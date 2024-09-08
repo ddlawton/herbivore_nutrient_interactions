@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+*.ipynb_checkpoints
+.env
+.venv/
+*.egg-info/
+.Python
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# Large files
+data/
