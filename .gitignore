@@ -12,3 +12,4 @@ __pycache__/
 
 # Large files
 data/
+output/field_cage_experiment/model_objects/
