@@ -16,3 +16,9 @@ __pycache__/
 *.xlsx
 *.tiff
 *.tif
+
+# Quarto and R stuff
+/.quarto/
+.Rproj.user
+*.Rproj
+.Rhistory
