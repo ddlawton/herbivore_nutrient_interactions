@@ -10,6 +10,9 @@ __pycache__/
 # Jupyter Notebooks
 .ipynb_checkpoints
 
-# Large files
-data/
-output/field_cage_experiment/model_objects/
+# Large data files -- to keep the repo < 50 mbs
+*.csv
+*.rds
+*.xlsx
+*.tiff
+*.tif
