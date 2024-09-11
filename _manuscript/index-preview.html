@@ -1,50 +1,173 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="generator" content="quarto-1.5.57">
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="dcterms.date" content="2024-09-10">
+    <meta name="keywords" content="nitrogen, phosphorus, grasshoppers, population dynamics, non-linear modeling, nutrient limitation, remote sensing">
 
-<meta name="dcterms.date" content="2024-09-10">
-<meta name="keywords" content="nitrogen, phosphorus, grasshoppers, population dynamics, non-linear modeling, nutrient limitation, remote sensing">
+    <title>Exploring Nutrient Availability and Herbivorous Insect Population Dynamics Across Multiple Scales</title>
+    <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      div.columns{display: flex; gap: min(4vw, 1.5em);}
+      div.column{flex: auto; overflow-x: auto;}
+      div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+      ul.task-list{list-style: none;}
+      ul.task-list li input[type="checkbox"] {
+        width: 0.8em;
+        margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+        vertical-align: middle;
+      }
+      /* CSS for syntax highlighting */
+      pre > code.sourceCode { white-space: pre; position: relative; }
+      pre > code.sourceCode > span { line-height: 1.25; }
+      pre > code.sourceCode > span:empty { height: 1.2em; }
+      .sourceCode { overflow: visible; }
+      code.sourceCode > span { color: inherit; text-decoration: inherit; }
+      div.sourceCode { margin: 1em 0; }
+      pre.sourceCode { margin: 0; }
+      @media screen {
+      div.sourceCode { overflow: auto; }
+      }
+      @media print {
+      pre > code.sourceCode { white-space: pre-wrap; }
+      pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+      }
+      pre.numberSource code
+        { counter-reset: source-line 0; }
+      pre.numberSource code > span
+        { position: relative; left: -4em; counter-increment: source-line; }
+      pre.numberSource code > span > a:first-child::before
+        { content: counter(source-line);
+          position: relative; left: -1em; text-align: right; vertical-align: baseline;
+          border: none; display: inline-block;
+          -webkit-touch-callout: none; -webkit-user-select: none;
+          -khtml-user-select: none; -moz-user-select: none;
+          -ms-user-select: none; user-select: none;
+          padding: 0 4px; width: 4em;
+        }
+      pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+      div.sourceCode
+        {   }
+      @media screen {
+      pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+      }
+      /* CSS for citations */
+      div.csl-bib-body { }
+      div.csl-entry {
+        clear: both;
+        margin-bottom: 0em;
+      }
+      .hanging-indent div.csl-entry {
+        margin-left:2em;
+        text-indent:-2em;
+      }
+      div.csl-left-margin {
+        min-width:2em;
+        float:left;
+      }
+      div.csl-right-inline {
+        margin-left:2em;
+        padding-left:1em;
+      }
+      div.csl-indent {
+        margin-left: 2em;
+      }    </style>
 
-<title>Exploring Nutrient Availability and Herbivorous Insect Population Dynamics Across Multiple Scales</title>
-<style>
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-  vertical-align: middle;
-}
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+    <style>
+      body.hypothesis-enabled #quarto-embed-header {
+        padding-right: 36px;
+      }
 
+      #quarto-embed-header {
+        height: 3em;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: solid 1px;
+      }
 
+      #quarto-embed-header h6 {
+        font-size: 1.1em;
+        padding-top: 0.6em;
+        margin-left: 1em;
+        margin-right: 1em;
+        font-weight: 400;
+      }
+
+      #quarto-embed-header a.quarto-back-link,
+      #quarto-embed-header a.quarto-download-embed {
+        font-size: 0.8em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 1em;
+        margin-right: 1em;
+      }
+
+      .quarto-back-container {
+        padding-left: 0.5em;
+        display: flex;
+      }
+
+      .headroom {
+          will-change: transform;
+          transition: transform 200ms linear;
+      }
+
+      .headroom--pinned {
+          transform: translateY(0%);
+      }
+
+      .headroom--unpinned {
+          transform: translateY(-100%);
+      }      
+    </style>
+
+    <script>
+    window.document.addEventListener("DOMContentLoaded", function () {
+
+      var header = window.document.querySelector("#quarto-embed-header");
+      const titleBannerEl = window.document.querySelector("body > #title-block-header");
+      if (titleBannerEl) {
+        titleBannerEl.style.paddingTop = header.clientHeight + "px";
+      }
+      const contentEl = window.document.getElementById('quarto-content');
+      for (const child of contentEl.children) {
+        child.style.paddingTop = header.clientHeight + "px";
+        child.style.marginTop = "1em";
+      }
+
+      // Use the article root if the `back` call doesn't work. This isn't perfect
+      // but should typically work
+      window.quartoBackToArticle = () => {
+        var currentUrl = window.location.href;
+        window.history.back();
+        setTimeout(() => {
+            // if location was not changed in 100 ms, then there is no history back
+            if(currentUrl === window.location.href){              
+                // redirect to site root
+                window.location.href = "index.html";
+            }
+        }, 100);
+      }
+
+      const headroom = new window.Headroom(header, {
+        tolerance: 5,
+        onPin: function () {
+        },
+        onUnpin: function () {
+        },
+      });
+      headroom.init();
+    });
+    </script>
+
+    
+<script src="site_libs/manuscript-notebook/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -58,15 +181,13 @@ div.csl-indent {
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
-<script async="" src="https://hypothes.is/embed.js"></script>
+     <script async="" src="https://hypothes.is/embed.js"></script>
 <script>
   window.document.addEventListener("DOMContentLoaded", function (_event) {
     document.body.classList.add('hypothesis-enabled');
   });
-</script>
-
-
-<meta name="citation_title" content="Exploring Nutrient Availability and Herbivorous Insect Population Dynamics Across Multiple Scales">
+</script>  
+      <meta name="citation_title" content="Exploring Nutrient Availability and Herbivorous Insect Population Dynamics Across Multiple Scales">
 <meta name="citation_abstract" content="1. Nutrient composition varies greatly across landscapes, which in turn influences the spatiotemporal variation and dynamics of populations. Yet few studies have investigated this pattern on multiple scales.
 
 2. We tested how nutrient limitation affects herbivore populations across spatial scales from individual behavior to landscape level population dynamics using Australian plague locust, Chortoicetes terminifera (Walker), field populations and long-term survey data from across their range.
@@ -200,9 +321,16 @@ div.csl-indent {
 <meta name="citation_reference" content="citation_title=Grasshoppers (Orthoptera: Acrididae) select vegetation patches in local-scale responses to foliar nitrogen but not phosphorus in native grassland: Grasshopper distribution and food quality;,citation_author=Viviana Loaiza;,citation_author=Jayne L. Jonas;,citation_author=Anthony Joern;,citation_publication_date=2011-10;,citation_cover_date=2011-10;,citation_year=2011;,citation_fulltext_html_url=https://onlinelibrary.wiley.com/doi/10.1111/j.1744-7917.2010.01376.x;,citation_issue=5;,citation_doi=10.1111/j.1744-7917.2010.01376.x;,citation_volume=18;,citation_language=en;,citation_journal_title=Insect Science;">
 </head>
 
-<body>
+  <body class="quarto-notebook">
+    <div id="quarto-embed-header" class="headroom fixed-top bg-primary">
+      
+      <a onclick="window.quartoBackToArticle(); return false;" class="btn btn-primary quarto-back-link" href=""><i class="bi bi-caret-left"></i> Back to Article</a>
+      <h6><i class="bi bi-journal-code"></i> Article Notebook</h6>
 
-<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+            <a href="./index.qmd" class="btn btn-primary quarto-download-embed" download="index.qmd">Download Source</a>
+          </div>
+
+     <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">Exploring Nutrient Availability and Herbivorous Insect Population Dynamics Across Multiple Scales</h1>
@@ -317,7 +445,7 @@ div.csl-indent {
               </div>
       </div>
       <div class="quarto-title-meta-column-end quarto-other-formats-target">
-      <div class="quarto-alternate-formats"><div class="quarto-title-meta-heading">Other Formats</div><div class="quarto-title-meta-contents"><p><a href="index.docx"><i class="bi bi-file-word"></i>MS Word</a></p></div><div class="quarto-title-meta-contents"><p><a href="index-meca.zip" data-meca-link="true"><i class="bi bi-archive"></i>MECA Bundle</a></p></div></div></div>
+      </div>
     </div>
 
     <div>
@@ -392,18 +520,13 @@ div.csl-indent {
   </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">5</span> References</a></li>
   </ul>
-<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="scripts/spatial_modeling/03_australian_plague_locust_raw_data_visualization-preview.html"><i class="bi bi-journal-code"></i>Australia Plauge Locust Modeling</a></li><li><a href="scripts/spatial_modeling/04_environmental_correlations_map_nitrogen_phosphorus_woody_cover-preview.html"><i class="bi bi-journal-code"></i>Environmental variable correlations</a></li><li><a href="scripts/spatial_modeling/02_fishnet_google_earth_engine_extraction-preview.html"><i class="bi bi-journal-code"></i>Extracting GEE data to polygons</a></li><li><a href="scripts/spatial_modeling/desert_locust/02_fishnet_google_earth_engine_extraction-Copy1-preview.html"><i class="bi bi-journal-code"></i>Extracting GEE data to polygons</a></li><li><a href="scripts/field_cage_experiment/02_field_cages_locust_physiology_analyses-preview.html"><i class="bi bi-journal-code"></i>Field cage nutrient analysis -- Locust Physiology</a></li><li><a href="scripts/field_cage_experiment/01_field_cages_plant_nutrient_analyses-preview.html"><i class="bi bi-journal-code"></i>Field cage nutrient analysis -- Plant nutrients</a></li><li><a href="scripts/field_cage_experiment/03_field_cage_manuscript_figure_table_code.ipynb-preview.html"><i class="bi bi-journal-code"></i>Field cage plant and locust post modeling visualization</a></li><li><a href="scripts/field_populations/03_field_population_intake_target_manuscript_figure_table_code-preview.html"><i class="bi bi-journal-code"></i>Field population Post modeling visualization</a></li><li><a href="scripts/field_populations/02_field_population_intake_target_no_choice_diet_analysis-preview.html"><i class="bi bi-journal-code"></i>Field population statistical analyses</a></li><li><a href="scripts/field_populations/01_field_population_intake_target_choice_diet_analysis-preview.html"><i class="bi bi-journal-code"></i>Field population statistical analyses -- Choice Experiment</a></li><li><a href="scripts/spatial_modeling/01_fishnet_grid_construction-preview.html"><i class="bi bi-journal-code"></i>Point to grid conversion</a></li><li><a href="scripts/spatial_modeling/desert_locust/01_fishnet_grid_construction-Copy1-preview.html"><i class="bi bi-journal-code"></i>Point to grid conversion</a></li><li><a href="scripts/spatial_modeling/desert_locust/03_desert_locust_raw_data_visualization-Copy1-preview.html"><i class="bi bi-journal-code"></i>Raw Data Visualization</a></li></ul></div></nav>
+</nav>
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">      
 
-
-
-  
-
-
-<section id="introduction" class="level1" data-number="1">
+       <section id="introduction" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> INTRODUCTION</h1>
 <p>Plant nutrients are usually more variable than animal body composition, which can make it challenging for herbivores to acquire an optimal nutritional balance <span class="citation" data-cites="elser_nutritional_2000">(<a href="#ref-elser_nutritional_2000" role="doc-biblioref">Elser et al., 2000</a>)</span>. Nutrient balance affects individual performance <span class="citation" data-cites="batzli_nutritional_1986 bernays_dietary_1994">(<a href="#ref-batzli_nutritional_1986" role="doc-biblioref">Batzli, 1986</a>; <a href="#ref-bernays_dietary_1994" role="doc-biblioref">Bernays et al., 1994</a>)</span> and, by extension, influences population dynamics <span class="citation" data-cites="elser_nutritional_2000">(<a href="#ref-elser_nutritional_2000" role="doc-biblioref">Elser et al., 2000</a>)</span>. One way many primary consumers achieve an optimal blend of nutrients is through selecting different host plants or plant parts to reach a specific amount and ratio, termed the intake target, IT <span class="citation" data-cites="simpson2012">(<a href="#ref-simpson2012" role="doc-biblioref">Simpson &amp; Raubenheimer, 2012a</a>)</span>. For example, giant pandas (Ailuropoda melanoleuca) synchronize their migration and reproduction cycles with seasonal nutrient availability between different bamboo species <span class="citation" data-cites="nie_obligate_2015">(<a href="#ref-nie_obligate_2015" role="doc-biblioref">Nie et al., 2015</a>)</span>. While studies have investigated this trend between available nutrients and animal populations, they usually happen at one scale and biological level. For example, much grasshopper nutrition research has been done at the organismal or local population level using lab and/or field studies <span class="citation" data-cites="behmer_insect_2009 cease_how_2024 le_gall_global_2019">(<a href="#ref-behmer_insect_2009" role="doc-biblioref">Behmer, 2009</a>; <a href="#ref-cease_how_2024" role="doc-biblioref">Cease, 2024</a>; <a href="#ref-le_gall_global_2019" role="doc-biblioref">Le Gall et al., 2019</a>)</span>, with a few separate larger scale modeling endeavors <span class="citation" data-cites="welti_nutrient_2020 zhou_increased_2019">(<a href="#ref-welti_nutrient_2020" role="doc-biblioref">Welti, Roeder, et al., 2020</a>; <a href="#ref-zhou_increased_2019" role="doc-biblioref">Zhou et al., 2019</a>)</span>. To our knowledge, no study has integrated individual herbivorous animal nutrition to continental level patterns in nutrient availability. Here we work across spatial scales, bridging field observations and cage manipulations with continental-scale insect pest outbreak modeling to see how the animal-nutrient relationship changes across multiple scales.</p>
 <p>Food quality has long been considered an important predictor of animal population dynamics <span class="citation" data-cites="andersen_stoichiometry_2004 white_inadequate_1993">(<a href="#ref-andersen_stoichiometry_2004" role="doc-biblioref">Andersen et al., 2004</a>; <a href="#ref-white_inadequate_1993" role="doc-biblioref">White, 1993</a>)</span>. Phosphorus and nitrogen commonly limit primary production in ecosystems, either separately or as co-limiting factors <span class="citation" data-cites="tyrrell_relative_1999">Vitousek et al. (<a href="#ref-vitousek_terrestrial_2010" role="doc-biblioref">2010</a>)</span>, and are often investigated as limiting factors for higher trophic levels to determine the consequences to animal growth and reproduction <span class="citation" data-cites="andersen_stoichiometry_2004">(<a href="#ref-andersen_stoichiometry_2004" role="doc-biblioref">Andersen et al., 2004</a>)</span>. For example, bluegrass fields supplemented with high quality (e.g.&nbsp;increased nitrogen) food pellets increase vole (Microtus ochmgaster) densities compared to control fields by supporting higher adult survival, increased breeding, and growth rate <span class="citation" data-cites="cole_influence_1978">(<a href="#ref-cole_influence_1978" role="doc-biblioref">Cole &amp; Batzli, 1978</a>)</span>. Less phosphorus in a dryland insect herbivore’s (Sabinia setosa) host plant, velvet mesquite (Prosopis velutina), leads to individuals having decreased RNA content (slower growth) and lower abundance <span class="citation" data-cites="schade_stoichiometric_2003">(<a href="#ref-schade_stoichiometric_2003" role="doc-biblioref">Schade et al., 2003</a>)</span>. More broadly, nitrogen and phosphorus limitation has been shown in mammals <span class="citation" data-cites="randolph_nutritional_1995 white_inadequate_1993">(<a href="#ref-randolph_nutritional_1995" role="doc-biblioref">Randolph et al., 1995</a>; <a href="#ref-white_inadequate_1993" role="doc-biblioref">White, 1993</a>)</span>, birds <span class="citation" data-cites="forero_conspecific_2002 granbom_food_2006">(<a href="#ref-forero_conspecific_2002" role="doc-biblioref">Forero et al., 2002</a>; <a href="#ref-granbom_food_2006" role="doc-biblioref">Granbom &amp; Smith, 2006</a>)</span>, and insects <span class="citation" data-cites="floyd_frontiers_1996 huberty_consequences_2006 marsh_decline_1995 perkins_dietary_2004">(<a href="#ref-floyd_frontiers_1996" role="doc-biblioref">Floyd, 1996</a>; <a href="#ref-huberty_consequences_2006" role="doc-biblioref">Huberty &amp; Denno, 2006</a>; <a href="#ref-marsh_decline_1995" role="doc-biblioref">Marsh &amp; Adams, 1995</a>; <a href="#ref-perkins_dietary_2004" role="doc-biblioref">Perkins et al., 2004</a>)</span> which is discussed further in <span class="citation" data-cites="white_role_2008">White (<a href="#ref-white_role_2008" role="doc-biblioref">2008</a>)</span> and <span class="citation" data-cites="andersen_stoichiometry_2004">Andersen et al. (<a href="#ref-andersen_stoichiometry_2004" role="doc-biblioref">2004</a>)</span>. However, not all animal populations respond positively to increasing environmental nutrients. For example, studies from across the globe reveal that the abundances of many grasshopper species are positively <span class="citation" data-cites="joern_not_2012 ozment_tracking_2021 welti_bottomup_2020 welti_nutrient_2020 zhu_effects_2020 zhu_negative_2019">(<a href="#ref-joern_not_2012" role="doc-biblioref">Joern et al., 2012</a>; <a href="#ref-ozment_tracking_2021" role="doc-biblioref">Ozment et al., 2021</a>; <a href="#ref-welti_bottomup_2020" role="doc-biblioref">Welti, Prather, et al., 2020</a>; <a href="#ref-welti_nutrient_2020" role="doc-biblioref">Welti, Roeder, et al., 2020</a>; <a href="#ref-zhu_effects_2020" role="doc-biblioref">H. Zhu et al., 2020</a>; <a href="#ref-zhu_negative_2019" role="doc-biblioref">Y. Zhu et al., 2019</a>)</span>, or not related <span class="citation" data-cites="heidorn_feeding_1987 jonas_hostplant_2008 lenhart_water_2015 ozment_tracking_2021">(<a href="#ref-heidorn_feeding_1987" role="doc-biblioref">Heidorn &amp; Joern, 1987</a>; <a href="#ref-jonas_hostplant_2008" role="doc-biblioref">Jonas &amp; Joern, 2008</a>; <a href="#ref-lenhart_water_2015" role="doc-biblioref">Lenhart et al., 2015</a>; <a href="#ref-ozment_tracking_2021" role="doc-biblioref">Ozment et al., 2021</a>)</span> to plant nitrogen concentrations as reviewed in <span class="citation" data-cites="cease_how_2024">Cease (<a href="#ref-cease_how_2024" role="doc-biblioref">2024</a>)</span>. Can the relationship between herbivore abundance and environmental nutrients be explained by approaches that consider nutritional physiology at the organismal level, in addition to population and landscape ecology?</p>
@@ -483,46 +606,32 @@ div.csl-indent {
 <h2 data-number="3.1" class="anchored" data-anchor-id="field-population-1"><span class="header-section-number">3.1</span> Field population</h2>
 <section id="choice-experiment-nutritional-target" class="level3" data-number="3.1.1">
 <h3 data-number="3.1.1" class="anchored" data-anchor-id="choice-experiment-nutritional-target"><span class="header-section-number">3.1.1</span> Choice experiment (nutritional target)</h3>
-<p>Australian plague locust individuals from the two outbreaking populations regulated to a specific ratio of 1 protein : 2 carbohydrate (<a href="#fig-field-pop-it-results" class="quarto-xref">Figure1</a> A) (Table 1). Model selection can be seen in Supplementary Table 3. Consumption in the two diet pairings did not differ, indicating non-random feeding (Supplementary Figure 3A, Table 1). While the protein : carbohydrate ratio did not change, females consumed more food than males, likely due to being bigger overall (Supplementary Figure 3B, Table 1, Supplementary Table 3).</p>
-</section>
-<section id="no-choice-experiment-performance-curves" class="level3" data-number="3.1.2">
-<h3 data-number="3.1.2" class="anchored" data-anchor-id="no-choice-experiment-performance-curves"><span class="header-section-number">3.1.2</span> No choice experiment (performance curves)</h3>
-<p>Australian plague locusts had higher specific mass growth rates and shorter development times on the 1 protein : 2 carbohydrate (14 protein : 28 carbohydrate) diet as compared to the other diets (<a href="#fig-field-pop-it-results" class="quarto-xref">Figure1</a> B &amp; C, Table 2, Supplementary Table 4).</p>
-<div id="fig-field-pop-it-results" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-field-pop-it-results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="output/publication_figures/field_population_intake_target_figure.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure1: The nutritional preference (A) and physiological performance (B &amp; C) of C. terminifera individuals were collected from two marching bands of 5th instars."><img src="output/publication_figures/field_population_intake_target_figure.png" class="img-fluid figure-img"></a>
+<p>Australian plague locust individuals from the two outbreaking populations regulated to a specific ratio of 1 protein : 2 carbohydrate (<a href="#fig-field-cage-time-results" class="quarto-xref">Figure1</a>) (Figure 2A, Table 1). Model selection can be seen in Supplementary Table 3. Consumption in the two diet pairings did not differ, indicating non-random feeding (Supplementary Figure 3A, Table 1). While the protein : carbohydrate ratio did not change, females consumed more food than males, likely due to being bigger overall (Supplementary Figure 3B, Table 1, Supplementary Table 3).</p>
+<div class="cell-container"><div class="cell-decorator"><pre>In [1]:</pre></div><div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "/Users/ddlawton/side_projects/herbivore_nutrient_interactions"</code></pre>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-field-pop-it-results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure1: The nutritional preference (A) and physiological performance (B &amp; C) of C. terminifera individuals were collected from two marching bands of 5th instars.
+</div></div>
+<div id="fig-field-cage-time-results" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-field-cage-time-results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="output/publication_figures/field_cage_plant_locust_figure.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure1: The nutritional preference (A) and physiological performance (B &amp; C) of C. terminifera individuals were collected from two marching bands of 5th instars."><img src="output/publication_figures/field_cage_plant_locust_figure.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-field-cage-time-results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure1: The nutritional preference (A) and physiological performance (B &amp; C) of <em>C. terminifera</em> individuals were collected from two marching bands of 5th instars.
 </figcaption>
 </figure>
 </div>
+</section>
+<section id="no-choice-experiment-performance-curves" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="no-choice-experiment-performance-curves"><span class="header-section-number">3.1.2</span> No choice experiment (performance curves)</h3>
+<p>Australian plague locusts had higher specific mass growth rates and shorter development times on the 1 protein : 2 carbohydrate (14 protein : 28 carbohydrate) diet as compared to the other diets (Fig. 2B &amp; C, Table 2, Supplementary Table 4).</p>
 </section>
 </section>
 <section id="field-cage-1" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="field-cage-1"><span class="header-section-number">3.2</span> Field Cage</h2>
-<p>For the first 11 days of the 14 day field cage experiment, plant protein and carbohydrate contents remained consistently protein-biased for all treatments (<a href="#fig-field-cage-time-results" class="quarto-xref">Figure2</a> A-C, Table 3), and only showed differences in protein content by the last sample period on December 1, which was after the end of the locust cage experiment. Accordingly, there was no effect of fertilizer on locust survival and adult proportion, though locusts in the medium level nitrogen fertilizer treatment were heavier than locusts in the high nitrogen fertilizer treatment (TukeyHSD: difference: -0.043, p-value: &lt; 0.001) ((<a href="#fig-field-cage-time-results" class="quarto-xref">Figure2</a> D-F, Table 4). Locusts that were retrieved from field cages after nine days and were given a choice to regulate protein and carbohydrate intake showed a pattern consistent with rebalancing a shortage of carbohydrates (<a href="#fig-field-cage-it-rebalancing" class="quarto-xref">Figure3</a>, Supplementary Fig. 4, Table 5). Irrespective of fertilizer treatment group, locusts initially selected very carbohydrate biased diets, but gradually, after 9 days, their trajectory returned close to the predicted intake target of 1p : 2c (<a href="#fig-field-cage-it-rebalancing" class="quarto-xref">Figure3</a>, Supplementary Fig. 4).</p>
-<div id="fig-field-cage-time-results" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-field-cage-time-results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="output/publication_figures/field_cage_plant_locust_figure.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure2: Nitrogen addition field cage experiments with plant nutrient change through time (A-C) and grasshopper performance metrics (D-F) are shown. Dashed line represents a 1p : 2c ratio, the solid line represents a 1p : 1c ratio."><img src="output/publication_figures/field_cage_plant_locust_figure.png" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-field-cage-time-results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure2: Nitrogen addition field cage experiments with plant nutrient change through time (A-C) and grasshopper performance metrics (D-F) are shown. Dashed line represents a 1p : 2c ratio, the solid line represents a 1p : 1c ratio.
-</figcaption>
-</figure>
-</div>
-<div id="fig-field-cage-it-rebalancing" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-field-cage-it-rebalancing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="output/publication_figures/field_cage_locust_intake_target_rebalancing.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure3: Nutrient imbalance redressing with artificial diet mixing of C. terminifera individuals taken from fertilized treatment cages. Colors represent treatment with large lines and points representing overall means. Individual time step targets can be seen in Supplementary Figure 4."><img src="output/publication_figures/field_cage_locust_intake_target_rebalancing.png" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-field-cage-it-rebalancing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure3: Nutrient imbalance redressing with artificial diet mixing of C. terminifera individuals taken from fertilized treatment cages. Colors represent treatment with large lines and points representing overall means. Individual time step targets can be seen in Supplementary Figure 4.
-</figcaption>
-</figure>
-</div>
+<p>For the first 11 days of the 14 day field cage experiment, plant protein and carbohydrate contents remained consistently protein-biased for all treatments (Fig. 3A-C, Table 3), and only showed differences in protein content by the last sample period on December 1, which was after the end of the locust cage experiment. Accordingly, there was no effect of fertilizer on locust survival and adult proportion, though locusts in the medium level nitrogen fertilizer treatment were heavier than locusts in the high nitrogen fertilizer treatment (TukeyHSD: difference: -0.043, p-value: &lt; 0.001) (Fig. 3D-F, Table 4). Locusts that were retrieved from field cages after nine days and were given a choice to regulate protein and carbohydrate intake showed a pattern consistent with rebalancing a shortage of carbohydrates (Fig. 4, Supplementary Fig. 4, Table 5). Irrespective of fertilizer treatment group, locusts initially selected very carbohydrate biased diets, but gradually, after 9 days, their trajectory returned close to the predicted intake target of 1p : 2c (Fig. 4, Supplementary Fig. 4).</p>
 </section>
 <section id="locust-outbreaks" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="locust-outbreaks"><span class="header-section-number">3.3</span> Locust outbreaks</h2>
@@ -559,11 +668,8 @@ Figure3: Nutrient imbalance redressing with artificial diet mixing of C. termini
 </section>
 </section>
 <section id="references" class="level1 unnumbered" data-number="5">
-
-
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">5 References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<h1 class="unnumbered" data-number="5"><span class="header-section-number">5</span> References</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-andersen_stoichiometry_2004" class="csl-entry" role="listitem">
 Andersen, T., Elser, J. J., &amp; Hessen, D. O. (2004). Stoichiometry and population dynamics. <em>Ecology Letters</em>, <em>7</em>(9), 884–900. <a href="https://doi.org/10.1111/j.1461-0248.2004.00646.x">https://doi.org/10.1111/j.1461-0248.2004.00646.x</a>
 </div>
@@ -840,9 +946,10 @@ Zhu, H., Nkurunziza, V., Wang, J., Guo, Q., Ruan, H., &amp; Wang, D. (2020). Eff
 <div id="ref-zhu_negative_2019" class="csl-entry" role="listitem">
 Zhu, Y., Zhong, Z., Pagès, J. F., Finke, D., Wang, D., Ma, Q., Hassan, N., Zhu, H., &amp; Wang, L. (2019). Negative effects of vertebrate on invertebrate herbivores mediated by enhanced plant nitrogen content. <em>Journal of Ecology</em>, <em>107</em>(2), 901–912. <a href="https://doi.org/10.1111/1365-2745.13100">https://doi.org/10.1111/1365-2745.13100</a>
 </div>
-</div></section></div></main>
-<!-- /main column -->
-<script id="quarto-html-after-body" type="application/javascript">
+</div>
+</section>
+     </main>
+<!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1261,9 +1368,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
-</div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"selector":".lightbox","openEffect":"zoom"});
+</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"descPosition":"bottom","openEffect":"zoom","selector":".lightbox","loop":false,"closeEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
@@ -1294,9 +1399,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   };
   
 })();
-          </script>
-
-
-
-
+          </script> 
+  
 </body></html>

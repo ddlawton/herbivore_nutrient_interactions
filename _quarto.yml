@@ -8,6 +8,7 @@ format:
   html:
     comments:
       hypothesis: true
+    fig-pos: 'h'
   docx: default
   jats: default
 

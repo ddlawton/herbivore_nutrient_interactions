@@ -211,27 +211,22 @@ To relate nymph survey grids to soil nitrogen and phosphorus, we constructed two
 
 ### Choice experiment (nutritional target)
 
-Australian plague locust individuals from the two outbreaking populations regulated to a specific ratio of 1 protein : 2 carbohydrate (@fig-field-pop-it-results A) (Table 1). Model selection can be seen in Supplementary Table 3. Consumption in the two diet pairings did not differ, indicating non-random feeding (Supplementary Figure 3A, Table 1). While the protein : carbohydrate ratio did not change, females consumed more food than males, likely due to being bigger overall (Supplementary Figure 3B, Table 1, Supplementary Table 3).
+Australian plague locust individuals from the two outbreaking populations regulated to a specific ratio of 1 protein : 2 carbohydrate (@fig-field-cage-time-results) (Figure 2A, Table 1). Model selection can be seen in Supplementary Table 3. Consumption in the two diet pairings did not differ, indicating non-random feeding (Supplementary Figure 3A, Table 1). While the protein : carbohydrate ratio did not change, females consumed more food than males, likely due to being bigger overall (Supplementary Figure 3B, Table 1, Supplementary Table 3).
+
+```{r}
+#| echo: true
+getwd()
+```
+
+![The nutritional preference (A) and physiological performance (B & C) of *C. terminifera* individuals were collected from two marching bands of 5th instars.](output/publication_figures/field_cage_plant_locust_figure.png){#fig-field-cage-time-results}
 
 ### No choice experiment (performance curves)
 
-Australian plague locusts had higher specific mass growth rates and shorter development times on the 1 protein : 2 carbohydrate (14 protein : 28 carbohydrate) diet as compared to the other diets (@fig-field-pop-it-results B & C, Table 2, Supplementary Table 4).
-
-![The nutritional preference (A) and physiological performance (B & C) of C. terminifera individuals were collected from two marching bands of 5th instars.](output/publication_figures/field_population_intake_target_figure.png){#fig-field-pop-it-results}
+Australian plague locusts had higher specific mass growth rates and shorter development times on the 1 protein : 2 carbohydrate (14 protein : 28 carbohydrate) diet as compared to the other diets (Fig. 2B & C, Table 2, Supplementary Table 4).
 
 ## Field Cage
 
-For the first 11 days of the 14 day field cage experiment, plant protein and carbohydrate contents remained consistently protein-biased for all treatments (@fig-field-cage-time-results A-C, Table 3), and only showed differences in protein content by the last sample period on December 1, which was after the end of the locust cage experiment. Accordingly, there was no effect of fertilizer on locust survival and adult proportion, though locusts in the medium level nitrogen fertilizer treatment were heavier than locusts in the high nitrogen fertilizer treatment (TukeyHSD: difference: -0.043, p-value: \< 0.001) ((@fig-field-cage-time-results D-F, Table 4). Locusts that were retrieved from field cages after nine days and were given a choice to regulate protein and carbohydrate intake showed a pattern consistent with rebalancing a shortage of carbohydrates (@fig-field-cage-it-rebalancing, Supplementary Fig. 4, Table 5). Irrespective of fertilizer treatment group, locusts initially selected very carbohydrate biased diets, but gradually, after 9 days, their trajectory returned close to the predicted intake target of 1p : 2c (@fig-field-cage-it-rebalancing, Supplementary Fig. 4).
-
-
-
-![Nitrogen addition field cage experiments with plant nutrient change through time (A-C) and grasshopper performance metrics (D-F) are shown. Dashed line represents a 1p : 2c ratio, the solid line represents a 1p : 1c ratio. ](output/publication_figures/field_cage_plant_locust_figure.png){#fig-field-cage-time-results}
-
-
-![Nutrient imbalance redressing with artificial diet mixing of C. terminifera individuals taken from fertilized treatment cages. Colors represent treatment with large lines and points representing overall means. Individual time step targets can be seen in Supplementary Figure 4.](output/publication_figures/field_cage_locust_intake_target_rebalancing.png){#fig-field-cage-it-rebalancing}
-
-
-
+For the first 11 days of the 14 day field cage experiment, plant protein and carbohydrate contents remained consistently protein-biased for all treatments (Fig. 3A-C, Table 3), and only showed differences in protein content by the last sample period on December 1, which was after the end of the locust cage experiment. Accordingly, there was no effect of fertilizer on locust survival and adult proportion, though locusts in the medium level nitrogen fertilizer treatment were heavier than locusts in the high nitrogen fertilizer treatment (TukeyHSD: difference: -0.043, p-value: \< 0.001) (Fig. 3D-F, Table 4). Locusts that were retrieved from field cages after nine days and were given a choice to regulate protein and carbohydrate intake showed a pattern consistent with rebalancing a shortage of carbohydrates (Fig. 4, Supplementary Fig. 4, Table 5). Irrespective of fertilizer treatment group, locusts initially selected very carbohydrate biased diets, but gradually, after 9 days, their trajectory returned close to the predicted intake target of 1p : 2c (Fig. 4, Supplementary Fig. 4).
 
 ## Locust outbreaks
 
