@@ -11,7 +11,7 @@ __pycache__/
 .ipynb_checkpoints
 
 # Large data files -- to keep the repo < 50 mbs
-*.csv
+/data/
 *.rds
 *.xlsx
 *.tiff
