@@ -175,7 +175,32 @@
             <a href="../../scripts/spatial_modeling/01_fishnet_grid_construction.ipynb" class="btn btn-primary quarto-download-embed" download="01_fishnet_grid_construction.ipynb">Download Notebook</a>
           </div>
 
-     <div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+     <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Point to grid conversion</h1>
+          </div>
+
+    
+    <div class="quarto-title-meta-container">
+      <div class="quarto-title-meta-column-start">
+        
+        <div class="quarto-title-meta">
+
+                
+          
+                
+              </div>
+      </div>
+      <div class="quarto-title-meta-column-end quarto-other-formats-target">
+      </div>
+    </div>
+
+
+
+    <div class="quarto-other-links-text-target">
+    </div>  </div>
+</header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
 <div id="quarto-sidebar-toc-left" class="sidebar toc-left">
   <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
@@ -196,23 +221,9 @@
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
-<main class="content" id="quarto-document-content">      <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Point to grid conversion</h1>
-</div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">      
 
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>     <p>This code takes the georeferenced points and related them to a fishnet grid of 1km x 1km scale.</p>
+       <p>This code takes the georeferenced points and related them to a fishnet grid of 1km x 1km scale.</p>
 <p>This will be for both for Australian Plague Locust and Desert Locust</p>
 <div class="cell-container"><div class="cell-decorator"><pre>In [1]:</pre></div><div id="8cb97841-63d4-4070-a986-089de1d711e8" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -226,7 +237,7 @@
 <pre><code>'/home/datascience/herbivore_nutrient_interactions'</code></pre>
 </div>
 </div></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [6]:</pre></div><div id="20638780-1e5a-4d63-b733-5b41a2670c7b" class="cell" data-execution_count="6">
+<div class="cell-container"><div class="cell-decorator"><pre>In [4]:</pre></div><div id="20638780-1e5a-4d63-b733-5b41a2670c7b" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This function takes the point dataset and creates a sparse fishnet grid that overlaps with all points. </span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># there is a user species cell size and few other handy parameters</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># it defaults to parallel processing but can be turned off</span></span>
@@ -257,41 +268,22 @@
 <section id="species-data-management" class="level3">
 <h3 class="anchored" data-anchor-id="species-data-management">Species data management</h3>
 <p>For each species, we need to combined the species specific ID with the <code>10</code> observations (nil-observations) and observations in the other species categories that are nil. This will provide us with all the records that a specific grasshopper species was present and combine it with all the nil observation possible.</p>
-<div class="cell-container"><div class="cell-decorator"><pre>In [8]:</pre></div><div id="19398ba1-1ad5-44d4-a42c-c26ee37c0a52" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'data/raw/survey_data/APLC_surveys_2000-2017.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [9]:</pre></div><div id="f22158aa-4a9b-4b5f-a743-c92efb33e85e" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> filter_and_update_species(df, species_list, target_species):</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    and_nil <span class="op">=</span> df[<span class="st">'Species'</span>].isin(species_list)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    all_other_nil <span class="op">=</span> (</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="op">~</span>df[<span class="st">'Species'</span>].isin(species_list) <span class="op">&amp;</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        (df[<span class="st">'Nymph Density'</span>] <span class="op">==</span> <span class="dv">0</span>) <span class="op">&amp;</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        (df[<span class="st">'Adult Density'</span>] <span class="op">==</span> <span class="dv">0</span>)</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    filtered_df <span class="op">=</span> df[and_nil <span class="op">|</span> all_other_nil].copy()  <span class="co"># Use copy() to avoid SettingWithCopyWarning</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    filtered_df[<span class="st">'Species'</span>] <span class="op">=</span> target_species</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> filtered_df</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the list of target species and corresponding species lists</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>species_combinations <span class="op">=</span> [</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    ([<span class="dv">10</span>, <span class="dv">11</span>], <span class="dv">11</span>),</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    ([<span class="dv">10</span>, <span class="dv">12</span>], <span class="dv">12</span>),</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    ([<span class="dv">10</span>, <span class="dv">15</span>], <span class="dv">15</span>),</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    ([<span class="dv">10</span>, <span class="dv">19</span>], <span class="dv">19</span>)</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>]</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Use a list comprehension to generate all DataFrames in one step</span></span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>full_species_data <span class="op">=</span> pd.concat(</span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>    [filter_and_update_species(df, species_list, target_species) </span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>     <span class="cf">for</span> species_list, target_species <span class="kw">in</span> species_combinations], </span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>    ignore_index<span class="op">=</span><span class="va">True</span></span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>).drop_duplicates()  <span class="co"># Optionally drop duplicates</span></span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="co"># final_df now contains the combined result</span></span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>full_species_data.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-container"><div class="cell-decorator"><pre>In [7]:</pre></div><div id="19398ba1-1ad5-44d4-a42c-c26ee37c0a52" class="cell" data-scrolled="true" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>CT <span class="op">=</span> pd.read_csv(<span class="st">'data/raw/survey_data/CT.csv'</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>OA <span class="op">=</span> pd.read_csv(<span class="st">'data/raw/survey_data/OA.csv'</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>AG <span class="op">=</span> pd.read_csv(<span class="st">'data/raw/survey_data/AG.csv'</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>AC <span class="op">=</span> pd.read_csv(<span class="st">'data/raw/survey_data/AC.csv'</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a species column to each dataframe</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>CT[<span class="st">'species'</span>] <span class="op">=</span> <span class="st">'CT'</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>OA[<span class="st">'species'</span>] <span class="op">=</span> <span class="st">'OA'</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>AG[<span class="st">'species'</span>] <span class="op">=</span> <span class="st">'AG'</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>AC[<span class="st">'species'</span>] <span class="op">=</span> <span class="st">'AC'</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine all the dataframes</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>combined_df <span class="op">=</span> pd.concat([CT, OA, AG, AC], ignore_index<span class="op">=</span><span class="va">True</span>).drop(columns<span class="op">=</span>[<span class="st">'Longitude2'</span>, <span class="st">'Latitude2'</span>,<span class="st">'Unnamed: 0'</span>])</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>combined_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 
 
@@ -303,14 +295,13 @@
 <th data-quarto-table-cell-role="th">Date</th>
 <th data-quarto-table-cell-role="th">Longitude</th>
 <th data-quarto-table-cell-role="th">Latitude</th>
-<th data-quarto-table-cell-role="th">Longitude2</th>
-<th data-quarto-table-cell-role="th">Latitude2</th>
 <th data-quarto-table-cell-role="th">Species</th>
-<th data-quarto-table-cell-role="th">Data Quality</th>
-<th data-quarto-table-cell-role="th">Nymph Stage</th>
-<th data-quarto-table-cell-role="th">Nymph Density</th>
-<th data-quarto-table-cell-role="th">Adult Stage</th>
-<th data-quarto-table-cell-role="th">Adult Density</th>
+<th data-quarto-table-cell-role="th">Data.Quality</th>
+<th data-quarto-table-cell-role="th">Nymph.Stage</th>
+<th data-quarto-table-cell-role="th">Nymph.Density</th>
+<th data-quarto-table-cell-role="th">Adult.Stage</th>
+<th data-quarto-table-cell-role="th">Adult.Density</th>
+<th data-quarto-table-cell-role="th">species</th>
 </tr>
 </thead>
 <tbody>
@@ -320,14 +311,13 @@
 <td>7-Apr-17</td>
 <td>143.144968</td>
 <td>-24.760067</td>
-<td>143.144968</td>
-<td>-24.760067</td>
 <td>11</td>
 <td>6</td>
 <td>0</td>
 <td>0</td>
 <td>7</td>
 <td>1</td>
+<td>CT</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
@@ -335,14 +325,13 @@
 <td>7-Apr-17</td>
 <td>143.276912</td>
 <td>-24.473368</td>
-<td>143.276912</td>
-<td>-24.473368</td>
-<td>11</td>
+<td>10</td>
 <td>6</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
+<td>CT</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
@@ -350,14 +339,13 @@
 <td>7-Apr-17</td>
 <td>143.278365</td>
 <td>-24.643177</td>
-<td>143.278365</td>
-<td>-24.643177</td>
 <td>11</td>
 <td>6</td>
 <td>0</td>
 <td>0</td>
 <td>7</td>
 <td>1</td>
+<td>CT</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
@@ -365,14 +353,13 @@
 <td>7-Apr-17</td>
 <td>143.367765</td>
 <td>-24.354893</td>
-<td>143.367765</td>
-<td>-24.354893</td>
 <td>11</td>
 <td>6</td>
 <td>0</td>
 <td>0</td>
 <td>7</td>
 <td>1</td>
+<td>CT</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
@@ -380,18 +367,102 @@
 <td>7-Apr-17</td>
 <td>143.459170</td>
 <td>-24.319528</td>
-<td>143.459170</td>
-<td>-24.319528</td>
 <td>11</td>
 <td>6</td>
 <td>0</td>
 <td>0</td>
 <td>7</td>
 <td>1</td>
+<td>CT</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">303829</td>
+<td>1</td>
+<td>5-Jan-00</td>
+<td>143.073900</td>
+<td>-25.521900</td>
+<td>10</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>AC</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">303830</td>
+<td>1</td>
+<td>5-Jan-00</td>
+<td>143.307100</td>
+<td>-25.209900</td>
+<td>10</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>AC</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">303831</td>
+<td>1</td>
+<td>5-Jan-00</td>
+<td>143.839400</td>
+<td>-25.032800</td>
+<td>10</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>AC</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">303832</td>
+<td>1</td>
+<td>5-Jan-00</td>
+<td>143.921900</td>
+<td>-24.971200</td>
+<td>10</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>AC</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">303833</td>
+<td>1</td>
+<td>5-Jan-00</td>
+<td>146.820000</td>
+<td>-31.751700</td>
+<td>10</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>AC</td>
 </tr>
 </tbody>
 </table>
 
+<p>303834 rows × 11 columns</p>
 </div>
 </div>
 </div></div>
@@ -400,32 +471,32 @@
 <section id="fishnet-grid-construction" class="level2">
 <h2 class="anchored" data-anchor-id="fishnet-grid-construction">Fishnet grid construction</h2>
 <p>I first create the sparse fishnet grid (roughly 1km x 1km) and then aggregate the species data to the polygons. This is done BY species and not between.</p>
-<div class="cell-container"><div class="cell-decorator"><pre>In [13]:</pre></div><div id="b518e127-c4da-4ed5-a189-161cb686a630" class="cell" data-scrolled="true" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>aplc_survey_dataframe <span class="op">=</span> create_grids_parallel(</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        full_species_data,</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        longitude_column<span class="op">=</span><span class="st">'Longitude'</span>,</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        latitude_column<span class="op">=</span><span class="st">'Latitude'</span>,</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        csv_crs<span class="op">=</span><span class="st">'EPSG:4326'</span>,</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        grid_crs<span class="op">=</span><span class="st">'EPSG:4326'</span>,</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        transformation_crs<span class="op">=</span><span class="st">'EPSG:4326'</span>,</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        final_cell_size<span class="op">=</span><span class="fl">0.01</span>,</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        coarse_cell_size<span class="op">=</span><span class="va">None</span>,</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>        parallel<span class="op">=</span><span class="va">True</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [8]:</pre></div><div id="b518e127-c4da-4ed5-a189-161cb686a630" class="cell" data-scrolled="true" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>aplc_survey_dataframe <span class="op">=</span> create_grids_parallel(</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        combined_df,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        longitude_column<span class="op">=</span><span class="st">'Longitude'</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        latitude_column<span class="op">=</span><span class="st">'Latitude'</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        csv_crs<span class="op">=</span><span class="st">'EPSG:4326'</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        grid_crs<span class="op">=</span><span class="st">'EPSG:4326'</span>,</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        transformation_crs<span class="op">=</span><span class="st">'EPSG:4326'</span>,</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        final_cell_size<span class="op">=</span><span class="fl">0.01</span>,</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        coarse_cell_size<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        parallel<span class="op">=</span><span class="va">True</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Processing Polygons: 100%|██████████| 1315/1315 [00:13&lt;00:00, 94.54it/s]</code></pre>
+<pre><code>Processing Polygons: 100%|██████████| 1315/1315 [00:17&lt;00:00, 73.10it/s]</code></pre>
 </div>
 </div></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [16]:</pre></div><div id="cd8ea9d3-c931-4001-81c5-983391ccfa35" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add an index to the polygons</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">## this will allow us to join tables together (and make GEE easier)</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>aplc_survey_dataframe <span class="op">=</span> gpd.GeoDataFrame(aplc_survey_dataframe)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>aplc_survey_dataframe[<span class="st">'polygon_id'</span>] <span class="op">=</span> aplc_survey_dataframe.index</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>aplc_survey_dataframe.set_crs(epsg<span class="op">=</span><span class="dv">4326</span>, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="16">
+<div class="cell-container"><div class="cell-decorator"><pre>In [9]:</pre></div><div id="cd8ea9d3-c931-4001-81c5-983391ccfa35" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add an index to the polygons</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">## this will allow us to join tables together (and make GEE easier)</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>aplc_survey_dataframe <span class="op">=</span> gpd.GeoDataFrame(aplc_survey_dataframe)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>aplc_survey_dataframe[<span class="st">'polygon_id'</span>] <span class="op">=</span> aplc_survey_dataframe.index</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>aplc_survey_dataframe.set_crs(epsg<span class="op">=</span><span class="dv">4326</span>, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
 <div>
 
 
@@ -496,17 +567,202 @@
 </tbody>
 </table>
 
-<p>67176 rows × 2 columns</p>
+<p>67144 rows × 2 columns</p>
 </div>
 </div>
 </div></div>
 <section id="lets-summarize-the-apl-point-data-to-the-polygon-grid-data" class="level3">
 <h3 class="anchored" data-anchor-id="lets-summarize-the-apl-point-data-to-the-polygon-grid-data">Lets summarize the APL point data to the polygon grid data</h3>
-<div class="cell-container"><div class="cell-decorator"><pre>In [17]:</pre></div><div id="674d1a74-aa45-4e26-a3b1-335111a9e054" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>columns_to_keep <span class="op">=</span> [<span class="st">'Longitude'</span>, <span class="st">'Latitude'</span>, <span class="st">'Date'</span>,<span class="st">'Species'</span>,<span class="st">'Data Quality'</span>,<span class="st">'Nymph Density'</span>,<span class="st">'Adult Density'</span>]</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>APL_dat <span class="op">=</span> full_species_data[columns_to_keep]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [12]:</pre></div><div id="9714e545-1812-4775-aab4-ed0f7c5a454c" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>combined_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Source</th>
+<th data-quarto-table-cell-role="th">Date</th>
+<th data-quarto-table-cell-role="th">Longitude</th>
+<th data-quarto-table-cell-role="th">Latitude</th>
+<th data-quarto-table-cell-role="th">Species</th>
+<th data-quarto-table-cell-role="th">Data.Quality</th>
+<th data-quarto-table-cell-role="th">Nymph.Stage</th>
+<th data-quarto-table-cell-role="th">Nymph.Density</th>
+<th data-quarto-table-cell-role="th">Adult.Stage</th>
+<th data-quarto-table-cell-role="th">Adult.Density</th>
+<th data-quarto-table-cell-role="th">species</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>7-Apr-17</td>
+<td>143.144968</td>
+<td>-24.760067</td>
+<td>11</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>7</td>
+<td>1</td>
+<td>CT</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1</td>
+<td>7-Apr-17</td>
+<td>143.276912</td>
+<td>-24.473368</td>
+<td>10</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>CT</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>1</td>
+<td>7-Apr-17</td>
+<td>143.278365</td>
+<td>-24.643177</td>
+<td>11</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>7</td>
+<td>1</td>
+<td>CT</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>1</td>
+<td>7-Apr-17</td>
+<td>143.367765</td>
+<td>-24.354893</td>
+<td>11</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>7</td>
+<td>1</td>
+<td>CT</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>1</td>
+<td>7-Apr-17</td>
+<td>143.459170</td>
+<td>-24.319528</td>
+<td>11</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>7</td>
+<td>1</td>
+<td>CT</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">303829</td>
+<td>1</td>
+<td>5-Jan-00</td>
+<td>143.073900</td>
+<td>-25.521900</td>
+<td>10</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>AC</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">303830</td>
+<td>1</td>
+<td>5-Jan-00</td>
+<td>143.307100</td>
+<td>-25.209900</td>
+<td>10</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>AC</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">303831</td>
+<td>1</td>
+<td>5-Jan-00</td>
+<td>143.839400</td>
+<td>-25.032800</td>
+<td>10</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>AC</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">303832</td>
+<td>1</td>
+<td>5-Jan-00</td>
+<td>143.921900</td>
+<td>-24.971200</td>
+<td>10</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>AC</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">303833</td>
+<td>1</td>
+<td>5-Jan-00</td>
+<td>146.820000</td>
+<td>-31.751700</td>
+<td>10</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>AC</td>
+</tr>
+</tbody>
+</table>
+
+<p>303834 rows × 11 columns</p>
+</div>
+</div>
 </div></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [18]:</pre></div><div id="b13906f9-6919-4226-ad4b-d9788b6036c3" class="cell" data-execution_count="18">
+<div class="cell-container"><div class="cell-decorator"><pre>In [13]:</pre></div><div id="674d1a74-aa45-4e26-a3b1-335111a9e054" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>columns_to_keep <span class="op">=</span> [<span class="st">'Longitude'</span>, <span class="st">'Latitude'</span>, <span class="st">'Date'</span>,<span class="st">'Species'</span>,<span class="st">'Data.Quality'</span>,<span class="st">'Nymph.Density'</span>,<span class="st">'Adult.Density'</span>]</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>APL_dat <span class="op">=</span> combined_df[columns_to_keep]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [14]:</pre></div><div id="b13906f9-6919-4226-ad4b-d9788b6036c3" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert DataFrame to GeoDataFrame</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>gdf_points <span class="op">=</span> gpd.GeoDataFrame(</span>
@@ -515,7 +771,7 @@
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>gdf_points.set_crs(epsg<span class="op">=</span><span class="dv">4326</span>, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="18">
+<div class="cell-output cell-output-display" data-execution_count="14">
 <div>
 
 
@@ -527,9 +783,9 @@
 <th data-quarto-table-cell-role="th">Latitude</th>
 <th data-quarto-table-cell-role="th">Date</th>
 <th data-quarto-table-cell-role="th">Species</th>
-<th data-quarto-table-cell-role="th">Data Quality</th>
-<th data-quarto-table-cell-role="th">Nymph Density</th>
-<th data-quarto-table-cell-role="th">Adult Density</th>
+<th data-quarto-table-cell-role="th">Data.Quality</th>
+<th data-quarto-table-cell-role="th">Nymph.Density</th>
+<th data-quarto-table-cell-role="th">Adult.Density</th>
 <th data-quarto-table-cell-role="th">geometry</th>
 </tr>
 </thead>
@@ -550,7 +806,7 @@
 <td>143.276912</td>
 <td>-24.473368</td>
 <td>7-Apr-17</td>
-<td>11</td>
+<td>10</td>
 <td>6</td>
 <td>0</td>
 <td>0</td>
@@ -601,55 +857,55 @@
 <td>...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">316058</td>
+<td data-quarto-table-cell-role="th">303829</td>
 <td>143.073900</td>
 <td>-25.521900</td>
 <td>5-Jan-00</td>
-<td>19</td>
+<td>10</td>
 <td>3</td>
 <td>0</td>
 <td>0</td>
 <td>POINT (143.07390 -25.52190)</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">316059</td>
+<td data-quarto-table-cell-role="th">303830</td>
 <td>143.307100</td>
 <td>-25.209900</td>
 <td>5-Jan-00</td>
-<td>19</td>
+<td>10</td>
 <td>3</td>
 <td>0</td>
 <td>0</td>
 <td>POINT (143.30710 -25.20990)</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">316060</td>
+<td data-quarto-table-cell-role="th">303831</td>
 <td>143.839400</td>
 <td>-25.032800</td>
 <td>5-Jan-00</td>
-<td>19</td>
+<td>10</td>
 <td>3</td>
 <td>0</td>
 <td>0</td>
 <td>POINT (143.83940 -25.03280)</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">316061</td>
+<td data-quarto-table-cell-role="th">303832</td>
 <td>143.921900</td>
 <td>-24.971200</td>
 <td>5-Jan-00</td>
-<td>19</td>
+<td>10</td>
 <td>3</td>
 <td>0</td>
 <td>0</td>
 <td>POINT (143.92190 -24.97120)</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">316062</td>
+<td data-quarto-table-cell-role="th">303833</td>
 <td>146.820000</td>
 <td>-31.751700</td>
 <td>5-Jan-00</td>
-<td>19</td>
+<td>10</td>
 <td>3</td>
 <td>0</td>
 <td>0</td>
@@ -658,14 +914,14 @@
 </tbody>
 </table>
 
-<p>309640 rows × 8 columns</p>
+<p>303834 rows × 8 columns</p>
 </div>
 </div>
 </div></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [19]:</pre></div><div id="b979461e-3cec-4b0d-8fe6-2b6a058a46b6" class="cell" data-execution_count="19">
+<div class="cell-container"><div class="cell-decorator"><pre>In [15]:</pre></div><div id="b979461e-3cec-4b0d-8fe6-2b6a058a46b6" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>joined_gdf <span class="op">=</span> gpd.sjoin(gdf_points, aplc_survey_dataframe, how<span class="op">=</span><span class="st">"left"</span>, predicate<span class="op">=</span><span class="st">'within'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [20]:</pre></div><div id="4982db06-9b18-401d-99a2-8e4fb78a5a80" class="cell" data-execution_count="20">
+<div class="cell-container"><div class="cell-decorator"><pre>In [16]:</pre></div><div id="4982db06-9b18-401d-99a2-8e4fb78a5a80" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># I wanted to ensure every point has an assoicated polygon_id </span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">## which they do</span></span>
@@ -678,16 +934,16 @@
 Latitude         0
 Date             0
 Species          0
-Data Quality     0
-Nymph Density    0
-Adult Density    0
+Data.Quality     0
+Nymph.Density    0
+Adult.Density    0
 geometry         0
 index_right      0
 polygon_id       0
 dtype: int64</code></pre>
 </div>
 </div></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [21]:</pre></div><div id="154aac4f-b185-43d6-9897-22eec2641829" class="cell" data-scrolled="true" data-execution_count="21">
+<div class="cell-container"><div class="cell-decorator"><pre>In [18]:</pre></div><div id="154aac4f-b185-43d6-9897-22eec2641829" class="cell" data-scrolled="true" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Custom aggregation function to get min, median, and max dates</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> date_aggregations(series):</span>
@@ -703,14 +959,14 @@ dtype: int64</code></pre>
 <span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Date'</span>: date_aggregations,</span>
 <span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Longitude'</span>: <span class="st">'median'</span>,</span>
 <span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Latitude'</span>: <span class="st">'median'</span>,</span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Data Quality'</span>: count_unique_values,</span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Nymph Density'</span>: count_unique_values,</span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Adult Density'</span>: count_unique_values</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Data.Quality'</span>: count_unique_values,</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Nymph.Density'</span>: count_unique_values,</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Adult.Density'</span>: count_unique_values</span>
 <span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>}).reset_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [26]:</pre></div><div id="a1aecc29-106a-4d7b-bd83-c06e07c84cc5" class="cell" data-execution_count="26">
+<div class="cell-container"><div class="cell-decorator"><pre>In [19]:</pre></div><div id="a1aecc29-106a-4d7b-bd83-c06e07c84cc5" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>aggregated_gdf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="26">
+<div class="cell-output cell-output-display" data-execution_count="19">
 <div>
 
 
@@ -723,66 +979,66 @@ dtype: int64</code></pre>
 <th data-quarto-table-cell-role="th">Date</th>
 <th data-quarto-table-cell-role="th">Longitude</th>
 <th data-quarto-table-cell-role="th">Latitude</th>
-<th data-quarto-table-cell-role="th">Data Quality</th>
-<th data-quarto-table-cell-role="th">Nymph Density</th>
-<th data-quarto-table-cell-role="th">Adult Density</th>
+<th data-quarto-table-cell-role="th">Data.Quality</th>
+<th data-quarto-table-cell-role="th">Nymph.Density</th>
+<th data-quarto-table-cell-role="th">Adult.Density</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>11</td>
+<td>10</td>
 <td>13</td>
 <td>[2014-03-08 00:00:00, 2014-03-08 00:00:00, 201...</td>
 <td>131.655639</td>
 <td>-28.119211</td>
-<td>{6: 1}</td>
-<td>{0: 1}</td>
-<td>{0: 1}</td>
+<td>{6: 4}</td>
+<td>{0: 4}</td>
+<td>{0: 4}</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>11</td>
+<td>10</td>
 <td>3072</td>
 <td>[2017-04-01 00:00:00, 2017-04-01 00:00:00, 201...</td>
 <td>133.206243</td>
 <td>-26.350383</td>
-<td>{6: 1}</td>
-<td>{0: 1}</td>
-<td>{0: 1}</td>
+<td>{6: 4}</td>
+<td>{0: 4}</td>
+<td>{0: 4}</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>11</td>
+<td>10</td>
 <td>4563</td>
 <td>[2006-03-16 00:00:00, 2006-03-16 00:00:00, 200...</td>
 <td>133.186734</td>
 <td>-26.237582</td>
-<td>{6: 1}</td>
-<td>{0: 1}</td>
-<td>{0: 1}</td>
+<td>{6: 4}</td>
+<td>{0: 4}</td>
+<td>{0: 4}</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
-<td>11</td>
+<td>10</td>
 <td>4620</td>
 <td>[2006-03-16 00:00:00, 2006-03-16 00:00:00, 200...</td>
 <td>133.195693</td>
 <td>-26.075735</td>
-<td>{6: 1}</td>
-<td>{0: 1}</td>
-<td>{0: 1}</td>
+<td>{6: 4}</td>
+<td>{0: 4}</td>
+<td>{0: 4}</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
-<td>11</td>
+<td>10</td>
 <td>4626</td>
 <td>[2017-04-01 00:00:00, 2017-04-01 00:00:00, 201...</td>
 <td>133.194124</td>
 <td>-26.009872</td>
-<td>{6: 1}</td>
-<td>{0: 1}</td>
-<td>{0: 1}</td>
+<td>{6: 4}</td>
+<td>{0: 4}</td>
+<td>{0: 4}</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
@@ -796,75 +1052,75 @@ dtype: int64</code></pre>
 <td>...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">177608</td>
+<td data-quarto-table-cell-role="th">99172</td>
 <td>19</td>
-<td>2101123</td>
-<td>[2000-12-16 00:00:00, 2000-12-16 00:00:00, 200...</td>
-<td>151.065400</td>
-<td>-27.032500</td>
+<td>2089037</td>
+<td>[2008-01-15 00:00:00, 2008-01-15 00:00:00, 200...</td>
+<td>150.841310</td>
+<td>-26.695573</td>
+<td>{6: 1}</td>
+<td>{0: 1}</td>
+<td>{2: 1}</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">99173</td>
+<td>19</td>
+<td>2089373</td>
+<td>[2007-03-18 00:00:00, 2007-03-18 00:00:00, 200...</td>
+<td>150.927725</td>
+<td>-26.933713</td>
+<td>{6: 1}</td>
+<td>{0: 1}</td>
+<td>{2: 1}</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">99174</td>
+<td>19</td>
+<td>2099579</td>
+<td>[2007-11-07 00:00:00, 2007-11-07 12:00:00, 200...</td>
+<td>151.075760</td>
+<td>-27.261202</td>
+<td>{6: 2}</td>
+<td>{0: 2}</td>
+<td>{1: 2}</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">99175</td>
+<td>19</td>
+<td>2100149</td>
+<td>[2007-03-18 00:00:00, 2007-03-18 00:00:00, 200...</td>
+<td>151.215045</td>
+<td>-27.163347</td>
+<td>{6: 1}</td>
+<td>{0: 1}</td>
 <td>{3: 1}</td>
-<td>{0: 1}</td>
-<td>{0: 1}</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">177609</td>
-<td>19</td>
-<td>2101201</td>
-<td>[2012-03-11 00:00:00, 2012-03-11 00:00:00, 201...</td>
-<td>151.082595</td>
-<td>-27.048465</td>
-<td>{6: 1}</td>
-<td>{0: 1}</td>
-<td>{0: 1}</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">177610</td>
+<td data-quarto-table-cell-role="th">99176</td>
 <td>19</td>
-<td>2101240</td>
-<td>[2011-11-12 00:00:00, 2011-11-12 00:00:00, 201...</td>
-<td>151.098285</td>
-<td>-27.062210</td>
+<td>2101084</td>
+<td>[2007-03-18 00:00:00, 2007-03-18 00:00:00, 200...</td>
+<td>151.054728</td>
+<td>-27.023087</td>
 <td>{6: 1}</td>
 <td>{0: 1}</td>
-<td>{0: 1}</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">177611</td>
-<td>19</td>
-<td>2101580</td>
-<td>[2011-02-04 00:00:00, 2011-02-04 00:00:00, 201...</td>
-<td>151.175738</td>
-<td>-26.865963</td>
-<td>{6: 1}</td>
-<td>{0: 1}</td>
-<td>{0: 1}</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">177612</td>
-<td>19</td>
-<td>2102562</td>
-<td>[2011-02-04 00:00:00, 2011-02-04 00:00:00, 201...</td>
-<td>151.028302</td>
-<td>-26.647570</td>
-<td>{6: 1}</td>
-<td>{0: 1}</td>
-<td>{0: 1}</td>
+<td>{2: 1}</td>
 </tr>
 </tbody>
 </table>
 
-<p>177613 rows × 8 columns</p>
+<p>99177 rows × 8 columns</p>
 </div>
 </div>
 </div></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [27]:</pre></div><div id="220eaf11-46b0-46e3-a435-af9fcf1fdefc" class="cell" data-execution_count="27">
+<div class="cell-container"><div class="cell-decorator"><pre>In [20]:</pre></div><div id="220eaf11-46b0-46e3-a435-af9fcf1fdefc" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lets count up the total number of observations in the dataframe:</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the aggregation functions for each column</span></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>agg_funcs <span class="op">=</span> {</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Data Quality'</span>: <span class="st">'count'</span>,  </span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Adult Density'</span>: <span class="st">'count'</span>,    </span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Nymph Density'</span>: <span class="st">'count'</span>    </span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Data.Quality'</span>: <span class="st">'count'</span>,  </span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Adult.Density'</span>: <span class="st">'count'</span>,    </span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Nymph.Density'</span>: <span class="st">'count'</span>    </span>
 <span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform groupby operation and aggregate</span></span>
@@ -872,9 +1128,9 @@ dtype: int64</code></pre>
 <span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Rename the aggregated columns</span></span>
 <span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>grouped_joined_gdf.rename(columns<span class="op">=</span>{</span>
-<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Data Quality'</span>: <span class="st">'Data Quality Total Count'</span>,</span>
-<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Adult Density'</span>: <span class="st">'Adult Density Total Count'</span>,</span>
-<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Nymph Density'</span>: <span class="st">'Nymph Density Total Count'</span></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Data.Quality'</span>: <span class="st">'Data Quality Total Count'</span>,</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Adult.Density'</span>: <span class="st">'Adult Density Total Count'</span>,</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Nymph.Density'</span>: <span class="st">'Nymph Density Total Count'</span></span>
 <span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>}, inplace<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a></span>
@@ -885,7 +1141,7 @@ dtype: int64</code></pre>
 <span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>    (grouped_joined_gdf[<span class="st">'Data Quality Total Count'</span>] <span class="op">!=</span> grouped_joined_gdf[<span class="st">'Nymph Density Total Count'</span>]) <span class="op">|</span></span>
 <span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>    (grouped_joined_gdf[<span class="st">'Adult Density Total Count'</span>] <span class="op">!=</span> grouped_joined_gdf[<span class="st">'Nymph Density Total Count'</span>])</span>
 <span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="27">
+<div class="cell-output cell-output-display" data-execution_count="20">
 <div>
 
 
@@ -907,7 +1163,7 @@ dtype: int64</code></pre>
 </div>
 </div>
 </div></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [28]:</pre></div><div id="66a01f23-45b0-41f3-8efa-c2f0244c59fb" class="cell" data-execution_count="28">
+<div class="cell-container"><div class="cell-decorator"><pre>In [21]:</pre></div><div id="66a01f23-45b0-41f3-8efa-c2f0244c59fb" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>final_df <span class="op">=</span> pd.merge(aggregated_gdf, grouped_joined_gdf, on<span class="op">=</span>[<span class="st">'Species'</span>, <span class="st">'polygon_id'</span>], how<span class="op">=</span><span class="st">'left'</span>)</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>final_df <span class="op">=</span> pd.merge(final_df, aplc_survey_dataframe, on<span class="op">=</span><span class="st">'polygon_id'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>final_df.head()</span>
@@ -920,9 +1176,9 @@ polygon_id                   0
 Date                         0
 Longitude                    0
 Latitude                     0
-Data Quality                 0
-Nymph Density                0
-Adult Density                0
+Data.Quality                 0
+Nymph.Density                0
+Adult.Density                0
 Data Quality Total Count     0
 Adult Density Total Count    0
 Nymph Density Total Count    0
@@ -933,7 +1189,7 @@ dtype: int64</code></pre>
 </section>
 <section id="the-aplc-data-is-complete-lets-write-to-disk" class="level3">
 <h3 class="anchored" data-anchor-id="the-aplc-data-is-complete-lets-write-to-disk">The APLC data is complete – lets write to disk</h3>
-<div class="cell-container"><div class="cell-decorator"><pre>In [29]:</pre></div><div id="53baf12a-4255-4c56-997e-b89028f78bac" class="cell" data-execution_count="29">
+<div class="cell-container"><div class="cell-decorator"><pre>In [22]:</pre></div><div id="53baf12a-4255-4c56-997e-b89028f78bac" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>final_df.to_csv(<span class="st">'data/processed/spatial_modeling/aplc_data_aggregated_to_polygon_grid.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 </section>
