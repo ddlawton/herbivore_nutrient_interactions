@@ -1,0 +1,5 @@
+"model","deltaBIC","deltaAIC","deltaAICc"
+"macronutrient ~ population + diet_pair + sex + s(initial_mass_g, k=30)",0.0087,0.004,0.0059
+"macronutrient ~ population + diet_pair + sex + initial_mass_g",7.2791,2.8109,4.7975
+"macronutrient ~ population + diet_pair + sex",0,0,0
+"macronutrient ~ 1",2.5564,15.9611,12.2819

@@ -1,0 +1,5 @@
+"model","deltaBIC","deltaAIC","deltaAICc"
+"development time ~ population + diet_pair + sex + s(initial_mass_g, k=15)",0,0,0
+"development time ~ population + diet_pair + sex + initial_mass_g",0.701,0.215,0.384
+"development time ~ population + diet_pair + sex",1.128,2.631,2.152
+"development time ~ 1",6.131,15.59,13.559

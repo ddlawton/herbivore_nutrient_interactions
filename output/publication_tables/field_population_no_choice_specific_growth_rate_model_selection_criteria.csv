@@ -1,0 +1,5 @@
+"model","deltaBIC","deltaAIC","deltaAICc"
+"specific growth rate ~ population + diet_pair + sex + s(initial_mass_g, k=15)",0,0,0
+"specific growth rate ~ population + diet_pair + sex + initial_mass_g",3.94,1.951,2.599
+"specific growth rate ~ population + diet_pair + sex",0,0,0
+"specific growth rate ~ 1",6.245,14.201,12.649
