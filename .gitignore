@@ -16,6 +16,15 @@ __pycache__/
 *.xlsx
 *.tiff
 *.tif
+*.cpg
+*.dbf
+*.prj
+*.sbn
+*.sbx
+*.shp
+*.shp.xml
+*.shx
+
 
 # Quarto and R stuff
 /.quarto/

@@ -1,0 +1,36 @@
+name: Quarto Publish
+
+on:
+  push:
+    branches:
+      - main  # Change to your default branch if not `main`
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up R
+      uses: r-lib/actions/setup-r@v2
+      with:
+        use-public-rspm: true
+
+    - name: Install Quarto
+      uses: quarto-dev/quarto-actions/setup@v2
+
+    - name: Install dependencies
+      run: |
+        Rscript -e 'if (!require("renv")) install.packages("renv")'
+        Rscript -e 'renv::restore()'
+
+    - name: Render site
+      run: quarto render
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs
