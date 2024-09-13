@@ -178,7 +178,32 @@
             <a href="../../scripts/field_cage_experiment/02_field_cages_locust_physiology_analyses.ipynb" class="btn btn-primary quarto-download-embed" download="02_field_cages_locust_physiology_analyses.ipynb">Download Notebook</a>
           </div>
 
-     <div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+     <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Field cage nutrient analysis – Locust Physiology</h1>
+          </div>
+
+    
+    <div class="quarto-title-meta-container">
+      <div class="quarto-title-meta-column-start">
+        
+        <div class="quarto-title-meta">
+
+                
+          
+                
+              </div>
+      </div>
+      <div class="quarto-title-meta-column-end quarto-other-formats-target">
+      </div>
+    </div>
+
+
+
+    <div class="quarto-other-links-text-target">
+    </div>  </div>
+</header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
 <div id="quarto-sidebar-toc-left" class="sidebar toc-left">
   <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
@@ -187,61 +212,40 @@
   <li><a href="#section-1---analyze-locust-weight-surivial-and-adult-in-field-cages" id="toc-section-1---analyze-locust-weight-surivial-and-adult-in-field-cages" class="nav-link active" data-scroll-target="#section-1---analyze-locust-weight-surivial-and-adult-in-field-cages">Section 1 - analyze locust weight, surivial, and # adult in field cages</a>
   <ul class="collapse">
   <li><a href="#read-in-data" id="toc-read-in-data" class="nav-link" data-scroll-target="#read-in-data">read in data</a></li>
+  </ul></li>
   <li><a href="#now-create-two-dataframes" id="toc-now-create-two-dataframes" class="nav-link" data-scroll-target="#now-create-two-dataframes">Now create two dataframes</a></li>
   <li><a href="#save-to-disk-for-figure-construction" id="toc-save-to-disk-for-figure-construction" class="nav-link" data-scroll-target="#save-to-disk-for-figure-construction">save to disk for figure construction</a></li>
-  </ul></li>
   <li><a href="#section-2---analyze-locust-nutrient-rebalancing-through-time" id="toc-section-2---analyze-locust-nutrient-rebalancing-through-time" class="nav-link" data-scroll-target="#section-2---analyze-locust-nutrient-rebalancing-through-time">Section 2 - analyze locust nutrient rebalancing through time</a>
   <ul class="collapse">
   <li><a href="#read-in-data-1" id="toc-read-in-data-1" class="nav-link" data-scroll-target="#read-in-data-1">read in data</a></li>
+  </ul></li>
   <li><a href="#data-management-step-1" id="toc-data-management-step-1" class="nav-link" data-scroll-target="#data-management-step-1">data management step 1</a></li>
   <li><a href="#data-management-step-2" id="toc-data-management-step-2" class="nav-link" data-scroll-target="#data-management-step-2">data management step 2</a></li>
-  <li><a href="#raw-data-visualization" id="toc-raw-data-visualization" class="nav-link" data-scroll-target="#raw-data-visualization">raw data visualization</a>
-  <ul class="collapse">
+  <li><a href="#raw-data-visualization" id="toc-raw-data-visualization" class="nav-link" data-scroll-target="#raw-data-visualization">raw data visualization</a></li>
   <li><a href="#treatment-raw-plot" id="toc-treatment-raw-plot" class="nav-link" data-scroll-target="#treatment-raw-plot">treatment raw plot</a></li>
   <li><a href="#sex-raw-plot" id="toc-sex-raw-plot" class="nav-link" data-scroll-target="#sex-raw-plot">sex raw plot</a></li>
   <li><a href="#save-plots-to-disk" id="toc-save-plots-to-disk" class="nav-link" data-scroll-target="#save-plots-to-disk">save plots to disk</a></li>
-  </ul></li>
   <li><a href="#modeling" id="toc-modeling" class="nav-link" data-scroll-target="#modeling">Modeling</a>
   <ul class="collapse">
   <li><a href="#model-comparison-overview-locust-nutrient-consumption" id="toc-model-comparison-overview-locust-nutrient-consumption" class="nav-link" data-scroll-target="#model-comparison-overview-locust-nutrient-consumption">Model Comparison Overview: Locust Nutrient Consumption</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  </ul></li>
   <li><a href="#model-diagnostics" id="toc-model-diagnostics" class="nav-link" data-scroll-target="#model-diagnostics">Model Diagnostics</a></li>
-  <li><a href="#model-selection-criteria" id="toc-model-selection-criteria" class="nav-link" data-scroll-target="#model-selection-criteria">Model selection criteria</a></li>
-  <li><a href="#final-model-summary" id="toc-final-model-summary" class="nav-link" data-scroll-target="#final-model-summary">Final Model Summary</a></li>
-  <li><a href="#key-findings" id="toc-key-findings" class="nav-link" data-scroll-target="#key-findings">Key Findings</a></li>
-  <li><a href="#model-outputs" id="toc-model-outputs" class="nav-link" data-scroll-target="#model-outputs">Model outputs</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#section-3---final-locust-mass-analysis" id="toc-section-3---final-locust-mass-analysis" class="nav-link" data-scroll-target="#section-3---final-locust-mass-analysis">Section 3 - Final locust mass analysis</a>
-  <ul class="collapse">
+  <li><a href="#section-3---final-locust-mass-analysis" id="toc-section-3---final-locust-mass-analysis" class="nav-link" data-scroll-target="#section-3---final-locust-mass-analysis">Section 3 - Final locust mass analysis</a></li>
   <li><a href="#building-model" id="toc-building-model" class="nav-link" data-scroll-target="#building-model">Building model</a></li>
   <li><a href="#model-appraisal" id="toc-model-appraisal" class="nav-link" data-scroll-target="#model-appraisal">Model appraisal</a></li>
   <li><a href="#model-summary" id="toc-model-summary" class="nav-link" data-scroll-target="#model-summary">Model summary</a></li>
   <li><a href="#key-findings-1" id="toc-key-findings-1" class="nav-link" data-scroll-target="#key-findings-1">Key Findings</a></li>
   <li><a href="#model-outputs-1" id="toc-model-outputs-1" class="nav-link" data-scroll-target="#model-outputs-1">Model outputs</a></li>
-  </ul></li>
   </ul>
 </nav>
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
-<main class="content" id="quarto-document-content">      <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Field cage nutrient analysis – Locust Physiology</h1>
-</div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">      
 
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>     <p>This script analyzes the locust data (protein and carbohydrates) for the field cage experiments</p>
+       <div id="fab2b47b-776e-469f-a50e-e983d2b7bdcc" class="cell markdown">
+<p>This script analyzes the locust data (protein and carbohydrates) for the field cage experiments</p>
 <p>Please see manuscript for specific methodology.</p>
 <p>This script does the following:</p>
 <ol type="1">
@@ -249,6 +253,7 @@
 <li>analyze locust nutrient rebalancing through time</li>
 </ol>
 <p>Manuscript figure preparation happens in the <code>03_field_cages_intake_target_mauscript_figure_code.ipynb</code> file</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [2]:</pre></div><div id="7606c69a-0e6e-4433-9278-da23a69b67a0" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>load_packages <span class="ot">&lt;-</span> <span class="cf">function</span>(packages) {</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Check for uninstalled packages</span></span>
@@ -287,10 +292,14 @@
 </code></pre>
 </div>
 </div></div>
+<div id="f165cd48-e9ea-4f73-ad02-3e51bc5d1e5e" class="cell markdown">
 <section id="section-1---analyze-locust-weight-surivial-and-adult-in-field-cages" class="level1">
 <h1>Section 1 - analyze locust weight, surivial, and # adult in field cages</h1>
 <section id="read-in-data" class="level2">
 <h2 class="anchored" data-anchor-id="read-in-data">read in data</h2>
+</section>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [3]:</pre></div><div id="72dd8935-790b-4f76-85d6-94e67d87ee86" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>adult_survival_prop <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data/raw/field_cage_experiment/LocustCageData_v02.xlsx - by cage.csv"</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>) </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -305,13 +314,15 @@
 • `` -&gt; `...28`</code></pre>
 </div>
 </div></div>
-</section>
+<div id="f48f40e3-1ed3-4adc-9e80-7f7dcc14431b" class="cell markdown">
 <section id="now-create-two-dataframes" class="level2">
 <h2 class="anchored" data-anchor-id="now-create-two-dataframes">Now create two dataframes</h2>
 <ul>
 <li>survival and adult proporation at end of field cage experiment</li>
 <li>final mass of all surviving locusts at end of experiment</li>
 </ul>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [6]:</pre></div><div id="a7775117-ac39-430f-8d05-b7e10f1f7da1" class="cell" data-scrolled="true" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>adult_survival_prop2 <span class="ot">&lt;-</span> adult_survival_prop <span class="sc">|&gt;</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="st">`</span><span class="at">N level</span><span class="st">`</span>,cageNum,AdultProportion,SurviveProportion) <span class="sc">|&gt;</span></span>
@@ -327,21 +338,25 @@
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">complete.cases</span>(oedaleus_australis)) <span class="sc">|&gt;</span></span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(treatment,mass_g,sex) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
+<div id="16edc6eb-3688-4e2c-a500-ffb8a2180944" class="cell markdown">
 <section id="save-to-disk-for-figure-construction" class="level2">
 <h2 class="anchored" data-anchor-id="save-to-disk-for-figure-construction">save to disk for figure construction</h2>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [8]:</pre></div><div id="d10b9b8e-c317-480b-b1ad-23ef65d5c837" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(adult_survival_prop2, <span class="fu">here</span>(<span class="st">"data/raw/field_cage_experiment/adult_locust_proportion_survival_by_treatment.csv"</span>),<span class="at">row.names=</span><span class="cn">FALSE</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(final_mass2, <span class="fu">here</span>(<span class="st">"data/raw/field_cage_experiment/adult_locust_final_mass_by_treatment.csv"</span>),<span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
-</section>
+<div id="aa0a9d72-9097-4f25-a71d-cac99a502293" class="cell markdown">
 <section id="section-2---analyze-locust-nutrient-rebalancing-through-time" class="level1">
 <h1>Section 2 - analyze locust nutrient rebalancing through time</h1>
 <section id="read-in-data-1" class="level2">
 <h2 class="anchored" data-anchor-id="read-in-data-1">read in data</h2>
 <p>We need to read in the data and conduct some significant management</p>
+</section>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [9]:</pre></div><div id="27ce4f71-c48c-46e1-979c-d055df6c717f" class="cell" data-scrolled="true" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Read and clean the names</span></span>
@@ -545,7 +560,7 @@
 </table>
 </div>
 </div></div>
-</section>
+<div id="8179add8-a4e6-4521-9a48-b82c16ac92c1" class="cell markdown">
 <section id="data-management-step-1" class="level2">
 <h2 class="anchored" data-anchor-id="data-management-step-1">data management step 1</h2>
 <ul>
@@ -553,6 +568,8 @@
 <li>identifying treatments based on cage number</li>
 <li>creating time series for locust IT (step 1-5)</li>
 </ul>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [11]:</pre></div><div id="638f947c-f7d7-4ed2-8dd1-b4aeee8896e1" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>dat2 <span class="ot">&lt;-</span> dat <span class="sc">|&gt;</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(locusts_final_mass_g) <span class="sc">|&gt;</span></span>
@@ -885,7 +902,7 @@
 </table>
 </div>
 </div></div>
-</section>
+<div id="f2198b46-d4ec-48e5-8883-66ff657805df" class="cell markdown">
 <section id="data-management-step-2" class="level2">
 <h2 class="anchored" data-anchor-id="data-management-step-2">data management step 2</h2>
 <ul>
@@ -894,6 +911,8 @@
 <li>collasping the time steps into a longer format</li>
 <li>recoding the time step into a simple number</li>
 </ul>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [13]:</pre></div><div id="d58a645f-34f5-40f9-b489-2caa82e70bc6" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>dat3 <span class="ot">&lt;-</span> dat2<span class="sc">|&gt;</span></span>
@@ -931,9 +950,11 @@
 <span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
 <span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
+<div id="93a1c969-1f53-4bf1-a406-81c616f15a14" class="cell markdown">
 <section id="raw-data-visualization" class="level2">
 <h2 class="anchored" data-anchor-id="raw-data-visualization">raw data visualization</h2>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [14]:</pre></div><div id="1b662bc7-badf-4568-8f4b-4c24758a187f" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>treatment_raw_plot <span class="ot">&lt;-</span> dat3 <span class="sc">|&gt;</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>total_p,<span class="at">y=</span>total_c,<span class="at">color=</span>treatment)) <span class="sc">+</span></span>
@@ -963,8 +984,11 @@
 <span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="fl">0.04</span>) <span class="sc">+</span></span>
 <span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="fl">0.04</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
+<div id="6f1022b3-8e61-494b-9ba5-6c4d0521d157" class="cell markdown">
 <section id="treatment-raw-plot" class="level3">
 <h3 class="anchored" data-anchor-id="treatment-raw-plot">treatment raw plot</h3>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [15]:</pre></div><div id="55248f19-6d1c-4946-9ff5-aa8381417318" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>treatment_raw_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -975,9 +999,11 @@
 </div>
 </div>
 </div></div>
-</section>
+<div id="796afbae-297f-46f1-9e76-78904c8e9ed7" class="cell markdown">
 <section id="sex-raw-plot" class="level3">
 <h3 class="anchored" data-anchor-id="sex-raw-plot">sex raw plot</h3>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [16]:</pre></div><div id="079cde43-a4b2-4d8e-8abe-01f4ea5a362a" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>sex_raw_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -988,9 +1014,11 @@
 </div>
 </div>
 </div></div>
-</section>
+<div id="5e46f484-176d-4510-81b1-8c3ec443104f" class="cell markdown">
 <section id="save-plots-to-disk" class="level3">
 <h3 class="anchored" data-anchor-id="save-plots-to-disk">save plots to disk</h3>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [17]:</pre></div><div id="423a7a3b-89d9-4432-ae3e-698eed3c698f" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the output directory</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>output_dir <span class="ot">&lt;-</span> <span class="fu">here</span>(<span class="st">'output/field_cage_experiment/raw_visualization/'</span>)</span>
@@ -1010,8 +1038,7 @@
 <span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
-</section>
+<div id="e247d2df-94a9-443b-9128-62d34feb34df" class="cell markdown">
 <section id="modeling" class="level2">
 <h2 class="anchored" data-anchor-id="modeling">Modeling</h2>
 <section id="model-comparison-overview-locust-nutrient-consumption" class="level3">
@@ -1085,6 +1112,9 @@
 <section id="summary" class="level3">
 <h3 class="anchored" data-anchor-id="summary">Summary</h3>
 <p>By comparing these models, we can assess the influence of sex, treatment, interval, and initial mass on locust nutrient consumption. The models range from full random effects models (Model 1) to simplified intercept-only models (Model 6), allowing for a thorough exploration of the factors driving nutrient consumption.</p>
+</section>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [18]:</pre></div><div id="49843240-2199-4a89-b3ea-044e9542f374" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>mod1 <span class="ot">&lt;-</span> <span class="fu">gam</span>(<span class="fu">list</span>( </span>
@@ -1118,9 +1148,11 @@
 <span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a>  <span class="at">family=</span><span class="fu">mvn</span>(<span class="at">d=</span><span class="dv">2</span>),<span class="at">select=</span><span class="cn">TRUE</span>, <span class="at">data=</span>dat3</span>
 <span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
+<div id="d117d593-564a-4aa0-b01f-50ae1f98af94" class="cell markdown">
 <section id="model-diagnostics" class="level3">
 <h3 class="anchored" data-anchor-id="model-diagnostics">Model Diagnostics</h3>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [19]:</pre></div><div id="605271d9-0f66-4371-8827-3b4c77107dbb" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gam.check</span>(mod1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1147,11 +1179,13 @@ s.1(id) 23.0 10.6      NA      NA</code></pre>
 </div>
 </div>
 </div></div>
+<div id="f706c068-a0f3-4a6a-baf9-8525467b0f56" class="cell markdown">
 <p>These diagnostic plots indicate these models could be improved. I think for descriptive uses these models are okay.</p>
 <p>Assuming a gaussian distribution is probably limiting here.</p>
-</section>
 <section id="model-selection-criteria" class="level3">
 <h3 class="anchored" data-anchor-id="model-selection-criteria">Model selection criteria</h3>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [20]:</pre></div><div id="07bf0a70-cc86-49cc-b818-e78c55561b8f" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Model selection using AIC, BIC, and AICc</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>bic <span class="ot">&lt;-</span> <span class="fu">BIC</span>(mod1, mod2, mod3, mod4, mod5) <span class="sc">|&gt;</span>  <span class="co"># Bayesian Information Criterion</span></span>
@@ -1256,10 +1290,12 @@ s.1(id) 23.0 10.6      NA      NA</code></pre>
 </table>
 </div>
 </div></div>
+<div id="72e17ed8-b262-43de-be1b-6e276b538012" class="cell markdown">
 <p>All model selection criteria agreed that <code>mod1</code> was the best model</p>
-</section>
 <section id="final-model-summary" class="level3">
 <h3 class="anchored" data-anchor-id="final-model-summary">Final Model Summary</h3>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [22]:</pre></div><div id="5fc6af52-99ef-47bf-8f70-f8ecc70689e0" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -1301,7 +1337,7 @@ Deviance explained = 73.4%
 -REML = -954.88  Scale est. = 1         n = 115</code></pre>
 </div>
 </div></div>
-</section>
+<div id="b331a7a4-2a0c-450d-939d-64cf693a7efd" class="cell markdown">
 <section id="key-findings" class="level3">
 <h3 class="anchored" data-anchor-id="key-findings">Key Findings</h3>
 <ul>
@@ -1321,6 +1357,8 @@ Deviance explained = 73.4%
 <p>I am going to get the estimated marginal means for <code>inter</code>,<code>date</code>, and <code>treatment:date</code> and output as a dataframe</p>
 <p>I will write out the transformed raw data to disk</p>
 <p>I will also write out to disk the model object</p>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [23]:</pre></div><div id="f2a589d4-5a2f-4b23-8a93-adc04279c11d" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1560,12 +1598,12 @@ Deviance explained = 73.4%
 <span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the combined list to an RDS file</span></span>
 <span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(models, <span class="fu">here</span>(<span class="st">"output/field_cage_experiment/model_objects/intake_target_through_time_models.rds"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
-</section>
-</section>
+<div id="b97f2c69-6245-4cf7-af5b-7959565ec765" class="cell markdown">
 <section id="section-3---final-locust-mass-analysis" class="level1">
 <h1>Section 3 - Final locust mass analysis</h1>
 <p>This model looks to see if the final mass of locusts differed between treatments.</p>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [27]:</pre></div><div id="8c6f865f-026a-489a-930a-ebf0cf99e171" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>locust_dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/raw/field_cage_experiment/LocustCageData.csv'</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
@@ -1662,8 +1700,11 @@ $ sex           &lt;fct&gt; F, F, F, F, M, M, M, F, F, M, M, M, F, F, F, F, F, F
 </details>
 </div>
 </div></div>
+<div id="b4675ee3-f08b-41f5-84a5-a23e25c28e2a" class="cell markdown">
 <section id="building-model" class="level2">
 <h2 class="anchored" data-anchor-id="building-model">Building model</h2>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [29]:</pre></div><div id="91eed4d7-74ea-4488-afbe-f9c11c3e9d00" class="cell" data-scrolled="true" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">gam</span>(mass_g <span class="sc">~</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>               sex <span class="sc">+</span></span>
@@ -1674,9 +1715,11 @@ $ sex           &lt;fct&gt; F, F, F, F, M, M, M, F, F, M, M, M, F, F, F, F, F, F
 <span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">select=</span><span class="cn">TRUE</span>,</span>
 <span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">data=</span>locust_dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
+<div id="9c3df201-7702-402d-af5f-a2c2a283f158" class="cell markdown">
 <section id="model-appraisal" class="level2">
 <h2 class="anchored" data-anchor-id="model-appraisal">Model appraisal</h2>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [30]:</pre></div><div id="dec76fb4-9740-4de3-b354-9367ebd252cb" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>gratia<span class="sc">::</span><span class="fu">appraise</span>(mod)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -1687,9 +1730,11 @@ $ sex           &lt;fct&gt; F, F, F, F, M, M, M, F, F, M, M, M, F, F, F, F, F, F
 </div>
 </div>
 </div></div>
-</section>
+<div id="d0760b9d-34b7-445f-8b4d-a96247458dd7" class="cell markdown">
 <section id="model-summary" class="level2">
 <h2 class="anchored" data-anchor-id="model-summary">Model summary</h2>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [31]:</pre></div><div id="b345db67-6a8c-4992-a216-e0c473d04f7d" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -1721,7 +1766,7 @@ R-sq.(adj) =  0.617   Deviance explained = 61.6%
 -REML = -427.13  Scale est. = 1         n = 292</code></pre>
 </div>
 </div></div>
-</section>
+<div id="0dcacec3-595b-48da-965c-952c76782afd" class="cell markdown">
 <section id="key-findings-1" class="level2">
 <h2 class="anchored" data-anchor-id="key-findings-1">Key Findings</h2>
 <ul>
@@ -1735,14 +1780,16 @@ R-sq.(adj) =  0.617   Deviance explained = 61.6%
 <li><strong>Deviance Explained</strong>: The model explains 61.6% of the variance in locust mass.</li>
 </ul>
 </section>
+</div>
+<div id="7ccdaeef-afa4-4bf0-81d6-e7ec74d467cc" class="cell markdown">
 <section id="model-outputs-1" class="level2">
 <h2 class="anchored" data-anchor-id="model-outputs-1">Model outputs</h2>
 <p>I dont need the estimated marginal means since there was no difference. I will just save the model to disk?</p>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [32]:</pre></div><div id="045954fb-6182-4dc3-958a-3464c241fdb4" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(mod, <span class="fu">here</span>(<span class="st">"output/field_cage_experiment/model_objects/final_locust_weight_by_field_cage_treatment_models.rds"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
-</section>
      </main>
 <!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -2163,7 +2210,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"loop":false,"openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","selector":".lightbox"});
+</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":false,"closeEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

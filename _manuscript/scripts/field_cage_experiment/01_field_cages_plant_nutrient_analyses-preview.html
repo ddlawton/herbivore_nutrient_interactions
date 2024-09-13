@@ -212,6 +212,7 @@
   <li><a href="#section-1---plant-nutrients-over-time-by-fertilization-treatment" id="toc-section-1---plant-nutrients-over-time-by-fertilization-treatment" class="nav-link active" data-scroll-target="#section-1---plant-nutrients-over-time-by-fertilization-treatment">Section 1 - Plant nutrients over time by fertilization treatment</a>
   <ul class="collapse">
   <li><a href="#read-in-data" id="toc-read-in-data" class="nav-link" data-scroll-target="#read-in-data">read in data</a></li>
+  </ul></li>
   <li><a href="#raw-data-visualization" id="toc-raw-data-visualization" class="nav-link" data-scroll-target="#raw-data-visualization">Raw data visualization</a></li>
   <li><a href="#modeling-overview" id="toc-modeling-overview" class="nav-link" data-scroll-target="#modeling-overview">Modeling Overview</a>
   <ul class="collapse">
@@ -222,25 +223,17 @@
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   </ul></li>
   <li><a href="#model-diagnostics" id="toc-model-diagnostics" class="nav-link" data-scroll-target="#model-diagnostics">Model Diagnostics</a></li>
-  <li><a href="#model-selection-criteria" id="toc-model-selection-criteria" class="nav-link" data-scroll-target="#model-selection-criteria">Model selection criteria</a>
-  <ul class="collapse">
   <li><a href="#selection-criteria-did-not-agree" id="toc-selection-criteria-did-not-agree" class="nav-link" data-scroll-target="#selection-criteria-did-not-agree">selection criteria did not agree</a></li>
-  <li><a href="#verdict" id="toc-verdict" class="nav-link" data-scroll-target="#verdict">verdict</a></li>
-  </ul></li>
-  <li><a href="#final-model-summary" id="toc-final-model-summary" class="nav-link" data-scroll-target="#final-model-summary">Final model summary</a></li>
-  <li><a href="#key-findings" id="toc-key-findings" class="nav-link" data-scroll-target="#key-findings">Key Findings</a></li>
-  <li><a href="#model-outputs-and-raw-data" id="toc-model-outputs-and-raw-data" class="nav-link" data-scroll-target="#model-outputs-and-raw-data">Model outputs and raw data</a></li>
-  </ul></li>
   <li><a href="#section-2---species-specific-and-soil-nutrient-content-by-fertilization-treatment" id="toc-section-2---species-specific-and-soil-nutrient-content-by-fertilization-treatment" class="nav-link" data-scroll-target="#section-2---species-specific-and-soil-nutrient-content-by-fertilization-treatment">Section 2 - Species-specific and soil nutrient content by fertilization treatment</a>
   <ul class="collapse">
   <li><a href="#read-in-data-1" id="toc-read-in-data-1" class="nav-link" data-scroll-target="#read-in-data-1">read in data</a></li>
-  <li><a href="#now-combine-the-species-plant-and-soil-nutrient-data" id="toc-now-combine-the-species-plant-and-soil-nutrient-data" class="nav-link" data-scroll-target="#now-combine-the-species-plant-and-soil-nutrient-data">Now combine the species plant and soil nutrient data</a></li>
   </ul></li>
+  <li><a href="#now-combine-the-species-plant-and-soil-nutrient-data" id="toc-now-combine-the-species-plant-and-soil-nutrient-data" class="nav-link" data-scroll-target="#now-combine-the-species-plant-and-soil-nutrient-data">Now combine the species plant and soil nutrient data</a></li>
   <li><a href="#section-3---ground-cover-by-fertilization-treatment" id="toc-section-3---ground-cover-by-fertilization-treatment" class="nav-link" data-scroll-target="#section-3---ground-cover-by-fertilization-treatment">Section 3 - Ground cover by fertilization treatment</a>
   <ul class="collapse">
   <li><a href="#read-in-data-2" id="toc-read-in-data-2" class="nav-link" data-scroll-target="#read-in-data-2">Read in data</a></li>
-  <li><a href="#writing-dataframes-to-disk" id="toc-writing-dataframes-to-disk" class="nav-link" data-scroll-target="#writing-dataframes-to-disk">writing dataframes to disk</a></li>
   </ul></li>
+  <li><a href="#writing-dataframes-to-disk" id="toc-writing-dataframes-to-disk" class="nav-link" data-scroll-target="#writing-dataframes-to-disk">writing dataframes to disk</a></li>
   <li><a href="#section-4---ground-cover-by-fertilization-treatment" id="toc-section-4---ground-cover-by-fertilization-treatment" class="nav-link" data-scroll-target="#section-4---ground-cover-by-fertilization-treatment">Section 4 - Ground cover by fertilization treatment</a>
   <ul class="collapse">
   <li><a href="#data-management-overview" id="toc-data-management-overview" class="nav-link" data-scroll-target="#data-management-overview">Data Management Overview</a></li>
@@ -252,7 +245,8 @@
 </div>
 <main class="content quarto-banner-title-block" id="quarto-document-content">      
 
-       <p>This script analyzes the grass nutrient contents (protein and carbohydrates) for field cages</p>
+       <div id="11fc5c0b-572c-491f-8620-463babfb2c2c" class="cell markdown">
+<p>This script analyzes the grass nutrient contents (protein and carbohydrates) for field cages</p>
 <p>Please see manuscript for specific methodology.</p>
 <p>This script does the following:</p>
 <ol type="1">
@@ -262,6 +256,7 @@
 <li>analyzes plant ground cover differences by fertilization treatment</li>
 </ol>
 <p>Manuscript figure preparation happens in the <code>03_field_cages_intake_target_mauscript_figure_code.ipynb</code> file</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [4]:</pre></div><div id="32b185d2-a3a2-4895-b064-e7c762312abe" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>load_packages <span class="ot">&lt;-</span> <span class="cf">function</span>(packages) {</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Check for uninstalled packages</span></span>
@@ -300,10 +295,14 @@
 </code></pre>
 </div>
 </div></div>
+<div id="a83d6bca-a242-4b32-99f3-64380684b4db" class="cell markdown">
 <section id="section-1---plant-nutrients-over-time-by-fertilization-treatment" class="level1">
 <h1>Section 1 - Plant nutrients over time by fertilization treatment</h1>
 <section id="read-in-data" class="level2">
 <h2 class="anchored" data-anchor-id="read-in-data">read in data</h2>
+</section>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [5]:</pre></div><div id="bd287563-6036-4f5b-a9fb-ed5773c113d8" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plant_nutrients <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/raw/field_cage_experiment/Field_Cage_Nutrients_Through_Time.csv'</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
@@ -512,10 +511,12 @@
 </table>
 </div>
 </div></div>
-</section>
+<div id="41491470-522e-4b0f-92dd-4c90ed5a77cb" class="cell markdown">
 <section id="raw-data-visualization" class="level2">
 <h2 class="anchored" data-anchor-id="raw-data-visualization">Raw data visualization</h2>
 <p>using ggpairs to be pithy..</p>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [5]:</pre></div><div id="cb444ca0-e179-4e31-96a0-be3235a9ec5e" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>numeric_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"chn_weight_mg"</span>, <span class="st">"c_mg_mg"</span>, <span class="st">"n_mg_mg"</span>,<span class="st">"protein_mg_mg"</span>,<span class="st">"carb_mg_mg"</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>factor_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'date'</span>,<span class="st">'plot'</span>,<span class="st">'treatment'</span>,<span class="st">'species'</span>)</span>
@@ -597,7 +598,7 @@ Warning message:
 (`geom_point()`).”</code></pre>
 </div>
 </div></div>
-</section>
+<div id="293c3e0d-3b37-4bec-90f0-224ee3b35098" class="cell markdown">
 <section id="modeling-overview" class="level2">
 <h2 class="anchored" data-anchor-id="modeling-overview">Modeling Overview</h2>
 <p>In this analysis, we are evaluating four Generalized Additive Models (GAMs) to understand the effects of fertilizer treatment and date on plant protein and carbohydrate content. Each model differs in the complexity of its random effects structure. Here is a summary of each model:</p>
@@ -643,6 +644,9 @@ Warning message:
 <section id="summary" class="level3">
 <h3 class="anchored" data-anchor-id="summary">Summary</h3>
 <p>By comparing these models, we aim to understand how different levels of model complexity (in terms of random effects) impact the fit and interpretation of our GAMs. The results from these models will help us identify the most appropriate model structure for explaining variations in plant protein and carbohydrate content</p>
+</section>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [9]:</pre></div><div id="880cbb75-0b07-456d-8ee8-c164e7c88db8" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># model 1: full model with species, plot, and cage random effects</span></span>
@@ -683,11 +687,12 @@ Warning message:
 <span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>  <span class="at">family=</span><span class="fu">mvn</span>(<span class="at">d=</span><span class="dv">2</span>),<span class="at">select=</span><span class="cn">TRUE</span>, <span class="at">data=</span>plant_nutrients</span>
 <span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
-</section>
+<div id="4ffe7e4c-a958-42cf-8169-25e8bd347caf" class="cell markdown">
 <section id="model-diagnostics" class="level2">
 <h2 class="anchored" data-anchor-id="model-diagnostics">Model Diagnostics</h2>
 <p>To see how well these models fit, I will run <code>mgcv::gam.check()</code> on it</p>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [10]:</pre></div><div id="7435316b-f9cb-4c6e-b8f7-c17d12f4bde1" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gam.check</span>(mod1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -718,11 +723,13 @@ s.1(cage)    37.00 13.88      NA      NA</code></pre>
 </div>
 </div>
 </div></div>
+<div id="16fdf5a5-7806-4040-8910-9f654dceafab" class="cell markdown">
 <p>These diagnostic plots indicate these models are pretty well fit.</p>
 <p>there is some discernable relationship in the variance plot, but it could be worse</p>
-</section>
 <section id="model-selection-criteria" class="level2">
 <h2 class="anchored" data-anchor-id="model-selection-criteria">Model selection criteria</h2>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [11]:</pre></div><div id="79d95108-b803-44ed-9670-76334e545a68" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Model selection using AIC, BIC, and AICc</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>bic <span class="ot">&lt;-</span> <span class="fu">BIC</span>(mod1, mod2, mod3, mod4, mod5) <span class="sc">|&gt;</span>  <span class="co"># Bayesian Information Criterion</span></span>
@@ -827,10 +834,13 @@ s.1(cage)    37.00 13.88      NA      NA</code></pre>
 </table>
 </div>
 </div></div>
+<div id="646dd85e-685f-4d7c-9ce9-bbf7bab67f92" class="cell markdown">
 <section id="selection-criteria-did-not-agree" class="level3">
 <h3 class="anchored" data-anchor-id="selection-criteria-did-not-agree">selection criteria did not agree</h3>
 <p>there were significant differences between the selection criteria. BIC and AICc selected model 2 whereas AIC selected model 1</p>
 <p>Lets view the estimates from both models to see where they agree and disagree</p>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [13]:</pre></div><div id="5d41d5ee-f433-4198-9d82-1cb31176062c" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>selection_testing_data <span class="ot">&lt;-</span> plant_nutrients</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -910,14 +920,15 @@ s.1(cage)    37.00 13.88      NA      NA</code></pre>
 </div>
 </div>
 </div></div>
-</section>
+<div id="f016cccc-db7e-4051-a1cc-1e018c8c6094" class="cell markdown">
 <section id="verdict" class="level3">
 <h3 class="anchored" data-anchor-id="verdict">verdict</h3>
 <p>The predictions really dont change much. I think I will stick with model 1 as it better portrays the nature of the data, even if the predictions remain the same.</p>
 </section>
-</section>
 <section id="final-model-summary" class="level2">
 <h2 class="anchored" data-anchor-id="final-model-summary">Final model summary</h2>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [16]:</pre></div><div id="06b7267f-a977-44f2-933c-f3f10326b182" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -969,7 +980,7 @@ Deviance explained = 70.4%
 -REML = -1038.3  Scale est. = 1         n = 168</code></pre>
 </div>
 </div></div>
-</section>
+<div id="62c907be-914a-41b5-a0e4-b6a07233247c" class="cell markdown">
 <section id="key-findings" class="level2">
 <h2 class="anchored" data-anchor-id="key-findings">Key Findings</h2>
 <p>Plant Carbohydrate Content: The application of urea (nitrogen) as a medium treatment significantly reduced carbohydrate content compared to the control, particularly on December 1, 2015. Significant species-specific variation in carbohydrate content was observed, while plot and cage variability were not significant.</p>
@@ -980,6 +991,8 @@ Deviance explained = 70.4%
 <h2 class="anchored" data-anchor-id="model-outputs-and-raw-data">Model outputs and raw data</h2>
 <p>I am going to get the estimated marginal means for <code>treatment</code>,<code>date</code>, and <code>treatment:date</code> and output as a dataframe</p>
 <p>I will also write out to disk the model object</p>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [17]:</pre></div><div id="230d88e4-1dfb-44aa-ac68-ebbd1bcc9125" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>plant_nutrient_exp_preds <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(</span>
@@ -1023,12 +1036,14 @@ Deviance explained = 70.4%
 <span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the combined list to an RDS file</span></span>
 <span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(models, <span class="fu">here</span>(<span class="st">"output/field_cage_experiment/model_objects/plant_nutrient_through_time_models.rds"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
-</section>
+<div id="be63456f-8b39-4c3a-9a7e-fdb6dba06de4" class="cell markdown">
 <section id="section-2---species-specific-and-soil-nutrient-content-by-fertilization-treatment" class="level1">
 <h1>Section 2 - Species-specific and soil nutrient content by fertilization treatment</h1>
 <section id="read-in-data-1" class="level2">
 <h2 class="anchored" data-anchor-id="read-in-data-1">read in data</h2>
+</section>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [19]:</pre></div><div id="6691609c-b351-4f05-9787-d5811399961c" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>plant_nutrients2 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">here</span>(<span class="st">"data/raw/field_cage_experiment/Field_Cage_Nutrients_Through_Time.csv"</span>)) <span class="sc">|&gt;</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">Treatment =</span> <span class="fu">fct_recode</span>(Treatment, <span class="st">"None"</span> <span class="ot">=</span> <span class="st">"0"</span>, <span class="st">"Medium"</span> <span class="ot">=</span> <span class="st">"M"</span>, <span class="st">"High"</span> <span class="ot">=</span> <span class="st">"H"</span>,</span>
@@ -1048,9 +1063,11 @@ Deviance explained = 70.4%
 <span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>             <span class="at">sd_no4 =</span> <span class="fu">sd</span>(initial_no4)) <span class="sc">|&gt;</span></span>
 <span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">treatment =</span> <span class="fu">fct_recode</span>(treatment, <span class="st">"None"</span> <span class="ot">=</span> <span class="st">"0"</span>, <span class="st">"Medium"</span> <span class="ot">=</span> <span class="st">"M"</span>, <span class="st">"High"</span> <span class="ot">=</span> <span class="st">"H"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
+<div id="588aaea2-01db-4487-8949-281b625e7cb1" class="cell markdown">
 <section id="now-combine-the-species-plant-and-soil-nutrient-data" class="level2">
 <h2 class="anchored" data-anchor-id="now-combine-the-species-plant-and-soil-nutrient-data">Now combine the species plant and soil nutrient data</h2>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [20]:</pre></div><div id="a5a8085c-ec71-4bec-9070-302676ae8cc1" class="cell" data-scrolled="true" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1228,8 +1245,7 @@ the `.groups` argument.</code></pre>
 <div class="cell-container"><div class="cell-decorator"><pre>In [21]:</pre></div><div id="7ae06cf6-db23-4110-aaf1-5ba63a00302c" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(plant_species_soil_nutrient_by_treatment,<span class="fu">here</span>(<span class="st">'data/processed/field_cage_experiment/plant_species_soil_nutrient_by_treatment.csv'</span>),<span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
-</section>
+<div id="f9207ac4-b354-48b1-a626-5508272e7b64" class="cell markdown">
 <section id="section-3---ground-cover-by-fertilization-treatment" class="level1">
 <h1>Section 3 - Ground cover by fertilization treatment</h1>
 <p>We need to regression soil and plant nutrients together</p>
@@ -1244,6 +1260,9 @@ the `.groups` argument.</code></pre>
 <section id="read-in-data-2" class="level2">
 <h2 class="anchored" data-anchor-id="read-in-data-2">Read in data</h2>
 <p>using the dataframe frames from <code>section 2</code></p>
+</section>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [6]:</pre></div><div id="ca81a011-6da5-4e5b-ac98-d431e05161ef" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>plant_dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/raw/field_cage_experiment/Field_Cage_Nutrients_Through_Time.csv'</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
@@ -1276,15 +1295,16 @@ the `.groups` argument.</code></pre>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">treatment =</span> <span class="fu">fct_recode</span>(treatment, <span class="st">"None"</span> <span class="ot">=</span> <span class="st">"0"</span>, <span class="st">"Medium"</span> <span class="ot">=</span> <span class="st">"M"</span>, <span class="st">"High"</span> <span class="ot">=</span> <span class="st">"H"</span>)) <span class="sc">|&gt;</span></span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(treatment,initial_no3,initial_no4) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
+<div id="87771e52-4e9e-42c1-8aca-2e236052c119" class="cell markdown">
 <section id="writing-dataframes-to-disk" class="level2">
 <h2 class="anchored" data-anchor-id="writing-dataframes-to-disk">writing dataframes to disk</h2>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [8]:</pre></div><div id="495c4661-f0e1-4d53-8b9a-98d5afc37ea8" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(soil_plant_dat,<span class="fu">here</span>(<span class="st">'data/processed/field_cage_experiment/plant_soil_nutrient_data.csv'</span>),<span class="at">row.names=</span><span class="cn">FALSE</span>)</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(soils_dat,<span class="fu">here</span>(<span class="st">'data/processed/field_cage_experiment/soil_nutrient_data'</span>),<span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
-</section>
+<div id="b7e51e88-05c4-468a-b8dd-04f13b202806" class="cell markdown">
 <section id="section-4---ground-cover-by-fertilization-treatment" class="level1">
 <h1>Section 4 - Ground cover by fertilization treatment</h1>
 <section id="data-management-overview" class="level2">
@@ -1298,6 +1318,9 @@ the `.groups` argument.</code></pre>
 <li><strong>Data Transformation:</strong> Converting specific values and calculating means by treatment.</li>
 <li><strong>Handling Missing Data:</strong> Replacing missing values for specific species with zero.</li>
 </ol>
+</section>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [27]:</pre></div><div id="50dd0861-4036-45a7-a257-a500f187c9ec" class="cell" data-scrolled="true" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>ground_cover_by_treatment <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/raw/field_cage_experiment/FieldCagePlantSurveys.xlsx - data.csv'</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
@@ -1319,8 +1342,6 @@ the `.groups` argument.</code></pre>
 <div class="cell-container"><div class="cell-decorator"><pre>In [28]:</pre></div><div id="d0bb90df-0a74-4b81-a656-d14b6fbb2a84" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(ground_cover_by_treatment,<span class="fu">here</span>(<span class="st">'data/processed/field_cage_experiment/plant_ground_cover_by_treatment.csv'</span>),<span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
-</section>
      </main>
 <!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1741,7 +1762,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","openEffect":"zoom","loop":false});
+</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","loop":false});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

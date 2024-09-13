@@ -212,8 +212,8 @@
   <li><a href="#section-1---post-spatial-modeling-visualization" id="toc-section-1---post-spatial-modeling-visualization" class="nav-link active" data-scroll-target="#section-1---post-spatial-modeling-visualization">Section 1 - Post spatial modeling visualization</a>
   <ul class="collapse">
   <li><a href="#outbreak-observations" id="toc-outbreak-observations" class="nav-link" data-scroll-target="#outbreak-observations">Outbreak observations</a></li>
-  <li><a href="#nil-observations" id="toc-nil-observations" class="nav-link" data-scroll-target="#nil-observations">nil observations</a></li>
   </ul></li>
+  <li><a href="#nil-observations" id="toc-nil-observations" class="nav-link" data-scroll-target="#nil-observations">nil observations</a></li>
   <li><a href="#section-2---environmental-correlations" id="toc-section-2---environmental-correlations" class="nav-link" data-scroll-target="#section-2---environmental-correlations">Section 2 - environmental correlations</a></li>
   <li><a href="#section-3---soil-and-point-map-generation" id="toc-section-3---soil-and-point-map-generation" class="nav-link" data-scroll-target="#section-3---soil-and-point-map-generation">Section 3 - soil and point map generation</a></li>
   <li><a href="#section-4---griding-example" id="toc-section-4---griding-example" class="nav-link" data-scroll-target="#section-4---griding-example">Section 4 - griding example</a></li>
@@ -224,12 +224,14 @@
 </div>
 <main class="content quarto-banner-title-block" id="quarto-document-content">      
 
-       <ul>
+       <div id="0e83583a-8f00-427a-84af-efd1dcd9d168" class="cell markdown">
+<ul>
 <li>post-modeling visualization</li>
 <li>environmental correlations</li>
 <li>soil and point map generation</li>
 <li>gridding example plot</li>
 </ul>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [57]:</pre></div><div id="d36c1a43-cc7e-42c8-bea9-169908f7da32" class="cell" data-execution_count="57">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>load_packages <span class="ot">&lt;-</span> <span class="cf">function</span>(packages) {</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Check for uninstalled packages</span></span>
@@ -277,21 +279,26 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 </code></pre>
 </div>
 </div></div>
+<div id="4b46a42d-4f40-4e8a-ab95-e30918010efa" class="cell markdown">
 <section id="section-1---post-spatial-modeling-visualization" class="level1">
 <h1>Section 1 - Post spatial modeling visualization</h1>
 <section id="outbreak-observations" class="level2">
 <h2 class="anchored" data-anchor-id="outbreak-observations">Outbreak observations</h2>
+</section>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [3]:</pre></div><div id="54ebe204-728a-4e56-8e25-3c84da3e40e7" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
+<div id="942f3399-dfee-4961-a4a4-b50b4977e497" class="cell markdown">
 <section id="nil-observations" class="level2">
 <h2 class="anchored" data-anchor-id="nil-observations">nil observations</h2>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [4]:</pre></div><div id="bb50f718-d6e0-4bb7-94d8-aea41c322d6d" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
-</section>
+<div id="ae165e80-0909-4423-bb6c-f2f6a81cd6d0" class="cell markdown">
 <section id="section-2---environmental-correlations" class="level1">
 <h1>Section 2 - environmental correlations</h1>
 <p>This is just a randomly sampled 100k points between the soil and bioclim variables on google earth engine. This extraction code can be found here: <code>04_environmental_correlations_map_nitrogen_phosphorus_woody_cover.ipynb</code></p>
@@ -303,6 +310,8 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 <li>soil phosphorus x woody veg</li>
 <li>MAP x woody veg</li>
 </ul>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [35]:</pre></div><div id="4a3ff466-f65c-48e1-aa08-7fdc06148f49" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># I min-max normalize to get all variables into the same scale for plotting.</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -464,10 +473,12 @@ Warning message:
 `geom_smooth()` using formula = 'y ~ s(x, bs = "cs")'</code></pre>
 </div>
 </div></div>
-</section>
+<div id="c6f9b2c1-5353-493b-bade-5ad1936f2ed6" class="cell markdown">
 <section id="section-3---soil-and-point-map-generation" class="level1">
 <h1>Section 3 - soil and point map generation</h1>
 <p>This figure will combine a few figures: - raw point distribution through australia - soil nitrogen map clipped to the locust distribution - soil phosphorus map clipped to the locust distribution</p>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [47]:</pre></div><div id="aa5f8e85-b766-42f7-97f3-e618e22f2081" class="cell" data-execution_count="47">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>aus <span class="ot">&lt;-</span> <span class="fu">ne_states</span>(<span class="at">country=</span><span class="st">'Australia'</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(name,geometry)</span>
@@ -568,10 +579,12 @@ name        : apl_nitrogen_raster </code></pre>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_figures/spatial_modeling_locust_env_map.png'</span>),</span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">width=</span><span class="dv">10</span><span class="sc">*</span>asp_ratio,<span class="at">height=</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
+<div id="6d5151d4-2567-4c86-9780-71ed0f9d0e22" class="cell markdown">
 <section id="section-4---griding-example" class="level1">
 <h1>Section 4 - griding example</h1>
 <p>I want to show an example gridding of the apl points</p>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [197]:</pre></div><div id="76abfd42-486a-43a9-88fe-e2584a0f53ea" class="cell" data-execution_count="197">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>apl_distribution <span class="ot">=</span> <span class="fu">st_read</span>(<span class="fu">here</span>(<span class="st">"data/raw/survey_data/australian_plague_locut_distribution/Australia_Locust_Distribution.shp"</span>))</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>apl_distribution</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -697,7 +710,6 @@ First 5 geometries:</code></pre>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_figures/spatial_modeling_grid_example_map.png'</span>),</span>
 <span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">width=</span><span class="dv">10</span><span class="sc">*</span>asp_ratio,<span class="at">height=</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
      </main>
 <!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1118,7 +1130,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"loop":false,"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","descPosition":"bottom"});
+</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"descPosition":"bottom","selector":".lightbox","closeEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

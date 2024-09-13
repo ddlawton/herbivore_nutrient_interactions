@@ -178,7 +178,32 @@
             <a href="../../scripts/field_populations/03_field_population_intake_target_manuscript_figure_table_code.ipynb" class="btn btn-primary quarto-download-embed" download="03_field_population_intake_target_manuscript_figure_table_code.ipynb">Download Notebook</a>
           </div>
 
-     <div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+     <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Field population Post modeling visualization</h1>
+          </div>
+
+    
+    <div class="quarto-title-meta-container">
+      <div class="quarto-title-meta-column-start">
+        
+        <div class="quarto-title-meta">
+
+                
+          
+                
+              </div>
+      </div>
+      <div class="quarto-title-meta-column-end quarto-other-formats-target">
+      </div>
+    </div>
+
+
+
+    <div class="quarto-other-links-text-target">
+    </div>  </div>
+</header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
 <div id="quarto-sidebar-toc-left" class="sidebar toc-left">
   <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
@@ -204,32 +229,20 @@
   <li><a href="#model-selection-criteria-tables" id="toc-model-selection-criteria-tables" class="nav-link" data-scroll-target="#model-selection-criteria-tables">Model Selection Criteria tables</a>
   <ul class="collapse">
   <li><a href="#choice-experiment-table" id="toc-choice-experiment-table" class="nav-link" data-scroll-target="#choice-experiment-table">Choice experiment table</a></li>
-  <li><a href="#no-choice-experiment" id="toc-no-choice-experiment" class="nav-link" data-scroll-target="#no-choice-experiment">no choice experiment</a></li>
   </ul></li>
+  <li><a href="#no-choice-experiment" id="toc-no-choice-experiment" class="nav-link" data-scroll-target="#no-choice-experiment">no choice experiment</a></li>
   <li><a href="#posthoc-comparisons" id="toc-posthoc-comparisons" class="nav-link" data-scroll-target="#posthoc-comparisons">Posthoc comparisons</a></li>
   </ul>
 </nav>
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
-<main class="content" id="quarto-document-content">      <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Field population Post modeling visualization</h1>
-</div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">      
 
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>     <p><strong>Choice and no choice experiments combined</strong></p>
+       <div id="0dfbd0e4-f2ab-4d09-b198-046791a2500d" class="cell markdown">
+<p><strong>Choice and no choice experiments combined</strong></p>
 <p>Now we combine all modeling output and data to produce the manuscript figures</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [1]:</pre></div><div id="2df55bf7-1053-4f17-8e65-f465f29888b4" class="cell" data-scrolled="true" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>load_packages <span class="ot">&lt;-</span> <span class="cf">function</span>(packages) {</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Check for uninstalled packages</span></span>
@@ -334,9 +347,12 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 </code></pre>
 </div>
 </div></div>
+<div id="fb45d49a-674a-40f3-839b-55dee8759786" class="cell markdown">
 <section id="read-in-data" class="level2">
 <h2 class="anchored" data-anchor-id="read-in-data">Read in data</h2>
 <p>I am going to select columns that I will use just to keep the dataframes managable</p>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [3]:</pre></div><div id="6a691f2d-64cb-4e29-ba2d-45ff628b67be" class="cell" data-scrolled="true" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Choice experiment data</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -378,7 +394,7 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 `.groups` argument.</code></pre>
 </div>
 </div></div>
-</section>
+<div id="d08cf342-1833-40d0-9b5b-c85c3f1fcd86" class="cell markdown">
 <section id="figure-2" class="level2">
 <h2 class="anchored" data-anchor-id="figure-2">Figure 2</h2>
 <section id="field-population-figure" class="level3">
@@ -388,6 +404,9 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 <li>panel b: specific growth rate on confined ‘no-choice’ diets</li>
 <li>panel c: development time on confined ‘no-choice’ diets</li>
 </ul>
+</section>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [4]:</pre></div><div id="413a9067-6c17-4ad7-9ebe-6f8328277d24" class="cell" data-scrolled="true" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>panel_a <span class="ot">&lt;-</span> choice_dat <span class="sc">|&gt;</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(population) <span class="sc">|&gt;</span></span>
@@ -450,8 +469,7 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 <div class="cell-container"><div class="cell-decorator"><pre>In [6]:</pre></div><div id="d761f891-a6a1-4a75-b3f5-95cc582cfb6f" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(figure_2,<span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_figures/field_population_intake_target_figure.png'</span>),<span class="at">width=</span><span class="dv">10</span>,<span class="at">height=</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
-</section>
+<div id="72e8dd60-3781-41a9-811a-bfee2b83d6a3" class="cell markdown">
 <section id="supplement-figure-3" class="level2">
 <h2 class="anchored" data-anchor-id="supplement-figure-3">Supplement Figure 3</h2>
 <section id="field-population-figure-diet-pairing-and-sex" class="level3">
@@ -462,6 +480,9 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 <li>panel c: specific growth rate – sex</li>
 <li>panel d: development time – sex</li>
 </ul>
+</section>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [7]:</pre></div><div id="3a4a4973-0e40-4b0f-9d12-2f6444107a5c" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>panel_a <span class="ot">&lt;-</span> choice_dat <span class="sc">|&gt;</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(diet_pair) <span class="sc">|&gt;</span></span>
@@ -529,13 +550,15 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 <div class="cell-container"><div class="cell-decorator"><pre>In [8]:</pre></div><div id="7ec1a088-27c0-444b-b2f9-b614cf5e3b47" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(supplement_figure_3,<span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_figures/supplement_figure_3.png'</span>),<span class="at">width=</span><span class="dv">10</span>,<span class="at">height=</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
-</section>
+<div id="afc74e2c-06f8-45be-9b29-6878d7387f91" class="cell markdown">
 <section id="maintext-table-1" class="level2">
 <h2 class="anchored" data-anchor-id="maintext-table-1">Maintext Table 1</h2>
 <section id="field-population-choice-model-result-table" class="level3">
 <h3 class="anchored" data-anchor-id="field-population-choice-model-result-table">Field population choice model result table</h3>
 <p>Family: multivariate gaussian distribution link: identity SE: standard error.</p>
+</section>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [9]:</pre></div><div id="dedb640b-5ddf-416a-beee-5139496acd1c" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>mods <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">"output/field_populations/model_objects/choice_experiment_models.rds"</span>))</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -640,13 +663,15 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_tables/field_population_choice_model_result.csv'</span>),</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
-</section>
+<div id="25e2f330-1a3d-4c18-9d73-3a02c2c1c583" class="cell markdown">
 <section id="maintext-table-2" class="level2">
 <h2 class="anchored" data-anchor-id="maintext-table-2">Maintext Table 2</h2>
 <section id="specific-growth-rate-and-development-time-model-results" class="level3">
 <h3 class="anchored" data-anchor-id="specific-growth-rate-and-development-time-model-results">Specific growth rate and development time model results</h3>
 <p>SE: standard error, EDF: estimated degrees freedom, DF: degrees freedom</p>
+</section>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [13]:</pre></div><div id="f798d0e7-e0f9-4b2d-b877-c0ce3a9f7f47" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>mods <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">"output/field_populations/model_objects/no_choice_experiment_models.rds"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
@@ -786,8 +811,7 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_tables/field_population_no_choice_sgr_dev_result.csv'</span>),</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
-</section>
+<div id="0a3fdbe7-d1be-485e-8d9d-556f488fe2fe" class="cell markdown">
 <section id="model-selection-criteria-tables" class="level2">
 <h2 class="anchored" data-anchor-id="model-selection-criteria-tables">Model Selection Criteria tables</h2>
 <ul>
@@ -797,6 +821,9 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 </ul>
 <section id="choice-experiment-table" class="level3">
 <h3 class="anchored" data-anchor-id="choice-experiment-table">Choice experiment table</h3>
+</section>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [18]:</pre></div><div id="1bf910d1-a807-445b-bffe-05490426b242" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>choice_selection <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"output/field_populations/choice_experiment_model_selection_criteria_results.csv"</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -813,9 +840,11 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_tables/field_population_choice_experiment_model_selection_criteria.csv'</span>),</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
+<div id="9bbc2699-a5e5-4b15-ba63-bb83e59f0102" class="cell markdown">
 <section id="no-choice-experiment" class="level3">
 <h3 class="anchored" data-anchor-id="no-choice-experiment">no choice experiment</h3>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [20]:</pre></div><div id="d131649b-fa63-4d0b-a841-b4bee39facad" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>no_choice_selection <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"output/field_populations/no_choice_experiment_model_selection_criteria_results.csv"</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
@@ -848,10 +877,11 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 <span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_tables/field_population_no_choice_development_time_model_selection_criteria.csv'</span>),</span>
 <span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
-</section>
+<div id="2ecc0a26-e2f5-4f91-a2fd-b57f22e3c1f8" class="cell markdown">
 <section id="posthoc-comparisons" class="level2">
 <h2 class="anchored" data-anchor-id="posthoc-comparisons">Posthoc comparisons</h2>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [23]:</pre></div><div id="e4cae95f-307f-4520-a264-7e8f749e64b9" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>development_time_contrasts <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"output/field_populations/no_choice_experiment_development_time_emm_contrasts.csv"</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>specific_growth_rate_contrasts <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"output/field_populations/no_choice_experiment_specific_growth_rate_emm_contrasts.csv"</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
@@ -879,7 +909,6 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_tables/field_population_no_choice_sgr_dev_posthoc_comparison_results.csv'</span>),</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
      </main>
 <!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1300,7 +1329,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"loop":false,"openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","descPosition":"bottom"});
+</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

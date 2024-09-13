@@ -215,10 +215,12 @@
 </div>
 <main class="content quarto-banner-title-block" id="quarto-document-content">      
 
-       <p>Now we need to take the sparse fishnets and extract our remote sensed data. to do so we will do the following:</p>
+       <div id="25103076-0cdd-4b69-a8fd-22b59b79ef30" class="cell markdown">
+<p>Now we need to take the sparse fishnets and extract our remote sensed data. to do so we will do the following:</p>
 <ol type="1">
 <li>import all the</li>
 </ol>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [1]:</pre></div><div id="760daf3b-8461-4a8c-8a42-f7b4ecf07981" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ee</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -954,9 +956,12 @@ for (let c of document.getElementsByClassName("ee-toggle")) {
 }</script></div>
 </div>
 </div></div>
+<div id="18154d41-39c6-4fa3-b386-9b34ba9eac50" class="cell markdown">
 <section id="now-that-we-have-all-the-bands-and-features-together-lets-extract-to-the-grids" class="level2">
 <h2 class="anchored" data-anchor-id="now-that-we-have-all-the-bands-and-features-together-lets-extract-to-the-grids">Now that we have all the bands and features together, lets extract to the grids</h2>
 <p>lets import both the APL and DL csvs and convert them into geopandas</p>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [10]:</pre></div><div id="903df30a-1b1c-4d10-ad0b-a7e728e72387" class="cell" data-scrolled="true" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create APL dataframe</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1048,7 +1053,7 @@ for (let c of document.getElementsByClassName("ee-toggle")) {
 <pre><code>Processing chunks: 100%|██████████| 1984/1984 [3:11:44&lt;00:00,  5.80s/it]  </code></pre>
 </div>
 </div></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [1]:</pre></div><div id="6092ad01-b20d-4378-b1d2-da7a7dc8affd" class="cell">
+<div class="cell-container"><div class="cell-decorator"><pre>In [19]:</pre></div><div id="6092ad01-b20d-4378-b1d2-da7a7dc8affd" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ee</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> shapely.geometry <span class="im">import</span> mapping</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tqdm <span class="im">import</span> tqdm</span>
@@ -1132,25 +1137,78 @@ for (let c of document.getElementsByClassName("ee-toggle")) {
             
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Processing chunks:  74%|███████▍  | 738/992 [8:08:18&lt;3:15:03, 46.08s/it] </code></pre>
+<pre><code>Processing chunks: 100%|██████████| 992/992 [11:14:20&lt;00:00, 40.79s/it]  </code></pre>
 </div>
 </div></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [2]:</pre></div><div id="eb1463c8-bb7c-40ef-9785-a0c90c245d1b" class="cell">
+<div class="cell-container"><div class="cell-decorator"><pre>In [20]:</pre></div><div id="eb1463c8-bb7c-40ef-9785-a0c90c245d1b" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>apl_results_df <span class="op">=</span> pd.DataFrame(apl_results)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>apl_results_df.to_csv(<span class="st">'data/processed/spatial_modeling/apl_remote_sense_extraction.csv'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+
+            <style>
+                .geemap-dark {
+                    --jp-widgets-color: white;
+                    --jp-widgets-label-color: white;
+                    --jp-ui-font-color1: white;
+                    --jp-layout-color2: #454545;
+                    background-color: #383838;
+                }
+
+                .geemap-dark .jupyter-button {
+                    --jp-layout-color3: #383838;
+                }
+
+                .geemap-colab {
+                    background-color: var(--colab-primary-surface-color, white);
+                }
+
+                .geemap-colab .jupyter-button {
+                    --jp-layout-color3: var(--colab-primary-surface-color, white);
+                }
+            </style>
+            
+</div>
 </div></div>
-</section>
+<div id="edf676c3-e0cc-438f-9f03-f42ec0174156" class="cell markdown">
 <section id="now-lets-relate-the-two-dataframes-together-and-serialize" class="level1">
 <h1>Now lets relate the two dataframes together and serialize</h1>
-<div class="cell-container"><div class="cell-decorator"><pre>In [3]:</pre></div><div id="baede775-221a-4add-b49e-fb4a06736b45" class="cell">
+</section>
+</div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [21]:</pre></div><div id="baede775-221a-4add-b49e-fb4a06736b45" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>apl_results_df <span class="op">=</span> pd.read_csv(<span class="st">'data/processed/spatial_modeling/apl_remote_sense_extraction.csv'</span>)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>apl_survey_remote_sense_data <span class="op">=</span> apl_df.merge(apl_results_df, on<span class="op">=</span><span class="st">'polygon_id'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>apl_survey_remote_sense_data.to_csv(<span class="st">'data/processed/spatial_modeling/apl_survey_remote_sense_data.csv'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+
+            <style>
+                .geemap-dark {
+                    --jp-widgets-color: white;
+                    --jp-widgets-label-color: white;
+                    --jp-ui-font-color1: white;
+                    --jp-layout-color2: #454545;
+                    background-color: #383838;
+                }
+
+                .geemap-dark .jupyter-button {
+                    --jp-layout-color3: #383838;
+                }
+
+                .geemap-colab {
+                    background-color: var(--colab-primary-surface-color, white);
+                }
+
+                .geemap-colab .jupyter-button {
+                    --jp-layout-color3: var(--colab-primary-surface-color, white);
+                }
+            </style>
+            
+</div>
 </div></div>
+<div id="e46bec49-e5aa-4d15-a960-80aedea99b93" class="cell markdown">
 <p>Now we have the australian plague locust dataset as a dataframe</p>
-</section>
+</div>
      </main>
 <!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {

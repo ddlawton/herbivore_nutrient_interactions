@@ -206,16 +206,9 @@
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#australian-plague-locust-data" id="toc-australian-plague-locust-data" class="nav-link active" data-scroll-target="#australian-plague-locust-data">Australian plague locust data</a></li>
-  <li><a href="#species-identifier" id="toc-species-identifier" class="nav-link" data-scroll-target="#species-identifier">Species identifier</a>
-  <ul class="collapse">
-  <li><a href="#species-data-management" id="toc-species-data-management" class="nav-link" data-scroll-target="#species-data-management">Species data management</a></li>
-  </ul></li>
-  <li><a href="#fishnet-grid-construction" id="toc-fishnet-grid-construction" class="nav-link" data-scroll-target="#fishnet-grid-construction">Fishnet grid construction</a>
-  <ul class="collapse">
+  <li><a href="#fishnet-grid-construction" id="toc-fishnet-grid-construction" class="nav-link active" data-scroll-target="#fishnet-grid-construction">Fishnet grid construction</a></li>
   <li><a href="#lets-summarize-the-apl-point-data-to-the-polygon-grid-data" id="toc-lets-summarize-the-apl-point-data-to-the-polygon-grid-data" class="nav-link" data-scroll-target="#lets-summarize-the-apl-point-data-to-the-polygon-grid-data">Lets summarize the APL point data to the polygon grid data</a></li>
   <li><a href="#the-aplc-data-is-complete-lets-write-to-disk" id="toc-the-aplc-data-is-complete-lets-write-to-disk" class="nav-link" data-scroll-target="#the-aplc-data-is-complete-lets-write-to-disk">The APLC data is complete – lets write to disk</a></li>
-  </ul></li>
   </ul>
 </nav>
 </div>
@@ -223,8 +216,10 @@
 </div>
 <main class="content quarto-banner-title-block" id="quarto-document-content">      
 
-       <p>This code takes the georeferenced points and related them to a fishnet grid of 1km x 1km scale.</p>
+       <div id="f0842cfa-9614-4820-91ca-5967aa8de101" class="cell markdown">
+<p>This code takes the georeferenced points and related them to a fishnet grid of 1km x 1km scale.</p>
 <p>This will be for both for Australian Plague Locust and Desert Locust</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [1]:</pre></div><div id="8cb97841-63d4-4070-a986-089de1d711e8" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
@@ -251,6 +246,7 @@
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Execute the code</span></span>
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="bu">exec</span>(code)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
+<div id="8fc96b44-606b-41f5-9a89-e7d7806adb4c" class="cell markdown">
 <section id="australian-plague-locust-data" class="level2">
 <h2 class="anchored" data-anchor-id="australian-plague-locust-data">Australian plague locust data</h2>
 <p>This dataset is comprised of several species but the records are biased towards the more economically important species (e.g.&nbsp;australian plauge locust)</p>
@@ -268,6 +264,9 @@
 <section id="species-data-management" class="level3">
 <h3 class="anchored" data-anchor-id="species-data-management">Species data management</h3>
 <p>For each species, we need to combined the species specific ID with the <code>10</code> observations (nil-observations) and observations in the other species categories that are nil. This will provide us with all the records that a specific grasshopper species was present and combine it with all the nil observation possible.</p>
+</section>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [7]:</pre></div><div id="19398ba1-1ad5-44d4-a42c-c26ee37c0a52" class="cell" data-scrolled="true" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>CT <span class="op">=</span> pd.read_csv(<span class="st">'data/raw/survey_data/CT.csv'</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>OA <span class="op">=</span> pd.read_csv(<span class="st">'data/raw/survey_data/OA.csv'</span>)</span>
@@ -466,11 +465,12 @@
 </div>
 </div>
 </div></div>
-</section>
-</section>
+<div id="388f01d6-e1dd-4b17-8d51-6c1e367650f4" class="cell markdown">
 <section id="fishnet-grid-construction" class="level2">
 <h2 class="anchored" data-anchor-id="fishnet-grid-construction">Fishnet grid construction</h2>
 <p>I first create the sparse fishnet grid (roughly 1km x 1km) and then aggregate the species data to the polygons. This is done BY species and not between.</p>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [8]:</pre></div><div id="b518e127-c4da-4ed5-a189-161cb686a630" class="cell" data-scrolled="true" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>aplc_survey_dataframe <span class="op">=</span> create_grids_parallel(</span>
@@ -571,8 +571,11 @@
 </div>
 </div>
 </div></div>
+<div id="b00cb0d8-975b-4481-b829-08246f656ab0" class="cell markdown">
 <section id="lets-summarize-the-apl-point-data-to-the-polygon-grid-data" class="level3">
 <h3 class="anchored" data-anchor-id="lets-summarize-the-apl-point-data-to-the-polygon-grid-data">Lets summarize the APL point data to the polygon grid data</h3>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [12]:</pre></div><div id="9714e545-1812-4775-aab4-ed0f7c5a454c" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>combined_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
@@ -1186,14 +1189,14 @@ geometry                     0
 dtype: int64</code></pre>
 </div>
 </div></div>
-</section>
+<div id="a1527cc6-91bf-4b76-aa86-314d972120ef" class="cell markdown">
 <section id="the-aplc-data-is-complete-lets-write-to-disk" class="level3">
 <h3 class="anchored" data-anchor-id="the-aplc-data-is-complete-lets-write-to-disk">The APLC data is complete – lets write to disk</h3>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [22]:</pre></div><div id="53baf12a-4255-4c56-997e-b89028f78bac" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>final_df.to_csv(<span class="st">'data/processed/spatial_modeling/aplc_data_aggregated_to_polygon_grid.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
-</section>
      </main>
 <!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {

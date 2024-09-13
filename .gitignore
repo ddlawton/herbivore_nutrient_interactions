@@ -28,6 +28,7 @@ __pycache__/
 
 # Quarto and R stuff
 /.quarto/
+/_manuscript
 .Rproj.user
 *.Rproj
 .Rhistory

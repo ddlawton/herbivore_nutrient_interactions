@@ -204,8 +204,7 @@
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#import-libraries-and-initialize-google-earth-engine" id="toc-import-libraries-and-initialize-google-earth-engine" class="nav-link active" data-scroll-target="#import-libraries-and-initialize-google-earth-engine">Import libraries and initialize google earth engine</a></li>
-  <li><a href="#set-relative-work-directory" id="toc-set-relative-work-directory" class="nav-link" data-scroll-target="#set-relative-work-directory">set relative work directory</a></li>
+  <li><a href="#set-relative-work-directory" id="toc-set-relative-work-directory" class="nav-link active" data-scroll-target="#set-relative-work-directory">set relative work directory</a></li>
   <li><a href="#load-australia-shape" id="toc-load-australia-shape" class="nav-link" data-scroll-target="#load-australia-shape">Load Australia shape</a></li>
   <li><a href="#load-in-rasters" id="toc-load-in-rasters" class="nav-link" data-scroll-target="#load-in-rasters">Load in rasters</a></li>
   <li><a href="#sample-the-australia-shapefile" id="toc-sample-the-australia-shapefile" class="nav-link" data-scroll-target="#sample-the-australia-shapefile">sample the australia shapefile</a></li>
@@ -217,11 +216,14 @@
 </div>
 <main class="content quarto-banner-title-block" id="quarto-document-content">      
 
-       <p>This script extracts nitrogen, phosphorus, woody vegetation pixel coverage, and mean annual precipitation from google earth engine for correlation</p>
+       <div id="b4b952d5-f86b-46c1-9b31-f8f2e9a81f8c" class="cell markdown">
+<p>This script extracts nitrogen, phosphorus, woody vegetation pixel coverage, and mean annual precipitation from google earth engine for correlation</p>
 <p>The purpose is to show how the locust outbreak model disentangled the positive correlation between nitrogen and these variables</p>
 <p>read the manuscript for further discussion</p>
 <section id="import-libraries-and-initialize-google-earth-engine" class="level1">
 <h1>Import libraries and initialize google earth engine</h1>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [1]:</pre></div><div id="fa0b44ae-a001-41b2-bfb0-fb4051d24448" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ee</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -231,9 +233,11 @@
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize Earth Engine</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>ee.Initialize()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
+<div id="87f45436-28d1-4eae-90a4-4f39b42fbd92" class="cell markdown">
 <section id="set-relative-work-directory" class="level1">
 <h1>set relative work directory</h1>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [3]:</pre></div><div id="526f163d-a835-487f-b6e7-fc8ba9a75d6a" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>os.chdir(os.path.abspath(os.path.join(os.getcwd(), os.pardir)))</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>os.getcwd()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -241,9 +245,11 @@
 <pre><code>'/home/datascience/herbivore_nutrient_interactions'</code></pre>
 </div>
 </div></div>
-</section>
+<div id="3a58d36b-7ccd-47c1-b12e-cdc5eadb2f42" class="cell markdown">
 <section id="load-australia-shape" class="level1">
 <h1>Load Australia shape</h1>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [4]:</pre></div><div id="5f3c01ac-f301-405e-ba0c-7b87cc1fa8c5" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the countries feature collection</span></span>
@@ -253,9 +259,11 @@
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>australia <span class="op">=</span> countries.<span class="bu">filter</span>(ee.Filter.eq(<span class="st">'country_na'</span>, <span class="st">'Australia'</span>))</span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
+<div id="d52e0539-250d-4095-96f7-9dc08c11f1b6" class="cell markdown">
 <section id="load-in-rasters" class="level1">
 <h1>Load in rasters</h1>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [5]:</pre></div><div id="6e574186-71f8-474b-ad3b-561701b536b3" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the two rasters</span></span>
@@ -277,9 +285,11 @@
 <span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>temp_bands <span class="op">=</span> raster1.addBands(raster2).addBands(raster3).addBands(raster4)</span>
 <span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
+<div id="8b77090a-14ab-4a79-b2fc-b346f4754ac2" class="cell markdown">
 <section id="sample-the-australia-shapefile" class="level1">
 <h1>sample the australia shapefile</h1>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [6]:</pre></div><div id="90f8c383-453f-41ee-844e-afaf21a984d8" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate random points</span></span>
@@ -293,9 +303,11 @@
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  scale <span class="op">=</span> <span class="dv">30</span></span>
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
+<div id="53fed578-8fa3-4986-ac09-2dfb70d01d51" class="cell markdown">
 <section id="for-loop-to-extract-data-from-google-earth-engine" class="level1">
 <h1>For loop to extract data from google earth engine</h1>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [8]:</pre></div><div id="075e31d3-8462-4648-8b70-41e6c5756786" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Set batch size</span></span>
@@ -556,7 +568,6 @@ Processed batch 99501 to 100000
 <div class="cell-container"><div class="cell-decorator"><pre>In [10]:</pre></div><div id="0572afc1-3e41-4dd5-87d8-bf9bdc360b75" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df.to_csv(<span class="st">'data/processed/spatial_modeling/environmental_correlation_data.csv'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
      </main>
 <!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {

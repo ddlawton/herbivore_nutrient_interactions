@@ -178,7 +178,32 @@
             <a href="../../scripts/field_populations/02_field_population_intake_target_no_choice_diet_analysis.ipynb" class="btn btn-primary quarto-download-embed" download="02_field_population_intake_target_no_choice_diet_analysis.ipynb">Download Notebook</a>
           </div>
 
-     <div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+     <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Field population statistical analyses</h1>
+          </div>
+
+    
+    <div class="quarto-title-meta-container">
+      <div class="quarto-title-meta-column-start">
+        
+        <div class="quarto-title-meta">
+
+                
+          
+                
+              </div>
+      </div>
+      <div class="quarto-title-meta-column-end quarto-other-formats-target">
+      </div>
+    </div>
+
+
+
+    <div class="quarto-other-links-text-target">
+    </div>  </div>
+</header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
 <div id="quarto-sidebar-toc-left" class="sidebar toc-left">
   <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
@@ -186,51 +211,35 @@
   <ul>
   <li><a href="#no-choice-experiment" id="toc-no-choice-experiment" class="nav-link active" data-scroll-target="#no-choice-experiment">no choice Experiment</a></li>
   <li><a href="#data-import" id="toc-data-import" class="nav-link" data-scroll-target="#data-import">Data import</a></li>
-  <li><a href="#raw-data-visualization" id="toc-raw-data-visualization" class="nav-link" data-scroll-target="#raw-data-visualization">Raw data visualization</a>
-  <ul class="collapse">
+  <li><a href="#raw-data-visualization" id="toc-raw-data-visualization" class="nav-link" data-scroll-target="#raw-data-visualization">Raw data visualization</a></li>
   <li><a href="#model-building" id="toc-model-building" class="nav-link" data-scroll-target="#model-building">Model building</a>
   <ul class="collapse">
   <li><a href="#general-additive-models-gam-for-carbohydrate-and-protein-consumption-of-field-populations" id="toc-general-additive-models-gam-for-carbohydrate-and-protein-consumption-of-field-populations" class="nav-link" data-scroll-target="#general-additive-models-gam-for-carbohydrate-and-protein-consumption-of-field-populations">General Additive Models (GAM) for Carbohydrate and Protein Consumption of Field Populations</a></li>
   <li><a href="#no-choice-experiments" id="toc-no-choice-experiments" class="nav-link" data-scroll-target="#no-choice-experiments">No Choice Experiments</a></li>
   <li><a href="#modeling-overview" id="toc-modeling-overview" class="nav-link" data-scroll-target="#modeling-overview">Modeling Overview:</a></li>
-  <li><a href="#model-selection" id="toc-model-selection" class="nav-link" data-scroll-target="#model-selection">Model Selection:</a></li>
   </ul></li>
+  <li><a href="#model-selection" id="toc-model-selection" class="nav-link" data-scroll-target="#model-selection">Model Selection:</a></li>
   <li><a href="#model-diagnostics" id="toc-model-diagnostics" class="nav-link" data-scroll-target="#model-diagnostics">Model Diagnostics</a>
   <ul class="collapse">
   <li><a href="#specific-growth-rate-diagnostic-plots" id="toc-specific-growth-rate-diagnostic-plots" class="nav-link" data-scroll-target="#specific-growth-rate-diagnostic-plots">Specific growth rate diagnostic plots</a></li>
+  </ul></li>
   <li><a href="#development-time-diagnostic-plots" id="toc-development-time-diagnostic-plots" class="nav-link" data-scroll-target="#development-time-diagnostic-plots">Development time diagnostic plots</a></li>
-  </ul></li>
-  <li><a href="#model-selection-summary" id="toc-model-selection-summary" class="nav-link" data-scroll-target="#model-selection-summary">model selection summary</a></li>
-  <li><a href="#key-findings" id="toc-key-findings" class="nav-link" data-scroll-target="#key-findings">Key Findings:</a></li>
-  <li><a href="#posthoc-comparison-between-diet-pair-levels" id="toc-posthoc-comparison-between-diet-pair-levels" class="nav-link" data-scroll-target="#posthoc-comparison-between-diet-pair-levels">Posthoc comparison between diet pair levels</a></li>
   <li><a href="#model-outputs" id="toc-model-outputs" class="nav-link" data-scroll-target="#model-outputs">Model outputs</a></li>
-  </ul></li>
   </ul>
 </nav>
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
-<main class="content" id="quarto-document-content">      <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Field population statistical analyses</h1>
-</div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">      
 
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>     <section id="no-choice-experiment" class="level2">
+       <div id="d20606e4-cec5-4bfd-b42a-f47ddb080734" class="cell markdown">
+<section id="no-choice-experiment" class="level2">
 <h2 class="anchored" data-anchor-id="no-choice-experiment">no choice Experiment</h2>
 <p>this script conducts the statistics for the no-choice experiment intake target of field caught Australian plauge locusts</p>
 <p>Specifics for the experiment design can be found in the publication.</p>
 <p>For this section, I (Douglas Lawton) did not calculate the specific growth time, this was done in excel. I will mnot reproduce it here</p>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [1]:</pre></div><div id="5e08cc2a-f12c-4907-b08a-1f97c269404a" class="cell" data-scrolled="true" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>load_packages <span class="ot">&lt;-</span> <span class="cf">function</span>(packages) {</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Check for uninstalled packages</span></span>
@@ -348,7 +357,7 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 </code></pre>
 </div>
 </div></div>
-</section>
+<div id="99f387df-312f-4d42-9f03-e89e74b66525" class="cell markdown">
 <section id="data-import" class="level2">
 <h2 class="anchored" data-anchor-id="data-import">Data import</h2>
 <p>This code reads a CSV file containing no choice IT data, cleans the column names, converts specific columns to factors.</p>
@@ -369,6 +378,8 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 <li><strong>dev_time_with_5th_instar_days</strong>: Development time including days spent in the 5th instar stage for locust individual that did not molt, measured in days.</li>
 <li><strong>specific_growth_rate_ln_mb</strong>: The specific growth rate, calculated as the growth rate normalized by initial body mass and time.</li>
 </ul>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [4]:</pre></div><div id="ce40faef-3fff-429f-a012-6e1445dabb35" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>no_choice <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data/raw/field_populations/confined_diet.csv"</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
@@ -536,10 +547,12 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 </table>
 </div>
 </div></div>
-</section>
+<div id="22cce73c-6187-4402-8bec-5f4058a436c8" class="cell markdown">
 <section id="raw-data-visualization" class="level1">
 <h1>Raw data visualization</h1>
 <p>I am using <code>ggpairs</code> to make this section pithy</p>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [5]:</pre></div><div id="89da0cad-e950-478f-85ad-d48bd8619848" class="cell" data-scrolled="true" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>numeric_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"initial_weight_g"</span>,<span class="st">"specific_growth_rate_ln_mb"</span>,<span class="st">"dev_time_with_5th_instar_days"</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -581,6 +594,7 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
+<div id="cdfcc609-7afb-424d-8b26-a0f10c2c1d8e" class="cell markdown">
 <section id="model-building" class="level2">
 <h2 class="anchored" data-anchor-id="model-building">Model building</h2>
 <section id="general-additive-models-gam-for-carbohydrate-and-protein-consumption-of-field-populations" class="level3">
@@ -606,6 +620,9 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 <p><strong>Model 4: Null Model</strong></p>
 <p>Formula: - specific_growth_rate ~ 1 - dev_time_with_5th_instar_days ~ 1</p>
 <p>Description: The null model includes only an intercept, serving as a baseline to compare the other models. This model should represent the worst fit to the data, as it assumes no relationship between the predictors and the response variables.</p>
+</section>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [19]:</pre></div><div id="c5cf1101-7ddd-4617-9fd1-60f482420b2f" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Model 1: Non-linear Relationship with Initial Mass</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -639,7 +656,7 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 <span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>dev_mod4 <span class="ot">&lt;-</span><span class="fu">gam</span>(dev_time_with_5th_instar_days  <span class="sc">~</span> <span class="dv">1</span>, </span>
 <span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>               <span class="at">data=</span>no_choice,<span class="at">select=</span><span class="cn">TRUE</span>, <span class="at">family=</span><span class="fu">gaussian</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
+<div id="2db623ac-9039-4259-97b3-2532f89a42b2" class="cell markdown">
 <section id="model-selection" class="level3">
 <h3 class="anchored" data-anchor-id="model-selection">Model Selection:</h3>
 <p>After fitting these models, we will compare them using the following criteria:</p>
@@ -648,6 +665,8 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 <li>Bayesian Information Criterion (BIC): Similar to AIC, but with a stronger penalty for models with more parameters.</li>
 <li>Corrected AIC (AICc): AIC adjusted for small sample sizes, ensuring a more reliable comparison when sample sizes are limited. By examining the AIC, BIC, and AICc values, we will select the best model for explaining carbohydrate and protein consumption.</li>
 </ul>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [21]:</pre></div><div id="d68fd5d1-0615-4934-a83b-6963fdaf0dd4" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the function</span></span>
@@ -683,13 +702,15 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 <span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>sgr_model_selection <span class="ot">&lt;-</span> <span class="fu">calculate_model_selection</span>(sgr_models)</span>
 <span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>dev_model_selection <span class="ot">&lt;-</span> <span class="fu">calculate_model_selection</span>(dev_models)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
-</section>
+<div id="79d237c5-a6cb-4ded-86aa-2cefb71384f7" class="cell markdown">
 <section id="model-diagnostics" class="level2">
 <h2 class="anchored" data-anchor-id="model-diagnostics">Model Diagnostics</h2>
 <p>To see how well these models fit, I will run <code>mgcv::gam.check()</code> on it</p>
 <section id="specific-growth-rate-diagnostic-plots" class="level3">
 <h3 class="anchored" data-anchor-id="specific-growth-rate-diagnostic-plots">Specific growth rate diagnostic plots</h3>
+</section>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [22]:</pre></div><div id="d7e235a3-c3e1-4e0a-bc77-4a52e1c9d56d" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>gratia<span class="sc">::</span><span class="fu">appraise</span>(sgr_mod1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -700,9 +721,11 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 </div>
 </div>
 </div></div>
-</section>
+<div id="76ee46ee-2663-44ec-90c7-1cfae8c5b7e7" class="cell markdown">
 <section id="development-time-diagnostic-plots" class="level3">
 <h3 class="anchored" data-anchor-id="development-time-diagnostic-plots">Development time diagnostic plots</h3>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [23]:</pre></div><div id="0b5b6b47-e05b-49e6-90f9-9f4681d382c6" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>gratia<span class="sc">::</span><span class="fu">appraise</span>(dev_mod1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -713,8 +736,10 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 </div>
 </div>
 </div></div>
+<div id="1e0baef5-3599-4ec1-b0d8-edb5f4ee143e" class="cell markdown">
 <p>These diagnostic plots indicate these models are decently fit.</p>
 <p>now lets calculate the model selection criteria</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [24]:</pre></div><div id="536ad86a-41f9-40ad-8aa5-f50ac64eb174" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
@@ -1031,8 +1056,7 @@ R-sq.(adj) =   0.31   Deviance explained = 37.5%
 GCV = 2.5906  Scale est. = 2.3027    n = 54</code></pre>
 </div>
 </div></div>
-</section>
-</section>
+<div id="4658f5aa-a86d-4f38-9522-cdd34652b05c" class="cell markdown">
 <section id="model-selection-summary" class="level2">
 <h2 class="anchored" data-anchor-id="model-selection-summary">model selection summary</h2>
 <p>For both specific growth rate and development model selection criteria differed slightly.</p>
@@ -1054,6 +1078,8 @@ GCV = 2.5906  Scale est. = 2.3027    n = 54</code></pre>
 </section>
 <section id="posthoc-comparison-between-diet-pair-levels" class="level2">
 <h2 class="anchored" data-anchor-id="posthoc-comparison-between-diet-pair-levels">Posthoc comparison between diet pair levels</h2>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [28]:</pre></div><div id="d6ebb33e-b82c-4610-b00d-73c742717024" class="cell" data-scrolled="true" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>development_time_emms <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(dev_mod2, <span class="sc">~</span> diet)</span>
@@ -1062,12 +1088,14 @@ GCV = 2.5906  Scale est. = 2.3027    n = 54</code></pre>
 <span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>specific_growth_rate_emms <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(sgr_mod3, <span class="sc">~</span> diet)</span>
 <span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>specific_growth_rate_contrasts <span class="ot">&lt;-</span> <span class="fu">contrast</span>(specific_growth_rate_emms, <span class="at">method =</span> <span class="st">"pairwise"</span>) <span class="sc">|&gt;</span> <span class="fu">tidy</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
+<div id="9e269c46-6e35-4da5-8970-7bd081793860" class="cell markdown">
 <section id="model-outputs" class="level2">
 <h2 class="anchored" data-anchor-id="model-outputs">Model outputs</h2>
 <p>I am going to get the estimated marginal means for <code>diet</code>,<code>sex</code>, and <code>initial_weight</code> for both the final models</p>
 <p>I will add this as a new dataframe</p>
 <p>I will also write out all models to disks</p>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [29]:</pre></div><div id="ad629d01-92af-4739-b469-0c6c4fc8c3c2" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>no_choice_exp_preds <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">initial_weight_g =</span> <span class="fu">seq</span>(<span class="fu">min</span>(no_choice<span class="sc">$</span>initial_weight_g), <span class="fu">max</span>(no_choice<span class="sc">$</span>initial_weight_g), <span class="at">length.out =</span> <span class="dv">10</span>),</span>
@@ -1177,8 +1205,6 @@ GCV = 2.5906  Scale est. = 2.3027    n = 54</code></pre>
 <span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a><span class="do">## Save the combined list to an RDS file</span></span>
 <span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(models, <span class="fu">here</span>(<span class="st">"output/field_populations/model_objects/no_choice_experiment_models.rds"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
-</section>
      </main>
 <!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1599,7 +1625,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","loop":false,"openEffect":"zoom"});
+</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":false,"descPosition":"bottom","closeEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
