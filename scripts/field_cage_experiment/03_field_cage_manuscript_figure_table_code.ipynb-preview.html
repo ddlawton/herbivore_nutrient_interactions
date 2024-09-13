@@ -1,0 +1,2530 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="generator" content="quarto-1.5.57">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+    <title>Field cage plant and locust post modeling visualization</title>
+    <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      div.columns{display: flex; gap: min(4vw, 1.5em);}
+      div.column{flex: auto; overflow-x: auto;}
+      div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+      ul.task-list{list-style: none;}
+      ul.task-list li input[type="checkbox"] {
+        width: 0.8em;
+        margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+        vertical-align: middle;
+      }
+      /* CSS for syntax highlighting */
+      pre > code.sourceCode { white-space: pre; position: relative; }
+      pre > code.sourceCode > span { line-height: 1.25; }
+      pre > code.sourceCode > span:empty { height: 1.2em; }
+      .sourceCode { overflow: visible; }
+      code.sourceCode > span { color: inherit; text-decoration: inherit; }
+      div.sourceCode { margin: 1em 0; }
+      pre.sourceCode { margin: 0; }
+      @media screen {
+      div.sourceCode { overflow: auto; }
+      }
+      @media print {
+      pre > code.sourceCode { white-space: pre-wrap; }
+      pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+      }
+      pre.numberSource code
+        { counter-reset: source-line 0; }
+      pre.numberSource code > span
+        { position: relative; left: -4em; counter-increment: source-line; }
+      pre.numberSource code > span > a:first-child::before
+        { content: counter(source-line);
+          position: relative; left: -1em; text-align: right; vertical-align: baseline;
+          border: none; display: inline-block;
+          -webkit-touch-callout: none; -webkit-user-select: none;
+          -khtml-user-select: none; -moz-user-select: none;
+          -ms-user-select: none; user-select: none;
+          padding: 0 4px; width: 4em;
+        }
+      pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+      div.sourceCode
+        {   }
+      @media screen {
+      pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+      }
+    </style>
+
+    <style>
+      body.hypothesis-enabled #quarto-embed-header {
+        padding-right: 36px;
+      }
+
+      #quarto-embed-header {
+        height: 3em;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: solid 1px;
+      }
+
+      #quarto-embed-header h6 {
+        font-size: 1.1em;
+        padding-top: 0.6em;
+        margin-left: 1em;
+        margin-right: 1em;
+        font-weight: 400;
+      }
+
+      #quarto-embed-header a.quarto-back-link,
+      #quarto-embed-header a.quarto-download-embed {
+        font-size: 0.8em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 1em;
+        margin-right: 1em;
+      }
+
+      .quarto-back-container {
+        padding-left: 0.5em;
+        display: flex;
+      }
+
+      .headroom {
+          will-change: transform;
+          transition: transform 200ms linear;
+      }
+
+      .headroom--pinned {
+          transform: translateY(0%);
+      }
+
+      .headroom--unpinned {
+          transform: translateY(-100%);
+      }      
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script>
+    window.document.addEventListener("DOMContentLoaded", function () {
+
+      var header = window.document.querySelector("#quarto-embed-header");
+      const titleBannerEl = window.document.querySelector("body > #title-block-header");
+      if (titleBannerEl) {
+        titleBannerEl.style.paddingTop = header.clientHeight + "px";
+      }
+      const contentEl = window.document.getElementById('quarto-content');
+      for (const child of contentEl.children) {
+        child.style.paddingTop = header.clientHeight + "px";
+        child.style.marginTop = "1em";
+      }
+
+      // Use the article root if the `back` call doesn't work. This isn't perfect
+      // but should typically work
+      window.quartoBackToArticle = () => {
+        var currentUrl = window.location.href;
+        window.history.back();
+        setTimeout(() => {
+            // if location was not changed in 100 ms, then there is no history back
+            if(currentUrl === window.location.href){              
+                // redirect to site root
+                window.location.href = "../../index.html";
+            }
+        }, 100);
+      }
+
+      const headroom = new window.Headroom(header, {
+        tolerance: 5,
+        onPin: function () {
+        },
+        onUnpin: function () {
+        },
+      });
+      headroom.init();
+    });
+    </script>
+
+    
+<script src="../../site_libs/manuscript-notebook/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+     <script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>  
+      </head>
+
+  <body class="quarto-notebook">
+    <div id="quarto-embed-header" class="headroom fixed-top bg-primary">
+      
+      <a onclick="window.quartoBackToArticle(); return false;" class="btn btn-primary quarto-back-link" href=""><i class="bi bi-caret-left"></i> Back to Article</a>
+      <h6><i class="bi bi-journal-code"></i> Field cage plant and locust post modeling visualization</h6>
+
+            <a href="../../scripts/field_cage_experiment/03_field_cage_manuscript_figure_table_code.ipynb.ipynb" class="btn btn-primary quarto-download-embed" download="03_field_cage_manuscript_figure_table_code.ipynb.ipynb">Download Notebook</a>
+          </div>
+
+     <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Field cage plant and locust post modeling visualization</h1>
+          </div>
+
+    
+    <div class="quarto-title-meta-container">
+      <div class="quarto-title-meta-column-start">
+        
+        <div class="quarto-title-meta">
+
+                
+          
+                
+              </div>
+      </div>
+      <div class="quarto-title-meta-column-end quarto-other-formats-target">
+      </div>
+    </div>
+
+
+
+    <div class="quarto-other-links-text-target">
+    </div>  </div>
+</header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#section-1---maintext-figures-and-tables" id="toc-section-1---maintext-figures-and-tables" class="nav-link active" data-scroll-target="#section-1---maintext-figures-and-tables">Section 1 - maintext figures and tables</a>
+  <ul class="collapse">
+  <li><a href="#figure---overall-field-cage-results" id="toc-figure---overall-field-cage-results" class="nav-link" data-scroll-target="#figure---overall-field-cage-results">Figure - overall field cage results</a></li>
+  </ul></li>
+  <li><a href="#figure---field-cage-locust-nutrient-rebalancing" id="toc-figure---field-cage-locust-nutrient-rebalancing" class="nav-link" data-scroll-target="#figure---field-cage-locust-nutrient-rebalancing">Figure - field Cage Locust Nutrient Rebalancing</a></li>
+  <li><a href="#table---plant-nutrients-through-time" id="toc-table---plant-nutrients-through-time" class="nav-link" data-scroll-target="#table---plant-nutrients-through-time">Table - Plant Nutrients through time</a></li>
+  <li><a href="#table---field-cage-final-locust-mass" id="toc-table---field-cage-final-locust-mass" class="nav-link" data-scroll-target="#table---field-cage-final-locust-mass">Table - field cage final locust mass</a></li>
+  <li><a href="#table---locust-nutrient-rebalancing-model-summary" id="toc-table---locust-nutrient-rebalancing-model-summary" class="nav-link" data-scroll-target="#table---locust-nutrient-rebalancing-model-summary">Table - locust nutrient rebalancing model summary</a></li>
+  <li><a href="#section-2-supplementary-figures-and-tables" id="toc-section-2-supplementary-figures-and-tables" class="nav-link" data-scroll-target="#section-2-supplementary-figures-and-tables">Section 2 – supplementary figures and tables</a>
+  <ul class="collapse">
+  <li><a href="#figure---individual-time-step-instake-targets-for-field-cage-locusts" id="toc-figure---individual-time-step-instake-targets-for-field-cage-locusts" class="nav-link" data-scroll-target="#figure---individual-time-step-instake-targets-for-field-cage-locusts">Figure - individual time step instake targets for field cage locusts</a></li>
+  </ul></li>
+  <li><a href="#figure---field-cage-soil-n-content-by-treatment-and-plant-carbohydrate-and-protein" id="toc-figure---field-cage-soil-n-content-by-treatment-and-plant-carbohydrate-and-protein" class="nav-link" data-scroll-target="#figure---field-cage-soil-n-content-by-treatment-and-plant-carbohydrate-and-protein">Figure - field cage soil N content by treatment and plant carbohydrate and protein</a></li>
+  <li><a href="#table---plant-species-nutrient-content" id="toc-table---plant-species-nutrient-content" class="nav-link" data-scroll-target="#table---plant-species-nutrient-content">table - plant species nutrient content</a></li>
+  <li><a href="#table-plant-species-ground-cover" id="toc-table-plant-species-ground-cover" class="nav-link" data-scroll-target="#table-plant-species-ground-cover">table – plant species ground cover</a></li>
+  </ul>
+</nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+</div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">      
+
+       <div id="b6011be8-cc31-4070-bfbc-70e1a092b27c" class="cell markdown">
+<p>Now we combined the plant nutrient and locust intake target model estimates and raw datan together for manuscript figure and table construction</p>
+<p>We will save the figures as png and save tables as csvs</p>
+</div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [3]:</pre></div><div id="511fbce1-c59c-4748-a8bc-7ec9d34a7575" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>load_packages <span class="ot">&lt;-</span> <span class="cf">function</span>(packages) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Check for uninstalled packages</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  uninstalled <span class="ot">&lt;-</span> packages[<span class="sc">!</span>packages <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">"Package"</span>]]</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Install uninstalled packages</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">length</span>(uninstalled)) <span class="fu">install.packages</span>(uninstalled, <span class="at">dependencies =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Load all packages</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (pkg <span class="cf">in</span> packages) {</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(pkg, <span class="at">character.only =</span> <span class="cn">TRUE</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">message</span>(<span class="fu">paste</span>(<span class="st">"Failed to load package:"</span>, pkg))</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># List of packages to check, install, and load</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"tidyverse"</span>, <span class="st">"mgcv"</span>,<span class="st">"gratia"</span>, </span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>              <span class="st">"ggpubr"</span>, <span class="st">"patchwork"</span>, <span class="st">"broom"</span>, <span class="st">"knitr"</span>, <span class="st">"janitor"</span>, </span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>              <span class="st">"here"</span>,<span class="st">"ggpubr"</span>,<span class="st">"MetBrewer"</span>,<span class="st">"GGally"</span>,<span class="st">"patchwork"</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">load_packages</span>(packages)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">i_am</span>(<span class="st">'README.md'</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting R options for jupyterlab</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repr.plot.width =</span> <span class="dv">10</span>, <span class="at">repr.plot.height =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>here() starts at /home/datascience/herbivore_nutrient_interactions
+</code></pre>
+</div>
+</div></div>
+<div id="2c5443aa-f4c4-452a-a22e-e7eabffe6b4c" class="cell markdown">
+<section id="section-1---maintext-figures-and-tables" class="level1">
+<h1>Section 1 - maintext figures and tables</h1>
+<section id="figure---overall-field-cage-results" class="level2">
+<h2 class="anchored" data-anchor-id="figure---overall-field-cage-results">Figure - overall field cage results</h2>
+<ul>
+<li>plant nutrient change</li>
+</ul>
+</section>
+</section>
+</div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [50]:</pre></div><div id="4290c0ed-9b9d-48f7-8b56-cf9278082be2" class="cell" data-execution_count="50">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plant_nutrients_model_estimates <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/processed/field_cage_experiment/plant_nutrient_predictions.csv'</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>plant_nutrients <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/processed/field_cage_experiment/plant_nutrient_raw_data.csv'</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>combined_plant_dat <span class="ot">&lt;-</span> plant_nutrients <span class="sc">|&gt;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(treatment,protein_mg_mg,carb_mg_mg,date) <span class="sc">|&gt;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(plant_nutrients_model_estimates,<span class="at">by=</span><span class="fu">c</span>(<span class="st">'treatment'</span>,<span class="st">'date'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+<div id="9deb88e9-21e8-417c-aa67-9a72177343df" class="cell markdown">
+<ul>
+<li>locust physiology</li>
+</ul>
+</div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [51]:</pre></div><div id="9e615cbe-254b-4ac0-9fd8-00f46da66949" class="cell" data-execution_count="51">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>locust_prop_dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data/raw/field_cage_experiment/adult_locust_proportion_survival_by_treatment.csv"</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>locust_mass_dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data/raw/field_cage_experiment/adult_locust_final_mass_by_treatment.csv"</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+<div id="c2d580d1-6f41-4cd9-8bdd-bd80bf8679ae" class="cell markdown">
+<p>now creating the figures</p>
+</div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [52]:</pre></div><div id="b95b8712-ccdf-48da-a755-267a65914ced" class="cell" data-execution_count="52">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plant_nutrients_through_time_plot <span class="ot">&lt;-</span> combined_plant_dat <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">treatment =</span> <span class="fu">factor</span>(treatment,<span class="at">levels=</span><span class="fu">c</span>(<span class="st">'None'</span>,<span class="st">'Medium'</span>,<span class="st">'High'</span>))) <span class="sc">|&gt;</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>protein_mg_mg,<span class="at">y=</span>carb_mg_mg, <span class="at">fill =</span> treatment)) <span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>(<span class="at">shape=</span><span class="dv">21</span>) <span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y=</span>pred_carb,<span class="at">x=</span>pred_protein,<span class="at">color =</span> treatment),<span class="at">size=</span><span class="dv">5</span>,<span class="at">shape=</span><span class="dv">21</span>) <span class="sc">+</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">coord_equal</span>(<span class="at">ratio=</span><span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">facet_wrap</span>(<span class="sc">~</span>date) <span class="sc">+</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="fl">0.3</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="fl">0.3</span>) <span class="sc">+</span> </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_pubr</span>() <span class="sc">+</span> </span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">"Carbohydrate (mg/mg)"</span>) <span class="sc">+</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">"Protein (mg/mg)"</span>) <span class="sc">+</span> </span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_abline</span>(<span class="at">slope =</span> <span class="dv">1</span>,<span class="at">linetype=</span><span class="dv">1</span>,<span class="at">intercept=</span><span class="dv">0</span>) <span class="sc">+</span> </span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_abline</span>(<span class="at">slope =</span> <span class="dv">2</span>,<span class="at">linetype=</span><span class="dv">2</span>,<span class="at">intercept=</span><span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">'#74c476'</span>,<span class="st">'#238b45'</span>,<span class="st">'#00441b'</span>))  <span class="sc">+</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">'#74c476'</span>,<span class="st">'#238b45'</span>,<span class="st">'#00441b'</span>))</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [53]:</pre></div><div id="a6c13bcc-08ba-405c-b092-95288d7dea2b" class="cell" data-execution_count="53">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>locust_final_mass_plot <span class="ot">&lt;-</span> locust_mass_dat <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(treatment) <span class="sc">|&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">mean_mass =</span> <span class="fu">mean</span>(mass_g)) <span class="sc">|&gt;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>treatment,<span class="at">y=</span>mass_g,<span class="at">color=</span>sex)) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_jitter</span>(<span class="at">height=</span><span class="dv">0</span>,<span class="at">width=</span><span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y=</span>mean_mass),<span class="at">color=</span><span class="st">'black'</span>,<span class="at">size=</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_pubr</span>() <span class="sc">+</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">'#1b9e77'</span>,<span class="st">'#d95f02'</span>)) <span class="sc">+</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">'mass (g)'</span>) <span class="sc">+</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">'treatment'</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>adult_prop_figure <span class="ot">&lt;-</span> locust_prop_dat <span class="sc">|&gt;</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>treatment,<span class="at">y=</span>adult_proportion)) <span class="sc">+</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_boxplot</span>(<span class="at">outlier.size=</span><span class="sc">-</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_jitter</span>(<span class="at">height=</span><span class="dv">0</span>,<span class="at">width=</span><span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>        <span class="co">#geom_point(aes(y=mean_adult),color='black',size=10) +</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_pubr</span>() <span class="sc">+</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">'adult proportion'</span>) <span class="sc">+</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">'treatment'</span>) <span class="sc">+</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">1</span>)</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>survival_prop_figure <span class="ot">&lt;-</span> locust_prop_dat <span class="sc">|&gt;</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>treatment,<span class="at">y=</span>survive_proportion)) <span class="sc">+</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_boxplot</span>(<span class="at">outlier.size=</span><span class="sc">-</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_jitter</span>(<span class="at">height=</span><span class="dv">0</span>,<span class="at">width=</span><span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>        <span class="co">#geom_point(aes(y=mean_adult),color='black',size=10) +</span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_pubr</span>() <span class="sc">+</span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">'survival proportion'</span>) <span class="sc">+</span></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">'treatment'</span>) <span class="sc">+</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [54]:</pre></div><div id="1a5f984c-64b7-43a1-900e-28cbac9dae24" class="cell" data-execution_count="54">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>field_cage_plant_locust_figure <span class="ot">&lt;-</span> (plant_nutrients_through_time_plot) <span class="sc">/</span> (locust_final_mass_plot <span class="sc">+</span> survival_prop_figure <span class="sc">+</span> adult_prop_figure) <span class="sc">+</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_annotation</span>(<span class="at">tag_levels =</span> <span class="st">'A'</span>) </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>field_cage_plant_locust_figure</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="">
+<figure class="figure">
+<p class=""><a href="03_field_cage_manuscript_figure_table_code.ipynb_files/figure-html/cell-7-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="03_field_cage_manuscript_figure_table_code.ipynb_files/figure-html/cell-7-output-1.png" width="600" height="600" class="figure-img"></a></p>
+</figure>
+</div>
+</div>
+</div></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [55]:</pre></div><div id="5421f09b-153a-40b7-a42f-0d4440d322a8" class="cell" data-execution_count="55">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(field_cage_plant_locust_figure,</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_figures/field_cage_plant_locust_figure.png'</span>),</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">width=</span><span class="dv">10</span>,<span class="at">height=</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+<div id="a518fae9-b13a-4e87-9be6-f76469215197" class="cell markdown">
+<section id="figure---field-cage-locust-nutrient-rebalancing" class="level2">
+<h2 class="anchored" data-anchor-id="figure---field-cage-locust-nutrient-rebalancing">Figure - field Cage Locust Nutrient Rebalancing</h2>
+</section>
+</div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [56]:</pre></div><div id="7f860f02-ebc8-4c55-a349-67a276e93b7e" class="cell" data-scrolled="true" data-execution_count="56">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>raw_locust_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/processed/field_cage_experiment/intake_target_through_time_predictions_raw_data.csv'</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>locust_model_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/processed/field_cage_experiment/intake_target_through_time_predictions.csv'</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(treatment,interval) </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>locust_model_data</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>raw_locust_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A grouped_df: 10 × 4</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">treatment</th>
+<th data-quarto-table-cell-role="th" scope="col">interval</th>
+<th data-quarto-table-cell-role="th" scope="col">pred_carb</th>
+<th data-quarto-table-cell-role="th" scope="col">pred_protein</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>High</td>
+<td>1</td>
+<td>0.007140269</td>
+<td>4.320264e-04</td>
+</tr>
+<tr class="even">
+<td>High</td>
+<td>2</td>
+<td>0.013823747</td>
+<td>9.615916e-04</td>
+</tr>
+<tr class="odd">
+<td>High</td>
+<td>3</td>
+<td>0.023173312</td>
+<td>3.846809e-03</td>
+</tr>
+<tr class="even">
+<td>High</td>
+<td>4</td>
+<td>0.033107225</td>
+<td>7.535505e-03</td>
+</tr>
+<tr class="odd">
+<td>High</td>
+<td>5</td>
+<td>0.042146356</td>
+<td>1.301377e-02</td>
+</tr>
+<tr class="even">
+<td>none</td>
+<td>1</td>
+<td>0.001038814</td>
+<td>-5.581555e-04</td>
+</tr>
+<tr class="odd">
+<td>none</td>
+<td>2</td>
+<td>0.007722292</td>
+<td>-2.859025e-05</td>
+</tr>
+<tr class="even">
+<td>none</td>
+<td>3</td>
+<td>0.017071858</td>
+<td>2.856627e-03</td>
+</tr>
+<tr class="odd">
+<td>none</td>
+<td>4</td>
+<td>0.027005771</td>
+<td>6.545323e-03</td>
+</tr>
+<tr class="even">
+<td>none</td>
+<td>5</td>
+<td>0.036044901</td>
+<td>1.202358e-02</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-display">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A spec_tbl_df: 115 × 13</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">field_plot</th>
+<th data-quarto-table-cell-role="th" scope="col">field_cage_num</th>
+<th data-quarto-table-cell-role="th" scope="col">sex</th>
+<th data-quarto-table-cell-role="th" scope="col">locust_initialmass_g</th>
+<th data-quarto-table-cell-role="th" scope="col">locusts_final_mass_g</th>
+<th data-quarto-table-cell-role="th" scope="col">treatment</th>
+<th data-quarto-table-cell-role="th" scope="col">id</th>
+<th data-quarto-table-cell-role="th" scope="col">interval</th>
+<th data-quarto-table-cell-role="th" scope="col">total_c</th>
+<th data-quarto-table-cell-role="th" scope="col">total_p</th>
+<th data-quarto-table-cell-role="th" scope="col">cumulative_total_c</th>
+<th data-quarto-table-cell-role="th" scope="col">cumulative_total_p</th>
+<th data-quarto-table-cell-role="th" scope="col">day_interval</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>C1</td>
+<td>5</td>
+<td>M</td>
+<td>0.167</td>
+<td>0.165</td>
+<td>none</td>
+<td>1</td>
+<td>1</td>
+<td>0.00000</td>
+<td>0.00042</td>
+<td>0.00000</td>
+<td>0.00042</td>
+<td>Day 1</td>
+</tr>
+<tr class="even">
+<td>C1</td>
+<td>5</td>
+<td>M</td>
+<td>0.167</td>
+<td>0.165</td>
+<td>none</td>
+<td>1</td>
+<td>2</td>
+<td>0.00756</td>
+<td>0.00000</td>
+<td>0.00756</td>
+<td>0.00042</td>
+<td>Day 2</td>
+</tr>
+<tr class="odd">
+<td>C1</td>
+<td>5</td>
+<td>M</td>
+<td>0.167</td>
+<td>0.165</td>
+<td>none</td>
+<td>1</td>
+<td>3</td>
+<td>0.00966</td>
+<td>0.00252</td>
+<td>0.01722</td>
+<td>0.00294</td>
+<td>Day 3-4</td>
+</tr>
+<tr class="even">
+<td>C1</td>
+<td>5</td>
+<td>M</td>
+<td>0.167</td>
+<td>0.165</td>
+<td>none</td>
+<td>1</td>
+<td>4</td>
+<td>0.00000</td>
+<td>0.00420</td>
+<td>0.01722</td>
+<td>0.00714</td>
+<td>Day 5-6</td>
+</tr>
+<tr class="odd">
+<td>C1</td>
+<td>5</td>
+<td>M</td>
+<td>0.167</td>
+<td>0.165</td>
+<td>none</td>
+<td>1</td>
+<td>5</td>
+<td>0.00000</td>
+<td>0.00084</td>
+<td>0.01722</td>
+<td>0.00798</td>
+<td>Day 7-9</td>
+</tr>
+<tr class="even">
+<td>H1</td>
+<td>2</td>
+<td>F</td>
+<td>0.211</td>
+<td>0.328</td>
+<td>High</td>
+<td>2</td>
+<td>1</td>
+<td>0.00798</td>
+<td>0.00000</td>
+<td>0.00798</td>
+<td>0.00000</td>
+<td>Day 1</td>
+</tr>
+<tr class="odd">
+<td>H1</td>
+<td>2</td>
+<td>F</td>
+<td>0.211</td>
+<td>0.328</td>
+<td>High</td>
+<td>2</td>
+<td>2</td>
+<td>0.01050</td>
+<td>0.00000</td>
+<td>0.01848</td>
+<td>0.00000</td>
+<td>Day 2</td>
+</tr>
+<tr class="even">
+<td>H1</td>
+<td>2</td>
+<td>F</td>
+<td>0.211</td>
+<td>0.328</td>
+<td>High</td>
+<td>2</td>
+<td>3</td>
+<td>0.03738</td>
+<td>0.00882</td>
+<td>0.05586</td>
+<td>0.00882</td>
+<td>Day 3-4</td>
+</tr>
+<tr class="odd">
+<td>H1</td>
+<td>2</td>
+<td>F</td>
+<td>0.211</td>
+<td>0.328</td>
+<td>High</td>
+<td>2</td>
+<td>4</td>
+<td>0.02478</td>
+<td>0.01512</td>
+<td>0.08064</td>
+<td>0.02394</td>
+<td>Day 5-6</td>
+</tr>
+<tr class="even">
+<td>H1</td>
+<td>2</td>
+<td>F</td>
+<td>0.211</td>
+<td>0.328</td>
+<td>High</td>
+<td>2</td>
+<td>5</td>
+<td>0.01512</td>
+<td>0.01596</td>
+<td>0.09576</td>
+<td>0.03990</td>
+<td>Day 7-9</td>
+</tr>
+<tr class="odd">
+<td>H1</td>
+<td>2</td>
+<td>F</td>
+<td>0.216</td>
+<td>0.313</td>
+<td>High</td>
+<td>3</td>
+<td>1</td>
+<td>0.01764</td>
+<td>0.00042</td>
+<td>0.01764</td>
+<td>0.00042</td>
+<td>Day 1</td>
+</tr>
+<tr class="even">
+<td>H1</td>
+<td>2</td>
+<td>F</td>
+<td>0.216</td>
+<td>0.313</td>
+<td>High</td>
+<td>3</td>
+<td>2</td>
+<td>0.01512</td>
+<td>0.00168</td>
+<td>0.03276</td>
+<td>0.00210</td>
+<td>Day 2</td>
+</tr>
+<tr class="odd">
+<td>H1</td>
+<td>2</td>
+<td>F</td>
+<td>0.216</td>
+<td>0.313</td>
+<td>High</td>
+<td>3</td>
+<td>3</td>
+<td>0.01974</td>
+<td>0.01218</td>
+<td>0.05250</td>
+<td>0.01428</td>
+<td>Day 3-4</td>
+</tr>
+<tr class="even">
+<td>H1</td>
+<td>2</td>
+<td>F</td>
+<td>0.216</td>
+<td>0.313</td>
+<td>High</td>
+<td>3</td>
+<td>4</td>
+<td>0.02226</td>
+<td>0.01680</td>
+<td>0.07476</td>
+<td>0.03108</td>
+<td>Day 5-6</td>
+</tr>
+<tr class="odd">
+<td>H1</td>
+<td>2</td>
+<td>F</td>
+<td>0.216</td>
+<td>0.313</td>
+<td>High</td>
+<td>3</td>
+<td>5</td>
+<td>0.00084</td>
+<td>0.00000</td>
+<td>0.07560</td>
+<td>0.03108</td>
+<td>Day 7-9</td>
+</tr>
+<tr class="even">
+<td>H1</td>
+<td>3</td>
+<td>F</td>
+<td>0.192</td>
+<td>0.252</td>
+<td>High</td>
+<td>4</td>
+<td>1</td>
+<td>0.01344</td>
+<td>0.00000</td>
+<td>0.01344</td>
+<td>0.00000</td>
+<td>Day 1</td>
+</tr>
+<tr class="odd">
+<td>H1</td>
+<td>3</td>
+<td>F</td>
+<td>0.192</td>
+<td>0.252</td>
+<td>High</td>
+<td>4</td>
+<td>2</td>
+<td>0.01008</td>
+<td>0.00168</td>
+<td>0.02352</td>
+<td>0.00168</td>
+<td>Day 2</td>
+</tr>
+<tr class="even">
+<td>H1</td>
+<td>3</td>
+<td>F</td>
+<td>0.192</td>
+<td>0.252</td>
+<td>High</td>
+<td>4</td>
+<td>3</td>
+<td>0.01176</td>
+<td>0.00336</td>
+<td>0.03528</td>
+<td>0.00504</td>
+<td>Day 3-4</td>
+</tr>
+<tr class="odd">
+<td>H1</td>
+<td>3</td>
+<td>F</td>
+<td>0.192</td>
+<td>0.252</td>
+<td>High</td>
+<td>4</td>
+<td>4</td>
+<td>0.02016</td>
+<td>0.00336</td>
+<td>0.05544</td>
+<td>0.00840</td>
+<td>Day 5-6</td>
+</tr>
+<tr class="even">
+<td>H1</td>
+<td>3</td>
+<td>F</td>
+<td>0.192</td>
+<td>0.252</td>
+<td>High</td>
+<td>4</td>
+<td>5</td>
+<td>0.01764</td>
+<td>0.00168</td>
+<td>0.07308</td>
+<td>0.01008</td>
+<td>Day 7-9</td>
+</tr>
+<tr class="odd">
+<td>C1</td>
+<td>7</td>
+<td>F</td>
+<td>0.290</td>
+<td>0.264</td>
+<td>none</td>
+<td>5</td>
+<td>1</td>
+<td>0.00924</td>
+<td>0.00042</td>
+<td>0.00924</td>
+<td>0.00042</td>
+<td>Day 1</td>
+</tr>
+<tr class="even">
+<td>C1</td>
+<td>7</td>
+<td>F</td>
+<td>0.290</td>
+<td>0.264</td>
+<td>none</td>
+<td>5</td>
+<td>2</td>
+<td>0.00294</td>
+<td>0.00126</td>
+<td>0.01218</td>
+<td>0.00168</td>
+<td>Day 2</td>
+</tr>
+<tr class="odd">
+<td>C1</td>
+<td>7</td>
+<td>F</td>
+<td>0.290</td>
+<td>0.264</td>
+<td>none</td>
+<td>5</td>
+<td>3</td>
+<td>0.00714</td>
+<td>0.00210</td>
+<td>0.01932</td>
+<td>0.00378</td>
+<td>Day 3-4</td>
+</tr>
+<tr class="even">
+<td>C1</td>
+<td>7</td>
+<td>F</td>
+<td>0.290</td>
+<td>0.264</td>
+<td>none</td>
+<td>5</td>
+<td>4</td>
+<td>0.00168</td>
+<td>0.00294</td>
+<td>0.02100</td>
+<td>0.00672</td>
+<td>Day 5-6</td>
+</tr>
+<tr class="odd">
+<td>C1</td>
+<td>7</td>
+<td>F</td>
+<td>0.290</td>
+<td>0.264</td>
+<td>none</td>
+<td>5</td>
+<td>5</td>
+<td>0.00042</td>
+<td>0.00126</td>
+<td>0.02142</td>
+<td>0.00798</td>
+<td>Day 7-9</td>
+</tr>
+<tr class="even">
+<td>C1</td>
+<td>8</td>
+<td>F</td>
+<td>0.255</td>
+<td>0.306</td>
+<td>none</td>
+<td>6</td>
+<td>1</td>
+<td>0.02268</td>
+<td>0.00084</td>
+<td>0.02268</td>
+<td>0.00084</td>
+<td>Day 1</td>
+</tr>
+<tr class="odd">
+<td>C1</td>
+<td>8</td>
+<td>F</td>
+<td>0.255</td>
+<td>0.306</td>
+<td>none</td>
+<td>6</td>
+<td>2</td>
+<td>0.01260</td>
+<td>0.00000</td>
+<td>0.03528</td>
+<td>0.00084</td>
+<td>Day 2</td>
+</tr>
+<tr class="even">
+<td>C1</td>
+<td>8</td>
+<td>F</td>
+<td>0.255</td>
+<td>0.306</td>
+<td>none</td>
+<td>6</td>
+<td>3</td>
+<td>0.00630</td>
+<td>0.00504</td>
+<td>0.04158</td>
+<td>0.00588</td>
+<td>Day 3-4</td>
+</tr>
+<tr class="odd">
+<td>C1</td>
+<td>8</td>
+<td>F</td>
+<td>0.255</td>
+<td>0.306</td>
+<td>none</td>
+<td>6</td>
+<td>4</td>
+<td>0.00126</td>
+<td>0.00294</td>
+<td>0.04284</td>
+<td>0.00882</td>
+<td>Day 5-6</td>
+</tr>
+<tr class="even">
+<td>C1</td>
+<td>8</td>
+<td>F</td>
+<td>0.255</td>
+<td>0.306</td>
+<td>none</td>
+<td>6</td>
+<td>5</td>
+<td>0.00966</td>
+<td>0.01176</td>
+<td>0.05250</td>
+<td>0.02058</td>
+<td>Day 7-9</td>
+</tr>
+<tr class="odd">
+<td>⋮</td>
+<td>⋮</td>
+<td>⋮</td>
+<td>⋮</td>
+<td>⋮</td>
+<td>⋮</td>
+<td>⋮</td>
+<td>⋮</td>
+<td>⋮</td>
+<td>⋮</td>
+<td>⋮</td>
+<td>⋮</td>
+<td>⋮</td>
+</tr>
+<tr class="even">
+<td>C3</td>
+<td>33</td>
+<td>M</td>
+<td>0.144</td>
+<td>0.170</td>
+<td>none</td>
+<td>18</td>
+<td>1</td>
+<td>0.00084</td>
+<td>0.00000</td>
+<td>0.00084</td>
+<td>0.00000</td>
+<td>Day 1</td>
+</tr>
+<tr class="odd">
+<td>C3</td>
+<td>33</td>
+<td>M</td>
+<td>0.144</td>
+<td>0.170</td>
+<td>none</td>
+<td>18</td>
+<td>2</td>
+<td>0.00504</td>
+<td>0.00000</td>
+<td>0.00588</td>
+<td>0.00000</td>
+<td>Day 2</td>
+</tr>
+<tr class="even">
+<td>C3</td>
+<td>33</td>
+<td>M</td>
+<td>0.144</td>
+<td>0.170</td>
+<td>none</td>
+<td>18</td>
+<td>3</td>
+<td>0.01134</td>
+<td>0.00210</td>
+<td>0.01722</td>
+<td>0.00210</td>
+<td>Day 3-4</td>
+</tr>
+<tr class="odd">
+<td>C3</td>
+<td>33</td>
+<td>M</td>
+<td>0.144</td>
+<td>0.170</td>
+<td>none</td>
+<td>18</td>
+<td>4</td>
+<td>0.00672</td>
+<td>0.00126</td>
+<td>0.02394</td>
+<td>0.00336</td>
+<td>Day 5-6</td>
+</tr>
+<tr class="even">
+<td>C3</td>
+<td>33</td>
+<td>M</td>
+<td>0.144</td>
+<td>0.170</td>
+<td>none</td>
+<td>18</td>
+<td>5</td>
+<td>0.00462</td>
+<td>0.00084</td>
+<td>0.02856</td>
+<td>0.00420</td>
+<td>Day 7-9</td>
+</tr>
+<tr class="odd">
+<td>H3</td>
+<td>29</td>
+<td>F</td>
+<td>0.292</td>
+<td>0.294</td>
+<td>High</td>
+<td>19</td>
+<td>1</td>
+<td>0.00000</td>
+<td>0.00000</td>
+<td>0.00000</td>
+<td>0.00000</td>
+<td>Day 1</td>
+</tr>
+<tr class="even">
+<td>H3</td>
+<td>29</td>
+<td>F</td>
+<td>0.292</td>
+<td>0.294</td>
+<td>High</td>
+<td>19</td>
+<td>2</td>
+<td>0.00756</td>
+<td>0.00000</td>
+<td>0.00756</td>
+<td>0.00000</td>
+<td>Day 2</td>
+</tr>
+<tr class="odd">
+<td>H3</td>
+<td>29</td>
+<td>F</td>
+<td>0.292</td>
+<td>0.294</td>
+<td>High</td>
+<td>19</td>
+<td>3</td>
+<td>0.00756</td>
+<td>0.00252</td>
+<td>0.01512</td>
+<td>0.00252</td>
+<td>Day 3-4</td>
+</tr>
+<tr class="even">
+<td>H3</td>
+<td>29</td>
+<td>F</td>
+<td>0.292</td>
+<td>0.294</td>
+<td>High</td>
+<td>19</td>
+<td>4</td>
+<td>0.00000</td>
+<td>0.00126</td>
+<td>0.01512</td>
+<td>0.00378</td>
+<td>Day 5-6</td>
+</tr>
+<tr class="odd">
+<td>H3</td>
+<td>29</td>
+<td>F</td>
+<td>0.292</td>
+<td>0.294</td>
+<td>High</td>
+<td>19</td>
+<td>5</td>
+<td>0.00798</td>
+<td>0.00126</td>
+<td>0.02310</td>
+<td>0.00504</td>
+<td>Day 7-9</td>
+</tr>
+<tr class="even">
+<td>H3</td>
+<td>29</td>
+<td>M</td>
+<td>0.174</td>
+<td>0.178</td>
+<td>High</td>
+<td>20</td>
+<td>1</td>
+<td>0.00000</td>
+<td>0.00042</td>
+<td>0.00000</td>
+<td>0.00042</td>
+<td>Day 1</td>
+</tr>
+<tr class="odd">
+<td>H3</td>
+<td>29</td>
+<td>M</td>
+<td>0.174</td>
+<td>0.178</td>
+<td>High</td>
+<td>20</td>
+<td>2</td>
+<td>0.00000</td>
+<td>0.00000</td>
+<td>0.00000</td>
+<td>0.00042</td>
+<td>Day 2</td>
+</tr>
+<tr class="even">
+<td>H3</td>
+<td>29</td>
+<td>M</td>
+<td>0.174</td>
+<td>0.178</td>
+<td>High</td>
+<td>20</td>
+<td>3</td>
+<td>0.00756</td>
+<td>0.00210</td>
+<td>0.00756</td>
+<td>0.00252</td>
+<td>Day 3-4</td>
+</tr>
+<tr class="odd">
+<td>H3</td>
+<td>29</td>
+<td>M</td>
+<td>0.174</td>
+<td>0.178</td>
+<td>High</td>
+<td>20</td>
+<td>4</td>
+<td>0.01806</td>
+<td>0.00084</td>
+<td>0.02562</td>
+<td>0.00336</td>
+<td>Day 5-6</td>
+</tr>
+<tr class="even">
+<td>H3</td>
+<td>29</td>
+<td>M</td>
+<td>0.174</td>
+<td>0.178</td>
+<td>High</td>
+<td>20</td>
+<td>5</td>
+<td>0.01722</td>
+<td>0.00546</td>
+<td>0.04284</td>
+<td>0.00882</td>
+<td>Day 7-9</td>
+</tr>
+<tr class="odd">
+<td>C3</td>
+<td>34</td>
+<td>M</td>
+<td>0.121</td>
+<td>0.138</td>
+<td>none</td>
+<td>21</td>
+<td>1</td>
+<td>0.00252</td>
+<td>0.00000</td>
+<td>0.00252</td>
+<td>0.00000</td>
+<td>Day 1</td>
+</tr>
+<tr class="even">
+<td>C3</td>
+<td>34</td>
+<td>M</td>
+<td>0.121</td>
+<td>0.138</td>
+<td>none</td>
+<td>21</td>
+<td>2</td>
+<td>0.00420</td>
+<td>0.00000</td>
+<td>0.00672</td>
+<td>0.00000</td>
+<td>Day 2</td>
+</tr>
+<tr class="odd">
+<td>C3</td>
+<td>34</td>
+<td>M</td>
+<td>0.121</td>
+<td>0.138</td>
+<td>none</td>
+<td>21</td>
+<td>3</td>
+<td>0.00714</td>
+<td>0.00168</td>
+<td>0.01386</td>
+<td>0.00168</td>
+<td>Day 3-4</td>
+</tr>
+<tr class="even">
+<td>C3</td>
+<td>34</td>
+<td>M</td>
+<td>0.121</td>
+<td>0.138</td>
+<td>none</td>
+<td>21</td>
+<td>4</td>
+<td>0.00672</td>
+<td>0.00126</td>
+<td>0.02058</td>
+<td>0.00294</td>
+<td>Day 5-6</td>
+</tr>
+<tr class="odd">
+<td>C3</td>
+<td>34</td>
+<td>M</td>
+<td>0.121</td>
+<td>0.138</td>
+<td>none</td>
+<td>21</td>
+<td>5</td>
+<td>0.00336</td>
+<td>0.00420</td>
+<td>0.02394</td>
+<td>0.00714</td>
+<td>Day 7-9</td>
+</tr>
+<tr class="even">
+<td>H3</td>
+<td>31</td>
+<td>F</td>
+<td>0.215</td>
+<td>0.336</td>
+<td>High</td>
+<td>22</td>
+<td>1</td>
+<td>0.00294</td>
+<td>0.00042</td>
+<td>0.00294</td>
+<td>0.00042</td>
+<td>Day 1</td>
+</tr>
+<tr class="odd">
+<td>H3</td>
+<td>31</td>
+<td>F</td>
+<td>0.215</td>
+<td>0.336</td>
+<td>High</td>
+<td>22</td>
+<td>2</td>
+<td>0.00588</td>
+<td>0.00000</td>
+<td>0.00882</td>
+<td>0.00042</td>
+<td>Day 2</td>
+</tr>
+<tr class="even">
+<td>H3</td>
+<td>31</td>
+<td>F</td>
+<td>0.215</td>
+<td>0.336</td>
+<td>High</td>
+<td>22</td>
+<td>3</td>
+<td>0.00714</td>
+<td>0.00210</td>
+<td>0.01596</td>
+<td>0.00252</td>
+<td>Day 3-4</td>
+</tr>
+<tr class="odd">
+<td>H3</td>
+<td>31</td>
+<td>F</td>
+<td>0.215</td>
+<td>0.336</td>
+<td>High</td>
+<td>22</td>
+<td>4</td>
+<td>0.01302</td>
+<td>0.01050</td>
+<td>0.02898</td>
+<td>0.01302</td>
+<td>Day 5-6</td>
+</tr>
+<tr class="even">
+<td>H3</td>
+<td>31</td>
+<td>F</td>
+<td>0.215</td>
+<td>0.336</td>
+<td>High</td>
+<td>22</td>
+<td>5</td>
+<td>0.02142</td>
+<td>0.01680</td>
+<td>0.05040</td>
+<td>0.02982</td>
+<td>Day 7-9</td>
+</tr>
+<tr class="odd">
+<td>H3</td>
+<td>32</td>
+<td>M</td>
+<td>0.134</td>
+<td>0.135</td>
+<td>High</td>
+<td>23</td>
+<td>1</td>
+<td>0.00126</td>
+<td>0.00000</td>
+<td>0.00126</td>
+<td>0.00000</td>
+<td>Day 1</td>
+</tr>
+<tr class="even">
+<td>H3</td>
+<td>32</td>
+<td>M</td>
+<td>0.134</td>
+<td>0.135</td>
+<td>High</td>
+<td>23</td>
+<td>2</td>
+<td>0.00462</td>
+<td>0.00000</td>
+<td>0.00588</td>
+<td>0.00000</td>
+<td>Day 2</td>
+</tr>
+<tr class="odd">
+<td>H3</td>
+<td>32</td>
+<td>M</td>
+<td>0.134</td>
+<td>0.135</td>
+<td>High</td>
+<td>23</td>
+<td>3</td>
+<td>0.00630</td>
+<td>0.00168</td>
+<td>0.01218</td>
+<td>0.00168</td>
+<td>Day 3-4</td>
+</tr>
+<tr class="even">
+<td>H3</td>
+<td>32</td>
+<td>M</td>
+<td>0.134</td>
+<td>0.135</td>
+<td>High</td>
+<td>23</td>
+<td>4</td>
+<td>0.00462</td>
+<td>0.00252</td>
+<td>0.01680</td>
+<td>0.00420</td>
+<td>Day 5-6</td>
+</tr>
+<tr class="odd">
+<td>H3</td>
+<td>32</td>
+<td>M</td>
+<td>0.134</td>
+<td>0.135</td>
+<td>High</td>
+<td>23</td>
+<td>5</td>
+<td>0.00924</td>
+<td>0.00336</td>
+<td>0.02604</td>
+<td>0.00756</td>
+<td>Day 7-9</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [59]:</pre></div><div id="512d6588-c7d7-41e5-ba45-6261a66b3784" class="cell" data-scrolled="true" data-execution_count="59">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>field_cage_locust_intake_rebalance_plot <span class="ot">&lt;-</span> raw_locust_data <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>cumulative_total_p,<span class="at">y=</span>cumulative_total_c,<span class="at">group=</span>id,<span class="at">color=</span>treatment)) <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_line</span>(<span class="at">alpha=</span><span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>(<span class="at">data =</span> locust_model_data,</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">aes</span>(<span class="at">y =</span> pred_carb, <span class="at">x =</span> pred_protein,</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>                       <span class="at">group=</span>treatment, <span class="at">color=</span>treatment), <span class="at">size=</span><span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_line</span>(<span class="at">data =</span> locust_model_data,</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">aes</span>(<span class="at">y =</span> pred_carb, <span class="at">x =</span> pred_protein,</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>                       <span class="at">group=</span>treatment, <span class="at">color=</span>treatment),<span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">coord_equal</span>(<span class="at">ratio=</span><span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="fl">0.1</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="fl">0.1</span>) <span class="sc">+</span> </span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_pubr</span>() <span class="sc">+</span> </span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">"total carbohydrate consumed (g)"</span>) <span class="sc">+</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">"total protein consumed  (g)"</span>) <span class="sc">+</span> </span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_abline</span>(<span class="at">slope =</span> <span class="dv">1</span>,<span class="at">linetype=</span><span class="dv">1</span>,<span class="at">intercept=</span><span class="dv">0</span>) <span class="sc">+</span> </span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_abline</span>(<span class="at">slope =</span> <span class="dv">2</span>,<span class="at">linetype=</span><span class="dv">2</span>,<span class="at">intercept=</span><span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>        <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">'#74c476'</span>,<span class="st">'#00441b'</span>))</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>field_cage_locust_intake_rebalance_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning message:
+“Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).”
+Warning message:
+“Removed 2 rows containing missing values or values outside the scale range
+(`geom_line()`).”</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div class="">
+<figure class="figure">
+<p class=""><a href="03_field_cage_manuscript_figure_table_code.ipynb_files/figure-html/cell-10-output-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="03_field_cage_manuscript_figure_table_code.ipynb_files/figure-html/cell-10-output-2.png" width="600" height="600" class="figure-img"></a></p>
+</figure>
+</div>
+</div>
+</div></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [60]:</pre></div><div id="78517042-ba67-485a-b2bd-36083797e53d" class="cell" data-execution_count="60">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(field_cage_locust_intake_rebalance_plot,</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_figures/field_cage_locust_intake_target_rebalancing.png'</span>),</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">width=</span><span class="dv">5</span>,<span class="at">height=</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning message:
+“Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).”
+Warning message:
+“Removed 2 rows containing missing values or values outside the scale range
+(`geom_line()`).”</code></pre>
+</div>
+</div></div>
+<div id="30c8676d-bde3-48ad-b983-3478c50f5e5a" class="cell markdown">
+<section id="table---plant-nutrients-through-time" class="level2">
+<h2 class="anchored" data-anchor-id="table---plant-nutrients-through-time">Table - Plant Nutrients through time</h2>
+</section>
+</div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [45]:</pre></div><div id="475cdb4b-363c-4b6c-a59b-350e809ea615" class="cell" data-execution_count="45">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>mods <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">"output/field_cage_experiment/model_objects/plant_nutrient_through_time_models.rds"</span>))</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>final_mod <span class="ot">&lt;-</span> mods<span class="sc">$</span>mod1</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>parametric_terms <span class="ot">&lt;-</span> <span class="fu">tidy</span>(final_mod,<span class="at">parametric=</span><span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(term,estimate,std.error,p.value) <span class="sc">|&gt;</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="at">variable =</span> term,</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">SE =</span> std.error,</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">p-value</span><span class="st">`</span> <span class="ot">=</span> p.value) <span class="sc">|&gt;</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">variable =</span> <span class="fu">gsub</span>(<span class="st">'</span><span class="sc">\\</span><span class="st">(|</span><span class="sc">\\</span><span class="st">)|treatment|date|diet'</span>,<span class="st">''</span>,variable),</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>          <span class="at">macronutrient =</span> <span class="fu">case_when</span>(<span class="fu">str_detect</span>(variable,<span class="st">'</span><span class="sc">\\</span><span class="st">.1'</span>) <span class="sc">~</span> <span class="st">'protein'</span>, <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">'carbohydrate'</span>),</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>          <span class="at">variable =</span> <span class="fu">gsub</span>(<span class="st">'</span><span class="sc">\\</span><span class="st">.1'</span>,<span class="st">''</span>,variable))</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>nonparametric_terms <span class="ot">&lt;-</span> <span class="fu">tidy</span>(final_mod,<span class="at">parametric=</span><span class="cn">FALSE</span>)</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>nonparametric_terms  <span class="ot">&lt;-</span> <span class="fu">tidy</span>(final_mod,<span class="at">parametric=</span><span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(term,edf,statistic,p.value) <span class="sc">|&gt;</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="at">variable =</span> term,</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>           <span class="at">EDF =</span> edf,</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">p-value</span><span class="st">`</span> <span class="ot">=</span> p.value) <span class="sc">|&gt;</span></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">macronutrient =</span> <span class="fu">case_when</span>(<span class="fu">str_detect</span>(variable,<span class="st">'s</span><span class="sc">\\</span><span class="st">.1'</span>) <span class="sc">~</span> <span class="st">'protein'</span>, <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">'carbohydrate'</span>),</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>          <span class="at">variable =</span> <span class="fu">gsub</span>(<span class="st">'</span><span class="sc">\\</span><span class="st">.1'</span>,<span class="st">''</span>,variable))</span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>field_cage_plant_nutrients_model_results <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(parametric_terms,nonparametric_terms)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [46]:</pre></div><div id="f7b5bdc0-9547-4ee9-80e9-6cdd37fc2953" class="cell" data-execution_count="46">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>field_cage_plant_nutrients_model_results <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A tibble: 2 × 7</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">variable</th>
+<th data-quarto-table-cell-role="th" scope="col">estimate</th>
+<th data-quarto-table-cell-role="th" scope="col">SE</th>
+<th data-quarto-table-cell-role="th" scope="col">p-value</th>
+<th data-quarto-table-cell-role="th" scope="col">macronutrient</th>
+<th data-quarto-table-cell-role="th" scope="col">EDF</th>
+<th data-quarto-table-cell-role="th" scope="col">statistic</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Intercept</td>
+<td>0.12699385</td>
+<td>0.007284922</td>
+<td>4.681898e-68</td>
+<td>carbohydrate</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+<tr class="even">
+<td>Medium</td>
+<td>-0.02028183</td>
+<td>0.007170558</td>
+<td>4.676868e-03</td>
+<td>carbohydrate</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [47]:</pre></div><div id="f82e0c72-33b8-4d36-b34f-63869ea0eeb3" class="cell" data-execution_count="47">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(field_cage_plant_nutrients_model_results,</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_tables/field_cage_plant_nutrients_model_summary.csv'</span>),</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+<div id="8529c918-fd15-4a4c-82c6-11c06fabc6d4" class="cell markdown">
+<section id="table---field-cage-final-locust-mass" class="level2">
+<h2 class="anchored" data-anchor-id="table---field-cage-final-locust-mass">Table - field cage final locust mass</h2>
+</section>
+</div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [48]:</pre></div><div id="b8f93154-25b9-4883-8605-eca8a550b69c" class="cell" data-execution_count="48">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>locust_mass_model <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">"output/field_cage_experiment/model_objects/final_locust_weight_by_field_cage_treatment_models.rds"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [49]:</pre></div><div id="bd0083ee-d997-4353-9bc6-d3b5e551f033" class="cell" data-execution_count="49">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>parametric_terms <span class="ot">&lt;-</span> <span class="fu">tidy</span>(locust_mass_model,<span class="at">parametric=</span><span class="cn">TRUE</span>)  <span class="sc">|&gt;</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(term,estimate,std.error,p.value) <span class="sc">|&gt;</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="at">variable =</span> term,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">SE =</span> std.error,</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">p-value</span><span class="st">`</span> <span class="ot">=</span> p.value) <span class="sc">|&gt;</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">variable =</span> <span class="fu">gsub</span>(<span class="st">'</span><span class="sc">\\</span><span class="st">(|</span><span class="sc">\\</span><span class="st">)'</span>,<span class="st">''</span>,variable),</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">variable =</span> <span class="fu">gsub</span>(<span class="st">'treatment|sex'</span>,<span class="st">''</span>,variable),</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">variable =</span> <span class="fu">case_when</span>(variable <span class="sc">==</span> <span class="st">'M'</span> <span class="sc">~</span> <span class="st">'male'</span>,<span class="cn">TRUE</span> <span class="sc">~</span> variable)) <span class="sc">|&gt;</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(variable,estimate,SE,<span class="st">`</span><span class="at">p-value</span><span class="st">`</span>)</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>nonparametric_terms  <span class="ot">&lt;-</span> <span class="fu">tidy</span>(locust_mass_model,<span class="at">parametric=</span><span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(term,edf,statistic,p.value) <span class="sc">|&gt;</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="at">variable =</span> term,</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>           <span class="at">EDF =</span> edf,</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">p-value</span><span class="st">`</span> <span class="ot">=</span> p.value)</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>locust_mass_model_summary <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(parametric_terms,nonparametric_terms)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [50]:</pre></div><div id="7e0e8699-d8bd-4ba0-b4dd-2bdd280680eb" class="cell" data-execution_count="50">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>locust_mass_model_summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A tibble: 6 × 6</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">variable</th>
+<th data-quarto-table-cell-role="th" scope="col">estimate</th>
+<th data-quarto-table-cell-role="th" scope="col">SE</th>
+<th data-quarto-table-cell-role="th" scope="col">p-value</th>
+<th data-quarto-table-cell-role="th" scope="col">EDF</th>
+<th data-quarto-table-cell-role="th" scope="col">statistic</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Intercept</td>
+<td>0.32618758</td>
+<td>0.007209637</td>
+<td>0.000000e+00</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+<tr class="even">
+<td>male</td>
+<td>-0.14769427</td>
+<td>0.005506869</td>
+<td>1.888448e-158</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+<tr class="odd">
+<td>medium</td>
+<td>0.01493507</td>
+<td>0.009518326</td>
+<td>1.166280e-01</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+<tr class="even">
+<td>high</td>
+<td>-0.01105525</td>
+<td>0.010095181</td>
+<td>2.734721e-01</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+<tr class="odd">
+<td>s(carb_mg_mg,protein_mg_mg)</td>
+<td>NA</td>
+<td>NA</td>
+<td>4.164041e-01</td>
+<td>0.001665257</td>
+<td>0.001606924</td>
+</tr>
+<tr class="even">
+<td>s(cage_num)</td>
+<td>NA</td>
+<td>NA</td>
+<td>1.783095e-05</td>
+<td>17.399298527</td>
+<td>42.160313817</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [51]:</pre></div><div id="4424b293-2929-4e4b-b7bb-4c88cd149026" class="cell" data-execution_count="51">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(locust_mass_model_summary,</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_tables/field_cage_final_locust_mass_model_summary.csv'</span>),</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+<div id="bfaecbc2-6804-4d87-8488-9c3a9a4df588" class="cell markdown">
+<section id="table---locust-nutrient-rebalancing-model-summary" class="level2">
+<h2 class="anchored" data-anchor-id="table---locust-nutrient-rebalancing-model-summary">Table - locust nutrient rebalancing model summary</h2>
+</section>
+</div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [52]:</pre></div><div id="7ec53419-61e3-478c-932d-d9d2f128cff3" class="cell" data-execution_count="52">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>mods <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">"output/field_cage_experiment/model_objects/intake_target_through_time_models.rds"</span>))</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>locust_rebalance_model <span class="ot">&lt;-</span> mods<span class="sc">$</span>mod1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [53]:</pre></div><div id="4d2acb0b-9a91-40f4-aed4-39ef7bd19385" class="cell" data-execution_count="53">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(locust_rebalance_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>
+Family: Multivariate normal 
+Link function: 
+
+Formula:
+cumulative_total_c ~ sex + interval + treatment + s(id, bs = "re")
+cumulative_total_p ~ sex + interval + treatment + s(id, bs = "re")
+
+Parametric coefficients:
+                  Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)      0.0125868  0.0036504   3.448 0.000565 ***
+sexM            -0.0108931  0.0041592  -2.619 0.008818 ** 
+interval2        0.0066835  0.0025232   2.649 0.008077 ** 
+interval3        0.0160330  0.0025232   6.354 2.09e-10 ***
+interval4        0.0259670  0.0025232  10.291  &lt; 2e-16 ***
+interval5        0.0350061  0.0025232  13.874  &lt; 2e-16 ***
+treatmentnone   -0.0061015  0.0040947  -1.490 0.136202    
+(Intercept).1    0.0022792  0.0014613   1.560 0.118829    
+sexM.1          -0.0036943  0.0014086  -2.623 0.008726 ** 
+interval2.1      0.0005296  0.0014992   0.353 0.723909    
+interval3.1      0.0034148  0.0014992   2.278 0.022739 *  
+interval4.1      0.0071035  0.0014992   4.738 2.16e-06 ***
+interval5.1      0.0125817  0.0014992   8.392  &lt; 2e-16 ***
+treatmentnone.1 -0.0009902  0.0013868  -0.714 0.475224    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Approximate significance of smooth terms:
+          edf Ref.df Chi.sq p-value    
+s(id)   17.59     20  484.7  &lt;2e-16 ***
+s.1(id) 10.61     20  110.7   0.381    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Deviance explained = 73.4%
+-REML = -954.88  Scale est. = 1         n = 115</code></pre>
+</div>
+</div></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [54]:</pre></div><div id="1a2e7c2e-1085-4372-866d-98d8d955cb6b" class="cell" data-execution_count="54">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>parametric <span class="ot">&lt;-</span> <span class="fu">tidy</span>(locust_rebalance_model,<span class="at">parametric=</span><span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(term,estimate,std.error,p.value) <span class="sc">|&gt;</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="at">variable =</span> term,</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">SE =</span> std.error,</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">p-value</span><span class="st">`</span> <span class="ot">=</span> p.value) <span class="sc">|&gt;</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">variable =</span> <span class="fu">gsub</span>(<span class="st">'</span><span class="sc">\\</span><span class="st">(|</span><span class="sc">\\</span><span class="st">)'</span>,<span class="st">''</span>,variable),</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">macronutrient =</span> <span class="fu">case_when</span>(<span class="fu">str_detect</span>(variable,<span class="st">'.1'</span>) <span class="sc">~</span> <span class="st">'protein'</span>, <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">'carbohydrate'</span>),</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">variable =</span> <span class="fu">gsub</span>(<span class="st">'.1|treatment|sex|interval|treatment'</span>,<span class="st">''</span>,variable),</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">variable =</span> <span class="fu">case_when</span>(variable <span class="sc">==</span> <span class="st">'2'</span> <span class="sc">~</span> <span class="st">'day 2'</span>,</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>                                variable <span class="sc">==</span> <span class="st">'3'</span> <span class="sc">~</span> <span class="st">'day 3-4'</span>,</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>                                variable <span class="sc">==</span> <span class="st">'4'</span> <span class="sc">~</span> <span class="st">'day 5-6'</span>,</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>                                variable <span class="sc">==</span> <span class="st">'5'</span> <span class="sc">~</span> <span class="st">'day 7-9'</span>,</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>                                variable <span class="sc">==</span> <span class="st">'M'</span> <span class="sc">~</span> <span class="st">'male'</span>,<span class="cn">TRUE</span> <span class="sc">~</span> variable)) <span class="sc">|&gt;</span></span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(macronutrient,variable,estimate,SE,<span class="st">`</span><span class="at">p-value</span><span class="st">`</span>)</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>nonparametric <span class="ot">&lt;-</span> <span class="fu">tidy</span>(locust_rebalance_model,<span class="at">parametric=</span><span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="at">variable =</span> term,</span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>           <span class="at">EDF =</span> edf,</span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">p-value</span><span class="st">`</span> <span class="ot">=</span> p.value) <span class="sc">|&gt;</span></span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">macronutrient =</span> <span class="fu">case_when</span>(<span class="fu">str_detect</span>(variable,<span class="st">'.1'</span>) <span class="sc">~</span> <span class="st">'protein'</span>, <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">'carbohydrate'</span>),</span>
+<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a>          <span class="at">variable =</span> <span class="fu">gsub</span>(<span class="st">'</span><span class="sc">\\</span><span class="st">.|1'</span>,<span class="st">''</span>,variable)) <span class="sc">|&gt;</span></span>
+<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(macronutrient,variable,statistic,<span class="st">`</span><span class="at">p-value</span><span class="st">`</span>)</span>
+<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-27"><a href="#cb24-27" aria-hidden="true" tabindex="-1"></a>locust_mass_model_summary <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(parametric,nonparametric)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [55]:</pre></div><div id="766d1c7b-0520-476d-9c70-1483e077b92c" class="cell" data-scrolled="true" data-execution_count="55">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(locust_mass_model_summary,</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_tables/field_cage_locust_nutrient_rebalancing_model_summary.csv'</span>),</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+<div id="150493d5-18ed-424b-9984-1b831ce6f999" class="cell markdown">
+<section id="section-2-supplementary-figures-and-tables" class="level1">
+<h1>Section 2 – supplementary figures and tables</h1>
+<section id="figure---individual-time-step-instake-targets-for-field-cage-locusts" class="level2">
+<h2 class="anchored" data-anchor-id="figure---individual-time-step-instake-targets-for-field-cage-locusts">Figure - individual time step instake targets for field cage locusts</h2>
+</section>
+</section>
+</div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [39]:</pre></div><div id="b1937f9c-1064-40c9-8e20-6310a0be2fb1" class="cell" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>raw_locust_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/processed/field_cage_experiment/intake_target_through_time_predictions_raw_data.csv'</span>),</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>locust_model_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/processed/field_cage_experiment/intake_target_through_time_predictions.csv'</span>),</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>raw_locust_data <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">1</span>)</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>locust_model_data <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A tibble: 1 × 13</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">field_plot</th>
+<th data-quarto-table-cell-role="th" scope="col">field_cage_num</th>
+<th data-quarto-table-cell-role="th" scope="col">sex</th>
+<th data-quarto-table-cell-role="th" scope="col">locust_initialmass_g</th>
+<th data-quarto-table-cell-role="th" scope="col">locusts_final_mass_g</th>
+<th data-quarto-table-cell-role="th" scope="col">treatment</th>
+<th data-quarto-table-cell-role="th" scope="col">id</th>
+<th data-quarto-table-cell-role="th" scope="col">interval</th>
+<th data-quarto-table-cell-role="th" scope="col">total_c</th>
+<th data-quarto-table-cell-role="th" scope="col">total_p</th>
+<th data-quarto-table-cell-role="th" scope="col">cumulative_total_c</th>
+<th data-quarto-table-cell-role="th" scope="col">cumulative_total_p</th>
+<th data-quarto-table-cell-role="th" scope="col">day_interval</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>C1</td>
+<td>5</td>
+<td>M</td>
+<td>0.167</td>
+<td>0.165</td>
+<td>none</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0.00042</td>
+<td>0</td>
+<td>0.00042</td>
+<td>Day 1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-display">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A tibble: 1 × 4</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">treatment</th>
+<th data-quarto-table-cell-role="th" scope="col">interval</th>
+<th data-quarto-table-cell-role="th" scope="col">pred_carb</th>
+<th data-quarto-table-cell-role="th" scope="col">pred_protein</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>High</td>
+<td>1</td>
+<td>0.007140269</td>
+<td>0.0004320264</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [40]:</pre></div><div id="7c8559be-9a77-405b-9d3e-5d9da800d5ff" class="cell" data-execution_count="40">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>field_cage_locust_intake_rebalance_day_facet_plot <span class="ot">&lt;-</span> raw_locust_data <span class="sc">|&gt;</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(day_interval) <span class="sc">|&gt;</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">mean_carb =</span> <span class="fu">mean</span>(total_c),<span class="at">mean_protein =</span> <span class="fu">mean</span>(total_p)) <span class="sc">|&gt;</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>total_p,<span class="at">y=</span>total_c)) <span class="sc">+</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">'black'</span>) <span class="sc">+</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>mean_protein,<span class="at">y=</span>mean_carb),<span class="at">size=</span><span class="dv">5</span>,<span class="at">color=</span><span class="st">'blue'</span>) <span class="sc">+</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">coord_equal</span>(<span class="at">ratio=</span><span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">"Protein consumed (g)"</span>) <span class="sc">+</span> </span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">"Carbohydrates consumed (g)"</span>) <span class="sc">+</span> </span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_pubr</span>() <span class="sc">+</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_abline</span>(<span class="at">slope =</span> <span class="dv">1</span>,<span class="at">linetype=</span><span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_abline</span>(<span class="at">slope =</span> <span class="dv">2</span>,<span class="at">linetype=</span><span class="dv">2</span>) <span class="sc">+</span> </span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>        <span class="fu">facet_wrap</span>(<span class="sc">~</span>day_interval) <span class="sc">+</span> </span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="fl">0.04</span>) <span class="sc">+</span></span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="fl">0.04</span>)</span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>field_cage_locust_intake_rebalance_day_facet_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="">
+<figure class="figure">
+<p class=""><a href="03_field_cage_manuscript_figure_table_code.ipynb_files/figure-html/cell-24-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="03_field_cage_manuscript_figure_table_code.ipynb_files/figure-html/cell-24-output-1.png" width="600" height="600" class="figure-img"></a></p>
+</figure>
+</div>
+</div>
+</div></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [42]:</pre></div><div id="1e9a5dee-8c9c-4815-bf02-546d96628314" class="cell" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(field_cage_locust_intake_rebalance_day_facet_plot,</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_figures/field_cage_locust_intake_rebalance_day_facet_plot.png'</span>),</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">width=</span><span class="dv">15</span>,<span class="at">height=</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+<div id="3f03a21c-509e-4d17-903c-4136aa7ce4df" class="cell markdown">
+<section id="figure---field-cage-soil-n-content-by-treatment-and-plant-carbohydrate-and-protein" class="level2">
+<h2 class="anchored" data-anchor-id="figure---field-cage-soil-n-content-by-treatment-and-plant-carbohydrate-and-protein">Figure - field cage soil N content by treatment and plant carbohydrate and protein</h2>
+<p>We need to regress soil and plant nutrients together</p>
+<ul>
+<li>panel a: initial no3 to treatment</li>
+<li>panel b: initial no4 to treatment</li>
+<li>panel c: plant protein to no3</li>
+<li>panel d: plant protein to no4</li>
+<li>panel e: plant carbohydrate to no3</li>
+<li>panel f: plant carbohydrate to no4</li>
+</ul>
+</section>
+</div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [7]:</pre></div><div id="d265cdc4-3938-4136-864f-19b10ab58e42" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>soil_plant <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/processed/field_cage_experiment/plant_soil_nutrient_data.csv'</span>))</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>soil_dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/processed/field_cage_experiment/soil_nutrient_data'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 168 Columns: 7
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): plot, treatment
+dbl  (4): protein_mg_mg, carb_mg_mg, mean_no3, mean_no4
+date (1): date
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 36 Columns: 3
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): treatment
+dbl (2): initial_no3, initial_no4
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [33]:</pre></div><div id="c08a930c-2b49-402a-b9bd-7e3d2a52c3e7" class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>panel_a <span class="ot">&lt;-</span> soil_dat <span class="sc">|&gt;</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">treatment =</span> <span class="fu">factor</span>(treatment,<span class="at">levels=</span><span class="fu">c</span>(<span class="st">'None'</span>,<span class="st">'Medium'</span>,<span class="st">'High'</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>treatment,<span class="at">y=</span>initial_no4)) <span class="sc">+</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_jitter</span>(<span class="at">width=</span><span class="fl">0.25</span>) <span class="sc">+</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">''</span>) <span class="sc">+</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">'Initial Soil NO4'</span>) <span class="sc">+</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_pubr</span>()</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>panel_b <span class="ot">&lt;-</span> soil_dat <span class="sc">|&gt;</span></span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">treatment =</span> <span class="fu">factor</span>(treatment,<span class="at">levels=</span><span class="fu">c</span>(<span class="st">'None'</span>,<span class="st">'Medium'</span>,<span class="st">'High'</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>treatment,<span class="at">y=</span>initial_no3)) <span class="sc">+</span></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_jitter</span>(<span class="at">width=</span><span class="fl">0.25</span>) <span class="sc">+</span></span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">''</span>) <span class="sc">+</span></span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">'Initial Soil NO3'</span>) <span class="sc">+</span></span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_pubr</span>()</span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a>panel_c <span class="ot">&lt;-</span> soil_plant <span class="sc">|&gt;</span></span>
+<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>mean_no3,<span class="at">y=</span>protein_mg_mg)) <span class="sc">+</span></span>
+<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">'lm'</span>,<span class="at">se=</span><span class="cn">FALSE</span>,<span class="at">color=</span><span class="st">'red'</span>,<span class="at">size=</span><span class="fl">1.3</span>)  <span class="sc">+</span></span>
+<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">'Initial Soil NO3'</span>) <span class="sc">+</span></span>
+<span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">'Protein mg/mg'</span>) <span class="sc">+</span></span>
+<span id="cb31-25"><a href="#cb31-25" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_pubr</span>()</span>
+<span id="cb31-26"><a href="#cb31-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-27"><a href="#cb31-27" aria-hidden="true" tabindex="-1"></a>panel_d <span class="ot">&lt;-</span> soil_plant <span class="sc">|&gt;</span></span>
+<span id="cb31-28"><a href="#cb31-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>mean_no4,<span class="at">y=</span>protein_mg_mg)) <span class="sc">+</span></span>
+<span id="cb31-29"><a href="#cb31-29" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb31-30"><a href="#cb31-30" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">'lm'</span>,<span class="at">se=</span><span class="cn">FALSE</span>,<span class="at">color=</span><span class="st">'red'</span>,<span class="at">size=</span><span class="fl">1.3</span>)  <span class="sc">+</span></span>
+<span id="cb31-31"><a href="#cb31-31" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">'Initial Soil NO4'</span>) <span class="sc">+</span></span>
+<span id="cb31-32"><a href="#cb31-32" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">'Protein mg/mg'</span>) <span class="sc">+</span></span>
+<span id="cb31-33"><a href="#cb31-33" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_pubr</span>()</span>
+<span id="cb31-34"><a href="#cb31-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-35"><a href="#cb31-35" aria-hidden="true" tabindex="-1"></a>panel_e <span class="ot">&lt;-</span> soil_plant <span class="sc">|&gt;</span></span>
+<span id="cb31-36"><a href="#cb31-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>mean_no3,<span class="at">y=</span>carb_mg_mg)) <span class="sc">+</span></span>
+<span id="cb31-37"><a href="#cb31-37" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb31-38"><a href="#cb31-38" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">'lm'</span>,<span class="at">se=</span><span class="cn">FALSE</span>,<span class="at">color=</span><span class="st">'red'</span>,<span class="at">size=</span><span class="fl">1.3</span>)  <span class="sc">+</span></span>
+<span id="cb31-39"><a href="#cb31-39" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">'Initial Soil NO3'</span>) <span class="sc">+</span></span>
+<span id="cb31-40"><a href="#cb31-40" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">'Carbohydrate mg/mg'</span>) <span class="sc">+</span></span>
+<span id="cb31-41"><a href="#cb31-41" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_pubr</span>()</span>
+<span id="cb31-42"><a href="#cb31-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-43"><a href="#cb31-43" aria-hidden="true" tabindex="-1"></a>panel_f <span class="ot">&lt;-</span> soil_plant <span class="sc">|&gt;</span></span>
+<span id="cb31-44"><a href="#cb31-44" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>mean_no4,<span class="at">y=</span>protein_mg_mg)) <span class="sc">+</span></span>
+<span id="cb31-45"><a href="#cb31-45" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb31-46"><a href="#cb31-46" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">'lm'</span>,<span class="at">se=</span><span class="cn">FALSE</span>,<span class="at">color=</span><span class="st">'red'</span>,<span class="at">size=</span><span class="fl">1.3</span>)  <span class="sc">+</span></span>
+<span id="cb31-47"><a href="#cb31-47" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">'Initial Soil NO4'</span>) <span class="sc">+</span></span>
+<span id="cb31-48"><a href="#cb31-48" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">'Protein mg/mg'</span>) <span class="sc">+</span></span>
+<span id="cb31-49"><a href="#cb31-49" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_pubr</span>()</span>
+<span id="cb31-50"><a href="#cb31-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-51"><a href="#cb31-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-52"><a href="#cb31-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-53"><a href="#cb31-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-54"><a href="#cb31-54" aria-hidden="true" tabindex="-1"></a>layout <span class="ot">&lt;-</span> <span class="st">"</span></span>
+<span id="cb31-55"><a href="#cb31-55" aria-hidden="true" tabindex="-1"></a><span class="st">AB</span></span>
+<span id="cb31-56"><a href="#cb31-56" aria-hidden="true" tabindex="-1"></a><span class="st">CD</span></span>
+<span id="cb31-57"><a href="#cb31-57" aria-hidden="true" tabindex="-1"></a><span class="st">EF</span></span>
+<span id="cb31-58"><a href="#cb31-58" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span>
+<span id="cb31-59"><a href="#cb31-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-60"><a href="#cb31-60" aria-hidden="true" tabindex="-1"></a>plant_and_soil_nutrients <span class="ot">&lt;-</span> panel_a <span class="sc">+</span> panel_b <span class="sc">+</span> panel_d <span class="sc">+</span> panel_c <span class="sc">+</span> panel_f <span class="sc">+</span> panel_e <span class="sc">+</span></span>
+<span id="cb31-61"><a href="#cb31-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_layout</span>(<span class="at">design =</span> layout)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [34]:</pre></div><div id="2aea6295-0eed-418f-8d55-77eb8c61d98f" class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(plant_and_soil_nutrients,</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_figures/field_cage_plant_and_soil_nutrient_correlations.png'</span>),</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">width=</span><span class="dv">10</span>,<span class="at">height=</span><span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+</div></div>
+<div id="2692efc3-d8c9-4ea3-bbc7-f2efe367da1d" class="cell markdown">
+<section id="table---plant-species-nutrient-content" class="level2">
+<h2 class="anchored" data-anchor-id="table---plant-species-nutrient-content">table - plant species nutrient content</h2>
+</section>
+</div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [43]:</pre></div><div id="36657598-4458-439a-9eb3-9ff33d85fca9" class="cell" data-execution_count="43">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/processed/field_cage_experiment/plant_species_soil_nutrient_by_treatment.csv'</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [44]:</pre></div><div id="e7fc5a7e-b48c-4ede-9cc6-b7b22adc3cd2" class="cell" data-execution_count="44">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(dat,</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_tables/field_cage_plant_species_nutrient_content.csv'</span>),</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+<div id="327e9a52-21a7-4609-8eff-02acb934ccf2" class="cell markdown">
+<section id="table-plant-species-ground-cover" class="level2">
+<h2 class="anchored" data-anchor-id="table-plant-species-ground-cover">table – plant species ground cover</h2>
+</section>
+</div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [46]:</pre></div><div id="5ac51f84-1aea-47cd-b55a-43c920bf7c1f" class="cell" data-execution_count="46">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/processed/field_cage_experiment/plant_ground_cover_by_treatment.csv'</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>dat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A spec_tbl_df: 3 × 7</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">treatment</th>
+<th data-quarto-table-cell-role="th" scope="col">plant_cover</th>
+<th data-quarto-table-cell-role="th" scope="col">Urochloa panicoides</th>
+<th data-quarto-table-cell-role="th" scope="col">Enteropogon acicularis</th>
+<th data-quarto-table-cell-role="th" scope="col">Austrodanthonia caespitosa</th>
+<th data-quarto-table-cell-role="th" scope="col">Cyperus rotundus</th>
+<th data-quarto-table-cell-role="th" scope="col">stipa species</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>High</td>
+<td>27.38095</td>
+<td>47.50000</td>
+<td>67.38095</td>
+<td>15.23810</td>
+<td>15.00000</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Medium</td>
+<td>35.23810</td>
+<td>15.00000</td>
+<td>65.47619</td>
+<td>18.33333</td>
+<td>17.29167</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>None</td>
+<td>35.47619</td>
+<td>13.33333</td>
+<td>60.11905</td>
+<td>15.35714</td>
+<td>19.33333</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [47]:</pre></div><div id="7ab36a03-6063-4345-a549-b737842acab4" class="cell" data-execution_count="47">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(dat,</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_tables/field_cage_plant_ground_cover.csv'</span>),</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+     </main>
+<!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"loop":false,"openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","descPosition":"bottom"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script> 
+  
+</body></html>
