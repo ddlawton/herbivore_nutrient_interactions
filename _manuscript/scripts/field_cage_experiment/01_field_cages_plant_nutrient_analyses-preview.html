@@ -178,7 +178,32 @@
             <a href="../../scripts/field_cage_experiment/01_field_cages_plant_nutrient_analyses.ipynb" class="btn btn-primary quarto-download-embed" download="01_field_cages_plant_nutrient_analyses.ipynb">Download Notebook</a>
           </div>
 
-     <div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+     <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Field cage nutrient analysis – Plant nutrients</h1>
+          </div>
+
+    
+    <div class="quarto-title-meta-container">
+      <div class="quarto-title-meta-column-start">
+        
+        <div class="quarto-title-meta">
+
+                
+          
+                
+              </div>
+      </div>
+      <div class="quarto-title-meta-column-end quarto-other-formats-target">
+      </div>
+    </div>
+
+
+
+    <div class="quarto-other-links-text-target">
+    </div>  </div>
+</header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
 <div id="quarto-sidebar-toc-left" class="sidebar toc-left">
   <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
@@ -225,23 +250,9 @@
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
-<main class="content" id="quarto-document-content">      <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Field cage nutrient analysis – Plant nutrients</h1>
-</div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">      
 
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>     <p>This script analyzes the grass nutrient contents (protein and carbohydrates) for field cages</p>
+       <p>This script analyzes the grass nutrient contents (protein and carbohydrates) for field cages</p>
 <p>Please see manuscript for specific methodology.</p>
 <p>This script does the following:</p>
 <ol type="1">
@@ -251,7 +262,7 @@
 <li>analyzes plant ground cover differences by fertilization treatment</li>
 </ol>
 <p>Manuscript figure preparation happens in the <code>03_field_cages_intake_target_mauscript_figure_code.ipynb</code> file</p>
-<div class="cell-container"><div class="cell-decorator"><pre>In [3]:</pre></div><div id="32b185d2-a3a2-4895-b064-e7c762312abe" class="cell" data-execution_count="3">
+<div class="cell-container"><div class="cell-decorator"><pre>In [4]:</pre></div><div id="32b185d2-a3a2-4895-b064-e7c762312abe" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>load_packages <span class="ot">&lt;-</span> <span class="cf">function</span>(packages) {</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Check for uninstalled packages</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  uninstalled <span class="ot">&lt;-</span> packages[<span class="sc">!</span>packages <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">"Package"</span>]]</span>
@@ -293,7 +304,7 @@
 <h1>Section 1 - Plant nutrients over time by fertilization treatment</h1>
 <section id="read-in-data" class="level2">
 <h2 class="anchored" data-anchor-id="read-in-data">read in data</h2>
-<div class="cell-container"><div class="cell-decorator"><pre>In [4]:</pre></div><div id="bd287563-6036-4f5b-a9fb-ed5773c113d8" class="cell" data-execution_count="4">
+<div class="cell-container"><div class="cell-decorator"><pre>In [5]:</pre></div><div id="bd287563-6036-4f5b-a9fb-ed5773c113d8" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plant_nutrients <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/raw/field_cage_experiment/Field_Cage_Nutrients_Through_Time.csv'</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(x1,plot,cage,treatment,species,chn_weight_mg,c_mg_mg,n_mg_mg,protein_mg_mg,carb_mg_mg,carb_prot_ratio) <span class="sc">|&gt;</span></span>
@@ -304,18 +315,201 @@
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"None"</span> <span class="ot">=</span> <span class="st">'1'</span>, <span class="st">"Medium"</span> <span class="ot">=</span> <span class="st">"2"</span>, <span class="st">"High"</span> <span class="ot">=</span> <span class="st">"3"</span>),</span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot_cage =</span> <span class="fu">factor</span>(<span class="fu">paste0</span>(plot,<span class="st">"_"</span>,cage)))</span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(plant_nutrients)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>plant_nutrients</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>New names:
 • `` -&gt; `...1`</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class="list-inline"><li>'date'</li><li>'plot'</li><li>'cage'</li><li>'treatment'</li><li>'species'</li><li>'chn_weight_mg'</li><li>'c_mg_mg'</li><li>'n_mg_mg'</li><li>'protein_mg_mg'</li><li>'carb_mg_mg'</li><li>'carb_prot_ratio'</li><li>'plot_cage'</li></ol>
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A tibble: 168 × 12</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">date</th>
+<th data-quarto-table-cell-role="th" scope="col">plot</th>
+<th data-quarto-table-cell-role="th" scope="col">cage</th>
+<th data-quarto-table-cell-role="th" scope="col">treatment</th>
+<th data-quarto-table-cell-role="th" scope="col">species</th>
+<th data-quarto-table-cell-role="th" scope="col">chn_weight_mg</th>
+<th data-quarto-table-cell-role="th" scope="col">c_mg_mg</th>
+<th data-quarto-table-cell-role="th" scope="col">n_mg_mg</th>
+<th data-quarto-table-cell-role="th" scope="col">protein_mg_mg</th>
+<th data-quarto-table-cell-role="th" scope="col">carb_mg_mg</th>
+<th data-quarto-table-cell-role="th" scope="col">carb_prot_ratio</th>
+<th data-quarto-table-cell-role="th" scope="col">plot_cage</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" scope="col">&lt;fct&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;fct&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;fct&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;fct&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;fct&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;fct&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2015-12-01</td>
+<td>0-1</td>
+<td>5</td>
+<td>None</td>
+<td>Nutgrass</td>
+<td>2.112</td>
+<td>0.40997</td>
+<td>0.02689</td>
+<td>0.1361</td>
+<td>0.120</td>
+<td>0.8816132</td>
+<td>0-1_5</td>
+</tr>
+<tr class="even">
+<td>2015-12-01</td>
+<td>0-1</td>
+<td>5</td>
+<td>None</td>
+<td>Wallaby</td>
+<td>2.818</td>
+<td>0.41875</td>
+<td>0.02299</td>
+<td>0.1410</td>
+<td>0.105</td>
+<td>0.7448132</td>
+<td>0-1_5</td>
+</tr>
+<tr class="odd">
+<td>2015-12-01</td>
+<td>0-1</td>
+<td>5</td>
+<td>None</td>
+<td>Plaspladium</td>
+<td>2.170</td>
+<td>0.39406</td>
+<td>0.03146</td>
+<td>0.1509</td>
+<td>0.096</td>
+<td>0.6360841</td>
+<td>0-1_5</td>
+</tr>
+<tr class="even">
+<td>2015-12-01</td>
+<td>0-1</td>
+<td>6</td>
+<td>None</td>
+<td>Enteropogon</td>
+<td>2.325</td>
+<td>0.40071</td>
+<td>0.02328</td>
+<td>0.0713</td>
+<td>0.171</td>
+<td>2.3998638</td>
+<td>0-1_6</td>
+</tr>
+<tr class="odd">
+<td>2015-12-01</td>
+<td>0-1</td>
+<td>6</td>
+<td>None</td>
+<td>Nutgrass</td>
+<td>2.244</td>
+<td>0.39387</td>
+<td>0.02247</td>
+<td>0.1334</td>
+<td>0.120</td>
+<td>0.8993145</td>
+<td>0-1_6</td>
+</tr>
+<tr class="even">
+<td>⋮</td>
+<td>⋮</td>
+<td>⋮</td>
+<td>⋮</td>
+<td>⋮</td>
+<td>⋮</td>
+<td>⋮</td>
+<td>⋮</td>
+<td>⋮</td>
+<td>⋮</td>
+<td>⋮</td>
+<td>⋮</td>
+</tr>
+<tr class="odd">
+<td>2015-11-11</td>
+<td>H-2</td>
+<td>Ext</td>
+<td>High</td>
+<td>Wallaby</td>
+<td>2.051</td>
+<td>0.42581</td>
+<td>0.02388</td>
+<td>0.2224</td>
+<td>0.131</td>
+<td>0.5890989</td>
+<td>H-2_Ext</td>
+</tr>
+<tr class="even">
+<td>2015-11-11</td>
+<td>H-2</td>
+<td>Ext</td>
+<td>High</td>
+<td>Enteropogon</td>
+<td>2.377</td>
+<td>0.42864</td>
+<td>0.02832</td>
+<td>0.2202</td>
+<td>0.118</td>
+<td>0.5358819</td>
+<td>H-2_Ext</td>
+</tr>
+<tr class="odd">
+<td>2015-11-11</td>
+<td>H-3</td>
+<td>Ext</td>
+<td>High</td>
+<td>Nutgrass</td>
+<td>2.207</td>
+<td>0.42253</td>
+<td>0.02804</td>
+<td>0.2603</td>
+<td>0.120</td>
+<td>0.4610205</td>
+<td>H-3_Ext</td>
+</tr>
+<tr class="even">
+<td>2015-11-11</td>
+<td>H-3</td>
+<td>Ext</td>
+<td>High</td>
+<td>Wallaby</td>
+<td>2.115</td>
+<td>0.41685</td>
+<td>0.02163</td>
+<td>0.2460</td>
+<td>0.124</td>
+<td>0.5041425</td>
+<td>H-3_Ext</td>
+</tr>
+<tr class="odd">
+<td>2015-11-11</td>
+<td>H-3</td>
+<td>Ext</td>
+<td>High</td>
+<td>Enteropogon</td>
+<td>2.237</td>
+<td>0.41712</td>
+<td>0.03325</td>
+<td>0.2093</td>
+<td>0.116</td>
+<td>0.5541557</td>
+<td>H-3_Ext</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div></div>
 </section>
@@ -1050,7 +1244,7 @@ the `.groups` argument.</code></pre>
 <section id="read-in-data-2" class="level2">
 <h2 class="anchored" data-anchor-id="read-in-data-2">Read in data</h2>
 <p>using the dataframe frames from <code>section 2</code></p>
-<div class="cell-container"><div class="cell-decorator"><pre>In [24]:</pre></div><div id="ca81a011-6da5-4e5b-ac98-d431e05161ef" class="cell" data-execution_count="24">
+<div class="cell-container"><div class="cell-decorator"><pre>In [6]:</pre></div><div id="ca81a011-6da5-4e5b-ac98-d431e05161ef" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>plant_dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/raw/field_cage_experiment/Field_Cage_Nutrients_Through_Time.csv'</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(x1,plot,cage,treatment,species,chn_weight_mg,c_mg_mg,n_mg_mg,protein_mg_mg,carb_mg_mg,carb_prot_ratio) <span class="sc">|&gt;</span></span>
@@ -1076,7 +1270,7 @@ the `.groups` argument.</code></pre>
 • `` -&gt; `...1`</code></pre>
 </div>
 </div></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [25]:</pre></div><div id="f17f156c-df73-478b-bb98-228914f8486e" class="cell" data-scrolled="true" data-execution_count="25">
+<div class="cell-container"><div class="cell-decorator"><pre>In [7]:</pre></div><div id="f17f156c-df73-478b-bb98-228914f8486e" class="cell" data-scrolled="true" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>soils_dat <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_xlsx</span>(<span class="fu">here</span>(<span class="st">'data/raw/field_cage_experiment/Aus_2015_ExpPlots_soil.xlsx'</span>)) <span class="sc">|&gt;</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">treatment =</span> <span class="fu">fct_recode</span>(treatment, <span class="st">"None"</span> <span class="ot">=</span> <span class="st">"0"</span>, <span class="st">"Medium"</span> <span class="ot">=</span> <span class="st">"M"</span>, <span class="st">"High"</span> <span class="ot">=</span> <span class="st">"H"</span>)) <span class="sc">|&gt;</span></span>
@@ -1085,7 +1279,7 @@ the `.groups` argument.</code></pre>
 </section>
 <section id="writing-dataframes-to-disk" class="level2">
 <h2 class="anchored" data-anchor-id="writing-dataframes-to-disk">writing dataframes to disk</h2>
-<div class="cell-container"><div class="cell-decorator"><pre>In [26]:</pre></div><div id="495c4661-f0e1-4d53-8b9a-98d5afc37ea8" class="cell" data-execution_count="26">
+<div class="cell-container"><div class="cell-decorator"><pre>In [8]:</pre></div><div id="495c4661-f0e1-4d53-8b9a-98d5afc37ea8" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(soil_plant_dat,<span class="fu">here</span>(<span class="st">'data/processed/field_cage_experiment/plant_soil_nutrient_data.csv'</span>),<span class="at">row.names=</span><span class="cn">FALSE</span>)</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(soils_dat,<span class="fu">here</span>(<span class="st">'data/processed/field_cage_experiment/soil_nutrient_data'</span>),<span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
@@ -1547,7 +1741,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","loop":false,"openEffect":"zoom","descPosition":"bottom"});
+</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","openEffect":"zoom","loop":false});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

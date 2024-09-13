@@ -112,21 +112,24 @@ crossref:
     - kind: float
       key: fig
       reference-prefix: Figure
-      space-before-numbering: false
+      space-before-numbering: true
       latex-list-of-description: Figure
     - kind: float
       key: suppfig
       latex-env: suppfig
       reference-prefix: Supplementary Figure 
-      space-before-numbering: false
+      space-before-numbering: true
       latex-list-of-description: Supplementary Figure
     - kind: float
       key: tbl
-      latex-env: tbl
       reference-prefix: Table
-      space-before-numbering: false
+      space-before-numbering: true
       latex-list-of-description: Table
-
+    - kind: float
+      key: supptbl
+      reference-prefix: Supplementary Table
+      space-before-numbering: true
+      latex-list-of-description: Supplementary Table
 bibliography: references.bib
 csl: citation_style.csl
 
@@ -179,7 +182,7 @@ We ran this experiment to test the effects of different host plant nitrogen cont
 
 We built 0.75 x 0.75 x 0.75 m cages with four steel fence posts and aluminum mesh. We secured the mesh to the ground by partially burying it and nailing thin slats of wood over the mesh edges. Before adding locusts to the cages, we removed any plant litter and arthropods (mostly spiders and locusts) so we could more easily count the locusts and limit predation. We added 20 4th instar locust nymphs to each field cage on the evening of November 13th and morning of November 14th. We randomly selected these nymphs from the Mendooran population we collected on November 12th (see synthetic diet methods section above). Each fertilized plot had four cages, for a total of 12 cages per fertilization level, and 36 cages and 720 locusts in total. We checked the cages every 4-5 days and removed any spiders.
 
-We measured plant diversity and abundance in each locust cage and outside the cage within each fertilized plot. We also measured ground, litter, manure, and plant cover in each of the nine plots by randomly tossing three 0.25 x 0.25 m quadrats within each of the nine plots. We took these ground cover and biodiversity measurements at the beginning and end of the experiment. We took plant leaf samples for nutrient analyses from each cage three times during the experiment on November 11th, November 25th, and December 1st, 2015. Plant species with resulting carbon, nitrogen, digestible carbohydrate and protein content as well as soil nitrogen (from 0-10 cm cores) can be seen in supplementary table 1. Plant species ground cover for each cage can be seen in supplementary table 2. The relationship between soil NO3 and NO4 within cage plots and cage plant carbohydrates and proteins are visualized in supplementary figure 1.
+We measured plant diversity and abundance in each locust cage and outside the cage within each fertilized plot. We also measured ground, litter, manure, and plant cover in each of the nine plots by randomly tossing three 0.25 x 0.25 m quadrats within each of the nine plots. We took these ground cover and biodiversity measurements at the beginning and end of the experiment. We took plant leaf samples for nutrient analyses from each cage three times during the experiment on November 11th, November 25th, and December 1st, 2015. Plant species with resulting carbon, nitrogen, digestible carbohydrate and protein content as well as soil nitrogen (from 0-10 cm cores) can be seen in @tbl-field-cage-plant-soil-nutrients. Plant species ground cover for each cage can be seen in @tbl-field-cage-plant-ground-cover. The relationship between soil NO3 and NO4 within cage plots and cage plant carbohydrates and proteins are visualized in @suppfig-field-cage-plant-soil-nutrient-correlations.
 
 To test how the nitrogen fertilization treatments affected the nutritional status of the locusts, we collected 20 locusts from control and high N treatment cages (40 individuals in total) on November 23, 2015. We housed them in individual cages and gave them the choice of a low protein: carbohydrate diet and a high protein: carbohydrate diet. We changed their diets on days one, two, four, and six and ended the experiment at day nine. To ensure an adequate sample size, we included data from any individuals that died (approximately 60% mortality) before the experiment was completed and individuals which molted during the experiment. We calculated the mass of protein and carbohydrate locusts ate over each interval. This allowed us to see the nutritional redressing of individuals.
 
@@ -226,13 +229,13 @@ To relate nymph survey grids to soil nitrogen and phosphorus, we constructed two
 
 ### Choice experiment (nutritional target)
 
-Australian plague locust individuals from the two outbreaking populations regulated to a specific ratio of 1 protein : 2 carbohydrate (@fig-field-pop-it-results A) (Table 1). Model selection can be seen in Supplementary Table 3. Consumption in the two diet pairings did not differ, indicating non-random feeding (@suppfig-field-pop-nutrients A, Table 1). While the protein : carbohydrate ratio did not change, females consumed more food than males, likely due to being bigger overall (@suppfig-field-pop-nutrients B, Table 1, Supplementary Table 3).
+Australian plague locust individuals from the two outbreaking populations regulated to a specific ratio of 1 protein : 2 carbohydrate (@fig-field-pop-it-results A,@tbl-field-population-it-model). Model selection can be seen in @tbl-field-population-choice-experiment-model-selection-criteria. Consumption in the two diet pairings did not differ, indicating non-random feeding (@suppfig-field-pop-nutrients A, @tbl-field-population-it-model). While the protein : carbohydrate ratio did not change, females consumed more food than males, likely due to being bigger overall (@suppfig-field-pop-nutrients B, @tbl-field-population-it-model).
 
 
 ```{r, field population it table}
 #| label: tbl-field-population-it-model
 #| tbl-cap:
-#|   - "Generalized additive model results for macronutrient consumption (carbohydrate and protein) of two outbreaking populations of Australian plague locust in #| Mendooran and Guntawang. Models were selected via AIC, AICc and BIC which can be seen in supplementary table 1. Family: multivariate gaussian distribution,     link: identity, SE: standard error."
+#|   - "Generalized additive model results for macronutrient consumption (carbohydrate and protein) of two outbreaking populations of Australian plague locust in #| Mendooran and Guntawang. Models were selected via AIC, AICc and BIC which can be seen in @tbl-field-population-choice-experiment-model-selection-criteria. Family: multivariate gaussian distribution, link: identity, SE: standard error."
 #| tbl-subcap: 
 #|     - parametric terms
 #|     - non-parametric terms
@@ -253,8 +256,8 @@ non_parametric <- table_dat |>
   select(macronutrient,variable,statistic,`p-value`) |>
   drop_na()
  
-kable(parametric) 
-kable(non_parametric)
+kable(parametric,digits=3) 
+kable(non_parametric,digits=3)
 
 
 ```
@@ -263,13 +266,43 @@ kable(non_parametric)
 
 ### No choice experiment (performance curves)
 
-Australian plague locusts had higher specific mass growth rates and shorter development times on the 1 protein : 2 carbohydrate (14 protein : 28 carbohydrate) diet as compared to the other diets (@fig-field-pop-it-results B & C, Table 2, Supplementary Table 4). Development time and specific growth rate did not different between male and female locusts (@suppfig-field-pop-nutrients C & D).
+Australian plague locusts had higher specific mass growth rates and shorter development times on the 1 protein : 2 carbohydrate (14 protein : 28 carbohydrate) diet as compared to the other diets (@fig-field-pop-it-results B & C, @tbl-field-population-no-choice-model, Supplementary Table 4). Development time and specific growth rate did not different between male and female locusts (@suppfig-field-pop-nutrients C & D, @tbl-field-population-no-choice-model).
 
 ![The nutritional preference (A) and physiological performance (B & C) of C. terminifera individuals were collected from two marching bands of 5th instars.](output/publication_figures/field_population_intake_target_figure.png){#fig-field-pop-it-results}
 
+
+```{r, field population no choice table}
+#| label: tbl-field-population-no-choice-model
+#| tbl-cap:
+#|   - "Australian plague locust physiological performance (specific growth rate and development time) when constrained to specific diets with varying protein and carbohydrate content. SE: standard error. Posthoc comparisons for both physiological performance metrics can be seen in supplementary table 2."
+#| tbl-subcap: 
+#|     - specific growth rate
+#|     - develpoment time
+#| layout-nrow: 2
+
+library(tidyverse)
+library(here)
+library(knitr)
+library(kableExtra)
+
+table_dat <- read_csv(here('output/publication_tables/field_population_no_choice_sgr_dev_result.csv'))
+
+sgr <- table_dat |>
+  filter(model == 'specific growth rate') |>
+  select(!model)
+
+dev <- table_dat  |>
+  filter(model != 'specific growth rate') |>
+  select(!model)
+ 
+kable(sgr,digits=3) 
+kable(dev,digits=3)
+```
+
+
 ## Field Cage
 
-For the first 11 days of the 14 day field cage experiment, plant protein and carbohydrate contents remained consistently protein-biased for all treatments (@fig-field-cage-time-results A-C, Table 3), and only showed differences in protein content by the last sample period on December 1, which was after the end of the locust cage experiment. Accordingly, there was no effect of fertilizer on locust survival and adult proportion, though locusts in the medium level nitrogen fertilizer treatment were heavier than locusts in the high nitrogen fertilizer treatment (TukeyHSD: difference: -0.043, p-value: \< 0.001) ((@fig-field-cage-time-results D-F, Table 4). Locusts that were retrieved from field cages after nine days and were given a choice to regulate protein and carbohydrate intake showed a pattern consistent with rebalancing a shortage of carbohydrates (@fig-field-cage-it-rebalancing, @suppfig-field-cage-rebalancing-facet, Table 5). Irrespective of fertilizer treatment group, locusts initially selected very carbohydrate biased diets, but gradually, after 9 days, their trajectory returned close to the predicted intake target of 1p : 2c (@fig-field-cage-it-rebalancing, @suppfig-field-cage-rebalancing-facet).
+For the first 11 days of the 14 day field cage experiment, plant protein and carbohydrate contents remained consistently protein-biased for all treatments (@fig-field-cage-time-results A-C, @tbl-field-cage-plant-nutrients), and only showed differences in protein content by the last sample period on December 1, which was after the end of the locust cage experiment. Accordingly, there was no effect of fertilizer on locust survival and adult proportion, though locusts in the medium level nitrogen fertilizer treatment were heavier than locusts in the high nitrogen fertilizer treatment (TukeyHSD: difference: -0.043, p-value: \< 0.001) ((@fig-field-cage-time-results D-F, @tbl-field-cage-locust-mass). Locusts that were retrieved from field cages after nine days and were given a choice to regulate protein and carbohydrate intake showed a pattern consistent with rebalancing a shortage of carbohydrates (@fig-field-cage-it-rebalancing, @tbl-field-cage-rebalancing, @suppfig-field-cage-rebalancing-facet). Irrespective of fertilizer treatment group, locusts initially selected very carbohydrate biased diets, but gradually, after 9 days, their trajectory returned close to the predicted intake target of 1p : 2c (@fig-field-cage-it-rebalancing, @suppfig-field-cage-rebalancing-facet).
 
 
 
@@ -278,6 +311,95 @@ For the first 11 days of the 14 day field cage experiment, plant protein and car
 
 ![Nutrient imbalance redressing with artificial diet mixing of C. terminifera individuals taken from fertilized treatment cages. Colors represent treatment with large lines and points representing overall means. Individual time step targets can be seen in @suppfig-field-cage-rebalancing-facet.](output/publication_figures/field_cage_locust_intake_target_rebalancing.png){#fig-field-cage-it-rebalancing}
 
+
+
+```{r, field cage plant nutrient change}
+#| label: tbl-field-cage-plant-nutrients
+#| tbl-cap:
+#|   - "Generalized additive model results for plant macronutrient (carbohydrate and protein) differences between fertilization treatment. Family: multivariate gaussian distribution, link: identity, SE: standard error, significance indicated in bold."
+#| tbl-subcap: 
+#|     - parametric terms
+#|     - non-parametric temrs
+#| layout-nrow: 2
+
+library(tidyverse)
+library(here)
+library(knitr)
+library(kableExtra)
+
+table_dat <- read_csv(here('output/publication_tables/field_cage_plant_nutrients_model_summary.csv'))
+
+parametric <- table_dat |>
+  select(macronutrient,variable,SE,`p-value`) |>
+  drop_na()
+
+non_parametric <- table_dat |>
+  select(macronutrient,variable,statistic,`p-value`) |>
+  drop_na()
+ 
+kable(parametric,digits=3) 
+kable(non_parametric,digits=3)
+```
+
+
+```{r, field cage locust mass}
+#| label: tbl-field-cage-locust-mass
+#| tbl-cap:
+#|   - "Generalized additive model results for differences between final locust mass after the nitrogen fertilization experiment finished. Family: scaled T, link: identity, SE: standard error, significance indicated in bold."
+#| tbl-subcap: 
+#|     - parametric terms
+#|     - non-parametric temrs
+#| layout-nrow: 2
+
+library(tidyverse)
+library(here)
+library(knitr)
+library(kableExtra)
+
+table_dat <- read_csv(here('output/publication_tables/field_cage_final_locust_mass_model_summary.csv'))
+
+parametric <- table_dat |>
+  select(variable,SE,`p-value`) |>
+  drop_na()
+
+non_parametric <- table_dat |>
+  select(variable,statistic,`p-value`) |>
+  drop_na()
+ 
+kable(parametric,digits=3) 
+kable(non_parametric,digits=3)
+```
+
+
+
+
+```{r, field cage rebalancing}
+#| label: tbl-field-cage-rebalancing
+#| tbl-cap:
+#|   - "Generalized additive model results for nutrient imbalance dressing of field cage Australian plague locust in the control and high fertilization treatments. Model also included interactive terms; however, none were significant and left out. SE: standard error, significance indicated in bold."
+#| tbl-subcap: 
+#|     - parametric terms
+#|     - non-parametric temrs
+#| layout-nrow: 2
+
+library(tidyverse)
+library(here)
+library(knitr)
+library(kableExtra)
+
+table_dat <- read_csv(here('output/publication_tables/field_cage_locust_nutrient_rebalancing_model_summary.csv'))
+
+parametric <- table_dat |>
+  select(variable,SE,`p-value`) |>
+  drop_na()
+
+non_parametric <- table_dat |>
+  select(variable,statistic,`p-value`) |>
+  drop_na()
+ 
+kable(parametric,digits=3) 
+kable(non_parametric,digits=3)
+```
 
 
 
@@ -326,6 +448,9 @@ Acquiring the right amount of nutrients is a critical component for animal growt
 
 # Supplementary
 
+![ Field cage soil nitrogen content by treatment (A & B) and regressed with plant carbohydrates and protein (C-F).](output/publication_figures/field_cage_plant_and_soil_nutrient_correlations.png){#suppfig-field-cage-plant-soil-nutrient-correlations}
+
+
 ![Map showing how we summarized point observation data to a fishnet grid throughout eastern Australia. Entire extent can be seen in the inlet map. We summed the number of 4 (outbreak) observations, low presence observations (1-3),  nil observations (0), and the total observations. Grid not at a 1 km2 x 1 km2 scale in this figure for demonstration purposes as the cells would be too small to see.](output/publication_figures/spatial_modeling_grid_example_map.png){#suppfig-grid-example}
 
 
@@ -335,4 +460,112 @@ Acquiring the right amount of nutrients is a critical component for animal growt
 ![Individual time step intake targets for grasshoppers kept in both high nitrogen fertilization and control cages.  Blue dots represent overall mean while blacks dots represent individual intake targets.](output/publication_figures/field_cage_locust_intake_rebalance_day_facet_plot.png){#suppfig-field-cage-rebalancing-facet}
 
 ![Environmental variable correlations between mean annual precipitation, soil nitrogen, soil phosphorus, and woody vegetation pixel coverage. Mean annual precipitation was sourced from WorldClim V1 Bioclim, soil nitrogen and phosphorus was sourced from Soil and Landscape Grid of Australia, and woody vegetation pixel coverage was sourced from Global Forest Cover Change dataset. We averaged woody coverage for each pixel between the years 2000 and 2017. For all rasters, we randomly sampled 100,000 georeferenced points and extracted values. All values have been scaled and min-max normalized (to fall within [0,1]) for visual clarity. Dashed line represents a 1:1 slope and the blue line is a cubic spline with 10 knots.](output/publication_figures/spatial_modeling_environment_correlation_figure.png){#suppfig-spatial-modeling-env-corr}
+
+
+
+```{r, supplementary field cage plant nutrients}
+#| label: tbl-field-cage-plant-soil-nutrients
+#| tbl-cap:
+#|   - "Generalized additive model results for nutrient imbalance dressing of field cage Australian plague locust in the control and high fertilization treatments. Model also included interactive terms; however, none were significant and left out. SE: standard error, significance indicated in bold."
+#| tbl-subcap: 
+#|     - parametric terms
+#|     - non-parametric temrs
+#| layout-nrow: 2
+
+library(tidyverse)
+library(here)
+library(gt)
+
+
+table_dat <- read_csv(here('output/publication_tables/field_cage_plant_species_nutrient_content.csv')) 
+
+table_dat |> 
+  arrange(treatment,`Soil NO3`,`Soil NO4`) |> 
+  mutate(across(where(is.numeric),~round(.,3))) |>
+  mutate(treatment = ifelse(duplicated(treatment), "", treatment)) |> 
+  mutate(`Soil NO3` = ifelse(duplicated(`Soil NO3`), "", `Soil NO3`)) |>
+  mutate(`Soil NO4` = ifelse(duplicated(`Soil NO4`), "", `Soil NO4`)) |>  
+  gt()
+```
+
+
+```{r, supplementary field cage plant nutrients}
+#| label: tbl-field-cage-plant-ground-cover
+#| tbl-cap:
+#|   - "Generalized additive model results for nutrient imbalance dressing of field cage Australian plague locust in the control and high fertilization treatments. Model also included interactive terms; however, none were significant and left out. SE: standard error, significance indicated in bold."
+#| tbl-subcap: 
+#|     - parametric terms
+#|     - non-parametric temrs
+#| layout-nrow: 2
+
+library(tidyverse)
+library(here)
+library(gt)
+
+
+table_dat <- read_csv(here('output/publication_tables/field_cage_plant_ground_cover.csv')) 
+
+table_dat |> 
+  pivot_longer(cols = !treatment) |>
+  pivot_wider(names_from = treatment,values_from = value) |>
+  mutate(plant = gsub('plant_cover','plant cover',name)) |>
+  select(plant,None,Medium,High) |> 
+  gt() |>
+  fmt_number(decimals = 2)
+```
+
+
+
+
+```{r, supplementary field population choice experiment model selection criteria}
+#| label: tbl-field-population-choice-experiment-model-selection-criteria
+#| tbl-cap:
+#|   - "Generalized additive model results for nutrient imbalance dressing of field cage Australian plague locust in the control and high fertilization treatments. Model also included interactive terms; however, none were significant and left out. SE: standard error, significance indicated in bold."
+#| tbl-subcap: 
+#|     - parametric terms
+#|     - non-parametric temrs
+#| layout-nrow: 2
+
+library(tidyverse)
+library(here)
+library(gt)
+
+
+table_dat <- read_csv(here('output/publication_tables/field_population_choice_experiment_model_selection_criteria.csv')) 
+
+table_dat |> 
+  gt() |>
+  fmt_number(decimals = 2)
+```
+
+
+
+```{r, supplementary field population no choice experiment model selection criteria}
+#| label: tbl-field-population-no-choice-experiment-model-selection-criteria
+#| tbl-cap:
+#|   - "Generalized additive model results for nutrient imbalance dressing of field cage Australian plague locust in the control and high fertilization treatments. Model also included interactive terms; however, none were significant and left out. SE: standard error, significance indicated in bold."
+#| tbl-subcap: 
+#|     - development time
+#|     - specific growth rate
+#| layout-nrow: 2
+
+library(tidyverse)
+library(here)
+library(gt)
+
+
+table_dat1 <- read_csv(here('output/publication_tables/field_population_no_choice_development_time_model_selection_criteria.csv')) 
+
+table_dat2 <- read_csv(here('output/publication_tables/field_population_no_choice_specific_growth_rate_model_selection_criteria.csv')) 
+
+
+table_dat1 |> 
+  gt() |>
+  fmt_number(decimals = 2)
+
+table_dat2 |> 
+  gt() |>
+  fmt_number(decimals = 2)
+```
+
 
