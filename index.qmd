@@ -205,7 +205,7 @@ The soil and landscape grid of Australia is a modeled raster of 12 soil variable
 
 ## Statistics
 
-All statistics were conducted with a generalized additive mixed modeling (GAMM) approach when possible. This allowed us to test for non-linear and linear trends in the dataset and specify the hierarchical nature of the data. All statistics were conducted in R and python. All scripts and packages used can be seen within the project code repository <*
+All statistics were conducted with a generalized additive mixed modeling (GAMM) approach when possible. This allowed us to test for non-linear and linear trends in the dataset and specify the hierarchical nature of the data. All statistics were conducted in R and python. All scripts and packages used can be seen within the project code repository: [github repo](/path/to/repo)
 
 ### Intake Targets
 
@@ -243,21 +243,32 @@ Australian plague locust individuals from the two outbreaking populations regula
 
 library(tidyverse)
 library(here)
-library(knitr)
-library(kableExtra)
+library(gt)
 
 table_dat <- read_csv(here('output/publication_tables/field_cage_locust_nutrient_rebalancing_model_summary.csv'))
 
-parametric <- table_dat |>
-  select(macronutrient,variable,SE,`p-value`) |>
-  drop_na()
 
-non_parametric <- table_dat |>
+
+
+p1 <- table_dat  |>
+  select(macronutrient,variable,SE,`p-value`) |> 
+  arrange(macronutrient) |> 
+  mutate(across(where(is.numeric),~round(.,3))) |>
+  mutate(macronutrient = ifelse(duplicated(macronutrient), "", macronutrient)) |> 
+  gt()
+
+p2 <- table_dat  |>
   select(macronutrient,variable,statistic,`p-value`) |>
-  drop_na()
- 
-kable(parametric,digits=3) 
-kable(non_parametric,digits=3)
+  drop_na(statistic) |>
+  arrange(macronutrient) |> 
+  mutate(across(where(is.numeric),~round(.,3))) |>
+  mutate(macronutrient = ifelse(duplicated(macronutrient), "", macronutrient)) |> 
+  gt()
+
+
+p1
+p2
+
 
 
 ```
@@ -282,21 +293,32 @@ Australian plague locusts had higher specific mass growth rates and shorter deve
 
 library(tidyverse)
 library(here)
-library(knitr)
-library(kableExtra)
+library(gt)
 
 table_dat <- read_csv(here('output/publication_tables/field_population_no_choice_sgr_dev_result.csv'))
 
-sgr <- table_dat |>
-  filter(model == 'specific growth rate') |>
-  select(!model)
 
-dev <- table_dat  |>
-  filter(model != 'specific growth rate') |>
-  select(!model)
- 
-kable(sgr,digits=3) 
-kable(dev,digits=3)
+table_dat |>
+  mutate(variable = gsub('initial_weight_g','initial weight (g)',variable),
+    across(where(is.numeric),~round(.,3))) |>
+  pivot_wider(names_from = model,values_from = c(estimate,SE,`p-value`)) |>
+  gt() |>
+  tab_spanner(
+    label = "Development Time",
+    columns = ends_with('development time'))  |>
+  tab_spanner(
+    label = "Specific Growth Rate",
+    columns = ends_with('specific growth rate')) |>
+  cols_label(
+    starts_with("est") ~ "estimate",
+    starts_with("SE") ~ "SE",
+    starts_with("p-value") ~ "p-value"
+  ) |>
+  sub_missing(
+    columns = everything(),
+    missing_text = ""
+  )
+
 ```
 
 
@@ -324,21 +346,29 @@ For the first 11 days of the 14 day field cage experiment, plant protein and car
 
 library(tidyverse)
 library(here)
-library(knitr)
-library(kableExtra)
+library(gt)
 
 table_dat <- read_csv(here('output/publication_tables/field_cage_plant_nutrients_model_summary.csv'))
 
-parametric <- table_dat |>
-  select(macronutrient,variable,SE,`p-value`) |>
-  drop_na()
 
-non_parametric <- table_dat |>
+p1 <- table_dat  |>
+  select(macronutrient,variable,SE,`p-value`) |> 
+  arrange(macronutrient) |> 
+  mutate(across(where(is.numeric),~round(.,3))) |>
+  mutate(macronutrient = ifelse(duplicated(macronutrient), "", macronutrient)) |> 
+  gt()
+
+p2 <- table_dat  |>
   select(macronutrient,variable,statistic,`p-value`) |>
-  drop_na()
- 
-kable(parametric,digits=3) 
-kable(non_parametric,digits=3)
+  drop_na(statistic) |>
+  arrange(macronutrient) |> 
+  mutate(across(where(is.numeric),~round(.,3))) |>
+  mutate(macronutrient = ifelse(duplicated(macronutrient), "", macronutrient)) |> 
+  gt()
+
+
+p1
+p2
 ```
 
 
@@ -466,7 +496,7 @@ Acquiring the right amount of nutrients is a critical component for animal growt
 ```{r, supplementary field cage plant nutrients}
 #| label: tbl-field-cage-plant-soil-nutrients
 #| tbl-cap:
-#|   - "Generalized additive model results for nutrient imbalance dressing of field cage Australian plague locust in the control and high fertilization treatments. Model also included interactive terms; however, none were significant and left out. SE: standard error, significance indicated in bold."
+#|   - "Field plot nutrient content for plant species collected from within the treatment plots but outside of the locust cages for three time points during the experiment. Soil nitrogen is also shown per each treatment. Trt = Treatment, C = carbon, N = Nitrogen, Prot = protein, Carb = Carbohydrates."
 #| tbl-subcap: 
 #|     - parametric terms
 #|     - non-parametric temrs
@@ -543,7 +573,12 @@ table_dat |>
 ```{r, supplementary field population no choice experiment model selection criteria}
 #| label: tbl-field-population-no-choice-experiment-phys-post-hoc
 #| tbl-cap:
-#|   - "Posthoc comparisons for diet treatments for C. terminifera individual specific growth rate and development time. SE = standard error.
+#|   - "Posthoc comparisons for diet treatments for C. terminifera individual specific growth rate and development time. SE = standard error."
+#| tbl-subcap: 
+#|     - parametric terms
+#|     - non-parametric temrs
+#| layout-nrow: 2
+
 
 library(tidyverse)
 library(here)
