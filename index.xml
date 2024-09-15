@@ -14748,8 +14748,18 @@ EF
 &quot;
 
 plant_and_soil_nutrients &lt;- panel_a + panel_b + panel_d + panel_c + panel_f + panel_e +
-  plot_layout(design = layout)
-    </code>
+  plot_layout(design = layout) + plot_annotation(tag_levels = 'a')
+
+plant_and_soil_nutrients</code>
+    <boxed-text>
+      <preformat>`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'</preformat>
+    </boxed-text>
+    <boxed-text>
+      <graphic mimetype="image" mime-subtype="png" xlink:href="03_field_cage_manuscript_figure_table_code.ipynb_files/figure-jats/cell-27-output-2.png" />
+    </boxed-text>
     </sec>
     <sec id="cell-2aea6295-0eed-418f-8d55-77eb8c61d98f-nb-3" specific-use="notebook-content">
     <code language="r script">ggsave(plant_and_soil_nutrients,
