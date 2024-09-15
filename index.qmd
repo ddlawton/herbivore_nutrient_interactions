@@ -87,7 +87,7 @@ keywords:
 abstract: |
   1. Nutrient composition varies greatly across landscapes, which in turn influences the spatiotemporal variation and dynamics of populations. Yet few studies have investigated this pattern on multiple scales.
   
-  2. We tested how nutrient limitation affects herbivore populations across spatial scales from individual behavior to landscape level population dynamics using Australian plague locust, Chortoicetes terminifera (Walker), field populations and long-term survey data from across their range.
+  2. We tested how nutrient limitation affects herbivore populations across spatial scales from individual behavior to landscape level population dynamics using Australian plague locust, **Chortoicetes terminifera** (Walker), field populations and long-term survey data from across their range.
   
   3. At the individual level, juvenile locusts selected for a carbohydrate-biased intake target of 1 protein (p) 2 carbohydrate (c) and had the highest growth and shortest development time when fed artificial diets with that same 1p:2c ratio over the duration of the 5th (final) juvenile instar.
   
@@ -111,6 +111,7 @@ crossref:
   custom:
     - kind: float
       key: fig
+      latex-env: fig
       reference-prefix: Figure
       space-before-numbering: true
       latex-list-of-description: Figure
@@ -122,14 +123,18 @@ crossref:
       latex-list-of-description: Supplementary Figure
     - kind: float
       key: tbl
+      latex-env: tbl
       reference-prefix: Table
       space-before-numbering: true
       latex-list-of-description: Table
     - kind: float
       key: supptbl
+      latex-env: supptbl
       reference-prefix: Supplementary Table
       space-before-numbering: true
       latex-list-of-description: Supplementary Table
+      
+
 bibliography: references.bib
 csl: citation_style.csl
 
@@ -235,11 +240,9 @@ Australian plague locust individuals from the two outbreaking populations regula
 ```{r, field population it table}
 #| label: tbl-field-population-it-model
 #| tbl-cap:
-#|   - "Generalized additive model results for macronutrient consumption (carbohydrate and protein) of two outbreaking populations of Australian plague locust in #| Mendooran and Guntawang. Models were selected via AIC, AICc and BIC which can be seen in @tbl-field-population-choice-experiment-model-selection-criteria. Family: multivariate gaussian distribution, link: identity, SE: standard error."
-#| tbl-subcap: 
-#|     - parametric terms
-#|     - non-parametric terms
-#| layout-nrow: 2
+#|   - "Generalized additive model results for macronutrient consumption (carbohydrate and protein) of two outbreaking populations of Australian plague locust in Mendooran and Guntawang. Models were selected via AIC, AICc and BIC which can be seen in @tbl-field-population-choice-experiment-model-selection-criteria. Family: multivariate gaussian distribution, link: identity, SE: standard error."
+#| 
+#| layout-nrow: 1
 
 library(tidyverse)
 library(here)
@@ -248,28 +251,18 @@ library(gt)
 table_dat <- read_csv(here('output/publication_tables/field_cage_locust_nutrient_rebalancing_model_summary.csv'))
 
 
-
-
-p1 <- table_dat  |>
-  select(macronutrient,variable,SE,`p-value`) |> 
+table_dat  |>
   arrange(macronutrient) |> 
   mutate(across(where(is.numeric),~round(.,3))) |>
-  mutate(macronutrient = ifelse(duplicated(macronutrient), "", macronutrient)) |> 
-  gt()
-
-p2 <- table_dat  |>
-  select(macronutrient,variable,statistic,`p-value`) |>
-  drop_na(statistic) |>
-  arrange(macronutrient) |> 
-  mutate(across(where(is.numeric),~round(.,3))) |>
-  mutate(macronutrient = ifelse(duplicated(macronutrient), "", macronutrient)) |> 
-  gt()
-
-
-p1
-p2
-
-
+  mutate(macronutrient = ifelse(duplicated(macronutrient), "", macronutrient),
+    estimate = ifelse(duplicated(estimate), "", estimate),
+    statistic = ifelse(duplicated(statistic), "", statistic)) |> 
+  select(macronutrient,variable,estimate,SE,statistic,`p-value`) |>
+  gt() |>
+  sub_missing(
+    columns = everything(),
+    missing_text = ""
+  )
 
 ```
 
@@ -286,9 +279,7 @@ Australian plague locusts had higher specific mass growth rates and shorter deve
 #| label: tbl-field-population-no-choice-model
 #| tbl-cap:
 #|   - "Australian plague locust physiological performance (specific growth rate and development time) when constrained to specific diets with varying protein and carbohydrate content. SE: standard error. Posthoc comparisons for both physiological performance metrics can be seen in @tbl-field-population-no-choice-experiment-phys-post-hoc."
-#| tbl-subcap: 
-#|     - specific growth rate
-#|     - develpoment time
+#| 
 #| layout-nrow: 2
 
 library(tidyverse)
@@ -339,10 +330,8 @@ For the first 11 days of the 14 day field cage experiment, plant protein and car
 #| label: tbl-field-cage-plant-nutrients
 #| tbl-cap:
 #|   - "Generalized additive model results for plant macronutrient (carbohydrate and protein) differences between fertilization treatment. Family: multivariate gaussian distribution, link: identity, SE: standard error, significance indicated in bold."
-#| tbl-subcap: 
-#|     - parametric terms
-#|     - non-parametric temrs
-#| layout-nrow: 2
+#| 
+#| layout-nrow: 1
 
 library(tidyverse)
 library(here)
@@ -350,36 +339,25 @@ library(gt)
 
 table_dat <- read_csv(here('output/publication_tables/field_cage_plant_nutrients_model_summary.csv'))
 
-
-p1 <- table_dat  |>
-  select(macronutrient,variable,SE,`p-value`) |> 
+table_dat  |>
   arrange(macronutrient) |> 
   mutate(across(where(is.numeric),~round(.,3))) |>
   mutate(macronutrient = ifelse(duplicated(macronutrient), "", macronutrient)) |> 
-  gt()
-
-p2 <- table_dat  |>
-  select(macronutrient,variable,statistic,`p-value`) |>
-  drop_na(statistic) |>
-  arrange(macronutrient) |> 
-  mutate(across(where(is.numeric),~round(.,3))) |>
-  mutate(macronutrient = ifelse(duplicated(macronutrient), "", macronutrient)) |> 
-  gt()
-
-
-p1
-p2
+  select(macronutrient,variable,estimate,SE,statistic,`p-value`) |>
+  gt() |>
+  sub_missing(
+    columns = everything(),
+    missing_text = ""
+  )
 ```
 
 
 ```{r, field cage locust mass}
 #| label: tbl-field-cage-locust-mass
 #| tbl-cap:
-#|   - "Generalized additive model results for differences between final locust mass after the nitrogen fertilization experiment finished. Family: scaled T, link: identity, SE: standard error, significance indicated in bold."
-#| tbl-subcap: 
-#|     - parametric terms
-#|     - non-parametric temrs
-#| layout-nrow: 2
+#|   - "Generalized additive model results for differences between final locust mass after the nitrogen fertilization experiment finished. Family: scaled T, link: identity, SE: standard error."
+#| 
+#| layout-nrow: 1
 
 library(tidyverse)
 library(here)
@@ -388,16 +366,16 @@ library(kableExtra)
 
 table_dat <- read_csv(here('output/publication_tables/field_cage_final_locust_mass_model_summary.csv'))
 
-parametric <- table_dat |>
-  select(variable,SE,`p-value`) |>
-  drop_na()
 
-non_parametric <- table_dat |>
-  select(variable,statistic,`p-value`) |>
-  drop_na()
- 
-kable(parametric,digits=3) 
-kable(non_parametric,digits=3)
+
+table_dat  |>
+  mutate(across(where(is.numeric),~round(.,3))) |>
+  select(variable,estimate,SE,statistic,`p-value`) |>
+  gt() |>
+  sub_missing(
+    columns = everything(),
+    missing_text = ""
+  )
 ```
 
 
@@ -406,29 +384,28 @@ kable(non_parametric,digits=3)
 ```{r, field cage rebalancing}
 #| label: tbl-field-cage-rebalancing
 #| tbl-cap:
-#|   - "Generalized additive model results for nutrient imbalance dressing of field cage Australian plague locust in the control and high fertilization treatments. Model also included interactive terms; however, none were significant and left out. SE: standard error, significance indicated in bold."
-#| tbl-subcap: 
-#|     - parametric terms
-#|     - non-parametric temrs
-#| layout-nrow: 2
+#|   - "Generalized additive model results for nutrient imbalance dressing of field cage Australian plague locust in the control and high fertilization treatments. Model also included interactive terms; however, none were significant and left out. SE: standard error"
+#| 
+#| layout-nrow: 1
 
 library(tidyverse)
 library(here)
-library(knitr)
-library(kableExtra)
+library(gt)
 
 table_dat <- read_csv(here('output/publication_tables/field_cage_locust_nutrient_rebalancing_model_summary.csv'))
 
-parametric <- table_dat |>
-  select(variable,SE,`p-value`) |>
-  drop_na()
 
-non_parametric <- table_dat |>
-  select(variable,statistic,`p-value`) |>
-  drop_na()
- 
-kable(parametric,digits=3) 
-kable(non_parametric,digits=3)
+
+table_dat  |>
+  arrange(macronutrient) |> 
+  mutate(across(where(is.numeric),~round(.,3))) |>
+  mutate(macronutrient = ifelse(duplicated(macronutrient), "", macronutrient)) |> 
+  select(macronutrient,variable,estimate,SE,statistic,`p-value`) |>
+  gt() |>
+  sub_missing(
+    columns = everything(),
+    missing_text = ""
+  )
 ```
 
 
@@ -471,14 +448,14 @@ Making predictions about a population’s nutritional demands can aid in making 
 
 Acquiring the right amount of nutrients is a critical component for animal growth, reproduction, and population dynamics [@doonan_effects_1995; @hansson_food_1979; @keith_role_1983]. However, in contrast to the conventional hypotheses that predict a broad positive linear relationship between herbivorous populations and nitrogen and phosphorus [@huberty_consequences_2006; @mattson_herbivory_1980; @white_importance_1978; @white_inadequate_1993], the story is nuanced and probably most often non-linear. For some species, especially those with high energy requirements, the relationship is the opposite (negatively associated with nitrogen) like many locust species and the effects can be seen at the continental scale. Land use and Land Cover Change (LULCC) impact on nutritional environments has important implications for animal population dynamics from conservation to pest management. While we did not make an explicit connection between LULCC and locust outbreaks in Australia, our results are consistent with previous research showing that LULCC that decreases soil quality and creates low nitrogen environments increases physiological performance and outbreaks of locusts (reviewed in @le_gall_global_2019). Most importantly, we show that this relationship is consistent between scales from the individual locust to continental wide outbreaks. As such, proper management of soil nutrients can help keep locust populations from reaching outbreak sizes and should be considered across scales, from individual locust behavior to continental wide plagues.
 
-# References
+# REFERENCES
 
 ::: {#refs}
 :::
 
-# Supplementary
+# SUPPLEMENTARY
 
-![ Field cage soil nitrogen content by treatment (A & B) and regressed with plant carbohydrates and protein (C-F).](output/publication_figures/field_cage_plant_and_soil_nutrient_correlations.png){#suppfig-field-cage-plant-soil-nutrient-correlations}
+![ Field cage soil nitrogen content by treatment (A & B) and regressed with plant carbohydrates and protein (C-F).](output/publication_figures/field_cage_plant_and_soil_nutrient_correlations.png){#suppfig-field-cage-plant-soil-nutrient-correlations  width=80%}
 
 
 ![Map showing how we summarized point observation data to a fishnet grid throughout eastern Australia. Entire extent can be seen in the inlet map. We summed the number of 4 (outbreak) observations, low presence observations (1-3),  nil observations (0), and the total observations. Grid not at a 1 km2 x 1 km2 scale in this figure for demonstration purposes as the cells would be too small to see.](output/publication_figures/spatial_modeling_grid_example_map.png){#suppfig-grid-example}
@@ -489,44 +466,67 @@ Acquiring the right amount of nutrients is a critical component for animal growt
 
 ![Individual time step intake targets for grasshoppers kept in both high nitrogen fertilization and control cages.  Blue dots represent overall mean while blacks dots represent individual intake targets.](output/publication_figures/field_cage_locust_intake_rebalance_day_facet_plot.png){#suppfig-field-cage-rebalancing-facet}
 
-![Environmental variable correlations between mean annual precipitation, soil nitrogen, soil phosphorus, and woody vegetation pixel coverage. Mean annual precipitation was sourced from WorldClim V1 Bioclim, soil nitrogen and phosphorus was sourced from Soil and Landscape Grid of Australia, and woody vegetation pixel coverage was sourced from Global Forest Cover Change dataset. We averaged woody coverage for each pixel between the years 2000 and 2017. For all rasters, we randomly sampled 100,000 georeferenced points and extracted values. All values have been scaled and min-max normalized (to fall within [0,1]) for visual clarity. Dashed line represents a 1:1 slope and the blue line is a cubic spline with 10 knots.](output/publication_figures/spatial_modeling_environment_correlation_figure.png){#suppfig-spatial-modeling-env-corr}
-
+![Environmental variable correlations between mean annual precipitation, soil nitrogen, soil phosphorus, and woody vegetation pixel coverage. Mean annual precipitation was sourced from WorldClim V1 Bioclim, soil nitrogen and phosphorus was sourced from Soil and Landscape Grid of Australia, and woody vegetation pixel coverage was sourced from Global Forest Cover Change dataset. We averaged woody coverage for each pixel between the years 2000 and 2017. For all rasters, we randomly sampled 100,000 georeferenced points and extracted values. All values have been scaled and min-max normalized (to fall within [0,1]) for visual clarity. Dashed line represents a 1:1 slope and the blue line is a cubic spline with 10 knots.](output/publication_figures/spatial_modeling_environment_correlation_figure.png){#suppfig-spatial-modeling-env-corr width=80%}
 
 
 ```{r, supplementary field cage plant nutrients}
 #| label: tbl-field-cage-plant-soil-nutrients
 #| tbl-cap:
 #|   - "Field plot nutrient content for plant species collected from within the treatment plots but outside of the locust cages for three time points during the experiment. Soil nitrogen is also shown per each treatment. Trt = Treatment, C = carbon, N = Nitrogen, Prot = protein, Carb = Carbohydrates."
-#| tbl-subcap: 
-#|     - parametric terms
-#|     - non-parametric temrs
-#| layout-nrow: 2
+#| 
+#| layout-nrow: 1
 
 library(tidyverse)
 library(here)
 library(gt)
 
-
 table_dat <- read_csv(here('output/publication_tables/field_cage_plant_species_nutrient_content.csv')) 
 
+
+# Define a mapping for the species names
+species_map <- c(
+  "Digitaria" = "Digitaria spp.",
+  "Enteropogon" = "Enteropogon spp.",
+  "Nutgrass" = "Cyperus spp.",
+  "Plaspladium" = "Plaspladium spp.",
+  "Wallaby" = "Rytidosperma spp.",
+  "Ustrostipa" = "Austrostipa spp.",
+  "unknown" = "unknown"
+)
+
 table_dat |> 
-  arrange(treatment,`Soil NO3`,`Soil NO4`) |> 
-  mutate(across(where(is.numeric),~round(.,3))) |>
+  arrange(treatment, `Soil NO3`, `Soil NO4`) |> 
+  mutate(across(where(is.numeric), ~round(., 3)),
+    date = as.character(date)) |>
   mutate(treatment = ifelse(duplicated(treatment), "", treatment)) |> 
   mutate(`Soil NO3` = ifelse(duplicated(`Soil NO3`), "", `Soil NO3`)) |>
-  mutate(`Soil NO4` = ifelse(duplicated(`Soil NO4`), "", `Soil NO4`)) |>  
-  gt()
+  mutate(`Soil NO4` = ifelse(duplicated(`Soil NO4`), "", `Soil NO4`)) |>
+  mutate(species = species_map[species]) |>  # Apply species mapping
+  gt() |>
+  tab_style(
+    style = cell_text(style = "italic"),
+    locations = cells_body(
+      columns = vars(species),
+      rows = species %in% c("Digitaria spp.", 
+                          "Enteropogon spp.", 
+                          "Cyperus spp.", 
+                          "Plaspladium spp.", 
+                          "Rytidosperma spp.",
+                          "Austrostipa spp.")
+    )
+  )  |> 
+  tab_options(table.width = pct(100),
+    table.font.size = 11)
+
 ```
 
 
 ```{r, supplementary field cage plant nutrients}
 #| label: tbl-field-cage-plant-ground-cover
 #| tbl-cap:
-#|   - "Generalized additive model results for nutrient imbalance dressing of field cage Australian plague locust in the control and high fertilization treatments. Model also included interactive terms; however, none were significant and left out. SE: standard error, significance indicated in bold."
-#| tbl-subcap: 
-#|     - parametric terms
-#|     - non-parametric temrs
-#| layout-nrow: 2
+#|   - "Averaged plant ground cover (%) across all cages per treatment. Ground cover was estimated on November 11th, 2015."
+#| 
+#| layout-nrow: 1
 
 library(tidyverse)
 library(here)
@@ -537,11 +537,22 @@ table_dat <- read_csv(here('output/publication_tables/field_cage_plant_ground_co
 
 table_dat |> 
   pivot_longer(cols = !treatment) |>
-  pivot_wider(names_from = treatment,values_from = value) |>
-  mutate(plant = gsub('plant_cover','plant cover',name)) |>
-  select(plant,None,Medium,High) |> 
+  pivot_wider(names_from = treatment, values_from = value) |>
+  mutate(plant = gsub('plant_cover', 'plant cover', name)) |>
+  select(plant, None, Medium, High) |>
   gt() |>
-  fmt_number(decimals = 2)
+  fmt_number(decimals = 2) |>
+  tab_style(
+    style = cell_text(style = "italic"),
+    locations = cells_body(
+      columns = vars(plant),
+      rows = plant %in% c("Urochloa panicoides", 
+                          "Enteropogon acicularis", 
+                          "Austrodanthonia caespitosa", 
+                          "Cyperus rotundus", 
+                          "stipa species")
+    )
+  ) 
 ```
 
 
@@ -550,11 +561,9 @@ table_dat |>
 ```{r, supplementary field population choice experiment model selection criteria}
 #| label: tbl-field-population-choice-experiment-model-selection-criteria
 #| tbl-cap:
-#|   - "Generalized additive model results for nutrient imbalance dressing of field cage Australian plague locust in the control and high fertilization treatments. Model also included interactive terms; however, none were significant and left out. SE: standard error, significance indicated in bold."
-#| tbl-subcap: 
-#|     - parametric terms
-#|     - non-parametric temrs
-#| layout-nrow: 2
+#|   - "Model selection criteria via Akaike information criterion (AIC), AIC corrected for small sample size (AICc), and bayesian information criterion. Model formula with the dependent variable on the left side and independent variables on the right side of the equation. s() denotes a smoothing parameter was estimated. For all criteria, the lower the number, more negative in this case, the better fit model."
+#| 
+#| layout-nrow: 1
 
 library(tidyverse)
 library(here)
@@ -565,7 +574,9 @@ table_dat <- read_csv(here('output/publication_tables/field_population_choice_ex
 
 table_dat |> 
   gt() |>
-  fmt_number(decimals = 2)
+  fmt_number(decimals = 2)   |> 
+  tab_options(table.width = pct(100),
+    table.font.size = 11)
 ```
 
 
@@ -574,10 +585,8 @@ table_dat |>
 #| label: tbl-field-population-no-choice-experiment-phys-post-hoc
 #| tbl-cap:
 #|   - "Posthoc comparisons for diet treatments for C. terminifera individual specific growth rate and development time. SE = standard error."
-#| tbl-subcap: 
-#|     - parametric terms
-#|     - non-parametric temrs
-#| layout-nrow: 2
+#| 
+#| layout-nrow: 1
 
 
 library(tidyverse)
@@ -602,7 +611,8 @@ table_dat |>
     starts_with("est") ~ "estimate",
     starts_with("SE") ~ "SE",
     starts_with("adjusted") ~ "adjusted p-value"
-  )
+  ) |>
+  fmt_number(decimals = 3)
 
 ```
 
