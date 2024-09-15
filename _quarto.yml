@@ -11,6 +11,13 @@ format:
       hypothesis: true
   docx: default
   jats: default
+  arxiv-pdf:
+    keep-tex: true
+    cite-method: natbib
+    linenumbers: true
+    runninghead: "initial submission"
+    authorcols: true
+notebook-links: global
 
 execute:
   freeze: auto
