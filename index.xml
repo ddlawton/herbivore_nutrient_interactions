@@ -19952,6 +19952,10 @@ overall_mods &lt;-outbreak_mod |&gt; rbind(nil_mod)
 
 map_mods &lt;-map_outbreak_mod |&gt; rbind(map_nil_outbreak_mod)</code>
   </sec>
+  <sec id="cell-8f588684-0347-45b2-9c79-5907243f4a00-nb-10" specific-use="notebook-content">
+  <code language="r script">write.csv(overall_mods, here(&quot;output/spatial_modeling/map_outbreak_model_results.csv&quot;),row.names=FALSE)
+  </code>
+  </sec>
 </sec>
 </body>
 
