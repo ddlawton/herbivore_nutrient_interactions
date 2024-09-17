@@ -155,7 +155,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-79bb3942e891885f9f7af119cd221462.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-9d55e8dd271c30898f86a5da5bf22145.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-2845a910685745abe2ae06f057ea89f3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -600,7 +600,7 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 <h2 class="anchored" data-anchor-id="mean-annual-precipitation-correlations">mean annual precipitation correlations</h2>
 </section>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [368]:</pre></div><div id="7df585d9-4033-4674-8766-e95d7daf776c" class="cell" data-execution_count="368">
+<div class="cell-container"><div class="cell-decorator"><pre>In [382]:</pre></div><div id="7df585d9-4033-4674-8766-e95d7daf776c" class="cell" data-execution_count="382">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>map_outbreak <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"output/spatial_modeling/map_outbreak_model_smooth_estimates.csv"</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">drop_na</span>(bio12) <span class="sc">|&gt;</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">model =</span> <span class="st">'outbreak'</span>)</span>
@@ -726,7 +726,7 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 </table>
 </div>
 </div></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [371]:</pre></div><div id="9ebd2655-a880-45a6-8aa1-7b9b36d41e7f" class="cell" data-execution_count="371">
+<div class="cell-container"><div class="cell-decorator"><pre>In [383]:</pre></div><div id="9ebd2655-a880-45a6-8aa1-7b9b36d41e7f" class="cell" data-execution_count="383">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> map_mod_results <span class="sc">|&gt;</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.smooth <span class="sc">==</span> <span class="st">"s(bio12)"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>bio12)) <span class="sc">+</span> </span>
@@ -735,7 +735,7 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_pubr</span>() <span class="sc">+</span></span>
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">'dark grey'</span>,<span class="st">'red'</span>))  <span class="sc">+</span></span>
 <span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">'dark grey'</span>,<span class="st">'red'</span>)) <span class="sc">+</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">"mean annuao precipitation"</span>) <span class="sc">+</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">"mean annual precipitation (mm)"</span>) <span class="sc">+</span></span>
 <span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">"partial effect"</span>)</span>
 <span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a></span>
@@ -748,7 +748,7 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 </div>
 </div>
 </div></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [372]:</pre></div><div id="17050a89-0c4e-4d00-86e1-cb65afd53c85" class="cell" data-execution_count="372">
+<div class="cell-container"><div class="cell-decorator"><pre>In [384]:</pre></div><div id="17050a89-0c4e-4d00-86e1-cb65afd53c85" class="cell" data-execution_count="384">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(p1,</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_figures/spatial_modeling_locust_outbreak_with_map.png'</span>),</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">width=</span><span class="dv">5</span>,<span class="at">height=</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1192,7 +1192,7 @@ First 5 geometries:</code></pre>
 <span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a>map_mods <span class="ot">&lt;-</span>map_outbreak_mod <span class="sc">|&gt;</span> <span class="fu">rbind</span>(map_nil_outbreak_mod)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [10]:</pre></div><div id="8f588684-0347-45b2-9c79-5907243f4a00" class="cell">
+<div class="cell-container"><div class="cell-decorator"><pre>In [381]:</pre></div><div id="8f588684-0347-45b2-9c79-5907243f4a00" class="cell" data-execution_count="381">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(overall_mods, <span class="fu">here</span>(<span class="st">"output/spatial_modeling/map_outbreak_model_results.csv"</span>),<span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
      </main>
@@ -1615,7 +1615,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","loop":false,"selector":".lightbox","descPosition":"bottom"});
+</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","loop":false,"descPosition":"bottom","openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
