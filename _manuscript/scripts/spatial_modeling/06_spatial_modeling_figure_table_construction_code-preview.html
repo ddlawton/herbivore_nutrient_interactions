@@ -211,12 +211,15 @@
   <ul>
   <li><a href="#section-1---post-spatial-modeling-visualization" id="toc-section-1---post-spatial-modeling-visualization" class="nav-link active" data-scroll-target="#section-1---post-spatial-modeling-visualization">Section 1 - Post spatial modeling visualization</a>
   <ul class="collapse">
-  <li><a href="#outbreak-observations" id="toc-outbreak-observations" class="nav-link" data-scroll-target="#outbreak-observations">Outbreak observations</a></li>
+  <li><a href="#nitrogen-and-phosphorus" id="toc-nitrogen-and-phosphorus" class="nav-link" data-scroll-target="#nitrogen-and-phosphorus">Nitrogen and Phosphorus</a></li>
+  <li><a href="#other-variable-visualization-outbreaks" id="toc-other-variable-visualization-outbreaks" class="nav-link" data-scroll-target="#other-variable-visualization-outbreaks">Other variable visualization – outbreaks</a></li>
+  <li><a href="#other-variable-visualization-nil-observations" id="toc-other-variable-visualization-nil-observations" class="nav-link" data-scroll-target="#other-variable-visualization-nil-observations">Other variable visualization – nil observations</a></li>
+  <li><a href="#mean-annual-precipitation-correlations" id="toc-mean-annual-precipitation-correlations" class="nav-link" data-scroll-target="#mean-annual-precipitation-correlations">mean annual precipitation correlations</a></li>
   </ul></li>
-  <li><a href="#nil-observations" id="toc-nil-observations" class="nav-link" data-scroll-target="#nil-observations">nil observations</a></li>
   <li><a href="#section-2---environmental-correlations" id="toc-section-2---environmental-correlations" class="nav-link" data-scroll-target="#section-2---environmental-correlations">Section 2 - environmental correlations</a></li>
   <li><a href="#section-3---soil-and-point-map-generation" id="toc-section-3---soil-and-point-map-generation" class="nav-link" data-scroll-target="#section-3---soil-and-point-map-generation">Section 3 - soil and point map generation</a></li>
   <li><a href="#section-4---griding-example" id="toc-section-4---griding-example" class="nav-link" data-scroll-target="#section-4---griding-example">Section 4 - griding example</a></li>
+  <li><a href="#section-5---table-construction" id="toc-section-5---table-construction" class="nav-link" data-scroll-target="#section-5---table-construction">Section 5 - table construction</a></li>
   </ul>
 </nav>
 </div>
@@ -224,14 +227,12 @@
 </div>
 <main class="content quarto-banner-title-block" id="quarto-document-content">      
 
-       <div id="0e83583a-8f00-427a-84af-efd1dcd9d168" class="cell markdown">
-<ul>
+       <ul>
 <li>post-modeling visualization</li>
 <li>environmental correlations</li>
 <li>soil and point map generation</li>
 <li>gridding example plot</li>
 </ul>
-</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [57]:</pre></div><div id="d36c1a43-cc7e-42c8-bea9-169908f7da32" class="cell" data-execution_count="57">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>load_packages <span class="ot">&lt;-</span> <span class="cf">function</span>(packages) {</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Check for uninstalled packages</span></span>
@@ -251,7 +252,7 @@
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># List of packages to check, install, and load</span></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"tidyverse"</span>, <span class="st">"mgcv"</span>, <span class="st">"stars"</span>, <span class="st">"terra"</span>,  </span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>              <span class="st">"ggpubr"</span>, <span class="st">"patchwork"</span>, <span class="st">"janitor"</span>, <span class="st">"sf"</span>,<span class="st">"tidyterra"</span>,</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>              <span class="st">"here"</span>,<span class="st">"ggpubr"</span>,<span class="st">"MetBrewer"</span>,<span class="st">"rnaturalearth"</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>              <span class="st">"here"</span>,<span class="st">"ggpubr"</span>,<span class="st">"MetBrewer"</span>,<span class="st">"rnaturalearth"</span>,<span class="st">'viridis'</span>,<span class="st">'broom'</span>)</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">load_packages</span>(packages)</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
@@ -279,26 +280,472 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 </code></pre>
 </div>
 </div></div>
-<div id="4b46a42d-4f40-4e8a-ab95-e30918010efa" class="cell markdown">
 <section id="section-1---post-spatial-modeling-visualization" class="level1">
 <h1>Section 1 - Post spatial modeling visualization</h1>
-<section id="outbreak-observations" class="level2">
-<h2 class="anchored" data-anchor-id="outbreak-observations">Outbreak observations</h2>
-</section>
-</section>
-</div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [3]:</pre></div><div id="54ebe204-728a-4e56-8e25-3c84da3e40e7" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="nitrogen-and-phosphorus" class="level2">
+<h2 class="anchored" data-anchor-id="nitrogen-and-phosphorus">Nitrogen and Phosphorus</h2>
+<p>showing the relationship between outbreak and nil observations to soil nitrogen and phosphorus</p>
+<div class="cell-container"><div class="cell-decorator"><pre>In [344]:</pre></div><div id="bb50f718-d6e0-4bb7-94d8-aea41c322d6d" class="cell" data-execution_count="344">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>outbreak_model_results <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"output/spatial_modeling/outbreak_model_smooth_estimates.csv"</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(.smooth <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'s(nitrogen)'</span>,<span class="st">'s(phosphorus)'</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(.smooth,.estimate,.se,nitrogen,phosphorus) <span class="sc">|&gt;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">model =</span> <span class="st">'outbreak'</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>nil_model_results <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"output/spatial_modeling/nil_model_smooth_estimates.csv"</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(.smooth <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'s(nitrogen)'</span>,<span class="st">'s(phosphorus)'</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(.smooth,.estimate,.se,nitrogen,phosphorus)  <span class="sc">|&gt;</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">model =</span> <span class="st">'nil'</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>combine_dat <span class="ot">&lt;-</span> <span class="fu">rbind</span>(outbreak_model_results,nil_model_results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-<div id="942f3399-dfee-4961-a4a4-b50b4977e497" class="cell markdown">
-<section id="nil-observations" class="level2">
-<h2 class="anchored" data-anchor-id="nil-observations">nil observations</h2>
-</section>
+<div class="cell-container"><div class="cell-decorator"><pre>In [345]:</pre></div><div id="34bb7adc-b35b-447e-85de-3791c64bbcc6" class="cell" data-execution_count="345">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>combine_dat <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A tibble: 6 × 6</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">.smooth</th>
+<th data-quarto-table-cell-role="th" scope="col">.estimate</th>
+<th data-quarto-table-cell-role="th" scope="col">.se</th>
+<th data-quarto-table-cell-role="th" scope="col">nitrogen</th>
+<th data-quarto-table-cell-role="th" scope="col">phosphorus</th>
+<th data-quarto-table-cell-role="th" scope="col">model</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>s(nitrogen)</td>
+<td>0.5906556</td>
+<td>0.05576474</td>
+<td>0.02707394</td>
+<td>NA</td>
+<td>outbreak</td>
+</tr>
+<tr class="even">
+<td>s(nitrogen)</td>
+<td>0.5586090</td>
+<td>0.05320992</td>
+<td>0.03082000</td>
+<td>NA</td>
+<td>outbreak</td>
+</tr>
+<tr class="odd">
+<td>s(nitrogen)</td>
+<td>0.5265910</td>
+<td>0.05083716</td>
+<td>0.03456606</td>
+<td>NA</td>
+<td>outbreak</td>
+</tr>
+<tr class="even">
+<td>s(nitrogen)</td>
+<td>0.4946931</td>
+<td>0.04867994</td>
+<td>0.03831212</td>
+<td>NA</td>
+<td>outbreak</td>
+</tr>
+<tr class="odd">
+<td>s(nitrogen)</td>
+<td>0.4630709</td>
+<td>0.04676640</td>
+<td>0.04205818</td>
+<td>NA</td>
+<td>outbreak</td>
+</tr>
+<tr class="even">
+<td>s(nitrogen)</td>
+<td>0.4319228</td>
+<td>0.04510672</td>
+<td>0.04580424</td>
+<td>NA</td>
+<td>outbreak</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [4]:</pre></div><div id="bb50f718-d6e0-4bb7-94d8-aea41c322d6d" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-<div id="ae165e80-0909-4423-bb6c-f2f6a81cd6d0" class="cell markdown">
+<div class="cell-container"><div class="cell-decorator"><pre>In [394]:</pre></div><div id="cd4f8b4f-a20e-405f-a541-01dd67d1e646" class="cell" data-execution_count="394">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> combine_dat <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.smooth <span class="sc">==</span> <span class="st">"s(nitrogen)"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>nitrogen)) <span class="sc">+</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>.estimate <span class="sc">-</span> .se, <span class="at">ymax=</span>.estimate <span class="sc">+</span> .se,<span class="at">fill=</span>model),<span class="at">alpha=</span>.<span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> .estimate ,<span class="at">color=</span>model),<span class="at">size=</span><span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_pubr</span>() <span class="sc">+</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">'dark grey'</span>,<span class="st">'red'</span>))  <span class="sc">+</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">'dark grey'</span>,<span class="st">'red'</span>)) <span class="sc">+</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">"soil nitrogen (%)"</span>) <span class="sc">+</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">"effect"</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> combine_dat <span class="sc">|&gt;</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.smooth <span class="sc">==</span> <span class="st">"s(phosphorus)"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>phosphorus)) <span class="sc">+</span> </span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>.estimate <span class="sc">-</span> .se, <span class="at">ymax=</span>.estimate <span class="sc">+</span> .se,<span class="at">fill=</span>model),<span class="at">alpha=</span>.<span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> .estimate ,<span class="at">color=</span>model),<span class="at">size=</span><span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_pubr</span>() <span class="sc">+</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">'dark grey'</span>,<span class="st">'red'</span>))  <span class="sc">+</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">'dark grey'</span>,<span class="st">'red'</span>)) <span class="sc">+</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">"soil phosphorus (%)"</span>) <span class="sc">+</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">"effect"</span>)</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>soil_outbreak_plot <span class="ot">&lt;-</span> (p1) <span class="sc">/</span> (p2) <span class="sc">+</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot_annotation</span>(<span class="at">tag_levels =</span> <span class="st">'a'</span>)</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>soil_outbreak_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="">
+<figure class="figure">
+<p class=""><a href="06_spatial_modeling_figure_table_construction_code_files/figure-html/cell-5-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="06_spatial_modeling_figure_table_construction_code_files/figure-html/cell-5-output-1.png" width="600" height="600" class="figure-img"></a></p>
+</figure>
+</div>
+</div>
+</div></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [395]:</pre></div><div id="11be0fec-b9fe-48cb-a35b-5db1a3a4304e" class="cell" data-execution_count="395">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(soil_outbreak_plot,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_figures/spatial_modeling_locust_outbreak_with_soil_NTO_PTO.png'</span>),</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">width=</span><span class="dv">5</span>,<span class="at">height=</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+</section>
+<section id="other-variable-visualization-outbreaks" class="level2">
+<h2 class="anchored" data-anchor-id="other-variable-visualization-outbreaks">Other variable visualization – outbreaks</h2>
+<div class="cell-container"><div class="cell-decorator"><pre>In [385]:</pre></div><div id="cb6acf67-15fe-45ae-9c94-0ad4175ed47b" class="cell" data-execution_count="385">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>outbreak_model_results <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"output/spatial_modeling/outbreak_model_smooth_estimates.csv"</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [386]:</pre></div><div id="9c6fb06d-95f6-463c-8204-67df14dd8b9a" class="cell" data-execution_count="386">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> outbreak_model_results <span class="sc">|&gt;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.smooth <span class="sc">==</span> <span class="st">"s(nitrogen)"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>nitrogen)) <span class="sc">+</span> </span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>.estimate <span class="sc">-</span> .se, <span class="at">ymax=</span>.estimate <span class="sc">+</span> .se),<span class="at">alpha=</span>.<span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> .estimate),<span class="at">size=</span><span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_pubr</span>() <span class="sc">+</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">"soil nitrogen (%)"</span>) <span class="sc">+</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">"partial effect"</span>)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> outbreak_model_results <span class="sc">|&gt;</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.smooth <span class="sc">==</span> <span class="st">"s(nymph_density_total_count)"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>nymph_density_total_count)) <span class="sc">+</span> </span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>.estimate <span class="sc">-</span> .se, <span class="at">ymax=</span>.estimate <span class="sc">+</span> .se),<span class="at">alpha=</span>.<span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> .estimate),<span class="at">size=</span><span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_pubr</span>() <span class="sc">+</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">"total number of observations"</span>) <span class="sc">+</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">"partial effect"</span>)</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>aus <span class="ot">&lt;-</span> <span class="fu">ne_states</span>(<span class="at">country =</span> <span class="st">'Australia'</span>)</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>map_dat <span class="ot">&lt;-</span> outbreak_model_results <span class="sc">|&gt;</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">drop_na</span>(longitude,latitude,.estimate) <span class="sc">|&gt;</span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">st_as_sf</span>(<span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"longitude"</span>, <span class="st">"latitude"</span>),<span class="at">crs=</span> <span class="st">"+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"</span>)</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> aus <span class="sc">|&gt;</span></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_sf</span>(<span class="at">data=</span>map_dat,<span class="fu">aes</span>(<span class="at">color=</span>.estimate)) <span class="sc">+</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>        <span class="fu">scale_color_viridis</span>() <span class="sc">+</span></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_void</span>()  <span class="sc">+</span></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>        <span class="fu">labs</span>(<span class="at">color=</span><span class="st">"partial effect"</span>)</span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>p4 <span class="ot">&lt;-</span> outbreak_model_results <span class="sc">|&gt;</span></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.smooth <span class="sc">==</span> <span class="st">"s(phosphorus)"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>phosphorus)) <span class="sc">+</span> </span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>.estimate <span class="sc">-</span> .se, <span class="at">ymax=</span>.estimate <span class="sc">+</span> .se),<span class="at">alpha=</span>.<span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> .estimate),<span class="at">size=</span><span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_pubr</span>() <span class="sc">+</span></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">"total number of observations"</span>) <span class="sc">+</span></span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">"partial effect"</span>)</span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>p5 <span class="ot">&lt;-</span> outbreak_model_results <span class="sc">|&gt;</span></span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>    <span class="fu">drop_na</span>(ecoregion) <span class="sc">|&gt;</span></span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y=</span>.estimate, <span class="at">x=</span><span class="fu">reorder</span>(ecoregion,.estimate))) <span class="sc">+</span></span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> .estimate <span class="sc">-</span> .se, <span class="at">ymax =</span> .estimate <span class="sc">+</span> .se),<span class="at">width=</span><span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_pubr</span>() <span class="sc">+</span></span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">'partial effect'</span>) <span class="sc">+</span></span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">'ecoregion'</span>) <span class="sc">+</span></span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme</span>(<span class="at">axis.text.x=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a>            <span class="at">axis.ticks.x=</span><span class="fu">element_blank</span>())</span>
+<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-55"><a href="#cb8-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-56"><a href="#cb8-56" aria-hidden="true" tabindex="-1"></a>layout <span class="ot">&lt;-</span> <span class="st">'</span></span>
+<span id="cb8-57"><a href="#cb8-57" aria-hidden="true" tabindex="-1"></a><span class="st">AB</span></span>
+<span id="cb8-58"><a href="#cb8-58" aria-hidden="true" tabindex="-1"></a><span class="st">CD</span></span>
+<span id="cb8-59"><a href="#cb8-59" aria-hidden="true" tabindex="-1"></a><span class="st">EE</span></span>
+<span id="cb8-60"><a href="#cb8-60" aria-hidden="true" tabindex="-1"></a><span class="st">'</span></span>
+<span id="cb8-61"><a href="#cb8-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-62"><a href="#cb8-62" aria-hidden="true" tabindex="-1"></a>outbreak_all_model_variables <span class="ot">&lt;-</span> p1 <span class="sc">+</span> p2 <span class="sc">+</span> p4 <span class="sc">+</span> p5 <span class="sc">+</span> p3 <span class="sc">+</span></span>
+<span id="cb8-63"><a href="#cb8-63" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot_layout</span>(<span class="at">design =</span> layout) <span class="sc">+</span></span>
+<span id="cb8-64"><a href="#cb8-64" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot_annotation</span>(<span class="at">tag_levels =</span> <span class="st">'a'</span>)</span>
+<span id="cb8-65"><a href="#cb8-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-66"><a href="#cb8-66" aria-hidden="true" tabindex="-1"></a>outbreak_all_model_variables</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="">
+<figure class="figure">
+<p class=""><a href="06_spatial_modeling_figure_table_construction_code_files/figure-html/cell-8-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="06_spatial_modeling_figure_table_construction_code_files/figure-html/cell-8-output-1.png" width="600" height="600" class="figure-img"></a></p>
+</figure>
+</div>
+</div>
+</div></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [387]:</pre></div><div id="f9bb3b8e-105a-4141-a279-8078a68cd2c7" class="cell" data-execution_count="387">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(soil_outbreak_plot,</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_figures/spatial_modeling_outbreak_all_model_variables.png'</span>),</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">width=</span><span class="dv">10</span>,<span class="at">height=</span><span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+</section>
+<section id="other-variable-visualization-nil-observations" class="level2">
+<h2 class="anchored" data-anchor-id="other-variable-visualization-nil-observations">Other variable visualization – nil observations</h2>
+<div class="cell-container"><div class="cell-decorator"><pre>In [388]:</pre></div><div id="7357d178-94e9-447c-9792-302bc77741fd" class="cell" data-execution_count="388">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>nil_model_results <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"output/spatial_modeling/nil_model_smooth_estimates.csv"</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [389]:</pre></div><div id="8540900d-235c-4b2a-91d8-9d174368afa8" class="cell" data-execution_count="389">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> nil_model_results <span class="sc">|&gt;</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.smooth <span class="sc">==</span> <span class="st">"s(nitrogen)"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>nitrogen)) <span class="sc">+</span> </span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>.estimate <span class="sc">-</span> .se, <span class="at">ymax=</span>.estimate <span class="sc">+</span> .se),<span class="at">alpha=</span>.<span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> .estimate),<span class="at">size=</span><span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_pubr</span>() <span class="sc">+</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">"soil nitrogen (%)"</span>) <span class="sc">+</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">"partial effect"</span>)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> nil_model_results <span class="sc">|&gt;</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.smooth <span class="sc">==</span> <span class="st">"s(nymph_density_total_count)"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>nymph_density_total_count)) <span class="sc">+</span> </span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>.estimate <span class="sc">-</span> .se, <span class="at">ymax=</span>.estimate <span class="sc">+</span> .se),<span class="at">alpha=</span>.<span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> .estimate),<span class="at">size=</span><span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_pubr</span>() <span class="sc">+</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">"total number of observations"</span>) <span class="sc">+</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">"partial effect"</span>)</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>aus <span class="ot">&lt;-</span> <span class="fu">ne_states</span>(<span class="at">country =</span> <span class="st">'Australia'</span>)</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>map_dat <span class="ot">&lt;-</span> nil_model_results <span class="sc">|&gt;</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">drop_na</span>(longitude,latitude,.estimate) <span class="sc">|&gt;</span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">st_as_sf</span>(<span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"longitude"</span>, <span class="st">"latitude"</span>),<span class="at">crs=</span> <span class="st">"+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"</span>)</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> aus <span class="sc">|&gt;</span></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_sf</span>(<span class="at">data=</span>map_dat,<span class="fu">aes</span>(<span class="at">color=</span>.estimate)) <span class="sc">+</span></span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>        <span class="fu">scale_color_viridis</span>() <span class="sc">+</span></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>        <span class="fu">labs</span>(<span class="at">color=</span><span class="st">"partial effect"</span>)</span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>p4 <span class="ot">&lt;-</span> nil_model_results <span class="sc">|&gt;</span></span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.smooth <span class="sc">==</span> <span class="st">"s(phosphorus)"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>phosphorus)) <span class="sc">+</span> </span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>.estimate <span class="sc">-</span> .se, <span class="at">ymax=</span>.estimate <span class="sc">+</span> .se),<span class="at">alpha=</span>.<span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> .estimate),<span class="at">size=</span><span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_pubr</span>() <span class="sc">+</span></span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">"total number of observations"</span>) <span class="sc">+</span></span>
+<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">"partial effect"</span>)</span>
+<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a>p5 <span class="ot">&lt;-</span> nil_model_results <span class="sc">|&gt;</span></span>
+<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a>    <span class="fu">drop_na</span>(ecoregion) <span class="sc">|&gt;</span></span>
+<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y=</span>.estimate, <span class="at">x=</span><span class="fu">reorder</span>(ecoregion,.estimate))) <span class="sc">+</span></span>
+<span id="cb11-47"><a href="#cb11-47" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> .estimate <span class="sc">-</span> .se, <span class="at">ymax =</span> .estimate <span class="sc">+</span> .se),<span class="at">width=</span><span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_pubr</span>() <span class="sc">+</span></span>
+<span id="cb11-50"><a href="#cb11-50" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">'partial effect'</span>) <span class="sc">+</span></span>
+<span id="cb11-51"><a href="#cb11-51" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">'ecoregion'</span>) <span class="sc">+</span></span>
+<span id="cb11-52"><a href="#cb11-52" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme</span>(<span class="at">axis.text.x=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb11-53"><a href="#cb11-53" aria-hidden="true" tabindex="-1"></a>            <span class="at">axis.ticks.x=</span><span class="fu">element_blank</span>())</span>
+<span id="cb11-54"><a href="#cb11-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-55"><a href="#cb11-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-56"><a href="#cb11-56" aria-hidden="true" tabindex="-1"></a>layout <span class="ot">&lt;-</span> <span class="st">'</span></span>
+<span id="cb11-57"><a href="#cb11-57" aria-hidden="true" tabindex="-1"></a><span class="st">AB</span></span>
+<span id="cb11-58"><a href="#cb11-58" aria-hidden="true" tabindex="-1"></a><span class="st">CD</span></span>
+<span id="cb11-59"><a href="#cb11-59" aria-hidden="true" tabindex="-1"></a><span class="st">EE</span></span>
+<span id="cb11-60"><a href="#cb11-60" aria-hidden="true" tabindex="-1"></a><span class="st">'</span></span>
+<span id="cb11-61"><a href="#cb11-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-62"><a href="#cb11-62" aria-hidden="true" tabindex="-1"></a>nil_all_model_variables <span class="ot">&lt;-</span> p1 <span class="sc">+</span> p2 <span class="sc">+</span> p4 <span class="sc">+</span> p5 <span class="sc">+</span> p3 <span class="sc">+</span></span>
+<span id="cb11-63"><a href="#cb11-63" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot_layout</span>(<span class="at">design =</span> layout) <span class="sc">+</span></span>
+<span id="cb11-64"><a href="#cb11-64" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot_annotation</span>(<span class="at">tag_levels =</span> <span class="st">'a'</span>)</span>
+<span id="cb11-65"><a href="#cb11-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-66"><a href="#cb11-66" aria-hidden="true" tabindex="-1"></a>nil_all_model_variables</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="">
+<figure class="figure">
+<p class=""><a href="06_spatial_modeling_figure_table_construction_code_files/figure-html/cell-11-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="06_spatial_modeling_figure_table_construction_code_files/figure-html/cell-11-output-1.png" width="600" height="600" class="figure-img"></a></p>
+</figure>
+</div>
+</div>
+</div></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [390]:</pre></div><div id="51013ab0-30e5-4cdd-a7a6-7c8502389214" class="cell" data-execution_count="390">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(nil_all_model_variables,</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_figures/spatial_modeling_nil_all_model_variables.png'</span>),</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">width=</span><span class="dv">10</span>,<span class="at">height=</span><span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+</section>
+<section id="mean-annual-precipitation-correlations" class="level2">
+<h2 class="anchored" data-anchor-id="mean-annual-precipitation-correlations">mean annual precipitation correlations</h2>
+<div class="cell-container"><div class="cell-decorator"><pre>In [391]:</pre></div><div id="7df585d9-4033-4674-8766-e95d7daf776c" class="cell" data-execution_count="391">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>map_outbreak <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"output/spatial_modeling/map_outbreak_model_smooth_estimates.csv"</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">drop_na</span>(bio12) <span class="sc">|&gt;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">model =</span> <span class="st">'outbreak'</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>map_nil <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"output/spatial_modeling/map_nill_model_smooth_estimates.csv"</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">drop_na</span>(bio12) <span class="sc">|&gt;</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">model =</span> <span class="st">'nil'</span>)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>map_mod_results <span class="ot">&lt;-</span> <span class="fu">rbind</span>(map_outbreak,map_nil)</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>map_mod_results <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A tibble: 6 × 11</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">.smooth</th>
+<th data-quarto-table-cell-role="th" scope="col">.type</th>
+<th data-quarto-table-cell-role="th" scope="col">.by</th>
+<th data-quarto-table-cell-role="th" scope="col">.estimate</th>
+<th data-quarto-table-cell-role="th" scope="col">.se</th>
+<th data-quarto-table-cell-role="th" scope="col">bio12</th>
+<th data-quarto-table-cell-role="th" scope="col">nymph_density_total_count</th>
+<th data-quarto-table-cell-role="th" scope="col">longitude</th>
+<th data-quarto-table-cell-role="th" scope="col">latitude</th>
+<th data-quarto-table-cell-role="th" scope="col">ecoregion</th>
+<th data-quarto-table-cell-role="th" scope="col">model</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;lgl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>s(bio12)</td>
+<td>TPRS</td>
+<td>NA</td>
+<td>0.02558828</td>
+<td>0.04400760</td>
+<td>152.0000</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>outbreak</td>
+</tr>
+<tr class="even">
+<td>s(bio12)</td>
+<td>TPRS</td>
+<td>NA</td>
+<td>0.02484161</td>
+<td>0.04361090</td>
+<td>159.3030</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>outbreak</td>
+</tr>
+<tr class="odd">
+<td>s(bio12)</td>
+<td>TPRS</td>
+<td>NA</td>
+<td>0.02409458</td>
+<td>0.04323558</td>
+<td>166.6061</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>outbreak</td>
+</tr>
+<tr class="even">
+<td>s(bio12)</td>
+<td>TPRS</td>
+<td>NA</td>
+<td>0.02334638</td>
+<td>0.04288135</td>
+<td>173.9091</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>outbreak</td>
+</tr>
+<tr class="odd">
+<td>s(bio12)</td>
+<td>TPRS</td>
+<td>NA</td>
+<td>0.02259582</td>
+<td>0.04254728</td>
+<td>181.2121</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>outbreak</td>
+</tr>
+<tr class="even">
+<td>s(bio12)</td>
+<td>TPRS</td>
+<td>NA</td>
+<td>0.02184140</td>
+<td>0.04223185</td>
+<td>188.5152</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>outbreak</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [392]:</pre></div><div id="9ebd2655-a880-45a6-8aa1-7b9b36d41e7f" class="cell" data-execution_count="392">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> map_mod_results <span class="sc">|&gt;</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.smooth <span class="sc">==</span> <span class="st">"s(bio12)"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>bio12)) <span class="sc">+</span> </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>.estimate <span class="sc">-</span> .se, <span class="at">ymax=</span>.estimate <span class="sc">+</span> .se,<span class="at">fill=</span>model),<span class="at">alpha=</span>.<span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> .estimate ,<span class="at">color=</span>model),<span class="at">size=</span><span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_pubr</span>() <span class="sc">+</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">'dark grey'</span>,<span class="st">'red'</span>))  <span class="sc">+</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">'dark grey'</span>,<span class="st">'red'</span>)) <span class="sc">+</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">"mean annual precipitation (mm)"</span>) <span class="sc">+</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">"partial effect"</span>)</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>p1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="">
+<figure class="figure">
+<p class=""><a href="06_spatial_modeling_figure_table_construction_code_files/figure-html/cell-14-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="06_spatial_modeling_figure_table_construction_code_files/figure-html/cell-14-output-1.png" width="600" height="600" class="figure-img"></a></p>
+</figure>
+</div>
+</div>
+</div></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [393]:</pre></div><div id="17050a89-0c4e-4d00-86e1-cb65afd53c85" class="cell" data-execution_count="393">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(p1,</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_figures/spatial_modeling_locust_outbreak_with_map.png'</span>),</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">width=</span><span class="dv">5</span>,<span class="at">height=</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+</section>
+</section>
 <section id="section-2---environmental-correlations" class="level1">
 <h1>Section 2 - environmental correlations</h1>
 <p>This is just a randomly sampled 100k points between the soil and bioclim variables on google earth engine. This extraction code can be found here: <code>04_environmental_correlations_map_nitrogen_phosphorus_woody_cover.ipynb</code></p>
@@ -310,24 +757,22 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 <li>soil phosphorus x woody veg</li>
 <li>MAP x woody veg</li>
 </ul>
-</section>
-</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [35]:</pre></div><div id="4a3ff466-f65c-48e1-aa08-7fdc06148f49" class="cell" data-execution_count="35">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># I min-max normalize to get all variables into the same scale for plotting.</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>minmax <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) {</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>((x<span class="sc">-</span> <span class="fu">min</span>(x)) <span class="sc">/</span>(<span class="fu">max</span>(x)<span class="sc">-</span><span class="fu">min</span>(x)))</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>env_dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/processed/spatial_modeling/environmental_correlation_data.csv'</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">mean_nto =</span> <span class="fu">minmax</span>((NTO_000_005_EV <span class="sc">+</span> NTO_005_015_EV) <span class="sc">/</span> <span class="dv">2</span>),</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>           <span class="at">mean_pto =</span> <span class="fu">minmax</span>((PTO_000_005_EV <span class="sc">+</span> PTO_005_015_EV) <span class="sc">/</span> <span class="dv">2</span>),</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>           <span class="at">annual_precip =</span> <span class="fu">minmax</span>(bio12),</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>           <span class="at">tree_cover =</span> <span class="fu">minmax</span>(tree_canopy_cover)) <span class="sc">|&gt;</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(mean_pto,mean_nto,annual_precip,tree_cover)</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>env_dat <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># I min-max normalize to get all variables into the same scale for plotting.</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>minmax <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) {</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>((x<span class="sc">-</span> <span class="fu">min</span>(x)) <span class="sc">/</span>(<span class="fu">max</span>(x)<span class="sc">-</span><span class="fu">min</span>(x)))</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>env_dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/processed/spatial_modeling/environmental_correlation_data.csv'</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">mean_nto =</span> <span class="fu">minmax</span>((NTO_000_005_EV <span class="sc">+</span> NTO_005_015_EV) <span class="sc">/</span> <span class="dv">2</span>),</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>           <span class="at">mean_pto =</span> <span class="fu">minmax</span>((PTO_000_005_EV <span class="sc">+</span> PTO_005_015_EV) <span class="sc">/</span> <span class="dv">2</span>),</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>           <span class="at">annual_precip =</span> <span class="fu">minmax</span>(bio12),</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>           <span class="at">tree_cover =</span> <span class="fu">minmax</span>(tree_canopy_cover)) <span class="sc">|&gt;</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(mean_pto,mean_nto,annual_precip,tree_cover)</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>env_dat <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <caption>A tibble: 6 × 4</caption>
@@ -387,78 +832,78 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 </div>
 </div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [30]:</pre></div><div id="c9f56150-5b6d-4cb7-b27f-6e49c0497383" class="cell" data-execution_count="30">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>nto_pto_graph <span class="ot">&lt;-</span> env_dat <span class="sc">|&gt;</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">#slice_sample(n=10000) |&gt;</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>mean_nto,<span class="at">y=</span>mean_pto)) <span class="sc">+</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_abline</span>(<span class="at">slope=</span><span class="dv">1</span>,<span class="at">linetype=</span><span class="dv">3</span>,<span class="at">linewidth=</span><span class="fl">1.4</span>) <span class="sc">+</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>(<span class="at">pch=</span><span class="dv">21</span>,<span class="at">alpha=</span><span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">'gam'</span>,<span class="at">se=</span><span class="cn">FALSE</span>,<span class="at">linewidth=</span><span class="fl">1.4</span>) <span class="sc">+</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_pubr</span>() <span class="sc">+</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">'soil nitrogen'</span>) <span class="sc">+</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">'soil phosphorus'</span>)</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>nto_woody_graph <span class="ot">&lt;-</span> env_dat <span class="sc">|&gt;</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="co">#slice_sample(n=10000) |&gt;</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>mean_nto,<span class="at">y=</span>tree_cover)) <span class="sc">+</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_abline</span>(<span class="at">slope=</span><span class="dv">1</span>,<span class="at">linetype=</span><span class="dv">3</span>,<span class="at">linewidth=</span><span class="fl">1.4</span>) <span class="sc">+</span></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>(<span class="at">pch=</span><span class="dv">21</span>,<span class="at">alpha=</span><span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">'gam'</span>,<span class="at">se=</span><span class="cn">FALSE</span>,<span class="at">linewidth=</span><span class="fl">1.4</span>) <span class="sc">+</span></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_pubr</span>() <span class="sc">+</span></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">'soil nitrogen'</span>) <span class="sc">+</span></span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">'woody tree cover'</span>)</span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>nto_map_graph <span class="ot">&lt;-</span> env_dat <span class="sc">|&gt;</span></span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>    <span class="co">#slice_sample(n=10000) |&gt;</span></span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>mean_nto,<span class="at">y=</span>annual_precip)) <span class="sc">+</span></span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_abline</span>(<span class="at">slope=</span><span class="dv">1</span>,<span class="at">linetype=</span><span class="dv">3</span>,<span class="at">linewidth=</span><span class="fl">1.4</span>) <span class="sc">+</span></span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>(<span class="at">pch=</span><span class="dv">21</span>,<span class="at">alpha=</span><span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">'gam'</span>,<span class="at">se=</span><span class="cn">FALSE</span>,<span class="at">linewidth=</span><span class="fl">1.4</span>) <span class="sc">+</span></span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_pubr</span>() <span class="sc">+</span></span>
-<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">'soil nitrogen'</span>) <span class="sc">+</span></span>
-<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">'annual precipitation'</span>)</span>
-<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>pto_woody_graph <span class="ot">&lt;-</span> env_dat <span class="sc">|&gt;</span></span>
-<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>    <span class="co">#lice_sample(n=10000) |&gt;</span></span>
-<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>mean_pto,<span class="at">y=</span>tree_cover)) <span class="sc">+</span></span>
-<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_abline</span>(<span class="at">slope=</span><span class="dv">1</span>,<span class="at">linetype=</span><span class="dv">3</span>,<span class="at">linewidth=</span><span class="fl">1.4</span>) <span class="sc">+</span></span>
-<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>(<span class="at">pch=</span><span class="dv">21</span>,<span class="at">alpha=</span><span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">'gam'</span>,<span class="at">se=</span><span class="cn">FALSE</span>,<span class="at">linewidth=</span><span class="fl">1.4</span>) <span class="sc">+</span></span>
-<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_pubr</span>() <span class="sc">+</span></span>
-<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">'soil phosphorus'</span>) <span class="sc">+</span></span>
-<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">'woody tree cover'</span>)</span>
-<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>pto_map_graph <span class="ot">&lt;-</span> env_dat <span class="sc">|&gt;</span></span>
-<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>    <span class="co">#slice_sample(n=10000) |&gt;</span></span>
-<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>mean_pto,<span class="at">y=</span>annual_precip)) <span class="sc">+</span></span>
-<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_abline</span>(<span class="at">slope=</span><span class="dv">1</span>,<span class="at">linetype=</span><span class="dv">3</span>,<span class="at">linewidth=</span><span class="fl">1.4</span>) <span class="sc">+</span></span>
-<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>(<span class="at">pch=</span><span class="dv">21</span>,<span class="at">alpha=</span><span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">'gam'</span>,<span class="at">se=</span><span class="cn">FALSE</span>,<span class="at">linewidth=</span><span class="fl">1.4</span>) <span class="sc">+</span></span>
-<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_pubr</span>() <span class="sc">+</span></span>
-<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">'soil phosphorus'</span>) <span class="sc">+</span></span>
-<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">'annual precipitation'</span>)</span>
-<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>        </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>nto_pto_graph <span class="ot">&lt;-</span> env_dat <span class="sc">|&gt;</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">#slice_sample(n=10000) |&gt;</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>mean_nto,<span class="at">y=</span>mean_pto)) <span class="sc">+</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_abline</span>(<span class="at">slope=</span><span class="dv">1</span>,<span class="at">linetype=</span><span class="dv">3</span>,<span class="at">linewidth=</span><span class="fl">1.4</span>) <span class="sc">+</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>(<span class="at">pch=</span><span class="dv">21</span>,<span class="at">alpha=</span><span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">'gam'</span>,<span class="at">se=</span><span class="cn">FALSE</span>,<span class="at">linewidth=</span><span class="fl">1.4</span>) <span class="sc">+</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_pubr</span>() <span class="sc">+</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">'soil nitrogen'</span>) <span class="sc">+</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">'soil phosphorus'</span>)</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>nto_woody_graph <span class="ot">&lt;-</span> env_dat <span class="sc">|&gt;</span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>    <span class="co">#slice_sample(n=10000) |&gt;</span></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>mean_nto,<span class="at">y=</span>tree_cover)) <span class="sc">+</span></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_abline</span>(<span class="at">slope=</span><span class="dv">1</span>,<span class="at">linetype=</span><span class="dv">3</span>,<span class="at">linewidth=</span><span class="fl">1.4</span>) <span class="sc">+</span></span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>(<span class="at">pch=</span><span class="dv">21</span>,<span class="at">alpha=</span><span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">'gam'</span>,<span class="at">se=</span><span class="cn">FALSE</span>,<span class="at">linewidth=</span><span class="fl">1.4</span>) <span class="sc">+</span></span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_pubr</span>() <span class="sc">+</span></span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">'soil nitrogen'</span>) <span class="sc">+</span></span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">'woody tree cover'</span>)</span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>nto_map_graph <span class="ot">&lt;-</span> env_dat <span class="sc">|&gt;</span></span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>    <span class="co">#slice_sample(n=10000) |&gt;</span></span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>mean_nto,<span class="at">y=</span>annual_precip)) <span class="sc">+</span></span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_abline</span>(<span class="at">slope=</span><span class="dv">1</span>,<span class="at">linetype=</span><span class="dv">3</span>,<span class="at">linewidth=</span><span class="fl">1.4</span>) <span class="sc">+</span></span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>(<span class="at">pch=</span><span class="dv">21</span>,<span class="at">alpha=</span><span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">'gam'</span>,<span class="at">se=</span><span class="cn">FALSE</span>,<span class="at">linewidth=</span><span class="fl">1.4</span>) <span class="sc">+</span></span>
+<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_pubr</span>() <span class="sc">+</span></span>
+<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">'soil nitrogen'</span>) <span class="sc">+</span></span>
+<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">'annual precipitation'</span>)</span>
+<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a>pto_woody_graph <span class="ot">&lt;-</span> env_dat <span class="sc">|&gt;</span></span>
+<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a>    <span class="co">#lice_sample(n=10000) |&gt;</span></span>
+<span id="cb17-39"><a href="#cb17-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>mean_pto,<span class="at">y=</span>tree_cover)) <span class="sc">+</span></span>
+<span id="cb17-40"><a href="#cb17-40" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_abline</span>(<span class="at">slope=</span><span class="dv">1</span>,<span class="at">linetype=</span><span class="dv">3</span>,<span class="at">linewidth=</span><span class="fl">1.4</span>) <span class="sc">+</span></span>
+<span id="cb17-41"><a href="#cb17-41" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>(<span class="at">pch=</span><span class="dv">21</span>,<span class="at">alpha=</span><span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb17-42"><a href="#cb17-42" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">'gam'</span>,<span class="at">se=</span><span class="cn">FALSE</span>,<span class="at">linewidth=</span><span class="fl">1.4</span>) <span class="sc">+</span></span>
+<span id="cb17-43"><a href="#cb17-43" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb17-44"><a href="#cb17-44" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb17-45"><a href="#cb17-45" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_pubr</span>() <span class="sc">+</span></span>
+<span id="cb17-46"><a href="#cb17-46" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">'soil phosphorus'</span>) <span class="sc">+</span></span>
+<span id="cb17-47"><a href="#cb17-47" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">'woody tree cover'</span>)</span>
+<span id="cb17-48"><a href="#cb17-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-49"><a href="#cb17-49" aria-hidden="true" tabindex="-1"></a>pto_map_graph <span class="ot">&lt;-</span> env_dat <span class="sc">|&gt;</span></span>
+<span id="cb17-50"><a href="#cb17-50" aria-hidden="true" tabindex="-1"></a>    <span class="co">#slice_sample(n=10000) |&gt;</span></span>
+<span id="cb17-51"><a href="#cb17-51" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>mean_pto,<span class="at">y=</span>annual_precip)) <span class="sc">+</span></span>
+<span id="cb17-52"><a href="#cb17-52" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_abline</span>(<span class="at">slope=</span><span class="dv">1</span>,<span class="at">linetype=</span><span class="dv">3</span>,<span class="at">linewidth=</span><span class="fl">1.4</span>) <span class="sc">+</span></span>
+<span id="cb17-53"><a href="#cb17-53" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>(<span class="at">pch=</span><span class="dv">21</span>,<span class="at">alpha=</span><span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb17-54"><a href="#cb17-54" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">'gam'</span>,<span class="at">se=</span><span class="cn">FALSE</span>,<span class="at">linewidth=</span><span class="fl">1.4</span>) <span class="sc">+</span></span>
+<span id="cb17-55"><a href="#cb17-55" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb17-56"><a href="#cb17-56" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb17-57"><a href="#cb17-57" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_pubr</span>() <span class="sc">+</span></span>
+<span id="cb17-58"><a href="#cb17-58" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">'soil phosphorus'</span>) <span class="sc">+</span></span>
+<span id="cb17-59"><a href="#cb17-59" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">'annual precipitation'</span>)</span>
+<span id="cb17-60"><a href="#cb17-60" aria-hidden="true" tabindex="-1"></a>        </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [137]:</pre></div><div id="aba295ce-a4ce-4937-af1e-d1a11b0e86a5" class="cell" data-execution_count="137">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>layout <span class="ot">&lt;-</span> <span class="st">"</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="st">AB</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="st">CD</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="st">E#</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>env_correlation_graph <span class="ot">&lt;-</span> nto_pto_graph <span class="sc">+</span> nto_woody_graph <span class="sc">+</span> nto_map_graph <span class="sc">+</span> pto_woody_graph <span class="sc">+</span> pto_map_graph <span class="sc">+</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_layout</span>(<span class="at">design =</span> layout) <span class="sc">+</span> <span class="fu">plot_annotation</span>(<span class="at">tag_levels =</span> <span class="st">'a'</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>layout <span class="ot">&lt;-</span> <span class="st">"</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="st">AB</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="st">CD</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="st">E#</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>env_correlation_graph <span class="ot">&lt;-</span> nto_pto_graph <span class="sc">+</span> nto_woody_graph <span class="sc">+</span> nto_map_graph <span class="sc">+</span> pto_woody_graph <span class="sc">+</span> pto_map_graph <span class="sc">+</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_layout</span>(<span class="at">design =</span> layout) <span class="sc">+</span> <span class="fu">plot_annotation</span>(<span class="at">tag_levels =</span> <span class="st">'a'</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [138]:</pre></div><div id="e765a129-03f5-478a-9893-dbc9e5a322c0" class="cell" data-scrolled="true" data-execution_count="138">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(env_correlation_graph,<span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_figures/spatial_modeling_environment_correlation_figure.png'</span>),<span class="at">width=</span><span class="dv">10</span>,<span class="at">height=</span><span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(env_correlation_graph,<span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_figures/spatial_modeling_environment_correlation_figure.png'</span>),<span class="at">width=</span><span class="dv">10</span>,<span class="at">height=</span><span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using formula = 'y ~ s(x, bs = "cs")'
 `geom_smooth()` using formula = 'y ~ s(x, bs = "cs")'
@@ -473,31 +918,29 @@ Warning message:
 `geom_smooth()` using formula = 'y ~ s(x, bs = "cs")'</code></pre>
 </div>
 </div></div>
-<div id="c6f9b2c1-5353-493b-bade-5ad1936f2ed6" class="cell markdown">
+</section>
 <section id="section-3---soil-and-point-map-generation" class="level1">
 <h1>Section 3 - soil and point map generation</h1>
 <p>This figure will combine a few figures: - raw point distribution through australia - soil nitrogen map clipped to the locust distribution - soil phosphorus map clipped to the locust distribution</p>
-</section>
-</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [47]:</pre></div><div id="aa5f8e85-b766-42f7-97f3-e618e22f2081" class="cell" data-execution_count="47">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>aus <span class="ot">&lt;-</span> <span class="fu">ne_states</span>(<span class="at">country=</span><span class="st">'Australia'</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(name,geometry)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>point_dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/raw/survey_data/CT.csv'</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="sc">!</span><span class="st">`</span><span class="at">...1</span><span class="st">`</span>) <span class="sc">|&gt;</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Latitude,Longitude,Species) <span class="sc">|&gt;</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">st_as_sf</span>(<span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"Longitude"</span>, <span class="st">"Latitude"</span>),</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">crs=</span> <span class="st">"+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"</span>)</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>nto_rast <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="fu">here</span>(<span class="st">"data/raw/survey_data/apl_nitrogen_raster.tif"</span>))</span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>pto_rast <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="fu">here</span>(<span class="st">"data/raw/survey_data/apl_phosphorus_raster.tif"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>aus <span class="ot">&lt;-</span> <span class="fu">ne_states</span>(<span class="at">country=</span><span class="st">'Australia'</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(name,geometry)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>point_dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/raw/survey_data/CT.csv'</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="sc">!</span><span class="st">`</span><span class="at">...1</span><span class="st">`</span>) <span class="sc">|&gt;</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Latitude,Longitude,Species) <span class="sc">|&gt;</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">st_as_sf</span>(<span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"Longitude"</span>, <span class="st">"Latitude"</span>),</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">crs=</span> <span class="st">"+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"</span>)</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>nto_rast <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="fu">here</span>(<span class="st">"data/raw/survey_data/apl_nitrogen_raster.tif"</span>))</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>pto_rast <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="fu">here</span>(<span class="st">"data/raw/survey_data/apl_phosphorus_raster.tif"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>New names:
 • `` -&gt; `...1`</code></pre>
 </div>
 </div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [58]:</pre></div><div id="9e0c2188-c862-4e50-95f5-b5d336d43c5f" class="cell" data-execution_count="58">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>nto_rast</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>nto_rast</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <pre><code>class       : SpatRaster 
 dimensions  : 1139, 2062, 1  (nrow, ncol, nlyr)
@@ -509,85 +952,83 @@ name        : apl_nitrogen_raster </code></pre>
 </div>
 </div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [191]:</pre></div><div id="de0af3df-3e02-4b00-b6bd-83323d565748" class="cell" data-execution_count="191">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>point_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(aus) <span class="sc">+</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">data=</span>point_dat,<span class="at">size =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_void</span>() <span class="co"># + theme(legend.position="none")</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>nto_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(aus) <span class="sc">+</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">color=</span><span class="cn">NA</span>) <span class="sc">+</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_spatraster</span>(<span class="at">data =</span> nto_rast, <span class="fu">aes</span>(<span class="at">fill =</span> apl_nitrogen_raster))  <span class="sc">+</span></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_stepsn</span>(<span class="at">n.breaks =</span> <span class="dv">10</span>,</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>                      <span class="at">colours =</span> <span class="fu">rev</span>(<span class="fu">terrain.colors</span>(<span class="dv">5</span>)),</span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>                      <span class="at">na.value =</span> <span class="st">"transparent"</span>,</span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>                      <span class="at">trans=</span><span class="st">'log'</span>,</span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>                      <span class="at">name=</span><span class="st">"soil nitrogen </span><span class="sc">\n</span><span class="st">(log-scaled)"</span>) <span class="sc">+</span></span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">data =</span> aus,<span class="at">fill=</span><span class="cn">NA</span>) <span class="sc">+</span></span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_void</span>()  <span class="co">#+ theme(legend.position="none")</span></span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>pto_map <span class="ot">&lt;-</span><span class="fu">ggplot</span>(aus) <span class="sc">+</span></span>
-<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">color=</span><span class="cn">NA</span>) <span class="sc">+</span></span>
-<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_spatraster</span>(<span class="at">data =</span> pto_rast, <span class="fu">aes</span>(<span class="at">fill =</span> apl_phosphorus_raster))  <span class="sc">+</span></span>
-<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_stepsn</span>(<span class="at">breaks=</span> <span class="fu">c</span>(<span class="fl">0.14</span>,<span class="fl">0.10</span>,<span class="fl">0.05</span>,<span class="fl">0.04</span>,<span class="fl">0.02</span>,<span class="fl">0.01</span>),</span>
-<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>                      <span class="at">colours =</span> viridis<span class="sc">::</span><span class="fu">viridis</span>(<span class="dv">9</span>),</span>
-<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>                      <span class="at">na.value =</span> <span class="st">"transparent"</span>,</span>
-<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>                      <span class="at">trans=</span><span class="st">'log'</span>,</span>
-<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>                      <span class="at">name=</span><span class="st">"soil phosphorus </span><span class="sc">\n</span><span class="st">(log-scaled)"</span>) <span class="sc">+</span></span>
-<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">data =</span> aus,<span class="at">fill=</span><span class="cn">NA</span>) <span class="sc">+</span></span>
-<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_void</span>()  <span class="co">#+ theme(legend.position="none")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>point_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(aus) <span class="sc">+</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">data=</span>point_dat,<span class="at">size =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_void</span>() <span class="co"># + theme(legend.position="none")</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>nto_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(aus) <span class="sc">+</span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">color=</span><span class="cn">NA</span>) <span class="sc">+</span></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_spatraster</span>(<span class="at">data =</span> nto_rast, <span class="fu">aes</span>(<span class="at">fill =</span> apl_nitrogen_raster))  <span class="sc">+</span></span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_stepsn</span>(<span class="at">n.breaks =</span> <span class="dv">10</span>,</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>                      <span class="at">colours =</span> <span class="fu">rev</span>(<span class="fu">terrain.colors</span>(<span class="dv">5</span>)),</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>                      <span class="at">na.value =</span> <span class="st">"transparent"</span>,</span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>                      <span class="at">trans=</span><span class="st">'log'</span>,</span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>                      <span class="at">name=</span><span class="st">"soil nitrogen </span><span class="sc">\n</span><span class="st">(log-scaled)"</span>) <span class="sc">+</span></span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">data =</span> aus,<span class="at">fill=</span><span class="cn">NA</span>) <span class="sc">+</span></span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_void</span>()  <span class="co">#+ theme(legend.position="none")</span></span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>pto_map <span class="ot">&lt;-</span><span class="fu">ggplot</span>(aus) <span class="sc">+</span></span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">color=</span><span class="cn">NA</span>) <span class="sc">+</span></span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_spatraster</span>(<span class="at">data =</span> pto_rast, <span class="fu">aes</span>(<span class="at">fill =</span> apl_phosphorus_raster))  <span class="sc">+</span></span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_stepsn</span>(<span class="at">breaks=</span> <span class="fu">c</span>(<span class="fl">0.14</span>,<span class="fl">0.10</span>,<span class="fl">0.05</span>,<span class="fl">0.04</span>,<span class="fl">0.02</span>,<span class="fl">0.01</span>),</span>
+<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a>                      <span class="at">colours =</span> viridis<span class="sc">::</span><span class="fu">viridis</span>(<span class="dv">9</span>),</span>
+<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a>                      <span class="at">na.value =</span> <span class="st">"transparent"</span>,</span>
+<span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a>                      <span class="at">trans=</span><span class="st">'log'</span>,</span>
+<span id="cb25-26"><a href="#cb25-26" aria-hidden="true" tabindex="-1"></a>                      <span class="at">name=</span><span class="st">"soil phosphorus </span><span class="sc">\n</span><span class="st">(log-scaled)"</span>) <span class="sc">+</span></span>
+<span id="cb25-27"><a href="#cb25-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">data =</span> aus,<span class="at">fill=</span><span class="cn">NA</span>) <span class="sc">+</span></span>
+<span id="cb25-28"><a href="#cb25-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_void</span>()  <span class="co">#+ theme(legend.position="none")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>&lt;SpatRaster&gt; resampled to 500752 cells.
 &lt;SpatRaster&gt; resampled to 500752 cells.</code></pre>
 </div>
 </div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [271]:</pre></div><div id="74cb03cb-d63a-4f9c-8eae-5bff494985a8" class="cell" data-execution_count="271">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>layout2 <span class="ot">&lt;-</span> <span class="st">"</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="st">AAAA</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="st">AAAA</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="st">AAAA</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="st">AAAA</span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="st">BBCC</span></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="st">BBCC</span></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="st">BBCC</span></span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="st">BBCC</span></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>layout <span class="ot">&lt;-</span> <span class="st">"</span></span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="st">A#</span></span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="st">BC</span></span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>locust_env_maps <span class="ot">&lt;-</span> point_map <span class="sc">+</span> nto_map <span class="sc">+</span> pto_map <span class="sc">+</span> </span>
-<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot_annotation</span>(<span class="at">tag_levels =</span> <span class="st">'a'</span>) <span class="sc">+</span></span>
-<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot_layout</span>(<span class="at">design =</span> layout)</span>
-<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>locust_env_maps</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>layout2 <span class="ot">&lt;-</span> <span class="st">"</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="st">AAAA</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="st">AAAA</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="st">AAAA</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="st">AAAA</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="st">BBCC</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="st">BBCC</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="st">BBCC</span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="st">BBCC</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>layout <span class="ot">&lt;-</span> <span class="st">"</span></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a><span class="st">A#</span></span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a><span class="st">BC</span></span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>locust_env_maps <span class="ot">&lt;-</span> point_map <span class="sc">+</span> nto_map <span class="sc">+</span> pto_map <span class="sc">+</span> </span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot_annotation</span>(<span class="at">tag_levels =</span> <span class="st">'a'</span>) <span class="sc">+</span></span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot_layout</span>(<span class="at">design =</span> layout)</span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>locust_env_maps</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div class="">
 <figure class="figure">
-<p class=""><a href="06_spatial_modeling_figure_table_construction_code_files/figure-html/cell-12-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="06_spatial_modeling_figure_table_construction_code_files/figure-html/cell-12-output-1.png" width="600" height="600" class="figure-img"></a></p>
+<p class=""><a href="06_spatial_modeling_figure_table_construction_code_files/figure-html/cell-23-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="06_spatial_modeling_figure_table_construction_code_files/figure-html/cell-23-output-1.png" width="600" height="600" class="figure-img"></a></p>
 </figure>
 </div>
 </div>
 </div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [272]:</pre></div><div id="78e1c642-6aaf-47fc-a2ad-f6bce049ee3c" class="cell" data-execution_count="272">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>asp_ratio <span class="ot">&lt;-</span> tmaptools<span class="sc">::</span><span class="fu">get_asp_ratio</span>(aus)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(locust_env_maps,</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_figures/spatial_modeling_locust_env_map.png'</span>),</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">width=</span><span class="dv">10</span><span class="sc">*</span>asp_ratio,<span class="at">height=</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>asp_ratio <span class="ot">&lt;-</span> tmaptools<span class="sc">::</span><span class="fu">get_asp_ratio</span>(aus)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(locust_env_maps,</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_figures/spatial_modeling_locust_env_map.png'</span>),</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">width=</span><span class="dv">10</span><span class="sc">*</span>asp_ratio,<span class="at">height=</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-<div id="6d5151d4-2567-4c86-9780-71ed0f9d0e22" class="cell markdown">
+</section>
 <section id="section-4---griding-example" class="level1">
 <h1>Section 4 - griding example</h1>
 <p>I want to show an example gridding of the apl points</p>
-</section>
-</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [197]:</pre></div><div id="76abfd42-486a-43a9-88fe-e2584a0f53ea" class="cell" data-execution_count="197">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>apl_distribution <span class="ot">=</span> <span class="fu">st_read</span>(<span class="fu">here</span>(<span class="st">"data/raw/survey_data/australian_plague_locut_distribution/Australia_Locust_Distribution.shp"</span>))</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>apl_distribution</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>apl_distribution <span class="ot">=</span> <span class="fu">st_read</span>(<span class="fu">here</span>(<span class="st">"data/raw/survey_data/australian_plague_locut_distribution/Australia_Locust_Distribution.shp"</span>))</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>apl_distribution</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Reading layer `Australia_Locust_Distribution' from data source 
   `/home/datascience/herbivore_nutrient_interactions/data/raw/survey_data/australian_plague_locut_distribution/Australia_Locust_Distribution.shp' 
@@ -633,22 +1074,22 @@ Geodetic CRS:  GDA94</code></pre>
 </div>
 </div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [265]:</pre></div><div id="48814d8d-34b6-426f-8f82-52d68ef3d989" class="cell" data-execution_count="265">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a grid with cells 4000m x 4000m </span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>grid <span class="ot">=</span> <span class="fu">st_make_grid</span>(point_dat, <span class="at">cellsize =</span> <span class="dv">1</span>, </span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>                            <span class="at">what =</span><span class="st">"polygons"</span>, <span class="at">square =</span> T)</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>overall_grid_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(aus) <span class="sc">+</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">data=</span>point_dat) <span class="sc">+</span></span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">data=</span>grid,<span class="at">fill=</span><span class="cn">NA</span>,<span class="at">color=</span><span class="st">'red'</span>) <span class="sc">+</span></span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_void</span>()  <span class="sc">+</span></span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">color =</span> <span class="cn">NA</span>)  <span class="co"># Set white background</span></span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a grid with cells 4000m x 4000m </span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>grid <span class="ot">=</span> <span class="fu">st_make_grid</span>(point_dat, <span class="at">cellsize =</span> <span class="dv">1</span>, </span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>                            <span class="at">what =</span><span class="st">"polygons"</span>, <span class="at">square =</span> T)</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>overall_grid_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(aus) <span class="sc">+</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">data=</span>point_dat) <span class="sc">+</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">data=</span>grid,<span class="at">fill=</span><span class="cn">NA</span>,<span class="at">color=</span><span class="st">'red'</span>) <span class="sc">+</span></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_void</span>()  <span class="sc">+</span></span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">color =</span> <span class="cn">NA</span>)  <span class="co"># Set white background</span></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [246]:</pre></div><div id="2ed19056-a4a5-4c9c-a073-8ab86132bb6f" class="cell" data-execution_count="246">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>grid</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>grid</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>POLYGON ((131.6556 -37.71413, 132.6556 -37.7141...
 
@@ -671,45 +1112,74 @@ First 5 geometries:</code></pre>
 </div>
 </div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [228]:</pre></div><div id="1d60c7d8-c695-43f7-abea-cc4350f6e9ba" class="cell" data-execution_count="228">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>nsw <span class="ot">&lt;-</span> aus <span class="sc">|&gt;</span> <span class="fu">filter</span>(name <span class="sc">==</span> <span class="st">'New South Wales'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>nsw <span class="ot">&lt;-</span> aus <span class="sc">|&gt;</span> <span class="fu">filter</span>(name <span class="sc">==</span> <span class="st">'New South Wales'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [263]:</pre></div><div id="30c046be-f1f3-43e9-8713-2881dbb05a60" class="cell" data-execution_count="263">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>zoomed_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(aus) <span class="sc">+</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">data=</span>point_dat) <span class="sc">+</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">data=</span>grid,<span class="at">fill=</span><span class="cn">NA</span>,<span class="at">color=</span><span class="st">'red'</span>,<span class="at">linewidth=</span><span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_sf</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">30</span>, <span class="sc">-</span><span class="dv">35</span>), <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">140</span>, <span class="dv">146</span>)) <span class="sc">+</span></span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_void</span>()</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>zoomed_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>zoomed_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(aus) <span class="sc">+</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">data=</span>point_dat) <span class="sc">+</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">data=</span>grid,<span class="at">fill=</span><span class="cn">NA</span>,<span class="at">color=</span><span class="st">'red'</span>,<span class="at">linewidth=</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_sf</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">30</span>, <span class="sc">-</span><span class="dv">35</span>), <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">140</span>, <span class="dv">146</span>)) <span class="sc">+</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_void</span>()</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>zoomed_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div class="">
 <figure class="figure">
-<p class=""><a href="06_spatial_modeling_figure_table_construction_code_files/figure-html/cell-18-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="06_spatial_modeling_figure_table_construction_code_files/figure-html/cell-18-output-1.png" width="600" height="600" class="figure-img"></a></p>
+<p class=""><a href="06_spatial_modeling_figure_table_construction_code_files/figure-html/cell-29-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="06_spatial_modeling_figure_table_construction_code_files/figure-html/cell-29-output-1.png" width="600" height="600" class="figure-img"></a></p>
 </figure>
 </div>
 </div>
 </div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [258]:</pre></div><div id="f8bb7e1f-76b1-4b8d-8788-c6377045bfaa" class="cell" data-execution_count="258">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>overall_grid_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>overall_grid_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div class="">
 <figure class="figure">
-<p class=""><a href="06_spatial_modeling_figure_table_construction_code_files/figure-html/cell-19-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="06_spatial_modeling_figure_table_construction_code_files/figure-html/cell-19-output-1.png" width="600" height="600" class="figure-img"></a></p>
+<p class=""><a href="06_spatial_modeling_figure_table_construction_code_files/figure-html/cell-30-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="06_spatial_modeling_figure_table_construction_code_files/figure-html/cell-30-output-1.png" width="600" height="600" class="figure-img"></a></p>
 </figure>
 </div>
 </div>
 </div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [268]:</pre></div><div id="86aedb65-23dc-42e1-82c8-b30006bde094" class="cell" data-execution_count="268">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>grid_examples <span class="ot">&lt;-</span> zoomed_plot <span class="sc">+</span> overall_grid_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>grid_examples <span class="ot">&lt;-</span> zoomed_plot <span class="sc">+</span> overall_grid_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [274]:</pre></div><div id="07d29832-eebf-458b-9375-5cf685e3a801" class="cell" data-execution_count="274">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>asp_ratio <span class="ot">&lt;-</span> tmaptools<span class="sc">::</span><span class="fu">get_asp_ratio</span>(aus)</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(grid_examples,</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_figures/spatial_modeling_grid_example_map.png'</span>),</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">width=</span><span class="dv">10</span><span class="sc">*</span>asp_ratio,<span class="at">height=</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>asp_ratio <span class="ot">&lt;-</span> tmaptools<span class="sc">::</span><span class="fu">get_asp_ratio</span>(aus)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(grid_examples,</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_figures/spatial_modeling_grid_example_map.png'</span>),</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">width=</span><span class="dv">10</span><span class="sc">*</span>asp_ratio,<span class="at">height=</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
+</section>
+<section id="section-5---table-construction" class="level1">
+<h1>Section 5 - table construction</h1>
+<div class="cell-container"><div class="cell-decorator"><pre>In [380]:</pre></div><div id="e8a1d645-313f-49a6-a1a1-7445f27240fc" class="cell" data-execution_count="380">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>outbreak_mod <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">"output/spatial_modeling/model_objects/locust_outbreak_model.rds"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tidy</span>() <span class="sc">|&gt;</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">model =</span> <span class="st">'outbreak'</span>)</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>nil_mod <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">"output/spatial_modeling/model_objects/locust_nil_model.rds"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tidy</span>()  <span class="sc">|&gt;</span></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">model =</span> <span class="st">'nil'</span>)</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>map_outbreak_mod <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">"output/spatial_modeling/model_objects/locust_outbreak_map_model.rds"</span>))<span class="sc">|&gt;</span></span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tidy</span>()  <span class="sc">|&gt;</span></span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">model =</span> <span class="st">'outbreak'</span>)</span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>map_nil_outbreak_mod <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">"output/spatial_modeling/model_objects/locust_nil_map_model.rds"</span>))<span class="sc">|&gt;</span></span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tidy</span>()  <span class="sc">|&gt;</span></span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">model =</span> <span class="st">'nil'</span>)</span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a>overall_mods <span class="ot">&lt;-</span>outbreak_mod <span class="sc">|&gt;</span> <span class="fu">rbind</span>(nil_mod)</span>
+<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a>map_mods <span class="ot">&lt;-</span>map_outbreak_mod <span class="sc">|&gt;</span> <span class="fu">rbind</span>(map_nil_outbreak_mod)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [381]:</pre></div><div id="8f588684-0347-45b2-9c79-5907243f4a00" class="cell" data-execution_count="381">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(overall_mods, <span class="fu">here</span>(<span class="st">"output/spatial_modeling/map_outbreak_model_results.csv"</span>),<span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+</section>
      </main>
 <!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1130,7 +1600,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","loop":false,"openEffect":"zoom"});
+</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom","openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
