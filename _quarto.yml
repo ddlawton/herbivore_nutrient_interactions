@@ -3,7 +3,35 @@ project:
 
 manuscript:
   article: index.qmd
-
+  code-links:
+    - repo: https://github.com/ddlawton/herbivore_nutrient_interactions
+  notebooks:
+    - notebook: title_page.qmd
+      title: title page
+    - notebook: cover_letter.qmd
+      title: cover letter
+    - notebook: scripts/field_populations/01_field_population_intake_target_choice_diet_analysis.ipynb
+      title: 1-1 population - choice intake targets
+    - notebook: scripts/field_populations/02_field_population_intake_target_no_choice_diet_analysis.ipynb
+      title: 1-2 population - no-choice experiments
+    - notebook: scripts/field_populations/03_field_population_intake_target_manuscript_figure_table_code.ipynb
+      title: 1-3 population - manuscript construction
+    - notebook: scripts/field_cage_experiment/01_field_cages_plant_nutrient_analyses.ipynb
+      title: 2-1 cage - plant nutrient anaylses
+    - notebook: scripts/field_cage_experiment/02_field_cages_locust_physiology_analyses.ipynb
+      title: 2-2 cage - locust physiology anaylses
+    - notebook: scripts/field_cage_experiment/03_field_cage_manuscript_figure_table_code.ipynb.ipynb
+      title: 2-3 cage - manuscript construction
+    - notebook: scripts/spatial_modeling/01_fishnet_grid_construction.ipynb
+      title: 3-1 spatial modeling - fishnet grid construction
+    - notebook: scripts/spatial_modeling/02_fishnet_google_earth_engine_extraction.ipynb
+      title: 3-2 spatial modeling - google earth extraction
+    - notebook: scripts/spatial_modeling/03_australian_plague_locust_raw_data_visualization.ipynb
+      title: 3-4 spatial modeling - modeling and data visualization
+    - notebook: scripts/spatial_modeling/04_environmental_correlations_map_nitrogen_phosphorus_woody_cover.ipynb
+      title: 3-5 spatial modeling - environmental correlations
+    - notebook: scripts/spatial_modeling/06_spatial_modeling_figure_table_construction_code.ipynb
+      title: 3-6 spatial modeling - manuscript construction
 format:
   html:
     toc: true

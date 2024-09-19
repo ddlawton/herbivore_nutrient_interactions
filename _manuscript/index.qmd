@@ -145,7 +145,7 @@ number-sections: true
 
 Plant nutrients are usually more variable than animal body composition, which can make it challenging for herbivores to acquire an optimal nutritional balance [@elser_nutritional_2000]. Nutrient balance affects individual performance [@batzli_nutritional_1986; @bernays_dietary_1994] and, by extension, influences population dynamics [@elser_nutritional_2000]. One way many primary consumers achieve an optimal blend of nutrients is through selecting different host plants or plant parts to reach a specific amount and ratio, termed the intake target, IT [@simpson2012]. For example, giant pandas (*Ailuropoda melanoleuca*) synchronize their migration and reproduction cycles with seasonal nutrient availability between different bamboo species [@nie_obligate_2015]. While studies have investigated this trend between available nutrients and animal populations, they usually happen at one scale and biological level. For example, much grasshopper nutrition research has been done at the organismal or local population level using lab and/or field studies [@behmer_insect_2009; @cease_how_2024; @le_gall_global_2019], with a few separate larger scale modeling endeavors [@welti_nutrient_2020; @zhou_increased_2019]. To our knowledge, no study has integrated individual herbivorous animal nutrition to continental level patterns in nutrient availability. Here we work across spatial scales, bridging field observations and cage manipulations with continental-scale insect pest outbreak modeling to see how the animal-nutrient relationship changes across multiple scales.
 
-Food quality has long been considered an important predictor of animal population dynamics [@andersen_stoichiometry_2004; @white_inadequate_1993]. Phosphorus and nitrogen commonly limit primary production in ecosystems, either separately or as co-limiting factors [@tyrrell_relative_1999 , @vitousek_terrestrial_2010], and are often investigated as limiting factors for higher trophic levels to determine the consequences to animal growth and reproduction [@andersen_stoichiometry_2004]. For example, bluegrass fields supplemented with high quality (e.g. increased nitrogen) food pellets increase vole (*Microtus ochmgaster*) densities compared to control fields by supporting higher adult survival, increased breeding, and growth rate [@cole_influence_1978]. Less phosphorus in a dryland insect herbivore’s (*Sabinia setosa*) host plant, velvet mesquite (*Prosopis velutina*), leads to individuals having decreased RNA content (slower growth) and lower abundance [@schade_stoichiometric_2003]. More broadly, nitrogen and phosphorus limitation has been shown in mammals [@randolph_nutritional_1995; @white_inadequate_1993], birds [@forero_conspecific_2002; @granbom_food_2006], and insects [@floyd_frontiers_1996; @huberty_consequences_2006; @marsh_decline_1995; @perkins_dietary_2004] which is discussed further in @white_role_2008 and @andersen_stoichiometry_2004. However, not all animal populations respond positively to increasing environmental nutrients. For example, studies from across the globe reveal that the abundances of many grasshopper species are positively [@joern_not_2012; @ozment_tracking_2021; @welti_bottomup_2020; @welti_nutrient_2020; @zhu_effects_2020; @zhu_negative_2019], or not related [@heidorn_feeding_1987; @jonas_hostplant_2008; @lenhart_water_2015; @ozment_tracking_2021] to plant nitrogen concentrations as reviewed in @cease_how_2024. Can the relationship between herbivore abundance and environmental nutrients be explained by approaches that consider nutritional physiology at the organismal level, in addition to population and landscape ecology?
+Food quality has long been considered an important predictor of animal population dynamics [@andersen_stoichiometry_2004; @white_inadequate_1993]. Phosphorus and nitrogen commonly limit primary production in ecosystems, either separately or as co-limiting factors [@tyrrell_relative_1999; @vitousek_terrestrial_2010], and are often investigated as limiting factors for higher trophic levels to determine the consequences to animal growth and reproduction [@andersen_stoichiometry_2004]. For example, bluegrass fields supplemented with high quality (e.g. increased nitrogen) food pellets increase vole (*Microtus ochmgaster*) densities compared to control fields by supporting higher adult survival, increased breeding, and growth rate [@cole_influence_1978]. Less phosphorus in a dryland insect herbivore’s (*Sabinia setosa*) host plant, velvet mesquite (*Prosopis velutina*), leads to individuals having decreased RNA content (slower growth) and lower abundance [@schade_stoichiometric_2003]. More broadly, nitrogen and phosphorus limitation has been shown in mammals [@randolph_nutritional_1995; @white_inadequate_1993], birds [@forero_conspecific_2002; @granbom_food_2006], and insects [@floyd_frontiers_1996; @huberty_consequences_2006; @marsh_decline_1995; @perkins_dietary_2004] which is discussed further in @white_role_2008 and @andersen_stoichiometry_2004. However, not all animal populations respond positively to increasing environmental nutrients. For example, studies from across the globe reveal that the abundances of many grasshopper species are positively [@joern_not_2012; @ozment_tracking_2021; @welti_bottomup_2020; @welti_nutrient_2020; @zhu_effects_2020; @zhu_negative_2019], or not related [@heidorn_feeding_1987; @jonas_hostplant_2008; @lenhart_water_2015; @ozment_tracking_2021] to plant nitrogen concentrations as reviewed in @cease_how_2024. Can the relationship between herbivore abundance and environmental nutrients be explained by approaches that consider nutritional physiology at the organismal level, in addition to population and landscape ecology?
 
 One excellent study system to understand the complex relationship of nutrient availability and population dynamics is a subset of grasshoppers called locusts [@cullen_molecules_2017; @uvarov_grasshoppers_1977]. Locusts undergo massive population irruptions known as plagues that pose significant issues for global food security [@cease_living_2015]. For example, the 2010-2011 Australian plague locust (*Chortoicetes terminifera*) plague could have caused AUD\$963 million in crop damage if not controlled [@millist_nicola_benefitcost_nodate]. In contrast to the nitrogen limitation paradigm (White 1993), locusts frequently show carbohydrate limitation. Many locust species, including *C. terminifera*, will select plants with a low protein:carbohydrate ratio and eat about double the amount of carbohydrate relative to protein when given a choice of artificial diets [@behmer_insect_2009; @brosemann_nutrient_2023; @lawton_mismatched_2021; @le_gall_global_2019]. Their high energy, relative to protein, demand is heightened by their impressive long-distance migration. Marching bands of South American locusts (*Schistocerca cancellata*) eat predominantly from dishes containing carbohydrates and largely ignore dishes containing protein [@cease_field_2023], and have the highest survival and lipid gain when eating carbohydrate-biased plants [@talal_plant_2020]. As adults, flight increases carbohydrate, but not protein, consumption in migratory locusts (*Locusta migratoria*) and locusts eating carbohydrate-biased diets fly for longer times [@talal_body_2023]. At a local scale, high-use agricultural areas that decrease soil and plant nitrogen promote Oedaleus locust outbreaks in Senegal and China [@cease_heavy_2012; @giese_n_2013; @le_gall_global_2019; @word_soil-targeted_2019]. Less is known about the relationship between plant phosphorus and locust populations, but grasshoppers and locusts can detect and regulate phosphorus during ingestion and post-ingestively to maintain homeostasis [@cease_dietary_2016; @zhang_grasshoppers_2014]. Long-term laboratory rearing studies show negative effects of too little or excess dietary phosphorus, though short-term restrictions to low or high phosphorus diets appear to have no effects [@cease_dietary_2016]. Field measurements of *Oedaleus asiaticus* in China show that locusts increase phosphorus excretion with increasing plant phosphorus content, suggesting that phosphorus may not be limiting in the Inner Mongolian Steppe for this species [@zhang_grasshoppers_2014]. Understanding the multi-scale flow of nitrogen and phosphorus from soils to continental scale population dynamics may reveal a connection between soil quality and locust plagues in Australia and further elucidate the pattern globally [@cease_how_2024; @le_gall_global_2019].
 
@@ -164,7 +164,6 @@ At larger scales, and accounting for climatic factors, we expect outbreaks to be
 # METHODS
 
 Details regarding the scales of inference, the application of factors of interest, and the corresponding replicates can be found in @tbl-replication-statement. This table outlines the hierarchical structure of our experimental design across individual, population, and landscape levels.
-
 
 ```{r, field population no choice table}
 #| label: tbl-replication-statement
@@ -186,7 +185,6 @@ data <- tibble(
 data |> gt()
 
 ```
-
 
 ## Field site and animals
 
@@ -218,7 +216,9 @@ To test how the nitrogen fertilization treatments affected the nutritional statu
 
 We collected all remaining field-cage locusts on Nov. 28, 2015 and recorded developmental stage and body mass. We calculated surviving proportion for each cage accounting for the locusts we removed for the nutritional status experiments as follows:
 
-Surviving proportion = \(\frac{\text{# live locusts}}{(\text{initial # added} - \text{# locusts removed for secondary experiment})}\)
+$$
+\text{survival proportion} = \frac{\text{number live locusts}}{\text{initial number added} - \text{number locusts removed for secondary experiment}}
+$$
 
 We calculated the proportion molted to adult of the surviving locusts (# adults/# live locusts).
 
@@ -522,9 +522,7 @@ Acquiring the right amount of nutrients is a critical component for animal growt
 
 ![The relationship between locust outbreaks and nil observations and mean annual precipitation. This is included as a visual comparison for the soil nitrogen relationship seen in @fig-spatial-model-nto-pto](output/publication_figures/spatial_modeling_locust_outbreak_with_map.png){#suppfig-spatial-modeling-map-outbreak-corr}
 
-
 ::: {#supptbl-field-cage-plant-soil-nutrients}
-
 ```{r, supplementary field cage plant soil nutrients}
 
 library(tidyverse)
@@ -571,11 +569,9 @@ table_dat |>
 ```
 
 Field plot nutrient content for plant species collected from within the treatment plots but outside of the locust cages for three time points during the experiment. Soil nitrogen is also shown per each treatment. Trt = Treatment, C = carbon, N = Nitrogen, Prot = protein, Carb = Carbohydrates.
-
 :::
 
 ::: {#supptbl-field-cage-plant-ground-cover}
-
 ```{r, supplementary field cage plant ground cover}
 
 library(tidyverse)
@@ -605,11 +601,9 @@ table_dat |>
 ```
 
 Averaged plant ground cover (%) across all cages per treatment. Ground cover was estimated on November 11th, 2015.
-
 :::
 
 ::: {#supptbl-field-population-choice-experiment-model-selection-criteria}
-
 ```{r, supplementary field population choice experiment model selection criteria}
 library(tidyverse)
 library(here)
@@ -625,12 +619,9 @@ table_dat |>
 ```
 
 Model selection criteria via Akaike information criterion (AIC), AIC corrected for small sample size (AICc), and bayesian information criterion. Model formula with the dependent variable on the left side and independent variables on the right side of the equation. For all criteria, the lower the number, more negative in this case, the better fit model.
-
 :::
 
-
 ::: {#supptbl-field-population-no-choice-experiment-phys-post-hoc}
-
 ```{r, supplementary field population no choice experiment model selection criteria}
 library(tidyverse)
 library(here)
@@ -657,5 +648,4 @@ table_dat |>
 ```
 
 Posthoc comparisons for diet treatments for C. terminifera individual specific growth rate and development time. SE = standard error
-
 :::
