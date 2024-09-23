@@ -21791,7 +21791,7 @@ outbreak_all_model_variables</code>
     </boxed-text>
     </sec>
     <sec id="f9bb3b8e-105a-4141-a279-8078a68cd2c7-nb-13" specific-use="notebook-content">
-    <code language="r script">ggsave(soil_outbreak_plot,
+    <code language="r script">ggsave(outbreak_all_model_variables,
        file=here('output/publication_figures/spatial_modeling_outbreak_all_model_variables.png'),
        width=10,height=15)</code>
     </sec>
