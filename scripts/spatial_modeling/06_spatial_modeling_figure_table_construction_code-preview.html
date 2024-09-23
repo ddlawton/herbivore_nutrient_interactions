@@ -427,10 +427,10 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 <h2 class="anchored" data-anchor-id="other-variable-visualization-outbreaks">Other variable visualization – outbreaks</h2>
 </section>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [385]:</pre></div><div id="cb6acf67-15fe-45ae-9c94-0ad4175ed47b" class="cell" data-execution_count="385">
+<div class="cell-container"><div class="cell-decorator"><pre>In [398]:</pre></div><div id="cb6acf67-15fe-45ae-9c94-0ad4175ed47b" class="cell" data-execution_count="398">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>outbreak_model_results <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"output/spatial_modeling/outbreak_model_smooth_estimates.csv"</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [386]:</pre></div><div id="9c6fb06d-95f6-463c-8204-67df14dd8b9a" class="cell" data-execution_count="386">
+<div class="cell-container"><div class="cell-decorator"><pre>In [399]:</pre></div><div id="9c6fb06d-95f6-463c-8204-67df14dd8b9a" class="cell" data-execution_count="399">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> outbreak_model_results <span class="sc">|&gt;</span></span>
@@ -505,7 +505,7 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 </div>
 </div>
 </div></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [387]:</pre></div><div id="f9bb3b8e-105a-4141-a279-8078a68cd2c7" class="cell" data-execution_count="387">
+<div class="cell-container"><div class="cell-decorator"><pre>In [400]:</pre></div><div id="f9bb3b8e-105a-4141-a279-8078a68cd2c7" class="cell" data-execution_count="400">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(soil_outbreak_plot,</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_figures/spatial_modeling_outbreak_all_model_variables.png'</span>),</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">width=</span><span class="dv">10</span>,<span class="at">height=</span><span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1618,7 +1618,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom","loop":false});
+</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","loop":false,"selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
