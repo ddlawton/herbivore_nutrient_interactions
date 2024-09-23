@@ -474,12 +474,13 @@ AZ, USA</institution>
   et al., 2015</xref>). For example, the 2010-2011 Australian plague
   locust (<italic>Chortoicetes terminifera</italic>) plague could have
   caused AUD$963 million in crop damage if not controlled
-  (<xref alt="Millist, 2011" rid="ref-millist_nicola_benefitcost_nodate" ref-type="bibr">Millist,
-  2011</xref>). In contrast to the nitrogen limitation paradigm (White
-  1993), locusts frequently show carbohydrate limitation. Many locust
-  species, including <italic>C. terminifera</italic>, will select plants
-  with a low protein:carbohydrate ratio and eat about double the amount
-  of carbohydrate relative to protein when given a choice of artificial
+  (<xref alt="Millist &amp; Ali, 2011" rid="ref-millist_nicola_benefitcost_nodate" ref-type="bibr">Millist
+  &amp; Ali, 2011</xref>). In contrast to the nitrogen limitation
+  paradigm (White 1993), locusts frequently show carbohydrate
+  limitation. Many locust species, including <italic>C.
+  terminifera</italic>, will select plants with a low
+  protein:carbohydrate ratio and eat about double the amount of
+  carbohydrate relative to protein when given a choice of artificial
   diets
   (<xref alt="Behmer, 2009" rid="ref-behmer_insect_2009" ref-type="bibr">Behmer,
   2009</xref>;
@@ -1150,7 +1151,7 @@ AZ, USA</institution>
       <fig id="fig-field-pop-it-results">
         <caption><p>Figure 2: The nutritional preference (A) and
         physiological performance (B &amp; C) of <italic>C.
-        terminifera</italic> individuals were collected from two
+        terminifera</italic> individuals that were collected from two
         marching bands of 5th instars. Raw data is shown as black dots
         with modeled estimated margial means as large diamonds or
         triangles.</p></caption>
@@ -1304,11 +1305,11 @@ AZ, USA</institution>
     </fig>
     <fig id="fig-field-cage-it-rebalancing">
       <caption><p>Figure 4: Nutrient imbalance redressing with
-      artificial diet mixing of C. terminifera individuals taken from
-      fertilized treatment cages. Colors represent treatment. Smaller
-      lines represent raw individual locust intake targets with large
-      lines and points representing estimated marginal means. Individual
-      time step targets can be seen in
+      artificial diet mixing of <italic>C. terminifera</italic>
+      individuals taken from fertilized treatment cages. Colors
+      represent treatment. Smaller lines represent raw individual locust
+      intake targets with large lines and points representing estimated
+      marginal means. Individual time step targets can be seen in
       <xref alt="Supplementary Figure 4" rid="suppfig-field-cage-rebalancing-facet">Supplementary Figure 4</xref>.</p></caption>
       <graphic mimetype="image" mime-subtype="png" xlink:href="output/publication_figures/field_cage_locust_intake_target_rebalancing.png" />
     </fig>
@@ -1316,8 +1317,8 @@ AZ, USA</institution>
       <caption><p>Table 4: Generalized additive model results for plant
       macronutrient (carbohydrate and protein) differences between
       fertilization treatment. Family: multivariate gaussian
-      distribution, link: identity, SE: standard error, significance
-      indicated in bold.</p></caption>
+      distribution, link: identity, SE: standard error, s() denotes a
+      smoothing parameter.</p></caption>
       <table-wrap>
         <table>
           <colgroup>
@@ -1552,7 +1553,8 @@ AZ, USA</institution>
       <caption><p>Table 5: Generalized additive model results for
       differences between final locust mass after the nitrogen
       fertilization experiment finished. Family: scaled T, link:
-      identity, SE: standard error.</p></caption>
+      identity, SE: standard error, and s() denotes a smoothing
+      parameter.</p></caption>
       <table-wrap>
         <table>
           <colgroup>
@@ -1609,14 +1611,15 @@ AZ, USA</institution>
                         <td headers="p-value">0.273</td>
                       </tr>
                       <tr>
-                        <td headers="variable">s(carb_mg_mg,protein_mg_mg)</td>
+                        <td headers="variable">s(carb mg/mg, protein
+                        mg/mg)</td>
                         <td headers="estimate"><break/></td>
                         <td headers="SE"><break/></td>
                         <td headers="statistic">0.002</td>
                         <td headers="p-value">0.416</td>
                       </tr>
                       <tr>
-                        <td headers="variable">s(cage_num)</td>
+                        <td headers="variable">s(cage number)</td>
                         <td headers="estimate"><break/></td>
                         <td headers="SE"><break/></td>
                         <td headers="statistic">42.160</td>
@@ -1636,7 +1639,8 @@ AZ, USA</institution>
       nutrient imbalance dressing of field cage <italic>C.
       terminifera</italic> in the control and high fertilization
       treatments. Model also included interactive terms; however, none
-      were significant and left out. SE: standard error</p></caption>
+      were significant and left out. SE: standard error and s() denotes
+      a smoothing parameter.</p></caption>
       <table-wrap>
         <table>
           <colgroup>
@@ -2000,11 +2004,11 @@ AZ, USA</institution>
     <xref alt="Key, 1945" rid="ref-key_general_1945" ref-type="bibr">Key,
     1945</xref>). How this species can achieve the optimal balance of
     nutrients within an unfavorable nutritional environment merits
-    further investigation, but may include postingestive regulation
-    and/or large-range foraging. Migratory locusts (Locusta migratoria)
-    can choose microclimates that favor higher efficiency of
-    carbohydrate or protein absorption depending on their host plant and
-    nutritional status
+    further investigation, but may include post-ingestive regulation
+    and/or large-range foraging. Migratory locusts (<italic>Locusta
+    migratoria</italic>) can choose microclimates that favor higher
+    efficiency of carbohydrate or protein absorption depending on their
+    host plant and nutritional status
     (<xref alt="Clissold et al., 2013" rid="ref-clissold_insect_2013" ref-type="bibr">Clissold
     et al., 2013</xref>). For this study, we collected free-living
     locusts from the same region and a similar environment as where we
@@ -2194,7 +2198,8 @@ AZ, USA</institution>
     herbivores in response to higher plant nitrogen and protein contents
     with thrips
     (<xref alt="Brown et al., 2002" rid="ref-brown_relationship_2002" ref-type="bibr">Brown
-    et al., 2002</xref>) and spruce budworm (Choristoneura)
+    et al., 2002</xref>) and spruce budworm
+    (<italic>Choristoneura</italic>)
     (<xref alt="De Grandpré et al., 2022" rid="ref-de_grandpre_defoliation-induced_2022" ref-type="bibr">De
     Grandpré et al., 2022</xref>) being two examples. These examples
     suggest that low p:c diets limit population growth of some
@@ -4091,7 +4096,8 @@ AZ, USA</institution>
   <ref id="ref-millist_nicola_benefitcost_nodate">
     <element-citation>
       <person-group person-group-type="author">
-        <name><surname>Millist</surname><given-names>Ali</given-names><suffix>Nicola</suffix></name>
+        <name><surname>Millist</surname><given-names>Nicola</given-names></name>
+        <name><surname>Ali</surname><given-names>Abdalla</given-names></name>
       </person-group>
       <article-title>Benefit–cost analysis of Australian plague locust control operations for 2010–11</article-title>
       <publisher-name>ABARES Report Prepared for the Australian Plague Locust Commission.</publisher-name>
@@ -5273,12 +5279,13 @@ AZ, USA</institution>
   et al., 2015</xref>). For example, the 2010-2011 Australian plague
   locust (<italic>Chortoicetes terminifera</italic>) plague could have
   caused AUD$963 million in crop damage if not controlled
-  (<xref alt="Millist, 2011" rid="ref-millist_nicola_benefitcost_nodate-nb-article" ref-type="bibr">Millist,
-  2011</xref>). In contrast to the nitrogen limitation paradigm (White
-  1993), locusts frequently show carbohydrate limitation. Many locust
-  species, including <italic>C. terminifera</italic>, will select plants
-  with a low protein:carbohydrate ratio and eat about double the amount
-  of carbohydrate relative to protein when given a choice of artificial
+  (<xref alt="Millist &amp; Ali, 2011" rid="ref-millist_nicola_benefitcost_nodate-nb-article" ref-type="bibr">Millist
+  &amp; Ali, 2011</xref>). In contrast to the nitrogen limitation
+  paradigm (White 1993), locusts frequently show carbohydrate
+  limitation. Many locust species, including <italic>C.
+  terminifera</italic>, will select plants with a low
+  protein:carbohydrate ratio and eat about double the amount of
+  carbohydrate relative to protein when given a choice of artificial
   diets
   (<xref alt="Behmer, 2009" rid="ref-behmer_insect_2009-nb-article" ref-type="bibr">Behmer,
   2009</xref>;
@@ -5435,7 +5442,7 @@ AZ, USA</institution>
   </boxed-text>
   <code language="r script">library(here)</code>
   <boxed-text>
-    <preformat>here() starts at /Users/ddlawton/side_projects/herbivore_nutrient_interactions</preformat>
+    <preformat>here() starts at /Users/lawton/SideProjects/herbivore_nutrient_interactions</preformat>
   </boxed-text>
   <code language="r script">library(gt)
 
@@ -6005,7 +6012,7 @@ dbl (3): estimate, SE, p-value
       <fig id="fig-field-pop-it-results-nb-article">
         <caption><p>Figure 2: The nutritional preference (A) and
         physiological performance (B &amp; C) of <italic>C.
-        terminifera</italic> individuals were collected from two
+        terminifera</italic> individuals that were collected from two
         marching bands of 5th instars. Raw data is shown as black dots
         with modeled estimated margial means as large diamonds or
         triangles.</p></caption>
@@ -6196,11 +6203,11 @@ dbl (3): estimate, SE, p-value
     </fig>
     <fig id="fig-field-cage-it-rebalancing-nb-article">
       <caption><p>Figure 4: Nutrient imbalance redressing with
-      artificial diet mixing of C. terminifera individuals taken from
-      fertilized treatment cages. Colors represent treatment. Smaller
-      lines represent raw individual locust intake targets with large
-      lines and points representing estimated marginal means. Individual
-      time step targets can be seen in
+      artificial diet mixing of <italic>C. terminifera</italic>
+      individuals taken from fertilized treatment cages. Colors
+      represent treatment. Smaller lines represent raw individual locust
+      intake targets with large lines and points representing estimated
+      marginal means. Individual time step targets can be seen in
       <xref alt="Supplementary Figure 4" rid="suppfig-field-cage-rebalancing-facet-nb-article">Supplementary Figure 4</xref>.</p></caption>
       <graphic mimetype="image" mime-subtype="png" xlink:href="output/publication_figures/field_cage_locust_intake_target_rebalancing.png" />
     </fig>
@@ -6234,8 +6241,8 @@ dbl (5): estimate, SE, p-value, EDF, statistic
       <caption><p>Table 4: Generalized additive model results for plant
       macronutrient (carbohydrate and protein) differences between
       fertilization treatment. Family: multivariate gaussian
-      distribution, link: identity, SE: standard error, significance
-      indicated in bold.</p></caption>
+      distribution, link: identity, SE: standard error, s() denotes a
+      smoothing parameter.</p></caption>
       <table-wrap>
         <table>
           <colgroup>
@@ -6470,23 +6477,12 @@ dbl (5): estimate, SE, p-value, EDF, statistic
     <sec specific-use="notebook-content">
     <code language="r script">library(tidyverse)
 library(here)
-library(knitr)
-library(kableExtra)</code>
-    <boxed-text>
-      <preformat>
-Attaching package: 'kableExtra'</preformat>
-    </boxed-text>
-    <boxed-text>
-      <preformat>The following object is masked from 'package:dplyr':
+library(gt)
 
-    group_rows</preformat>
-    </boxed-text>
-    <code language="r script">table_dat &lt;- read_csv(here('output/publication_tables/field_cage_final_locust_mass_model_summary.csv'))</code>
+table_dat &lt;- read_csv(here('output/publication_tables/field_cage_final_locust_mass_model_summary.csv'))</code>
     <boxed-text>
-      <preformat>Rows: 6 Columns: 6</preformat>
-    </boxed-text>
-    <boxed-text>
-      <preformat>── Column specification ────────────────────────────────────────────────────────
+      <preformat>Rows: 6 Columns: 6
+── Column specification ────────────────────────────────────────────────────────
 Delimiter: &quot;,&quot;
 chr (1): variable
 dbl (5): estimate, SE, p-value, EDF, statistic
@@ -6497,6 +6493,11 @@ dbl (5): estimate, SE, p-value, EDF, statistic
     <code language="r script">table_dat  |&gt;
   mutate(across(where(is.numeric),~round(.,3))) |&gt;
   select(variable,estimate,SE,statistic,`p-value`) |&gt;
+  mutate(variable = case_when(
+    variable == &quot;s(carb_mg_mg,protein_mg_mg)&quot; ~ &quot;s(carb mg/mg, protein mg/mg)&quot;,
+    variable == &quot;s(cage_num)&quot; ~ &quot;s(cage number)&quot;,
+    TRUE ~ variable
+  ))|&gt;
   gt() |&gt;
   sub_missing(
     columns = everything(),
@@ -6506,7 +6507,8 @@ dbl (5): estimate, SE, p-value, EDF, statistic
       <caption><p>Table 5: Generalized additive model results for
       differences between final locust mass after the nitrogen
       fertilization experiment finished. Family: scaled T, link:
-      identity, SE: standard error.</p></caption>
+      identity, SE: standard error, and s() denotes a smoothing
+      parameter.</p></caption>
       <table-wrap>
         <table>
           <colgroup>
@@ -6563,14 +6565,15 @@ dbl (5): estimate, SE, p-value, EDF, statistic
                         <td headers="p-value">0.273</td>
                       </tr>
                       <tr>
-                        <td headers="variable">s(carb_mg_mg,protein_mg_mg)</td>
+                        <td headers="variable">s(carb mg/mg, protein
+                        mg/mg)</td>
                         <td headers="estimate"><break/></td>
                         <td headers="SE"><break/></td>
                         <td headers="statistic">0.002</td>
                         <td headers="p-value">0.416</td>
                       </tr>
                       <tr>
-                        <td headers="variable">s(cage_num)</td>
+                        <td headers="variable">s(cage number)</td>
                         <td headers="estimate"><break/></td>
                         <td headers="SE"><break/></td>
                         <td headers="statistic">42.160</td>
@@ -6617,7 +6620,8 @@ dbl (4): estimate, SE, p-value, statistic
       nutrient imbalance dressing of field cage <italic>C.
       terminifera</italic> in the control and high fertilization
       treatments. Model also included interactive terms; however, none
-      were significant and left out. SE: standard error</p></caption>
+      were significant and left out. SE: standard error and s() denotes
+      a smoothing parameter.</p></caption>
       <table-wrap>
         <table>
           <colgroup>
@@ -7019,11 +7023,11 @@ dbl (4): edf, ref.df, statistic, p.value
     <xref alt="Key, 1945" rid="ref-key_general_1945-nb-article" ref-type="bibr">Key,
     1945</xref>). How this species can achieve the optimal balance of
     nutrients within an unfavorable nutritional environment merits
-    further investigation, but may include postingestive regulation
-    and/or large-range foraging. Migratory locusts (Locusta migratoria)
-    can choose microclimates that favor higher efficiency of
-    carbohydrate or protein absorption depending on their host plant and
-    nutritional status
+    further investigation, but may include post-ingestive regulation
+    and/or large-range foraging. Migratory locusts (<italic>Locusta
+    migratoria</italic>) can choose microclimates that favor higher
+    efficiency of carbohydrate or protein absorption depending on their
+    host plant and nutritional status
     (<xref alt="Clissold et al., 2013" rid="ref-clissold_insect_2013-nb-article" ref-type="bibr">Clissold
     et al., 2013</xref>). For this study, we collected free-living
     locusts from the same region and a similar environment as where we
@@ -7213,7 +7217,8 @@ dbl (4): edf, ref.df, statistic, p.value
     herbivores in response to higher plant nitrogen and protein contents
     with thrips
     (<xref alt="Brown et al., 2002" rid="ref-brown_relationship_2002-nb-article" ref-type="bibr">Brown
-    et al., 2002</xref>) and spruce budworm (Choristoneura)
+    et al., 2002</xref>) and spruce budworm
+    (<italic>Choristoneura</italic>)
     (<xref alt="De Grandpré et al., 2022" rid="ref-de_grandpre_defoliation-induced_2022-nb-article" ref-type="bibr">De
     Grandpré et al., 2022</xref>) being two examples. These examples
     suggest that low p:c diets limit population growth of some
@@ -9261,7 +9266,8 @@ dbl (3): estimate, SE, adjusted p-value
   <ref id="ref-millist_nicola_benefitcost_nodate-nb-article">
     <element-citation>
       <person-group person-group-type="author">
-        <name><surname>Millist</surname><given-names>Ali</given-names><suffix>Nicola</suffix></name>
+        <name><surname>Millist</surname><given-names>Nicola</given-names></name>
+        <name><surname>Ali</surname><given-names>Abdalla</given-names></name>
       </person-group>
       <article-title>Benefit–cost analysis of Australian plague locust control operations for 2010–11</article-title>
       <publisher-name>ABARES Report Prepared for the Australian Plague Locust Commission.</publisher-name>

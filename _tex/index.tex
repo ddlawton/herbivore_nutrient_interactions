@@ -99,15 +99,6 @@
 \usepackage{array}
 \usepackage{anyfontsize}
 \usepackage{multirow}
-\usepackage{wrapfig}
-\usepackage{float}
-\usepackage{pdflscape}
-\usepackage{tabu}
-\usepackage{threeparttable}
-\usepackage{threeparttablex}
-\usepackage[normalem]{ulem}
-\usepackage{makecell}
-\usepackage{xcolor}
 \usepackage{arxiv}
 \usepackage{orcidlink}
 \usepackage{amsmath}
@@ -841,8 +832,8 @@ Table~\ref{tbl-field-population-no-choice-model}).
 
 \caption{\label{fig-field-pop-it-results}The nutritional preference (A)
 and physiological performance (B \& C) of \emph{C. terminifera}
-individuals were collected from two marching bands of 5th instars. Raw
-data is shown as black dots with modeled estimated margial means as
+individuals that were collected from two marching bands of 5th instars.
+Raw data is shown as black dots with modeled estimated margial means as
 large diamonds or triangles.}
 
 \end{fig}%
@@ -928,11 +919,11 @@ in B represent means.}
 }
 
 \caption{\label{fig-field-cage-it-rebalancing}Nutrient imbalance
-redressing with artificial diet mixing of C. terminifera individuals
-taken from fertilized treatment cages. Colors represent treatment.
-Smaller lines represent raw individual locust intake targets with large
-lines and points representing estimated marginal means. Individual time
-step targets can be seen in
+redressing with artificial diet mixing of \emph{C. terminifera}
+individuals taken from fertilized treatment cages. Colors represent
+treatment. Smaller lines represent raw individual locust intake targets
+with large lines and points representing estimated marginal means.
+Individual time step targets can be seen in
 Supplementary Figure~\ref{suppfig-field-cage-rebalancing-facet}.}
 
 \end{fig}%
@@ -980,8 +971,8 @@ protein & Intercept & 0.209 & 0.017 &  & 0.000 \\
 \caption{\label{tbl-field-cage-plant-nutrients}Generalized additive
 model results for plant macronutrient (carbohydrate and protein)
 differences between fertilization treatment. Family: multivariate
-gaussian distribution, link: identity, SE: standard error, significance
-indicated in bold.}
+gaussian distribution, link: identity, SE: standard error, s() denotes a
+smoothing parameter.}
 
 \end{tbl}%
 
@@ -999,8 +990,8 @@ Intercept & 0.326 & 0.007 &  & 0.000 \\
 male & -0.148 & 0.006 &  & 0.000 \\ 
 medium & 0.015 & 0.010 &  & 0.117 \\ 
 high & -0.011 & 0.010 &  & 0.273 \\ 
-s(carb\_mg\_mg,protein\_mg\_mg) &  &  & 0.002 & 0.416 \\ 
-s(cage\_num) &  &  & 42.160 & 0.000 \\ 
+s(carb mg/mg, protein mg/mg) &  &  & 0.002 & 0.416 \\ 
+s(cage number) &  &  & 42.160 & 0.000 \\ 
 \bottomrule
 \end{longtable*}
 \endgroup
@@ -1010,7 +1001,7 @@ s(cage\_num) &  &  & 42.160 & 0.000 \\
 \caption{\label{tbl-field-cage-locust-mass}Generalized additive model
 results for differences between final locust mass after the nitrogen
 fertilization experiment finished. Family: scaled T, link: identity, SE:
-standard error.}
+standard error, and s() denotes a smoothing parameter.}
 
 \end{tbl}%
 
@@ -1050,7 +1041,7 @@ protein & Intercept & 0.002 & 0.001 &  & 0.119 \\
 results for nutrient imbalance dressing of field cage \emph{C.
 terminifera} in the control and high fertilization treatments. Model
 also included interactive terms; however, none were significant and left
-out. SE: standard error}
+out. SE: standard error and s() denotes a smoothing parameter.}
 
 \end{tbl}%
 
@@ -1185,8 +1176,8 @@ frequencies in these areas
 \citep{deveson_satellite_2013, key_general_1945}. How this species can
 achieve the optimal balance of nutrients within an unfavorable
 nutritional environment merits further investigation, but may include
-postingestive regulation and/or large-range foraging. Migratory locusts
-(Locusta migratoria) can choose microclimates that favor higher
+post-ingestive regulation and/or large-range foraging. Migratory locusts
+(\emph{Locusta migratoria}) can choose microclimates that favor higher
 efficiency of carbohydrate or protein absorption depending on their host
 plant and nutritional status \citep{clissold_insect_2013}. For this
 study, we collected free-living locusts from the same region and a
@@ -1335,12 +1326,12 @@ herbivores facing one higher than their IT (i.e., protein excess).
 However, there are several examples of higher localized densities of
 herbivores in response to higher plant nitrogen and protein contents
 with thrips \citep{brown_relationship_2002} and spruce budworm
-(Choristoneura) \citep{de_grandpre_defoliation-induced_2022} being two
-examples. These examples suggest that low p:c diets limit population
-growth of some herbivores, but more studies are needed to determine if
-this relationship is only localized or if it scales up. It may be that
-herbivore populations with lower numbers are not limited by a
-nutritional landscape at a large scale because they can differentially
+(\emph{Choristoneura}) \citep{de_grandpre_defoliation-induced_2022}
+being two examples. These examples suggest that low p:c diets limit
+population growth of some herbivores, but more studies are needed to
+determine if this relationship is only localized or if it scales up. It
+may be that herbivore populations with lower numbers are not limited by
+a nutritional landscape at a large scale because they can differentially
 disperse locally among optimal patches, whereas herbivore populations
 with extreme numbers (i.e., irruptions) may be more limited by
 nutritionally unfavorable environments across scales.
