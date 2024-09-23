@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-09-17">
+<meta name="dcterms.date" content="2024-09-18">
 <meta name="keywords" content="nitrogen, phosphorus, grasshoppers, population dynamics, non-linear modeling, nutrient limitation, remote sensing">
 
 <title>Exploring Nutrient Availability and Herbivorous Insect Population Dynamics Across Multiple Scales</title>
@@ -65,6 +65,35 @@ div.csl-indent {
   });
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <meta name="citation_title" content="Exploring Nutrient Availability and Herbivorous Insect Population Dynamics Across Multiple Scales">
 <meta name="citation_abstract" content="1. Nutrient composition varies greatly across landscapes, which in turn influences the spatiotemporal variation and dynamics of populations. Yet few studies have investigated this pattern on multiple scales.
@@ -90,10 +119,10 @@ div.csl-indent {
 <meta name="citation_author" content="Ted Deveson">
 <meta name="citation_author" content="Stephen J. Simpson">
 <meta name="citation_author" content="Arianne Cease">
-<meta name="citation_publication_date" content="2024-09-17">
-<meta name="citation_cover_date" content="2024-09-17">
+<meta name="citation_publication_date" content="2024-09-18">
+<meta name="citation_cover_date" content="2024-09-18">
 <meta name="citation_year" content="2024">
-<meta name="citation_online_date" content="2024-09-17">
+<meta name="citation_online_date" content="2024-09-18">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=Stoichiometry and population dynamics;,citation_abstract=AbstractPopulation dynamics theory forms the quantitative core from which most ecologists have developed their intuition about how species interactions, heterogeneity, and biodiversity play out in time. Throughout its development, theoretical population biology has built on variants of the Lotka–Volterra equations and in nearly all cases has taken a single‐currency approach to understanding population change, abstracting populations as aggregations of individuals or biomass. In this review, we explore how depicting organisms as built of more than one thing (for example, C and an important nutrient, such as P) in stoichiometrically explicit models results in qualitatively different predictions about the resulting dynamics. Fundamentally, stoichiometric models incorporate both food quantity and food quality effects in a single framework, allow key feedbacks such as consumer‐driven nutrient recycling to occur, and generally appear to stabilize predator–prey systems while simultaneously producing rich dynamics with alternative domains of attraction and occasionally counterintuitive outcomes, such as coexistence of more than one predator species on a single‐prey item and decreased herbivore performance in response to increased light intensity experienced by the autotrophs. In addition to the theoretical background, we also review recent laboratory and field studies considering stoichiometric effects on autotroph–herbivore systems, emphasizing algae– Daphnia interactions. These studies support the predictions of stoichiometric theory, providing empirical evidence for alternative stable states under stoichiometric constraints, for negative effects of solar radiation on herbivores via stoichiometric food quality, and for diversity‐enhancing effects of poor food quality. Stoichiometric theory has strong potential for both quantitative and qualitative improvements in the predictive power of population ecology, a major priority in light of the multivariate anthropogenic and natural perturbations experienced by populations. However, full development and testing of stoichiometric population dynamics theory will require greater intellectual tolerance and exchange between researchers working in ecosystem and population ecology.;,citation_author=Tom Andersen;,citation_author=James J. Elser;,citation_author=Dag O. Hessen;,citation_publication_date=2004-09;,citation_cover_date=2004-09;,citation_year=2004;,citation_fulltext_html_url=https://onlinelibrary.wiley.com/doi/10.1111/j.1461-0248.2004.00646.x;,citation_issue=9;,citation_doi=10.1111/j.1461-0248.2004.00646.x;,citation_issn=1461-023X, 1461-0248;,citation_volume=7;,citation_journal_title=Ecology Letters;">
 <meta name="citation_reference" content="citation_title=The Feeding Ecology of YucatÃ¡n Black Howler Monkeys (Alouatta pigra) in Mangrove Forest, Tabasco, Mexico;,citation_author=LeAndra Luecke Bridgeman;,citation_publication_date=2012;,citation_cover_date=2012;,citation_year=2012;,citation_fulltext_html_url=http://openscholarship.wustl.edu/etd/998;,citation_doi=10.7936/K75T3HGP;">
@@ -310,7 +339,7 @@ div.csl-indent {
                 <div>
             <div class="quarto-title-meta-heading">Published</div>
             <div class="quarto-title-meta-contents">
-              <p class="date">September 17, 2024</p>
+              <p class="date">September 18, 2024</p>
             </div>
           </div>
           
@@ -343,7 +372,7 @@ div.csl-indent {
     </div>
 
     <div class="quarto-other-links-text-target">
-    </div>  </div>
+    <div class="quarto-code-links"><div class="quarto-title-meta-heading">Code Links</div><div class="quarto-title-meta-contents"><span><a href="undefined"><i class="bi bi-link-45deg"></i></a></span></div></div></div>  </div>
 </header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
 <div id="quarto-sidebar-toc-left" class="sidebar toc-left">
   <nav id="TOC" role="doc-toc" class="toc-active">
@@ -394,7 +423,7 @@ div.csl-indent {
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">5</span> REFERENCES</a></li>
   <li><a href="#supplementary" id="toc-supplementary" class="nav-link" data-scroll-target="#supplementary"><span class="header-section-number">6</span> SUPPLEMENTARY</a></li>
   </ul>
-<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="scripts/spatial_modeling/05_locust_distribution_soil_nutrient_mapping-preview.html"><i class="bi bi-journal-code"></i>05_locust_distribution_soil_nutrient_mapping.ipynb</a></li><li><a href="index-preview.html"><i class="bi bi-journal-code"></i>Article Notebook</a></li><li><a href="scripts/spatial_modeling/03_australian_plague_locust_raw_data_visualization-preview.html"><i class="bi bi-journal-code"></i>Australia Plauge Locust Modeling</a></li><li><a href="scripts/spatial_modeling/04_environmental_correlations_map_nitrogen_phosphorus_woody_cover-preview.html"><i class="bi bi-journal-code"></i>Environmental variable correlations</a></li><li><a href="scripts/spatial_modeling/02_fishnet_google_earth_engine_extraction-preview.html"><i class="bi bi-journal-code"></i>Extracting GEE data to polygons</a></li><li><a href="scripts/field_cage_experiment/02_field_cages_locust_physiology_analyses-preview.html"><i class="bi bi-journal-code"></i>Field cage nutrient analysis -- Locust Physiology</a></li><li><a href="scripts/field_cage_experiment/01_field_cages_plant_nutrient_analyses-preview.html"><i class="bi bi-journal-code"></i>Field cage nutrient analysis -- Plant nutrients</a></li><li><a href="scripts/field_cage_experiment/03_field_cage_manuscript_figure_table_code.ipynb-preview.html"><i class="bi bi-journal-code"></i>Field cage plant and locust post modeling visualization</a></li><li><a href="scripts/field_populations/03_field_population_intake_target_manuscript_figure_table_code-preview.html"><i class="bi bi-journal-code"></i>Field population Post modeling visualization</a></li><li><a href="scripts/field_populations/02_field_population_intake_target_no_choice_diet_analysis-preview.html"><i class="bi bi-journal-code"></i>Field population statistical analyses</a></li><li><a href="scripts/field_populations/01_field_population_intake_target_choice_diet_analysis-preview.html"><i class="bi bi-journal-code"></i>Field population statistical analyses -- Choice Experiment</a></li><li><a href="scripts/spatial_modeling/01_fishnet_grid_construction-preview.html"><i class="bi bi-journal-code"></i>Point to grid conversion</a></li><li><a href="scripts/spatial_modeling/06_spatial_modeling_figure_table_construction_code-preview.html"><i class="bi bi-journal-code"></i>Spatial modeling post modeling figure and table construction</a></li></ul></div></nav>
+<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="scripts/field_populations/01_field_population_intake_target_choice_diet_analysis-preview.html"><i class="bi bi-journal-code"></i>1-1 population - choice intake targets</a></li><li><a href="scripts/field_populations/02_field_population_intake_target_no_choice_diet_analysis-preview.html"><i class="bi bi-journal-code"></i>1-2 population - no-choice experiments</a></li><li><a href="scripts/field_populations/03_field_population_intake_target_manuscript_figure_table_code-preview.html"><i class="bi bi-journal-code"></i>1-3 population - manuscript construction</a></li><li><a href="scripts/field_cage_experiment/01_field_cages_plant_nutrient_analyses-preview.html"><i class="bi bi-journal-code"></i>2-1 cage - plant nutrient anaylses</a></li><li><a href="scripts/field_cage_experiment/02_field_cages_locust_physiology_analyses-preview.html"><i class="bi bi-journal-code"></i>2-2 cage - locust physiology anaylses</a></li><li><a href="scripts/field_cage_experiment/03_field_cage_manuscript_figure_table_code.ipynb-preview.html"><i class="bi bi-journal-code"></i>2-3 cage - manuscript construction</a></li><li><a href="scripts/spatial_modeling/01_fishnet_grid_construction-preview.html"><i class="bi bi-journal-code"></i>3-1 spatial modeling - fishnet grid construction</a></li><li><a href="scripts/spatial_modeling/02_fishnet_google_earth_engine_extraction-preview.html"><i class="bi bi-journal-code"></i>3-2 spatial modeling - google earth extraction</a></li><li><a href="scripts/spatial_modeling/03_australian_plague_locust_raw_data_visualization-preview.html"><i class="bi bi-journal-code"></i>3-4 spatial modeling - modeling and data visualization</a></li><li><a href="scripts/spatial_modeling/04_environmental_correlations_map_nitrogen_phosphorus_woody_cover-preview.html"><i class="bi bi-journal-code"></i>3-5 spatial modeling - environmental correlations</a></li><li><a href="scripts/spatial_modeling/06_spatial_modeling_figure_table_construction_code-preview.html"><i class="bi bi-journal-code"></i>3-6 spatial modeling - manuscript construction</a></li><li><a href="index-preview.html"><i class="bi bi-journal-code"></i>Article Notebook</a></li><li><a href="cover_letter-preview.html"><i class="bi bi-journal-code"></i>cover letter</a></li><li><a href="title_page-preview.html"><i class="bi bi-journal-code"></i>title page</a></li></ul></div></nav>
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
@@ -408,7 +437,7 @@ div.csl-indent {
 <section id="introduction" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> INTRODUCTION</h1>
 <p>Plant nutrients are usually more variable than animal body composition, which can make it challenging for herbivores to acquire an optimal nutritional balance <span class="citation" data-cites="elser_nutritional_2000">(<a href="#ref-elser_nutritional_2000" role="doc-biblioref">Elser et al., 2000</a>)</span>. Nutrient balance affects individual performance <span class="citation" data-cites="batzli_nutritional_1986 bernays_dietary_1994">(<a href="#ref-batzli_nutritional_1986" role="doc-biblioref">Batzli, 1986</a>; <a href="#ref-bernays_dietary_1994" role="doc-biblioref">Bernays et al., 1994</a>)</span> and, by extension, influences population dynamics <span class="citation" data-cites="elser_nutritional_2000">(<a href="#ref-elser_nutritional_2000" role="doc-biblioref">Elser et al., 2000</a>)</span>. One way many primary consumers achieve an optimal blend of nutrients is through selecting different host plants or plant parts to reach a specific amount and ratio, termed the intake target, IT <span class="citation" data-cites="simpson2012">(<a href="#ref-simpson2012" role="doc-biblioref">Simpson &amp; Raubenheimer, 2012a</a>)</span>. For example, giant pandas (<em>Ailuropoda melanoleuca</em>) synchronize their migration and reproduction cycles with seasonal nutrient availability between different bamboo species <span class="citation" data-cites="nie_obligate_2015">(<a href="#ref-nie_obligate_2015" role="doc-biblioref">Nie et al., 2015</a>)</span>. While studies have investigated this trend between available nutrients and animal populations, they usually happen at one scale and biological level. For example, much grasshopper nutrition research has been done at the organismal or local population level using lab and/or field studies <span class="citation" data-cites="behmer_insect_2009 cease_how_2024 le_gall_global_2019">(<a href="#ref-behmer_insect_2009" role="doc-biblioref">Behmer, 2009</a>; <a href="#ref-cease_how_2024" role="doc-biblioref">Cease, 2024</a>; <a href="#ref-le_gall_global_2019" role="doc-biblioref">Le Gall et al., 2019</a>)</span>, with a few separate larger scale modeling endeavors <span class="citation" data-cites="welti_nutrient_2020 zhou_increased_2019">(<a href="#ref-welti_nutrient_2020" role="doc-biblioref">Welti, Roeder, et al., 2020</a>; <a href="#ref-zhou_increased_2019" role="doc-biblioref">Zhou et al., 2019</a>)</span>. To our knowledge, no study has integrated individual herbivorous animal nutrition to continental level patterns in nutrient availability. Here we work across spatial scales, bridging field observations and cage manipulations with continental-scale insect pest outbreak modeling to see how the animal-nutrient relationship changes across multiple scales.</p>
-<p>Food quality has long been considered an important predictor of animal population dynamics <span class="citation" data-cites="andersen_stoichiometry_2004 white_inadequate_1993">(<a href="#ref-andersen_stoichiometry_2004" role="doc-biblioref">Andersen et al., 2004</a>; <a href="#ref-white_inadequate_1993" role="doc-biblioref">White, 1993</a>)</span>. Phosphorus and nitrogen commonly limit primary production in ecosystems, either separately or as co-limiting factors <span class="citation" data-cites="tyrrell_relative_1999">Vitousek et al. (<a href="#ref-vitousek_terrestrial_2010" role="doc-biblioref">2010</a>)</span>, and are often investigated as limiting factors for higher trophic levels to determine the consequences to animal growth and reproduction <span class="citation" data-cites="andersen_stoichiometry_2004">(<a href="#ref-andersen_stoichiometry_2004" role="doc-biblioref">Andersen et al., 2004</a>)</span>. For example, bluegrass fields supplemented with high quality (e.g.&nbsp;increased nitrogen) food pellets increase vole (<em>Microtus ochmgaster</em>) densities compared to control fields by supporting higher adult survival, increased breeding, and growth rate <span class="citation" data-cites="cole_influence_1978">(<a href="#ref-cole_influence_1978" role="doc-biblioref">Cole &amp; Batzli, 1978</a>)</span>. Less phosphorus in a dryland insect herbivore’s (<em>Sabinia setosa</em>) host plant, velvet mesquite (<em>Prosopis velutina</em>), leads to individuals having decreased RNA content (slower growth) and lower abundance <span class="citation" data-cites="schade_stoichiometric_2003">(<a href="#ref-schade_stoichiometric_2003" role="doc-biblioref">Schade et al., 2003</a>)</span>. More broadly, nitrogen and phosphorus limitation has been shown in mammals <span class="citation" data-cites="randolph_nutritional_1995 white_inadequate_1993">(<a href="#ref-randolph_nutritional_1995" role="doc-biblioref">Randolph et al., 1995</a>; <a href="#ref-white_inadequate_1993" role="doc-biblioref">White, 1993</a>)</span>, birds <span class="citation" data-cites="forero_conspecific_2002 granbom_food_2006">(<a href="#ref-forero_conspecific_2002" role="doc-biblioref">Forero et al., 2002</a>; <a href="#ref-granbom_food_2006" role="doc-biblioref">Granbom &amp; Smith, 2006</a>)</span>, and insects <span class="citation" data-cites="floyd_frontiers_1996 huberty_consequences_2006 marsh_decline_1995 perkins_dietary_2004">(<a href="#ref-floyd_frontiers_1996" role="doc-biblioref">Floyd, 1996</a>; <a href="#ref-huberty_consequences_2006" role="doc-biblioref">Huberty &amp; Denno, 2006</a>; <a href="#ref-marsh_decline_1995" role="doc-biblioref">Marsh &amp; Adams, 1995</a>; <a href="#ref-perkins_dietary_2004" role="doc-biblioref">Perkins et al., 2004</a>)</span> which is discussed further in <span class="citation" data-cites="white_role_2008">White (<a href="#ref-white_role_2008" role="doc-biblioref">2008</a>)</span> and <span class="citation" data-cites="andersen_stoichiometry_2004">Andersen et al. (<a href="#ref-andersen_stoichiometry_2004" role="doc-biblioref">2004</a>)</span>. However, not all animal populations respond positively to increasing environmental nutrients. For example, studies from across the globe reveal that the abundances of many grasshopper species are positively <span class="citation" data-cites="joern_not_2012 ozment_tracking_2021 welti_bottomup_2020 welti_nutrient_2020 zhu_effects_2020 zhu_negative_2019">(<a href="#ref-joern_not_2012" role="doc-biblioref">Joern et al., 2012</a>; <a href="#ref-ozment_tracking_2021" role="doc-biblioref">Ozment et al., 2021</a>; <a href="#ref-welti_bottomup_2020" role="doc-biblioref">Welti, Prather, et al., 2020</a>; <a href="#ref-welti_nutrient_2020" role="doc-biblioref">Welti, Roeder, et al., 2020</a>; <a href="#ref-zhu_effects_2020" role="doc-biblioref">H. Zhu et al., 2020</a>; <a href="#ref-zhu_negative_2019" role="doc-biblioref">Y. Zhu et al., 2019</a>)</span>, or not related <span class="citation" data-cites="heidorn_feeding_1987 jonas_hostplant_2008 lenhart_water_2015 ozment_tracking_2021">(<a href="#ref-heidorn_feeding_1987" role="doc-biblioref">Heidorn &amp; Joern, 1987</a>; <a href="#ref-jonas_hostplant_2008" role="doc-biblioref">Jonas &amp; Joern, 2008</a>; <a href="#ref-lenhart_water_2015" role="doc-biblioref">Lenhart et al., 2015</a>; <a href="#ref-ozment_tracking_2021" role="doc-biblioref">Ozment et al., 2021</a>)</span> to plant nitrogen concentrations as reviewed in <span class="citation" data-cites="cease_how_2024">Cease (<a href="#ref-cease_how_2024" role="doc-biblioref">2024</a>)</span>. Can the relationship between herbivore abundance and environmental nutrients be explained by approaches that consider nutritional physiology at the organismal level, in addition to population and landscape ecology?</p>
+<p>Food quality has long been considered an important predictor of animal population dynamics <span class="citation" data-cites="andersen_stoichiometry_2004 white_inadequate_1993">(<a href="#ref-andersen_stoichiometry_2004" role="doc-biblioref">Andersen et al., 2004</a>; <a href="#ref-white_inadequate_1993" role="doc-biblioref">White, 1993</a>)</span>. Phosphorus and nitrogen commonly limit primary production in ecosystems, either separately or as co-limiting factors <span class="citation" data-cites="tyrrell_relative_1999 vitousek_terrestrial_2010">(<a href="#ref-tyrrell_relative_1999" role="doc-biblioref">Tyrrell, 1999</a>; <a href="#ref-vitousek_terrestrial_2010" role="doc-biblioref">Vitousek et al., 2010</a>)</span>, and are often investigated as limiting factors for higher trophic levels to determine the consequences to animal growth and reproduction <span class="citation" data-cites="andersen_stoichiometry_2004">(<a href="#ref-andersen_stoichiometry_2004" role="doc-biblioref">Andersen et al., 2004</a>)</span>. For example, bluegrass fields supplemented with high quality (e.g.&nbsp;increased nitrogen) food pellets increase vole (<em>Microtus ochmgaster</em>) densities compared to control fields by supporting higher adult survival, increased breeding, and growth rate <span class="citation" data-cites="cole_influence_1978">(<a href="#ref-cole_influence_1978" role="doc-biblioref">Cole &amp; Batzli, 1978</a>)</span>. Less phosphorus in a dryland insect herbivore’s (<em>Sabinia setosa</em>) host plant, velvet mesquite (<em>Prosopis velutina</em>), leads to individuals having decreased RNA content (slower growth) and lower abundance <span class="citation" data-cites="schade_stoichiometric_2003">(<a href="#ref-schade_stoichiometric_2003" role="doc-biblioref">Schade et al., 2003</a>)</span>. More broadly, nitrogen and phosphorus limitation has been shown in mammals <span class="citation" data-cites="randolph_nutritional_1995 white_inadequate_1993">(<a href="#ref-randolph_nutritional_1995" role="doc-biblioref">Randolph et al., 1995</a>; <a href="#ref-white_inadequate_1993" role="doc-biblioref">White, 1993</a>)</span>, birds <span class="citation" data-cites="forero_conspecific_2002 granbom_food_2006">(<a href="#ref-forero_conspecific_2002" role="doc-biblioref">Forero et al., 2002</a>; <a href="#ref-granbom_food_2006" role="doc-biblioref">Granbom &amp; Smith, 2006</a>)</span>, and insects <span class="citation" data-cites="floyd_frontiers_1996 huberty_consequences_2006 marsh_decline_1995 perkins_dietary_2004">(<a href="#ref-floyd_frontiers_1996" role="doc-biblioref">Floyd, 1996</a>; <a href="#ref-huberty_consequences_2006" role="doc-biblioref">Huberty &amp; Denno, 2006</a>; <a href="#ref-marsh_decline_1995" role="doc-biblioref">Marsh &amp; Adams, 1995</a>; <a href="#ref-perkins_dietary_2004" role="doc-biblioref">Perkins et al., 2004</a>)</span> which is discussed further in <span class="citation" data-cites="white_role_2008">White (<a href="#ref-white_role_2008" role="doc-biblioref">2008</a>)</span> and <span class="citation" data-cites="andersen_stoichiometry_2004">Andersen et al. (<a href="#ref-andersen_stoichiometry_2004" role="doc-biblioref">2004</a>)</span>. However, not all animal populations respond positively to increasing environmental nutrients. For example, studies from across the globe reveal that the abundances of many grasshopper species are positively <span class="citation" data-cites="joern_not_2012 ozment_tracking_2021 welti_bottomup_2020 welti_nutrient_2020 zhu_effects_2020 zhu_negative_2019">(<a href="#ref-joern_not_2012" role="doc-biblioref">Joern et al., 2012</a>; <a href="#ref-ozment_tracking_2021" role="doc-biblioref">Ozment et al., 2021</a>; <a href="#ref-welti_bottomup_2020" role="doc-biblioref">Welti, Prather, et al., 2020</a>; <a href="#ref-welti_nutrient_2020" role="doc-biblioref">Welti, Roeder, et al., 2020</a>; <a href="#ref-zhu_effects_2020" role="doc-biblioref">H. Zhu et al., 2020</a>; <a href="#ref-zhu_negative_2019" role="doc-biblioref">Y. Zhu et al., 2019</a>)</span>, or not related <span class="citation" data-cites="heidorn_feeding_1987 jonas_hostplant_2008 lenhart_water_2015 ozment_tracking_2021">(<a href="#ref-heidorn_feeding_1987" role="doc-biblioref">Heidorn &amp; Joern, 1987</a>; <a href="#ref-jonas_hostplant_2008" role="doc-biblioref">Jonas &amp; Joern, 2008</a>; <a href="#ref-lenhart_water_2015" role="doc-biblioref">Lenhart et al., 2015</a>; <a href="#ref-ozment_tracking_2021" role="doc-biblioref">Ozment et al., 2021</a>)</span> to plant nitrogen concentrations as reviewed in <span class="citation" data-cites="cease_how_2024">Cease (<a href="#ref-cease_how_2024" role="doc-biblioref">2024</a>)</span>. Can the relationship between herbivore abundance and environmental nutrients be explained by approaches that consider nutritional physiology at the organismal level, in addition to population and landscape ecology?</p>
 <p>One excellent study system to understand the complex relationship of nutrient availability and population dynamics is a subset of grasshoppers called locusts <span class="citation" data-cites="cullen_molecules_2017 uvarov_grasshoppers_1977">(<a href="#ref-cullen_molecules_2017" role="doc-biblioref">Cullen et al., 2017</a>; <a href="#ref-uvarov_grasshoppers_1977" role="doc-biblioref">Uvarov, 1977</a>)</span>. Locusts undergo massive population irruptions known as plagues that pose significant issues for global food security <span class="citation" data-cites="cease_living_2015">(<a href="#ref-cease_living_2015" role="doc-biblioref">Cease et al., 2015</a>)</span>. For example, the 2010-2011 Australian plague locust (<em>Chortoicetes terminifera</em>) plague could have caused AUD$963 million in crop damage if not controlled <span class="citation" data-cites="millist_nicola_benefitcost_nodate">(<a href="#ref-millist_nicola_benefitcost_nodate" role="doc-biblioref">Millist, 2011</a>)</span>. In contrast to the nitrogen limitation paradigm (White 1993), locusts frequently show carbohydrate limitation. Many locust species, including <em>C. terminifera</em>, will select plants with a low protein:carbohydrate ratio and eat about double the amount of carbohydrate relative to protein when given a choice of artificial diets <span class="citation" data-cites="behmer_insect_2009 brosemann_nutrient_2023 lawton_mismatched_2021 le_gall_global_2019">(<a href="#ref-behmer_insect_2009" role="doc-biblioref">Behmer, 2009</a>; <a href="#ref-brosemann_nutrient_2023" role="doc-biblioref">Brosemann et al., 2023</a>; <a href="#ref-lawton_mismatched_2021" role="doc-biblioref">Lawton et al., 2021</a>; <a href="#ref-le_gall_global_2019" role="doc-biblioref">Le Gall et al., 2019</a>)</span>. Their high energy, relative to protein, demand is heightened by their impressive long-distance migration. Marching bands of South American locusts (<em>Schistocerca cancellata</em>) eat predominantly from dishes containing carbohydrates and largely ignore dishes containing protein <span class="citation" data-cites="cease_field_2023">(<a href="#ref-cease_field_2023" role="doc-biblioref">Cease et al., 2023</a>)</span>, and have the highest survival and lipid gain when eating carbohydrate-biased plants <span class="citation" data-cites="talal_plant_2020">(<a href="#ref-talal_plant_2020" role="doc-biblioref">Talal et al., 2020</a>)</span>. As adults, flight increases carbohydrate, but not protein, consumption in migratory locusts (<em>Locusta migratoria</em>) and locusts eating carbohydrate-biased diets fly for longer times <span class="citation" data-cites="talal_body_2023">(<a href="#ref-talal_body_2023" role="doc-biblioref">Talal et al., 2023</a>)</span>. At a local scale, high-use agricultural areas that decrease soil and plant nitrogen promote Oedaleus locust outbreaks in Senegal and China <span class="citation" data-cites="cease_heavy_2012 giese_n_2013 le_gall_global_2019 word_soil-targeted_2019">(<a href="#ref-cease_heavy_2012" role="doc-biblioref">Cease et al., 2012</a>; <a href="#ref-giese_n_2013" role="doc-biblioref">Giese et al., 2013</a>; <a href="#ref-le_gall_global_2019" role="doc-biblioref">Le Gall et al., 2019</a>; <a href="#ref-word_soil-targeted_2019" role="doc-biblioref">Word et al., 2019</a>)</span>. Less is known about the relationship between plant phosphorus and locust populations, but grasshoppers and locusts can detect and regulate phosphorus during ingestion and post-ingestively to maintain homeostasis <span class="citation" data-cites="cease_dietary_2016 zhang_grasshoppers_2014">(<a href="#ref-cease_dietary_2016" role="doc-biblioref">Cease et al., 2016</a>; <a href="#ref-zhang_grasshoppers_2014" role="doc-biblioref">Zhang et al., 2014</a>)</span>. Long-term laboratory rearing studies show negative effects of too little or excess dietary phosphorus, though short-term restrictions to low or high phosphorus diets appear to have no effects <span class="citation" data-cites="cease_dietary_2016">(<a href="#ref-cease_dietary_2016" role="doc-biblioref">Cease et al., 2016</a>)</span>. Field measurements of <em>Oedaleus asiaticus</em> in China show that locusts increase phosphorus excretion with increasing plant phosphorus content, suggesting that phosphorus may not be limiting in the Inner Mongolian Steppe for this species <span class="citation" data-cites="zhang_grasshoppers_2014">(<a href="#ref-zhang_grasshoppers_2014" role="doc-biblioref">Zhang et al., 2014</a>)</span>. Understanding the multi-scale flow of nitrogen and phosphorus from soils to continental scale population dynamics may reveal a connection between soil quality and locust plagues in Australia and further elucidate the pattern globally <span class="citation" data-cites="cease_how_2024 le_gall_global_2019">(<a href="#ref-cease_how_2024" role="doc-biblioref">Cease, 2024</a>; <a href="#ref-le_gall_global_2019" role="doc-biblioref">Le Gall et al., 2019</a>)</span>.</p>
 <p>The arid interior of Australia is a highly variable environment <span class="citation" data-cites="morton_fresh_2011">(<a href="#ref-morton_fresh_2011" role="doc-biblioref">Morton et al., 2011</a>)</span> characterized by the Resource-Pulse Paradigm <span class="citation" data-cites="noy-meir_desert_1974 whitford_ecology_2002">(<a href="#ref-noy-meir_desert_1974" role="doc-biblioref">Noy-Meir, 1974</a>; <a href="#ref-whitford_ecology_2002" role="doc-biblioref">Whitford, 2002</a>)</span>. Many Australian animal and plant populations irrupt following periods of favorable climatic conditions. For example, preceding vegetation growth is an important factor for <em>C. terminifera</em> population outbreaks <span class="citation" data-cites="lawton_seeing_2022">(<a href="#ref-lawton_seeing_2022" role="doc-biblioref">Lawton et al., 2022</a>)</span>. In addition to climatic variability, Australia is marked by poor natural soil fertility <span class="citation" data-cites="morton_fresh_2011 orians_ecology_2007">(<a href="#ref-morton_fresh_2011" role="doc-biblioref">Morton et al., 2011</a>; <a href="#ref-orians_ecology_2007" role="doc-biblioref">Orians &amp; Milewski, 2007</a>)</span>. Nutrients such as nitrogen and phosphorus are in short supply in unmodified soils. Subsequently, many native animals and plants are adapted to environments low in soil nutrients <span class="citation" data-cites="orians_ecology_2007">(<a href="#ref-orians_ecology_2007" role="doc-biblioref">Orians &amp; Milewski, 2007</a>)</span>. Australia has several locust species, but the <em>C. terminifera</em> is the most widespread and economically damaging <span class="citation" data-cites="hunter_adaptations_2001">(<a href="#ref-hunter_adaptations_2001" role="doc-biblioref">Hunter et al., 2001</a>)</span>. As with many dryland animals, numerous studies have shown the relationship between climatic conditions and <em>C. terminifera</em> population outbreaks <span class="citation" data-cites="clark_influence_1974 deveson_not_2005 farrow_population_1982 key_general_1945">(<a href="#ref-clark_influence_1974" role="doc-biblioref">Clark, 1974</a>; <a href="#ref-deveson_not_2005" role="doc-biblioref">Deveson &amp; Walker, 2005</a>; <a href="#ref-farrow_population_1982" role="doc-biblioref">Farrow, 1982</a>; <a href="#ref-key_general_1945" role="doc-biblioref">Key, 1945</a>)</span>, however few have investigated the relationship between soil and plant nutrients and this species’ outbreaks.</p>
 <p>In this study, we investigate the across scale relationship between soil and plant nutrients and animal populations using <em>C. terminifera</em>. We have three specific questions and subsequent predictions across scales:</p>
@@ -427,23 +456,23 @@ div.csl-indent {
 <figure class="quarto-float quarto-float-tbl figure">
 <div aria-describedby="tbl-replication-statement-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
-<div id="hncfmdayls" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#hncfmdayls table {
+<div id="qdwdkolrca" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qdwdkolrca table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#hncfmdayls thead, #hncfmdayls tbody, #hncfmdayls tfoot, #hncfmdayls tr, #hncfmdayls td, #hncfmdayls th {
+#qdwdkolrca thead, #qdwdkolrca tbody, #qdwdkolrca tfoot, #qdwdkolrca tr, #qdwdkolrca td, #qdwdkolrca th {
   border-style: none;
 }
 
-#hncfmdayls p {
+#qdwdkolrca p {
   margin: 0;
   padding: 0;
 }
 
-#hncfmdayls .gt_table {
+#qdwdkolrca .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -469,12 +498,12 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#hncfmdayls .gt_caption {
+#qdwdkolrca .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#hncfmdayls .gt_title {
+#qdwdkolrca .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -486,7 +515,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#hncfmdayls .gt_subtitle {
+#qdwdkolrca .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -498,7 +527,7 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#hncfmdayls .gt_heading {
+#qdwdkolrca .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -510,13 +539,13 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#hncfmdayls .gt_bottom_border {
+#qdwdkolrca .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#hncfmdayls .gt_col_headings {
+#qdwdkolrca .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -531,7 +560,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#hncfmdayls .gt_col_heading {
+#qdwdkolrca .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -551,7 +580,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#hncfmdayls .gt_column_spanner_outer {
+#qdwdkolrca .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -563,15 +592,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#hncfmdayls .gt_column_spanner_outer:first-child {
+#qdwdkolrca .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#hncfmdayls .gt_column_spanner_outer:last-child {
+#qdwdkolrca .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#hncfmdayls .gt_column_spanner {
+#qdwdkolrca .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -583,11 +612,11 @@ div.csl-indent {
   width: 100%;
 }
 
-#hncfmdayls .gt_spanner_row {
+#qdwdkolrca .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#hncfmdayls .gt_group_heading {
+#qdwdkolrca .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -613,7 +642,7 @@ div.csl-indent {
   text-align: left;
 }
 
-#hncfmdayls .gt_empty_group_heading {
+#qdwdkolrca .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -628,15 +657,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#hncfmdayls .gt_from_md > :first-child {
+#qdwdkolrca .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#hncfmdayls .gt_from_md > :last-child {
+#qdwdkolrca .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#hncfmdayls .gt_row {
+#qdwdkolrca .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -655,7 +684,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#hncfmdayls .gt_stub {
+#qdwdkolrca .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -668,7 +697,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#hncfmdayls .gt_stub_row_group {
+#qdwdkolrca .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -682,15 +711,15 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#hncfmdayls .gt_row_group_first td {
+#qdwdkolrca .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#hncfmdayls .gt_row_group_first th {
+#qdwdkolrca .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#hncfmdayls .gt_summary_row {
+#qdwdkolrca .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -700,16 +729,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#hncfmdayls .gt_first_summary_row {
+#qdwdkolrca .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#hncfmdayls .gt_first_summary_row.thick {
+#qdwdkolrca .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#hncfmdayls .gt_last_summary_row {
+#qdwdkolrca .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -719,7 +748,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#hncfmdayls .gt_grand_summary_row {
+#qdwdkolrca .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -729,7 +758,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#hncfmdayls .gt_first_grand_summary_row {
+#qdwdkolrca .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -739,7 +768,7 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#hncfmdayls .gt_last_grand_summary_row_top {
+#qdwdkolrca .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -749,11 +778,11 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#hncfmdayls .gt_striped {
+#qdwdkolrca .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#hncfmdayls .gt_table_body {
+#qdwdkolrca .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -762,7 +791,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#hncfmdayls .gt_footnotes {
+#qdwdkolrca .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -776,7 +805,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#hncfmdayls .gt_footnote {
+#qdwdkolrca .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -785,7 +814,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#hncfmdayls .gt_sourcenotes {
+#qdwdkolrca .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -799,7 +828,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#hncfmdayls .gt_sourcenote {
+#qdwdkolrca .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -807,72 +836,72 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#hncfmdayls .gt_left {
+#qdwdkolrca .gt_left {
   text-align: left;
 }
 
-#hncfmdayls .gt_center {
+#qdwdkolrca .gt_center {
   text-align: center;
 }
 
-#hncfmdayls .gt_right {
+#qdwdkolrca .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#hncfmdayls .gt_font_normal {
+#qdwdkolrca .gt_font_normal {
   font-weight: normal;
 }
 
-#hncfmdayls .gt_font_bold {
+#qdwdkolrca .gt_font_bold {
   font-weight: bold;
 }
 
-#hncfmdayls .gt_font_italic {
+#qdwdkolrca .gt_font_italic {
   font-style: italic;
 }
 
-#hncfmdayls .gt_super {
+#qdwdkolrca .gt_super {
   font-size: 65%;
 }
 
-#hncfmdayls .gt_footnote_marks {
+#qdwdkolrca .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#hncfmdayls .gt_asterisk {
+#qdwdkolrca .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#hncfmdayls .gt_indent_1 {
+#qdwdkolrca .gt_indent_1 {
   text-indent: 5px;
 }
 
-#hncfmdayls .gt_indent_2 {
+#qdwdkolrca .gt_indent_2 {
   text-indent: 10px;
 }
 
-#hncfmdayls .gt_indent_3 {
+#qdwdkolrca .gt_indent_3 {
   text-indent: 15px;
 }
 
-#hncfmdayls .gt_indent_4 {
+#qdwdkolrca .gt_indent_4 {
   text-indent: 20px;
 }
 
-#hncfmdayls .gt_indent_5 {
+#qdwdkolrca .gt_indent_5 {
   text-indent: 25px;
 }
 
-#hncfmdayls .katex-display {
+#qdwdkolrca .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#hncfmdayls div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#qdwdkolrca div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -942,7 +971,9 @@ Table&nbsp;1: Replication statement for all scales of interest
 <p>We measured plant diversity and abundance in each locust cage and outside the cage within each fertilized plot. We also measured ground, litter, manure, and plant cover in each of the nine plots by randomly tossing three 0.25 x 0.25 m quadrats within each of the nine plots. We took these ground cover and biodiversity measurements at the beginning and end of the experiment. We took plant leaf samples for nutrient analyses from each cage three times during the experiment on November 11th, November 25th, and December 1st, 2015. Plant species with resulting carbon, nitrogen, digestible carbohydrate and protein content as well as soil nitrogen (from 0-10 cm cores) can be seen in <a href="#supptbl-field-cage-plant-soil-nutrients" class="quarto-xref">Supplementary Table&nbsp;1</a>. Plant species ground cover for each cage can be seen in <a href="#supptbl-field-cage-plant-ground-cover" class="quarto-xref">Supplementary Table&nbsp;2</a>. The relationship between soil NO3 and NO4 within cage plots and cage plant carbohydrates and proteins are visualized in <a href="#suppfig-field-cage-plant-soil-nutrient-correlations" class="quarto-xref">Supplementary Figure&nbsp;1</a>.</p>
 <p>To test how the nitrogen fertilization treatments affected the nutritional status of the locusts, we collected 20 locusts from control and high N treatment cages (40 individuals in total) on November 23, 2015. We housed them in individual cages and gave them the choice of a low protein: carbohydrate diet and a high protein: carbohydrate diet. We changed their diets on days one, two, four, and six and ended the experiment at day nine. To ensure an adequate sample size, we included data from any individuals that died (approximately 60% mortality) before the experiment was completed and individuals which molted during the experiment. We calculated the mass of protein and carbohydrate locusts ate over each interval. This allowed us to see the nutritional redressing of individuals.</p>
 <p>We collected all remaining field-cage locusts on Nov.&nbsp;28, 2015 and recorded developmental stage and body mass. We calculated surviving proportion for each cage accounting for the locusts we removed for the nutritional status experiments as follows:</p>
-<p>Surviving proportion = ()</p>
+<p><span class="math display">\[
+\text{survival proportion} = \frac{\text{number live locusts}}{\text{initial number added} - \text{number locusts removed for secondary experiment}}
+\]</span></p>
 <p>We calculated the proportion molted to adult of the surviving locusts (# adults/# live locusts).</p>
 </section>
 <section id="correlating-historical-nymphal-outbreaks-with-soil-nitrogen-and-phosphorus" class="level2" data-number="2.4">
@@ -1000,23 +1031,23 @@ Figure&nbsp;1: Locust survey data map and soil nutrients throughout the <em>C. t
 <figure class="quarto-float quarto-float-tbl figure">
 <div aria-describedby="tbl-field-population-it-model-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
-<div id="hsgugqmqjl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#hsgugqmqjl table {
+<div id="qkuuvphike" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qkuuvphike table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#hsgugqmqjl thead, #hsgugqmqjl tbody, #hsgugqmqjl tfoot, #hsgugqmqjl tr, #hsgugqmqjl td, #hsgugqmqjl th {
+#qkuuvphike thead, #qkuuvphike tbody, #qkuuvphike tfoot, #qkuuvphike tr, #qkuuvphike td, #qkuuvphike th {
   border-style: none;
 }
 
-#hsgugqmqjl p {
+#qkuuvphike p {
   margin: 0;
   padding: 0;
 }
 
-#hsgugqmqjl .gt_table {
+#qkuuvphike .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1042,12 +1073,12 @@ Figure&nbsp;1: Locust survey data map and soil nutrients throughout the <em>C. t
   border-left-color: #D3D3D3;
 }
 
-#hsgugqmqjl .gt_caption {
+#qkuuvphike .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#hsgugqmqjl .gt_title {
+#qkuuvphike .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1059,7 +1090,7 @@ Figure&nbsp;1: Locust survey data map and soil nutrients throughout the <em>C. t
   border-bottom-width: 0;
 }
 
-#hsgugqmqjl .gt_subtitle {
+#qkuuvphike .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1071,7 +1102,7 @@ Figure&nbsp;1: Locust survey data map and soil nutrients throughout the <em>C. t
   border-top-width: 0;
 }
 
-#hsgugqmqjl .gt_heading {
+#qkuuvphike .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1083,13 +1114,13 @@ Figure&nbsp;1: Locust survey data map and soil nutrients throughout the <em>C. t
   border-right-color: #D3D3D3;
 }
 
-#hsgugqmqjl .gt_bottom_border {
+#qkuuvphike .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#hsgugqmqjl .gt_col_headings {
+#qkuuvphike .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1104,7 +1135,7 @@ Figure&nbsp;1: Locust survey data map and soil nutrients throughout the <em>C. t
   border-right-color: #D3D3D3;
 }
 
-#hsgugqmqjl .gt_col_heading {
+#qkuuvphike .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1124,7 +1155,7 @@ Figure&nbsp;1: Locust survey data map and soil nutrients throughout the <em>C. t
   overflow-x: hidden;
 }
 
-#hsgugqmqjl .gt_column_spanner_outer {
+#qkuuvphike .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1136,15 +1167,15 @@ Figure&nbsp;1: Locust survey data map and soil nutrients throughout the <em>C. t
   padding-right: 4px;
 }
 
-#hsgugqmqjl .gt_column_spanner_outer:first-child {
+#qkuuvphike .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#hsgugqmqjl .gt_column_spanner_outer:last-child {
+#qkuuvphike .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#hsgugqmqjl .gt_column_spanner {
+#qkuuvphike .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1156,11 +1187,11 @@ Figure&nbsp;1: Locust survey data map and soil nutrients throughout the <em>C. t
   width: 100%;
 }
 
-#hsgugqmqjl .gt_spanner_row {
+#qkuuvphike .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#hsgugqmqjl .gt_group_heading {
+#qkuuvphike .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1186,7 +1217,7 @@ Figure&nbsp;1: Locust survey data map and soil nutrients throughout the <em>C. t
   text-align: left;
 }
 
-#hsgugqmqjl .gt_empty_group_heading {
+#qkuuvphike .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1201,15 +1232,15 @@ Figure&nbsp;1: Locust survey data map and soil nutrients throughout the <em>C. t
   vertical-align: middle;
 }
 
-#hsgugqmqjl .gt_from_md > :first-child {
+#qkuuvphike .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#hsgugqmqjl .gt_from_md > :last-child {
+#qkuuvphike .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#hsgugqmqjl .gt_row {
+#qkuuvphike .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1228,7 +1259,7 @@ Figure&nbsp;1: Locust survey data map and soil nutrients throughout the <em>C. t
   overflow-x: hidden;
 }
 
-#hsgugqmqjl .gt_stub {
+#qkuuvphike .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1241,7 +1272,7 @@ Figure&nbsp;1: Locust survey data map and soil nutrients throughout the <em>C. t
   padding-right: 5px;
 }
 
-#hsgugqmqjl .gt_stub_row_group {
+#qkuuvphike .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1255,15 +1286,15 @@ Figure&nbsp;1: Locust survey data map and soil nutrients throughout the <em>C. t
   vertical-align: top;
 }
 
-#hsgugqmqjl .gt_row_group_first td {
+#qkuuvphike .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#hsgugqmqjl .gt_row_group_first th {
+#qkuuvphike .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#hsgugqmqjl .gt_summary_row {
+#qkuuvphike .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1273,16 +1304,16 @@ Figure&nbsp;1: Locust survey data map and soil nutrients throughout the <em>C. t
   padding-right: 5px;
 }
 
-#hsgugqmqjl .gt_first_summary_row {
+#qkuuvphike .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#hsgugqmqjl .gt_first_summary_row.thick {
+#qkuuvphike .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#hsgugqmqjl .gt_last_summary_row {
+#qkuuvphike .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1292,7 +1323,7 @@ Figure&nbsp;1: Locust survey data map and soil nutrients throughout the <em>C. t
   border-bottom-color: #D3D3D3;
 }
 
-#hsgugqmqjl .gt_grand_summary_row {
+#qkuuvphike .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1302,7 +1333,7 @@ Figure&nbsp;1: Locust survey data map and soil nutrients throughout the <em>C. t
   padding-right: 5px;
 }
 
-#hsgugqmqjl .gt_first_grand_summary_row {
+#qkuuvphike .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1312,7 +1343,7 @@ Figure&nbsp;1: Locust survey data map and soil nutrients throughout the <em>C. t
   border-top-color: #D3D3D3;
 }
 
-#hsgugqmqjl .gt_last_grand_summary_row_top {
+#qkuuvphike .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1322,11 +1353,11 @@ Figure&nbsp;1: Locust survey data map and soil nutrients throughout the <em>C. t
   border-bottom-color: #D3D3D3;
 }
 
-#hsgugqmqjl .gt_striped {
+#qkuuvphike .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#hsgugqmqjl .gt_table_body {
+#qkuuvphike .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1335,7 +1366,7 @@ Figure&nbsp;1: Locust survey data map and soil nutrients throughout the <em>C. t
   border-bottom-color: #D3D3D3;
 }
 
-#hsgugqmqjl .gt_footnotes {
+#qkuuvphike .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1349,7 +1380,7 @@ Figure&nbsp;1: Locust survey data map and soil nutrients throughout the <em>C. t
   border-right-color: #D3D3D3;
 }
 
-#hsgugqmqjl .gt_footnote {
+#qkuuvphike .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1358,7 +1389,7 @@ Figure&nbsp;1: Locust survey data map and soil nutrients throughout the <em>C. t
   padding-right: 5px;
 }
 
-#hsgugqmqjl .gt_sourcenotes {
+#qkuuvphike .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1372,7 +1403,7 @@ Figure&nbsp;1: Locust survey data map and soil nutrients throughout the <em>C. t
   border-right-color: #D3D3D3;
 }
 
-#hsgugqmqjl .gt_sourcenote {
+#qkuuvphike .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1380,72 +1411,72 @@ Figure&nbsp;1: Locust survey data map and soil nutrients throughout the <em>C. t
   padding-right: 5px;
 }
 
-#hsgugqmqjl .gt_left {
+#qkuuvphike .gt_left {
   text-align: left;
 }
 
-#hsgugqmqjl .gt_center {
+#qkuuvphike .gt_center {
   text-align: center;
 }
 
-#hsgugqmqjl .gt_right {
+#qkuuvphike .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#hsgugqmqjl .gt_font_normal {
+#qkuuvphike .gt_font_normal {
   font-weight: normal;
 }
 
-#hsgugqmqjl .gt_font_bold {
+#qkuuvphike .gt_font_bold {
   font-weight: bold;
 }
 
-#hsgugqmqjl .gt_font_italic {
+#qkuuvphike .gt_font_italic {
   font-style: italic;
 }
 
-#hsgugqmqjl .gt_super {
+#qkuuvphike .gt_super {
   font-size: 65%;
 }
 
-#hsgugqmqjl .gt_footnote_marks {
+#qkuuvphike .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#hsgugqmqjl .gt_asterisk {
+#qkuuvphike .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#hsgugqmqjl .gt_indent_1 {
+#qkuuvphike .gt_indent_1 {
   text-indent: 5px;
 }
 
-#hsgugqmqjl .gt_indent_2 {
+#qkuuvphike .gt_indent_2 {
   text-indent: 10px;
 }
 
-#hsgugqmqjl .gt_indent_3 {
+#qkuuvphike .gt_indent_3 {
   text-indent: 15px;
 }
 
-#hsgugqmqjl .gt_indent_4 {
+#qkuuvphike .gt_indent_4 {
   text-indent: 20px;
 }
 
-#hsgugqmqjl .gt_indent_5 {
+#qkuuvphike .gt_indent_5 {
   text-indent: 25px;
 }
 
-#hsgugqmqjl .katex-display {
+#qkuuvphike .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#hsgugqmqjl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#qkuuvphike div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1548,23 +1579,23 @@ Figure&nbsp;2: The nutritional preference (A) and physiological performance (B &
 <figure class="quarto-float quarto-float-tbl figure">
 <div aria-describedby="tbl-field-population-no-choice-model-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
-<div id="fssoihzkio" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fssoihzkio table {
+<div id="rjqfulyshc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rjqfulyshc table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fssoihzkio thead, #fssoihzkio tbody, #fssoihzkio tfoot, #fssoihzkio tr, #fssoihzkio td, #fssoihzkio th {
+#rjqfulyshc thead, #rjqfulyshc tbody, #rjqfulyshc tfoot, #rjqfulyshc tr, #rjqfulyshc td, #rjqfulyshc th {
   border-style: none;
 }
 
-#fssoihzkio p {
+#rjqfulyshc p {
   margin: 0;
   padding: 0;
 }
 
-#fssoihzkio .gt_table {
+#rjqfulyshc .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1590,12 +1621,12 @@ Figure&nbsp;2: The nutritional preference (A) and physiological performance (B &
   border-left-color: #D3D3D3;
 }
 
-#fssoihzkio .gt_caption {
+#rjqfulyshc .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fssoihzkio .gt_title {
+#rjqfulyshc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1607,7 +1638,7 @@ Figure&nbsp;2: The nutritional preference (A) and physiological performance (B &
   border-bottom-width: 0;
 }
 
-#fssoihzkio .gt_subtitle {
+#rjqfulyshc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1619,7 +1650,7 @@ Figure&nbsp;2: The nutritional preference (A) and physiological performance (B &
   border-top-width: 0;
 }
 
-#fssoihzkio .gt_heading {
+#rjqfulyshc .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1631,13 +1662,13 @@ Figure&nbsp;2: The nutritional preference (A) and physiological performance (B &
   border-right-color: #D3D3D3;
 }
 
-#fssoihzkio .gt_bottom_border {
+#rjqfulyshc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#fssoihzkio .gt_col_headings {
+#rjqfulyshc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1652,7 +1683,7 @@ Figure&nbsp;2: The nutritional preference (A) and physiological performance (B &
   border-right-color: #D3D3D3;
 }
 
-#fssoihzkio .gt_col_heading {
+#rjqfulyshc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1672,7 +1703,7 @@ Figure&nbsp;2: The nutritional preference (A) and physiological performance (B &
   overflow-x: hidden;
 }
 
-#fssoihzkio .gt_column_spanner_outer {
+#rjqfulyshc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1684,15 +1715,15 @@ Figure&nbsp;2: The nutritional preference (A) and physiological performance (B &
   padding-right: 4px;
 }
 
-#fssoihzkio .gt_column_spanner_outer:first-child {
+#rjqfulyshc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fssoihzkio .gt_column_spanner_outer:last-child {
+#rjqfulyshc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fssoihzkio .gt_column_spanner {
+#rjqfulyshc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1704,11 +1735,11 @@ Figure&nbsp;2: The nutritional preference (A) and physiological performance (B &
   width: 100%;
 }
 
-#fssoihzkio .gt_spanner_row {
+#rjqfulyshc .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fssoihzkio .gt_group_heading {
+#rjqfulyshc .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1734,7 +1765,7 @@ Figure&nbsp;2: The nutritional preference (A) and physiological performance (B &
   text-align: left;
 }
 
-#fssoihzkio .gt_empty_group_heading {
+#rjqfulyshc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1749,15 +1780,15 @@ Figure&nbsp;2: The nutritional preference (A) and physiological performance (B &
   vertical-align: middle;
 }
 
-#fssoihzkio .gt_from_md > :first-child {
+#rjqfulyshc .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fssoihzkio .gt_from_md > :last-child {
+#rjqfulyshc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fssoihzkio .gt_row {
+#rjqfulyshc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1776,7 +1807,7 @@ Figure&nbsp;2: The nutritional preference (A) and physiological performance (B &
   overflow-x: hidden;
 }
 
-#fssoihzkio .gt_stub {
+#rjqfulyshc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1789,7 +1820,7 @@ Figure&nbsp;2: The nutritional preference (A) and physiological performance (B &
   padding-right: 5px;
 }
 
-#fssoihzkio .gt_stub_row_group {
+#rjqfulyshc .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1803,15 +1834,15 @@ Figure&nbsp;2: The nutritional preference (A) and physiological performance (B &
   vertical-align: top;
 }
 
-#fssoihzkio .gt_row_group_first td {
+#rjqfulyshc .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fssoihzkio .gt_row_group_first th {
+#rjqfulyshc .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fssoihzkio .gt_summary_row {
+#rjqfulyshc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1821,16 +1852,16 @@ Figure&nbsp;2: The nutritional preference (A) and physiological performance (B &
   padding-right: 5px;
 }
 
-#fssoihzkio .gt_first_summary_row {
+#rjqfulyshc .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#fssoihzkio .gt_first_summary_row.thick {
+#rjqfulyshc .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fssoihzkio .gt_last_summary_row {
+#rjqfulyshc .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1840,7 +1871,7 @@ Figure&nbsp;2: The nutritional preference (A) and physiological performance (B &
   border-bottom-color: #D3D3D3;
 }
 
-#fssoihzkio .gt_grand_summary_row {
+#rjqfulyshc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1850,7 +1881,7 @@ Figure&nbsp;2: The nutritional preference (A) and physiological performance (B &
   padding-right: 5px;
 }
 
-#fssoihzkio .gt_first_grand_summary_row {
+#rjqfulyshc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1860,7 +1891,7 @@ Figure&nbsp;2: The nutritional preference (A) and physiological performance (B &
   border-top-color: #D3D3D3;
 }
 
-#fssoihzkio .gt_last_grand_summary_row_top {
+#rjqfulyshc .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1870,11 +1901,11 @@ Figure&nbsp;2: The nutritional preference (A) and physiological performance (B &
   border-bottom-color: #D3D3D3;
 }
 
-#fssoihzkio .gt_striped {
+#rjqfulyshc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#fssoihzkio .gt_table_body {
+#rjqfulyshc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1883,7 +1914,7 @@ Figure&nbsp;2: The nutritional preference (A) and physiological performance (B &
   border-bottom-color: #D3D3D3;
 }
 
-#fssoihzkio .gt_footnotes {
+#rjqfulyshc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1897,7 +1928,7 @@ Figure&nbsp;2: The nutritional preference (A) and physiological performance (B &
   border-right-color: #D3D3D3;
 }
 
-#fssoihzkio .gt_footnote {
+#rjqfulyshc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1906,7 +1937,7 @@ Figure&nbsp;2: The nutritional preference (A) and physiological performance (B &
   padding-right: 5px;
 }
 
-#fssoihzkio .gt_sourcenotes {
+#rjqfulyshc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1920,7 +1951,7 @@ Figure&nbsp;2: The nutritional preference (A) and physiological performance (B &
   border-right-color: #D3D3D3;
 }
 
-#fssoihzkio .gt_sourcenote {
+#rjqfulyshc .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1928,72 +1959,72 @@ Figure&nbsp;2: The nutritional preference (A) and physiological performance (B &
   padding-right: 5px;
 }
 
-#fssoihzkio .gt_left {
+#rjqfulyshc .gt_left {
   text-align: left;
 }
 
-#fssoihzkio .gt_center {
+#rjqfulyshc .gt_center {
   text-align: center;
 }
 
-#fssoihzkio .gt_right {
+#rjqfulyshc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fssoihzkio .gt_font_normal {
+#rjqfulyshc .gt_font_normal {
   font-weight: normal;
 }
 
-#fssoihzkio .gt_font_bold {
+#rjqfulyshc .gt_font_bold {
   font-weight: bold;
 }
 
-#fssoihzkio .gt_font_italic {
+#rjqfulyshc .gt_font_italic {
   font-style: italic;
 }
 
-#fssoihzkio .gt_super {
+#rjqfulyshc .gt_super {
   font-size: 65%;
 }
 
-#fssoihzkio .gt_footnote_marks {
+#rjqfulyshc .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fssoihzkio .gt_asterisk {
+#rjqfulyshc .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fssoihzkio .gt_indent_1 {
+#rjqfulyshc .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fssoihzkio .gt_indent_2 {
+#rjqfulyshc .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fssoihzkio .gt_indent_3 {
+#rjqfulyshc .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fssoihzkio .gt_indent_4 {
+#rjqfulyshc .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fssoihzkio .gt_indent_5 {
+#rjqfulyshc .gt_indent_5 {
   text-indent: 25px;
 }
 
-#fssoihzkio .katex-display {
+#rjqfulyshc .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#fssoihzkio div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#rjqfulyshc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2123,23 +2154,23 @@ Figure&nbsp;4: Nutrient imbalance redressing with artificial diet mixing of C. t
 <figure class="quarto-float quarto-float-tbl figure">
 <div aria-describedby="tbl-field-cage-plant-nutrients-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
-<div id="zsuxtblhxu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zsuxtblhxu table {
+<div id="igjfcineaw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#igjfcineaw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#zsuxtblhxu thead, #zsuxtblhxu tbody, #zsuxtblhxu tfoot, #zsuxtblhxu tr, #zsuxtblhxu td, #zsuxtblhxu th {
+#igjfcineaw thead, #igjfcineaw tbody, #igjfcineaw tfoot, #igjfcineaw tr, #igjfcineaw td, #igjfcineaw th {
   border-style: none;
 }
 
-#zsuxtblhxu p {
+#igjfcineaw p {
   margin: 0;
   padding: 0;
 }
 
-#zsuxtblhxu .gt_table {
+#igjfcineaw .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2165,12 +2196,12 @@ Figure&nbsp;4: Nutrient imbalance redressing with artificial diet mixing of C. t
   border-left-color: #D3D3D3;
 }
 
-#zsuxtblhxu .gt_caption {
+#igjfcineaw .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#zsuxtblhxu .gt_title {
+#igjfcineaw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2182,7 +2213,7 @@ Figure&nbsp;4: Nutrient imbalance redressing with artificial diet mixing of C. t
   border-bottom-width: 0;
 }
 
-#zsuxtblhxu .gt_subtitle {
+#igjfcineaw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2194,7 +2225,7 @@ Figure&nbsp;4: Nutrient imbalance redressing with artificial diet mixing of C. t
   border-top-width: 0;
 }
 
-#zsuxtblhxu .gt_heading {
+#igjfcineaw .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2206,13 +2237,13 @@ Figure&nbsp;4: Nutrient imbalance redressing with artificial diet mixing of C. t
   border-right-color: #D3D3D3;
 }
 
-#zsuxtblhxu .gt_bottom_border {
+#igjfcineaw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zsuxtblhxu .gt_col_headings {
+#igjfcineaw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2227,7 +2258,7 @@ Figure&nbsp;4: Nutrient imbalance redressing with artificial diet mixing of C. t
   border-right-color: #D3D3D3;
 }
 
-#zsuxtblhxu .gt_col_heading {
+#igjfcineaw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2247,7 +2278,7 @@ Figure&nbsp;4: Nutrient imbalance redressing with artificial diet mixing of C. t
   overflow-x: hidden;
 }
 
-#zsuxtblhxu .gt_column_spanner_outer {
+#igjfcineaw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2259,15 +2290,15 @@ Figure&nbsp;4: Nutrient imbalance redressing with artificial diet mixing of C. t
   padding-right: 4px;
 }
 
-#zsuxtblhxu .gt_column_spanner_outer:first-child {
+#igjfcineaw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zsuxtblhxu .gt_column_spanner_outer:last-child {
+#igjfcineaw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zsuxtblhxu .gt_column_spanner {
+#igjfcineaw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2279,11 +2310,11 @@ Figure&nbsp;4: Nutrient imbalance redressing with artificial diet mixing of C. t
   width: 100%;
 }
 
-#zsuxtblhxu .gt_spanner_row {
+#igjfcineaw .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zsuxtblhxu .gt_group_heading {
+#igjfcineaw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2309,7 +2340,7 @@ Figure&nbsp;4: Nutrient imbalance redressing with artificial diet mixing of C. t
   text-align: left;
 }
 
-#zsuxtblhxu .gt_empty_group_heading {
+#igjfcineaw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2324,15 +2355,15 @@ Figure&nbsp;4: Nutrient imbalance redressing with artificial diet mixing of C. t
   vertical-align: middle;
 }
 
-#zsuxtblhxu .gt_from_md > :first-child {
+#igjfcineaw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zsuxtblhxu .gt_from_md > :last-child {
+#igjfcineaw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zsuxtblhxu .gt_row {
+#igjfcineaw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2351,7 +2382,7 @@ Figure&nbsp;4: Nutrient imbalance redressing with artificial diet mixing of C. t
   overflow-x: hidden;
 }
 
-#zsuxtblhxu .gt_stub {
+#igjfcineaw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2364,7 +2395,7 @@ Figure&nbsp;4: Nutrient imbalance redressing with artificial diet mixing of C. t
   padding-right: 5px;
 }
 
-#zsuxtblhxu .gt_stub_row_group {
+#igjfcineaw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2378,15 +2409,15 @@ Figure&nbsp;4: Nutrient imbalance redressing with artificial diet mixing of C. t
   vertical-align: top;
 }
 
-#zsuxtblhxu .gt_row_group_first td {
+#igjfcineaw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zsuxtblhxu .gt_row_group_first th {
+#igjfcineaw .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#zsuxtblhxu .gt_summary_row {
+#igjfcineaw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2396,16 +2427,16 @@ Figure&nbsp;4: Nutrient imbalance redressing with artificial diet mixing of C. t
   padding-right: 5px;
 }
 
-#zsuxtblhxu .gt_first_summary_row {
+#igjfcineaw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#zsuxtblhxu .gt_first_summary_row.thick {
+#igjfcineaw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zsuxtblhxu .gt_last_summary_row {
+#igjfcineaw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2415,7 +2446,7 @@ Figure&nbsp;4: Nutrient imbalance redressing with artificial diet mixing of C. t
   border-bottom-color: #D3D3D3;
 }
 
-#zsuxtblhxu .gt_grand_summary_row {
+#igjfcineaw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2425,7 +2456,7 @@ Figure&nbsp;4: Nutrient imbalance redressing with artificial diet mixing of C. t
   padding-right: 5px;
 }
 
-#zsuxtblhxu .gt_first_grand_summary_row {
+#igjfcineaw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2435,7 +2466,7 @@ Figure&nbsp;4: Nutrient imbalance redressing with artificial diet mixing of C. t
   border-top-color: #D3D3D3;
 }
 
-#zsuxtblhxu .gt_last_grand_summary_row_top {
+#igjfcineaw .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2445,11 +2476,11 @@ Figure&nbsp;4: Nutrient imbalance redressing with artificial diet mixing of C. t
   border-bottom-color: #D3D3D3;
 }
 
-#zsuxtblhxu .gt_striped {
+#igjfcineaw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zsuxtblhxu .gt_table_body {
+#igjfcineaw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2458,7 +2489,7 @@ Figure&nbsp;4: Nutrient imbalance redressing with artificial diet mixing of C. t
   border-bottom-color: #D3D3D3;
 }
 
-#zsuxtblhxu .gt_footnotes {
+#igjfcineaw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2472,7 +2503,7 @@ Figure&nbsp;4: Nutrient imbalance redressing with artificial diet mixing of C. t
   border-right-color: #D3D3D3;
 }
 
-#zsuxtblhxu .gt_footnote {
+#igjfcineaw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2481,7 +2512,7 @@ Figure&nbsp;4: Nutrient imbalance redressing with artificial diet mixing of C. t
   padding-right: 5px;
 }
 
-#zsuxtblhxu .gt_sourcenotes {
+#igjfcineaw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2495,7 +2526,7 @@ Figure&nbsp;4: Nutrient imbalance redressing with artificial diet mixing of C. t
   border-right-color: #D3D3D3;
 }
 
-#zsuxtblhxu .gt_sourcenote {
+#igjfcineaw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2503,72 +2534,72 @@ Figure&nbsp;4: Nutrient imbalance redressing with artificial diet mixing of C. t
   padding-right: 5px;
 }
 
-#zsuxtblhxu .gt_left {
+#igjfcineaw .gt_left {
   text-align: left;
 }
 
-#zsuxtblhxu .gt_center {
+#igjfcineaw .gt_center {
   text-align: center;
 }
 
-#zsuxtblhxu .gt_right {
+#igjfcineaw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zsuxtblhxu .gt_font_normal {
+#igjfcineaw .gt_font_normal {
   font-weight: normal;
 }
 
-#zsuxtblhxu .gt_font_bold {
+#igjfcineaw .gt_font_bold {
   font-weight: bold;
 }
 
-#zsuxtblhxu .gt_font_italic {
+#igjfcineaw .gt_font_italic {
   font-style: italic;
 }
 
-#zsuxtblhxu .gt_super {
+#igjfcineaw .gt_super {
   font-size: 65%;
 }
 
-#zsuxtblhxu .gt_footnote_marks {
+#igjfcineaw .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#zsuxtblhxu .gt_asterisk {
+#igjfcineaw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zsuxtblhxu .gt_indent_1 {
+#igjfcineaw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zsuxtblhxu .gt_indent_2 {
+#igjfcineaw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zsuxtblhxu .gt_indent_3 {
+#igjfcineaw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zsuxtblhxu .gt_indent_4 {
+#igjfcineaw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zsuxtblhxu .gt_indent_5 {
+#igjfcineaw .gt_indent_5 {
   text-indent: 25px;
 }
 
-#zsuxtblhxu .katex-display {
+#igjfcineaw .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#zsuxtblhxu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#igjfcineaw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2832,23 +2863,23 @@ Table&nbsp;4: Generalized additive model results for plant macronutrient (carboh
 <figure class="quarto-float quarto-float-tbl figure">
 <div aria-describedby="tbl-field-cage-locust-mass-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
-<div id="gsdcdxbvqg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gsdcdxbvqg table {
+<div id="nhslbjefni" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#nhslbjefni table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#gsdcdxbvqg thead, #gsdcdxbvqg tbody, #gsdcdxbvqg tfoot, #gsdcdxbvqg tr, #gsdcdxbvqg td, #gsdcdxbvqg th {
+#nhslbjefni thead, #nhslbjefni tbody, #nhslbjefni tfoot, #nhslbjefni tr, #nhslbjefni td, #nhslbjefni th {
   border-style: none;
 }
 
-#gsdcdxbvqg p {
+#nhslbjefni p {
   margin: 0;
   padding: 0;
 }
 
-#gsdcdxbvqg .gt_table {
+#nhslbjefni .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2874,12 +2905,12 @@ Table&nbsp;4: Generalized additive model results for plant macronutrient (carboh
   border-left-color: #D3D3D3;
 }
 
-#gsdcdxbvqg .gt_caption {
+#nhslbjefni .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#gsdcdxbvqg .gt_title {
+#nhslbjefni .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2891,7 +2922,7 @@ Table&nbsp;4: Generalized additive model results for plant macronutrient (carboh
   border-bottom-width: 0;
 }
 
-#gsdcdxbvqg .gt_subtitle {
+#nhslbjefni .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2903,7 +2934,7 @@ Table&nbsp;4: Generalized additive model results for plant macronutrient (carboh
   border-top-width: 0;
 }
 
-#gsdcdxbvqg .gt_heading {
+#nhslbjefni .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2915,13 +2946,13 @@ Table&nbsp;4: Generalized additive model results for plant macronutrient (carboh
   border-right-color: #D3D3D3;
 }
 
-#gsdcdxbvqg .gt_bottom_border {
+#nhslbjefni .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#gsdcdxbvqg .gt_col_headings {
+#nhslbjefni .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2936,7 +2967,7 @@ Table&nbsp;4: Generalized additive model results for plant macronutrient (carboh
   border-right-color: #D3D3D3;
 }
 
-#gsdcdxbvqg .gt_col_heading {
+#nhslbjefni .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2956,7 +2987,7 @@ Table&nbsp;4: Generalized additive model results for plant macronutrient (carboh
   overflow-x: hidden;
 }
 
-#gsdcdxbvqg .gt_column_spanner_outer {
+#nhslbjefni .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2968,15 +2999,15 @@ Table&nbsp;4: Generalized additive model results for plant macronutrient (carboh
   padding-right: 4px;
 }
 
-#gsdcdxbvqg .gt_column_spanner_outer:first-child {
+#nhslbjefni .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gsdcdxbvqg .gt_column_spanner_outer:last-child {
+#nhslbjefni .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gsdcdxbvqg .gt_column_spanner {
+#nhslbjefni .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2988,11 +3019,11 @@ Table&nbsp;4: Generalized additive model results for plant macronutrient (carboh
   width: 100%;
 }
 
-#gsdcdxbvqg .gt_spanner_row {
+#nhslbjefni .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#gsdcdxbvqg .gt_group_heading {
+#nhslbjefni .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3018,7 +3049,7 @@ Table&nbsp;4: Generalized additive model results for plant macronutrient (carboh
   text-align: left;
 }
 
-#gsdcdxbvqg .gt_empty_group_heading {
+#nhslbjefni .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3033,15 +3064,15 @@ Table&nbsp;4: Generalized additive model results for plant macronutrient (carboh
   vertical-align: middle;
 }
 
-#gsdcdxbvqg .gt_from_md > :first-child {
+#nhslbjefni .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gsdcdxbvqg .gt_from_md > :last-child {
+#nhslbjefni .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gsdcdxbvqg .gt_row {
+#nhslbjefni .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3060,7 +3091,7 @@ Table&nbsp;4: Generalized additive model results for plant macronutrient (carboh
   overflow-x: hidden;
 }
 
-#gsdcdxbvqg .gt_stub {
+#nhslbjefni .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3073,7 +3104,7 @@ Table&nbsp;4: Generalized additive model results for plant macronutrient (carboh
   padding-right: 5px;
 }
 
-#gsdcdxbvqg .gt_stub_row_group {
+#nhslbjefni .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3087,15 +3118,15 @@ Table&nbsp;4: Generalized additive model results for plant macronutrient (carboh
   vertical-align: top;
 }
 
-#gsdcdxbvqg .gt_row_group_first td {
+#nhslbjefni .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#gsdcdxbvqg .gt_row_group_first th {
+#nhslbjefni .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#gsdcdxbvqg .gt_summary_row {
+#nhslbjefni .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3105,16 +3136,16 @@ Table&nbsp;4: Generalized additive model results for plant macronutrient (carboh
   padding-right: 5px;
 }
 
-#gsdcdxbvqg .gt_first_summary_row {
+#nhslbjefni .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#gsdcdxbvqg .gt_first_summary_row.thick {
+#nhslbjefni .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#gsdcdxbvqg .gt_last_summary_row {
+#nhslbjefni .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3124,7 +3155,7 @@ Table&nbsp;4: Generalized additive model results for plant macronutrient (carboh
   border-bottom-color: #D3D3D3;
 }
 
-#gsdcdxbvqg .gt_grand_summary_row {
+#nhslbjefni .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3134,7 +3165,7 @@ Table&nbsp;4: Generalized additive model results for plant macronutrient (carboh
   padding-right: 5px;
 }
 
-#gsdcdxbvqg .gt_first_grand_summary_row {
+#nhslbjefni .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3144,7 +3175,7 @@ Table&nbsp;4: Generalized additive model results for plant macronutrient (carboh
   border-top-color: #D3D3D3;
 }
 
-#gsdcdxbvqg .gt_last_grand_summary_row_top {
+#nhslbjefni .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3154,11 +3185,11 @@ Table&nbsp;4: Generalized additive model results for plant macronutrient (carboh
   border-bottom-color: #D3D3D3;
 }
 
-#gsdcdxbvqg .gt_striped {
+#nhslbjefni .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gsdcdxbvqg .gt_table_body {
+#nhslbjefni .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3167,7 +3198,7 @@ Table&nbsp;4: Generalized additive model results for plant macronutrient (carboh
   border-bottom-color: #D3D3D3;
 }
 
-#gsdcdxbvqg .gt_footnotes {
+#nhslbjefni .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3181,7 +3212,7 @@ Table&nbsp;4: Generalized additive model results for plant macronutrient (carboh
   border-right-color: #D3D3D3;
 }
 
-#gsdcdxbvqg .gt_footnote {
+#nhslbjefni .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3190,7 +3221,7 @@ Table&nbsp;4: Generalized additive model results for plant macronutrient (carboh
   padding-right: 5px;
 }
 
-#gsdcdxbvqg .gt_sourcenotes {
+#nhslbjefni .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3204,7 +3235,7 @@ Table&nbsp;4: Generalized additive model results for plant macronutrient (carboh
   border-right-color: #D3D3D3;
 }
 
-#gsdcdxbvqg .gt_sourcenote {
+#nhslbjefni .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3212,72 +3243,72 @@ Table&nbsp;4: Generalized additive model results for plant macronutrient (carboh
   padding-right: 5px;
 }
 
-#gsdcdxbvqg .gt_left {
+#nhslbjefni .gt_left {
   text-align: left;
 }
 
-#gsdcdxbvqg .gt_center {
+#nhslbjefni .gt_center {
   text-align: center;
 }
 
-#gsdcdxbvqg .gt_right {
+#nhslbjefni .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gsdcdxbvqg .gt_font_normal {
+#nhslbjefni .gt_font_normal {
   font-weight: normal;
 }
 
-#gsdcdxbvqg .gt_font_bold {
+#nhslbjefni .gt_font_bold {
   font-weight: bold;
 }
 
-#gsdcdxbvqg .gt_font_italic {
+#nhslbjefni .gt_font_italic {
   font-style: italic;
 }
 
-#gsdcdxbvqg .gt_super {
+#nhslbjefni .gt_super {
   font-size: 65%;
 }
 
-#gsdcdxbvqg .gt_footnote_marks {
+#nhslbjefni .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#gsdcdxbvqg .gt_asterisk {
+#nhslbjefni .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#gsdcdxbvqg .gt_indent_1 {
+#nhslbjefni .gt_indent_1 {
   text-indent: 5px;
 }
 
-#gsdcdxbvqg .gt_indent_2 {
+#nhslbjefni .gt_indent_2 {
   text-indent: 10px;
 }
 
-#gsdcdxbvqg .gt_indent_3 {
+#nhslbjefni .gt_indent_3 {
   text-indent: 15px;
 }
 
-#gsdcdxbvqg .gt_indent_4 {
+#nhslbjefni .gt_indent_4 {
   text-indent: 20px;
 }
 
-#gsdcdxbvqg .gt_indent_5 {
+#nhslbjefni .gt_indent_5 {
   text-indent: 25px;
 }
 
-#gsdcdxbvqg .katex-display {
+#nhslbjefni .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#gsdcdxbvqg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#nhslbjefni div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3367,23 +3398,23 @@ Table&nbsp;5: Generalized additive model results for differences between final l
 <figure class="quarto-float quarto-float-tbl figure">
 <div aria-describedby="tbl-field-cage-rebalancing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
-<div id="lemwvwseqt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#lemwvwseqt table {
+<div id="zitifxgtky" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zitifxgtky table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#lemwvwseqt thead, #lemwvwseqt tbody, #lemwvwseqt tfoot, #lemwvwseqt tr, #lemwvwseqt td, #lemwvwseqt th {
+#zitifxgtky thead, #zitifxgtky tbody, #zitifxgtky tfoot, #zitifxgtky tr, #zitifxgtky td, #zitifxgtky th {
   border-style: none;
 }
 
-#lemwvwseqt p {
+#zitifxgtky p {
   margin: 0;
   padding: 0;
 }
 
-#lemwvwseqt .gt_table {
+#zitifxgtky .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3409,12 +3440,12 @@ Table&nbsp;5: Generalized additive model results for differences between final l
   border-left-color: #D3D3D3;
 }
 
-#lemwvwseqt .gt_caption {
+#zitifxgtky .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#lemwvwseqt .gt_title {
+#zitifxgtky .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3426,7 +3457,7 @@ Table&nbsp;5: Generalized additive model results for differences between final l
   border-bottom-width: 0;
 }
 
-#lemwvwseqt .gt_subtitle {
+#zitifxgtky .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3438,7 +3469,7 @@ Table&nbsp;5: Generalized additive model results for differences between final l
   border-top-width: 0;
 }
 
-#lemwvwseqt .gt_heading {
+#zitifxgtky .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3450,13 +3481,13 @@ Table&nbsp;5: Generalized additive model results for differences between final l
   border-right-color: #D3D3D3;
 }
 
-#lemwvwseqt .gt_bottom_border {
+#zitifxgtky .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#lemwvwseqt .gt_col_headings {
+#zitifxgtky .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3471,7 +3502,7 @@ Table&nbsp;5: Generalized additive model results for differences between final l
   border-right-color: #D3D3D3;
 }
 
-#lemwvwseqt .gt_col_heading {
+#zitifxgtky .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3491,7 +3522,7 @@ Table&nbsp;5: Generalized additive model results for differences between final l
   overflow-x: hidden;
 }
 
-#lemwvwseqt .gt_column_spanner_outer {
+#zitifxgtky .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3503,15 +3534,15 @@ Table&nbsp;5: Generalized additive model results for differences between final l
   padding-right: 4px;
 }
 
-#lemwvwseqt .gt_column_spanner_outer:first-child {
+#zitifxgtky .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#lemwvwseqt .gt_column_spanner_outer:last-child {
+#zitifxgtky .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#lemwvwseqt .gt_column_spanner {
+#zitifxgtky .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3523,11 +3554,11 @@ Table&nbsp;5: Generalized additive model results for differences between final l
   width: 100%;
 }
 
-#lemwvwseqt .gt_spanner_row {
+#zitifxgtky .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#lemwvwseqt .gt_group_heading {
+#zitifxgtky .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3553,7 +3584,7 @@ Table&nbsp;5: Generalized additive model results for differences between final l
   text-align: left;
 }
 
-#lemwvwseqt .gt_empty_group_heading {
+#zitifxgtky .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3568,15 +3599,15 @@ Table&nbsp;5: Generalized additive model results for differences between final l
   vertical-align: middle;
 }
 
-#lemwvwseqt .gt_from_md > :first-child {
+#zitifxgtky .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#lemwvwseqt .gt_from_md > :last-child {
+#zitifxgtky .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#lemwvwseqt .gt_row {
+#zitifxgtky .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3595,7 +3626,7 @@ Table&nbsp;5: Generalized additive model results for differences between final l
   overflow-x: hidden;
 }
 
-#lemwvwseqt .gt_stub {
+#zitifxgtky .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3608,7 +3639,7 @@ Table&nbsp;5: Generalized additive model results for differences between final l
   padding-right: 5px;
 }
 
-#lemwvwseqt .gt_stub_row_group {
+#zitifxgtky .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3622,15 +3653,15 @@ Table&nbsp;5: Generalized additive model results for differences between final l
   vertical-align: top;
 }
 
-#lemwvwseqt .gt_row_group_first td {
+#zitifxgtky .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#lemwvwseqt .gt_row_group_first th {
+#zitifxgtky .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#lemwvwseqt .gt_summary_row {
+#zitifxgtky .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3640,16 +3671,16 @@ Table&nbsp;5: Generalized additive model results for differences between final l
   padding-right: 5px;
 }
 
-#lemwvwseqt .gt_first_summary_row {
+#zitifxgtky .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#lemwvwseqt .gt_first_summary_row.thick {
+#zitifxgtky .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#lemwvwseqt .gt_last_summary_row {
+#zitifxgtky .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3659,7 +3690,7 @@ Table&nbsp;5: Generalized additive model results for differences between final l
   border-bottom-color: #D3D3D3;
 }
 
-#lemwvwseqt .gt_grand_summary_row {
+#zitifxgtky .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3669,7 +3700,7 @@ Table&nbsp;5: Generalized additive model results for differences between final l
   padding-right: 5px;
 }
 
-#lemwvwseqt .gt_first_grand_summary_row {
+#zitifxgtky .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3679,7 +3710,7 @@ Table&nbsp;5: Generalized additive model results for differences between final l
   border-top-color: #D3D3D3;
 }
 
-#lemwvwseqt .gt_last_grand_summary_row_top {
+#zitifxgtky .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3689,11 +3720,11 @@ Table&nbsp;5: Generalized additive model results for differences between final l
   border-bottom-color: #D3D3D3;
 }
 
-#lemwvwseqt .gt_striped {
+#zitifxgtky .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#lemwvwseqt .gt_table_body {
+#zitifxgtky .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3702,7 +3733,7 @@ Table&nbsp;5: Generalized additive model results for differences between final l
   border-bottom-color: #D3D3D3;
 }
 
-#lemwvwseqt .gt_footnotes {
+#zitifxgtky .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3716,7 +3747,7 @@ Table&nbsp;5: Generalized additive model results for differences between final l
   border-right-color: #D3D3D3;
 }
 
-#lemwvwseqt .gt_footnote {
+#zitifxgtky .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3725,7 +3756,7 @@ Table&nbsp;5: Generalized additive model results for differences between final l
   padding-right: 5px;
 }
 
-#lemwvwseqt .gt_sourcenotes {
+#zitifxgtky .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3739,7 +3770,7 @@ Table&nbsp;5: Generalized additive model results for differences between final l
   border-right-color: #D3D3D3;
 }
 
-#lemwvwseqt .gt_sourcenote {
+#zitifxgtky .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3747,72 +3778,72 @@ Table&nbsp;5: Generalized additive model results for differences between final l
   padding-right: 5px;
 }
 
-#lemwvwseqt .gt_left {
+#zitifxgtky .gt_left {
   text-align: left;
 }
 
-#lemwvwseqt .gt_center {
+#zitifxgtky .gt_center {
   text-align: center;
 }
 
-#lemwvwseqt .gt_right {
+#zitifxgtky .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#lemwvwseqt .gt_font_normal {
+#zitifxgtky .gt_font_normal {
   font-weight: normal;
 }
 
-#lemwvwseqt .gt_font_bold {
+#zitifxgtky .gt_font_bold {
   font-weight: bold;
 }
 
-#lemwvwseqt .gt_font_italic {
+#zitifxgtky .gt_font_italic {
   font-style: italic;
 }
 
-#lemwvwseqt .gt_super {
+#zitifxgtky .gt_super {
   font-size: 65%;
 }
 
-#lemwvwseqt .gt_footnote_marks {
+#zitifxgtky .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#lemwvwseqt .gt_asterisk {
+#zitifxgtky .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#lemwvwseqt .gt_indent_1 {
+#zitifxgtky .gt_indent_1 {
   text-indent: 5px;
 }
 
-#lemwvwseqt .gt_indent_2 {
+#zitifxgtky .gt_indent_2 {
   text-indent: 10px;
 }
 
-#lemwvwseqt .gt_indent_3 {
+#zitifxgtky .gt_indent_3 {
   text-indent: 15px;
 }
 
-#lemwvwseqt .gt_indent_4 {
+#zitifxgtky .gt_indent_4 {
   text-indent: 20px;
 }
 
-#lemwvwseqt .gt_indent_5 {
+#zitifxgtky .gt_indent_5 {
   text-indent: 25px;
 }
 
-#lemwvwseqt .katex-display {
+#zitifxgtky .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#lemwvwseqt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#zitifxgtky div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4014,23 +4045,23 @@ Figure&nbsp;5: Relationship between outbreaks and nil observations for both soil
 <figure class="quarto-float quarto-float-tbl figure">
 <div aria-describedby="tbl-spatial-modeling-outbreak-model-results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
-<div id="mjrxzeclpf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mjrxzeclpf table {
+<div id="rkrqoqdwys" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rkrqoqdwys table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mjrxzeclpf thead, #mjrxzeclpf tbody, #mjrxzeclpf tfoot, #mjrxzeclpf tr, #mjrxzeclpf td, #mjrxzeclpf th {
+#rkrqoqdwys thead, #rkrqoqdwys tbody, #rkrqoqdwys tfoot, #rkrqoqdwys tr, #rkrqoqdwys td, #rkrqoqdwys th {
   border-style: none;
 }
 
-#mjrxzeclpf p {
+#rkrqoqdwys p {
   margin: 0;
   padding: 0;
 }
 
-#mjrxzeclpf .gt_table {
+#rkrqoqdwys .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4056,12 +4087,12 @@ Figure&nbsp;5: Relationship between outbreaks and nil observations for both soil
   border-left-color: #D3D3D3;
 }
 
-#mjrxzeclpf .gt_caption {
+#rkrqoqdwys .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mjrxzeclpf .gt_title {
+#rkrqoqdwys .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4073,7 +4104,7 @@ Figure&nbsp;5: Relationship between outbreaks and nil observations for both soil
   border-bottom-width: 0;
 }
 
-#mjrxzeclpf .gt_subtitle {
+#rkrqoqdwys .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4085,7 +4116,7 @@ Figure&nbsp;5: Relationship between outbreaks and nil observations for both soil
   border-top-width: 0;
 }
 
-#mjrxzeclpf .gt_heading {
+#rkrqoqdwys .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4097,13 +4128,13 @@ Figure&nbsp;5: Relationship between outbreaks and nil observations for both soil
   border-right-color: #D3D3D3;
 }
 
-#mjrxzeclpf .gt_bottom_border {
+#rkrqoqdwys .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mjrxzeclpf .gt_col_headings {
+#rkrqoqdwys .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4118,7 +4149,7 @@ Figure&nbsp;5: Relationship between outbreaks and nil observations for both soil
   border-right-color: #D3D3D3;
 }
 
-#mjrxzeclpf .gt_col_heading {
+#rkrqoqdwys .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4138,7 +4169,7 @@ Figure&nbsp;5: Relationship between outbreaks and nil observations for both soil
   overflow-x: hidden;
 }
 
-#mjrxzeclpf .gt_column_spanner_outer {
+#rkrqoqdwys .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4150,15 +4181,15 @@ Figure&nbsp;5: Relationship between outbreaks and nil observations for both soil
   padding-right: 4px;
 }
 
-#mjrxzeclpf .gt_column_spanner_outer:first-child {
+#rkrqoqdwys .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mjrxzeclpf .gt_column_spanner_outer:last-child {
+#rkrqoqdwys .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mjrxzeclpf .gt_column_spanner {
+#rkrqoqdwys .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4170,11 +4201,11 @@ Figure&nbsp;5: Relationship between outbreaks and nil observations for both soil
   width: 100%;
 }
 
-#mjrxzeclpf .gt_spanner_row {
+#rkrqoqdwys .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mjrxzeclpf .gt_group_heading {
+#rkrqoqdwys .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4200,7 +4231,7 @@ Figure&nbsp;5: Relationship between outbreaks and nil observations for both soil
   text-align: left;
 }
 
-#mjrxzeclpf .gt_empty_group_heading {
+#rkrqoqdwys .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4215,15 +4246,15 @@ Figure&nbsp;5: Relationship between outbreaks and nil observations for both soil
   vertical-align: middle;
 }
 
-#mjrxzeclpf .gt_from_md > :first-child {
+#rkrqoqdwys .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mjrxzeclpf .gt_from_md > :last-child {
+#rkrqoqdwys .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mjrxzeclpf .gt_row {
+#rkrqoqdwys .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4242,7 +4273,7 @@ Figure&nbsp;5: Relationship between outbreaks and nil observations for both soil
   overflow-x: hidden;
 }
 
-#mjrxzeclpf .gt_stub {
+#rkrqoqdwys .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4255,7 +4286,7 @@ Figure&nbsp;5: Relationship between outbreaks and nil observations for both soil
   padding-right: 5px;
 }
 
-#mjrxzeclpf .gt_stub_row_group {
+#rkrqoqdwys .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4269,15 +4300,15 @@ Figure&nbsp;5: Relationship between outbreaks and nil observations for both soil
   vertical-align: top;
 }
 
-#mjrxzeclpf .gt_row_group_first td {
+#rkrqoqdwys .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mjrxzeclpf .gt_row_group_first th {
+#rkrqoqdwys .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mjrxzeclpf .gt_summary_row {
+#rkrqoqdwys .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4287,16 +4318,16 @@ Figure&nbsp;5: Relationship between outbreaks and nil observations for both soil
   padding-right: 5px;
 }
 
-#mjrxzeclpf .gt_first_summary_row {
+#rkrqoqdwys .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mjrxzeclpf .gt_first_summary_row.thick {
+#rkrqoqdwys .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mjrxzeclpf .gt_last_summary_row {
+#rkrqoqdwys .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4306,7 +4337,7 @@ Figure&nbsp;5: Relationship between outbreaks and nil observations for both soil
   border-bottom-color: #D3D3D3;
 }
 
-#mjrxzeclpf .gt_grand_summary_row {
+#rkrqoqdwys .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4316,7 +4347,7 @@ Figure&nbsp;5: Relationship between outbreaks and nil observations for both soil
   padding-right: 5px;
 }
 
-#mjrxzeclpf .gt_first_grand_summary_row {
+#rkrqoqdwys .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4326,7 +4357,7 @@ Figure&nbsp;5: Relationship between outbreaks and nil observations for both soil
   border-top-color: #D3D3D3;
 }
 
-#mjrxzeclpf .gt_last_grand_summary_row_top {
+#rkrqoqdwys .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4336,11 +4367,11 @@ Figure&nbsp;5: Relationship between outbreaks and nil observations for both soil
   border-bottom-color: #D3D3D3;
 }
 
-#mjrxzeclpf .gt_striped {
+#rkrqoqdwys .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mjrxzeclpf .gt_table_body {
+#rkrqoqdwys .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4349,7 +4380,7 @@ Figure&nbsp;5: Relationship between outbreaks and nil observations for both soil
   border-bottom-color: #D3D3D3;
 }
 
-#mjrxzeclpf .gt_footnotes {
+#rkrqoqdwys .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4363,7 +4394,7 @@ Figure&nbsp;5: Relationship between outbreaks and nil observations for both soil
   border-right-color: #D3D3D3;
 }
 
-#mjrxzeclpf .gt_footnote {
+#rkrqoqdwys .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4372,7 +4403,7 @@ Figure&nbsp;5: Relationship between outbreaks and nil observations for both soil
   padding-right: 5px;
 }
 
-#mjrxzeclpf .gt_sourcenotes {
+#rkrqoqdwys .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4386,7 +4417,7 @@ Figure&nbsp;5: Relationship between outbreaks and nil observations for both soil
   border-right-color: #D3D3D3;
 }
 
-#mjrxzeclpf .gt_sourcenote {
+#rkrqoqdwys .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4394,72 +4425,72 @@ Figure&nbsp;5: Relationship between outbreaks and nil observations for both soil
   padding-right: 5px;
 }
 
-#mjrxzeclpf .gt_left {
+#rkrqoqdwys .gt_left {
   text-align: left;
 }
 
-#mjrxzeclpf .gt_center {
+#rkrqoqdwys .gt_center {
   text-align: center;
 }
 
-#mjrxzeclpf .gt_right {
+#rkrqoqdwys .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mjrxzeclpf .gt_font_normal {
+#rkrqoqdwys .gt_font_normal {
   font-weight: normal;
 }
 
-#mjrxzeclpf .gt_font_bold {
+#rkrqoqdwys .gt_font_bold {
   font-weight: bold;
 }
 
-#mjrxzeclpf .gt_font_italic {
+#rkrqoqdwys .gt_font_italic {
   font-style: italic;
 }
 
-#mjrxzeclpf .gt_super {
+#rkrqoqdwys .gt_super {
   font-size: 65%;
 }
 
-#mjrxzeclpf .gt_footnote_marks {
+#rkrqoqdwys .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mjrxzeclpf .gt_asterisk {
+#rkrqoqdwys .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mjrxzeclpf .gt_indent_1 {
+#rkrqoqdwys .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mjrxzeclpf .gt_indent_2 {
+#rkrqoqdwys .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mjrxzeclpf .gt_indent_3 {
+#rkrqoqdwys .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mjrxzeclpf .gt_indent_4 {
+#rkrqoqdwys .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mjrxzeclpf .gt_indent_5 {
+#rkrqoqdwys .gt_indent_5 {
   text-indent: 25px;
 }
 
-#mjrxzeclpf .katex-display {
+#rkrqoqdwys .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#mjrxzeclpf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#rkrqoqdwys div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4931,23 +4962,23 @@ Supplementary Figure&nbsp;8: The relationship between locust outbreaks and nil o
 <div aria-describedby="supptbl-field-cage-plant-soil-nutrients-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
 <div class="cell-output-display">
-<div id="ikolbpxesw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ikolbpxesw table {
+<div id="xynogvfsnt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xynogvfsnt table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ikolbpxesw thead, #ikolbpxesw tbody, #ikolbpxesw tfoot, #ikolbpxesw tr, #ikolbpxesw td, #ikolbpxesw th {
+#xynogvfsnt thead, #xynogvfsnt tbody, #xynogvfsnt tfoot, #xynogvfsnt tr, #xynogvfsnt td, #xynogvfsnt th {
   border-style: none;
 }
 
-#ikolbpxesw p {
+#xynogvfsnt p {
   margin: 0;
   padding: 0;
 }
 
-#ikolbpxesw .gt_table {
+#xynogvfsnt .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4973,12 +5004,12 @@ Supplementary Figure&nbsp;8: The relationship between locust outbreaks and nil o
   border-left-color: #D3D3D3;
 }
 
-#ikolbpxesw .gt_caption {
+#xynogvfsnt .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ikolbpxesw .gt_title {
+#xynogvfsnt .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4990,7 +5021,7 @@ Supplementary Figure&nbsp;8: The relationship between locust outbreaks and nil o
   border-bottom-width: 0;
 }
 
-#ikolbpxesw .gt_subtitle {
+#xynogvfsnt .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5002,7 +5033,7 @@ Supplementary Figure&nbsp;8: The relationship between locust outbreaks and nil o
   border-top-width: 0;
 }
 
-#ikolbpxesw .gt_heading {
+#xynogvfsnt .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -5014,13 +5045,13 @@ Supplementary Figure&nbsp;8: The relationship between locust outbreaks and nil o
   border-right-color: #D3D3D3;
 }
 
-#ikolbpxesw .gt_bottom_border {
+#xynogvfsnt .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ikolbpxesw .gt_col_headings {
+#xynogvfsnt .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5035,7 +5066,7 @@ Supplementary Figure&nbsp;8: The relationship between locust outbreaks and nil o
   border-right-color: #D3D3D3;
 }
 
-#ikolbpxesw .gt_col_heading {
+#xynogvfsnt .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5055,7 +5086,7 @@ Supplementary Figure&nbsp;8: The relationship between locust outbreaks and nil o
   overflow-x: hidden;
 }
 
-#ikolbpxesw .gt_column_spanner_outer {
+#xynogvfsnt .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5067,15 +5098,15 @@ Supplementary Figure&nbsp;8: The relationship between locust outbreaks and nil o
   padding-right: 4px;
 }
 
-#ikolbpxesw .gt_column_spanner_outer:first-child {
+#xynogvfsnt .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ikolbpxesw .gt_column_spanner_outer:last-child {
+#xynogvfsnt .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ikolbpxesw .gt_column_spanner {
+#xynogvfsnt .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5087,11 +5118,11 @@ Supplementary Figure&nbsp;8: The relationship between locust outbreaks and nil o
   width: 100%;
 }
 
-#ikolbpxesw .gt_spanner_row {
+#xynogvfsnt .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ikolbpxesw .gt_group_heading {
+#xynogvfsnt .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5117,7 +5148,7 @@ Supplementary Figure&nbsp;8: The relationship between locust outbreaks and nil o
   text-align: left;
 }
 
-#ikolbpxesw .gt_empty_group_heading {
+#xynogvfsnt .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -5132,15 +5163,15 @@ Supplementary Figure&nbsp;8: The relationship between locust outbreaks and nil o
   vertical-align: middle;
 }
 
-#ikolbpxesw .gt_from_md > :first-child {
+#xynogvfsnt .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ikolbpxesw .gt_from_md > :last-child {
+#xynogvfsnt .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ikolbpxesw .gt_row {
+#xynogvfsnt .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5159,7 +5190,7 @@ Supplementary Figure&nbsp;8: The relationship between locust outbreaks and nil o
   overflow-x: hidden;
 }
 
-#ikolbpxesw .gt_stub {
+#xynogvfsnt .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5172,7 +5203,7 @@ Supplementary Figure&nbsp;8: The relationship between locust outbreaks and nil o
   padding-right: 5px;
 }
 
-#ikolbpxesw .gt_stub_row_group {
+#xynogvfsnt .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5186,15 +5217,15 @@ Supplementary Figure&nbsp;8: The relationship between locust outbreaks and nil o
   vertical-align: top;
 }
 
-#ikolbpxesw .gt_row_group_first td {
+#xynogvfsnt .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ikolbpxesw .gt_row_group_first th {
+#xynogvfsnt .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ikolbpxesw .gt_summary_row {
+#xynogvfsnt .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5204,16 +5235,16 @@ Supplementary Figure&nbsp;8: The relationship between locust outbreaks and nil o
   padding-right: 5px;
 }
 
-#ikolbpxesw .gt_first_summary_row {
+#xynogvfsnt .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ikolbpxesw .gt_first_summary_row.thick {
+#xynogvfsnt .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ikolbpxesw .gt_last_summary_row {
+#xynogvfsnt .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5223,7 +5254,7 @@ Supplementary Figure&nbsp;8: The relationship between locust outbreaks and nil o
   border-bottom-color: #D3D3D3;
 }
 
-#ikolbpxesw .gt_grand_summary_row {
+#xynogvfsnt .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5233,7 +5264,7 @@ Supplementary Figure&nbsp;8: The relationship between locust outbreaks and nil o
   padding-right: 5px;
 }
 
-#ikolbpxesw .gt_first_grand_summary_row {
+#xynogvfsnt .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5243,7 +5274,7 @@ Supplementary Figure&nbsp;8: The relationship between locust outbreaks and nil o
   border-top-color: #D3D3D3;
 }
 
-#ikolbpxesw .gt_last_grand_summary_row_top {
+#xynogvfsnt .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5253,11 +5284,11 @@ Supplementary Figure&nbsp;8: The relationship between locust outbreaks and nil o
   border-bottom-color: #D3D3D3;
 }
 
-#ikolbpxesw .gt_striped {
+#xynogvfsnt .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ikolbpxesw .gt_table_body {
+#xynogvfsnt .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5266,7 +5297,7 @@ Supplementary Figure&nbsp;8: The relationship between locust outbreaks and nil o
   border-bottom-color: #D3D3D3;
 }
 
-#ikolbpxesw .gt_footnotes {
+#xynogvfsnt .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5280,7 +5311,7 @@ Supplementary Figure&nbsp;8: The relationship between locust outbreaks and nil o
   border-right-color: #D3D3D3;
 }
 
-#ikolbpxesw .gt_footnote {
+#xynogvfsnt .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5289,7 +5320,7 @@ Supplementary Figure&nbsp;8: The relationship between locust outbreaks and nil o
   padding-right: 5px;
 }
 
-#ikolbpxesw .gt_sourcenotes {
+#xynogvfsnt .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5303,7 +5334,7 @@ Supplementary Figure&nbsp;8: The relationship between locust outbreaks and nil o
   border-right-color: #D3D3D3;
 }
 
-#ikolbpxesw .gt_sourcenote {
+#xynogvfsnt .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5311,72 +5342,72 @@ Supplementary Figure&nbsp;8: The relationship between locust outbreaks and nil o
   padding-right: 5px;
 }
 
-#ikolbpxesw .gt_left {
+#xynogvfsnt .gt_left {
   text-align: left;
 }
 
-#ikolbpxesw .gt_center {
+#xynogvfsnt .gt_center {
   text-align: center;
 }
 
-#ikolbpxesw .gt_right {
+#xynogvfsnt .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ikolbpxesw .gt_font_normal {
+#xynogvfsnt .gt_font_normal {
   font-weight: normal;
 }
 
-#ikolbpxesw .gt_font_bold {
+#xynogvfsnt .gt_font_bold {
   font-weight: bold;
 }
 
-#ikolbpxesw .gt_font_italic {
+#xynogvfsnt .gt_font_italic {
   font-style: italic;
 }
 
-#ikolbpxesw .gt_super {
+#xynogvfsnt .gt_super {
   font-size: 65%;
 }
 
-#ikolbpxesw .gt_footnote_marks {
+#xynogvfsnt .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ikolbpxesw .gt_asterisk {
+#xynogvfsnt .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ikolbpxesw .gt_indent_1 {
+#xynogvfsnt .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ikolbpxesw .gt_indent_2 {
+#xynogvfsnt .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ikolbpxesw .gt_indent_3 {
+#xynogvfsnt .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ikolbpxesw .gt_indent_4 {
+#xynogvfsnt .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ikolbpxesw .gt_indent_5 {
+#xynogvfsnt .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ikolbpxesw .katex-display {
+#xynogvfsnt .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ikolbpxesw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#xynogvfsnt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -5776,23 +5807,23 @@ Supplementary Table&nbsp;1: Field plot nutrient content for plant species collec
 <div aria-describedby="supptbl-field-cage-plant-ground-cover-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
 <div class="cell-output-display">
-<div id="dvlwfmivrr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#dvlwfmivrr table {
+<div id="fvzkofcpye" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fvzkofcpye table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#dvlwfmivrr thead, #dvlwfmivrr tbody, #dvlwfmivrr tfoot, #dvlwfmivrr tr, #dvlwfmivrr td, #dvlwfmivrr th {
+#fvzkofcpye thead, #fvzkofcpye tbody, #fvzkofcpye tfoot, #fvzkofcpye tr, #fvzkofcpye td, #fvzkofcpye th {
   border-style: none;
 }
 
-#dvlwfmivrr p {
+#fvzkofcpye p {
   margin: 0;
   padding: 0;
 }
 
-#dvlwfmivrr .gt_table {
+#fvzkofcpye .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5818,12 +5849,12 @@ Supplementary Table&nbsp;1: Field plot nutrient content for plant species collec
   border-left-color: #D3D3D3;
 }
 
-#dvlwfmivrr .gt_caption {
+#fvzkofcpye .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#dvlwfmivrr .gt_title {
+#fvzkofcpye .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -5835,7 +5866,7 @@ Supplementary Table&nbsp;1: Field plot nutrient content for plant species collec
   border-bottom-width: 0;
 }
 
-#dvlwfmivrr .gt_subtitle {
+#fvzkofcpye .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5847,7 +5878,7 @@ Supplementary Table&nbsp;1: Field plot nutrient content for plant species collec
   border-top-width: 0;
 }
 
-#dvlwfmivrr .gt_heading {
+#fvzkofcpye .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -5859,13 +5890,13 @@ Supplementary Table&nbsp;1: Field plot nutrient content for plant species collec
   border-right-color: #D3D3D3;
 }
 
-#dvlwfmivrr .gt_bottom_border {
+#fvzkofcpye .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dvlwfmivrr .gt_col_headings {
+#fvzkofcpye .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5880,7 +5911,7 @@ Supplementary Table&nbsp;1: Field plot nutrient content for plant species collec
   border-right-color: #D3D3D3;
 }
 
-#dvlwfmivrr .gt_col_heading {
+#fvzkofcpye .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5900,7 +5931,7 @@ Supplementary Table&nbsp;1: Field plot nutrient content for plant species collec
   overflow-x: hidden;
 }
 
-#dvlwfmivrr .gt_column_spanner_outer {
+#fvzkofcpye .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5912,15 +5943,15 @@ Supplementary Table&nbsp;1: Field plot nutrient content for plant species collec
   padding-right: 4px;
 }
 
-#dvlwfmivrr .gt_column_spanner_outer:first-child {
+#fvzkofcpye .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dvlwfmivrr .gt_column_spanner_outer:last-child {
+#fvzkofcpye .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dvlwfmivrr .gt_column_spanner {
+#fvzkofcpye .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5932,11 +5963,11 @@ Supplementary Table&nbsp;1: Field plot nutrient content for plant species collec
   width: 100%;
 }
 
-#dvlwfmivrr .gt_spanner_row {
+#fvzkofcpye .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#dvlwfmivrr .gt_group_heading {
+#fvzkofcpye .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5962,7 +5993,7 @@ Supplementary Table&nbsp;1: Field plot nutrient content for plant species collec
   text-align: left;
 }
 
-#dvlwfmivrr .gt_empty_group_heading {
+#fvzkofcpye .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -5977,15 +6008,15 @@ Supplementary Table&nbsp;1: Field plot nutrient content for plant species collec
   vertical-align: middle;
 }
 
-#dvlwfmivrr .gt_from_md > :first-child {
+#fvzkofcpye .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dvlwfmivrr .gt_from_md > :last-child {
+#fvzkofcpye .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dvlwfmivrr .gt_row {
+#fvzkofcpye .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6004,7 +6035,7 @@ Supplementary Table&nbsp;1: Field plot nutrient content for plant species collec
   overflow-x: hidden;
 }
 
-#dvlwfmivrr .gt_stub {
+#fvzkofcpye .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6017,7 +6048,7 @@ Supplementary Table&nbsp;1: Field plot nutrient content for plant species collec
   padding-right: 5px;
 }
 
-#dvlwfmivrr .gt_stub_row_group {
+#fvzkofcpye .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6031,15 +6062,15 @@ Supplementary Table&nbsp;1: Field plot nutrient content for plant species collec
   vertical-align: top;
 }
 
-#dvlwfmivrr .gt_row_group_first td {
+#fvzkofcpye .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#dvlwfmivrr .gt_row_group_first th {
+#fvzkofcpye .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#dvlwfmivrr .gt_summary_row {
+#fvzkofcpye .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6049,16 +6080,16 @@ Supplementary Table&nbsp;1: Field plot nutrient content for plant species collec
   padding-right: 5px;
 }
 
-#dvlwfmivrr .gt_first_summary_row {
+#fvzkofcpye .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#dvlwfmivrr .gt_first_summary_row.thick {
+#fvzkofcpye .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#dvlwfmivrr .gt_last_summary_row {
+#fvzkofcpye .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6068,7 +6099,7 @@ Supplementary Table&nbsp;1: Field plot nutrient content for plant species collec
   border-bottom-color: #D3D3D3;
 }
 
-#dvlwfmivrr .gt_grand_summary_row {
+#fvzkofcpye .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6078,7 +6109,7 @@ Supplementary Table&nbsp;1: Field plot nutrient content for plant species collec
   padding-right: 5px;
 }
 
-#dvlwfmivrr .gt_first_grand_summary_row {
+#fvzkofcpye .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6088,7 +6119,7 @@ Supplementary Table&nbsp;1: Field plot nutrient content for plant species collec
   border-top-color: #D3D3D3;
 }
 
-#dvlwfmivrr .gt_last_grand_summary_row_top {
+#fvzkofcpye .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6098,11 +6129,11 @@ Supplementary Table&nbsp;1: Field plot nutrient content for plant species collec
   border-bottom-color: #D3D3D3;
 }
 
-#dvlwfmivrr .gt_striped {
+#fvzkofcpye .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dvlwfmivrr .gt_table_body {
+#fvzkofcpye .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6111,7 +6142,7 @@ Supplementary Table&nbsp;1: Field plot nutrient content for plant species collec
   border-bottom-color: #D3D3D3;
 }
 
-#dvlwfmivrr .gt_footnotes {
+#fvzkofcpye .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6125,7 +6156,7 @@ Supplementary Table&nbsp;1: Field plot nutrient content for plant species collec
   border-right-color: #D3D3D3;
 }
 
-#dvlwfmivrr .gt_footnote {
+#fvzkofcpye .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -6134,7 +6165,7 @@ Supplementary Table&nbsp;1: Field plot nutrient content for plant species collec
   padding-right: 5px;
 }
 
-#dvlwfmivrr .gt_sourcenotes {
+#fvzkofcpye .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6148,7 +6179,7 @@ Supplementary Table&nbsp;1: Field plot nutrient content for plant species collec
   border-right-color: #D3D3D3;
 }
 
-#dvlwfmivrr .gt_sourcenote {
+#fvzkofcpye .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -6156,72 +6187,72 @@ Supplementary Table&nbsp;1: Field plot nutrient content for plant species collec
   padding-right: 5px;
 }
 
-#dvlwfmivrr .gt_left {
+#fvzkofcpye .gt_left {
   text-align: left;
 }
 
-#dvlwfmivrr .gt_center {
+#fvzkofcpye .gt_center {
   text-align: center;
 }
 
-#dvlwfmivrr .gt_right {
+#fvzkofcpye .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dvlwfmivrr .gt_font_normal {
+#fvzkofcpye .gt_font_normal {
   font-weight: normal;
 }
 
-#dvlwfmivrr .gt_font_bold {
+#fvzkofcpye .gt_font_bold {
   font-weight: bold;
 }
 
-#dvlwfmivrr .gt_font_italic {
+#fvzkofcpye .gt_font_italic {
   font-style: italic;
 }
 
-#dvlwfmivrr .gt_super {
+#fvzkofcpye .gt_super {
   font-size: 65%;
 }
 
-#dvlwfmivrr .gt_footnote_marks {
+#fvzkofcpye .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#dvlwfmivrr .gt_asterisk {
+#fvzkofcpye .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#dvlwfmivrr .gt_indent_1 {
+#fvzkofcpye .gt_indent_1 {
   text-indent: 5px;
 }
 
-#dvlwfmivrr .gt_indent_2 {
+#fvzkofcpye .gt_indent_2 {
   text-indent: 10px;
 }
 
-#dvlwfmivrr .gt_indent_3 {
+#fvzkofcpye .gt_indent_3 {
   text-indent: 15px;
 }
 
-#dvlwfmivrr .gt_indent_4 {
+#fvzkofcpye .gt_indent_4 {
   text-indent: 20px;
 }
 
-#dvlwfmivrr .gt_indent_5 {
+#fvzkofcpye .gt_indent_5 {
   text-indent: 25px;
 }
 
-#dvlwfmivrr .katex-display {
+#fvzkofcpye .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#dvlwfmivrr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#fvzkofcpye div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -6289,23 +6320,23 @@ Supplementary Table&nbsp;2: Averaged plant ground cover (%) across all cages per
 <div aria-describedby="supptbl-field-population-choice-experiment-model-selection-criteria-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
 <div class="cell-output-display">
-<div id="ntbvipfzcc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ntbvipfzcc table {
+<div id="kvstlhcsrr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#kvstlhcsrr table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ntbvipfzcc thead, #ntbvipfzcc tbody, #ntbvipfzcc tfoot, #ntbvipfzcc tr, #ntbvipfzcc td, #ntbvipfzcc th {
+#kvstlhcsrr thead, #kvstlhcsrr tbody, #kvstlhcsrr tfoot, #kvstlhcsrr tr, #kvstlhcsrr td, #kvstlhcsrr th {
   border-style: none;
 }
 
-#ntbvipfzcc p {
+#kvstlhcsrr p {
   margin: 0;
   padding: 0;
 }
 
-#ntbvipfzcc .gt_table {
+#kvstlhcsrr .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -6331,12 +6362,12 @@ Supplementary Table&nbsp;2: Averaged plant ground cover (%) across all cages per
   border-left-color: #D3D3D3;
 }
 
-#ntbvipfzcc .gt_caption {
+#kvstlhcsrr .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ntbvipfzcc .gt_title {
+#kvstlhcsrr .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -6348,7 +6379,7 @@ Supplementary Table&nbsp;2: Averaged plant ground cover (%) across all cages per
   border-bottom-width: 0;
 }
 
-#ntbvipfzcc .gt_subtitle {
+#kvstlhcsrr .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -6360,7 +6391,7 @@ Supplementary Table&nbsp;2: Averaged plant ground cover (%) across all cages per
   border-top-width: 0;
 }
 
-#ntbvipfzcc .gt_heading {
+#kvstlhcsrr .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -6372,13 +6403,13 @@ Supplementary Table&nbsp;2: Averaged plant ground cover (%) across all cages per
   border-right-color: #D3D3D3;
 }
 
-#ntbvipfzcc .gt_bottom_border {
+#kvstlhcsrr .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ntbvipfzcc .gt_col_headings {
+#kvstlhcsrr .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6393,7 +6424,7 @@ Supplementary Table&nbsp;2: Averaged plant ground cover (%) across all cages per
   border-right-color: #D3D3D3;
 }
 
-#ntbvipfzcc .gt_col_heading {
+#kvstlhcsrr .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6413,7 +6444,7 @@ Supplementary Table&nbsp;2: Averaged plant ground cover (%) across all cages per
   overflow-x: hidden;
 }
 
-#ntbvipfzcc .gt_column_spanner_outer {
+#kvstlhcsrr .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6425,15 +6456,15 @@ Supplementary Table&nbsp;2: Averaged plant ground cover (%) across all cages per
   padding-right: 4px;
 }
 
-#ntbvipfzcc .gt_column_spanner_outer:first-child {
+#kvstlhcsrr .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ntbvipfzcc .gt_column_spanner_outer:last-child {
+#kvstlhcsrr .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ntbvipfzcc .gt_column_spanner {
+#kvstlhcsrr .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -6445,11 +6476,11 @@ Supplementary Table&nbsp;2: Averaged plant ground cover (%) across all cages per
   width: 100%;
 }
 
-#ntbvipfzcc .gt_spanner_row {
+#kvstlhcsrr .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ntbvipfzcc .gt_group_heading {
+#kvstlhcsrr .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6475,7 +6506,7 @@ Supplementary Table&nbsp;2: Averaged plant ground cover (%) across all cages per
   text-align: left;
 }
 
-#ntbvipfzcc .gt_empty_group_heading {
+#kvstlhcsrr .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -6490,15 +6521,15 @@ Supplementary Table&nbsp;2: Averaged plant ground cover (%) across all cages per
   vertical-align: middle;
 }
 
-#ntbvipfzcc .gt_from_md > :first-child {
+#kvstlhcsrr .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ntbvipfzcc .gt_from_md > :last-child {
+#kvstlhcsrr .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ntbvipfzcc .gt_row {
+#kvstlhcsrr .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6517,7 +6548,7 @@ Supplementary Table&nbsp;2: Averaged plant ground cover (%) across all cages per
   overflow-x: hidden;
 }
 
-#ntbvipfzcc .gt_stub {
+#kvstlhcsrr .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6530,7 +6561,7 @@ Supplementary Table&nbsp;2: Averaged plant ground cover (%) across all cages per
   padding-right: 5px;
 }
 
-#ntbvipfzcc .gt_stub_row_group {
+#kvstlhcsrr .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6544,15 +6575,15 @@ Supplementary Table&nbsp;2: Averaged plant ground cover (%) across all cages per
   vertical-align: top;
 }
 
-#ntbvipfzcc .gt_row_group_first td {
+#kvstlhcsrr .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ntbvipfzcc .gt_row_group_first th {
+#kvstlhcsrr .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ntbvipfzcc .gt_summary_row {
+#kvstlhcsrr .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6562,16 +6593,16 @@ Supplementary Table&nbsp;2: Averaged plant ground cover (%) across all cages per
   padding-right: 5px;
 }
 
-#ntbvipfzcc .gt_first_summary_row {
+#kvstlhcsrr .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ntbvipfzcc .gt_first_summary_row.thick {
+#kvstlhcsrr .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ntbvipfzcc .gt_last_summary_row {
+#kvstlhcsrr .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6581,7 +6612,7 @@ Supplementary Table&nbsp;2: Averaged plant ground cover (%) across all cages per
   border-bottom-color: #D3D3D3;
 }
 
-#ntbvipfzcc .gt_grand_summary_row {
+#kvstlhcsrr .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6591,7 +6622,7 @@ Supplementary Table&nbsp;2: Averaged plant ground cover (%) across all cages per
   padding-right: 5px;
 }
 
-#ntbvipfzcc .gt_first_grand_summary_row {
+#kvstlhcsrr .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6601,7 +6632,7 @@ Supplementary Table&nbsp;2: Averaged plant ground cover (%) across all cages per
   border-top-color: #D3D3D3;
 }
 
-#ntbvipfzcc .gt_last_grand_summary_row_top {
+#kvstlhcsrr .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6611,11 +6642,11 @@ Supplementary Table&nbsp;2: Averaged plant ground cover (%) across all cages per
   border-bottom-color: #D3D3D3;
 }
 
-#ntbvipfzcc .gt_striped {
+#kvstlhcsrr .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ntbvipfzcc .gt_table_body {
+#kvstlhcsrr .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6624,7 +6655,7 @@ Supplementary Table&nbsp;2: Averaged plant ground cover (%) across all cages per
   border-bottom-color: #D3D3D3;
 }
 
-#ntbvipfzcc .gt_footnotes {
+#kvstlhcsrr .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6638,7 +6669,7 @@ Supplementary Table&nbsp;2: Averaged plant ground cover (%) across all cages per
   border-right-color: #D3D3D3;
 }
 
-#ntbvipfzcc .gt_footnote {
+#kvstlhcsrr .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -6647,7 +6678,7 @@ Supplementary Table&nbsp;2: Averaged plant ground cover (%) across all cages per
   padding-right: 5px;
 }
 
-#ntbvipfzcc .gt_sourcenotes {
+#kvstlhcsrr .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6661,7 +6692,7 @@ Supplementary Table&nbsp;2: Averaged plant ground cover (%) across all cages per
   border-right-color: #D3D3D3;
 }
 
-#ntbvipfzcc .gt_sourcenote {
+#kvstlhcsrr .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -6669,72 +6700,72 @@ Supplementary Table&nbsp;2: Averaged plant ground cover (%) across all cages per
   padding-right: 5px;
 }
 
-#ntbvipfzcc .gt_left {
+#kvstlhcsrr .gt_left {
   text-align: left;
 }
 
-#ntbvipfzcc .gt_center {
+#kvstlhcsrr .gt_center {
   text-align: center;
 }
 
-#ntbvipfzcc .gt_right {
+#kvstlhcsrr .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ntbvipfzcc .gt_font_normal {
+#kvstlhcsrr .gt_font_normal {
   font-weight: normal;
 }
 
-#ntbvipfzcc .gt_font_bold {
+#kvstlhcsrr .gt_font_bold {
   font-weight: bold;
 }
 
-#ntbvipfzcc .gt_font_italic {
+#kvstlhcsrr .gt_font_italic {
   font-style: italic;
 }
 
-#ntbvipfzcc .gt_super {
+#kvstlhcsrr .gt_super {
   font-size: 65%;
 }
 
-#ntbvipfzcc .gt_footnote_marks {
+#kvstlhcsrr .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ntbvipfzcc .gt_asterisk {
+#kvstlhcsrr .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ntbvipfzcc .gt_indent_1 {
+#kvstlhcsrr .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ntbvipfzcc .gt_indent_2 {
+#kvstlhcsrr .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ntbvipfzcc .gt_indent_3 {
+#kvstlhcsrr .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ntbvipfzcc .gt_indent_4 {
+#kvstlhcsrr .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ntbvipfzcc .gt_indent_5 {
+#kvstlhcsrr .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ntbvipfzcc .katex-display {
+#kvstlhcsrr .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ntbvipfzcc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#kvstlhcsrr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -6790,23 +6821,23 @@ Supplementary Table&nbsp;3: Model selection criteria via Akaike information crit
 <div aria-describedby="supptbl-field-population-no-choice-experiment-phys-post-hoc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
 <div class="cell-output-display">
-<div id="uimveckgsj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#uimveckgsj table {
+<div id="sfwdahxvoa" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#sfwdahxvoa table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#uimveckgsj thead, #uimveckgsj tbody, #uimveckgsj tfoot, #uimveckgsj tr, #uimveckgsj td, #uimveckgsj th {
+#sfwdahxvoa thead, #sfwdahxvoa tbody, #sfwdahxvoa tfoot, #sfwdahxvoa tr, #sfwdahxvoa td, #sfwdahxvoa th {
   border-style: none;
 }
 
-#uimveckgsj p {
+#sfwdahxvoa p {
   margin: 0;
   padding: 0;
 }
 
-#uimveckgsj .gt_table {
+#sfwdahxvoa .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -6832,12 +6863,12 @@ Supplementary Table&nbsp;3: Model selection criteria via Akaike information crit
   border-left-color: #D3D3D3;
 }
 
-#uimveckgsj .gt_caption {
+#sfwdahxvoa .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#uimveckgsj .gt_title {
+#sfwdahxvoa .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -6849,7 +6880,7 @@ Supplementary Table&nbsp;3: Model selection criteria via Akaike information crit
   border-bottom-width: 0;
 }
 
-#uimveckgsj .gt_subtitle {
+#sfwdahxvoa .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -6861,7 +6892,7 @@ Supplementary Table&nbsp;3: Model selection criteria via Akaike information crit
   border-top-width: 0;
 }
 
-#uimveckgsj .gt_heading {
+#sfwdahxvoa .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -6873,13 +6904,13 @@ Supplementary Table&nbsp;3: Model selection criteria via Akaike information crit
   border-right-color: #D3D3D3;
 }
 
-#uimveckgsj .gt_bottom_border {
+#sfwdahxvoa .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#uimveckgsj .gt_col_headings {
+#sfwdahxvoa .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6894,7 +6925,7 @@ Supplementary Table&nbsp;3: Model selection criteria via Akaike information crit
   border-right-color: #D3D3D3;
 }
 
-#uimveckgsj .gt_col_heading {
+#sfwdahxvoa .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6914,7 +6945,7 @@ Supplementary Table&nbsp;3: Model selection criteria via Akaike information crit
   overflow-x: hidden;
 }
 
-#uimveckgsj .gt_column_spanner_outer {
+#sfwdahxvoa .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6926,15 +6957,15 @@ Supplementary Table&nbsp;3: Model selection criteria via Akaike information crit
   padding-right: 4px;
 }
 
-#uimveckgsj .gt_column_spanner_outer:first-child {
+#sfwdahxvoa .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#uimveckgsj .gt_column_spanner_outer:last-child {
+#sfwdahxvoa .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#uimveckgsj .gt_column_spanner {
+#sfwdahxvoa .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -6946,11 +6977,11 @@ Supplementary Table&nbsp;3: Model selection criteria via Akaike information crit
   width: 100%;
 }
 
-#uimveckgsj .gt_spanner_row {
+#sfwdahxvoa .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#uimveckgsj .gt_group_heading {
+#sfwdahxvoa .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6976,7 +7007,7 @@ Supplementary Table&nbsp;3: Model selection criteria via Akaike information crit
   text-align: left;
 }
 
-#uimveckgsj .gt_empty_group_heading {
+#sfwdahxvoa .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -6991,15 +7022,15 @@ Supplementary Table&nbsp;3: Model selection criteria via Akaike information crit
   vertical-align: middle;
 }
 
-#uimveckgsj .gt_from_md > :first-child {
+#sfwdahxvoa .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#uimveckgsj .gt_from_md > :last-child {
+#sfwdahxvoa .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#uimveckgsj .gt_row {
+#sfwdahxvoa .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7018,7 +7049,7 @@ Supplementary Table&nbsp;3: Model selection criteria via Akaike information crit
   overflow-x: hidden;
 }
 
-#uimveckgsj .gt_stub {
+#sfwdahxvoa .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -7031,7 +7062,7 @@ Supplementary Table&nbsp;3: Model selection criteria via Akaike information crit
   padding-right: 5px;
 }
 
-#uimveckgsj .gt_stub_row_group {
+#sfwdahxvoa .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -7045,15 +7076,15 @@ Supplementary Table&nbsp;3: Model selection criteria via Akaike information crit
   vertical-align: top;
 }
 
-#uimveckgsj .gt_row_group_first td {
+#sfwdahxvoa .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#uimveckgsj .gt_row_group_first th {
+#sfwdahxvoa .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#uimveckgsj .gt_summary_row {
+#sfwdahxvoa .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -7063,16 +7094,16 @@ Supplementary Table&nbsp;3: Model selection criteria via Akaike information crit
   padding-right: 5px;
 }
 
-#uimveckgsj .gt_first_summary_row {
+#sfwdahxvoa .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#uimveckgsj .gt_first_summary_row.thick {
+#sfwdahxvoa .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#uimveckgsj .gt_last_summary_row {
+#sfwdahxvoa .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7082,7 +7113,7 @@ Supplementary Table&nbsp;3: Model selection criteria via Akaike information crit
   border-bottom-color: #D3D3D3;
 }
 
-#uimveckgsj .gt_grand_summary_row {
+#sfwdahxvoa .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -7092,7 +7123,7 @@ Supplementary Table&nbsp;3: Model selection criteria via Akaike information crit
   padding-right: 5px;
 }
 
-#uimveckgsj .gt_first_grand_summary_row {
+#sfwdahxvoa .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7102,7 +7133,7 @@ Supplementary Table&nbsp;3: Model selection criteria via Akaike information crit
   border-top-color: #D3D3D3;
 }
 
-#uimveckgsj .gt_last_grand_summary_row_top {
+#sfwdahxvoa .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7112,11 +7143,11 @@ Supplementary Table&nbsp;3: Model selection criteria via Akaike information crit
   border-bottom-color: #D3D3D3;
 }
 
-#uimveckgsj .gt_striped {
+#sfwdahxvoa .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#uimveckgsj .gt_table_body {
+#sfwdahxvoa .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -7125,7 +7156,7 @@ Supplementary Table&nbsp;3: Model selection criteria via Akaike information crit
   border-bottom-color: #D3D3D3;
 }
 
-#uimveckgsj .gt_footnotes {
+#sfwdahxvoa .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -7139,7 +7170,7 @@ Supplementary Table&nbsp;3: Model selection criteria via Akaike information crit
   border-right-color: #D3D3D3;
 }
 
-#uimveckgsj .gt_footnote {
+#sfwdahxvoa .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -7148,7 +7179,7 @@ Supplementary Table&nbsp;3: Model selection criteria via Akaike information crit
   padding-right: 5px;
 }
 
-#uimveckgsj .gt_sourcenotes {
+#sfwdahxvoa .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -7162,7 +7193,7 @@ Supplementary Table&nbsp;3: Model selection criteria via Akaike information crit
   border-right-color: #D3D3D3;
 }
 
-#uimveckgsj .gt_sourcenote {
+#sfwdahxvoa .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -7170,72 +7201,72 @@ Supplementary Table&nbsp;3: Model selection criteria via Akaike information crit
   padding-right: 5px;
 }
 
-#uimveckgsj .gt_left {
+#sfwdahxvoa .gt_left {
   text-align: left;
 }
 
-#uimveckgsj .gt_center {
+#sfwdahxvoa .gt_center {
   text-align: center;
 }
 
-#uimveckgsj .gt_right {
+#sfwdahxvoa .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#uimveckgsj .gt_font_normal {
+#sfwdahxvoa .gt_font_normal {
   font-weight: normal;
 }
 
-#uimveckgsj .gt_font_bold {
+#sfwdahxvoa .gt_font_bold {
   font-weight: bold;
 }
 
-#uimveckgsj .gt_font_italic {
+#sfwdahxvoa .gt_font_italic {
   font-style: italic;
 }
 
-#uimveckgsj .gt_super {
+#sfwdahxvoa .gt_super {
   font-size: 65%;
 }
 
-#uimveckgsj .gt_footnote_marks {
+#sfwdahxvoa .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#uimveckgsj .gt_asterisk {
+#sfwdahxvoa .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#uimveckgsj .gt_indent_1 {
+#sfwdahxvoa .gt_indent_1 {
   text-indent: 5px;
 }
 
-#uimveckgsj .gt_indent_2 {
+#sfwdahxvoa .gt_indent_2 {
   text-indent: 10px;
 }
 
-#uimveckgsj .gt_indent_3 {
+#sfwdahxvoa .gt_indent_3 {
   text-indent: 15px;
 }
 
-#uimveckgsj .gt_indent_4 {
+#sfwdahxvoa .gt_indent_4 {
   text-indent: 20px;
 }
 
-#uimveckgsj .gt_indent_5 {
+#sfwdahxvoa .gt_indent_5 {
   text-indent: 25px;
 }
 
-#uimveckgsj .katex-display {
+#sfwdahxvoa .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#uimveckgsj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#sfwdahxvoa div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -7748,7 +7779,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

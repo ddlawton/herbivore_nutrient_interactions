@@ -173,7 +173,7 @@
     <div id="quarto-embed-header" class="headroom fixed-top bg-primary">
       
       <a onclick="window.quartoBackToArticle(); return false;" class="btn btn-primary quarto-back-link" href=""><i class="bi bi-caret-left"></i> Back to Article</a>
-      <h6><i class="bi bi-journal-code"></i> Spatial modeling post modeling figure and table construction</h6>
+      <h6><i class="bi bi-journal-code"></i> 3-6 spatial modeling - manuscript construction</h6>
 
             <a href="../../scripts/spatial_modeling/06_spatial_modeling_figure_table_construction_code.ipynb" class="btn btn-primary quarto-download-embed" download="06_spatial_modeling_figure_table_construction_code.ipynb">Download Notebook</a>
           </div>
@@ -212,10 +212,10 @@
   <li><a href="#section-1---post-spatial-modeling-visualization" id="toc-section-1---post-spatial-modeling-visualization" class="nav-link active" data-scroll-target="#section-1---post-spatial-modeling-visualization">Section 1 - Post spatial modeling visualization</a>
   <ul class="collapse">
   <li><a href="#nitrogen-and-phosphorus" id="toc-nitrogen-and-phosphorus" class="nav-link" data-scroll-target="#nitrogen-and-phosphorus">Nitrogen and Phosphorus</a></li>
+  </ul></li>
   <li><a href="#other-variable-visualization-outbreaks" id="toc-other-variable-visualization-outbreaks" class="nav-link" data-scroll-target="#other-variable-visualization-outbreaks">Other variable visualization – outbreaks</a></li>
   <li><a href="#other-variable-visualization-nil-observations" id="toc-other-variable-visualization-nil-observations" class="nav-link" data-scroll-target="#other-variable-visualization-nil-observations">Other variable visualization – nil observations</a></li>
   <li><a href="#mean-annual-precipitation-correlations" id="toc-mean-annual-precipitation-correlations" class="nav-link" data-scroll-target="#mean-annual-precipitation-correlations">mean annual precipitation correlations</a></li>
-  </ul></li>
   <li><a href="#section-2---environmental-correlations" id="toc-section-2---environmental-correlations" class="nav-link" data-scroll-target="#section-2---environmental-correlations">Section 2 - environmental correlations</a></li>
   <li><a href="#section-3---soil-and-point-map-generation" id="toc-section-3---soil-and-point-map-generation" class="nav-link" data-scroll-target="#section-3---soil-and-point-map-generation">Section 3 - soil and point map generation</a></li>
   <li><a href="#section-4---griding-example" id="toc-section-4---griding-example" class="nav-link" data-scroll-target="#section-4---griding-example">Section 4 - griding example</a></li>
@@ -227,12 +227,14 @@
 </div>
 <main class="content quarto-banner-title-block" id="quarto-document-content">      
 
-       <ul>
+       <div id="0e83583a-8f00-427a-84af-efd1dcd9d168" class="cell markdown">
+<ul>
 <li>post-modeling visualization</li>
 <li>environmental correlations</li>
 <li>soil and point map generation</li>
 <li>gridding example plot</li>
 </ul>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [57]:</pre></div><div id="d36c1a43-cc7e-42c8-bea9-169908f7da32" class="cell" data-execution_count="57">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>load_packages <span class="ot">&lt;-</span> <span class="cf">function</span>(packages) {</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Check for uninstalled packages</span></span>
@@ -280,11 +282,15 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 </code></pre>
 </div>
 </div></div>
+<div id="4b46a42d-4f40-4e8a-ab95-e30918010efa" class="cell markdown">
 <section id="section-1---post-spatial-modeling-visualization" class="level1">
 <h1>Section 1 - Post spatial modeling visualization</h1>
 <section id="nitrogen-and-phosphorus" class="level2">
 <h2 class="anchored" data-anchor-id="nitrogen-and-phosphorus">Nitrogen and Phosphorus</h2>
 <p>showing the relationship between outbreak and nil observations to soil nitrogen and phosphorus</p>
+</section>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [344]:</pre></div><div id="bb50f718-d6e0-4bb7-94d8-aea41c322d6d" class="cell" data-execution_count="344">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>outbreak_model_results <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"output/spatial_modeling/outbreak_model_smooth_estimates.csv"</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
@@ -416,9 +422,11 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_figures/spatial_modeling_locust_outbreak_with_soil_NTO_PTO.png'</span>),</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">width=</span><span class="dv">5</span>,<span class="at">height=</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
+<div id="fc57fbae-2317-42da-8910-6645cf5b1cb6" class="cell markdown">
 <section id="other-variable-visualization-outbreaks" class="level2">
 <h2 class="anchored" data-anchor-id="other-variable-visualization-outbreaks">Other variable visualization – outbreaks</h2>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [385]:</pre></div><div id="cb6acf67-15fe-45ae-9c94-0ad4175ed47b" class="cell" data-execution_count="385">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>outbreak_model_results <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"output/spatial_modeling/outbreak_model_smooth_estimates.csv"</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
@@ -502,9 +510,11 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_figures/spatial_modeling_outbreak_all_model_variables.png'</span>),</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">width=</span><span class="dv">10</span>,<span class="at">height=</span><span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
+<div id="fa93d1dc-66e4-4fa5-a30d-8b07447dd26e" class="cell markdown">
 <section id="other-variable-visualization-nil-observations" class="level2">
 <h2 class="anchored" data-anchor-id="other-variable-visualization-nil-observations">Other variable visualization – nil observations</h2>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [388]:</pre></div><div id="7357d178-94e9-447c-9792-302bc77741fd" class="cell" data-execution_count="388">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>nil_model_results <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"output/spatial_modeling/nil_model_smooth_estimates.csv"</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
@@ -588,9 +598,11 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_figures/spatial_modeling_nil_all_model_variables.png'</span>),</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">width=</span><span class="dv">10</span>,<span class="at">height=</span><span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
+<div id="b4c59e5b-8647-41d2-bca2-bbdd3937c844" class="cell markdown">
 <section id="mean-annual-precipitation-correlations" class="level2">
 <h2 class="anchored" data-anchor-id="mean-annual-precipitation-correlations">mean annual precipitation correlations</h2>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [391]:</pre></div><div id="7df585d9-4033-4674-8766-e95d7daf776c" class="cell" data-execution_count="391">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>map_outbreak <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"output/spatial_modeling/map_outbreak_model_smooth_estimates.csv"</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">drop_na</span>(bio12) <span class="sc">|&gt;</span></span>
@@ -744,8 +756,7 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_figures/spatial_modeling_locust_outbreak_with_map.png'</span>),</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">width=</span><span class="dv">5</span>,<span class="at">height=</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
-</section>
+<div id="ae165e80-0909-4423-bb6c-f2f6a81cd6d0" class="cell markdown">
 <section id="section-2---environmental-correlations" class="level1">
 <h1>Section 2 - environmental correlations</h1>
 <p>This is just a randomly sampled 100k points between the soil and bioclim variables on google earth engine. This extraction code can be found here: <code>04_environmental_correlations_map_nitrogen_phosphorus_woody_cover.ipynb</code></p>
@@ -757,6 +768,8 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 <li>soil phosphorus x woody veg</li>
 <li>MAP x woody veg</li>
 </ul>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [35]:</pre></div><div id="4a3ff466-f65c-48e1-aa08-7fdc06148f49" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># I min-max normalize to get all variables into the same scale for plotting.</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -918,10 +931,12 @@ Warning message:
 `geom_smooth()` using formula = 'y ~ s(x, bs = "cs")'</code></pre>
 </div>
 </div></div>
-</section>
+<div id="c6f9b2c1-5353-493b-bade-5ad1936f2ed6" class="cell markdown">
 <section id="section-3---soil-and-point-map-generation" class="level1">
 <h1>Section 3 - soil and point map generation</h1>
 <p>This figure will combine a few figures: - raw point distribution through australia - soil nitrogen map clipped to the locust distribution - soil phosphorus map clipped to the locust distribution</p>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [47]:</pre></div><div id="aa5f8e85-b766-42f7-97f3-e618e22f2081" class="cell" data-execution_count="47">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>aus <span class="ot">&lt;-</span> <span class="fu">ne_states</span>(<span class="at">country=</span><span class="st">'Australia'</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(name,geometry)</span>
@@ -1022,10 +1037,12 @@ name        : apl_nitrogen_raster </code></pre>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_figures/spatial_modeling_locust_env_map.png'</span>),</span>
 <span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">width=</span><span class="dv">10</span><span class="sc">*</span>asp_ratio,<span class="at">height=</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
+<div id="6d5151d4-2567-4c86-9780-71ed0f9d0e22" class="cell markdown">
 <section id="section-4---griding-example" class="level1">
 <h1>Section 4 - griding example</h1>
 <p>I want to show an example gridding of the apl points</p>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [197]:</pre></div><div id="76abfd42-486a-43a9-88fe-e2584a0f53ea" class="cell" data-execution_count="197">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>apl_distribution <span class="ot">=</span> <span class="fu">st_read</span>(<span class="fu">here</span>(<span class="st">"data/raw/survey_data/australian_plague_locut_distribution/Australia_Locust_Distribution.shp"</span>))</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>apl_distribution</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1151,9 +1168,11 @@ First 5 geometries:</code></pre>
 <span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_figures/spatial_modeling_grid_example_map.png'</span>),</span>
 <span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">width=</span><span class="dv">10</span><span class="sc">*</span>asp_ratio,<span class="at">height=</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
+<div id="fbe80946-5dca-4f33-a448-f8ced383e83b" class="cell markdown">
 <section id="section-5---table-construction" class="level1">
 <h1>Section 5 - table construction</h1>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [380]:</pre></div><div id="e8a1d645-313f-49a6-a1a1-7445f27240fc" class="cell" data-execution_count="380">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>outbreak_mod <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">"output/spatial_modeling/model_objects/locust_outbreak_model.rds"</span>)) <span class="sc">|&gt;</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tidy</span>() <span class="sc">|&gt;</span></span>
@@ -1179,7 +1198,6 @@ First 5 geometries:</code></pre>
 <div class="cell-container"><div class="cell-decorator"><pre>In [381]:</pre></div><div id="8f588684-0347-45b2-9c79-5907243f4a00" class="cell" data-execution_count="381">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(overall_mods, <span class="fu">here</span>(<span class="st">"output/spatial_modeling/map_outbreak_model_results.csv"</span>),<span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
      </main>
 <!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1600,7 +1618,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom","openEffect":"zoom"});
+</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"descPosition":"bottom","selector":".lightbox","closeEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
