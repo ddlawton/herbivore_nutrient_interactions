@@ -17031,6 +17031,7 @@ raw_locust_data</code>
     <sec id="cell-512d6588-c7d7-41e5-ba45-6261a66b3784-nb-8" specific-use="notebook-content">
     <code language="r script">field_cage_locust_intake_rebalance_plot &lt;- raw_locust_data |&gt;
     drop_na() |&gt;
+    mutate(treatment = factor(treatment,levels=c('none','High'))) |&gt;
     ggplot(aes(x=cumulative_total_p,y=cumulative_total_c,group=id,color=treatment)) +
         geom_point(alpha=0.3) +
         geom_line(alpha=0.3) +
@@ -17047,7 +17048,7 @@ raw_locust_data</code>
         xlab(&quot;total protein consumed  (g)&quot;) + 
         geom_abline(slope = 1,linetype=1,intercept=0) + 
         geom_abline(slope = 2,linetype=2,intercept=0) +
-        scale_color_manual(values = c('#74c476','#00441b'))
+        scale_color_manual(values = c('#74c476','#00441b'),labels = c(&quot;none&quot;, &quot;high&quot;))
 
 field_cage_locust_intake_rebalance_plot</code>
     <boxed-text>
@@ -19111,37 +19112,7 @@ i_am('README.md')
 options(repr.plot.width = 10, repr.plot.height = 10,repr.matrix.max.rows=10)
   </code>
   <boxed-text>
-    <preformat>This is mgcv 1.9-1. For overview type 'help(&quot;mgcv-package&quot;)'.
-
-Linking to GEOS 3.10.2, GDAL 3.4.1, PROJ 8.2.1; sf_use_s2() is TRUE
-
-
-Attaching package: ‘janitor’
-
-
-The following objects are masked from ‘package:stats’:
-
-    chisq.test, fisher.test
-
-
-here() starts at /home/datascience/herbivore_nutrient_interactions
-
-Registered S3 method overwritten by 'GGally':
-  method from   
-  +.gg   ggplot2
-
-── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ lubridate 1.9.3     ✔ tibble    3.2.1
-✔ purrr     1.0.2     ✔ tidyr     1.3.1
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ stringr::boundary() masks gratia::boundary()
-✖ dplyr::collapse()   masks nlme::collapse()
-✖ dplyr::filter()     masks stats::filter()
-✖ dplyr::lag()        masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors
-here() starts at /home/datascience/herbivore_nutrient_interactions
+    <preformat>here() starts at /home/datascience/herbivore_nutrient_interactions
     </preformat>
   </boxed-text>
   </sec>
@@ -21708,7 +21679,7 @@ combine_dat &lt;- rbind(outbreak_model_results,nil_model_results)</code>
     scale_color_manual(values = c('dark grey','red'))  +
     scale_fill_manual(values = c('dark grey','red')) +
     xlab(&quot;soil nitrogen (%)&quot;) +
-    ylab(&quot;effect&quot;)
+    ylab(&quot;partial effect&quot;)
 
 p2 &lt;- combine_dat |&gt;
   filter(.smooth == &quot;s(phosphorus)&quot;) |&gt;
@@ -21719,7 +21690,7 @@ p2 &lt;- combine_dat |&gt;
     scale_color_manual(values = c('dark grey','red'))  +
     scale_fill_manual(values = c('dark grey','red')) +
     xlab(&quot;soil phosphorus (%)&quot;) +
-    ylab(&quot;effect&quot;)
+    ylab(&quot;partial effect&quot;)
 
 soil_outbreak_plot &lt;- (p1) / (p2) +
     plot_annotation(tag_levels = 'a')

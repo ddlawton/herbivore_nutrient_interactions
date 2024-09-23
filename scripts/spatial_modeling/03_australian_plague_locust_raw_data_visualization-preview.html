@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
     <meta charset="utf-8">
-    <meta name="generator" content="quarto-1.6.10">
+    <meta name="generator" content="quarto-1.6.11">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -248,7 +248,7 @@
 <h1>Section 1 - Data management</h1>
 </section>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [1]:</pre></div><div id="36eefa03-e030-42db-a6ea-137c85d269a9" class="cell" data-execution_count="1">
+<div class="cell-container"><div class="cell-decorator"><pre>In [89]:</pre></div><div id="36eefa03-e030-42db-a6ea-137c85d269a9" class="cell" data-execution_count="89">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>load_packages <span class="ot">&lt;-</span> <span class="cf">function</span>(packages) {</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Check for uninstalled packages</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  uninstalled <span class="ot">&lt;-</span> packages[<span class="sc">!</span>packages <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">"Package"</span>]]</span>
@@ -277,37 +277,7 @@
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting R options for jupyterlab</span></span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repr.plot.width =</span> <span class="dv">10</span>, <span class="at">repr.plot.height =</span> <span class="dv">10</span>,<span class="at">repr.matrix.max.rows=</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>This is mgcv 1.9-1. For overview type 'help("mgcv-package")'.
-
-Linking to GEOS 3.10.2, GDAL 3.4.1, PROJ 8.2.1; sf_use_s2() is TRUE
-
-
-Attaching package: ‘janitor’
-
-
-The following objects are masked from ‘package:stats’:
-
-    chisq.test, fisher.test
-
-
-here() starts at /home/datascience/herbivore_nutrient_interactions
-
-Registered S3 method overwritten by 'GGally':
-  method from   
-  +.gg   ggplot2
-
-── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ lubridate 1.9.3     ✔ tibble    3.2.1
-✔ purrr     1.0.2     ✔ tidyr     1.3.1
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ stringr::boundary() masks gratia::boundary()
-✖ dplyr::collapse()   masks nlme::collapse()
-✖ dplyr::filter()     masks stats::filter()
-✖ dplyr::lag()        masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors
-here() starts at /home/datascience/herbivore_nutrient_interactions
+<pre><code>here() starts at /home/datascience/herbivore_nutrient_interactions
 </code></pre>
 </div>
 </div></div>
@@ -322,7 +292,7 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 </ul>
 </section>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [31]:</pre></div><div id="5c6190fc-1e37-4272-b492-aee923195d6d" class="cell" data-execution_count="31">
+<div class="cell-container"><div class="cell-decorator"><pre>In [90]:</pre></div><div id="5c6190fc-1e37-4272-b492-aee923195d6d" class="cell" data-execution_count="90">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>apl_dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/processed/spatial_modeling/apl_survey_remote_sense_data.csv'</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [32]:</pre></div><div id="d0e60f8d-b250-4761-9eea-3b51306714ce" class="cell" data-scrolled="true" data-execution_count="32">
@@ -2397,7 +2367,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom"});
+</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","loop":false});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
