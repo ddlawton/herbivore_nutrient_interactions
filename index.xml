@@ -10963,7 +10963,7 @@ saveRDS(models, here(&quot;output/field_populations/model_objects/choice_experim
   <p>Specifics for the experiment design can be found in the
   publication.</p>
   <p>For this section, I (Douglas Lawton) did not calculate the specific
-  growth time, this was done in excel. I will mnot reproduce it here</p>
+  growth time, this was done in excel. I will not reproduce it here</p>
   </sec>
   <sec id="cell-5e08cc2a-f12c-4907-b08a-1f97c269404a-nb-4" specific-use="notebook-content">
   <code language="r script">load_packages &lt;- function(packages) {
@@ -10994,92 +10994,7 @@ i_am('README.md')
 options(repr.plot.width = 10, repr.plot.height = 10)
   </code>
   <boxed-text>
-    <preformat>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.1     ✔ tibble    3.2.1
-✔ lubridate 1.9.3     ✔ tidyr     1.3.1
-✔ purrr     1.0.2     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors
-
-Attaching package: ‘nlme’
-
-
-The following object is masked from ‘package:dplyr’:
-
-    collapse
-
-
-This is mgcv 1.9-1. For overview type 'help(&quot;mgcv-package&quot;)'.
-
-
-Attaching package: ‘MASS’
-
-
-The following object is masked from ‘package:dplyr’:
-
-    select
-
-
-
-Attaching package: ‘TH.data’
-
-
-The following object is masked from ‘package:MASS’:
-
-    geyser
-
-
-
-Attaching package: ‘gratia’
-
-
-The following object is masked from ‘package:stringr’:
-
-    boundary
-
-
-
-Attaching package: ‘patchwork’
-
-
-The following object is masked from ‘package:MASS’:
-
-    area
-
-
-
-Attaching package: ‘janitor’
-
-
-The following objects are masked from ‘package:stats’:
-
-    chisq.test, fisher.test
-
-
-here() starts at /home/datascience/herbivore_nutrient_interactions
-
-Registered S3 method overwritten by 'GGally':
-  method from   
-  +.gg   ggplot2
-
-Welcome to emmeans.
-Caution: You lose important information if you filter this package's results.
-See '? untidy'
-
-
-Attaching package: ‘emmeans’
-
-
-The following object is masked from ‘package:GGally’:
-
-    pigs
-
-
-here() starts at /home/datascience/herbivore_nutrient_interactions
+    <preformat>here() starts at /home/datascience/herbivore_nutrient_interactions
     </preformat>
   </boxed-text>
   </sec>
@@ -12276,7 +12191,7 @@ panel_b &lt;- no_choice_dat |&gt;
     ggplot(aes(x=diet,y=specific_growth_rate_ln_mb)) +
         geom_point() +
         geom_point(aes(y=pred_specific_growth_rate),shape=23,size=5,fill=&quot;blue&quot;) +
-        ylab(&quot;Specific Growth Rate&quot;) + 
+        ylab(expression(&quot;Specific Growth Rate&quot; ~ (day^-1))) +
         xlab(&quot;Diet&quot;) + 
         theme_pubr()
 
@@ -13696,6 +13611,189 @@ saveRDS(models, here(&quot;output/field_cage_experiment/model_objects/plant_nutr
   fertilization treatment</title>
   <sec id="read-in-data-1-nb-6">
     <title>read in data</title>
+    </sec>
+    <sec id="cell-7f80e27a-2178-4154-af34-52f3de75fac1-nb-6" specific-use="notebook-content">
+    <code language="r script">readxl::read_xlsx(here('data/raw/field_cage_experiment/Aus_2015_ExpPlots_soil.xlsx'))</code>
+    <boxed-text>
+      <p>A tibble: 36 × 11</p>
+      <table-wrap>
+        <table>
+          <colgroup>
+            <col width="9%" />
+            <col width="9%" />
+            <col width="9%" />
+            <col width="9%" />
+            <col width="9%" />
+            <col width="9%" />
+            <col width="9%" />
+            <col width="9%" />
+            <col width="9%" />
+            <col width="9%" />
+            <col width="9%" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Treatment &lt;chr&gt;</th>
+              <th>Row &lt;dbl&gt;</th>
+              <th>Sample &lt;dbl&gt;</th>
+              <th>Depth &lt;dbl&gt;</th>
+              <th>Weight (g) &lt;dbl&gt;</th>
+              <th>SM iniital (g) &lt;dbl&gt;</th>
+              <th>SM dry wt (g) &lt;dbl&gt;</th>
+              <th>water wt (g) &lt;lgl&gt;</th>
+              <th>extraction wt (g) &lt;dbl&gt;</th>
+              <th>Initial NO3 &lt;dbl&gt;</th>
+              <th>Initial NO4 &lt;dbl&gt;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>306</td>
+              <td>1.325</td>
+              <td>1.320</td>
+              <td>NA</td>
+              <td>10.540</td>
+              <td>2.2481515</td>
+              <td>0.54417124</td>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>1</td>
+              <td>1</td>
+              <td>2</td>
+              <td>349</td>
+              <td>1.720</td>
+              <td>1.710</td>
+              <td>NA</td>
+              <td>10.015</td>
+              <td>0.7908088</td>
+              <td>0.06434308</td>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>1</td>
+              <td>2</td>
+              <td>1</td>
+              <td>379</td>
+              <td>1.060</td>
+              <td>1.060</td>
+              <td>NA</td>
+              <td>10.920</td>
+              <td>2.5581221</td>
+              <td>0.37857696</td>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>1</td>
+              <td>2</td>
+              <td>2</td>
+              <td>371</td>
+              <td>1.650</td>
+              <td>1.645</td>
+              <td>NA</td>
+              <td>10.130</td>
+              <td>1.0797543</td>
+              <td>0.19405167</td>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>2</td>
+              <td>1</td>
+              <td>1</td>
+              <td>366</td>
+              <td>2.320</td>
+              <td>2.310</td>
+              <td>NA</td>
+              <td>11.240</td>
+              <td>3.1522326</td>
+              <td>0.89564302</td>
+            </tr>
+            <tr>
+              <td>⋮</td>
+              <td>⋮</td>
+              <td>⋮</td>
+              <td>⋮</td>
+              <td>⋮</td>
+              <td>⋮</td>
+              <td>⋮</td>
+              <td>⋮</td>
+              <td>⋮</td>
+              <td>⋮</td>
+              <td>⋮</td>
+            </tr>
+            <tr>
+              <td>H</td>
+              <td>2</td>
+              <td>2</td>
+              <td>2</td>
+              <td>414</td>
+              <td>1.970</td>
+              <td>1.965</td>
+              <td>NA</td>
+              <td>10.470</td>
+              <td>3.111384</td>
+              <td>0.2887067</td>
+            </tr>
+            <tr>
+              <td>H</td>
+              <td>3</td>
+              <td>1</td>
+              <td>1</td>
+              <td>384</td>
+              <td>1.975</td>
+              <td>1.965</td>
+              <td>NA</td>
+              <td>10.070</td>
+              <td>3.838253</td>
+              <td>8.6883519</td>
+            </tr>
+            <tr>
+              <td>H</td>
+              <td>3</td>
+              <td>1</td>
+              <td>2</td>
+              <td>334</td>
+              <td>2.525</td>
+              <td>2.510</td>
+              <td>NA</td>
+              <td>11.020</td>
+              <td>4.103170</td>
+              <td>1.0052764</td>
+            </tr>
+            <tr>
+              <td>H</td>
+              <td>3</td>
+              <td>2</td>
+              <td>1</td>
+              <td>439</td>
+              <td>2.430</td>
+              <td>2.425</td>
+              <td>NA</td>
+              <td>11.250</td>
+              <td>4.064123</td>
+              <td>10.1668425</td>
+            </tr>
+            <tr>
+              <td>H</td>
+              <td>3</td>
+              <td>2</td>
+              <td>2</td>
+              <td>388</td>
+              <td>3.015</td>
+              <td>3.000</td>
+              <td>NA</td>
+              <td>10.085</td>
+              <td>2.592964</td>
+              <td>0.3866902</td>
+            </tr>
+          </tbody>
+        </table>
+      </table-wrap>
+    </boxed-text>
     </sec>
     <sec id="cell-6691609c-b351-4f05-9787-d5811399961c-nb-6" specific-use="notebook-content">
     <code language="r script">plant_nutrients2 &lt;- read.csv(here(&quot;data/raw/field_cage_experiment/Field_Cage_Nutrients_Through_Time.csv&quot;)) |&gt;
@@ -15921,8 +16019,8 @@ locust_mass_dat &lt;- read_csv(here(&quot;data/raw/field_cage_experiment/adult_l
         facet_wrap(~date) +
         xlim(0,0.3) + ylim(0,0.3) + 
         theme_pubr() + 
-        ylab(&quot;Carbohydrate (mg/mg)&quot;) +
-        xlab(&quot;Protein (mg/mg)&quot;) + 
+        ylab(&quot;Plant carbohydrate (mg/mg)&quot;) +
+        xlab(&quot;Plant protein (mg/mg)&quot;) + 
         geom_abline(slope = 1,linetype=1,intercept=0) + 
         geom_abline(slope = 2,linetype=2,intercept=0) +
         scale_fill_manual(values = c('#74c476','#238b45','#00441b'))  +
@@ -17054,7 +17152,7 @@ raw_locust_data</code>
         xlab(&quot;total protein consumed  (g)&quot;) + 
         geom_abline(slope = 1,linetype=1,intercept=0) + 
         geom_abline(slope = 2,linetype=2,intercept=0) +
-        scale_color_manual(values = c('#74c476','#00441b'),labels = c(&quot;none&quot;, &quot;high&quot;))
+        scale_color_manual('fertilizer treatment',values = c('#74c476','#00441b'),labels = c(&quot;none&quot;, &quot;high&quot;))
 
 field_cage_locust_intake_rebalance_plot</code>
     <boxed-text>

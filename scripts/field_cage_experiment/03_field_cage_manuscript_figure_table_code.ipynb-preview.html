@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
     <meta charset="utf-8">
-    <meta name="generator" content="quarto-1.6.11">
+    <meta name="generator" content="quarto-1.6.13">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -152,10 +152,10 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-79bb3942e891885f9f7af119cd221462.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-018089954d508eae8a473f0b7f0491f0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-2845a910685745abe2ae06f057ea89f3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-f9d477f1d62ddffd2fa441715a11aa79.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -278,7 +278,7 @@
 </section>
 </section>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [50]:</pre></div><div id="4290c0ed-9b9d-48f7-8b56-cf9278082be2" class="cell" data-execution_count="50">
+<div class="cell-container"><div class="cell-decorator"><pre>In [85]:</pre></div><div id="4290c0ed-9b9d-48f7-8b56-cf9278082be2" class="cell" data-execution_count="85">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plant_nutrients_model_estimates <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/processed/field_cage_experiment/plant_nutrient_predictions.csv'</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>plant_nutrients <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/processed/field_cage_experiment/plant_nutrient_raw_data.csv'</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -291,7 +291,7 @@
 <li>locust physiology</li>
 </ul>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [51]:</pre></div><div id="9e615cbe-254b-4ac0-9fd8-00f46da66949" class="cell" data-execution_count="51">
+<div class="cell-container"><div class="cell-decorator"><pre>In [86]:</pre></div><div id="9e615cbe-254b-4ac0-9fd8-00f46da66949" class="cell" data-execution_count="86">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>locust_prop_dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data/raw/field_cage_experiment/adult_locust_proportion_survival_by_treatment.csv"</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>locust_mass_dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data/raw/field_cage_experiment/adult_locust_final_mass_by_treatment.csv"</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -299,7 +299,7 @@
 <div id="c2d580d1-6f41-4cd9-8bdd-bd80bf8679ae" class="cell markdown">
 <p>now creating the figures</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [52]:</pre></div><div id="b95b8712-ccdf-48da-a755-267a65914ced" class="cell" data-execution_count="52">
+<div class="cell-container"><div class="cell-decorator"><pre>In [87]:</pre></div><div id="b95b8712-ccdf-48da-a755-267a65914ced" class="cell" data-execution_count="87">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plant_nutrients_through_time_plot <span class="ot">&lt;-</span> combined_plant_dat <span class="sc">|&gt;</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">treatment =</span> <span class="fu">factor</span>(treatment,<span class="at">levels=</span><span class="fu">c</span>(<span class="st">'None'</span>,<span class="st">'Medium'</span>,<span class="st">'High'</span>))) <span class="sc">|&gt;</span> </span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>protein_mg_mg,<span class="at">y=</span>carb_mg_mg, <span class="at">fill =</span> treatment)) <span class="sc">+</span></span>
@@ -309,8 +309,8 @@
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">facet_wrap</span>(<span class="sc">~</span>date) <span class="sc">+</span></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="fl">0.3</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="fl">0.3</span>) <span class="sc">+</span> </span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_pubr</span>() <span class="sc">+</span> </span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">"Carbohydrate (mg/mg)"</span>) <span class="sc">+</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">"Protein (mg/mg)"</span>) <span class="sc">+</span> </span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">"Plant carbohydrate (mg/mg)"</span>) <span class="sc">+</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">"Plant protein (mg/mg)"</span>) <span class="sc">+</span> </span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_abline</span>(<span class="at">slope =</span> <span class="dv">1</span>,<span class="at">linetype=</span><span class="dv">1</span>,<span class="at">intercept=</span><span class="dv">0</span>) <span class="sc">+</span> </span>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_abline</span>(<span class="at">slope =</span> <span class="dv">2</span>,<span class="at">linetype=</span><span class="dv">2</span>,<span class="at">intercept=</span><span class="dv">0</span>) <span class="sc">+</span></span>
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">'#74c476'</span>,<span class="st">'#238b45'</span>,<span class="st">'#00441b'</span>))  <span class="sc">+</span></span>
@@ -318,7 +318,7 @@
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [53]:</pre></div><div id="a6c13bcc-08ba-405c-b092-95288d7dea2b" class="cell" data-execution_count="53">
+<div class="cell-container"><div class="cell-decorator"><pre>In [88]:</pre></div><div id="a6c13bcc-08ba-405c-b092-95288d7dea2b" class="cell" data-execution_count="88">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>locust_final_mass_plot <span class="ot">&lt;-</span> locust_mass_dat <span class="sc">|&gt;</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(treatment) <span class="sc">|&gt;</span></span>
@@ -354,7 +354,7 @@
 <span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">'treatment'</span>) <span class="sc">+</span></span>
 <span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [54]:</pre></div><div id="1a5f984c-64b7-43a1-900e-28cbac9dae24" class="cell" data-execution_count="54">
+<div class="cell-container"><div class="cell-decorator"><pre>In [89]:</pre></div><div id="1a5f984c-64b7-43a1-900e-28cbac9dae24" class="cell" data-execution_count="89">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>field_cage_plant_locust_figure <span class="ot">&lt;-</span> (plant_nutrients_through_time_plot) <span class="sc">/</span> (locust_final_mass_plot <span class="sc">+</span> survival_prop_figure <span class="sc">+</span> adult_prop_figure) <span class="sc">+</span> </span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_annotation</span>(<span class="at">tag_levels =</span> <span class="st">'A'</span>) </span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -368,7 +368,7 @@
 </div>
 </div>
 </div></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [55]:</pre></div><div id="5421f09b-153a-40b7-a42f-0d4440d322a8" class="cell" data-execution_count="55">
+<div class="cell-container"><div class="cell-decorator"><pre>In [90]:</pre></div><div id="5421f09b-153a-40b7-a42f-0d4440d322a8" class="cell" data-execution_count="90">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(field_cage_plant_locust_figure,</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_figures/field_cage_plant_locust_figure.png'</span>),</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">width=</span><span class="dv">10</span>,<span class="at">height=</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -378,7 +378,7 @@
 <h2 class="anchored" data-anchor-id="figure---field-cage-locust-nutrient-rebalancing">Figure - field Cage Locust Nutrient Rebalancing</h2>
 </section>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [65]:</pre></div><div id="7f860f02-ebc8-4c55-a349-67a276e93b7e" class="cell" data-scrolled="true" data-execution_count="65">
+<div class="cell-container"><div class="cell-decorator"><pre>In [91]:</pre></div><div id="7f860f02-ebc8-4c55-a349-67a276e93b7e" class="cell" data-scrolled="true" data-execution_count="91">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>raw_locust_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/processed/field_cage_experiment/intake_target_through_time_predictions_raw_data.csv'</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>locust_model_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/processed/field_cage_experiment/intake_target_through_time_predictions.csv'</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(treatment,interval) </span>
@@ -1422,7 +1422,7 @@
 </table>
 </div>
 </div></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [83]:</pre></div><div id="512d6588-c7d7-41e5-ba45-6261a66b3784" class="cell" data-scrolled="true" data-execution_count="83">
+<div class="cell-container"><div class="cell-decorator"><pre>In [93]:</pre></div><div id="512d6588-c7d7-41e5-ba45-6261a66b3784" class="cell" data-scrolled="true" data-execution_count="93">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>field_cage_locust_intake_rebalance_plot <span class="ot">&lt;-</span> raw_locust_data <span class="sc">|&gt;</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">treatment =</span> <span class="fu">factor</span>(treatment,<span class="at">levels=</span><span class="fu">c</span>(<span class="st">'none'</span>,<span class="st">'High'</span>))) <span class="sc">|&gt;</span></span>
@@ -1442,7 +1442,7 @@
 <span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">"total protein consumed  (g)"</span>) <span class="sc">+</span> </span>
 <span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_abline</span>(<span class="at">slope =</span> <span class="dv">1</span>,<span class="at">linetype=</span><span class="dv">1</span>,<span class="at">intercept=</span><span class="dv">0</span>) <span class="sc">+</span> </span>
 <span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_abline</span>(<span class="at">slope =</span> <span class="dv">2</span>,<span class="at">linetype=</span><span class="dv">2</span>,<span class="at">intercept=</span><span class="dv">0</span>) <span class="sc">+</span></span>
-<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>        <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">'#74c476'</span>,<span class="st">'#00441b'</span>),<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"none"</span>, <span class="st">"high"</span>))</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>        <span class="fu">scale_color_manual</span>(<span class="st">'fertilizer treatment'</span>,<span class="at">values =</span> <span class="fu">c</span>(<span class="st">'#74c476'</span>,<span class="st">'#00441b'</span>),<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"none"</span>, <span class="st">"high"</span>))</span>
 <span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>field_cage_locust_intake_rebalance_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -1461,7 +1461,7 @@ Warning message:
 </div>
 </div>
 </div></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [84]:</pre></div><div id="78517042-ba67-485a-b2bd-36083797e53d" class="cell" data-execution_count="84">
+<div class="cell-container"><div class="cell-decorator"><pre>In [94]:</pre></div><div id="78517042-ba67-485a-b2bd-36083797e53d" class="cell" data-execution_count="94">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(field_cage_locust_intake_rebalance_plot,</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_figures/field_cage_locust_intake_target_rebalancing.png'</span>),</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">width=</span><span class="dv">5</span>,<span class="at">height=</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2510,7 +2510,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"loop":false,"closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","selector":".lightbox"});
+</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"descPosition":"bottom","selector":".lightbox","closeEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

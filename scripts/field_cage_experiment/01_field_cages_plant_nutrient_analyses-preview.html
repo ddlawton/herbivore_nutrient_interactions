@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
     <meta charset="utf-8">
-    <meta name="generator" content="quarto-1.6.11">
+    <meta name="generator" content="quarto-1.6.13">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -152,10 +152,10 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-79bb3942e891885f9f7af119cd221462.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-018089954d508eae8a473f0b7f0491f0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-2845a910685745abe2ae06f057ea89f3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-f9d477f1d62ddffd2fa441715a11aa79.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -257,7 +257,7 @@
 </ol>
 <p>Manuscript figure preparation happens in the <code>03_field_cages_intake_target_mauscript_figure_code.ipynb</code> file</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [4]:</pre></div><div id="32b185d2-a3a2-4895-b064-e7c762312abe" class="cell" data-execution_count="4">
+<div class="cell-container"><div class="cell-decorator"><pre>In [9]:</pre></div><div id="32b185d2-a3a2-4895-b064-e7c762312abe" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>load_packages <span class="ot">&lt;-</span> <span class="cf">function</span>(packages) {</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Check for uninstalled packages</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  uninstalled <span class="ot">&lt;-</span> packages[<span class="sc">!</span>packages <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">"Package"</span>]]</span>
@@ -1044,24 +1044,205 @@ Deviance explained = 70.4%
 </section>
 </section>
 </div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [10]:</pre></div><div id="7f80e27a-2178-4154-af34-52f3de75fac1" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>readxl<span class="sc">::</span><span class="fu">read_xlsx</span>(<span class="fu">here</span>(<span class="st">'data/raw/field_cage_experiment/Aus_2015_ExpPlots_soil.xlsx'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A tibble: 36 × 11</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">Treatment</th>
+<th data-quarto-table-cell-role="th" scope="col">Row</th>
+<th data-quarto-table-cell-role="th" scope="col">Sample</th>
+<th data-quarto-table-cell-role="th" scope="col">Depth</th>
+<th data-quarto-table-cell-role="th" scope="col">Weight (g)</th>
+<th data-quarto-table-cell-role="th" scope="col">SM iniital (g)</th>
+<th data-quarto-table-cell-role="th" scope="col">SM dry wt (g)</th>
+<th data-quarto-table-cell-role="th" scope="col">water wt (g)</th>
+<th data-quarto-table-cell-role="th" scope="col">extraction wt (g)</th>
+<th data-quarto-table-cell-role="th" scope="col">Initial NO3</th>
+<th data-quarto-table-cell-role="th" scope="col">Initial NO4</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;lgl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>306</td>
+<td>1.325</td>
+<td>1.320</td>
+<td>NA</td>
+<td>10.540</td>
+<td>2.2481515</td>
+<td>0.54417124</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>349</td>
+<td>1.720</td>
+<td>1.710</td>
+<td>NA</td>
+<td>10.015</td>
+<td>0.7908088</td>
+<td>0.06434308</td>
+</tr>
+<tr class="odd">
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>379</td>
+<td>1.060</td>
+<td>1.060</td>
+<td>NA</td>
+<td>10.920</td>
+<td>2.5581221</td>
+<td>0.37857696</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>371</td>
+<td>1.650</td>
+<td>1.645</td>
+<td>NA</td>
+<td>10.130</td>
+<td>1.0797543</td>
+<td>0.19405167</td>
+</tr>
+<tr class="odd">
+<td>0</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>366</td>
+<td>2.320</td>
+<td>2.310</td>
+<td>NA</td>
+<td>11.240</td>
+<td>3.1522326</td>
+<td>0.89564302</td>
+</tr>
+<tr class="even">
+<td>⋮</td>
+<td>⋮</td>
+<td>⋮</td>
+<td>⋮</td>
+<td>⋮</td>
+<td>⋮</td>
+<td>⋮</td>
+<td>⋮</td>
+<td>⋮</td>
+<td>⋮</td>
+<td>⋮</td>
+</tr>
+<tr class="odd">
+<td>H</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>414</td>
+<td>1.970</td>
+<td>1.965</td>
+<td>NA</td>
+<td>10.470</td>
+<td>3.111384</td>
+<td>0.2887067</td>
+</tr>
+<tr class="even">
+<td>H</td>
+<td>3</td>
+<td>1</td>
+<td>1</td>
+<td>384</td>
+<td>1.975</td>
+<td>1.965</td>
+<td>NA</td>
+<td>10.070</td>
+<td>3.838253</td>
+<td>8.6883519</td>
+</tr>
+<tr class="odd">
+<td>H</td>
+<td>3</td>
+<td>1</td>
+<td>2</td>
+<td>334</td>
+<td>2.525</td>
+<td>2.510</td>
+<td>NA</td>
+<td>11.020</td>
+<td>4.103170</td>
+<td>1.0052764</td>
+</tr>
+<tr class="even">
+<td>H</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>439</td>
+<td>2.430</td>
+<td>2.425</td>
+<td>NA</td>
+<td>11.250</td>
+<td>4.064123</td>
+<td>10.1668425</td>
+</tr>
+<tr class="odd">
+<td>H</td>
+<td>3</td>
+<td>2</td>
+<td>2</td>
+<td>388</td>
+<td>3.015</td>
+<td>3.000</td>
+<td>NA</td>
+<td>10.085</td>
+<td>2.592964</td>
+<td>0.3866902</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [19]:</pre></div><div id="6691609c-b351-4f05-9787-d5811399961c" class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>plant_nutrients2 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">here</span>(<span class="st">"data/raw/field_cage_experiment/Field_Cage_Nutrients_Through_Time.csv"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">Treatment =</span> <span class="fu">fct_recode</span>(Treatment, <span class="st">"None"</span> <span class="ot">=</span> <span class="st">"0"</span>, <span class="st">"Medium"</span> <span class="ot">=</span> <span class="st">"M"</span>, <span class="st">"High"</span> <span class="ot">=</span> <span class="st">"H"</span>,</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"None"</span> <span class="ot">=</span> <span class="st">'1'</span>, <span class="st">"Medium"</span> <span class="ot">=</span> <span class="st">"2"</span>, <span class="st">"High"</span> <span class="ot">=</span> <span class="st">"3"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">factor</span>(<span class="fu">parse_date_time</span>(x,<span class="at">orders=</span><span class="st">'mdy'</span>)))</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>soils <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_xlsx</span>(<span class="fu">here</span>(<span class="st">'data/raw/field_cage_experiment/Aus_2015_ExpPlots_soil.xlsx'</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(treatment,initial_no3,initial_no4) <span class="sc">|&gt;</span></span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(treatment) <span class="sc">|&gt;</span></span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">mean_no3 =</span> <span class="fu">mean</span>(initial_no3),</span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>             <span class="at">sd_no3 =</span> <span class="fu">sd</span>(initial_no3),</span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>             <span class="at">mean_no4 =</span> <span class="fu">mean</span>(initial_no4),</span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>             <span class="at">sd_no4 =</span> <span class="fu">sd</span>(initial_no4)) <span class="sc">|&gt;</span></span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">treatment =</span> <span class="fu">fct_recode</span>(treatment, <span class="st">"None"</span> <span class="ot">=</span> <span class="st">"0"</span>, <span class="st">"Medium"</span> <span class="ot">=</span> <span class="st">"M"</span>, <span class="st">"High"</span> <span class="ot">=</span> <span class="st">"H"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>plant_nutrients2 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">here</span>(<span class="st">"data/raw/field_cage_experiment/Field_Cage_Nutrients_Through_Time.csv"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">Treatment =</span> <span class="fu">fct_recode</span>(Treatment, <span class="st">"None"</span> <span class="ot">=</span> <span class="st">"0"</span>, <span class="st">"Medium"</span> <span class="ot">=</span> <span class="st">"M"</span>, <span class="st">"High"</span> <span class="ot">=</span> <span class="st">"H"</span>,</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"None"</span> <span class="ot">=</span> <span class="st">'1'</span>, <span class="st">"Medium"</span> <span class="ot">=</span> <span class="st">"2"</span>, <span class="st">"High"</span> <span class="ot">=</span> <span class="st">"3"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">factor</span>(<span class="fu">parse_date_time</span>(x,<span class="at">orders=</span><span class="st">'mdy'</span>)))</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>soils <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_xlsx</span>(<span class="fu">here</span>(<span class="st">'data/raw/field_cage_experiment/Aus_2015_ExpPlots_soil.xlsx'</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(treatment,initial_no3,initial_no4) <span class="sc">|&gt;</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(treatment) <span class="sc">|&gt;</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">mean_no3 =</span> <span class="fu">mean</span>(initial_no3),</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>             <span class="at">sd_no3 =</span> <span class="fu">sd</span>(initial_no3),</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>             <span class="at">mean_no4 =</span> <span class="fu">mean</span>(initial_no4),</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>             <span class="at">sd_no4 =</span> <span class="fu">sd</span>(initial_no4)) <span class="sc">|&gt;</span></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">treatment =</span> <span class="fu">fct_recode</span>(treatment, <span class="st">"None"</span> <span class="ot">=</span> <span class="st">"0"</span>, <span class="st">"Medium"</span> <span class="ot">=</span> <span class="st">"M"</span>, <span class="st">"High"</span> <span class="ot">=</span> <span class="st">"H"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 <div id="588aaea2-01db-4487-8949-281b625e7cb1" class="cell markdown">
 <section id="now-combine-the-species-plant-and-soil-nutrient-data" class="level2">
@@ -1069,22 +1250,22 @@ Deviance explained = 70.4%
 </section>
 </div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [20]:</pre></div><div id="a5a8085c-ec71-4bec-9070-302676ae8cc1" class="cell" data-scrolled="true" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>plant_species_soil_nutrient_by_treatment <span class="ot">&lt;-</span> plant_nutrients2  <span class="sc">|&gt;</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(plot,treatment,species,c_mg_mg,n_mg_mg,protein_mg_mg,carb_mg_mg,date) <span class="sc">|&gt;</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(soils,<span class="at">by=</span><span class="st">'treatment'</span>) <span class="sc">|&gt;</span></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(date,treatment,species) <span class="sc">|&gt;</span></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="st">`</span><span class="at">Plant C</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(c_mg_mg),</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>              <span class="st">`</span><span class="at">Plant N</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(n_mg_mg),</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>              <span class="st">`</span><span class="at">Plant Protein</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(protein_mg_mg),</span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>              <span class="st">`</span><span class="at">Plant Carbohydrate</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(carb_mg_mg),</span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>              <span class="st">`</span><span class="at">Soil NO3</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">first</span>(mean_no3),</span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>              <span class="st">`</span><span class="at">Soil NO4</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">first</span>(mean_no4)) <span class="sc">|&gt;</span></span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(treatment,species,date) <span class="sc">|&gt;</span></span>
-<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(treatment,species,date,<span class="st">`</span><span class="at">Plant C</span><span class="st">`</span>,<span class="st">`</span><span class="at">Plant N</span><span class="st">`</span>,<span class="st">`</span><span class="at">Plant Protein</span><span class="st">`</span>,<span class="st">`</span><span class="at">Plant Carbohydrate</span><span class="st">`</span>,<span class="st">`</span><span class="at">Soil NO3</span><span class="st">`</span>,<span class="st">`</span><span class="at">Soil NO4</span><span class="st">`</span>)</span>
-<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>plant_species_soil_nutrient_by_treatment</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>plant_species_soil_nutrient_by_treatment <span class="ot">&lt;-</span> plant_nutrients2  <span class="sc">|&gt;</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(plot,treatment,species,c_mg_mg,n_mg_mg,protein_mg_mg,carb_mg_mg,date) <span class="sc">|&gt;</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(soils,<span class="at">by=</span><span class="st">'treatment'</span>) <span class="sc">|&gt;</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(date,treatment,species) <span class="sc">|&gt;</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="st">`</span><span class="at">Plant C</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(c_mg_mg),</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>              <span class="st">`</span><span class="at">Plant N</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(n_mg_mg),</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>              <span class="st">`</span><span class="at">Plant Protein</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(protein_mg_mg),</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>              <span class="st">`</span><span class="at">Plant Carbohydrate</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(carb_mg_mg),</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>              <span class="st">`</span><span class="at">Soil NO3</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">first</span>(mean_no3),</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>              <span class="st">`</span><span class="at">Soil NO4</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">first</span>(mean_no4)) <span class="sc">|&gt;</span></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(treatment,species,date) <span class="sc">|&gt;</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(treatment,species,date,<span class="st">`</span><span class="at">Plant C</span><span class="st">`</span>,<span class="st">`</span><span class="at">Plant N</span><span class="st">`</span>,<span class="st">`</span><span class="at">Plant Protein</span><span class="st">`</span>,<span class="st">`</span><span class="at">Plant Carbohydrate</span><span class="st">`</span>,<span class="st">`</span><span class="at">Soil NO3</span><span class="st">`</span>,<span class="st">`</span><span class="at">Soil NO4</span><span class="st">`</span>)</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>plant_species_soil_nutrient_by_treatment</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`summarise()` has grouped output by 'date', 'treatment'. You can override using
 the `.groups` argument.</code></pre>
@@ -1243,7 +1424,7 @@ the `.groups` argument.</code></pre>
 </div>
 </div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [21]:</pre></div><div id="7ae06cf6-db23-4110-aaf1-5ba63a00302c" class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(plant_species_soil_nutrient_by_treatment,<span class="fu">here</span>(<span class="st">'data/processed/field_cage_experiment/plant_species_soil_nutrient_by_treatment.csv'</span>),<span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(plant_species_soil_nutrient_by_treatment,<span class="fu">here</span>(<span class="st">'data/processed/field_cage_experiment/plant_species_soil_nutrient_by_treatment.csv'</span>),<span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 <div id="f9207ac4-b354-48b1-a626-5508272e7b64" class="cell markdown">
 <section id="section-3---ground-cover-by-fertilization-treatment" class="level1">
@@ -1264,36 +1445,36 @@ the `.groups` argument.</code></pre>
 </section>
 </div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [6]:</pre></div><div id="ca81a011-6da5-4e5b-ac98-d431e05161ef" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>plant_dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/raw/field_cage_experiment/Field_Cage_Nutrients_Through_Time.csv'</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(x1,plot,cage,treatment,species,chn_weight_mg,c_mg_mg,n_mg_mg,protein_mg_mg,carb_mg_mg,carb_prot_ratio) <span class="sc">|&gt;</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="at">date =</span> x1) <span class="sc">|&gt;</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">parse_date_time</span>(date,<span class="at">orders=</span><span class="st">'mdy'</span>),</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">across</span>(<span class="fu">c</span>(date,plot,cage,treatment,species),<span class="sc">~</span><span class="fu">as.factor</span>(.)),</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">treatment =</span> <span class="fu">fct_recode</span>(treatment, <span class="st">"None"</span> <span class="ot">=</span> <span class="st">"0"</span>, <span class="st">"Medium"</span> <span class="ot">=</span> <span class="st">"M"</span>, <span class="st">"High"</span> <span class="ot">=</span> <span class="st">"H"</span>,</span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"None"</span> <span class="ot">=</span> <span class="st">'1'</span>, <span class="st">"Medium"</span> <span class="ot">=</span> <span class="st">"2"</span>, <span class="st">"High"</span> <span class="ot">=</span> <span class="st">"3"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(date,plot,treatment,protein_mg_mg,carb_mg_mg)</span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>soils_dat_avg_treatment <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_xlsx</span>(<span class="fu">here</span>(<span class="st">'data/raw/field_cage_experiment/Aus_2015_ExpPlots_soil.xlsx'</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
-<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">treatment =</span> <span class="fu">fct_recode</span>(treatment, <span class="st">"None"</span> <span class="ot">=</span> <span class="st">"0"</span>, <span class="st">"Medium"</span> <span class="ot">=</span> <span class="st">"M"</span>, <span class="st">"High"</span> <span class="ot">=</span> <span class="st">"H"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(treatment,initial_no3,initial_no4) <span class="sc">|&gt;</span></span>
-<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(treatment) <span class="sc">|&gt;</span></span>
-<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">mean_no3 =</span> <span class="fu">mean</span>(initial_no3,<span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>              <span class="at">mean_no4 =</span> <span class="fu">mean</span>(initial_no4,<span class="at">na.rm=</span><span class="cn">TRUE</span>))</span>
-<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>soil_plant_dat <span class="ot">&lt;-</span> plant_dat <span class="sc">|&gt;</span></span>
-<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(soils_dat_avg_treatment,<span class="at">by=</span><span class="st">'treatment'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>plant_dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/raw/field_cage_experiment/Field_Cage_Nutrients_Through_Time.csv'</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(x1,plot,cage,treatment,species,chn_weight_mg,c_mg_mg,n_mg_mg,protein_mg_mg,carb_mg_mg,carb_prot_ratio) <span class="sc">|&gt;</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="at">date =</span> x1) <span class="sc">|&gt;</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">parse_date_time</span>(date,<span class="at">orders=</span><span class="st">'mdy'</span>),</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">across</span>(<span class="fu">c</span>(date,plot,cage,treatment,species),<span class="sc">~</span><span class="fu">as.factor</span>(.)),</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">treatment =</span> <span class="fu">fct_recode</span>(treatment, <span class="st">"None"</span> <span class="ot">=</span> <span class="st">"0"</span>, <span class="st">"Medium"</span> <span class="ot">=</span> <span class="st">"M"</span>, <span class="st">"High"</span> <span class="ot">=</span> <span class="st">"H"</span>,</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"None"</span> <span class="ot">=</span> <span class="st">'1'</span>, <span class="st">"Medium"</span> <span class="ot">=</span> <span class="st">"2"</span>, <span class="st">"High"</span> <span class="ot">=</span> <span class="st">"3"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(date,plot,treatment,protein_mg_mg,carb_mg_mg)</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>soils_dat_avg_treatment <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_xlsx</span>(<span class="fu">here</span>(<span class="st">'data/raw/field_cage_experiment/Aus_2015_ExpPlots_soil.xlsx'</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">treatment =</span> <span class="fu">fct_recode</span>(treatment, <span class="st">"None"</span> <span class="ot">=</span> <span class="st">"0"</span>, <span class="st">"Medium"</span> <span class="ot">=</span> <span class="st">"M"</span>, <span class="st">"High"</span> <span class="ot">=</span> <span class="st">"H"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(treatment,initial_no3,initial_no4) <span class="sc">|&gt;</span></span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(treatment) <span class="sc">|&gt;</span></span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">mean_no3 =</span> <span class="fu">mean</span>(initial_no3,<span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>              <span class="at">mean_no4 =</span> <span class="fu">mean</span>(initial_no4,<span class="at">na.rm=</span><span class="cn">TRUE</span>))</span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>soil_plant_dat <span class="ot">&lt;-</span> plant_dat <span class="sc">|&gt;</span></span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(soils_dat_avg_treatment,<span class="at">by=</span><span class="st">'treatment'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>New names:
 • `` -&gt; `...1`</code></pre>
 </div>
 </div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [7]:</pre></div><div id="f17f156c-df73-478b-bb98-228914f8486e" class="cell" data-scrolled="true" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>soils_dat <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_xlsx</span>(<span class="fu">here</span>(<span class="st">'data/raw/field_cage_experiment/Aus_2015_ExpPlots_soil.xlsx'</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">treatment =</span> <span class="fu">fct_recode</span>(treatment, <span class="st">"None"</span> <span class="ot">=</span> <span class="st">"0"</span>, <span class="st">"Medium"</span> <span class="ot">=</span> <span class="st">"M"</span>, <span class="st">"High"</span> <span class="ot">=</span> <span class="st">"H"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(treatment,initial_no3,initial_no4) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>soils_dat <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_xlsx</span>(<span class="fu">here</span>(<span class="st">'data/raw/field_cage_experiment/Aus_2015_ExpPlots_soil.xlsx'</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">treatment =</span> <span class="fu">fct_recode</span>(treatment, <span class="st">"None"</span> <span class="ot">=</span> <span class="st">"0"</span>, <span class="st">"Medium"</span> <span class="ot">=</span> <span class="st">"M"</span>, <span class="st">"High"</span> <span class="ot">=</span> <span class="st">"H"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(treatment,initial_no3,initial_no4) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 <div id="87771e52-4e9e-42c1-8aca-2e236052c119" class="cell markdown">
 <section id="writing-dataframes-to-disk" class="level2">
@@ -1301,8 +1482,8 @@ the `.groups` argument.</code></pre>
 </section>
 </div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [8]:</pre></div><div id="495c4661-f0e1-4d53-8b9a-98d5afc37ea8" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(soil_plant_dat,<span class="fu">here</span>(<span class="st">'data/processed/field_cage_experiment/plant_soil_nutrient_data.csv'</span>),<span class="at">row.names=</span><span class="cn">FALSE</span>)</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(soils_dat,<span class="fu">here</span>(<span class="st">'data/processed/field_cage_experiment/soil_nutrient_data'</span>),<span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(soil_plant_dat,<span class="fu">here</span>(<span class="st">'data/processed/field_cage_experiment/plant_soil_nutrient_data.csv'</span>),<span class="at">row.names=</span><span class="cn">FALSE</span>)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(soils_dat,<span class="fu">here</span>(<span class="st">'data/processed/field_cage_experiment/soil_nutrient_data'</span>),<span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 <div id="b7e51e88-05c4-468a-b8dd-04f13b202806" class="cell markdown">
 <section id="section-4---ground-cover-by-fertilization-treatment" class="level1">
@@ -1322,25 +1503,25 @@ the `.groups` argument.</code></pre>
 </section>
 </div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [27]:</pre></div><div id="50dd0861-4036-45a7-a257-a500f187c9ec" class="cell" data-scrolled="true" data-execution_count="27">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>ground_cover_by_treatment <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/raw/field_cage_experiment/FieldCagePlantSurveys.xlsx - data.csv'</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(n_treatment_kg_n_per_ha, liverseed_grass, enterpogam, wallaby_grass, nut_grass, stipa,plant_ground_cover_percent) <span class="sc">|&gt;</span></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">treatment =</span> <span class="fu">case_when</span>(n_treatment_kg_n_per_ha <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">'None'</span>, n_treatment_kg_n_per_ha <span class="sc">==</span> <span class="fl">87.5</span> <span class="sc">~</span> <span class="st">'Medium'</span>,</span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>                                 n_treatment_kg_n_per_ha <span class="sc">==</span> <span class="dv">175</span> <span class="sc">~</span> <span class="st">'High'</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(treatment,plant_ground_cover_percent,liverseed_grass,enterpogam,wallaby_grass,nut_grass,stipa) <span class="sc">|&gt;</span></span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="st">`</span><span class="at">Urochloa panicoides</span><span class="st">`</span> <span class="ot">=</span> liverseed_grass,</span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>          <span class="st">`</span><span class="at">Enteropogon acicularis</span><span class="st">`</span> <span class="ot">=</span> enterpogam,</span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>          <span class="st">`</span><span class="at">Austrodanthonia caespitosa</span><span class="st">`</span> <span class="ot">=</span> wallaby_grass,</span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">Cyperus rotundus</span><span class="st">`</span> <span class="ot">=</span> nut_grass,</span>
-<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">stipa species</span><span class="st">`</span> <span class="ot">=</span> stipa,</span>
-<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>          <span class="at">plant_cover =</span> plant_ground_cover_percent) <span class="sc">|&gt;</span></span>
-<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="sc">!</span>treatment, <span class="sc">~</span><span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">'&lt;5'</span>,<span class="st">'5'</span>,.)))) <span class="sc">|&gt;</span></span>
-<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(treatment) <span class="sc">|&gt;</span></span>
-<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric),<span class="sc">~</span><span class="fu">mean</span>(.,<span class="at">na.rm=</span><span class="cn">TRUE</span>))) <span class="sc">|&gt;</span></span>
-<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="st">`</span><span class="at">stipa species</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">replace_na</span>(<span class="st">`</span><span class="at">stipa species</span><span class="st">`</span>,<span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>ground_cover_by_treatment <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/raw/field_cage_experiment/FieldCagePlantSurveys.xlsx - data.csv'</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(n_treatment_kg_n_per_ha, liverseed_grass, enterpogam, wallaby_grass, nut_grass, stipa,plant_ground_cover_percent) <span class="sc">|&gt;</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">treatment =</span> <span class="fu">case_when</span>(n_treatment_kg_n_per_ha <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">'None'</span>, n_treatment_kg_n_per_ha <span class="sc">==</span> <span class="fl">87.5</span> <span class="sc">~</span> <span class="st">'Medium'</span>,</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>                                 n_treatment_kg_n_per_ha <span class="sc">==</span> <span class="dv">175</span> <span class="sc">~</span> <span class="st">'High'</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(treatment,plant_ground_cover_percent,liverseed_grass,enterpogam,wallaby_grass,nut_grass,stipa) <span class="sc">|&gt;</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="st">`</span><span class="at">Urochloa panicoides</span><span class="st">`</span> <span class="ot">=</span> liverseed_grass,</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>          <span class="st">`</span><span class="at">Enteropogon acicularis</span><span class="st">`</span> <span class="ot">=</span> enterpogam,</span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>          <span class="st">`</span><span class="at">Austrodanthonia caespitosa</span><span class="st">`</span> <span class="ot">=</span> wallaby_grass,</span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">Cyperus rotundus</span><span class="st">`</span> <span class="ot">=</span> nut_grass,</span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">stipa species</span><span class="st">`</span> <span class="ot">=</span> stipa,</span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>          <span class="at">plant_cover =</span> plant_ground_cover_percent) <span class="sc">|&gt;</span></span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="sc">!</span>treatment, <span class="sc">~</span><span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">'&lt;5'</span>,<span class="st">'5'</span>,.)))) <span class="sc">|&gt;</span></span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(treatment) <span class="sc">|&gt;</span></span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric),<span class="sc">~</span><span class="fu">mean</span>(.,<span class="at">na.rm=</span><span class="cn">TRUE</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="st">`</span><span class="at">stipa species</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">replace_na</span>(<span class="st">`</span><span class="at">stipa species</span><span class="st">`</span>,<span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [28]:</pre></div><div id="d0bb90df-0a74-4b81-a656-d14b6fbb2a84" class="cell" data-execution_count="28">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(ground_cover_by_treatment,<span class="fu">here</span>(<span class="st">'data/processed/field_cage_experiment/plant_ground_cover_by_treatment.csv'</span>),<span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(ground_cover_by_treatment,<span class="fu">here</span>(<span class="st">'data/processed/field_cage_experiment/plant_ground_cover_by_treatment.csv'</span>),<span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
      </main>
 <!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">
@@ -1762,7 +1943,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","loop":false,"closeEffect":"zoom","descPosition":"bottom"});
+</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"loop":false,"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","descPosition":"bottom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
