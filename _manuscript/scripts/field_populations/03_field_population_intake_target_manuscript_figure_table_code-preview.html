@@ -353,7 +353,7 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 <p>I am going to select columns that I will use just to keep the dataframes managable</p>
 </section>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [3]:</pre></div><div id="6a691f2d-64cb-4e29-ba2d-45ff628b67be" class="cell" data-scrolled="true" data-execution_count="3">
+<div class="cell-container"><div class="cell-decorator"><pre>In [26]:</pre></div><div id="6a691f2d-64cb-4e29-ba2d-45ff628b67be" class="cell" data-scrolled="true" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Choice experiment data</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>choice_raw_dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data/raw/field_populations/IT_dat.csv"</span>),<span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
@@ -407,7 +407,7 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 </section>
 </section>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [4]:</pre></div><div id="413a9067-6c17-4ad7-9ebe-6f8328277d24" class="cell" data-scrolled="true" data-execution_count="4">
+<div class="cell-container"><div class="cell-decorator"><pre>In [29]:</pre></div><div id="413a9067-6c17-4ad7-9ebe-6f8328277d24" class="cell" data-scrolled="true" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>panel_a <span class="ot">&lt;-</span> choice_dat <span class="sc">|&gt;</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(population) <span class="sc">|&gt;</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">pred_carb =</span> <span class="fu">mean</span>(pred_carb), <span class="at">pred_protein =</span> <span class="fu">mean</span>(pred_protein)) <span class="sc">|&gt;</span></span>
@@ -431,7 +431,7 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 <span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>diet,<span class="at">y=</span>specific_growth_rate_ln_mb)) <span class="sc">+</span></span>
 <span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y=</span>pred_specific_growth_rate),<span class="at">shape=</span><span class="dv">23</span>,<span class="at">size=</span><span class="dv">5</span>,<span class="at">fill=</span><span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">"Specific Growth Rate"</span>) <span class="sc">+</span> </span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="fu">expression</span>(<span class="st">"Specific Growth Rate"</span> <span class="sc">~</span> (day<span class="sc">^-</span><span class="dv">1</span>))) <span class="sc">+</span></span>
 <span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">"Diet"</span>) <span class="sc">+</span> </span>
 <span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_pubr</span>()</span>
 <span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
@@ -447,7 +447,7 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 <span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">"Diet"</span>) <span class="sc">+</span>  </span>
 <span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_pubr</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [5]:</pre></div><div id="0a1f9d3b-a5e8-4891-bcc1-98ec7d0ff0c7" class="cell" data-execution_count="5">
+<div class="cell-container"><div class="cell-decorator"><pre>In [30]:</pre></div><div id="0a1f9d3b-a5e8-4891-bcc1-98ec7d0ff0c7" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>layout <span class="ot">&lt;-</span> <span class="st">"</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="st">AA</span></span>
@@ -466,7 +466,7 @@ here() starts at /home/datascience/herbivore_nutrient_interactions
 </div>
 </div>
 </div></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [6]:</pre></div><div id="d761f891-a6a1-4a75-b3f5-95cc582cfb6f" class="cell" data-execution_count="6">
+<div class="cell-container"><div class="cell-decorator"><pre>In [31]:</pre></div><div id="d761f891-a6a1-4a75-b3f5-95cc582cfb6f" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(figure_2,<span class="at">file=</span><span class="fu">here</span>(<span class="st">'output/publication_figures/field_population_intake_target_figure.png'</span>),<span class="at">width=</span><span class="dv">10</span>,<span class="at">height=</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 <div id="72e8dd60-3781-41a9-811a-bfee2b83d6a3" class="cell markdown">
@@ -1329,7 +1329,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom"});
+</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
