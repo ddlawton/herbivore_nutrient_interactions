@@ -165,26 +165,24 @@ At larger scales, and accounting for climatic factors, we expect outbreaks to be
 
 Details regarding the scales of inference, the application of factors of interest, and the corresponding replicates can be found in @tbl-replication-statement. This table outlines the hierarchical structure of our experimental design across individual, population, and landscape levels.
 
-```{r, field population no choice table}
-#| label: tbl-replication-statement
-#| tbl-cap:
-#|   - "Replication statement for all scales of interest"
-#| 
-#| layout-nrow: 1
-
+::: {#tbl-replication-statement}
+```{r, replication statement}
 library(tidyverse)
 library(here)
 library(gt)
 
 data <- tibble(
-  `Scale of inference` = c("individual", "individual", "population", "Landscape"),
-  `Scale at which the factor of interest is applied` = c("Populations", "cages", "cages", "populations"),
-  `Number of replicates at the appropriate scale` = c("150 locusts", "20 locusts in each cage", "36 cages in each fertilization treatment", "67144 1 km2 grids throughout Australia")
+  `Scale of inference` = c("individual", "individual", "population", "landscape"),
+  `Scale at which the factor of interest is applied` = c("populations", "field cages", "field cages", "populations"),
+  `Number of replicates at the appropriate scale` = c("150 locusts tested on varying macronutrient ratios with artificial diets.", "20 locusts in each cage", "36 cages in each fertilization treatment", "67144 1 km2 grids throughout Australia")
 )
 
 data |> gt()
 
 ```
+
+Replication statement for all scales of interest
+:::
 
 ## Field site and animals
 
@@ -210,7 +208,7 @@ We ran this experiment to test the effects of different host plant nitrogen cont
 
 We built 0.75 x 0.75 x 0.75 m cages with four steel fence posts and aluminum mesh. We secured the mesh to the ground by partially burying it and nailing thin slats of wood over the mesh edges. Before adding locusts to the cages, we removed any plant litter and arthropods (mostly spiders and locusts) so we could more easily count the locusts and limit predation. We added 20 4th instar locust nymphs to each field cage on the evening of November 13th and morning of November 14th. We randomly selected these nymphs from the Mendooran population we collected on November 12th (see synthetic diet methods section above). Each fertilized plot had four cages, for a total of 12 cages per fertilization level, and 36 cages and 720 locusts in total. We checked the cages every 4-5 days and removed any spiders.
 
-We measured plant diversity and abundance in each locust cage and outside the cage within each fertilized plot. We also measured ground, litter, manure, and plant cover in each of the nine plots by randomly tossing three 0.25 x 0.25 m quadrats within each of the nine plots. We took these ground cover and biodiversity measurements at the beginning and end of the experiment. We took plant leaf samples for nutrient analyses from each cage three times during the experiment on November 11th, November 25th, and December 1st, 2015. Plant species with resulting carbon, nitrogen, digestible carbohydrate and protein content as well as soil nitrogen (from 0-10 cm cores) can be seen in @supptbl-field-cage-plant-soil-nutrients. Plant species ground cover for each cage can be seen in @supptbl-field-cage-plant-ground-cover. The relationship between soil NO3 and NO4 within cage plots and cage plant carbohydrates and proteins are visualized in @suppfig-field-cage-plant-soil-nutrient-correlations.
+We measured plant diversity and abundance in each locust cage and outside the cage within each fertilized plot. We also measured ground, litter, manure, and plant cover in each of the nine plots by randomly tossing three 0.25 x 0.25 m quadrats within each of the nine plots. We took these ground cover and biodiversity measurements at the beginning and end of the experiment. We took plant leaf samples for nutrient analyses from each cage three times during the experiment on November 11th, November 25th, and December 1st, 2015. Plant species with resulting carbon, nitrogen, digestible carbohydrate and protein content as well as soil nitrogen (from 0-10 cm cores) can be seen in @supptbl-field-cage-plant-soil-nutrients. Plant species ground cover for each cage can be seen in @supptbl-field-cage-plant-ground-cover. The relationship between soil NO^3^ and NO^4^ within cage plots and cage plant carbohydrates and proteins are visualized in @suppfig-field-cage-plant-soil-nutrient-correlations.
 
 To test how the nitrogen fertilization treatments affected the nutritional status of the locusts, we collected 20 locusts from control and high N treatment cages (40 individuals in total) on November 23, 2015. We housed them in individual cages and gave them the choice of a low protein: carbohydrate diet and a high protein: carbohydrate diet. We changed their diets on days one, two, four, and six and ended the experiment at day nine. To ensure an adequate sample size, we included data from any individuals that died (approximately 60% mortality) before the experiment was completed and individuals which molted during the experiment. We calculated the mass of protein and carbohydrate locusts ate over each interval. This allowed us to see the nutritional redressing of individuals.
 
@@ -228,33 +226,33 @@ To understand the relationship between soil nutrients and locust outbreaks, we u
 
 ### Locust outbreak data
 
-*C. terminifera* data from 2000 - 2017 (\~ 190,000 records) were used in this study. This database contains georeferenced points with a categorical ordinal variable 0-4 to represent approximate nymph densities. The value ranges for nymphs are: 0 = nil, 1 = \< 5 m^2^, 2 = 5-30 m^2^, 3 = 31-80 m^2^, and 4 = \> 80 m^2^. Population outbreaks are characterized by very high densities of gregarious nymphs (up to 1000 m^2^). We focused on nymphs as this life stage cannot fly and can be used to assess prior local habitat conditions. While the database extends into the 1980s, we only used data collected between 2000-2017 as this period overlapped with the soil grid data which was released in 2015. Since climatic conditions and migration patterns are drivers in outbreak occurrence [@lawton_seeing_2022; @veran_modeling_2015] they likely mask the relationship between static environmental variables like soil nutrients. To account for this variability, we spatially aggregated the survey dataset to a 1 km^2^ grid as can be seen in @suppfig-grid-example. This allowed us to model how often locust outbreaks occur in grid cells rather than the actual outbreak. We used a 1 km^2^ grid as this reflects the estimated maximum dispersal distance from hatching to 5th instar [@hunter_aerial_2008]. We counted the number of outbreaks (APLC nymph density code 4), the number of nil records (APLC nymph density code 0), and total number of survey observations. This resulted in approximately 67,000 grid cells for the final dataset. Overall APLC survey point distribution can be seen in @fig-spatial-modeling-env-map A.
+*Chortoicetes terminifera* data from 2000 - 2017 (\~ 190,000 records) were used in this study. This database contains georeferenced points with a categorical ordinal variable 0-4 to represent approximate nymph densities. The value ranges for nymphs are: 0 = nil, 1 = \< 5 m^2^, 2 = 5-30 m^2^, 3 = 31-80 m^2^, and 4 = \> 80 m^2^. Population outbreaks are characterized by very high densities of gregarious nymphs (up to 1000 m^2^). We focused on nymphs as this life stage cannot fly and can be used to assess prior local habitat conditions. While the database extends into the 1980s, we only used data collected between 2000-2017 as this period overlapped with the soil grid data which was released in 2015. Since climatic conditions and migration patterns are drivers in outbreak occurrence [@lawton_seeing_2022; @veran_modeling_2015] they likely mask the relationship between static environmental variables like soil nutrients. To account for this variability, we spatially aggregated the survey dataset to a 1 km^2^ grid as can be seen in @suppfig-grid-example. This allowed us to model how often locust outbreaks occur in grid cells rather than the actual outbreak. We used a 1 km^2^ grid as this reflects the estimated maximum dispersal distance from hatching to 5th instar [@hunter_aerial_2008]. We counted the number of outbreaks (APLC nymph density code 4), the number of nil records (APLC nymph density code 0), and total number of survey observations. This resulted in approximately 67,000 grid cells for the final dataset. Overall APLC survey point distribution can be seen in @fig-spatial-modeling-env-map A.
 
 ### Soil grid of Australia data
 
-The soil and landscape grid of Australia is a modeled raster of 12 soil variables at a 90 m^2^ resolution. These soil characteristics are available at multiple depths from surface to two meters below the surface. These depths and methodology are consistent with the specifications of the Global Soil Map project (http://www.globalsoilmap.net) [@grundy_soil_2015]. We extracted this data from Google Earth Engine [@gorelick_google_2017]. In this data set both phosphorus and nitrogen units are the mass fraction of total nutrient in the soil by weight. We took the average of nitrogen and phosphorus of the top two depths (0 cm – 5 cm and 5 cm and 15 cm) as these are most relevant to nutrient content of grasses and forbs. Then, for each APLC survey grid we calculated the mean mass fraction of nitrogen and phosphorus in the soil by weight to a 15 cm depth. Spatial distribution of soil nitrogen and phosphorus can be seen in @fig-spatial-modeling-env-map B and @fig-spatial-modeling-env-map C respectively.
+The soil and landscape grid of Australia is a modeled raster of 12 soil variables at a 90 m^2^ resolution. These soil characteristics are available at multiple depths from surface to two meters below the surface. These depths and methodology are consistent with the specifications of the Global Soil Map project (http://www.globalsoilmap.net) [@grundy_soil_2015]. We extracted this data from Google Earth Engine [@gorelick_google_2017]. In this data set both phosphorus and nitrogen units are the mass fraction of total nutrient in the soil by weight. We took the average of nitrogen and phosphorus of the top two depths (0 cm – 5 cm and 5 cm and 15 cm) as these are most relevant to nutrient content of grasses and forbs. Then, for each APLC survey grid we calculated the mean mass fraction of nitrogen and phosphorus in the soil to a 15 cm depth. Spatial distribution of soil nitrogen and phosphorus can be seen in @fig-spatial-modeling-env-map B and @fig-spatial-modeling-env-map C respectively.
 
-![Locust survey data map and soil nutrients throughout the *C. terminifera* distribution. A: APLC survey dataset, B: mean proportion phosphorous at 0-15cm deep, C: mean proportion of nitrogen at 0-15 cm deep.](output/publication_figures/spatial_modeling_locust_env_map.png){#fig-spatial-modeling-env-map}
+![Locust survey data map and soil nutrients throughout the *C. terminifera* distribution. A: APLC survey dataset, B: mean proportion of nitrogen at 0-15 cm deep, C: mean proportion phosphorous at 0-15cm deep.](output/publication_figures/spatial_modeling_locust_env_map.png){#fig-spatial-modeling-env-map}
 
 ## Statistics
 
-All statistics were conducted with a generalized additive mixed modeling (GAMM) approach when possible. This allowed us to test for non-linear and linear trends in the dataset and specify the hierarchical nature of the data. All statistics were conducted in R and python. All scripts and packages used can be seen within the project code repository: [github repo](/path/to/repo)
+All statistics were conducted with a generalized additive mixed modeling (GAMM) approach when possible. This allowed us to test for non-linear and linear trends in the dataset and specify the hierarchical nature of the data. All statistics were conducted in R and python. All scripts and packages used can be seen within the project code repository: [github repo](https://github.com/ddlawton/herbivore_nutrient_interactions)
 
 ### Intake Targets
 
-To determine intake targets, we constructed GAM (family: Multivariate Normal Distribution, Link: Identity) with the following variables when possible: diet pairing (factor), locust sex (factor), time period interval (integer), locust initial weight (numeric) following roughly the procedure found in @lawton_mismatched_2021. We selected the inclusion of locust weight as either a non-linear or linear effect via Akaike information criterion (AIC), AIC adjusted for small sample size (AICc), and Bayesian information criterion (BIC). If weight was not an important variable, it was removed entirely from the model.
+To determine intake targets, we constructed generalized additive model (GAM) (family: Multivariate Normal Distribution, Link: Identity) with the following variables when possible: diet pairing (factor), locust sex (factor), time period interval (integer), locust initial weight (numeric) following roughly the procedure found in @lawton_mismatched_2021. We selected the inclusion of locust weight as either a non-linear or linear effect via Akaike information criterion (AIC), AIC adjusted for small sample size (AICc), and Bayesian information criterion (BIC). If weight was not an important variable, it was removed entirely from the model.
 
 ### Field population
 
 We calculated intake targets as discussed above. To see the impact of confined diet treatments, we constructed GAMs (family: gaussian, link: identity) with the following variables: treatment (factor), locust sex (factor), population (factor), and locust initial weight (numeric).
 
-### Field Cage
+### Field Cage Experiments
 
-We assessed plant nutrients with a GAMM (family: Multivariate Normal Distribution, link: identity) and included the following variables: plant carbohydrate (numeric, dependent), plant protein (numeric, dependent), treatment (factor, independent), cage (factor, random effect), plot (factor, random effect), and plant species (random effect). Redressing intake targets were conducted as discussed above (section 2.5.1). To see the difference between physiological performance and fertilizer treatments, we constructed GAMMs (family: Scaled T distribution, link: identity) for final locust mass. The independent variables in all models were treatment (factor), sex (factor), a two-dimensional smoother of available protein and carbohydrate, and cage number as a random effect. For both final adult proportion and survival proportion, we constructed a GAM (Family: gaussian, Link: identity) and included the following variables: treatment (factor) and a two-dimensional smoother of available protein and carbohydrate.
+We assessed plant nutrients with a generalized additive mixed model (GAMM) (family: Multivariate Normal Distribution, link: identity) and included the following variables: plant carbohydrate (numeric, dependent), plant protein (numeric, dependent), treatment (factor, independent), cage (factor, random effect), plot (factor, random effect), and plant species (random effect). Redressing intake targets were conducted as discussed above (section 2.5.1). To see the difference between physiological performance and fertilizer treatments, we constructed GAMMs (family: Scaled T distribution, link: identity) for final locust mass. The independent variables in all models were treatment (factor), sex (factor), a two-dimensional smoother of available protein and carbohydrate, and cage number as a random effect. For both final adult proportion and survival proportion, we constructed a GAM (Family: gaussian, Link: identity) and included the following variables: treatment (factor) and a two-dimensional smoother of available protein and carbohydrate.
 
 ### Historical outbreaks and soil nutrient grid modeling
 
-To relate nymph survey grids to soil nitrogen and phosphorus, we constructed two GAMMs (family: tweedie, link: log) predicting the number of outbreaks (APLC Survey Category 4) and nil observations (category 0). Since both soil nitrogen and mean annual precipitation are highly correlated (Pearson correlation = 0.93) with both variables decreasing going into the arid interior of Australia, we are unable to add precipitation directly to the model as it would bias the results. Instead, we built a comparison model with mean annual precipitation between 2000 and 2017 switched for soil nitrogen. To do this, we calculated the average precipitation between 2000 and 2017 for all survey grids using the European Centre for Medium-Range Weather Forecasts’ ERA5 reanalysis dataset [@munoz-sabater_era5-land_2021]. This allowed us to visually compare the effect differences of soil nitrogen and mean annual precipitation on locust outbreaks. In other words, if soil nitrogen and mean annual precipitation were so tightly correlated that the effects are indistinguishable, the modeled results should look very similar. The soil models had the following independent variables: soil nitrogen, phosphorus, latitude / longitude, bioregion, and the number of observations within each grid. For the precipitation model, all variables were the same except mean annual precipitation replaced soil nitrogen and phosphorus. The inclusion of bioregions as a random effect allowed us to account for variation due to vegetation community and soil characteristics. The inclusion of latitude and longitude allowed us to account for spatial autocorrelation [@clayton_spatial_1993]. Lastly, the inclusion of the total number of observations allowed us to account for sampling intensity biases.
+To relate nymph survey grids to soil nitrogen and phosphorus, we constructed two GAMMs (family: tweedie, link: log) predicting the number of outbreaks (APLC Survey Category 4) and nil observations (category 0). Since soil nitrogen and mean annual precipitation are highly correlated with both variables decreasing going into the arid interior of Australia, we are unable to add precipitation directly to the model as it would bias the results. Instead, we built a comparison model with mean annual precipitation between 2000 and 2017 switched for soil nitrogen. To do this, we calculated the average precipitation between 2000 and 2017 for all survey grids using the European Centre for Medium-Range Weather Forecasts’ ERA5 reanalysis dataset [@munoz-sabater_era5-land_2021]. This allowed us to visually compare the effect differences of soil nitrogen and mean annual precipitation on locust outbreaks. In other words, if soil nitrogen and mean annual precipitation were so tightly correlated that the effects are indistinguishable, the modeled results should look very similar. The soil models had the following independent variables: soil nitrogen, phosphorus, latitude / longitude, bioregion, and the number of observations within each grid. For the precipitation model, all variables were the same except mean annual precipitation replaced soil nitrogen and phosphorus. The inclusion of bioregions as a random effect allowed us to account for variation due to vegetation community and soil characteristics [@lawton_seeing_2022]. The inclusion of latitude and longitude allowed us to account for spatial autocorrelation [@clayton_spatial_1993]. Lastly, the inclusion of the total number of observations allowed us to account for sampling intensity biases.
 
 # RESULTS
 
@@ -262,15 +260,10 @@ To relate nymph survey grids to soil nitrogen and phosphorus, we constructed two
 
 ### Choice experiment (nutritional target)
 
-*C. terminifera* individuals from the two outbreaking populations regulated to a specific ratio of 1 protein : 2 carbohydrate (@fig-field-pop-it-results A,@tbl-field-population-it-model). Model selection can be seen in @supptbl-field-population-choice-experiment-model-selection-criteria. Consumption in the two diet pairings did not differ, indicating non-random feeding (@suppfig-field-pop-nutrients A, @tbl-field-population-it-model). While the protein : carbohydrate ratio did not change, females consumed more food than males, likely due to being bigger overall (@suppfig-field-pop-nutrients B, @tbl-field-population-it-model).
+*Chortoicetes terminifera* individuals from the two outbreaking populations regulated to a specific ratio of 1 protein : 2 carbohydrate (@fig-field-pop-it-results A,@tbl-field-population-it-model). Model selection can be seen in @supptbl-field-population-choice-experiment-model-selection-criteria. Consumption in the two diet pairings did not differ, indicating non-random feeding (@suppfig-field-pop-nutrients A, @tbl-field-population-it-model). While the protein : carbohydrate ratio did not change, females consumed more food than males, likely due to being bigger overall (@suppfig-field-pop-nutrients B, @tbl-field-population-it-model).
 
+::: {#tbl-field-population-it-model}
 ```{r, field population it table}
-#| label: tbl-field-population-it-model
-#| tbl-cap:
-#|   - "Generalized additive model results for macronutrient consumption (carbohydrate and protein) of two outbreaking populations of *C. terminifera* in Mendooran and Guntawang. Models were selected via AIC, AICc and BIC which can be seen in @supptbl-field-population-choice-experiment-model-selection-criteria. Family: multivariate gaussian distribution, link: identity, SE: standard error."
-#| 
-#| layout-nrow: 1
-
 library(tidyverse)
 library(here)
 library(gt)
@@ -292,19 +285,17 @@ table_dat  |>
 
 ```
 
+Generalized additive model results for macronutrient consumption (carbohydrate and protein) of two outbreaking populations of *C. terminifera* in Mendooran and Guntawang. Models were selected via AIC, AICc and BIC which can be seen in @supptbl-field-population-choice-experiment-model-selection-criteria. Family: multivariate gaussian distribution, link: identity, SE: standard error.
+:::
+
 ### No choice experiment (performance curves)
 
-*C. terminifera* had higher specific mass growth rates and shorter development times on the 1 protein : 2 carbohydrate (14 protein : 28 carbohydrate) diet as compared to the other diets (@fig-field-pop-it-results B & C, @tbl-field-population-no-choice-model, @supptbl-field-population-no-choice-experiment-phys-post-hoc). Development time and specific growth rate did not differ between male and female locusts (@suppfig-field-pop-nutrients C & D, @tbl-field-population-no-choice-model).
+*Chortoicetes terminifera* had higher specific mass growth rates and faster development times on the 1 protein : 2 carbohydrate (14 protein : 28 carbohydrate) diet as compared to the other diets (@fig-field-pop-it-results B & C, @tbl-field-population-no-choice-model, @supptbl-field-population-no-choice-experiment-phys-post-hoc). Development time and specific growth rate did not differ between male and female locusts (@suppfig-field-pop-nutrients C & D, @tbl-field-population-no-choice-model).
 
 ![The nutritional preference (A) and physiological performance (B & C) of *C. terminifera* individuals that were collected from two marching bands of 5th instars. Raw data is shown as black dots with modeled estimated margial means as large diamonds or triangles.](output/publication_figures/field_population_intake_target_figure.png){#fig-field-pop-it-results}
 
+::: {#tbl-field-population-no-choice-model}
 ```{r, field population no choice table}
-#| label: tbl-field-population-no-choice-model
-#| tbl-cap:
-#|   - "*C. terminifera* physiological performance (specific growth rate and development time) when constrained to specific diets with varying protein and carbohydrate content. SE: standard error. Posthoc comparisons for both physiological performance metrics can be seen in @supptbl-field-population-no-choice-experiment-phys-post-hoc."
-#| 
-#| layout-nrow: 2
-
 library(tidyverse)
 library(here)
 library(gt)
@@ -335,21 +326,19 @@ table_dat |>
 
 ```
 
+*Chortoicetes terminifera* physiological performance (specific growth rate and development time) when constrained to specific diets with varying protein and carbohydrate content. SE: standard error. Posthoc comparisons for both physiological performance metrics can be seen in @supptbl-field-population-no-choice-experiment-phys-post-hoc.
+:::
+
 ## Field Cage
 
 For the first 11 days of the 14 day field cage experiment, plant protein and carbohydrate contents remained consistently protein-biased for all treatments (@fig-field-cage-time-results A-C, @tbl-field-cage-plant-nutrients), and only showed differences in protein content by the last sample period on December 1, which was after the end of the locust cage experiment. Accordingly, there was no effect of fertilizer on locust survival and adult proportion (@fig-field-cage-time-results D-F, @tbl-field-cage-locust-mass). Locusts that were retrieved from field cages after nine days and were given a choice to regulate protein and carbohydrate intake showed a pattern consistent with rebalancing a shortage of carbohydrates (@fig-field-cage-it-rebalancing, @tbl-field-cage-rebalancing, @suppfig-field-cage-rebalancing-facet). Irrespective of fertilizer treatment group, locusts initially selected very carbohydrate biased diets, but gradually, after 9 days, their trajectory returned close to the predicted intake target of 1p : 2c (@fig-field-cage-it-rebalancing, @suppfig-field-cage-rebalancing-facet).
 
-![Nitrogen addition field cage experiments with plant nutrient change through time (A-C) and grasshopper performance metrics (D-F) are shown. Dashed line represents a 1p : 2c ratio, the solid line represents a 1p : 1c ratio. Black dots in B represent means.](output/publication_figures/field_cage_plant_locust_figure.png){#fig-field-cage-time-results}
+![Nitrogen addition field cage experiments with plant nutrient change through time (A) and grasshopper performance metrics (B-C) are shown. Dashed line represents a 1p : 2c ratio, the solid line represents a 1p : 1c ratio. Black dots in B represent overall means whereas boxplots represent the lower, median, and upper quartlies.](output/publication_figures/field_cage_plant_locust_figure.png){#fig-field-cage-time-results}
 
-![Nutrient imbalance redressing with artificial diet mixing of *C. terminifera* individuals taken from fertilized treatment cages. Colors represent treatment. Smaller lines represent raw individual locust intake targets with large lines and points representing estimated marginal means. Individual time step targets can be seen in @suppfig-field-cage-rebalancing-facet.](output/publication_figures/field_cage_locust_intake_target_rebalancing.png){#fig-field-cage-it-rebalancing}
+![Nutrient imbalance redressing with artificial diet mixing of *C. terminifera* individuals taken from fertilized treatment cages. Colors represent fertilizer treatment. Smaller lines represent raw individual locust intake targets; large lines and points represent estimated marginal means. Points along each line represent sampling times on days 1, 2, 4, 6, and 9. Individual time step targets can be seen in @suppfig-field-cage-rebalancing-facet.](output/publication_figures/field_cage_locust_intake_target_rebalancing.png){#fig-field-cage-it-rebalancing}
 
+::: {#tbl-field-cage-plant-nutrients}
 ```{r, field cage plant nutrient change}
-#| label: tbl-field-cage-plant-nutrients
-#| tbl-cap:
-#|   - "Generalized additive model results for plant macronutrient (carbohydrate and protein) differences between fertilization treatment. Family: multivariate gaussian distribution, link: identity, SE: standard error, s() denotes a smoothing parameter."
-#| 
-#| layout-nrow: 1
-
 library(tidyverse)
 library(here)
 library(gt)
@@ -366,15 +355,14 @@ table_dat  |>
     columns = everything(),
     missing_text = ""
   )
+
 ```
 
-```{r, field cage locust mass}
-#| label: tbl-field-cage-locust-mass
-#| tbl-cap:
-#|   - "Generalized additive model results for differences between final locust mass after the nitrogen fertilization experiment finished. Family: scaled T, link: identity, SE: standard error, and s() denotes a smoothing parameter."
-#| 
-#| layout-nrow: 1
+Generalized additive model results for plant macronutrient (carbohydrate and protein) differences between fertilization treatment. Family: multivariate gaussian distribution, link: identity, SE: standard error, s() denotes a smoothing parameter.
+:::
 
+::: {#tbl-field-cage-locust-mass}
+```{r, field cage locust mass}
 library(tidyverse)
 library(here)
 library(gt)
@@ -398,13 +386,11 @@ table_dat  |>
   )
 ```
 
-```{r, field cage rebalancing}
-#| label: tbl-field-cage-rebalancing
-#| tbl-cap:
-#|   - "Generalized additive model results for nutrient imbalance dressing of field cage *C. terminifera* in the control and high fertilization treatments. Model also included interactive terms; however, none were significant and left out. SE: standard error and s() denotes a smoothing parameter."
-#| 
-#| layout-nrow: 1
+Generalized additive model results for differences between final locust mass after the nitrogen fertilization experiment finished. Family: scaled T, link: identity, SE: standard error, and s() denotes a smoothing parameter.
+:::
 
+::: {#tbl-field-cage-rebalancing}
+```{r, field cage rebalancing}
 library(tidyverse)
 library(here)
 library(gt)
@@ -425,28 +411,22 @@ table_dat  |>
   )
 ```
 
+Generalized additive model results for nutrient imbalance dressing of field cage *C. terminifera* in the control and high fertilization treatments. Model also included interactive terms; however, none were significant and left out. SE: standard error and s() denotes a smoothing parameter.
+:::
+
 ## Locust outbreaks
 
-*C. terminifera* outbreaks were negatively associated with soil nitrogen, which supports the hypothesis that nitrogen (in excess) acts as a limiting factor for population upsurges (@tbl-spatial-modeling-outbreak-model-results, @fig-spatial-model-nto-pto A). *C. terminifera*s had a nonlinear relationship with soil phosphorus with outbreaks occurring more often in areas with approximately 4% soil phosphorus and were strongly negatively associated with increasing phosphorus afterwards (@fig-spatial-model-nto-pto B). For both nutrients, the absence models had a very weak relationship with soil nutrient in comparison to the outbreak models, demonstrating little model bias due to APLC survey protocol. There were significant nonlinear relationships between coordinates and the total number of observations in all models (@suppfig-spatial-modeling-outbreak-all-vars; @suppfig-spatial-modeling-nil-all-vars). The relationship between locust outbreaks and mean annual precipitation was very different from the relationship with soil nitrogen ( @fig-spatial-model-nto-pto, @suppfig-spatial-modeling-map-outbreak-corr). Soil nitrogen and phosphorus show weak positive correlations with woody vegetation cover, while mean annual precipitation exhibits high variation in its relationship with soil nitrogen and weak correlation with soil phosphorus (@suppfig-spatial-modeling-env-corr). Thus, the relationship between soil nitrogen and locust outbreaks cannot be fully explained by differences in woody vegetation.
+*Chortoicetes terminifera* outbreaks were negatively associated with soil nitrogen, which supports the hypothesis that nitrogen (in excess) acts as a limiting factor for population upsurges (@tbl-spatial-modeling-outbreak-model-results, @fig-spatial-model-nto-pto A). *C. terminifera*s had a nonlinear relationship with soil phosphorus with outbreaks occurring more often in areas with approximately 4% soil phosphorus and were strongly negatively associated with increasing phosphorus afterwards (@fig-spatial-model-nto-pto B). For both nutrients, the absence models had a very weak relationship with soil nutrient in comparison to the outbreak models, demonstrating little model bias due to APLC survey protocol. There were significant nonlinear relationships between coordinates and the total number of observations in all models (@suppfig-spatial-modeling-outbreak-all-vars; @suppfig-spatial-modeling-nil-all-vars). The relationship between locust outbreaks and mean annual precipitation was very different from the relationship with soil nitrogen ( @fig-spatial-model-nto-pto, @suppfig-spatial-modeling-map-outbreak-corr). Soil nitrogen and phosphorus show weak positive correlations with woody vegetation cover, while mean annual precipitation exhibits high variation in its relationship with soil nitrogen and weak correlation with soil phosphorus (@suppfig-spatial-modeling-env-corr). Thus, the relationship between soil nitrogen and locust outbreaks cannot be fully explained by differences in woody vegetation.
 
 ![Relationship between outbreaks and nil observations for both soil nitrogen (A) and phosphorus (B). Partial effect is the modeled predictions after accounting for bioregion and spatial autocorrelation.](output/publication_figures/spatial_modeling_locust_outbreak_with_soil_NTO_PTO.png){#fig-spatial-model-nto-pto}
 
-```{r, supplementary field population no choice experiment model selection criteria}
-#| label: tbl-spatial-modeling-outbreak-model-results
-#| tbl-cap:
-#|   - "Historical locust presence data modeling with soil nitrogen for outbreak, low presence, and no observation records with r-square and deviance explain reported. Family: tweedie, link: log, edf = estimated degrees freedom."
-#| 
-#| layout-nrow: 1
-
-
+::: {#tbl-spatial-modeling-outbreak-model-results}
+```{r, spatial modeling outbreak model results}
 library(tidyverse)
 library(here)
 library(gt)
 
-
-
-table_dat <- read_csv(here("output/spatial_modeling/map_outbreak_model_results.csv")) 
-
+table_dat <- read_csv(here("output/spatial_modeling/map_outbreak_model_results.csv"))
 
 table_dat |>
   rename(`p-value` = p.value) |>
@@ -466,8 +446,10 @@ table_dat |>
     starts_with("p-value") ~ "p-value",
     starts_with("term") ~ "variable") |>
   fmt_number(decimals = 3)
-
 ```
+
+Historical locust presence data modeling with soil nitrogen for outbreak, low presence, and no observation records with r-square and deviance explain reported. Family: tweedie, link: log, edf = estimated degrees freedom.
+:::
 
 # DISCUSSION
 
@@ -489,7 +471,7 @@ Lastly, our results suggest that forecasting efforts for locusts should consider
 
 ## Locusts are more likely to be limited by high nitrogen environments than other grasshoppers
 
-A five-decade review of grasshopper responses to plant nitrogen content showed that grasshoppers not classified as locusts have a variation of negative, neutral, and positive responses to increasing plant nitrogen [@cease_how_2024]. Looking just at field surveys, there are more reports of a negative correlation between plant nitrogen and non-locust grasshopper abundance (17 reports) relative to neutral (6 reports) or positive (9 reports). This pattern corroborates long-term studies showing that dilution of plant nitrogen is correlated with declines of North American grasshopper populations [@welti_nutrient_2020]. Of the studies that report correlations between individual grasshopper species abundance and plant nitrogen, most are from graminivorous (grass-feeding) species (11 reports), with 7 reports from mixed (grasses and forbs) or forb feeders [@cease_how_2024]. The abundance of non-locust graminivorous species tended to be more positively correlated with plant nitrogen, which would support the hypothesis that grass-feeders are more likely to be nitrogen-limited because grasses tend to have lower p:c ratios than forbs; although this trend was not significant and grass-feeders also regularly showed negative responses to high plant nitrogen. In contrast, there was a consistent negative effect of high plant nitrogen on locust species, regardless of whether they were graminivorous or mixed feeders. Because mass specific protein consumption is highly correlated with growth rate in both lab and field populations, but carbohydrate consumption is highly influenced by the environment [@talal_body_2023], it is most likely that locusts have similar protein requirements as other non-locust grasshopper species, but have much higher carbohydrate demands, potentially to support migration [@raubenheimer_integrative_1997; @talal_high_2021; @talal_body_2023]. Locusts are able to meet this increased demand for carbohydrate, while keeping protein consumption constant, by eating larger amounts of low p:c plants found in low nitrogen environments. In summary, these studies suggest that nymphal outbreaks of all locust species may be negatively correlated with soil nitrogen across continental scales, but that the correlation between plant nitrogen and non-locust grasshoppers may not be significant or consistent through space and time.
+A five-decade review of grasshopper responses to plant nitrogen content showed that grasshoppers not classified as locusts have a variation of negative, neutral, and positive responses to increasing plant nitrogen [@cease_how_2024]. Looking just at field surveys, there are more reports of a negative correlation between plant nitrogen and non-locust grasshopper abundance (17 reports) relative to neutral (6 reports) or positive (9 reports). This pattern corroborates long-term studies showing that dilution of plant nitrogen is correlated with declines of North American grasshopper populations [@welti_nutrient_2020]. Of the studies that report positive correlations between individual grasshopper species abundance and plant nitrogen, most are from graminivorous (grass-feeding) species (11 reports), with 7 reports from mixed (grasses and forbs) or forb feeders [@cease_how_2024]. This pattern supports the hypothesis that grass-feeders are more likely to be nitrogen-limited because grasses tend to have lower p:c ratios than forbs; although this trend was not significant and grass-feeders also regularly showed negative responses to high plant nitrogen. In contrast, there was a consistent negative effect of high plant nitrogen on locust species, regardless of whether they were graminivorous or mixed feeders. Because mass specific protein consumption is highly correlated with growth rate in both lab and field populations, but carbohydrate consumption is highly influenced by the environment [@talal_body_2023], it is most likely that locusts have similar protein requirements as other non-locust grasshopper species, but have much higher carbohydrate demands, potentially to support migration [@raubenheimer_integrative_1997; @talal_high_2021; @talal_body_2023]. Locusts are able to meet this increased demand for carbohydrate, while keeping protein consumption constant, by eating larger amounts of low p:c plants found in low nitrogen environments. In summary, these studies suggest that nymphal outbreaks of all locust species may be negatively correlated with soil nitrogen across continental scales, but that the correlation between plant nitrogen and non-locust grasshoppers may not be significant or consistent through space and time.
 
 ## Comparing the relationship between plant macronutrients and herbivore abundance in other taxa
 
@@ -501,7 +483,7 @@ Making predictions about a population’s nutritional demands can aid in making 
 
 ## Synthesis and Application
 
-Acquiring the right amount of nutrients is a critical component for animal growth, reproduction, and population dynamics [@doonan_effects_1995; @hansson_food_1979; @keith_role_1983]. However, in contrast to the conventional hypotheses that predict a broad positive linear relationship between herbivorous populations and nitrogen and phosphorus [@huberty_consequences_2006; @mattson_herbivory_1980; @white_importance_1978; @white_inadequate_1993], the story is nuanced and probably most often non-linear. For some species, especially those with high energy requirements, the relationship is the opposite (negatively associated with nitrogen) like many locust species and the effects can be seen at the continental scale. Land use and Land Cover Change (LULCC) impact on nutritional environments has important implications for animal population dynamics from conservation to pest management. While we did not make an explicit connection between LULCC and locust outbreaks in Australia, our results are consistent with previous research showing that LULCC that decreases soil quality and creates low nitrogen environments increases physiological performance and outbreaks of locusts (reviewed in @le_gall_global_2019). Most importantly, we show that this relationship is consistent between scales from the individual locust to continental wide outbreaks. As such, proper management of soil nutrients can help keep locust populations from reaching outbreak sizes and should be considered across scales, from individual locust behavior to continental wide plagues.
+Acquiring the right amount of nutrients is a critical component for animal growth, reproduction, and population dynamics [@doonan_effects_1995; @hansson_food_1979; @keith_role_1983]. However, in contrast to the conventional hypotheses that predict a broad positive linear relationship between herbivorous populations and nitrogen and phosphorus [@huberty_consequences_2006; @mattson_herbivory_1980; @white_importance_1978; @white_inadequate_1993], the story is nuanced and probably most often non-linear. For some species, especially those with high energy requirements, the relationship is the opposite (negatively associated with nitrogen) like many locust species and the effects can be seen at the continental scale. Land use and Land Cover Change (LULCC) impact on nutritional environments has important implications for animal population dynamics from conservation to pest management. While we did not make an explicit connection between LULCC and locust outbreaks in Australia, our results are consistent with previous research showing that LULCC that decreases soil quality and creates low nitrogen environments increases physiological performance and outbreaks of locusts (reviewed in @le_gall_global_2019). Most importantly, we show that this relationship is consistent between scales from the individual locust to continental wide outbreaks. As such, proper management of soil nutrients can help keep locust populations from reaching outbreak sizes and should be considered across scales, from individual locust behavior to continental-wide plagues.
 
 # REFERENCES
 
@@ -512,7 +494,7 @@ Acquiring the right amount of nutrients is a critical component for animal growt
 
 ![Field cage soil nitrogen content by treatment (A & B) and regressed with plant carbohydrates and protein (C-F).](output/publication_figures/field_cage_plant_and_soil_nutrient_correlations.png){#suppfig-field-cage-plant-soil-nutrient-correlations width="80%"}
 
-![Map showing how we summarized point observation data to a fishnet grid throughout eastern Australia. Entire extent can be seen in the inlet map. We summed the number of 4 (outbreak) observations, nil observations (0), and the total observations. Grid not at a 1 km^2^ scale in this figure for demonstration purposes as the cells would be too small to see.](output/publication_figures/spatial_modeling_grid_example_map.png){#suppfig-grid-example}
+![Map illustrating the summarization of point observation data into a fishnet grid across eastern Australia. The full extent is shown in the inset map. We summed the number of outbreak, nil, and total observations. The grid in this figure is not at a 1 km^2^ scale for demonstration purposes, as the cells would be too small to see.](output/publication_figures/spatial_modeling_grid_example_map.png){#suppfig-grid-example}
 
 ![Nutrient consumption for outbreaking field populations of *C. terminifera* by diet pair (A) and sex (B) and development time (C) specific growth rate (D) by sex. The P:C ratio did not differ between diet pairing and sex. Females consumed more diet (but kept the same ratio) than males. Big circles represent estimated marginal means from the model while little circles represent raw data.](output/publication_figures/supplement_figure_3.png){#suppfig-field-pop-nutrients}
 
@@ -554,7 +536,17 @@ table_dat |>
   mutate(`Soil NO3` = ifelse(duplicated(`Soil NO3`), "", `Soil NO3`)) |>
   mutate(`Soil NO4` = ifelse(duplicated(`Soil NO4`), "", `Soil NO4`)) |>
   mutate(species = species_map[species]) |>  # Apply species mapping
+  rename(`Plant C mg/mg` = `Plant C`,
+    `Plant C mg/mg` = `Plant C`,
+    `Plant Protein mg/mg` = `Plant Protein`,
+    `Plant Carbohydrate mg/mg` = `Plant Carbohydrate`,
+    `Soil NO3 mg/L` = `Soil NO3`,
+    `Soil NO4 mg/L` = `Soil NO4`) |>
   gt() |>
+  cols_label(
+    `Soil NO3 mg/L` = html("Soil NO<sup>3</sup> mg/L"),
+    `Soil NO4 mg/L` = html("Soil NO<sup>4</sup> mg/L")
+  ) |>
   tab_style(
     style = cell_text(style = "italic"),
     locations = cells_body(
@@ -587,14 +579,25 @@ table_dat <- read_csv(here('output/publication_tables/field_cage_plant_ground_co
 table_dat |> 
   pivot_longer(cols = !treatment) |>
   pivot_wider(names_from = treatment, values_from = value) |>
-  mutate(plant = gsub('plant_cover', 'plant cover', name)) |>
+  mutate(plant = gsub('plant_cover', 'plant cover', name),
+    None = None/100,
+    Medium = Medium/100,
+    High = High/100) |>
   select(plant, None, Medium, High) |>
   gt() |>
-  fmt_number(decimals = 2) |>
+  cols_label(
+    `None` = html("None"),
+    `Medium` = html("Medium"),
+    `High` = html("High"),
+  ) |>
+  fmt_percent(
+    columns = c('None','Medium','High'),
+    decimals = 1
+  ) |>
   tab_style(
     style = cell_text(style = "italic"),
     locations = cells_body(
-      columns = vars(plant),
+      columns = c(plant),
       rows = plant %in% c("Urochloa panicoides", 
                           "Enteropogon acicularis", 
                           "Austrodanthonia caespitosa", 
@@ -618,8 +621,7 @@ table_dat <- read_csv(here('output/publication_tables/field_population_choice_ex
 table_dat |> 
   gt() |>
   fmt_number(decimals = 2)   |> 
-  tab_options(table.width = pct(100),
-    table.font.size = 11)
+  tab_options(table.width = pct(100),table.font.size = 11)
 ```
 
 Model selection criteria via Akaike information criterion (AIC), AIC corrected for small sample size (AICc), and bayesian information criterion. Model formula with the dependent variable on the left side and independent variables on the right side of the equation. For all criteria, the lower the number, more negative in this case, the better fit model.
@@ -651,5 +653,5 @@ table_dat |>
 
 ```
 
-Posthoc comparisons for diet treatments for C. terminifera individual specific growth rate and development time. SE = standard error
+Posthoc comparisons for diet treatments for *C. terminifera* individual specific growth rate and development time. SE = standard error
 :::
