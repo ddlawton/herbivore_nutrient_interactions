@@ -1,0 +1,20 @@
+\usepackage{pdflscape}
+\usepackage{fancyhdr}
+\usepackage{lscape}
+\usepackage{pdflscape}
+\usepackage{fancyhdr}
+
+% Redefine landscape commands for easier use
+\newcommand{\blandscape}{\begin{landscape}}
+\newcommand{\elandscape}{\end{landscape}}
+
+% Custom page style for landscape pages
+\fancypagestyle{landscape}{%
+  \fancyhf{} % Clear all header and footer fields
+  \fancyfoot[C]{\thepage} % Center page number on long edge
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+% Hook into the landscape environment
+\AtBeginEnvironment{landscape}{\pagestyle{landscape}}

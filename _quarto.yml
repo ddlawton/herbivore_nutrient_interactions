@@ -41,6 +41,7 @@ format:
   jats: default
   arxiv-pdf:
     keep-tex: true
+    include-in-header: header.tex
     cite-method: natbib
     linenumbers: true
     runninghead: "initial submission"
