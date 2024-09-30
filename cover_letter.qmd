@@ -1,15 +1,28 @@
-Dear Editors, 
+---
+title: "Cover Letter"
+author: "Douglas Lawton"
+format:
+  pdf:
+    documentclass: article
+---
 
-We are submitting our manuscript titled "Exploring Nutrient Availability and Herbivorous Insect Population Dynamics Across Multiple Scales" for publication in Functional Ecology. Our study investigates the intricate relationship between nutrient availability and the population dynamics of herbivorous insects across spatial scales. 
+Dear Editors,
 
-Understanding the environmental drivers of animal population dynamics, particularly in relation to nutrient availability, is crucial for ecological research. While nitrogen (N) and phosphorus (P) have traditionally been associated with positive population growth across trophic levels, recent studies have challenged this assumption. We investigate the influence of nutrient availability on herbivorous insect population dynamics across multiple scales, ranging from local to continental adding critical insight to the discussion. 
+We are resubmitting our manuscript titled "Exploring Nutrient Availability and Herbivorous Insect Population Dynamics Across Multiple Scales" for publication in Functional Ecology. We have thoroughly revised the manuscript in response to the feedback provided by Dr. Enrico Rezende, and we believe these revisions have strengthened the work considerably.
 
-By providing novel insights into the suppressive effects of soil nitrogen and the non-linear correlation with soil phosphorus (specifically a peak approximately at 4%), our research elucidates the nuanced nature of nutrient regulation and its implications for herbivorous insect outbreaks across varying spatial scales. Incorporating historical locust outbreak data and a comprehensive soil nutrient database for the Australian continent, we establish correlations between nutrient availability and locust outbreaks, thereby offering a comprehensive analysis of nutrient limitation and its potential for forecasting not only locust outbreaks but also those of other insect pests globally. 
+Specifically, we have addressed the request to include the data points in Supplementary Figures 1, 5, and 7, ensuring that both the raw data (or adjusted values) and the model results are presented clearly. This addition allows readers to visualize the dispersion of the data alongside the model outcomes. Furthermore, we have clarified the units in all relevant plots, such as mean annual precipitation in Figure 7, which is now correctly expressed in millimeters. Lastly to ensure reproducibility, the entire project from coding/modeling to manuscript writing can be seen in the github repository for this project: https://github.com/ddlawton/herbivore_nutrient_interactions.
 
-Our manuscript aligns with the aims and scopes of Functional Ecology by providing a detailed, integrated analysis of nutrient limitation in animal population dynamics across multiple scales. We contribute to the journal's interest in advancing our mechanistic understanding of ecology by exploring the impact of physiology on the ecology of animals and plants. It is 11,300 words long with roughly 2,700 words being in the reference section as this allowed us to cite the necessary research to position this work in a broader context while providing a historical perspective. We have also taken suggestions from Dr Enrico Rezende and clarified supplementary figures 1, 5 and 7. Lastly, the entire manuscript processed from data management, anaylsis, and writing is reprodicible and will be made available on github at time of publication.
+Our study investigates the intricate relationship between nutrient availability and the population dynamics of herbivorous insects across spatial scales. Understanding the environmental drivers of animal population dynamics, particularly in relation to nutrient availability, is crucial for ecological research. While nitrogen (N) and phosphorus (P) have traditionally been associated with positive population growth across trophic levels, recent studies have challenged this assumption. We investigate the influence of nutrient availability on herbivorous insect population dynamics across multiple scales, ranging from local to continental, adding critical insight to the discussion.
 
-In the face of climate change and land use practices, understanding the intricate interaction between animals and nutrient availability at large spatial scales is of paramount importance. Our study not only enhances the understanding of herbivorous insect population dynamics but also contributes to ecological discussions surrounding soil degradation and insect pest management. 
+By providing novel insights into the suppressive effects of soil nitrogen and the non-linear correlation with soil phosphorus (specifically a peak approximately at 4%), our research elucidates the nuanced nature of nutrient regulation and its implications for herbivorous insect outbreaks across varying spatial scales. Incorporating historical locust outbreak data and a comprehensive soil nutrient database for the Australian continent, we establish correlations between nutrient availability and locust outbreaks, thereby offering a comprehensive analysis of nutrient limitation and its potential for forecasting not only locust outbreaks but also those of other insect pests globally.
+
+Our manuscript aligns with the aims and scope of Functional Ecology by providing a detailed, integrated analysis of nutrient limitation in animal population dynamics across multiple scales. We contribute to the journal's interest in advancing our mechanistic understanding of ecology by exploring the impact of physiology on the ecology of animals and plants. The manuscript is 11,300 words long, with approximately 2,700 words dedicated to the reference section, allowing us to cite the necessary research to position our work in a broader context while providing a historical perspective. We have also taken the suggestions from Dr. Rezende and clarified supplementary Figures 1, 5, and 7. Lastly, the entire manuscript, from data management and analysis to writing, is reproducible and will be made available on GitHub at the time of publication.
+
+In light of climate change and land use practices, understanding the intricate interaction between animals and nutrient availability at large spatial scales is of paramount importance. Our study not only enhances the understanding of herbivorous insect population dynamics but also contributes to ecological discussions surrounding soil degradation and insect pest management.
+
+We appreciate the opportunity to revise and resubmit our work, and we remain hopeful that these changes will meet the standards required for publication. We also appreciate the offer of language editing with Writefull, and we have used the service to further refine the manuscript.
+
+Thank you for considering our resubmission. We look forward to the possibility of contributing to Functional Ecology.
 
 Yours sincerely,
-Douglas Lawton and co-authors
-
+Douglas Lawton and co\-authors

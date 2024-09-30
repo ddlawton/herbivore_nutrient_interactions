@@ -174,11 +174,18 @@ library(gt)
 data <- tibble(
   `Scale of inference` = c("individual", "individual", "population", "landscape"),
   `Scale at which the factor of interest is applied` = c("populations", "field cages", "field cages", "populations"),
-  `Number of replicates at the appropriate scale` = c("150 locusts tested on varying macronutrient ratios with artificial diets.", "20 locusts in each cage", "36 cages in each fertilization treatment", "67144 1 km2 grids throughout Australia")
-)
+  `Number of replicates at the appropriate scale` = c(
+    "150 locusts tested on varying macronutrient ratios with artificial diets.",
+    "20 locusts in each cage",
+    "36 cages in each fertilization treatment",
+    "67,144 1 km<sup>2</sup> grids throughout Australia"
+  )
+) |> 
+  gt() |>
+  tab_options(table.width = pct(90), table.font.size = 11) |> 
+  fmt_markdown(columns = `Number of replicates at the appropriate scale`)
 
-data |> gt()
-
+data
 ```
 
 Replication statement for all scales of interest
@@ -218,7 +225,12 @@ $$
 \text{survival proportion} = \frac{\text{number live locusts}}{\text{initial number added} - \text{number locusts removed for secondary experiment}}
 $$
 
-We calculated the proportion molted to adult of the surviving locusts (# adults/# live locusts).
+We calculated the proportion molted to adult of the surviving locusts as:
+
+$$
+\frac{\text{\# adult locusts}}{\text{\# live locusts}}
+$$
+
 
 ## Correlating historical nymphal outbreaks with soil nitrogen and phosphorus
 
@@ -508,7 +520,10 @@ Acquiring the right amount of nutrients is a critical component for animal growt
 
 ![The relationship between locust outbreaks and nil observations and mean annual precipitation. This is included as a visual comparison for the soil nitrogen relationship seen in @fig-spatial-model-nto-pto](output/publication_figures/spatial_modeling_locust_outbreak_with_map.png){#suppfig-spatial-modeling-map-outbreak-corr}
 
+\blandscape
+
 ::: {#supptbl-field-cage-plant-soil-nutrients}
+
 ```{r, supplementary field cage plant soil nutrients}
 
 library(tidyverse)
@@ -531,41 +546,47 @@ species_map <- c(
 table_dat |> 
   arrange(treatment, `Soil NO3`, `Soil NO4`) |> 
   mutate(across(where(is.numeric), ~round(., 3)),
-    date = as.character(date)) |>
+         date = as.character(date)) |>
   mutate(treatment = ifelse(duplicated(treatment), "", treatment)) |> 
   mutate(`Soil NO3` = ifelse(duplicated(`Soil NO3`), "", `Soil NO3`)) |>
   mutate(`Soil NO4` = ifelse(duplicated(`Soil NO4`), "", `Soil NO4`)) |>
   mutate(species = species_map[species]) |>  # Apply species mapping
   rename(`Plant C mg/mg` = `Plant C`,
-    `Plant C mg/mg` = `Plant C`,
-    `Plant Protein mg/mg` = `Plant Protein`,
-    `Plant Carbohydrate mg/mg` = `Plant Carbohydrate`,
-    `Soil NO3 mg/L` = `Soil NO3`,
-    `Soil NO4 mg/L` = `Soil NO4`) |>
+         `Plant Protein mg/mg` = `Plant Protein`,
+         `Plant Carbohydrate mg/mg` = `Plant Carbohydrate`,
+         `Soil NO3 mg/L` = `Soil NO3`,
+         `Soil NO4 mg/L` = `Soil NO4`) |>
   gt() |>
   cols_label(
-    `Soil NO3 mg/L` = html("Soil NO<sup>3</sup> mg/L"),
-    `Soil NO4 mg/L` = html("Soil NO<sup>4</sup> mg/L")
+    `Soil NO3 mg/L` = md("Soil NO<sup>3</sup> mg/L"),
+    `Soil NO4 mg/L` = md("Soil NO<sup>4</sup> mg/L"),
+    `Plant C mg/mg` = md("Plant C mg/mg"),
+    `Plant Protein mg/mg` = md("Plant P mg/mg"),
+    `Plant Carbohydrate mg/mg` = md("Plant Carb mg/mg")
   ) |>
   tab_style(
     style = cell_text(style = "italic"),
     locations = cells_body(
-      columns = vars(species),
+      columns = c(species),
       rows = species %in% c("Digitaria spp.", 
-                          "Enteropogon spp.", 
-                          "Cyperus spp.", 
-                          "Plaspladium spp.", 
-                          "Rytidosperma spp.",
-                          "Austrostipa spp.")
+                            "Enteropogon spp.", 
+                            "Cyperus spp.", 
+                            "Plaspladium spp.", 
+                            "Rytidosperma spp.",
+                            "Austrostipa spp.")
     )
-  )  |> 
-  tab_options(table.width = pct(100),
-    table.font.size = 11)
+  ) |>
+  tab_options(table.width = pct(90),
+              table.font.size = 11)
+
 
 ```
 
-Field plot nutrient content for plant species collected from within the treatment plots but outside of the locust cages for three time points during the experiment. Soil nitrogen is also shown per each treatment. Trt = Treatment, C = carbon, N = Nitrogen, Prot = protein, Carb = Carbohydrates.
+Field plot nutrient content for plant species collected from within the treatment plots but outside of the locust cages for three time points during the experiment. Soil nitrogen is also shown per each treatment. Trt = Treatment, C = carbon, N = Nitrogen, P = protein, Carb = Carbohydrates.
 :::
+
+\elandscape
+
 
 ::: {#supptbl-field-cage-plant-ground-cover}
 ```{r, supplementary field cage plant ground cover}
@@ -604,7 +625,7 @@ table_dat |>
                           "Cyperus rotundus", 
                           "stipa species")
     )
-  ) 
+  )  
 ```
 
 Averaged plant ground cover (%) across all cages per treatment. Ground cover was estimated on November 11th, 2015.

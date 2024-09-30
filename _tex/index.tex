@@ -94,6 +94,26 @@
 \def\fps@figure{htbp}
 \makeatother
 
+\usepackage{pdflscape}
+\usepackage{fancyhdr}
+\usepackage{lscape}
+\usepackage{pdflscape}
+\usepackage{fancyhdr}
+
+% Redefine landscape commands for easier use
+\newcommand{\blandscape}{\begin{landscape}}
+\newcommand{\elandscape}{\end{landscape}}
+
+% Custom page style for landscape pages
+\fancypagestyle{landscape}{%
+  \fancyhf{} % Clear all header and footer fields
+  \fancyfoot[C]{\thepage} % Center page number on long edge
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+% Hook into the landscape environment
+\AtBeginEnvironment{landscape}{\pagestyle{landscape}}
 \usepackage{booktabs}
 \usepackage{caption}
 \usepackage{longtable}
@@ -195,7 +215,7 @@ dynamics, non-linear modeling, nutrient limitation, remote sensing},
 
 \usepackage{lineno}
 \linenumbers
-\renewcommand{\today}{2024-09-27}
+\renewcommand{\today}{2024-09-30}
 \newcommand{\runninghead}{A Preprint }
 \renewcommand{\runninghead}{initial submission }
 \title{Exploring Nutrient Availability and Herbivorous Insect Population
@@ -203,7 +223,7 @@ Dynamics Across Multiple Scales}
 \def\asep{\\\\\\ } % default: all authors on same column
 \def\asep{\And }
 \author{\asep\asep\asep\asep\asep\asep\asep\asep\asep}
-\date{2024-09-27}
+\date{2024-09-30}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -421,9 +441,10 @@ hierarchical structure of our experimental design across individual,
 population, and landscape levels.
 
 \begingroup
-\fontsize{12.0pt}{14.4pt}\selectfont
+\setlength\LTleft{0.05\linewidth}
+\setlength\LTright{0.05\linewidth}\fontsize{8.2pt}{9.9pt}\selectfont
 
-\begin{longtable}{lll}
+\begin{longtable}{@{\extracolsep{\fill}}lll}
 
 \toprule
 Scale of inference & Scale at which the factor of interest is applied & Number of replicates at the appropriate scale \\ 
@@ -431,7 +452,7 @@ Scale of inference & Scale at which the factor of interest is applied & Number o
 individual & populations & 150 locusts tested on varying macronutrient ratios with artificial diets. \\ 
 individual & field cages & 20 locusts in each cage \\ 
 population & field cages & 36 cages in each fertilization treatment \\ 
-landscape & populations & 67144 1 km2 grids throughout Australia \\ 
+landscape & populations & 67,144 1 km2 grids throughout Australia \\ 
 \bottomrule
 
 \caption{\label{tbl-replication-statement}Replication statement for all
@@ -596,7 +617,11 @@ nutritional status experiments as follows:
 \]
 
 We calculated the proportion molted to adult of the surviving locusts
-(\# adults/\# live locusts).
+as:
+
+\[
+\frac{\text{\# adult locusts}}{\text{\# live locusts}}
+\]
 
 \subsection{Correlating historical nymphal outbreaks with soil nitrogen
 and
@@ -1530,16 +1555,18 @@ Figure~\ref{fig-spatial-model-nto-pto}}
 
 \end{suppfig}%
 
+\blandscape
+
 \begin{supptbl}
 
 \centering{
 
 \begingroup
-\setlength\LTleft{0\linewidth}
-\setlength\LTright{0\linewidth}\fontsize{8.2pt}{9.9pt}\selectfont
+\setlength\LTleft{0.05\linewidth}
+\setlength\LTright{0.05\linewidth}\fontsize{8.2pt}{9.9pt}\selectfont
 \begin{longtable*}{@{\extracolsep{\fill}}llrrrrrrr}
 \toprule
-treatment & species & date & Plant C mg/mg & Plant N & Plant Protein mg/mg & Plant Carbohydrate mg/mg & Soil NO<sup>3</sup> mg/L & Soil NO<sup>4</sup> mg/L \\ 
+treatment & species & date & Plant C mg/mg & Plant N & Plant P mg/mg & Plant Carb mg/mg & Soil NO3 mg/L & Soil NO4 mg/L \\ 
 \midrule\addlinespace[2.5pt]
 High & {\itshape Digitaria spp.} & 2015-12-01 & 0.419 & 0.027 & 0.182 & 0.108 & 3.238 & 4.207 \\ 
  & {\itshape Enteropogon spp.} & 2015-11-11 & 0.425 & 0.030 & 0.199 & 0.128 &  &  \\ 
@@ -1584,10 +1611,11 @@ None & {\itshape Enteropogon spp.} & 2015-11-11 & 0.432 & 0.031 & 0.164 & 0.145 
 nutrient content for plant species collected from within the treatment
 plots but outside of the locust cages for three time points during the
 experiment. Soil nitrogen is also shown per each treatment. Trt =
-Treatment, C = carbon, N = Nitrogen, Prot = protein, Carb =
-Carbohydrates.}
+Treatment, C = carbon, N = Nitrogen, P = protein, Carb = Carbohydrates.}
 
 \end{supptbl}%
+
+\elandscape
 
 \begin{supptbl}
 

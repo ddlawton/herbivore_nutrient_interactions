@@ -626,6 +626,11 @@ AZ, USA</institution>
     interest</p></caption>
     <table-wrap>
       <table>
+        <colgroup>
+          <col width="33%" />
+          <col width="33%" />
+          <col width="33%" />
+        </colgroup>
         <thead>
           <tr>
             <th id="ScaleU0020ofU0020inference" scope="col">Scale of
@@ -640,29 +645,29 @@ AZ, USA</institution>
           <tr>
             <td headers="Scale of inference">individual</td>
             <td headers="Scale at which the factor of interest is applied">populations</td>
-            <td headers="Number of replicates at the appropriate scale">150
+            <td headers="Number of replicates at the appropriate scale"><p>150
             locusts tested on varying macronutrient ratios with
-            artificial diets.</td>
+            artificial diets.</p></td>
           </tr>
           <tr>
             <td headers="Scale of inference">individual</td>
             <td headers="Scale at which the factor of interest is applied">field
             cages</td>
-            <td headers="Number of replicates at the appropriate scale">20
-            locusts in each cage</td>
+            <td headers="Number of replicates at the appropriate scale"><p>20
+            locusts in each cage</p></td>
           </tr>
           <tr>
             <td headers="Scale of inference">population</td>
             <td headers="Scale at which the factor of interest is applied">field
             cages</td>
-            <td headers="Number of replicates at the appropriate scale">36
-            cages in each fertilization treatment</td>
+            <td headers="Number of replicates at the appropriate scale"><p>36
+            cages in each fertilization treatment</p></td>
           </tr>
           <tr>
             <td headers="Scale of inference">landscape</td>
             <td headers="Scale at which the factor of interest is applied">populations</td>
-            <td headers="Number of replicates at the appropriate scale">67144
-            1 km2 grids throughout Australia</td>
+            <td headers="Number of replicates at the appropriate scale"><p>67,144
+            1 km2 grids throughout Australia</p></td>
           </tr>
         </tbody>
       </table>
@@ -831,7 +836,12 @@ AZ, USA</institution>
     ]]></tex-math>
     <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mtext mathvariant="normal">survival proportion</mml:mtext><mml:mo>=</mml:mo><mml:mfrac><mml:mtext mathvariant="normal">number live locusts</mml:mtext><mml:mrow><mml:mtext mathvariant="normal">initial number added</mml:mtext><mml:mo>−</mml:mo><mml:mtext mathvariant="normal">number locusts removed for secondary experiment</mml:mtext></mml:mrow></mml:mfrac></mml:mrow></mml:math></alternatives></disp-formula></p>
     <p>We calculated the proportion molted to adult of the surviving
-    locusts (# adults/# live locusts).</p>
+    locusts as:</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[
+    \frac{\text{\# adult locusts}}{\text{\# live locusts}}
+    ]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mfrac><mml:mtext mathvariant="normal">#adult locusts</mml:mtext><mml:mtext mathvariant="normal">#live locusts</mml:mtext></mml:mfrac></mml:math></alternatives></disp-formula></p>
   </sec>
   <sec id="correlating-historical-nymphal-outbreaks-with-soil-nitrogen-and-phosphorus">
     <title>2.4 Correlating historical nymphal outbreaks with soil
@@ -2293,26 +2303,37 @@ AZ, USA</institution>
     plant species collected from within the treatment plots but outside
     of the locust cages for three time points during the experiment.
     Soil nitrogen is also shown per each treatment. Trt = Treatment, C =
-    carbon, N = Nitrogen, Prot = protein, Carb =
+    carbon, N = Nitrogen, P = protein, Carb =
     Carbohydrates.</p></caption>
     <table-wrap>
       <table>
+        <colgroup>
+          <col width="11%" />
+          <col width="11%" />
+          <col width="11%" />
+          <col width="11%" />
+          <col width="11%" />
+          <col width="11%" />
+          <col width="11%" />
+          <col width="11%" />
+          <col width="11%" />
+        </colgroup>
         <thead>
           <tr>
             <th id="treatment" scope="col">treatment</th>
             <th id="species" scope="col">species</th>
             <th id="date" scope="col">date</th>
-            <th id="PlantU0020CU0020mgU002Fmg" scope="col">Plant C
-            mg/mg</th>
+            <th id="U003CdivU0020data-qmd-base64U003DU0022UGxhbnQgQyBtZy9tZwU003DU003DU0022U003EU003CdivU0020classU003DU0027gt_from_mdU0027U003EU003CpU003EPlantU0020CU0020mgU002FmgU003CU002FpU003EU000AU003CU002FdivU003EU003CU002FdivU003E" scope="col"><p>Plant
+            C mg/mg</p></th>
             <th id="PlantU0020N" scope="col">Plant N</th>
-            <th id="PlantU0020ProteinU0020mgU002Fmg" scope="col">Plant
-            Protein mg/mg</th>
-            <th id="PlantU0020CarbohydrateU0020mgU002Fmg" scope="col">Plant
-            Carbohydrate mg/mg</th>
-            <th id="SoilU0020NOU003CsupU003E3U003CU002FsupU003EU0020mgU002FL" scope="col">Soil
-            NO<sup>3</sup> mg/L</th>
-            <th id="SoilU0020NOU003CsupU003E4U003CU002FsupU003EU0020mgU002FL" scope="col">Soil
-            NO<sup>4</sup> mg/L</th>
+            <th id="U003CdivU0020data-qmd-base64U003DU0022UGxhbnQgUCBtZy9tZwU003DU003DU0022U003EU003CdivU0020classU003DU0027gt_from_mdU0027U003EU003CpU003EPlantU0020PU0020mgU002FmgU003CU002FpU003EU000AU003CU002FdivU003EU003CU002FdivU003E" scope="col"><p>Plant
+            P mg/mg</p></th>
+            <th id="U003CdivU0020data-qmd-base64U003DU0022UGxhbnQgQ2FyYiBtZy9tZwU003DU003DU0022U003EU003CdivU0020classU003DU0027gt_from_mdU0027U003EU003CpU003EPlantU0020CarbU0020mgU002FmgU003CU002FpU003EU000AU003CU002FdivU003EU003CU002FdivU003E" scope="col"><p>Plant
+            Carb mg/mg</p></th>
+            <th id="U003CdivU0020data-qmd-base64U003DU0022U29pbCBOTzxzdXAU002BMzwvc3VwPiBtZy9MU0022U003EU003CdivU0020classU003DU0027gt_from_mdU0027U003EU003CpU003ESoilU0020NOU003CsupU003E3U003CU002FsupU003EU0020mgU002FLU003CU002FpU003EU000AU003CU002FdivU003EU003CU002FdivU003E" scope="col"><p>Soil
+            NO3 mg/L</p></th>
+            <th id="U003CdivU0020data-qmd-base64U003DU0022U29pbCBOTzxzdXAU002BNDwvc3VwPiBtZy9MU0022U003EU003CdivU0020classU003DU0027gt_from_mdU0027U003EU003CpU003ESoilU0020NOU003CsupU003E4U003CU002FsupU003EU0020mgU002FLU003CU002FpU003EU000AU003CU002FdivU003EU003CU002FdivU003E" scope="col"><p>Soil
+            NO4 mg/L</p></th>
           </tr>
         </thead>
         <tbody>
@@ -4756,7 +4777,7 @@ AZ, USA</institution>
 </ref-list>
 </back>
 
-<sub-article article-type="notebook" id="nb-45-nb-article">
+<sub-article article-type="notebook" id="nb-41-nb-article">
 <front-stub>
 <title-group>
 <article-title>Exploring Nutrient Availability and Herbivorous Insect
@@ -5367,12 +5388,25 @@ AZ, USA</institution>
 data &lt;- tibble(
   `Scale of inference` = c(&quot;individual&quot;, &quot;individual&quot;, &quot;population&quot;, &quot;landscape&quot;),
   `Scale at which the factor of interest is applied` = c(&quot;populations&quot;, &quot;field cages&quot;, &quot;field cages&quot;, &quot;populations&quot;),
-  `Number of replicates at the appropriate scale` = c(&quot;150 locusts tested on varying macronutrient ratios with artificial diets.&quot;, &quot;20 locusts in each cage&quot;, &quot;36 cages in each fertilization treatment&quot;, &quot;67144 1 km2 grids throughout Australia&quot;)
-)
+  `Number of replicates at the appropriate scale` = c(
+    &quot;150 locusts tested on varying macronutrient ratios with artificial diets.&quot;,
+    &quot;20 locusts in each cage&quot;,
+    &quot;36 cages in each fertilization treatment&quot;,
+    &quot;67,144 1 km&lt;sup&gt;2&lt;/sup&gt; grids throughout Australia&quot;
+  )
+) |&gt; 
+  gt() |&gt;
+  tab_options(table.width = pct(90), table.font.size = 11) |&gt; 
+  fmt_markdown(columns = `Number of replicates at the appropriate scale`)
 
-data |&gt; gt()</code>
+data</code>
     <table-wrap>
       <table>
+        <colgroup>
+          <col width="33%" />
+          <col width="33%" />
+          <col width="33%" />
+        </colgroup>
         <thead>
           <tr>
             <th id="ScaleU0020ofU0020inference-nb-article" scope="col">Scale of
@@ -5387,29 +5421,29 @@ data |&gt; gt()</code>
           <tr>
             <td headers="Scale of inference">individual</td>
             <td headers="Scale at which the factor of interest is applied">populations</td>
-            <td headers="Number of replicates at the appropriate scale">150
+            <td headers="Number of replicates at the appropriate scale"><p>150
             locusts tested on varying macronutrient ratios with
-            artificial diets.</td>
+            artificial diets.</p></td>
           </tr>
           <tr>
             <td headers="Scale of inference">individual</td>
             <td headers="Scale at which the factor of interest is applied">field
             cages</td>
-            <td headers="Number of replicates at the appropriate scale">20
-            locusts in each cage</td>
+            <td headers="Number of replicates at the appropriate scale"><p>20
+            locusts in each cage</p></td>
           </tr>
           <tr>
             <td headers="Scale of inference">population</td>
             <td headers="Scale at which the factor of interest is applied">field
             cages</td>
-            <td headers="Number of replicates at the appropriate scale">36
-            cages in each fertilization treatment</td>
+            <td headers="Number of replicates at the appropriate scale"><p>36
+            cages in each fertilization treatment</p></td>
           </tr>
           <tr>
             <td headers="Scale of inference">landscape</td>
             <td headers="Scale at which the factor of interest is applied">populations</td>
-            <td headers="Number of replicates at the appropriate scale">67144
-            1 km2 grids throughout Australia</td>
+            <td headers="Number of replicates at the appropriate scale"><p>67,144
+            1 km2 grids throughout Australia</p></td>
           </tr>
         </tbody>
       </table>
@@ -5579,7 +5613,12 @@ data |&gt; gt()</code>
     ]]></tex-math>
     <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mtext mathvariant="normal">survival proportion</mml:mtext><mml:mo>=</mml:mo><mml:mfrac><mml:mtext mathvariant="normal">number live locusts</mml:mtext><mml:mrow><mml:mtext mathvariant="normal">initial number added</mml:mtext><mml:mo>−</mml:mo><mml:mtext mathvariant="normal">number locusts removed for secondary experiment</mml:mtext></mml:mrow></mml:mfrac></mml:mrow></mml:math></alternatives></disp-formula></p>
     <p>We calculated the proportion molted to adult of the surviving
-    locusts (# adults/# live locusts).</p>
+    locusts as:</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[
+    \frac{\text{\# adult locusts}}{\text{\# live locusts}}
+    ]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mfrac><mml:mtext mathvariant="normal">#adult locusts</mml:mtext><mml:mtext mathvariant="normal">#live locusts</mml:mtext></mml:mfrac></mml:math></alternatives></disp-formula></p>
   </sec>
   <sec id="correlating-historical-nymphal-outbreaks-with-soil-nitrogen-and-phosphorus-nb-article">
     <title>2.4 Correlating historical nymphal outbreaks with soil
@@ -7225,7 +7264,7 @@ dbl (4): edf, ref.df, statistic, p.value
     plant species collected from within the treatment plots but outside
     of the locust cages for three time points during the experiment.
     Soil nitrogen is also shown per each treatment. Trt = Treatment, C =
-    carbon, N = Nitrogen, Prot = protein, Carb =
+    carbon, N = Nitrogen, P = protein, Carb =
     Carbohydrates.</p></caption>
     <sec specific-use="notebook-content">
     <code language="r script">library(tidyverse)
@@ -7258,58 +7297,67 @@ species_map &lt;- c(
 table_dat |&gt; 
   arrange(treatment, `Soil NO3`, `Soil NO4`) |&gt; 
   mutate(across(where(is.numeric), ~round(., 3)),
-    date = as.character(date)) |&gt;
+         date = as.character(date)) |&gt;
   mutate(treatment = ifelse(duplicated(treatment), &quot;&quot;, treatment)) |&gt; 
   mutate(`Soil NO3` = ifelse(duplicated(`Soil NO3`), &quot;&quot;, `Soil NO3`)) |&gt;
   mutate(`Soil NO4` = ifelse(duplicated(`Soil NO4`), &quot;&quot;, `Soil NO4`)) |&gt;
   mutate(species = species_map[species]) |&gt;  # Apply species mapping
   rename(`Plant C mg/mg` = `Plant C`,
-    `Plant C mg/mg` = `Plant C`,
-    `Plant Protein mg/mg` = `Plant Protein`,
-    `Plant Carbohydrate mg/mg` = `Plant Carbohydrate`,
-    `Soil NO3 mg/L` = `Soil NO3`,
-    `Soil NO4 mg/L` = `Soil NO4`) |&gt;
+         `Plant Protein mg/mg` = `Plant Protein`,
+         `Plant Carbohydrate mg/mg` = `Plant Carbohydrate`,
+         `Soil NO3 mg/L` = `Soil NO3`,
+         `Soil NO4 mg/L` = `Soil NO4`) |&gt;
   gt() |&gt;
   cols_label(
-    `Soil NO3 mg/L` = html(&quot;Soil NO&lt;sup&gt;3&lt;/sup&gt; mg/L&quot;),
-    `Soil NO4 mg/L` = html(&quot;Soil NO&lt;sup&gt;4&lt;/sup&gt; mg/L&quot;)
+    `Soil NO3 mg/L` = md(&quot;Soil NO&lt;sup&gt;3&lt;/sup&gt; mg/L&quot;),
+    `Soil NO4 mg/L` = md(&quot;Soil NO&lt;sup&gt;4&lt;/sup&gt; mg/L&quot;),
+    `Plant C mg/mg` = md(&quot;Plant C mg/mg&quot;),
+    `Plant Protein mg/mg` = md(&quot;Plant P mg/mg&quot;),
+    `Plant Carbohydrate mg/mg` = md(&quot;Plant Carb mg/mg&quot;)
   ) |&gt;
   tab_style(
     style = cell_text(style = &quot;italic&quot;),
     locations = cells_body(
-      columns = vars(species),
+      columns = c(species),
       rows = species %in% c(&quot;Digitaria spp.&quot;, 
-                          &quot;Enteropogon spp.&quot;, 
-                          &quot;Cyperus spp.&quot;, 
-                          &quot;Plaspladium spp.&quot;, 
-                          &quot;Rytidosperma spp.&quot;,
-                          &quot;Austrostipa spp.&quot;)
+                            &quot;Enteropogon spp.&quot;, 
+                            &quot;Cyperus spp.&quot;, 
+                            &quot;Plaspladium spp.&quot;, 
+                            &quot;Rytidosperma spp.&quot;,
+                            &quot;Austrostipa spp.&quot;)
     )
-  )  |&gt; 
-  tab_options(table.width = pct(100),
-    table.font.size = 11)</code>
-    <boxed-text>
-      <preformat>Warning: Since gt v0.3.0, `columns = vars(...)` has been deprecated.
-• Please use `columns = c(...)` instead.</preformat>
-    </boxed-text>
+  ) |&gt;
+  tab_options(table.width = pct(90),
+              table.font.size = 11)</code>
     <table-wrap>
       <table>
+        <colgroup>
+          <col width="11%" />
+          <col width="11%" />
+          <col width="11%" />
+          <col width="11%" />
+          <col width="11%" />
+          <col width="11%" />
+          <col width="11%" />
+          <col width="11%" />
+          <col width="11%" />
+        </colgroup>
         <thead>
           <tr>
             <th id="treatment-nb-article" scope="col">treatment</th>
             <th id="species-nb-article" scope="col">species</th>
             <th id="date-nb-article" scope="col">date</th>
-            <th id="PlantU0020CU0020mgU002Fmg-nb-article" scope="col">Plant C
-            mg/mg</th>
+            <th id="U003CdivU0020data-qmd-base64U003DU0022UGxhbnQgQyBtZy9tZwU003DU003DU0022U003EU003CdivU0020classU003DU0027gt_from_mdU0027U003EU003CpU003EPlantU0020CU0020mgU002FmgU003CU002FpU003EU000AU003CU002FdivU003EU003CU002FdivU003E-nb-article" scope="col"><p>Plant
+            C mg/mg</p></th>
             <th id="PlantU0020N-nb-article" scope="col">Plant N</th>
-            <th id="PlantU0020ProteinU0020mgU002Fmg-nb-article" scope="col">Plant
-            Protein mg/mg</th>
-            <th id="PlantU0020CarbohydrateU0020mgU002Fmg-nb-article" scope="col">Plant
-            Carbohydrate mg/mg</th>
-            <th id="SoilU0020NOU003CsupU003E3U003CU002FsupU003EU0020mgU002FL-nb-article" scope="col">Soil
-            NO<sup>3</sup> mg/L</th>
-            <th id="SoilU0020NOU003CsupU003E4U003CU002FsupU003EU0020mgU002FL-nb-article" scope="col">Soil
-            NO<sup>4</sup> mg/L</th>
+            <th id="U003CdivU0020data-qmd-base64U003DU0022UGxhbnQgUCBtZy9tZwU003DU003DU0022U003EU003CdivU0020classU003DU0027gt_from_mdU0027U003EU003CpU003EPlantU0020PU0020mgU002FmgU003CU002FpU003EU000AU003CU002FdivU003EU003CU002FdivU003E-nb-article" scope="col"><p>Plant
+            P mg/mg</p></th>
+            <th id="U003CdivU0020data-qmd-base64U003DU0022UGxhbnQgQ2FyYiBtZy9tZwU003DU003DU0022U003EU003CdivU0020classU003DU0027gt_from_mdU0027U003EU003CpU003EPlantU0020CarbU0020mgU002FmgU003CU002FpU003EU000AU003CU002FdivU003EU003CU002FdivU003E-nb-article" scope="col"><p>Plant
+            Carb mg/mg</p></th>
+            <th id="U003CdivU0020data-qmd-base64U003DU0022U29pbCBOTzxzdXAU002BMzwvc3VwPiBtZy9MU0022U003EU003CdivU0020classU003DU0027gt_from_mdU0027U003EU003CpU003ESoilU0020NOU003CsupU003E3U003CU002FsupU003EU0020mgU002FLU003CU002FpU003EU000AU003CU002FdivU003EU003CU002FdivU003E-nb-article" scope="col"><p>Soil
+            NO3 mg/L</p></th>
+            <th id="U003CdivU0020data-qmd-base64U003DU0022U29pbCBOTzxzdXAU002BNDwvc3VwPiBtZy9MU0022U003EU003CdivU0020classU003DU0027gt_from_mdU0027U003EU003CpU003ESoilU0020NOU003CsupU003E4U003CU002FsupU003EU0020mgU002FLU003CU002FpU003EU000AU003CU002FdivU003EU003CU002FdivU003E-nb-article" scope="col"><p>Soil
+            NO4 mg/L</p></th>
           </tr>
         </thead>
         <tbody>
@@ -7761,7 +7809,7 @@ dbl (6): plant_cover, Urochloa panicoides, Enteropogon acicularis, Austrodan...
                           &quot;Cyperus rotundus&quot;, 
                           &quot;stipa species&quot;)
     )
-  ) </code>
+  )  </code>
     <table-wrap>
       <table>
         <thead>
@@ -9991,65 +10039,7 @@ dbl (3): estimate, SE, adjusted p-value
 
 
 </sub-article>
-<sub-article article-type="notebook" id="nb-41-nb-2">
-<front-stub>
-</front-stub>
-
-<body>
-<p>Dear Editors,</p>
-<p>We are submitting our manuscript titled “Exploring Nutrient
-Availability and Herbivorous Insect Population Dynamics Across Multiple
-Scales” for publication in Functional Ecology. Our study investigates
-the intricate relationship between nutrient availability and the
-population dynamics of herbivorous insects across spatial scales.</p>
-<p>Understanding the environmental drivers of animal population
-dynamics, particularly in relation to nutrient availability, is crucial
-for ecological research. While nitrogen (N) and phosphorus (P) have
-traditionally been associated with positive population growth across
-trophic levels, recent studies have challenged this assumption. We
-investigate the influence of nutrient availability on herbivorous insect
-population dynamics across multiple scales, ranging from local to
-continental adding critical insight to the discussion.</p>
-<p>By providing novel insights into the suppressive effects of soil
-nitrogen and the non-linear correlation with soil phosphorus
-(specifically a peak approximately at 4%), our research elucidates the
-nuanced nature of nutrient regulation and its implications for
-herbivorous insect outbreaks across varying spatial scales.
-Incorporating historical locust outbreak data and a comprehensive soil
-nutrient database for the Australian continent, we establish
-correlations between nutrient availability and locust outbreaks, thereby
-offering a comprehensive analysis of nutrient limitation and its
-potential for forecasting not only locust outbreaks but also those of
-other insect pests globally.</p>
-<p>Our manuscript aligns with the aims and scopes of Functional Ecology
-by providing a detailed, integrated analysis of nutrient limitation in
-animal population dynamics across multiple scales. We contribute to the
-journal’s interest in advancing our mechanistic understanding of ecology
-by exploring the impact of physiology on the ecology of animals and
-plants. It is 11,300 words long with roughly 2,700 words being in the
-reference section as this allowed us to cite the necessary research to
-position this work in a broader context while providing a historical
-perspective. We have also taken suggestions from Dr Enrico Rezende and
-clarified supplementary figures 1, 5 and 7. Lastly, the entire
-manuscript processed from data management, anaylsis, and writing is
-reprodicible and will be made available on github at time of
-publication.</p>
-<p>In the face of climate change and land use practices, understanding
-the intricate interaction between animals and nutrient availability at
-large spatial scales is of paramount importance. Our study not only
-enhances the understanding of herbivorous insect population dynamics but
-also contributes to ecological discussions surrounding soil degradation
-and insect pest management.</p>
-<p>Yours sincerely, Douglas Lawton and co-authors</p>
-</body>
-
-
-
-<back>
-</back>
-
-
-</sub-article>
+<!-- (F2ED4C6E)[nb-2]:/home/runner/work/herbivore_nutrient_interactions/herbivore_nutrient_interactions/cover_letter.qmd -->
 <sub-article article-type="notebook" id="nb-3-nb-3">
 <front-stub>
 <title-group>
