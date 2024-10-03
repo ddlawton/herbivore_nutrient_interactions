@@ -502,8 +502,6 @@ Acquiring the right amount of nutrients is a critical component for animal growt
 ::: {#refs}
 :::
 
-# SUPPLEMENTARY
-
 ![Field cage soil nitrogen content by treatment (A & B) and regressed with plant carbohydrates and protein (C-F).](output/publication_figures/field_cage_plant_and_soil_nutrient_correlations.png){#suppfig-field-cage-plant-soil-nutrient-correlations width="80%"}
 
 ![Map illustrating the summarization of point observation data into a fishnet grid across eastern Australia. The full extent is shown in the inset map. We summed the number of outbreak, nil, and total observations. The grid in this figure is not at a 1 km^2^ scale for demonstration purposes, as the cells would be too small to see.](output/publication_figures/spatial_modeling_grid_example_map.png){#suppfig-grid-example}
