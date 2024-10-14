@@ -278,53 +278,34 @@ AZ, USA</institution>
 
 
 <abstract>
-<list list-type="order">
-  <list-item>
-    <p>Nutrient composition varies greatly across landscapes, which in
-    turn influences the spatiotemporal variation and dynamics of
-    populations. Yet few studies have investigated this pattern on
-    multiple scales.</p>
-  </list-item>
-  <list-item>
-    <p>We tested how nutrient limitation affects herbivore populations
-    across spatial scales from individual behavior to landscape level
-    population dynamics using Australian plague locust,
-    <italic>Chortoicetes terminifera</italic> (Walker), field
-    populations and long-term survey data from across their range.</p>
-  </list-item>
-  <list-item>
-    <p>At the individual level, juvenile locusts selected for a
-    carbohydrate-biased intake target of 1 protein (p) 2 carbohydrate
-    (c) and had the highest growth and shortest development time when
-    fed artificial diets with that same 1p:2c ratio over the duration of
-    the 5th (final) juvenile instar.</p>
-  </list-item>
-  <list-item>
-    <p>At the field level, locusts kept in field cages with
-    protein-biased plants redressed their nutritional imbalance by
-    selecting very carbohydrate-biased diets (up to a 1p:20c ratio) for
-    more than a week after being removed from the protein-biased
-    environment. Once the deficiency was met, locusts returned to the
-    1p:2c intake target.</p>
-  </list-item>
-  <list-item>
-    <p>Going up to the landscape level, outbreaks were negatively
-    correlated with soil nitrogen and showed a non-linear relationship
-    with soil phosphorus peaking at approximately 4% soil phosphorus. We
-    disentangled the relationship between mean annual precipitation and
-    soil nitrogen through leveraging both comprehensive locust surveys
-    and remotely sensed soil and weather data that spanned decades.</p>
-  </list-item>
-  <list-item>
-    <p>This paper is the first to integrate lab, field, and remote
-    sensing approaches to demonstrate the importance of nutrient
-    balancing and acquisition across scales for herbivores. Specifically
-    for locusts, we show that low nitrogen environments promote
-    outbreaks, likely by reducing plant protein to carbohydrate ratios.
-    Incorporating soil quality data into locust plague forecasting
-    models can help increase accuracy of predictions.</p>
-  </list-item>
-</list>
+<p>Nutrient composition varies greatly across landscapes, influencing
+the spatiotemporal variation and dynamics of populations, yet few
+studies have investigated this pattern across multiple scales. We tested
+how nutrient limitation affects herbivore populations, from individual
+behavior to landscape-level population dynamics, using the Australian
+plague locust, Chortoicetes terminifera (Walker), with field populations
+and long-term survey data from across their range. At the individual
+level, juvenile locusts selected for a carbohydrate-biased intake target
+of 1 protein (p) to 2 carbohydrate (c), and exhibited the highest growth
+and shortest development time when fed artificial diets with that same
+1p:2c ratio during the final juvenile instar. At the field level,
+locusts kept in cages with protein-biased plants redressed their
+nutritional imbalance by selecting carbohydrate-biased diets (up to a
+1p:20c ratio) for over a week after being removed from the
+protein-biased environment, returning to the 1p:2c intake target once
+the deficiency was met. At the landscape level, locust outbreaks were
+negatively correlated with soil nitrogen and showed a non-linear
+relationship with soil phosphorus, peaking at approximately 4% soil
+phosphorus. We disentangled the interaction between mean annual
+precipitation and soil nitrogen using comprehensive locust surveys and
+remotely sensed soil and weather data spanning decades. This study is
+the first to integrate lab, field, and remote sensing approaches,
+demonstrating the importance of nutrient balancing and acquisition
+across scales for herbivores. Specifically for locusts, we show that
+low-nitrogen environments promote outbreaks, likely by reducing plant
+protein-to-carbohydrate ratios. Incorporating soil quality data into
+locust plague forecasting models could help improve prediction
+accuracy.</p>
 </abstract>
 <kwd-group kwd-group-type="author">
 <kwd>nitrogen</kwd>
@@ -349,39 +330,38 @@ AZ, USA</institution>
   <p>Plant nutrients are usually more variable than animal body
   composition, which can make it challenging for herbivores to acquire
   an optimal nutritional balance
-  (<xref alt="Elser et al., 2000" rid="ref-elser_nutritional_2000" ref-type="bibr">Elser
-  et al., 2000</xref>). Nutrient balance affects individual performance
-  (<xref alt="Batzli, 1986" rid="ref-batzli_nutritional_1986" ref-type="bibr">Batzli,
-  1986</xref>;
-  <xref alt="Bernays et al., 1994" rid="ref-bernays_dietary_1994" ref-type="bibr">Bernays
-  et al., 1994</xref>) and, by extension, influences population dynamics
-  (<xref alt="Elser et al., 2000" rid="ref-elser_nutritional_2000" ref-type="bibr">Elser
-  et al., 2000</xref>). One way many primary consumers achieve an
-  optimal blend of nutrients is through selecting different host plants
-  or plant parts to reach a specific amount and ratio, termed the intake
-  target, IT
-  (<xref alt="Simpson &amp; Raubenheimer, 2012a" rid="ref-simpson2012" ref-type="bibr">Simpson
-  &amp; Raubenheimer, 2012a</xref>). For example, giant pandas
+  (<xref alt="Elser et al. 2000" rid="ref-elser_nutritional_2000" ref-type="bibr">Elser
+  et al. 2000</xref>). Nutrient balance affects individual performance
+  (<xref alt="Batzli 1986" rid="ref-batzli_nutritional_1986" ref-type="bibr">Batzli
+  1986</xref>,
+  <xref alt="Bernays et al. 1994" rid="ref-bernays_dietary_1994" ref-type="bibr">Bernays
+  et al. 1994</xref>) and, by extension, influences population dynamics
+  (<xref alt="Elser et al. 2000" rid="ref-elser_nutritional_2000" ref-type="bibr">Elser
+  et al. 2000</xref>). One way many primary consumers achieve an optimal
+  blend of nutrients is through selecting different host plants or plant
+  parts to reach a specific amount and ratio, termed the intake target,
+  IT
+  (<xref alt="Simpson and Raubenheimer 2012a" rid="ref-simpson2012" ref-type="bibr">Simpson
+  and Raubenheimer 2012a</xref>). For example, giant pandas
   (<italic>Ailuropoda melanoleuca</italic>) synchronize their migration
   and reproduction cycles with seasonal nutrient availability between
   different bamboo species
-  (<xref alt="Nie et al., 2015" rid="ref-nie_obligate_2015" ref-type="bibr">Nie
-  et al., 2015</xref>). While studies have investigated this trend
+  (<xref alt="Nie et al. 2015" rid="ref-nie_obligate_2015" ref-type="bibr">Nie
+  et al. 2015</xref>). While studies have investigated this trend
   between available nutrients and animal populations, they usually
   happen at one scale and biological level. For example, much
   grasshopper nutrition research has been done at the organismal or
   local population level using lab and/or field studies
-  (<xref alt="Behmer, 2009" rid="ref-behmer_insect_2009" ref-type="bibr">Behmer,
-  2009</xref>;
-  <xref alt="Cease, 2024" rid="ref-cease_how_2024" ref-type="bibr">Cease,
-  2024</xref>;
-  <xref alt="Le Gall et al., 2019" rid="ref-le_gall_global_2019" ref-type="bibr">Le
-  Gall et al., 2019</xref>), with a few separate larger scale modeling
-  endeavors
-  (<xref alt="Welti, Roeder, et al., 2020" rid="ref-welti_nutrient_2020" ref-type="bibr">Welti,
-  Roeder, et al., 2020</xref>;
-  <xref alt="Zhou et al., 2019" rid="ref-zhou_increased_2019" ref-type="bibr">Zhou
-  et al., 2019</xref>). To our knowledge, no study has integrated
+  (<xref alt="Behmer 2009" rid="ref-behmer_insect_2009" ref-type="bibr">Behmer
+  2009</xref>,
+  <xref alt="Le Gall et al. 2019" rid="ref-le_gall_global_2019" ref-type="bibr">Le
+  Gall et al. 2019</xref>,
+  <xref alt="Cease 2024" rid="ref-cease_how_2024" ref-type="bibr">Cease
+  2024</xref>), with a few separate larger scale modeling endeavors
+  (<xref alt="Zhou et al. 2019" rid="ref-zhou_increased_2019" ref-type="bibr">Zhou
+  et al. 2019</xref>,
+  <xref alt="Welti et al. 2020a" rid="ref-welti_nutrient_2020" ref-type="bibr">Welti
+  et al. 2020a</xref>). To our knowledge, no study has integrated
   individual herbivorous animal nutrition to continental level patterns
   in nutrient availability. Here we work across spatial scales, bridging
   field observations and cage manipulations with continental-scale
@@ -389,73 +369,72 @@ AZ, USA</institution>
   relationship changes across multiple scales.</p>
   <p>Food quality has long been considered an important predictor of
   animal population dynamics
-  (<xref alt="Andersen et al., 2004" rid="ref-andersen_stoichiometry_2004" ref-type="bibr">Andersen
-  et al., 2004</xref>;
-  <xref alt="White, 1993" rid="ref-white_inadequate_1993" ref-type="bibr">White,
-  1993</xref>). Phosphorus and nitrogen commonly limit primary
+  (<xref alt="White 1993" rid="ref-white_inadequate_1993" ref-type="bibr">White
+  1993</xref>,
+  <xref alt="Andersen et al. 2004" rid="ref-andersen_stoichiometry_2004" ref-type="bibr">Andersen
+  et al. 2004</xref>). Phosphorus and nitrogen commonly limit primary
   production in ecosystems, either separately or as co-limiting factors
-  (<xref alt="Tyrrell, 1999" rid="ref-tyrrell_relative_1999" ref-type="bibr">Tyrrell,
-  1999</xref>;
-  <xref alt="Vitousek et al., 2010" rid="ref-vitousek_terrestrial_2010" ref-type="bibr">Vitousek
-  et al., 2010</xref>), and are often investigated as limiting factors
+  (<xref alt="Tyrrell 1999" rid="ref-tyrrell_relative_1999" ref-type="bibr">Tyrrell
+  1999</xref>,
+  <xref alt="Vitousek et al. 2010" rid="ref-vitousek_terrestrial_2010" ref-type="bibr">Vitousek
+  et al. 2010</xref>), and are often investigated as limiting factors
   for higher trophic levels to determine the consequences to animal
   growth and reproduction
-  (<xref alt="Andersen et al., 2004" rid="ref-andersen_stoichiometry_2004" ref-type="bibr">Andersen
-  et al., 2004</xref>). For example, bluegrass fields supplemented with
+  (<xref alt="Andersen et al. 2004" rid="ref-andersen_stoichiometry_2004" ref-type="bibr">Andersen
+  et al. 2004</xref>). For example, bluegrass fields supplemented with
   high quality (e.g. increased nitrogen) food pellets increase vole
   (<italic>Microtus ochmgaster</italic>) densities compared to control
   fields by supporting higher adult survival, increased breeding, and
   growth rate
-  (<xref alt="Cole &amp; Batzli, 1978" rid="ref-cole_influence_1978" ref-type="bibr">Cole
-  &amp; Batzli, 1978</xref>). Less phosphorus in a dryland insect
+  (<xref alt="Cole and Batzli 1978" rid="ref-cole_influence_1978" ref-type="bibr">Cole
+  and Batzli 1978</xref>). Less phosphorus in a dryland insect
   herbivore’s (<italic>Sabinia setosa</italic>) host plant, velvet
   mesquite (<italic>Prosopis velutina</italic>), leads to individuals
   having decreased RNA content (slower growth) and lower abundance
-  (<xref alt="Schade et al., 2003" rid="ref-schade_stoichiometric_2003" ref-type="bibr">Schade
-  et al., 2003</xref>). More broadly, nitrogen and phosphorus limitation
+  (<xref alt="Schade et al. 2003" rid="ref-schade_stoichiometric_2003" ref-type="bibr">Schade
+  et al. 2003</xref>). More broadly, nitrogen and phosphorus limitation
   has been shown in mammals
-  (<xref alt="Randolph et al., 1995" rid="ref-randolph_nutritional_1995" ref-type="bibr">Randolph
-  et al., 1995</xref>;
-  <xref alt="White, 1993" rid="ref-white_inadequate_1993" ref-type="bibr">White,
-  1993</xref>), birds
-  (<xref alt="Forero et al., 2002" rid="ref-forero_conspecific_2002" ref-type="bibr">Forero
-  et al., 2002</xref>;
-  <xref alt="Granbom &amp; Smith, 2006" rid="ref-granbom_food_2006" ref-type="bibr">Granbom
-  &amp; Smith, 2006</xref>), and insects
-  (<xref alt="Floyd, 1996" rid="ref-floyd_frontiers_1996" ref-type="bibr">Floyd,
-  1996</xref>;
-  <xref alt="Huberty &amp; Denno, 2006" rid="ref-huberty_consequences_2006" ref-type="bibr">Huberty
-  &amp; Denno, 2006</xref>;
-  <xref alt="Marsh &amp; Adams, 1995" rid="ref-marsh_decline_1995" ref-type="bibr">Marsh
-  &amp; Adams, 1995</xref>;
-  <xref alt="Perkins et al., 2004" rid="ref-perkins_dietary_2004" ref-type="bibr">Perkins
-  et al., 2004</xref>) which is discussed further in White
+  (<xref alt="White 1993" rid="ref-white_inadequate_1993" ref-type="bibr">White
+  1993</xref>,
+  <xref alt="Randolph et al. 1995" rid="ref-randolph_nutritional_1995" ref-type="bibr">Randolph
+  et al. 1995</xref>), birds
+  (<xref alt="Forero et al. 2002" rid="ref-forero_conspecific_2002" ref-type="bibr">Forero
+  et al. 2002</xref>,
+  <xref alt="Granbom and Smith 2006" rid="ref-granbom_food_2006" ref-type="bibr">Granbom
+  and Smith 2006</xref>), and insects
+  (<xref alt="Marsh and Adams 1995" rid="ref-marsh_decline_1995" ref-type="bibr">Marsh
+  and Adams 1995</xref>,
+  <xref alt="Floyd 1996" rid="ref-floyd_frontiers_1996" ref-type="bibr">Floyd
+  1996</xref>,
+  <xref alt="Perkins et al. 2004" rid="ref-perkins_dietary_2004" ref-type="bibr">Perkins
+  et al. 2004</xref>,
+  <xref alt="Huberty and Denno 2006" rid="ref-huberty_consequences_2006" ref-type="bibr">Huberty
+  and Denno 2006</xref>) which is discussed further in White
   (<xref alt="2008" rid="ref-white_role_2008" ref-type="bibr">2008</xref>)
   and Andersen et al.
   (<xref alt="2004" rid="ref-andersen_stoichiometry_2004" ref-type="bibr">2004</xref>).
   However, not all animal populations respond positively to increasing
   environmental nutrients. For example, studies from across the globe
   reveal that the abundances of many grasshopper species are positively
-  (<xref alt="Joern et al., 2012" rid="ref-joern_not_2012" ref-type="bibr">Joern
-  et al., 2012</xref>;
-  <xref alt="Ozment et al., 2021" rid="ref-ozment_tracking_2021" ref-type="bibr">Ozment
-  et al., 2021</xref>;
-  <xref alt="Welti, Prather, et al., 2020" rid="ref-welti_bottomup_2020" ref-type="bibr">Welti,
-  Prather, et al., 2020</xref>;
-  <xref alt="Welti, Roeder, et al., 2020" rid="ref-welti_nutrient_2020" ref-type="bibr">Welti,
-  Roeder, et al., 2020</xref>;
-  <xref alt="H. Zhu et al., 2020" rid="ref-zhu_effects_2020" ref-type="bibr">H.
-  Zhu et al., 2020</xref>;
-  <xref alt="Y. Zhu et al., 2019" rid="ref-zhu_negative_2019" ref-type="bibr">Y.
-  Zhu et al., 2019</xref>), or not related
-  (<xref alt="Heidorn &amp; Joern, 1987" rid="ref-heidorn_feeding_1987" ref-type="bibr">Heidorn
-  &amp; Joern, 1987</xref>;
-  <xref alt="Jonas &amp; Joern, 2008" rid="ref-jonas_hostplant_2008" ref-type="bibr">Jonas
-  &amp; Joern, 2008</xref>;
-  <xref alt="Lenhart et al., 2015" rid="ref-lenhart_water_2015" ref-type="bibr">Lenhart
-  et al., 2015</xref>;
-  <xref alt="Ozment et al., 2021" rid="ref-ozment_tracking_2021" ref-type="bibr">Ozment
-  et al., 2021</xref>) to plant nitrogen concentrations as reviewed in
+  (<xref alt="Joern et al. 2012" rid="ref-joern_not_2012" ref-type="bibr">Joern
+  et al. 2012</xref>,
+  <xref alt="Zhu et al. 2019" rid="ref-zhu_negative_2019" ref-type="bibr">Zhu
+  et al. 2019</xref>,
+  <xref alt="Welti et al. 2020a" rid="ref-welti_nutrient_2020" ref-type="bibr">Welti
+  et al. 2020a</xref>,
+  <xref alt="b" rid="ref-welti_bottomup_2020" ref-type="bibr">b</xref>,
+  <xref alt="Zhu et al. 2020" rid="ref-zhu_effects_2020" ref-type="bibr">Zhu
+  et al. 2020</xref>,
+  <xref alt="Ozment et al. 2021" rid="ref-ozment_tracking_2021" ref-type="bibr">Ozment
+  et al. 2021</xref>), or not related
+  (<xref alt="Heidorn and Joern 1987" rid="ref-heidorn_feeding_1987" ref-type="bibr">Heidorn
+  and Joern 1987</xref>,
+  <xref alt="Jonas and Joern 2008" rid="ref-jonas_hostplant_2008" ref-type="bibr">Jonas
+  and Joern 2008</xref>,
+  <xref alt="Lenhart et al. 2015" rid="ref-lenhart_water_2015" ref-type="bibr">Lenhart
+  et al. 2015</xref>,
+  <xref alt="Ozment et al. 2021" rid="ref-ozment_tracking_2021" ref-type="bibr">Ozment
+  et al. 2021</xref>) to plant nitrogen concentrations as reviewed in
   Cease
   (<xref alt="2024" rid="ref-cease_how_2024" ref-type="bibr">2024</xref>).
   Can the relationship between herbivore abundance and environmental
@@ -465,117 +444,116 @@ AZ, USA</institution>
   <p>One excellent study system to understand the complex relationship
   of nutrient availability and population dynamics is a subset of
   grasshoppers called locusts
-  (<xref alt="Cullen et al., 2017" rid="ref-cullen_molecules_2017" ref-type="bibr">Cullen
-  et al., 2017</xref>;
-  <xref alt="Uvarov, 1977" rid="ref-uvarov_grasshoppers_1977" ref-type="bibr">Uvarov,
-  1977</xref>). Locusts undergo massive population irruptions known as
-  plagues that pose significant issues for global food security
-  (<xref alt="Cease et al., 2015" rid="ref-cease_living_2015" ref-type="bibr">Cease
-  et al., 2015</xref>). For example, the 2010-2011 Australian plague
+  (<xref alt="Uvarov 1977" rid="ref-uvarov_grasshoppers_1977" ref-type="bibr">Uvarov
+  1977</xref>,
+  <xref alt="Cullen et al. 2017" rid="ref-cullen_molecules_2017" ref-type="bibr">Cullen
+  et al. 2017</xref>). Locusts undergo massive population irruptions
+  known as plagues that pose significant issues for global food security
+  (<xref alt="Cease et al. 2015" rid="ref-cease_living_2015" ref-type="bibr">Cease
+  et al. 2015</xref>). For example, the 2010-2011 Australian plague
   locust (<italic>Chortoicetes terminifera</italic>) plague could have
   caused AUD$963 million in crop damage if not controlled
-  (<xref alt="Millist &amp; Ali, 2011" rid="ref-millist_nicola_benefitcost_nodate" ref-type="bibr">Millist
-  &amp; Ali, 2011</xref>). In contrast to the nitrogen limitation
-  paradigm (White 1993), locusts frequently show carbohydrate
-  limitation. Many locust species, including <italic>C.
-  terminifera</italic>, will select plants with a low
-  protein:carbohydrate ratio and eat about double the amount of
-  carbohydrate relative to protein when given a choice of artificial
-  diets
-  (<xref alt="Behmer, 2009" rid="ref-behmer_insect_2009" ref-type="bibr">Behmer,
-  2009</xref>;
-  <xref alt="Brosemann et al., 2023" rid="ref-brosemann_nutrient_2023" ref-type="bibr">Brosemann
-  et al., 2023</xref>;
-  <xref alt="Lawton et al., 2021" rid="ref-lawton_mismatched_2021" ref-type="bibr">Lawton
-  et al., 2021</xref>;
-  <xref alt="Le Gall et al., 2019" rid="ref-le_gall_global_2019" ref-type="bibr">Le
-  Gall et al., 2019</xref>). Their high energy, relative to protein,
-  demand is heightened by their impressive long-distance migration.
-  Marching bands of South American locusts (<italic>Schistocerca
-  cancellata</italic>) eat predominantly from dishes containing
-  carbohydrates and largely ignore dishes containing protein
-  (<xref alt="Cease et al., 2023" rid="ref-cease_field_2023" ref-type="bibr">Cease
-  et al., 2023</xref>), and have the highest survival and lipid gain
-  when eating carbohydrate-biased plants
-  (<xref alt="Talal et al., 2020" rid="ref-talal_plant_2020" ref-type="bibr">Talal
-  et al., 2020</xref>). As adults, flight increases carbohydrate, but
-  not protein, consumption in migratory locusts (<italic>Locusta
+  (<xref alt="Millist and Ali 2011" rid="ref-millist_nicola_benefitcost_nodate" ref-type="bibr">Millist
+  and Ali 2011</xref>). In contrast to the nitrogen limitation paradigm
+  (White 1993), locusts frequently show carbohydrate limitation. Many
+  locust species, including <italic>C. terminifera</italic>, will select
+  plants with a low protein:carbohydrate ratio and eat about double the
+  amount of carbohydrate relative to protein when given a choice of
+  artificial diets
+  (<xref alt="Behmer 2009" rid="ref-behmer_insect_2009" ref-type="bibr">Behmer
+  2009</xref>,
+  <xref alt="Le Gall et al. 2019" rid="ref-le_gall_global_2019" ref-type="bibr">Le
+  Gall et al. 2019</xref>,
+  <xref alt="Lawton et al. 2021" rid="ref-lawton_mismatched_2021" ref-type="bibr">Lawton
+  et al. 2021</xref>,
+  <xref alt="Brosemann et al. 2023" rid="ref-brosemann_nutrient_2023" ref-type="bibr">Brosemann
+  et al. 2023</xref>). Their high energy, relative to protein, demand is
+  heightened by their impressive long-distance migration. Marching bands
+  of South American locusts (<italic>Schistocerca cancellata</italic>)
+  eat predominantly from dishes containing carbohydrates and largely
+  ignore dishes containing protein
+  (<xref alt="Cease et al. 2023" rid="ref-cease_field_2023" ref-type="bibr">Cease
+  et al. 2023</xref>), and have the highest survival and lipid gain when
+  eating carbohydrate-biased plants
+  (<xref alt="Talal et al. 2020" rid="ref-talal_plant_2020" ref-type="bibr">Talal
+  et al. 2020</xref>). As adults, flight increases carbohydrate, but not
+  protein, consumption in migratory locusts (<italic>Locusta
   migratoria</italic>) and locusts eating carbohydrate-biased diets fly
   for longer times
-  (<xref alt="Talal et al., 2023" rid="ref-talal_body_2023" ref-type="bibr">Talal
-  et al., 2023</xref>). At a local scale, high-use agricultural areas
+  (<xref alt="Talal et al. 2023" rid="ref-talal_body_2023" ref-type="bibr">Talal
+  et al. 2023</xref>). At a local scale, high-use agricultural areas
   that decrease soil and plant nitrogen promote Oedaleus locust
   outbreaks in Senegal and China
-  (<xref alt="Cease et al., 2012" rid="ref-cease_heavy_2012" ref-type="bibr">Cease
-  et al., 2012</xref>;
-  <xref alt="Giese et al., 2013" rid="ref-giese_n_2013" ref-type="bibr">Giese
-  et al., 2013</xref>;
-  <xref alt="Le Gall et al., 2019" rid="ref-le_gall_global_2019" ref-type="bibr">Le
-  Gall et al., 2019</xref>;
-  <xref alt="Word et al., 2019" rid="ref-word_soil-targeted_2019" ref-type="bibr">Word
-  et al., 2019</xref>). Less is known about the relationship between
+  (<xref alt="Cease et al. 2012" rid="ref-cease_heavy_2012" ref-type="bibr">Cease
+  et al. 2012</xref>,
+  <xref alt="Giese et al. 2013" rid="ref-giese_n_2013" ref-type="bibr">Giese
+  et al. 2013</xref>,
+  <xref alt="Word et al. 2019" rid="ref-word_soil-targeted_2019" ref-type="bibr">Word
+  et al. 2019</xref>,
+  <xref alt="Le Gall et al. 2019" rid="ref-le_gall_global_2019" ref-type="bibr">Le
+  Gall et al. 2019</xref>). Less is known about the relationship between
   plant phosphorus and locust populations, but grasshoppers and locusts
   can detect and regulate phosphorus during ingestion and
   post-ingestively to maintain homeostasis
-  (<xref alt="Cease et al., 2016" rid="ref-cease_dietary_2016" ref-type="bibr">Cease
-  et al., 2016</xref>;
-  <xref alt="Zhang et al., 2014" rid="ref-zhang_grasshoppers_2014" ref-type="bibr">Zhang
-  et al., 2014</xref>). Long-term laboratory rearing studies show
+  (<xref alt="Zhang et al. 2014" rid="ref-zhang_grasshoppers_2014" ref-type="bibr">Zhang
+  et al. 2014</xref>,
+  <xref alt="Cease et al. 2016" rid="ref-cease_dietary_2016" ref-type="bibr">Cease
+  et al. 2016</xref>). Long-term laboratory rearing studies show
   negative effects of too little or excess dietary phosphorus, though
   short-term restrictions to low or high phosphorus diets appear to have
   no effects
-  (<xref alt="Cease et al., 2016" rid="ref-cease_dietary_2016" ref-type="bibr">Cease
-  et al., 2016</xref>). Field measurements of <italic>Oedaleus
+  (<xref alt="Cease et al. 2016" rid="ref-cease_dietary_2016" ref-type="bibr">Cease
+  et al. 2016</xref>). Field measurements of <italic>Oedaleus
   asiaticus</italic> in China show that locusts increase phosphorus
   excretion with increasing plant phosphorus content, suggesting that
   phosphorus may not be limiting in the Inner Mongolian Steppe for this
   species
-  (<xref alt="Zhang et al., 2014" rid="ref-zhang_grasshoppers_2014" ref-type="bibr">Zhang
-  et al., 2014</xref>). Understanding the multi-scale flow of nitrogen
+  (<xref alt="Zhang et al. 2014" rid="ref-zhang_grasshoppers_2014" ref-type="bibr">Zhang
+  et al. 2014</xref>). Understanding the multi-scale flow of nitrogen
   and phosphorus from soils to continental scale population dynamics may
   reveal a connection between soil quality and locust plagues in
   Australia and further elucidate the pattern globally
-  (<xref alt="Cease, 2024" rid="ref-cease_how_2024" ref-type="bibr">Cease,
-  2024</xref>;
-  <xref alt="Le Gall et al., 2019" rid="ref-le_gall_global_2019" ref-type="bibr">Le
-  Gall et al., 2019</xref>).</p>
+  (<xref alt="Le Gall et al. 2019" rid="ref-le_gall_global_2019" ref-type="bibr">Le
+  Gall et al. 2019</xref>,
+  <xref alt="Cease 2024" rid="ref-cease_how_2024" ref-type="bibr">Cease
+  2024</xref>).</p>
   <p>The arid interior of Australia is a highly variable environment
-  (<xref alt="Morton et al., 2011" rid="ref-morton_fresh_2011" ref-type="bibr">Morton
-  et al., 2011</xref>) characterized by the Resource-Pulse Paradigm
-  (<xref alt="Noy-Meir, 1974" rid="ref-noy-meir_desert_1974" ref-type="bibr">Noy-Meir,
-  1974</xref>;
-  <xref alt="Whitford, 2002" rid="ref-whitford_ecology_2002" ref-type="bibr">Whitford,
+  (<xref alt="Morton et al. 2011" rid="ref-morton_fresh_2011" ref-type="bibr">Morton
+  et al. 2011</xref>) characterized by the Resource-Pulse Paradigm
+  (<xref alt="Noy-Meir 1974" rid="ref-noy-meir_desert_1974" ref-type="bibr">Noy-Meir
+  1974</xref>,
+  <xref alt="Whitford 2002" rid="ref-whitford_ecology_2002" ref-type="bibr">Whitford
   2002</xref>). Many Australian animal and plant populations irrupt
   following periods of favorable climatic conditions. For example,
   preceding vegetation growth is an important factor for <italic>C.
   terminifera</italic> population outbreaks
-  (<xref alt="Lawton et al., 2022" rid="ref-lawton_seeing_2022" ref-type="bibr">Lawton
-  et al., 2022</xref>). In addition to climatic variability, Australia
-  is marked by poor natural soil fertility
-  (<xref alt="Morton et al., 2011" rid="ref-morton_fresh_2011" ref-type="bibr">Morton
-  et al., 2011</xref>;
-  <xref alt="Orians &amp; Milewski, 2007" rid="ref-orians_ecology_2007" ref-type="bibr">Orians
-  &amp; Milewski, 2007</xref>). Nutrients such as nitrogen and
-  phosphorus are in short supply in unmodified soils. Subsequently, many
-  native animals and plants are adapted to environments low in soil
-  nutrients
-  (<xref alt="Orians &amp; Milewski, 2007" rid="ref-orians_ecology_2007" ref-type="bibr">Orians
-  &amp; Milewski, 2007</xref>). Australia has several locust species,
-  but the <italic>C. terminifera</italic> is the most widespread and
+  (<xref alt="Lawton et al. 2022" rid="ref-lawton_seeing_2022" ref-type="bibr">Lawton
+  et al. 2022</xref>). In addition to climatic variability, Australia is
+  marked by poor natural soil fertility
+  (<xref alt="Orians and Milewski 2007" rid="ref-orians_ecology_2007" ref-type="bibr">Orians
+  and Milewski 2007</xref>,
+  <xref alt="Morton et al. 2011" rid="ref-morton_fresh_2011" ref-type="bibr">Morton
+  et al. 2011</xref>). Nutrients such as nitrogen and phosphorus are in
+  short supply in unmodified soils. Subsequently, many native animals
+  and plants are adapted to environments low in soil nutrients
+  (<xref alt="Orians and Milewski 2007" rid="ref-orians_ecology_2007" ref-type="bibr">Orians
+  and Milewski 2007</xref>). Australia has several locust species, but
+  the <italic>C. terminifera</italic> is the most widespread and
   economically damaging
-  (<xref alt="Hunter et al., 2001" rid="ref-hunter_adaptations_2001" ref-type="bibr">Hunter
-  et al., 2001</xref>). As with many dryland animals, numerous studies
+  (<xref alt="Hunter et al. 2001" rid="ref-hunter_adaptations_2001" ref-type="bibr">Hunter
+  et al. 2001</xref>). As with many dryland animals, numerous studies
   have shown the relationship between climatic conditions and <italic>C.
   terminifera</italic> population outbreaks
-  (<xref alt="Clark, 1974" rid="ref-clark_influence_1974" ref-type="bibr">Clark,
-  1974</xref>;
-  <xref alt="Deveson &amp; Walker, 2005" rid="ref-deveson_not_2005" ref-type="bibr">Deveson
-  &amp; Walker, 2005</xref>;
-  <xref alt="Farrow, 1982" rid="ref-farrow_population_1982" ref-type="bibr">Farrow,
-  1982</xref>;
-  <xref alt="Key, 1945" rid="ref-key_general_1945" ref-type="bibr">Key,
-  1945</xref>), however few have investigated the relationship between
-  soil and plant nutrients and this species’ outbreaks.</p>
+  (<xref alt="Key 1945" rid="ref-key_general_1945" ref-type="bibr">Key
+  1945</xref>,
+  <xref alt="Clark 1974" rid="ref-clark_influence_1974" ref-type="bibr">Clark
+  1974</xref>,
+  <xref alt="Farrow 1982" rid="ref-farrow_population_1982" ref-type="bibr">Farrow
+  1982</xref>,
+  <xref alt="Deveson and Walker 2005" rid="ref-deveson_not_2005" ref-type="bibr">Deveson
+  and Walker 2005</xref>), however few have investigated the
+  relationship between soil and plant nutrients and this species’
+  outbreaks.</p>
   <p>In this study, we investigate the across scale relationship between
   soil and plant nutrients and animal populations using <italic>C.
   terminifera</italic>. We have three specific questions and subsequent
@@ -605,13 +583,13 @@ AZ, USA</institution>
   <p>At larger scales, and accounting for climatic factors, we expect
   outbreaks to be associated with low nitrogen areas. Since terrestrial
   herbivores can require 5-50 times more nitrogen than phosphorus
-  (<xref alt="Elser et al., 2000" rid="ref-elser_nutritional_2000" ref-type="bibr">Elser
-  et al., 2000</xref>) and locusts likely have a higher capacity to
+  (<xref alt="Elser et al. 2000" rid="ref-elser_nutritional_2000" ref-type="bibr">Elser
+  et al. 2000</xref>) and locusts likely have a higher capacity to
   post-ingestively regulate phosphorus in ranges found in nature
-  (<xref alt="Cease et al., 2016" rid="ref-cease_dietary_2016" ref-type="bibr">Cease
-  et al., 2016</xref>;
-  <xref alt="Zhang et al., 2014" rid="ref-zhang_grasshoppers_2014" ref-type="bibr">Zhang
-  et al., 2014</xref>), we expect nitrogen to be a stronger predictor of
+  (<xref alt="Zhang et al. 2014" rid="ref-zhang_grasshoppers_2014" ref-type="bibr">Zhang
+  et al. 2014</xref>,
+  <xref alt="Cease et al. 2016" rid="ref-cease_dietary_2016" ref-type="bibr">Cease
+  et al. 2016</xref>), we expect nitrogen to be a stronger predictor of
   populations at a continental scale as compared to phosphorus.</p>
 </sec>
 <sec id="methods">
@@ -680,12 +658,12 @@ AZ, USA</institution>
     Industries in Trangie, New South Wales, Australia. We used field
     populations of the <italic>C. terminifera</italic>, which prefers
     open grassy areas and is a grass generalist
-    (<xref alt="Key, 1945" rid="ref-key_general_1945" ref-type="bibr">Key,
+    (<xref alt="Key 1945" rid="ref-key_general_1945" ref-type="bibr">Key
     1945</xref>). Solitarious populations of this locust species
     maintain their intake target closely regardless of spatiotemporal
     changes
-    (<xref alt="Lawton et al., 2021" rid="ref-lawton_mismatched_2021" ref-type="bibr">Lawton
-    et al., 2021</xref>). We carried out these studies in
+    (<xref alt="Lawton et al. 2021" rid="ref-lawton_mismatched_2021" ref-type="bibr">Lawton
+    et al. 2021</xref>). We carried out these studies in
     November-December 2015, during the final nymphal and early adult
     stages of the spring <italic>C. terminifera</italic> generation.</p>
   </sec>
@@ -697,8 +675,8 @@ AZ, USA</institution>
     (differing ratios of protein and carbohydrates), 32% cellulose, and
     4% of salt, sterols and vitamins. This artificial diet mixture has
     been used with this species
-    (<xref alt="Clissold et al., 2014" rid="ref-clissold_regulation_2014" ref-type="bibr">Clissold
-    et al., 2014</xref>) and was developed by Simpson &amp; Abisgold
+    (<xref alt="Clissold et al. 2014" rid="ref-clissold_regulation_2014" ref-type="bibr">Clissold
+    et al. 2014</xref>) and was developed by Simpson and Abisgold
     (<xref alt="1985" rid="ref-simpson_compensation_1985" ref-type="bibr">1985</xref>)
     from Dadd
     (<xref alt="1961" rid="ref-dadd_nutritional_1961" ref-type="bibr">1961</xref>).
@@ -849,11 +827,11 @@ AZ, USA</institution>
     <p>To understand the relationship between soil nutrients and locust
     outbreaks, we used the Australian Plague Locust Commission’s (APLC)
     long-term locust survey dataset
-    (<xref alt="T. Deveson &amp; Hunter, 2002" rid="ref-deveson_operation_2002" ref-type="bibr">T.
-    Deveson &amp; Hunter, 2002</xref>) and the Soil and Landscape Grid
+    (<xref alt="Deveson and Hunter 2002" rid="ref-deveson_operation_2002" ref-type="bibr">Deveson
+    and Hunter 2002</xref>) and the Soil and Landscape Grid
     Australia-Wide 3D Soil Property Maps
-    (<xref alt="Grundy et al., 2015" rid="ref-grundy_soil_2015" ref-type="bibr">Grundy
-    et al., 2015</xref>).</p>
+    (<xref alt="Grundy et al. 2015" rid="ref-grundy_soil_2015" ref-type="bibr">Grundy
+    et al. 2015</xref>).</p>
     <sec id="locust-outbreak-data">
       <title>2.4.1 Locust outbreak data</title>
       <p><italic>Chortoicetes terminifera</italic> data from 2000 - 2017
@@ -870,10 +848,10 @@ AZ, USA</institution>
       this period overlapped with the soil grid data which was released
       in 2015. Since climatic conditions and migration patterns are
       drivers in outbreak occurrence
-      (<xref alt="Lawton et al., 2022" rid="ref-lawton_seeing_2022" ref-type="bibr">Lawton
-      et al., 2022</xref>;
-      <xref alt="Veran et al., 2015" rid="ref-veran_modeling_2015" ref-type="bibr">Veran
-      et al., 2015</xref>) they likely mask the relationship between
+      (<xref alt="Veran et al. 2015" rid="ref-veran_modeling_2015" ref-type="bibr">Veran
+      et al. 2015</xref>,
+      <xref alt="Lawton et al. 2022" rid="ref-lawton_seeing_2022" ref-type="bibr">Lawton
+      et al. 2022</xref>) they likely mask the relationship between
       static environmental variables like soil nutrients. To account for
       this variability, we spatially aggregated the survey dataset to a
       1 km<sup>2</sup> grid as can be seen in
@@ -882,8 +860,8 @@ AZ, USA</institution>
       cells rather than the actual outbreak. We used a 1 km<sup>2</sup>
       grid as this reflects the estimated maximum dispersal distance
       from hatching to 5th instar
-      (<xref alt="Hunter et al., 2008" rid="ref-hunter_aerial_2008" ref-type="bibr">Hunter
-      et al., 2008</xref>). We counted the number of outbreaks (APLC
+      (<xref alt="Hunter et al. 2008" rid="ref-hunter_aerial_2008" ref-type="bibr">Hunter
+      et al. 2008</xref>). We counted the number of outbreaks (APLC
       nymph density code 4), the number of nil records (APLC nymph
       density code 0), and total number of survey observations. This
       resulted in approximately 67,000 grid cells for the final dataset.
@@ -899,14 +877,14 @@ AZ, USA</institution>
       two meters below the surface. These depths and methodology are
       consistent with the specifications of the Global Soil Map project
       (http://www.globalsoilmap.net)
-      (<xref alt="Grundy et al., 2015" rid="ref-grundy_soil_2015" ref-type="bibr">Grundy
-      et al., 2015</xref>). We extracted this data from Google Earth
+      (<xref alt="Grundy et al. 2015" rid="ref-grundy_soil_2015" ref-type="bibr">Grundy
+      et al. 2015</xref>). We extracted this data from Google Earth
       Engine
-      (<xref alt="Gorelick et al., 2017" rid="ref-gorelick_google_2017" ref-type="bibr">Gorelick
-      et al., 2017</xref>). In this data set both phosphorus and
-      nitrogen units are the mass fraction of total nutrient in the soil
-      by weight. We took the average of nitrogen and phosphorus of the
-      top two depths (0 cm – 5 cm and 5 cm and 15 cm) as these are most
+      (<xref alt="Gorelick et al. 2017" rid="ref-gorelick_google_2017" ref-type="bibr">Gorelick
+      et al. 2017</xref>). In this data set both phosphorus and nitrogen
+      units are the mass fraction of total nutrient in the soil by
+      weight. We took the average of nitrogen and phosphorus of the top
+      two depths (0 cm – 5 cm and 5 cm and 15 cm) as these are most
       relevant to nutrient content of grasses and forbs. Then, for each
       APLC survey grid we calculated the mean mass fraction of nitrogen
       and phosphorus in the soil to a 15 cm depth. Spatial distribution
@@ -993,8 +971,8 @@ AZ, USA</institution>
       do this, we calculated the average precipitation between 2000 and
       2017 for all survey grids using the European Centre for
       Medium-Range Weather Forecasts’ ERA5 reanalysis dataset
-      (<xref alt="Muñoz-Sabater et al., 2021" rid="ref-munoz-sabater_era5-land_2021" ref-type="bibr">Muñoz-Sabater
-      et al., 2021</xref>). This allowed us to visually compare the
+      (<xref alt="Muñoz-Sabater et al. 2021" rid="ref-munoz-sabater_era5-land_2021" ref-type="bibr">Muñoz-Sabater
+      et al. 2021</xref>). This allowed us to visually compare the
       effect differences of soil nitrogen and mean annual precipitation
       on locust outbreaks. In other words, if soil nitrogen and mean
       annual precipitation were so tightly correlated that the effects
@@ -1006,11 +984,11 @@ AZ, USA</institution>
       precipitation replaced soil nitrogen and phosphorus. The inclusion
       of bioregions as a random effect allowed us to account for
       variation due to vegetation community and soil characteristics
-      (<xref alt="Lawton et al., 2022" rid="ref-lawton_seeing_2022" ref-type="bibr">Lawton
-      et al., 2022</xref>). The inclusion of latitude and longitude
+      (<xref alt="Lawton et al. 2022" rid="ref-lawton_seeing_2022" ref-type="bibr">Lawton
+      et al. 2022</xref>). The inclusion of latitude and longitude
       allowed us to account for spatial autocorrelation
-      (<xref alt="Clayton et al., 1993" rid="ref-clayton_spatial_1993" ref-type="bibr">Clayton
-      et al., 1993</xref>). Lastly, the inclusion of the total number of
+      (<xref alt="Clayton et al. 1993" rid="ref-clayton_spatial_1993" ref-type="bibr">Clayton
+      et al. 1993</xref>). Lastly, the inclusion of the total number of
       observations allowed us to account for sampling intensity
       biases.</p>
     </sec>
@@ -1886,15 +1864,15 @@ AZ, USA</institution>
     lowest development time to adulthood
     (<xref alt="Figure 2" rid="fig-field-pop-it-results">Figure 2</xref>
     B &amp; C), consistent with previous studies
-    (<xref alt="Clissold et al., 2014" rid="ref-clissold_regulation_2014" ref-type="bibr">Clissold
-    et al., 2014</xref>;
-    <xref alt="Lawton et al., 2021" rid="ref-lawton_mismatched_2021" ref-type="bibr">Lawton
-    et al., 2021</xref>). Locusts are highly mobile (<italic>C.
+    (<xref alt="Clissold et al. 2014" rid="ref-clissold_regulation_2014" ref-type="bibr">Clissold
+    et al. 2014</xref>,
+    <xref alt="Lawton et al. 2021" rid="ref-lawton_mismatched_2021" ref-type="bibr">Lawton
+    et al. 2021</xref>). Locusts are highly mobile (<italic>C.
     terminifera</italic> can fly up to 500 km in a single night,
-    (<xref alt="Deveson &amp; Walker, 2005" rid="ref-deveson_not_2005" ref-type="bibr">Deveson
-    &amp; Walker, 2005</xref>)) and the demand for energy via
-    carbohydrates and lipids likely increases relative to protein demand
-    during the later life stages of these animals.</p>
+    (<xref alt="Deveson and Walker 2005" rid="ref-deveson_not_2005" ref-type="bibr">Deveson
+    and Walker 2005</xref>)) and the demand for energy via carbohydrates
+    and lipids likely increases relative to protein demand during the
+    later life stages of these animals.</p>
     <p>Plant nutrient content in the nitrogen fertilization treatments
     was not significantly different until the last sample period, which
     likely explains the small effect on locust growth
@@ -1918,23 +1896,23 @@ AZ, USA</institution>
     multiple studies have shown that the Australian nutritional
     landscape is often too protein-biased relative to what the
     <italic>C. terminifera</italic> prefers
-    (<xref alt="Lawton et al., 2020" rid="ref-lawton_woody_2020" ref-type="bibr">Lawton
-    et al., 2020</xref>,
+    (<xref alt="Lawton et al. 2020" rid="ref-lawton_woody_2020" ref-type="bibr">Lawton
+    et al. 2020</xref>,
     <xref alt="2021" rid="ref-lawton_mismatched_2021" ref-type="bibr">2021</xref>).
     Regardless, populations are still persistent and outbreaks can occur
     at lower frequencies in these areas
-    (<xref alt="Deveson, 2013" rid="ref-deveson_satellite_2013" ref-type="bibr">Deveson,
-    2013</xref>;
-    <xref alt="Key, 1945" rid="ref-key_general_1945" ref-type="bibr">Key,
-    1945</xref>). How this species can achieve the optimal balance of
+    (<xref alt="Key 1945" rid="ref-key_general_1945" ref-type="bibr">Key
+    1945</xref>,
+    <xref alt="Deveson 2013" rid="ref-deveson_satellite_2013" ref-type="bibr">Deveson
+    2013</xref>). How this species can achieve the optimal balance of
     nutrients within an unfavorable nutritional environment merits
     further investigation, but may include post-ingestive regulation
     and/or large-range foraging. Migratory locusts (<italic>Locusta
     migratoria</italic>) can choose microclimates that favor higher
     efficiency of carbohydrate or protein absorption depending on their
     host plant and nutritional status
-    (<xref alt="Clissold et al., 2013" rid="ref-clissold_insect_2013" ref-type="bibr">Clissold
-    et al., 2013</xref>). For this study, we collected free-living
+    (<xref alt="Clissold et al. 2013" rid="ref-clissold_insect_2013" ref-type="bibr">Clissold
+    et al. 2013</xref>). For this study, we collected free-living
     locusts from the same region and a similar environment as where we
     built the field cages, yet those confined to field cages selected a
     10x decrease in p:c (1p : 20c vs 1p : 2c). This result suggests that
@@ -1959,15 +1937,15 @@ AZ, USA</institution>
     (<xref alt="Figure 5" rid="fig-spatial-model-nto-pto">Figure 5</xref>
     A), suggesting that nitrogen acts as a limiting factor not due to
     its deficit
-    (<xref alt="White, 1993" rid="ref-white_inadequate_1993" ref-type="bibr">White,
+    (<xref alt="White 1993" rid="ref-white_inadequate_1993" ref-type="bibr">White
     1993</xref>) but its excess. Plants growing in high nitrogen
     environments tend to have high p:c ratios, which force locusts to
     either undereat carbohydrates (limiting their energy to support
     growth and migration) or overeat protein (which can be toxic) to
     acquire sufficient carbohydrates
-    (<xref alt="Behmer, 2009" rid="ref-behmer_insect_2009" ref-type="bibr">Behmer,
-    2009</xref>;
-    <xref alt="Cease, 2024" rid="ref-cease_how_2024" ref-type="bibr">Cease,
+    (<xref alt="Behmer 2009" rid="ref-behmer_insect_2009" ref-type="bibr">Behmer
+    2009</xref>,
+    <xref alt="Cease 2024" rid="ref-cease_how_2024" ref-type="bibr">Cease
     2024</xref>). On the other end of the performance curve, <italic>C.
     terminifera</italic> do have a lower p:c range that limits
     performance, as shown using artificial diets
@@ -1979,23 +1957,23 @@ AZ, USA</institution>
     extremely phosphorus poor soils
     (<xref alt="Figure 5" rid="fig-spatial-model-nto-pto">Figure 5</xref>
     B). Because Australian soils are characteristically phosphorus poor
-    (<xref alt="Donald, 1964" rid="ref-donald_colin_phosphorus_1964" ref-type="bibr">Donald,
+    (<xref alt="Donald 1964" rid="ref-donald_colin_phosphorus_1964" ref-type="bibr">Donald
     1964</xref>), Australian animals like this locust are adapted to
     phosphorus poor environments and potentially having too much
     phosphorus is deleterious
-    (<xref alt="Morton et al., 2011" rid="ref-morton_fresh_2011" ref-type="bibr">Morton
-    et al., 2011</xref>). Locust populations may be more tightly
+    (<xref alt="Morton et al. 2011" rid="ref-morton_fresh_2011" ref-type="bibr">Morton
+    et al. 2011</xref>). Locust populations may be more tightly
     correlated with soil nitrogen than phosphorus because terrestrial
     herbivores require 5-50 times more nitrogen than phosphorus
-    (<xref alt="Elser et al., 2000" rid="ref-elser_nutritional_2000" ref-type="bibr">Elser
-    et al., 2000</xref>), meaning they can more readily balance
+    (<xref alt="Elser et al. 2000" rid="ref-elser_nutritional_2000" ref-type="bibr">Elser
+    et al. 2000</xref>), meaning they can more readily balance
     phosphorus by eating a few foods rich or poor in phosphorus but
     cannot as quickly regulate protein and carbohydrate energy because
     they make up the bulk of their required nutrients. Indeed,
     laboratory studies have revealed that short-term limitations in
     dietary phosphorus have no apparent impact on grasshopper growth
-    (<xref alt="Cease et al., 2016" rid="ref-cease_dietary_2016" ref-type="bibr">Cease
-    et al., 2016</xref>), suggesting that these mobile herbivores could
+    (<xref alt="Cease et al. 2016" rid="ref-cease_dietary_2016" ref-type="bibr">Cease
+    et al. 2016</xref>), suggesting that these mobile herbivores could
     seek out phosphorus-rich diets intermittently to overcome potential
     phosphorus limitation in field environments. However, in this study,
     we only tested this relationship with phosphorus at the continental
@@ -2004,8 +1982,8 @@ AZ, USA</institution>
     soil phosphorus. While we only looked at nitrogen and phosphorus, it
     is also important to note that animals require a suite of nutrients.
     Other nutrients such as potassium and sodium
-    (<xref alt="Joern et al., 2012" rid="ref-joern_not_2012" ref-type="bibr">Joern
-    et al., 2012</xref>) warrant further investigation. Comparing locust
+    (<xref alt="Joern et al. 2012" rid="ref-joern_not_2012" ref-type="bibr">Joern
+    et al. 2012</xref>) warrant further investigation. Comparing locust
     outbreaks between continents would further show the relationship
     between nutrient availability and animal population dynamics. One
     excellent dataset for this would be SoilGrids
@@ -2017,7 +1995,7 @@ AZ, USA</institution>
     data (e.g. rainfall and soil moisture) or vegetation growth data
     (e.g. normalized difference vegetation index, NDVI) as the major
     predictors of outbreaks
-    (<xref alt="Cressman, 2013" rid="ref-cressman_role_2013" ref-type="bibr">Cressman,
+    (<xref alt="Cressman 2013" rid="ref-cressman_role_2013" ref-type="bibr">Cressman
     2013</xref>). While these climatic variables are clearly important,
     adding metrics to quantify the nutritional landscape can help
     increase forecasting model accuracy in environments with highly
@@ -2030,20 +2008,20 @@ AZ, USA</institution>
     content showed that grasshoppers not classified as locusts have a
     variation of negative, neutral, and positive responses to increasing
     plant nitrogen
-    (<xref alt="Cease, 2024" rid="ref-cease_how_2024" ref-type="bibr">Cease,
+    (<xref alt="Cease 2024" rid="ref-cease_how_2024" ref-type="bibr">Cease
     2024</xref>). Looking just at field surveys, there are more reports
     of a negative correlation between plant nitrogen and non-locust
     grasshopper abundance (17 reports) relative to neutral (6 reports)
     or positive (9 reports). This pattern corroborates long-term studies
     showing that dilution of plant nitrogen is correlated with declines
     of North American grasshopper populations
-    (<xref alt="Welti, Roeder, et al., 2020" rid="ref-welti_nutrient_2020" ref-type="bibr">Welti,
-    Roeder, et al., 2020</xref>). Of the studies that report positive
+    (<xref alt="Welti et al. 2020a" rid="ref-welti_nutrient_2020" ref-type="bibr">Welti
+    et al. 2020a</xref>). Of the studies that report positive
     correlations between individual grasshopper species abundance and
     plant nitrogen, most are from graminivorous (grass-feeding) species
     (11 reports), with 7 reports from mixed (grasses and forbs) or forb
     feeders
-    (<xref alt="Cease, 2024" rid="ref-cease_how_2024" ref-type="bibr">Cease,
+    (<xref alt="Cease 2024" rid="ref-cease_how_2024" ref-type="bibr">Cease
     2024</xref>). This pattern supports the hypothesis that
     grass-feeders are more likely to be nitrogen-limited because grasses
     tend to have lower p:c ratios than forbs; although this trend was
@@ -2054,15 +2032,15 @@ AZ, USA</institution>
     Because mass specific protein consumption is highly correlated with
     growth rate in both lab and field populations, but carbohydrate
     consumption is highly influenced by the environment
-    (<xref alt="Talal et al., 2023" rid="ref-talal_body_2023" ref-type="bibr">Talal
-    et al., 2023</xref>), it is most likely that locusts have similar
+    (<xref alt="Talal et al. 2023" rid="ref-talal_body_2023" ref-type="bibr">Talal
+    et al. 2023</xref>), it is most likely that locusts have similar
     protein requirements as other non-locust grasshopper species, but
     have much higher carbohydrate demands, potentially to support
     migration
-    (<xref alt="Raubenheimer &amp; Simpson, 1997" rid="ref-raubenheimer_integrative_1997" ref-type="bibr">Raubenheimer
-    &amp; Simpson, 1997</xref>;
-    <xref alt="Talal et al., 2021" rid="ref-talal_high_2021" ref-type="bibr">Talal
-    et al., 2021</xref>,
+    (<xref alt="Raubenheimer and Simpson 1997" rid="ref-raubenheimer_integrative_1997" ref-type="bibr">Raubenheimer
+    and Simpson 1997</xref>,
+    <xref alt="Talal et al. 2021" rid="ref-talal_high_2021" ref-type="bibr">Talal
+    et al. 2021</xref>,
     <xref alt="2023" rid="ref-talal_body_2023" ref-type="bibr">2023</xref>).
     Locusts are able to meet this increased demand for carbohydrate,
     while keeping protein consumption constant, by eating larger amounts
@@ -2084,46 +2062,46 @@ AZ, USA</institution>
     complementary feeding has been recorded for field populations of
     blue sheep (<italic>Psuedois nayaur</italic>) in the Himalayan
     Mountains
-    (<xref alt="Aryal et al., 2015" rid="ref-aryal_foods_2015" ref-type="bibr">Aryal
-    et al., 2015</xref>), Black Howler Monkeys (<italic>Alouatta
+    (<xref alt="Aryal et al. 2015" rid="ref-aryal_foods_2015" ref-type="bibr">Aryal
+    et al. 2015</xref>), Black Howler Monkeys (<italic>Alouatta
     pigra</italic>) in Yucatán
-    (<xref alt="Bridgeman, 2012" rid="ref-bridgeman_feeding_2012" ref-type="bibr">Bridgeman,
+    (<xref alt="Bridgeman 2012" rid="ref-bridgeman_feeding_2012" ref-type="bibr">Bridgeman
     2012</xref>), and other primates
-    (<xref alt="Raubenheimer &amp; Rothman, 2013" rid="ref-raubenheimer_nutritional_2013" ref-type="bibr">Raubenheimer
-    &amp; Rothman, 2013</xref>). There would be a predicted impact on
+    (<xref alt="Raubenheimer and Rothman 2013" rid="ref-raubenheimer_nutritional_2013" ref-type="bibr">Raubenheimer
+    and Rothman 2013</xref>). There would be a predicted impact on
     populations if the nutritional landscape were to become more
     constricted or not overlap with the IT. For example, lab colonies of
     tobacco hornworms (<italic>Manduca sexta</italic> larvae) have an IT
     around 1:1 or sometimes slightly carbohydrate-biased
-    (<xref alt="Wilson, Ruiz, &amp; Davidowitz, 2019" rid="ref-wilson_dietary_2019" ref-type="bibr">Wilson,
-    Ruiz, &amp; Davidowitz, 2019</xref>) and their host plants tend to
-    be carbohydrate-biased relative to their IT
-    (<xref alt="Wilson, Ruiz, Duarte, et al., 2019" rid="ref-wilson_nutritional_2019" ref-type="bibr">Wilson,
-    Ruiz, Duarte, et al., 2019</xref>). However, this does not seem to
-    translate to population level effects, potentially due to secondary
-    metabolites affecting growth more strongly than macronutrient
-    balance and/or larvae may be able to compensate by overeating
-    carbohydrates to acquire sufficient protein
-    (<xref alt="Wilson, Ruiz, &amp; Davidowitz, 2019" rid="ref-wilson_dietary_2019" ref-type="bibr">Wilson,
-    Ruiz, &amp; Davidowitz, 2019</xref>). Overeating carbohydrates is
-    not as detrimental as overeating protein, at least in the short
-    term, and animals tend to be willing to overeat carbohydrates to a
-    greater extent than protein
-    (<xref alt="Cheng et al., 2008" rid="ref-cheng_geometry_2008" ref-type="bibr">Cheng
-    et al., 2008</xref>;
-    <xref alt="Simpson &amp; Raubenheimer, 2012b" rid="ref-simpson_nature_2012" ref-type="bibr">Simpson
-    &amp; Raubenheimer, 2012b</xref>). Therefore, herbivores facing a
+    (<xref alt="Wilson et al. 2019a" rid="ref-wilson_dietary_2019" ref-type="bibr">Wilson
+    et al. 2019a</xref>) and their host plants tend to be
+    carbohydrate-biased relative to their IT
+    (<xref alt="Wilson et al. 2019b" rid="ref-wilson_nutritional_2019" ref-type="bibr">Wilson
+    et al. 2019b</xref>). However, this does not seem to translate to
+    population level effects, potentially due to secondary metabolites
+    affecting growth more strongly than macronutrient balance and/or
+    larvae may be able to compensate by overeating carbohydrates to
+    acquire sufficient protein
+    (<xref alt="Wilson et al. 2019a" rid="ref-wilson_dietary_2019" ref-type="bibr">Wilson
+    et al. 2019a</xref>). Overeating carbohydrates is not as detrimental
+    as overeating protein, at least in the short term, and animals tend
+    to be willing to overeat carbohydrates to a greater extent than
+    protein
+    (<xref alt="Cheng et al. 2008" rid="ref-cheng_geometry_2008" ref-type="bibr">Cheng
+    et al. 2008</xref>,
+    <xref alt="Simpson and Raubenheimer 2012b" rid="ref-simpson_nature_2012" ref-type="bibr">Simpson
+    and Raubenheimer 2012b</xref>). Therefore, herbivores facing a
     nutritional landscape with a p:c generally lower than their IT
     (i.e., carbohydrate excess) may not be as negatively impacted as
     herbivores facing one higher than their IT (i.e., protein excess).
     However, there are several examples of higher localized densities of
     herbivores in response to higher plant nitrogen and protein contents
     with thrips
-    (<xref alt="Brown et al., 2002" rid="ref-brown_relationship_2002" ref-type="bibr">Brown
-    et al., 2002</xref>) and spruce budworm
+    (<xref alt="Brown et al. 2002" rid="ref-brown_relationship_2002" ref-type="bibr">Brown
+    et al. 2002</xref>) and spruce budworm
     (<italic>Choristoneura</italic>)
-    (<xref alt="De Grandpré et al., 2022" rid="ref-de_grandpre_defoliation-induced_2022" ref-type="bibr">De
-    Grandpré et al., 2022</xref>) being two examples. These examples
+    (<xref alt="De Grandpré et al. 2022" rid="ref-de_grandpre_defoliation-induced_2022" ref-type="bibr">De
+    Grandpré et al. 2022</xref>) being two examples. These examples
     suggest that low p:c diets limit population growth of some
     herbivores, but more studies are needed to determine if this
     relationship is only localized or if it scales up. It may be that
@@ -2135,16 +2113,16 @@ AZ, USA</institution>
     scales.</p>
     <p>There is evidence for phosphorus limitation in some species, but
     limited research showing a detrimental effect of excess phosphorus
-    (<xref alt="Cease et al., 2016" rid="ref-cease_dietary_2016" ref-type="bibr">Cease
-    et al., 2016</xref>). In aquatic insects such as
+    (<xref alt="Cease et al. 2016" rid="ref-cease_dietary_2016" ref-type="bibr">Cease
+    et al. 2016</xref>). In aquatic insects such as
     <italic>Daphnia</italic> species, there is a strong positive
     association with phosphorus available and population dynamics
     Andersen et al.
     (<xref alt="2004" rid="ref-andersen_stoichiometry_2004" ref-type="bibr">2004</xref>).
     However this trend is not seen in field cricket populations
     (<italic>Gryllus veletis</italic>)
-    (<xref alt="Harrison et al., 2014" rid="ref-harrison_synthesis_2014" ref-type="bibr">Harrison
-    et al., 2014</xref>) and other terrestrial insects. Loaiza et al.
+    (<xref alt="Harrison et al. 2014" rid="ref-harrison_synthesis_2014" ref-type="bibr">Harrison
+    et al. 2014</xref>) and other terrestrial insects. Loaiza et al.
     (<xref alt="2011" rid="ref-loaiza2011" ref-type="bibr">2011</xref>)
     found no effect of phosphorus fertilization (but a positive effect
     of N fertilization) on Kansas tallgrass prairie grasshopper
@@ -2158,12 +2136,12 @@ AZ, USA</institution>
     chickens, rats, cats, caribou, pigs, and dairy cattle, mass specific
     protein consumption is highly correlated with growth rate and
     decreases with age and body size
-    (<xref alt="Talal et al., 2023" rid="ref-talal_body_2023" ref-type="bibr">Talal
-    et al., 2023</xref>). In contrast, energy demand (carbohydrates and
+    (<xref alt="Talal et al. 2023" rid="ref-talal_body_2023" ref-type="bibr">Talal
+    et al. 2023</xref>). In contrast, energy demand (carbohydrates and
     lipids) does not show a clear relationship with growth rate and
     instead is more affected by environment and activity
-    (<xref alt="Talal et al., 2023" rid="ref-talal_body_2023" ref-type="bibr">Talal
-    et al., 2023</xref>). Therefore, an animal’s IT is predicted to be
+    (<xref alt="Talal et al. 2023" rid="ref-talal_body_2023" ref-type="bibr">Talal
+    et al. 2023</xref>). Therefore, an animal’s IT is predicted to be
     affected by the contrasting effects of growth (increases dietary
     p:c) and activity or stress (increases carbohydrate demand and
     therefore decreases dietary p:c), although other physiological and
@@ -2173,8 +2151,8 @@ AZ, USA</institution>
     For example, monarch butterflies have been gradually increasing
     their already-high daily energy expenditure during migration due to
     warmer temperatures caused by climate change
-    (<xref alt="Parlin et al., 2023" rid="ref-parlin_cost_2023" ref-type="bibr">Parlin
-    et al., 2023</xref>). Young and fast growing herbivores with low
+    (<xref alt="Parlin et al. 2023" rid="ref-parlin_cost_2023" ref-type="bibr">Parlin
+    et al. 2023</xref>). Young and fast growing herbivores with low
     activity levels would be predicted to have a high p:c IT, whereas
     older juveniles and adults (slower mass specific growth) with high
     activity levels would be predicted to have a low p:c IT. Comparative
@@ -2188,22 +2166,22 @@ AZ, USA</institution>
     <title>4.5 Synthesis and Application</title>
     <p>Acquiring the right amount of nutrients is a critical component
     for animal growth, reproduction, and population dynamics
-    (<xref alt="Doonan &amp; Slade, 1995" rid="ref-doonan_effects_1995" ref-type="bibr">Doonan
-    &amp; Slade, 1995</xref>;
-    <xref alt="Hansson, 1979" rid="ref-hansson_food_1979" ref-type="bibr">Hansson,
-    1979</xref>;
-    <xref alt="Keith, 1983" rid="ref-keith_role_1983" ref-type="bibr">Keith,
-    1983</xref>). However, in contrast to the conventional hypotheses
-    that predict a broad positive linear relationship between
+    (<xref alt="Hansson 1979" rid="ref-hansson_food_1979" ref-type="bibr">Hansson
+    1979</xref>,
+    <xref alt="Keith 1983" rid="ref-keith_role_1983" ref-type="bibr">Keith
+    1983</xref>,
+    <xref alt="Doonan and Slade 1995" rid="ref-doonan_effects_1995" ref-type="bibr">Doonan
+    and Slade 1995</xref>). However, in contrast to the conventional
+    hypotheses that predict a broad positive linear relationship between
     herbivorous populations and nitrogen and phosphorus
-    (<xref alt="Huberty &amp; Denno, 2006" rid="ref-huberty_consequences_2006" ref-type="bibr">Huberty
-    &amp; Denno, 2006</xref>;
-    <xref alt="Mattson, 1980" rid="ref-mattson_herbivory_1980" ref-type="bibr">Mattson,
-    1980</xref>;
-    <xref alt="White, 1978" rid="ref-white_importance_1978" ref-type="bibr">White,
-    1978</xref>;
-    <xref alt="White, 1993" rid="ref-white_inadequate_1993" ref-type="bibr">White,
-    1993</xref>), the story is nuanced and probably most often
+    (<xref alt="White 1978" rid="ref-white_importance_1978" ref-type="bibr">White
+    1978</xref>,
+    <xref alt="Mattson 1980" rid="ref-mattson_herbivory_1980" ref-type="bibr">Mattson
+    1980</xref>,
+    <xref alt="White 1993" rid="ref-white_inadequate_1993" ref-type="bibr">White
+    1993</xref>,
+    <xref alt="Huberty and Denno 2006" rid="ref-huberty_consequences_2006" ref-type="bibr">Huberty
+    and Denno 2006</xref>), the story is nuanced and probably most often
     non-linear. For some species, especially those with high energy
     requirements, the relationship is the opposite (negatively
     associated with nitrogen) like many locust species and the effects
@@ -5031,53 +5009,34 @@ AZ, USA</institution>
 <corresp id="cor-1-nb-article">douglas@douglaslawton.com</corresp>
 </author-notes>
 <abstract>
-<list list-type="order">
-  <list-item>
-    <p>Nutrient composition varies greatly across landscapes, which in
-    turn influences the spatiotemporal variation and dynamics of
-    populations. Yet few studies have investigated this pattern on
-    multiple scales.</p>
-  </list-item>
-  <list-item>
-    <p>We tested how nutrient limitation affects herbivore populations
-    across spatial scales from individual behavior to landscape level
-    population dynamics using Australian plague locust,
-    <italic>Chortoicetes terminifera</italic> (Walker), field
-    populations and long-term survey data from across their range.</p>
-  </list-item>
-  <list-item>
-    <p>At the individual level, juvenile locusts selected for a
-    carbohydrate-biased intake target of 1 protein (p) 2 carbohydrate
-    (c) and had the highest growth and shortest development time when
-    fed artificial diets with that same 1p:2c ratio over the duration of
-    the 5th (final) juvenile instar.</p>
-  </list-item>
-  <list-item>
-    <p>At the field level, locusts kept in field cages with
-    protein-biased plants redressed their nutritional imbalance by
-    selecting very carbohydrate-biased diets (up to a 1p:20c ratio) for
-    more than a week after being removed from the protein-biased
-    environment. Once the deficiency was met, locusts returned to the
-    1p:2c intake target.</p>
-  </list-item>
-  <list-item>
-    <p>Going up to the landscape level, outbreaks were negatively
-    correlated with soil nitrogen and showed a non-linear relationship
-    with soil phosphorus peaking at approximately 4% soil phosphorus. We
-    disentangled the relationship between mean annual precipitation and
-    soil nitrogen through leveraging both comprehensive locust surveys
-    and remotely sensed soil and weather data that spanned decades.</p>
-  </list-item>
-  <list-item>
-    <p>This paper is the first to integrate lab, field, and remote
-    sensing approaches to demonstrate the importance of nutrient
-    balancing and acquisition across scales for herbivores. Specifically
-    for locusts, we show that low nitrogen environments promote
-    outbreaks, likely by reducing plant protein to carbohydrate ratios.
-    Incorporating soil quality data into locust plague forecasting
-    models can help increase accuracy of predictions.</p>
-  </list-item>
-</list>
+<p>Nutrient composition varies greatly across landscapes, influencing
+the spatiotemporal variation and dynamics of populations, yet few
+studies have investigated this pattern across multiple scales. We tested
+how nutrient limitation affects herbivore populations, from individual
+behavior to landscape-level population dynamics, using the Australian
+plague locust, Chortoicetes terminifera (Walker), with field populations
+and long-term survey data from across their range. At the individual
+level, juvenile locusts selected for a carbohydrate-biased intake target
+of 1 protein (p) to 2 carbohydrate (c), and exhibited the highest growth
+and shortest development time when fed artificial diets with that same
+1p:2c ratio during the final juvenile instar. At the field level,
+locusts kept in cages with protein-biased plants redressed their
+nutritional imbalance by selecting carbohydrate-biased diets (up to a
+1p:20c ratio) for over a week after being removed from the
+protein-biased environment, returning to the 1p:2c intake target once
+the deficiency was met. At the landscape level, locust outbreaks were
+negatively correlated with soil nitrogen and showed a non-linear
+relationship with soil phosphorus, peaking at approximately 4% soil
+phosphorus. We disentangled the interaction between mean annual
+precipitation and soil nitrogen using comprehensive locust surveys and
+remotely sensed soil and weather data spanning decades. This study is
+the first to integrate lab, field, and remote sensing approaches,
+demonstrating the importance of nutrient balancing and acquisition
+across scales for herbivores. Specifically for locusts, we show that
+low-nitrogen environments promote outbreaks, likely by reducing plant
+protein-to-carbohydrate ratios. Incorporating soil quality data into
+locust plague forecasting models could help improve prediction
+accuracy.</p>
 </abstract>
 </front-stub>
 
@@ -5087,39 +5046,38 @@ AZ, USA</institution>
   <p>Plant nutrients are usually more variable than animal body
   composition, which can make it challenging for herbivores to acquire
   an optimal nutritional balance
-  (<xref alt="Elser et al., 2000" rid="ref-elser_nutritional_2000-nb-article" ref-type="bibr">Elser
-  et al., 2000</xref>). Nutrient balance affects individual performance
-  (<xref alt="Batzli, 1986" rid="ref-batzli_nutritional_1986-nb-article" ref-type="bibr">Batzli,
-  1986</xref>;
-  <xref alt="Bernays et al., 1994" rid="ref-bernays_dietary_1994-nb-article" ref-type="bibr">Bernays
-  et al., 1994</xref>) and, by extension, influences population dynamics
-  (<xref alt="Elser et al., 2000" rid="ref-elser_nutritional_2000-nb-article" ref-type="bibr">Elser
-  et al., 2000</xref>). One way many primary consumers achieve an
-  optimal blend of nutrients is through selecting different host plants
-  or plant parts to reach a specific amount and ratio, termed the intake
-  target, IT
-  (<xref alt="Simpson &amp; Raubenheimer, 2012a" rid="ref-simpson2012-nb-article" ref-type="bibr">Simpson
-  &amp; Raubenheimer, 2012a</xref>). For example, giant pandas
+  (<xref alt="Elser et al. 2000" rid="ref-elser_nutritional_2000-nb-article" ref-type="bibr">Elser
+  et al. 2000</xref>). Nutrient balance affects individual performance
+  (<xref alt="Batzli 1986" rid="ref-batzli_nutritional_1986-nb-article" ref-type="bibr">Batzli
+  1986</xref>,
+  <xref alt="Bernays et al. 1994" rid="ref-bernays_dietary_1994-nb-article" ref-type="bibr">Bernays
+  et al. 1994</xref>) and, by extension, influences population dynamics
+  (<xref alt="Elser et al. 2000" rid="ref-elser_nutritional_2000-nb-article" ref-type="bibr">Elser
+  et al. 2000</xref>). One way many primary consumers achieve an optimal
+  blend of nutrients is through selecting different host plants or plant
+  parts to reach a specific amount and ratio, termed the intake target,
+  IT
+  (<xref alt="Simpson and Raubenheimer 2012a" rid="ref-simpson2012-nb-article" ref-type="bibr">Simpson
+  and Raubenheimer 2012a</xref>). For example, giant pandas
   (<italic>Ailuropoda melanoleuca</italic>) synchronize their migration
   and reproduction cycles with seasonal nutrient availability between
   different bamboo species
-  (<xref alt="Nie et al., 2015" rid="ref-nie_obligate_2015-nb-article" ref-type="bibr">Nie
-  et al., 2015</xref>). While studies have investigated this trend
+  (<xref alt="Nie et al. 2015" rid="ref-nie_obligate_2015-nb-article" ref-type="bibr">Nie
+  et al. 2015</xref>). While studies have investigated this trend
   between available nutrients and animal populations, they usually
   happen at one scale and biological level. For example, much
   grasshopper nutrition research has been done at the organismal or
   local population level using lab and/or field studies
-  (<xref alt="Behmer, 2009" rid="ref-behmer_insect_2009-nb-article" ref-type="bibr">Behmer,
-  2009</xref>;
-  <xref alt="Cease, 2024" rid="ref-cease_how_2024-nb-article" ref-type="bibr">Cease,
-  2024</xref>;
-  <xref alt="Le Gall et al., 2019" rid="ref-le_gall_global_2019-nb-article" ref-type="bibr">Le
-  Gall et al., 2019</xref>), with a few separate larger scale modeling
-  endeavors
-  (<xref alt="Welti, Roeder, et al., 2020" rid="ref-welti_nutrient_2020-nb-article" ref-type="bibr">Welti,
-  Roeder, et al., 2020</xref>;
-  <xref alt="Zhou et al., 2019" rid="ref-zhou_increased_2019-nb-article" ref-type="bibr">Zhou
-  et al., 2019</xref>). To our knowledge, no study has integrated
+  (<xref alt="Behmer 2009" rid="ref-behmer_insect_2009-nb-article" ref-type="bibr">Behmer
+  2009</xref>,
+  <xref alt="Le Gall et al. 2019" rid="ref-le_gall_global_2019-nb-article" ref-type="bibr">Le
+  Gall et al. 2019</xref>,
+  <xref alt="Cease 2024" rid="ref-cease_how_2024-nb-article" ref-type="bibr">Cease
+  2024</xref>), with a few separate larger scale modeling endeavors
+  (<xref alt="Zhou et al. 2019" rid="ref-zhou_increased_2019-nb-article" ref-type="bibr">Zhou
+  et al. 2019</xref>,
+  <xref alt="Welti et al. 2020a" rid="ref-welti_nutrient_2020-nb-article" ref-type="bibr">Welti
+  et al. 2020a</xref>). To our knowledge, no study has integrated
   individual herbivorous animal nutrition to continental level patterns
   in nutrient availability. Here we work across spatial scales, bridging
   field observations and cage manipulations with continental-scale
@@ -5127,73 +5085,72 @@ AZ, USA</institution>
   relationship changes across multiple scales.</p>
   <p>Food quality has long been considered an important predictor of
   animal population dynamics
-  (<xref alt="Andersen et al., 2004" rid="ref-andersen_stoichiometry_2004-nb-article" ref-type="bibr">Andersen
-  et al., 2004</xref>;
-  <xref alt="White, 1993" rid="ref-white_inadequate_1993-nb-article" ref-type="bibr">White,
-  1993</xref>). Phosphorus and nitrogen commonly limit primary
+  (<xref alt="White 1993" rid="ref-white_inadequate_1993-nb-article" ref-type="bibr">White
+  1993</xref>,
+  <xref alt="Andersen et al. 2004" rid="ref-andersen_stoichiometry_2004-nb-article" ref-type="bibr">Andersen
+  et al. 2004</xref>). Phosphorus and nitrogen commonly limit primary
   production in ecosystems, either separately or as co-limiting factors
-  (<xref alt="Tyrrell, 1999" rid="ref-tyrrell_relative_1999-nb-article" ref-type="bibr">Tyrrell,
-  1999</xref>;
-  <xref alt="Vitousek et al., 2010" rid="ref-vitousek_terrestrial_2010-nb-article" ref-type="bibr">Vitousek
-  et al., 2010</xref>), and are often investigated as limiting factors
+  (<xref alt="Tyrrell 1999" rid="ref-tyrrell_relative_1999-nb-article" ref-type="bibr">Tyrrell
+  1999</xref>,
+  <xref alt="Vitousek et al. 2010" rid="ref-vitousek_terrestrial_2010-nb-article" ref-type="bibr">Vitousek
+  et al. 2010</xref>), and are often investigated as limiting factors
   for higher trophic levels to determine the consequences to animal
   growth and reproduction
-  (<xref alt="Andersen et al., 2004" rid="ref-andersen_stoichiometry_2004-nb-article" ref-type="bibr">Andersen
-  et al., 2004</xref>). For example, bluegrass fields supplemented with
+  (<xref alt="Andersen et al. 2004" rid="ref-andersen_stoichiometry_2004-nb-article" ref-type="bibr">Andersen
+  et al. 2004</xref>). For example, bluegrass fields supplemented with
   high quality (e.g. increased nitrogen) food pellets increase vole
   (<italic>Microtus ochmgaster</italic>) densities compared to control
   fields by supporting higher adult survival, increased breeding, and
   growth rate
-  (<xref alt="Cole &amp; Batzli, 1978" rid="ref-cole_influence_1978-nb-article" ref-type="bibr">Cole
-  &amp; Batzli, 1978</xref>). Less phosphorus in a dryland insect
+  (<xref alt="Cole and Batzli 1978" rid="ref-cole_influence_1978-nb-article" ref-type="bibr">Cole
+  and Batzli 1978</xref>). Less phosphorus in a dryland insect
   herbivore’s (<italic>Sabinia setosa</italic>) host plant, velvet
   mesquite (<italic>Prosopis velutina</italic>), leads to individuals
   having decreased RNA content (slower growth) and lower abundance
-  (<xref alt="Schade et al., 2003" rid="ref-schade_stoichiometric_2003-nb-article" ref-type="bibr">Schade
-  et al., 2003</xref>). More broadly, nitrogen and phosphorus limitation
+  (<xref alt="Schade et al. 2003" rid="ref-schade_stoichiometric_2003-nb-article" ref-type="bibr">Schade
+  et al. 2003</xref>). More broadly, nitrogen and phosphorus limitation
   has been shown in mammals
-  (<xref alt="Randolph et al., 1995" rid="ref-randolph_nutritional_1995-nb-article" ref-type="bibr">Randolph
-  et al., 1995</xref>;
-  <xref alt="White, 1993" rid="ref-white_inadequate_1993-nb-article" ref-type="bibr">White,
-  1993</xref>), birds
-  (<xref alt="Forero et al., 2002" rid="ref-forero_conspecific_2002-nb-article" ref-type="bibr">Forero
-  et al., 2002</xref>;
-  <xref alt="Granbom &amp; Smith, 2006" rid="ref-granbom_food_2006-nb-article" ref-type="bibr">Granbom
-  &amp; Smith, 2006</xref>), and insects
-  (<xref alt="Floyd, 1996" rid="ref-floyd_frontiers_1996-nb-article" ref-type="bibr">Floyd,
-  1996</xref>;
-  <xref alt="Huberty &amp; Denno, 2006" rid="ref-huberty_consequences_2006-nb-article" ref-type="bibr">Huberty
-  &amp; Denno, 2006</xref>;
-  <xref alt="Marsh &amp; Adams, 1995" rid="ref-marsh_decline_1995-nb-article" ref-type="bibr">Marsh
-  &amp; Adams, 1995</xref>;
-  <xref alt="Perkins et al., 2004" rid="ref-perkins_dietary_2004-nb-article" ref-type="bibr">Perkins
-  et al., 2004</xref>) which is discussed further in White
+  (<xref alt="White 1993" rid="ref-white_inadequate_1993-nb-article" ref-type="bibr">White
+  1993</xref>,
+  <xref alt="Randolph et al. 1995" rid="ref-randolph_nutritional_1995-nb-article" ref-type="bibr">Randolph
+  et al. 1995</xref>), birds
+  (<xref alt="Forero et al. 2002" rid="ref-forero_conspecific_2002-nb-article" ref-type="bibr">Forero
+  et al. 2002</xref>,
+  <xref alt="Granbom and Smith 2006" rid="ref-granbom_food_2006-nb-article" ref-type="bibr">Granbom
+  and Smith 2006</xref>), and insects
+  (<xref alt="Marsh and Adams 1995" rid="ref-marsh_decline_1995-nb-article" ref-type="bibr">Marsh
+  and Adams 1995</xref>,
+  <xref alt="Floyd 1996" rid="ref-floyd_frontiers_1996-nb-article" ref-type="bibr">Floyd
+  1996</xref>,
+  <xref alt="Perkins et al. 2004" rid="ref-perkins_dietary_2004-nb-article" ref-type="bibr">Perkins
+  et al. 2004</xref>,
+  <xref alt="Huberty and Denno 2006" rid="ref-huberty_consequences_2006-nb-article" ref-type="bibr">Huberty
+  and Denno 2006</xref>) which is discussed further in White
   (<xref alt="2008" rid="ref-white_role_2008-nb-article" ref-type="bibr">2008</xref>)
   and Andersen et al.
   (<xref alt="2004" rid="ref-andersen_stoichiometry_2004-nb-article" ref-type="bibr">2004</xref>).
   However, not all animal populations respond positively to increasing
   environmental nutrients. For example, studies from across the globe
   reveal that the abundances of many grasshopper species are positively
-  (<xref alt="Joern et al., 2012" rid="ref-joern_not_2012-nb-article" ref-type="bibr">Joern
-  et al., 2012</xref>;
-  <xref alt="Ozment et al., 2021" rid="ref-ozment_tracking_2021-nb-article" ref-type="bibr">Ozment
-  et al., 2021</xref>;
-  <xref alt="Welti, Prather, et al., 2020" rid="ref-welti_bottomup_2020-nb-article" ref-type="bibr">Welti,
-  Prather, et al., 2020</xref>;
-  <xref alt="Welti, Roeder, et al., 2020" rid="ref-welti_nutrient_2020-nb-article" ref-type="bibr">Welti,
-  Roeder, et al., 2020</xref>;
-  <xref alt="H. Zhu et al., 2020" rid="ref-zhu_effects_2020-nb-article" ref-type="bibr">H.
-  Zhu et al., 2020</xref>;
-  <xref alt="Y. Zhu et al., 2019" rid="ref-zhu_negative_2019-nb-article" ref-type="bibr">Y.
-  Zhu et al., 2019</xref>), or not related
-  (<xref alt="Heidorn &amp; Joern, 1987" rid="ref-heidorn_feeding_1987-nb-article" ref-type="bibr">Heidorn
-  &amp; Joern, 1987</xref>;
-  <xref alt="Jonas &amp; Joern, 2008" rid="ref-jonas_hostplant_2008-nb-article" ref-type="bibr">Jonas
-  &amp; Joern, 2008</xref>;
-  <xref alt="Lenhart et al., 2015" rid="ref-lenhart_water_2015-nb-article" ref-type="bibr">Lenhart
-  et al., 2015</xref>;
-  <xref alt="Ozment et al., 2021" rid="ref-ozment_tracking_2021-nb-article" ref-type="bibr">Ozment
-  et al., 2021</xref>) to plant nitrogen concentrations as reviewed in
+  (<xref alt="Joern et al. 2012" rid="ref-joern_not_2012-nb-article" ref-type="bibr">Joern
+  et al. 2012</xref>,
+  <xref alt="Zhu et al. 2019" rid="ref-zhu_negative_2019-nb-article" ref-type="bibr">Zhu
+  et al. 2019</xref>,
+  <xref alt="Welti et al. 2020a" rid="ref-welti_nutrient_2020-nb-article" ref-type="bibr">Welti
+  et al. 2020a</xref>,
+  <xref alt="b" rid="ref-welti_bottomup_2020-nb-article" ref-type="bibr">b</xref>,
+  <xref alt="Zhu et al. 2020" rid="ref-zhu_effects_2020-nb-article" ref-type="bibr">Zhu
+  et al. 2020</xref>,
+  <xref alt="Ozment et al. 2021" rid="ref-ozment_tracking_2021-nb-article" ref-type="bibr">Ozment
+  et al. 2021</xref>), or not related
+  (<xref alt="Heidorn and Joern 1987" rid="ref-heidorn_feeding_1987-nb-article" ref-type="bibr">Heidorn
+  and Joern 1987</xref>,
+  <xref alt="Jonas and Joern 2008" rid="ref-jonas_hostplant_2008-nb-article" ref-type="bibr">Jonas
+  and Joern 2008</xref>,
+  <xref alt="Lenhart et al. 2015" rid="ref-lenhart_water_2015-nb-article" ref-type="bibr">Lenhart
+  et al. 2015</xref>,
+  <xref alt="Ozment et al. 2021" rid="ref-ozment_tracking_2021-nb-article" ref-type="bibr">Ozment
+  et al. 2021</xref>) to plant nitrogen concentrations as reviewed in
   Cease
   (<xref alt="2024" rid="ref-cease_how_2024-nb-article" ref-type="bibr">2024</xref>).
   Can the relationship between herbivore abundance and environmental
@@ -5203,117 +5160,116 @@ AZ, USA</institution>
   <p>One excellent study system to understand the complex relationship
   of nutrient availability and population dynamics is a subset of
   grasshoppers called locusts
-  (<xref alt="Cullen et al., 2017" rid="ref-cullen_molecules_2017-nb-article" ref-type="bibr">Cullen
-  et al., 2017</xref>;
-  <xref alt="Uvarov, 1977" rid="ref-uvarov_grasshoppers_1977-nb-article" ref-type="bibr">Uvarov,
-  1977</xref>). Locusts undergo massive population irruptions known as
-  plagues that pose significant issues for global food security
-  (<xref alt="Cease et al., 2015" rid="ref-cease_living_2015-nb-article" ref-type="bibr">Cease
-  et al., 2015</xref>). For example, the 2010-2011 Australian plague
+  (<xref alt="Uvarov 1977" rid="ref-uvarov_grasshoppers_1977-nb-article" ref-type="bibr">Uvarov
+  1977</xref>,
+  <xref alt="Cullen et al. 2017" rid="ref-cullen_molecules_2017-nb-article" ref-type="bibr">Cullen
+  et al. 2017</xref>). Locusts undergo massive population irruptions
+  known as plagues that pose significant issues for global food security
+  (<xref alt="Cease et al. 2015" rid="ref-cease_living_2015-nb-article" ref-type="bibr">Cease
+  et al. 2015</xref>). For example, the 2010-2011 Australian plague
   locust (<italic>Chortoicetes terminifera</italic>) plague could have
   caused AUD$963 million in crop damage if not controlled
-  (<xref alt="Millist &amp; Ali, 2011" rid="ref-millist_nicola_benefitcost_nodate-nb-article" ref-type="bibr">Millist
-  &amp; Ali, 2011</xref>). In contrast to the nitrogen limitation
-  paradigm (White 1993), locusts frequently show carbohydrate
-  limitation. Many locust species, including <italic>C.
-  terminifera</italic>, will select plants with a low
-  protein:carbohydrate ratio and eat about double the amount of
-  carbohydrate relative to protein when given a choice of artificial
-  diets
-  (<xref alt="Behmer, 2009" rid="ref-behmer_insect_2009-nb-article" ref-type="bibr">Behmer,
-  2009</xref>;
-  <xref alt="Brosemann et al., 2023" rid="ref-brosemann_nutrient_2023-nb-article" ref-type="bibr">Brosemann
-  et al., 2023</xref>;
-  <xref alt="Lawton et al., 2021" rid="ref-lawton_mismatched_2021-nb-article" ref-type="bibr">Lawton
-  et al., 2021</xref>;
-  <xref alt="Le Gall et al., 2019" rid="ref-le_gall_global_2019-nb-article" ref-type="bibr">Le
-  Gall et al., 2019</xref>). Their high energy, relative to protein,
-  demand is heightened by their impressive long-distance migration.
-  Marching bands of South American locusts (<italic>Schistocerca
-  cancellata</italic>) eat predominantly from dishes containing
-  carbohydrates and largely ignore dishes containing protein
-  (<xref alt="Cease et al., 2023" rid="ref-cease_field_2023-nb-article" ref-type="bibr">Cease
-  et al., 2023</xref>), and have the highest survival and lipid gain
-  when eating carbohydrate-biased plants
-  (<xref alt="Talal et al., 2020" rid="ref-talal_plant_2020-nb-article" ref-type="bibr">Talal
-  et al., 2020</xref>). As adults, flight increases carbohydrate, but
-  not protein, consumption in migratory locusts (<italic>Locusta
+  (<xref alt="Millist and Ali 2011" rid="ref-millist_nicola_benefitcost_nodate-nb-article" ref-type="bibr">Millist
+  and Ali 2011</xref>). In contrast to the nitrogen limitation paradigm
+  (White 1993), locusts frequently show carbohydrate limitation. Many
+  locust species, including <italic>C. terminifera</italic>, will select
+  plants with a low protein:carbohydrate ratio and eat about double the
+  amount of carbohydrate relative to protein when given a choice of
+  artificial diets
+  (<xref alt="Behmer 2009" rid="ref-behmer_insect_2009-nb-article" ref-type="bibr">Behmer
+  2009</xref>,
+  <xref alt="Le Gall et al. 2019" rid="ref-le_gall_global_2019-nb-article" ref-type="bibr">Le
+  Gall et al. 2019</xref>,
+  <xref alt="Lawton et al. 2021" rid="ref-lawton_mismatched_2021-nb-article" ref-type="bibr">Lawton
+  et al. 2021</xref>,
+  <xref alt="Brosemann et al. 2023" rid="ref-brosemann_nutrient_2023-nb-article" ref-type="bibr">Brosemann
+  et al. 2023</xref>). Their high energy, relative to protein, demand is
+  heightened by their impressive long-distance migration. Marching bands
+  of South American locusts (<italic>Schistocerca cancellata</italic>)
+  eat predominantly from dishes containing carbohydrates and largely
+  ignore dishes containing protein
+  (<xref alt="Cease et al. 2023" rid="ref-cease_field_2023-nb-article" ref-type="bibr">Cease
+  et al. 2023</xref>), and have the highest survival and lipid gain when
+  eating carbohydrate-biased plants
+  (<xref alt="Talal et al. 2020" rid="ref-talal_plant_2020-nb-article" ref-type="bibr">Talal
+  et al. 2020</xref>). As adults, flight increases carbohydrate, but not
+  protein, consumption in migratory locusts (<italic>Locusta
   migratoria</italic>) and locusts eating carbohydrate-biased diets fly
   for longer times
-  (<xref alt="Talal et al., 2023" rid="ref-talal_body_2023-nb-article" ref-type="bibr">Talal
-  et al., 2023</xref>). At a local scale, high-use agricultural areas
+  (<xref alt="Talal et al. 2023" rid="ref-talal_body_2023-nb-article" ref-type="bibr">Talal
+  et al. 2023</xref>). At a local scale, high-use agricultural areas
   that decrease soil and plant nitrogen promote Oedaleus locust
   outbreaks in Senegal and China
-  (<xref alt="Cease et al., 2012" rid="ref-cease_heavy_2012-nb-article" ref-type="bibr">Cease
-  et al., 2012</xref>;
-  <xref alt="Giese et al., 2013" rid="ref-giese_n_2013-nb-article" ref-type="bibr">Giese
-  et al., 2013</xref>;
-  <xref alt="Le Gall et al., 2019" rid="ref-le_gall_global_2019-nb-article" ref-type="bibr">Le
-  Gall et al., 2019</xref>;
-  <xref alt="Word et al., 2019" rid="ref-word_soil-targeted_2019-nb-article" ref-type="bibr">Word
-  et al., 2019</xref>). Less is known about the relationship between
+  (<xref alt="Cease et al. 2012" rid="ref-cease_heavy_2012-nb-article" ref-type="bibr">Cease
+  et al. 2012</xref>,
+  <xref alt="Giese et al. 2013" rid="ref-giese_n_2013-nb-article" ref-type="bibr">Giese
+  et al. 2013</xref>,
+  <xref alt="Word et al. 2019" rid="ref-word_soil-targeted_2019-nb-article" ref-type="bibr">Word
+  et al. 2019</xref>,
+  <xref alt="Le Gall et al. 2019" rid="ref-le_gall_global_2019-nb-article" ref-type="bibr">Le
+  Gall et al. 2019</xref>). Less is known about the relationship between
   plant phosphorus and locust populations, but grasshoppers and locusts
   can detect and regulate phosphorus during ingestion and
   post-ingestively to maintain homeostasis
-  (<xref alt="Cease et al., 2016" rid="ref-cease_dietary_2016-nb-article" ref-type="bibr">Cease
-  et al., 2016</xref>;
-  <xref alt="Zhang et al., 2014" rid="ref-zhang_grasshoppers_2014-nb-article" ref-type="bibr">Zhang
-  et al., 2014</xref>). Long-term laboratory rearing studies show
+  (<xref alt="Zhang et al. 2014" rid="ref-zhang_grasshoppers_2014-nb-article" ref-type="bibr">Zhang
+  et al. 2014</xref>,
+  <xref alt="Cease et al. 2016" rid="ref-cease_dietary_2016-nb-article" ref-type="bibr">Cease
+  et al. 2016</xref>). Long-term laboratory rearing studies show
   negative effects of too little or excess dietary phosphorus, though
   short-term restrictions to low or high phosphorus diets appear to have
   no effects
-  (<xref alt="Cease et al., 2016" rid="ref-cease_dietary_2016-nb-article" ref-type="bibr">Cease
-  et al., 2016</xref>). Field measurements of <italic>Oedaleus
+  (<xref alt="Cease et al. 2016" rid="ref-cease_dietary_2016-nb-article" ref-type="bibr">Cease
+  et al. 2016</xref>). Field measurements of <italic>Oedaleus
   asiaticus</italic> in China show that locusts increase phosphorus
   excretion with increasing plant phosphorus content, suggesting that
   phosphorus may not be limiting in the Inner Mongolian Steppe for this
   species
-  (<xref alt="Zhang et al., 2014" rid="ref-zhang_grasshoppers_2014-nb-article" ref-type="bibr">Zhang
-  et al., 2014</xref>). Understanding the multi-scale flow of nitrogen
+  (<xref alt="Zhang et al. 2014" rid="ref-zhang_grasshoppers_2014-nb-article" ref-type="bibr">Zhang
+  et al. 2014</xref>). Understanding the multi-scale flow of nitrogen
   and phosphorus from soils to continental scale population dynamics may
   reveal a connection between soil quality and locust plagues in
   Australia and further elucidate the pattern globally
-  (<xref alt="Cease, 2024" rid="ref-cease_how_2024-nb-article" ref-type="bibr">Cease,
-  2024</xref>;
-  <xref alt="Le Gall et al., 2019" rid="ref-le_gall_global_2019-nb-article" ref-type="bibr">Le
-  Gall et al., 2019</xref>).</p>
+  (<xref alt="Le Gall et al. 2019" rid="ref-le_gall_global_2019-nb-article" ref-type="bibr">Le
+  Gall et al. 2019</xref>,
+  <xref alt="Cease 2024" rid="ref-cease_how_2024-nb-article" ref-type="bibr">Cease
+  2024</xref>).</p>
   <p>The arid interior of Australia is a highly variable environment
-  (<xref alt="Morton et al., 2011" rid="ref-morton_fresh_2011-nb-article" ref-type="bibr">Morton
-  et al., 2011</xref>) characterized by the Resource-Pulse Paradigm
-  (<xref alt="Noy-Meir, 1974" rid="ref-noy-meir_desert_1974-nb-article" ref-type="bibr">Noy-Meir,
-  1974</xref>;
-  <xref alt="Whitford, 2002" rid="ref-whitford_ecology_2002-nb-article" ref-type="bibr">Whitford,
+  (<xref alt="Morton et al. 2011" rid="ref-morton_fresh_2011-nb-article" ref-type="bibr">Morton
+  et al. 2011</xref>) characterized by the Resource-Pulse Paradigm
+  (<xref alt="Noy-Meir 1974" rid="ref-noy-meir_desert_1974-nb-article" ref-type="bibr">Noy-Meir
+  1974</xref>,
+  <xref alt="Whitford 2002" rid="ref-whitford_ecology_2002-nb-article" ref-type="bibr">Whitford
   2002</xref>). Many Australian animal and plant populations irrupt
   following periods of favorable climatic conditions. For example,
   preceding vegetation growth is an important factor for <italic>C.
   terminifera</italic> population outbreaks
-  (<xref alt="Lawton et al., 2022" rid="ref-lawton_seeing_2022-nb-article" ref-type="bibr">Lawton
-  et al., 2022</xref>). In addition to climatic variability, Australia
-  is marked by poor natural soil fertility
-  (<xref alt="Morton et al., 2011" rid="ref-morton_fresh_2011-nb-article" ref-type="bibr">Morton
-  et al., 2011</xref>;
-  <xref alt="Orians &amp; Milewski, 2007" rid="ref-orians_ecology_2007-nb-article" ref-type="bibr">Orians
-  &amp; Milewski, 2007</xref>). Nutrients such as nitrogen and
-  phosphorus are in short supply in unmodified soils. Subsequently, many
-  native animals and plants are adapted to environments low in soil
-  nutrients
-  (<xref alt="Orians &amp; Milewski, 2007" rid="ref-orians_ecology_2007-nb-article" ref-type="bibr">Orians
-  &amp; Milewski, 2007</xref>). Australia has several locust species,
-  but the <italic>C. terminifera</italic> is the most widespread and
+  (<xref alt="Lawton et al. 2022" rid="ref-lawton_seeing_2022-nb-article" ref-type="bibr">Lawton
+  et al. 2022</xref>). In addition to climatic variability, Australia is
+  marked by poor natural soil fertility
+  (<xref alt="Orians and Milewski 2007" rid="ref-orians_ecology_2007-nb-article" ref-type="bibr">Orians
+  and Milewski 2007</xref>,
+  <xref alt="Morton et al. 2011" rid="ref-morton_fresh_2011-nb-article" ref-type="bibr">Morton
+  et al. 2011</xref>). Nutrients such as nitrogen and phosphorus are in
+  short supply in unmodified soils. Subsequently, many native animals
+  and plants are adapted to environments low in soil nutrients
+  (<xref alt="Orians and Milewski 2007" rid="ref-orians_ecology_2007-nb-article" ref-type="bibr">Orians
+  and Milewski 2007</xref>). Australia has several locust species, but
+  the <italic>C. terminifera</italic> is the most widespread and
   economically damaging
-  (<xref alt="Hunter et al., 2001" rid="ref-hunter_adaptations_2001-nb-article" ref-type="bibr">Hunter
-  et al., 2001</xref>). As with many dryland animals, numerous studies
+  (<xref alt="Hunter et al. 2001" rid="ref-hunter_adaptations_2001-nb-article" ref-type="bibr">Hunter
+  et al. 2001</xref>). As with many dryland animals, numerous studies
   have shown the relationship between climatic conditions and <italic>C.
   terminifera</italic> population outbreaks
-  (<xref alt="Clark, 1974" rid="ref-clark_influence_1974-nb-article" ref-type="bibr">Clark,
-  1974</xref>;
-  <xref alt="Deveson &amp; Walker, 2005" rid="ref-deveson_not_2005-nb-article" ref-type="bibr">Deveson
-  &amp; Walker, 2005</xref>;
-  <xref alt="Farrow, 1982" rid="ref-farrow_population_1982-nb-article" ref-type="bibr">Farrow,
-  1982</xref>;
-  <xref alt="Key, 1945" rid="ref-key_general_1945-nb-article" ref-type="bibr">Key,
-  1945</xref>), however few have investigated the relationship between
-  soil and plant nutrients and this species’ outbreaks.</p>
+  (<xref alt="Key 1945" rid="ref-key_general_1945-nb-article" ref-type="bibr">Key
+  1945</xref>,
+  <xref alt="Clark 1974" rid="ref-clark_influence_1974-nb-article" ref-type="bibr">Clark
+  1974</xref>,
+  <xref alt="Farrow 1982" rid="ref-farrow_population_1982-nb-article" ref-type="bibr">Farrow
+  1982</xref>,
+  <xref alt="Deveson and Walker 2005" rid="ref-deveson_not_2005-nb-article" ref-type="bibr">Deveson
+  and Walker 2005</xref>), however few have investigated the
+  relationship between soil and plant nutrients and this species’
+  outbreaks.</p>
   <p>In this study, we investigate the across scale relationship between
   soil and plant nutrients and animal populations using <italic>C.
   terminifera</italic>. We have three specific questions and subsequent
@@ -5343,13 +5299,13 @@ AZ, USA</institution>
   <p>At larger scales, and accounting for climatic factors, we expect
   outbreaks to be associated with low nitrogen areas. Since terrestrial
   herbivores can require 5-50 times more nitrogen than phosphorus
-  (<xref alt="Elser et al., 2000" rid="ref-elser_nutritional_2000-nb-article" ref-type="bibr">Elser
-  et al., 2000</xref>) and locusts likely have a higher capacity to
+  (<xref alt="Elser et al. 2000" rid="ref-elser_nutritional_2000-nb-article" ref-type="bibr">Elser
+  et al. 2000</xref>) and locusts likely have a higher capacity to
   post-ingestively regulate phosphorus in ranges found in nature
-  (<xref alt="Cease et al., 2016" rid="ref-cease_dietary_2016-nb-article" ref-type="bibr">Cease
-  et al., 2016</xref>;
-  <xref alt="Zhang et al., 2014" rid="ref-zhang_grasshoppers_2014-nb-article" ref-type="bibr">Zhang
-  et al., 2014</xref>), we expect nitrogen to be a stronger predictor of
+  (<xref alt="Zhang et al. 2014" rid="ref-zhang_grasshoppers_2014-nb-article" ref-type="bibr">Zhang
+  et al. 2014</xref>,
+  <xref alt="Cease et al. 2016" rid="ref-cease_dietary_2016-nb-article" ref-type="bibr">Cease
+  et al. 2016</xref>), we expect nitrogen to be a stronger predictor of
   populations at a continental scale as compared to phosphorus.</p>
 </sec>
 <sec id="methods-nb-article">
@@ -5454,12 +5410,12 @@ data</code>
     Industries in Trangie, New South Wales, Australia. We used field
     populations of the <italic>C. terminifera</italic>, which prefers
     open grassy areas and is a grass generalist
-    (<xref alt="Key, 1945" rid="ref-key_general_1945-nb-article" ref-type="bibr">Key,
+    (<xref alt="Key 1945" rid="ref-key_general_1945-nb-article" ref-type="bibr">Key
     1945</xref>). Solitarious populations of this locust species
     maintain their intake target closely regardless of spatiotemporal
     changes
-    (<xref alt="Lawton et al., 2021" rid="ref-lawton_mismatched_2021-nb-article" ref-type="bibr">Lawton
-    et al., 2021</xref>). We carried out these studies in
+    (<xref alt="Lawton et al. 2021" rid="ref-lawton_mismatched_2021-nb-article" ref-type="bibr">Lawton
+    et al. 2021</xref>). We carried out these studies in
     November-December 2015, during the final nymphal and early adult
     stages of the spring <italic>C. terminifera</italic> generation.</p>
   </sec>
@@ -5471,8 +5427,8 @@ data</code>
     (differing ratios of protein and carbohydrates), 32% cellulose, and
     4% of salt, sterols and vitamins. This artificial diet mixture has
     been used with this species
-    (<xref alt="Clissold et al., 2014" rid="ref-clissold_regulation_2014-nb-article" ref-type="bibr">Clissold
-    et al., 2014</xref>) and was developed by Simpson &amp; Abisgold
+    (<xref alt="Clissold et al. 2014" rid="ref-clissold_regulation_2014-nb-article" ref-type="bibr">Clissold
+    et al. 2014</xref>) and was developed by Simpson and Abisgold
     (<xref alt="1985" rid="ref-simpson_compensation_1985-nb-article" ref-type="bibr">1985</xref>)
     from Dadd
     (<xref alt="1961" rid="ref-dadd_nutritional_1961-nb-article" ref-type="bibr">1961</xref>).
@@ -5623,11 +5579,11 @@ data</code>
     <p>To understand the relationship between soil nutrients and locust
     outbreaks, we used the Australian Plague Locust Commission’s (APLC)
     long-term locust survey dataset
-    (<xref alt="T. Deveson &amp; Hunter, 2002" rid="ref-deveson_operation_2002-nb-article" ref-type="bibr">T.
-    Deveson &amp; Hunter, 2002</xref>) and the Soil and Landscape Grid
+    (<xref alt="Deveson and Hunter 2002" rid="ref-deveson_operation_2002-nb-article" ref-type="bibr">Deveson
+    and Hunter 2002</xref>) and the Soil and Landscape Grid
     Australia-Wide 3D Soil Property Maps
-    (<xref alt="Grundy et al., 2015" rid="ref-grundy_soil_2015-nb-article" ref-type="bibr">Grundy
-    et al., 2015</xref>).</p>
+    (<xref alt="Grundy et al. 2015" rid="ref-grundy_soil_2015-nb-article" ref-type="bibr">Grundy
+    et al. 2015</xref>).</p>
     <sec id="locust-outbreak-data-nb-article">
       <title>2.4.1 Locust outbreak data</title>
       <p><italic>Chortoicetes terminifera</italic> data from 2000 - 2017
@@ -5644,10 +5600,10 @@ data</code>
       this period overlapped with the soil grid data which was released
       in 2015. Since climatic conditions and migration patterns are
       drivers in outbreak occurrence
-      (<xref alt="Lawton et al., 2022" rid="ref-lawton_seeing_2022-nb-article" ref-type="bibr">Lawton
-      et al., 2022</xref>;
-      <xref alt="Veran et al., 2015" rid="ref-veran_modeling_2015-nb-article" ref-type="bibr">Veran
-      et al., 2015</xref>) they likely mask the relationship between
+      (<xref alt="Veran et al. 2015" rid="ref-veran_modeling_2015-nb-article" ref-type="bibr">Veran
+      et al. 2015</xref>,
+      <xref alt="Lawton et al. 2022" rid="ref-lawton_seeing_2022-nb-article" ref-type="bibr">Lawton
+      et al. 2022</xref>) they likely mask the relationship between
       static environmental variables like soil nutrients. To account for
       this variability, we spatially aggregated the survey dataset to a
       1 km<sup>2</sup> grid as can be seen in
@@ -5656,8 +5612,8 @@ data</code>
       cells rather than the actual outbreak. We used a 1 km<sup>2</sup>
       grid as this reflects the estimated maximum dispersal distance
       from hatching to 5th instar
-      (<xref alt="Hunter et al., 2008" rid="ref-hunter_aerial_2008-nb-article" ref-type="bibr">Hunter
-      et al., 2008</xref>). We counted the number of outbreaks (APLC
+      (<xref alt="Hunter et al. 2008" rid="ref-hunter_aerial_2008-nb-article" ref-type="bibr">Hunter
+      et al. 2008</xref>). We counted the number of outbreaks (APLC
       nymph density code 4), the number of nil records (APLC nymph
       density code 0), and total number of survey observations. This
       resulted in approximately 67,000 grid cells for the final dataset.
@@ -5673,14 +5629,14 @@ data</code>
       two meters below the surface. These depths and methodology are
       consistent with the specifications of the Global Soil Map project
       (http://www.globalsoilmap.net)
-      (<xref alt="Grundy et al., 2015" rid="ref-grundy_soil_2015-nb-article" ref-type="bibr">Grundy
-      et al., 2015</xref>). We extracted this data from Google Earth
+      (<xref alt="Grundy et al. 2015" rid="ref-grundy_soil_2015-nb-article" ref-type="bibr">Grundy
+      et al. 2015</xref>). We extracted this data from Google Earth
       Engine
-      (<xref alt="Gorelick et al., 2017" rid="ref-gorelick_google_2017-nb-article" ref-type="bibr">Gorelick
-      et al., 2017</xref>). In this data set both phosphorus and
-      nitrogen units are the mass fraction of total nutrient in the soil
-      by weight. We took the average of nitrogen and phosphorus of the
-      top two depths (0 cm – 5 cm and 5 cm and 15 cm) as these are most
+      (<xref alt="Gorelick et al. 2017" rid="ref-gorelick_google_2017-nb-article" ref-type="bibr">Gorelick
+      et al. 2017</xref>). In this data set both phosphorus and nitrogen
+      units are the mass fraction of total nutrient in the soil by
+      weight. We took the average of nitrogen and phosphorus of the top
+      two depths (0 cm – 5 cm and 5 cm and 15 cm) as these are most
       relevant to nutrient content of grasses and forbs. Then, for each
       APLC survey grid we calculated the mean mass fraction of nitrogen
       and phosphorus in the soil to a 15 cm depth. Spatial distribution
@@ -5767,8 +5723,8 @@ data</code>
       do this, we calculated the average precipitation between 2000 and
       2017 for all survey grids using the European Centre for
       Medium-Range Weather Forecasts’ ERA5 reanalysis dataset
-      (<xref alt="Muñoz-Sabater et al., 2021" rid="ref-munoz-sabater_era5-land_2021-nb-article" ref-type="bibr">Muñoz-Sabater
-      et al., 2021</xref>). This allowed us to visually compare the
+      (<xref alt="Muñoz-Sabater et al. 2021" rid="ref-munoz-sabater_era5-land_2021-nb-article" ref-type="bibr">Muñoz-Sabater
+      et al. 2021</xref>). This allowed us to visually compare the
       effect differences of soil nitrogen and mean annual precipitation
       on locust outbreaks. In other words, if soil nitrogen and mean
       annual precipitation were so tightly correlated that the effects
@@ -5780,11 +5736,11 @@ data</code>
       precipitation replaced soil nitrogen and phosphorus. The inclusion
       of bioregions as a random effect allowed us to account for
       variation due to vegetation community and soil characteristics
-      (<xref alt="Lawton et al., 2022" rid="ref-lawton_seeing_2022-nb-article" ref-type="bibr">Lawton
-      et al., 2022</xref>). The inclusion of latitude and longitude
+      (<xref alt="Lawton et al. 2022" rid="ref-lawton_seeing_2022-nb-article" ref-type="bibr">Lawton
+      et al. 2022</xref>). The inclusion of latitude and longitude
       allowed us to account for spatial autocorrelation
-      (<xref alt="Clayton et al., 1993" rid="ref-clayton_spatial_1993-nb-article" ref-type="bibr">Clayton
-      et al., 1993</xref>). Lastly, the inclusion of the total number of
+      (<xref alt="Clayton et al. 1993" rid="ref-clayton_spatial_1993-nb-article" ref-type="bibr">Clayton
+      et al. 1993</xref>). Lastly, the inclusion of the total number of
       observations allowed us to account for sampling intensity
       biases.</p>
     </sec>
@@ -6844,15 +6800,15 @@ dbl (4): edf, ref.df, statistic, p.value
     lowest development time to adulthood
     (<xref alt="Figure 2" rid="fig-field-pop-it-results-nb-article">Figure 2</xref>
     B &amp; C), consistent with previous studies
-    (<xref alt="Clissold et al., 2014" rid="ref-clissold_regulation_2014-nb-article" ref-type="bibr">Clissold
-    et al., 2014</xref>;
-    <xref alt="Lawton et al., 2021" rid="ref-lawton_mismatched_2021-nb-article" ref-type="bibr">Lawton
-    et al., 2021</xref>). Locusts are highly mobile (<italic>C.
+    (<xref alt="Clissold et al. 2014" rid="ref-clissold_regulation_2014-nb-article" ref-type="bibr">Clissold
+    et al. 2014</xref>,
+    <xref alt="Lawton et al. 2021" rid="ref-lawton_mismatched_2021-nb-article" ref-type="bibr">Lawton
+    et al. 2021</xref>). Locusts are highly mobile (<italic>C.
     terminifera</italic> can fly up to 500 km in a single night,
-    (<xref alt="Deveson &amp; Walker, 2005" rid="ref-deveson_not_2005-nb-article" ref-type="bibr">Deveson
-    &amp; Walker, 2005</xref>)) and the demand for energy via
-    carbohydrates and lipids likely increases relative to protein demand
-    during the later life stages of these animals.</p>
+    (<xref alt="Deveson and Walker 2005" rid="ref-deveson_not_2005-nb-article" ref-type="bibr">Deveson
+    and Walker 2005</xref>)) and the demand for energy via carbohydrates
+    and lipids likely increases relative to protein demand during the
+    later life stages of these animals.</p>
     <p>Plant nutrient content in the nitrogen fertilization treatments
     was not significantly different until the last sample period, which
     likely explains the small effect on locust growth
@@ -6876,23 +6832,23 @@ dbl (4): edf, ref.df, statistic, p.value
     multiple studies have shown that the Australian nutritional
     landscape is often too protein-biased relative to what the
     <italic>C. terminifera</italic> prefers
-    (<xref alt="Lawton et al., 2020" rid="ref-lawton_woody_2020-nb-article" ref-type="bibr">Lawton
-    et al., 2020</xref>,
+    (<xref alt="Lawton et al. 2020" rid="ref-lawton_woody_2020-nb-article" ref-type="bibr">Lawton
+    et al. 2020</xref>,
     <xref alt="2021" rid="ref-lawton_mismatched_2021-nb-article" ref-type="bibr">2021</xref>).
     Regardless, populations are still persistent and outbreaks can occur
     at lower frequencies in these areas
-    (<xref alt="Deveson, 2013" rid="ref-deveson_satellite_2013-nb-article" ref-type="bibr">Deveson,
-    2013</xref>;
-    <xref alt="Key, 1945" rid="ref-key_general_1945-nb-article" ref-type="bibr">Key,
-    1945</xref>). How this species can achieve the optimal balance of
+    (<xref alt="Key 1945" rid="ref-key_general_1945-nb-article" ref-type="bibr">Key
+    1945</xref>,
+    <xref alt="Deveson 2013" rid="ref-deveson_satellite_2013-nb-article" ref-type="bibr">Deveson
+    2013</xref>). How this species can achieve the optimal balance of
     nutrients within an unfavorable nutritional environment merits
     further investigation, but may include post-ingestive regulation
     and/or large-range foraging. Migratory locusts (<italic>Locusta
     migratoria</italic>) can choose microclimates that favor higher
     efficiency of carbohydrate or protein absorption depending on their
     host plant and nutritional status
-    (<xref alt="Clissold et al., 2013" rid="ref-clissold_insect_2013-nb-article" ref-type="bibr">Clissold
-    et al., 2013</xref>). For this study, we collected free-living
+    (<xref alt="Clissold et al. 2013" rid="ref-clissold_insect_2013-nb-article" ref-type="bibr">Clissold
+    et al. 2013</xref>). For this study, we collected free-living
     locusts from the same region and a similar environment as where we
     built the field cages, yet those confined to field cages selected a
     10x decrease in p:c (1p : 20c vs 1p : 2c). This result suggests that
@@ -6917,15 +6873,15 @@ dbl (4): edf, ref.df, statistic, p.value
     (<xref alt="Figure 5" rid="fig-spatial-model-nto-pto-nb-article">Figure 5</xref>
     A), suggesting that nitrogen acts as a limiting factor not due to
     its deficit
-    (<xref alt="White, 1993" rid="ref-white_inadequate_1993-nb-article" ref-type="bibr">White,
+    (<xref alt="White 1993" rid="ref-white_inadequate_1993-nb-article" ref-type="bibr">White
     1993</xref>) but its excess. Plants growing in high nitrogen
     environments tend to have high p:c ratios, which force locusts to
     either undereat carbohydrates (limiting their energy to support
     growth and migration) or overeat protein (which can be toxic) to
     acquire sufficient carbohydrates
-    (<xref alt="Behmer, 2009" rid="ref-behmer_insect_2009-nb-article" ref-type="bibr">Behmer,
-    2009</xref>;
-    <xref alt="Cease, 2024" rid="ref-cease_how_2024-nb-article" ref-type="bibr">Cease,
+    (<xref alt="Behmer 2009" rid="ref-behmer_insect_2009-nb-article" ref-type="bibr">Behmer
+    2009</xref>,
+    <xref alt="Cease 2024" rid="ref-cease_how_2024-nb-article" ref-type="bibr">Cease
     2024</xref>). On the other end of the performance curve, <italic>C.
     terminifera</italic> do have a lower p:c range that limits
     performance, as shown using artificial diets
@@ -6937,23 +6893,23 @@ dbl (4): edf, ref.df, statistic, p.value
     extremely phosphorus poor soils
     (<xref alt="Figure 5" rid="fig-spatial-model-nto-pto-nb-article">Figure 5</xref>
     B). Because Australian soils are characteristically phosphorus poor
-    (<xref alt="Donald, 1964" rid="ref-donald_colin_phosphorus_1964-nb-article" ref-type="bibr">Donald,
+    (<xref alt="Donald 1964" rid="ref-donald_colin_phosphorus_1964-nb-article" ref-type="bibr">Donald
     1964</xref>), Australian animals like this locust are adapted to
     phosphorus poor environments and potentially having too much
     phosphorus is deleterious
-    (<xref alt="Morton et al., 2011" rid="ref-morton_fresh_2011-nb-article" ref-type="bibr">Morton
-    et al., 2011</xref>). Locust populations may be more tightly
+    (<xref alt="Morton et al. 2011" rid="ref-morton_fresh_2011-nb-article" ref-type="bibr">Morton
+    et al. 2011</xref>). Locust populations may be more tightly
     correlated with soil nitrogen than phosphorus because terrestrial
     herbivores require 5-50 times more nitrogen than phosphorus
-    (<xref alt="Elser et al., 2000" rid="ref-elser_nutritional_2000-nb-article" ref-type="bibr">Elser
-    et al., 2000</xref>), meaning they can more readily balance
+    (<xref alt="Elser et al. 2000" rid="ref-elser_nutritional_2000-nb-article" ref-type="bibr">Elser
+    et al. 2000</xref>), meaning they can more readily balance
     phosphorus by eating a few foods rich or poor in phosphorus but
     cannot as quickly regulate protein and carbohydrate energy because
     they make up the bulk of their required nutrients. Indeed,
     laboratory studies have revealed that short-term limitations in
     dietary phosphorus have no apparent impact on grasshopper growth
-    (<xref alt="Cease et al., 2016" rid="ref-cease_dietary_2016-nb-article" ref-type="bibr">Cease
-    et al., 2016</xref>), suggesting that these mobile herbivores could
+    (<xref alt="Cease et al. 2016" rid="ref-cease_dietary_2016-nb-article" ref-type="bibr">Cease
+    et al. 2016</xref>), suggesting that these mobile herbivores could
     seek out phosphorus-rich diets intermittently to overcome potential
     phosphorus limitation in field environments. However, in this study,
     we only tested this relationship with phosphorus at the continental
@@ -6962,8 +6918,8 @@ dbl (4): edf, ref.df, statistic, p.value
     soil phosphorus. While we only looked at nitrogen and phosphorus, it
     is also important to note that animals require a suite of nutrients.
     Other nutrients such as potassium and sodium
-    (<xref alt="Joern et al., 2012" rid="ref-joern_not_2012-nb-article" ref-type="bibr">Joern
-    et al., 2012</xref>) warrant further investigation. Comparing locust
+    (<xref alt="Joern et al. 2012" rid="ref-joern_not_2012-nb-article" ref-type="bibr">Joern
+    et al. 2012</xref>) warrant further investigation. Comparing locust
     outbreaks between continents would further show the relationship
     between nutrient availability and animal population dynamics. One
     excellent dataset for this would be SoilGrids
@@ -6975,7 +6931,7 @@ dbl (4): edf, ref.df, statistic, p.value
     data (e.g. rainfall and soil moisture) or vegetation growth data
     (e.g. normalized difference vegetation index, NDVI) as the major
     predictors of outbreaks
-    (<xref alt="Cressman, 2013" rid="ref-cressman_role_2013-nb-article" ref-type="bibr">Cressman,
+    (<xref alt="Cressman 2013" rid="ref-cressman_role_2013-nb-article" ref-type="bibr">Cressman
     2013</xref>). While these climatic variables are clearly important,
     adding metrics to quantify the nutritional landscape can help
     increase forecasting model accuracy in environments with highly
@@ -6988,20 +6944,20 @@ dbl (4): edf, ref.df, statistic, p.value
     content showed that grasshoppers not classified as locusts have a
     variation of negative, neutral, and positive responses to increasing
     plant nitrogen
-    (<xref alt="Cease, 2024" rid="ref-cease_how_2024-nb-article" ref-type="bibr">Cease,
+    (<xref alt="Cease 2024" rid="ref-cease_how_2024-nb-article" ref-type="bibr">Cease
     2024</xref>). Looking just at field surveys, there are more reports
     of a negative correlation between plant nitrogen and non-locust
     grasshopper abundance (17 reports) relative to neutral (6 reports)
     or positive (9 reports). This pattern corroborates long-term studies
     showing that dilution of plant nitrogen is correlated with declines
     of North American grasshopper populations
-    (<xref alt="Welti, Roeder, et al., 2020" rid="ref-welti_nutrient_2020-nb-article" ref-type="bibr">Welti,
-    Roeder, et al., 2020</xref>). Of the studies that report positive
+    (<xref alt="Welti et al. 2020a" rid="ref-welti_nutrient_2020-nb-article" ref-type="bibr">Welti
+    et al. 2020a</xref>). Of the studies that report positive
     correlations between individual grasshopper species abundance and
     plant nitrogen, most are from graminivorous (grass-feeding) species
     (11 reports), with 7 reports from mixed (grasses and forbs) or forb
     feeders
-    (<xref alt="Cease, 2024" rid="ref-cease_how_2024-nb-article" ref-type="bibr">Cease,
+    (<xref alt="Cease 2024" rid="ref-cease_how_2024-nb-article" ref-type="bibr">Cease
     2024</xref>). This pattern supports the hypothesis that
     grass-feeders are more likely to be nitrogen-limited because grasses
     tend to have lower p:c ratios than forbs; although this trend was
@@ -7012,15 +6968,15 @@ dbl (4): edf, ref.df, statistic, p.value
     Because mass specific protein consumption is highly correlated with
     growth rate in both lab and field populations, but carbohydrate
     consumption is highly influenced by the environment
-    (<xref alt="Talal et al., 2023" rid="ref-talal_body_2023-nb-article" ref-type="bibr">Talal
-    et al., 2023</xref>), it is most likely that locusts have similar
+    (<xref alt="Talal et al. 2023" rid="ref-talal_body_2023-nb-article" ref-type="bibr">Talal
+    et al. 2023</xref>), it is most likely that locusts have similar
     protein requirements as other non-locust grasshopper species, but
     have much higher carbohydrate demands, potentially to support
     migration
-    (<xref alt="Raubenheimer &amp; Simpson, 1997" rid="ref-raubenheimer_integrative_1997-nb-article" ref-type="bibr">Raubenheimer
-    &amp; Simpson, 1997</xref>;
-    <xref alt="Talal et al., 2021" rid="ref-talal_high_2021-nb-article" ref-type="bibr">Talal
-    et al., 2021</xref>,
+    (<xref alt="Raubenheimer and Simpson 1997" rid="ref-raubenheimer_integrative_1997-nb-article" ref-type="bibr">Raubenheimer
+    and Simpson 1997</xref>,
+    <xref alt="Talal et al. 2021" rid="ref-talal_high_2021-nb-article" ref-type="bibr">Talal
+    et al. 2021</xref>,
     <xref alt="2023" rid="ref-talal_body_2023-nb-article" ref-type="bibr">2023</xref>).
     Locusts are able to meet this increased demand for carbohydrate,
     while keeping protein consumption constant, by eating larger amounts
@@ -7042,46 +6998,46 @@ dbl (4): edf, ref.df, statistic, p.value
     complementary feeding has been recorded for field populations of
     blue sheep (<italic>Psuedois nayaur</italic>) in the Himalayan
     Mountains
-    (<xref alt="Aryal et al., 2015" rid="ref-aryal_foods_2015-nb-article" ref-type="bibr">Aryal
-    et al., 2015</xref>), Black Howler Monkeys (<italic>Alouatta
+    (<xref alt="Aryal et al. 2015" rid="ref-aryal_foods_2015-nb-article" ref-type="bibr">Aryal
+    et al. 2015</xref>), Black Howler Monkeys (<italic>Alouatta
     pigra</italic>) in Yucatán
-    (<xref alt="Bridgeman, 2012" rid="ref-bridgeman_feeding_2012-nb-article" ref-type="bibr">Bridgeman,
+    (<xref alt="Bridgeman 2012" rid="ref-bridgeman_feeding_2012-nb-article" ref-type="bibr">Bridgeman
     2012</xref>), and other primates
-    (<xref alt="Raubenheimer &amp; Rothman, 2013" rid="ref-raubenheimer_nutritional_2013-nb-article" ref-type="bibr">Raubenheimer
-    &amp; Rothman, 2013</xref>). There would be a predicted impact on
+    (<xref alt="Raubenheimer and Rothman 2013" rid="ref-raubenheimer_nutritional_2013-nb-article" ref-type="bibr">Raubenheimer
+    and Rothman 2013</xref>). There would be a predicted impact on
     populations if the nutritional landscape were to become more
     constricted or not overlap with the IT. For example, lab colonies of
     tobacco hornworms (<italic>Manduca sexta</italic> larvae) have an IT
     around 1:1 or sometimes slightly carbohydrate-biased
-    (<xref alt="Wilson, Ruiz, &amp; Davidowitz, 2019" rid="ref-wilson_dietary_2019-nb-article" ref-type="bibr">Wilson,
-    Ruiz, &amp; Davidowitz, 2019</xref>) and their host plants tend to
-    be carbohydrate-biased relative to their IT
-    (<xref alt="Wilson, Ruiz, Duarte, et al., 2019" rid="ref-wilson_nutritional_2019-nb-article" ref-type="bibr">Wilson,
-    Ruiz, Duarte, et al., 2019</xref>). However, this does not seem to
-    translate to population level effects, potentially due to secondary
-    metabolites affecting growth more strongly than macronutrient
-    balance and/or larvae may be able to compensate by overeating
-    carbohydrates to acquire sufficient protein
-    (<xref alt="Wilson, Ruiz, &amp; Davidowitz, 2019" rid="ref-wilson_dietary_2019-nb-article" ref-type="bibr">Wilson,
-    Ruiz, &amp; Davidowitz, 2019</xref>). Overeating carbohydrates is
-    not as detrimental as overeating protein, at least in the short
-    term, and animals tend to be willing to overeat carbohydrates to a
-    greater extent than protein
-    (<xref alt="Cheng et al., 2008" rid="ref-cheng_geometry_2008-nb-article" ref-type="bibr">Cheng
-    et al., 2008</xref>;
-    <xref alt="Simpson &amp; Raubenheimer, 2012b" rid="ref-simpson_nature_2012-nb-article" ref-type="bibr">Simpson
-    &amp; Raubenheimer, 2012b</xref>). Therefore, herbivores facing a
+    (<xref alt="Wilson et al. 2019a" rid="ref-wilson_dietary_2019-nb-article" ref-type="bibr">Wilson
+    et al. 2019a</xref>) and their host plants tend to be
+    carbohydrate-biased relative to their IT
+    (<xref alt="Wilson et al. 2019b" rid="ref-wilson_nutritional_2019-nb-article" ref-type="bibr">Wilson
+    et al. 2019b</xref>). However, this does not seem to translate to
+    population level effects, potentially due to secondary metabolites
+    affecting growth more strongly than macronutrient balance and/or
+    larvae may be able to compensate by overeating carbohydrates to
+    acquire sufficient protein
+    (<xref alt="Wilson et al. 2019a" rid="ref-wilson_dietary_2019-nb-article" ref-type="bibr">Wilson
+    et al. 2019a</xref>). Overeating carbohydrates is not as detrimental
+    as overeating protein, at least in the short term, and animals tend
+    to be willing to overeat carbohydrates to a greater extent than
+    protein
+    (<xref alt="Cheng et al. 2008" rid="ref-cheng_geometry_2008-nb-article" ref-type="bibr">Cheng
+    et al. 2008</xref>,
+    <xref alt="Simpson and Raubenheimer 2012b" rid="ref-simpson_nature_2012-nb-article" ref-type="bibr">Simpson
+    and Raubenheimer 2012b</xref>). Therefore, herbivores facing a
     nutritional landscape with a p:c generally lower than their IT
     (i.e., carbohydrate excess) may not be as negatively impacted as
     herbivores facing one higher than their IT (i.e., protein excess).
     However, there are several examples of higher localized densities of
     herbivores in response to higher plant nitrogen and protein contents
     with thrips
-    (<xref alt="Brown et al., 2002" rid="ref-brown_relationship_2002-nb-article" ref-type="bibr">Brown
-    et al., 2002</xref>) and spruce budworm
+    (<xref alt="Brown et al. 2002" rid="ref-brown_relationship_2002-nb-article" ref-type="bibr">Brown
+    et al. 2002</xref>) and spruce budworm
     (<italic>Choristoneura</italic>)
-    (<xref alt="De Grandpré et al., 2022" rid="ref-de_grandpre_defoliation-induced_2022-nb-article" ref-type="bibr">De
-    Grandpré et al., 2022</xref>) being two examples. These examples
+    (<xref alt="De Grandpré et al. 2022" rid="ref-de_grandpre_defoliation-induced_2022-nb-article" ref-type="bibr">De
+    Grandpré et al. 2022</xref>) being two examples. These examples
     suggest that low p:c diets limit population growth of some
     herbivores, but more studies are needed to determine if this
     relationship is only localized or if it scales up. It may be that
@@ -7093,16 +7049,16 @@ dbl (4): edf, ref.df, statistic, p.value
     scales.</p>
     <p>There is evidence for phosphorus limitation in some species, but
     limited research showing a detrimental effect of excess phosphorus
-    (<xref alt="Cease et al., 2016" rid="ref-cease_dietary_2016-nb-article" ref-type="bibr">Cease
-    et al., 2016</xref>). In aquatic insects such as
+    (<xref alt="Cease et al. 2016" rid="ref-cease_dietary_2016-nb-article" ref-type="bibr">Cease
+    et al. 2016</xref>). In aquatic insects such as
     <italic>Daphnia</italic> species, there is a strong positive
     association with phosphorus available and population dynamics
     Andersen et al.
     (<xref alt="2004" rid="ref-andersen_stoichiometry_2004-nb-article" ref-type="bibr">2004</xref>).
     However this trend is not seen in field cricket populations
     (<italic>Gryllus veletis</italic>)
-    (<xref alt="Harrison et al., 2014" rid="ref-harrison_synthesis_2014-nb-article" ref-type="bibr">Harrison
-    et al., 2014</xref>) and other terrestrial insects. Loaiza et al.
+    (<xref alt="Harrison et al. 2014" rid="ref-harrison_synthesis_2014-nb-article" ref-type="bibr">Harrison
+    et al. 2014</xref>) and other terrestrial insects. Loaiza et al.
     (<xref alt="2011" rid="ref-loaiza2011-nb-article" ref-type="bibr">2011</xref>)
     found no effect of phosphorus fertilization (but a positive effect
     of N fertilization) on Kansas tallgrass prairie grasshopper
@@ -7116,12 +7072,12 @@ dbl (4): edf, ref.df, statistic, p.value
     chickens, rats, cats, caribou, pigs, and dairy cattle, mass specific
     protein consumption is highly correlated with growth rate and
     decreases with age and body size
-    (<xref alt="Talal et al., 2023" rid="ref-talal_body_2023-nb-article" ref-type="bibr">Talal
-    et al., 2023</xref>). In contrast, energy demand (carbohydrates and
+    (<xref alt="Talal et al. 2023" rid="ref-talal_body_2023-nb-article" ref-type="bibr">Talal
+    et al. 2023</xref>). In contrast, energy demand (carbohydrates and
     lipids) does not show a clear relationship with growth rate and
     instead is more affected by environment and activity
-    (<xref alt="Talal et al., 2023" rid="ref-talal_body_2023-nb-article" ref-type="bibr">Talal
-    et al., 2023</xref>). Therefore, an animal’s IT is predicted to be
+    (<xref alt="Talal et al. 2023" rid="ref-talal_body_2023-nb-article" ref-type="bibr">Talal
+    et al. 2023</xref>). Therefore, an animal’s IT is predicted to be
     affected by the contrasting effects of growth (increases dietary
     p:c) and activity or stress (increases carbohydrate demand and
     therefore decreases dietary p:c), although other physiological and
@@ -7131,8 +7087,8 @@ dbl (4): edf, ref.df, statistic, p.value
     For example, monarch butterflies have been gradually increasing
     their already-high daily energy expenditure during migration due to
     warmer temperatures caused by climate change
-    (<xref alt="Parlin et al., 2023" rid="ref-parlin_cost_2023-nb-article" ref-type="bibr">Parlin
-    et al., 2023</xref>). Young and fast growing herbivores with low
+    (<xref alt="Parlin et al. 2023" rid="ref-parlin_cost_2023-nb-article" ref-type="bibr">Parlin
+    et al. 2023</xref>). Young and fast growing herbivores with low
     activity levels would be predicted to have a high p:c IT, whereas
     older juveniles and adults (slower mass specific growth) with high
     activity levels would be predicted to have a low p:c IT. Comparative
@@ -7146,22 +7102,22 @@ dbl (4): edf, ref.df, statistic, p.value
     <title>4.5 Synthesis and Application</title>
     <p>Acquiring the right amount of nutrients is a critical component
     for animal growth, reproduction, and population dynamics
-    (<xref alt="Doonan &amp; Slade, 1995" rid="ref-doonan_effects_1995-nb-article" ref-type="bibr">Doonan
-    &amp; Slade, 1995</xref>;
-    <xref alt="Hansson, 1979" rid="ref-hansson_food_1979-nb-article" ref-type="bibr">Hansson,
-    1979</xref>;
-    <xref alt="Keith, 1983" rid="ref-keith_role_1983-nb-article" ref-type="bibr">Keith,
-    1983</xref>). However, in contrast to the conventional hypotheses
-    that predict a broad positive linear relationship between
+    (<xref alt="Hansson 1979" rid="ref-hansson_food_1979-nb-article" ref-type="bibr">Hansson
+    1979</xref>,
+    <xref alt="Keith 1983" rid="ref-keith_role_1983-nb-article" ref-type="bibr">Keith
+    1983</xref>,
+    <xref alt="Doonan and Slade 1995" rid="ref-doonan_effects_1995-nb-article" ref-type="bibr">Doonan
+    and Slade 1995</xref>). However, in contrast to the conventional
+    hypotheses that predict a broad positive linear relationship between
     herbivorous populations and nitrogen and phosphorus
-    (<xref alt="Huberty &amp; Denno, 2006" rid="ref-huberty_consequences_2006-nb-article" ref-type="bibr">Huberty
-    &amp; Denno, 2006</xref>;
-    <xref alt="Mattson, 1980" rid="ref-mattson_herbivory_1980-nb-article" ref-type="bibr">Mattson,
-    1980</xref>;
-    <xref alt="White, 1978" rid="ref-white_importance_1978-nb-article" ref-type="bibr">White,
-    1978</xref>;
-    <xref alt="White, 1993" rid="ref-white_inadequate_1993-nb-article" ref-type="bibr">White,
-    1993</xref>), the story is nuanced and probably most often
+    (<xref alt="White 1978" rid="ref-white_importance_1978-nb-article" ref-type="bibr">White
+    1978</xref>,
+    <xref alt="Mattson 1980" rid="ref-mattson_herbivory_1980-nb-article" ref-type="bibr">Mattson
+    1980</xref>,
+    <xref alt="White 1993" rid="ref-white_inadequate_1993-nb-article" ref-type="bibr">White
+    1993</xref>,
+    <xref alt="Huberty and Denno 2006" rid="ref-huberty_consequences_2006-nb-article" ref-type="bibr">Huberty
+    and Denno 2006</xref>), the story is nuanced and probably most often
     non-linear. For some species, especially those with high energy
     requirements, the relationship is the opposite (negatively
     associated with nitrogen) like many locust species and the effects
