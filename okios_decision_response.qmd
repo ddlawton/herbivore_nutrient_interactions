@@ -1,0 +1,170 @@
+---
+title: "Oikos Decision Response"
+author: "Douglas Lawton"
+format:
+  docx: default
+---
+
+## Dear Editors,
+
+We sincerely thank the reviewers for their thorough evaluation of our manuscript, *“Exploring Nutrient Availability and Herbivorous Insect Population Dynamics Across Multiple Scales.”* Their insightful feedback has greatly enhanced the clarity, rigor, and overall impact of this work. In the following sections, we address each comment in detail, providing clarification, additional analysis, or revisions where necessary. We have carefully considered their suggestions, incorporating additional references and elaborating on theoretical frameworks. We believe these changes significantly strengthen the manuscript and appreciate the reviewers’ contributions to this improvement process. Below we respond to the specific suggestions and comments left by the reviewers. We again thank them for their time and effort and feel that the manuscript is stronger due to their comments. Our responses will be in *italics*.
+
+## Specific Reponses to Reviewers
+
+### Reviewer: 1
+
+**Comments to the Author: I was invited to review the manuscript titled “Exploring nutrient availability and herbivorous insect population dynamics across multiple scales.” This research investigates how nutrient availability impacts the population dynamics of the Australian plague locust, *Chortoicetes terminifera*, across various ecological scales. The strength of this work lies in its comprehensive approach, integrating field experiments, laboratory studies, and long-term environmental data to assess the ecological implications of nutrient dynamics on an agriculturally significant pest species. The study highlights the role of nutrient balance in herbivorous insects, suggesting that low-nitrogen environments may increase locust outbreaks by modifying plant nutrient profiles. These findings hold practical value for enhancing locust management strategies and forecasting models, potentially contributing to improved agricultural practices and pest control measures.**
+
+**Overall, I believe the study is well-executed and merits publication, contingent on addressing the following reservations:**
+
+1.  **The study investigates soil nitrogen and phosphorus at large scales, along with protein and carbohydrate ratios in artificial diets and plants in lab and field cage experiments. However, it does not assess phosphorus content in either the artificial diets or plants used in smaller-scale experiments. Given the focus on multi-scale nutrient availability, it is essential to clarify if there is nutrient mismatch across scales and whether the lack of phosphorus measurements could affect the conclusions on nutrient imbalance.**
+
+*Thank you for highlighting the potential value of measuring phosphorus content in artificial diets and plants. While we agree that this could provide further insight into nutrient mismatches, the experiments were completed as designed, and additional measurements are unfortunately not possible at this stage. We highlight this as future work within the first paragraph in the discussion by saying: 'While this study advances our understanding of nutrient limitation across scales, future work should aim to explicitly assess phosphorus nutrient imbalances at finer scales. This could help elucidate whether phosphorus mismatches at smaller scales influence broader patterns of herbivore population dynamics.'*
+
+2.  **While the introduction effectively outlines a multi-scale approach, the connection between individual herbivore nutrition and broader-scale patterns could be more explicitly articulated. Integrating recent studies could help bridge these concepts and enhance the flow between sections.**
+
+*Thank you for this suggestion. We have integrated studies **X,Y,Z** studies that help bridge the gap between concepts. Please see lines **XXX***
+
+3.  **The hypotheses are well-presented; however, more explicitly linking them to the theoretical framework (e.g., ecological stoichiometry) would strengthen the foundation for the experiments.**
+
+*We have added a discussion on ecological stoichiometry in the introduction and discussion sections. Please see **LINES XXX***
+
+4.  **Locust populations may respond differently to nitrogen based on local adaptations. I would be interested to know how closely related insect species within the same feeding guild respond to variations in nutrient status (see Behmer & Joern, 2008; Zhu et al., 2020; Zhu et al., 2023). Are there any closely related species to Chortoicetes terminifera that might exhibit different nutrient preferences?**
+
+**References:**
+
+**Behmer, S.T. & Joern, A. (2008). Coexisting generalist herbivores occupy unique nutritional feeding niches. PNAS, 105, 1977–1982.**
+
+**Zhu, Y., Veen, G.F., Wang, D., Wang, L., Zhong, Z., Ma, Q., et al. (2020). Herbivore phenology can predict response to changes in plant quality by livestock grazing. Oikos, 129, 811–819.**
+
+**Zhu, Y., Ma, Q., Zhong, Z., Jiang, M., Bakker, E.S., Harvey, J.A., et al. (2023). Contrasting effects of nitrogen fertilizer application on the performance of closely related grasshoppers through changes in plant nutrient concentrations. Ecological Entomology, 48(3), 347-357.**
+
+*We appreciate the reviewer highlighting this important aspect of nutritional ecology. To address this, we have revised the introduction to discuss how closely related herbivores, even within the same feeding guild, may occupy distinct nutritional niches and respond differently to variations in nutrient availability. We now include references to Behmer & Joern (2008) and Zhu et al. (2020, 2023) to contextualize species-specific nutrient preferences. While our study focuses on Chortoicetes terminifera, we acknowledge that examining other closely related acridid species may reveal important contrasts in nutrient preferences. These considerations will help guide future research on how local adaptations and nutritional niches influence population dynamics. We have added a discussion of this in section 4.4 within the manuscript.*
+
+5.  **Although nitrogen is the primary focus, the influence of other environmental factors (e.g., precipitation, plant diversity, temperature) should be considered, as they also affect locust outbreaks. Including these variables in relation to nitrogen could make the conclusions more robust and refine the predictive model.**
+
+*We definitely agree that precipitation, plant diversity, and temperature are all very important variables in predicting locust as this is a very active area of research. The relationship between biomass and rain and locust plagues has been well studied. The purpose of these models were to illustrate the more static environmental variables on locust outbreaks, which are typically understudied at least in large scale predictive modeling. We did not include more environmental variables into the overall model as we were concerned with concurvity which would make model inference more complicated. Instead of adding these variables directly to the model, we decided to summarize the data up to spatial grids so that we were modeling the propensity of outbreaks in spatial areas instead of predicting the temporality of locust plagues. In addition, we built a separate annual precipitation model (Supplementary Figure 8) and including a raw visualization of the relationship between soil nitrogen, soil phosphorus, annual precipitation, and woody tree over (Supplementary Figure 5).*
+
+**Minor Comments: Line 8-10: This sentence is quite long. Consider splitting it into two sentences for clarity.**
+
+*We have reworded this sentence for clarity as follows: 'In the field, locusts exposed to protein-biased plants corrected their nutritional imbalance by initially selecting carbohydrate-heavy diets (up to a 1p:20c ratio). Over a week after removal from the protein-rich environment, they returned to the 1p:2c intake target once the deficiency was balanced.'*
+
+**Line 13-15: It would be beneficial to show directly how mean annual precipitation affects the relationship between soil nitrogen and locust populations, given the high correlation between these two factors.**
+
+*Since we aggregated locust outbreaks to spatial grids (supplementary figure 2), the effects of annual precipitation are glossed over and the effects of more static variables are more pronounced. This is because instead of predicting the specific locust plague outbreak, we are predicting the number of outbreaks likely to occur in a 1x1 km\^2 grid. As such, the relationship between outbreaks summed up to the grid and mean annual precipitation is weak and very different from the more static environmental variable models (Supplementary Figure 8 and Figure 5). Given that this relationship is different and that the relationship between soil nitrogen and annual precipitation is not 1:1 (Supplementary Figure 5C), we are likely seeing the effect of soil nitrogen on the likelihood of Chortocietes terminifera outbreaks.*
+
+**Line 43-45: In the introduction, further elaboration on the theory of phosphorus limitation would be helpful. The study suggests a non-linear relationship between locust abundance and soil phosphorus, with a peak at approximately 4% phosphorus content. Providing examples of the influence of phosphorus and its threshold on herbivorous insects would add depth.**
+
+*Thank you for this suggestion, we have amended this section to say:* *A decrease in phosphorus in the host plant of the dryland insect herbivore Sabinia setosa—velvet mesquite (Prosopis velutina)—results in lower RNA content, slower growth, and reduced abundance in the insect population [@schade_stoichiometric_2003. Nonlinear relationships between phosphorus availability and herbivore abundance has been documented, for eample insufficient phosphorus limits RNA production and growth, while excessive phosphorus disrupts nutrient homeostasis and reduces fitness, as demonstrated in laboratory studies of locusts [@cease_dietary_2016].Phosphorus plays a vital role in RNA synthesis, energy storage and transfer via ATP, and numerous cellular processes, making it essential for animal growth and reproduction. For herbivorous insects, phosphorus-rich plant tissue is particularly important, as it supports their rapid growth and high reproductive rates[@sterner2003; @andersen_stoichiometry_2004].*
+
+**Line 80-88: The connection between weather conditions, soil nutrients, and locust populations in the introduction could be clarified further for a smoother transition.**
+
+*Thank you for this suggestion, we have rephrased this section to have a smoother transition as follows: 'While climatic variability plays a significant role, another critical factor in Australia is its naturally poor soil fertility, with essential nutrients like nitrogen and phosphorus often in short supply in unmodified soils [@morton_fresh_2011; @orians_ecology_2007]. This nutrient scarcity has shaped the adaptation of many native plants and animals to thrive in low-nutrient environments [@orians_ecology_2007]\]. Among Australia’s locust species, C. terminifera is the most widespread and economically damaging [@hunter_adaptations_2001]. Although numerous studies have linked climatic conditions to C. terminifera population outbreaks [@clark_influence_1974; @deveson_not_2005; @farrow_population_1982; @key_general_1945], the role of soil and plant nutrients in driving these outbreaks remains underexplored.'*
+
+**Line 245-247: Since soil nitrogen and mean annual precipitation are highly correlated, how do the authors distinguish the effect of soil nitrogen from precipitation on locust populations at landscape scales? It would be useful to explain how they determine the driving factor rather than correlation.**
+
+*Please see the answer above*
+
+**Figure 5a: It appears that when soil nitrogen exceeds 0.33, an increase in soil nitrogen has a positive effect on locust populations. Clarification on this observation would enhance the interpretation of the figure.**
+
+*Thanks for catching this! As can be seen, the standard error increases after roughly 0.3 as this area is reaching the upper limits of soil nitrogen seen in this dataset. There are also considerably fewer observations that lead to the model to be more unsure in this parameter space. This make model interpretation difficult and results should be taken with a grain of salt.*
+
+### Reviewer: 2
+
+**Comments to the Author Overall an interesting study with novel results of diet correction following non-choice diets and non-linear responses of locust outbreaks to soil phosphorus. This study also has clear implications for incorporating soil data into outbreak forecast models, in addition to insights into general drivers of herbivore populations. The introduction is particularly well written, and I conclusions follow results. Most of my concerns relate towards improving clarity for the reader, considering the larger number of studies and questions included.**
+
+**Minor concerns:**
+
+**Lines 78 – 80: Please connect these two sentences to include a definition of the Resource Pulse Paradigm (or otherwise make it clear what the definition of the RPP is).**
+
+*Thanks for the suggestion we have amended the two sentences as follows: 'The arid interior of Australia is a highly variable environment [@morton_fresh_2011] characterized by the Resource-Pulse Paradigm, where episodic resource boosts drive ecological dynamics and population responses [@noy-meir_desert_1974; @whitford_ecology_2002]. Many Australian animal and plant populations irrupt following periods of favorable climatic conditions. For example, preceding vegetation growth is an important factor for C. terminifera population outbreaks [@lawton_seeing_2022].'*
+
+**Lines 94 – 95: I understand where this is going based on the study methods, but as a stand-alone question and hypothesis it is a bit confusing (i.e. the question implied locusts are in a non-choice environment, prediction implies choice environment). If there is a way to put the importance of this question in a larger context, that would also add value here.**
+
+*Thanks for the suggestion. We have further clarified this section to say: What happens to C. terminifera when constrained to high-nitrogen environments? Since at the individual level, locusts are often confronted with sub-optimal nutritional situations like high-nitrogen environments, locusts will prefer carbohydrate-rich diets to correct protein-carbohydrate imbalances.*
+
+**Line 96: Would be nice to include a prediction here as well.**
+
+*We have added a prediction as follows: Can we use soil nutrients as a predictor of C. terminifera nymph outbreaks at the continental scale? We expect outbreaks to by negatively correlation with soil nitrogen at this level.*
+
+**Lines 97 - 101: Why is this not included as a fourth question/ predictions?**
+
+*Great suggestion! We have added this as a fourth question to say: 'What are the large-scale patterns of C. terminifera outbreaks, accounting for climatic factors? We expect outbreaks to be associated with low-nitrogen areas, as terrestrial herbivores often require significantly more nitrogen than phosphorus \[\@elser_nutritional_2000\]. Given locusts' capacity to post-ingestively regulate phosphorus within natural ranges \[\@cease_dietary_2016; \@zhang_grasshoppers_2014\], we predict nitrogen to be a stronger predictor of population dynamics at the continental scale.'*
+
+**Line 116 etc: the degrees symbol is not showing up correctly in the draft I have access to**
+
+*This was a rendering error when converting to the ARXIV pdf. It is corrected now.*
+
+**Methods: Would be easier to follow why methods were used if there were a few more statements to connect them to the question (e.g. “To test our question regarding XXXX, we XXXX”).**
+
+*Thanks for the suggestion, we highlight which method sections corresponds with which question in the section title.*
+
+**Line 161: What other effects might removing plant litter have caused at this site (e.g. removal of light limitation for plants, increasing soil temperature)? Might want to include this as quick sentence here or in discussion.**
+
+*We have clarified this limitation within the methods section, specifically: ' We removed any plant litter and arthropods (mostly spiders and locusts) so we could more easily count the locusts and limit predation. This removal may have also affected factors such as light availability for plants and soil temperature, which could have influenced plant growth and other ecological dynamics.'*
+
+**Line 196: Soil data are temporal? How can data released in 2015 overlap with 2017?**
+
+*Thanks for the question. Soil nutrients can be temporal especially the forms of nitrogen and phosphorus that are readily accessible by plants. The soil grid data is based off inorganic forms of nitrogen and phosphorus which are much more stable. With this said, there are many activities (e.g. land use/land change) that can alter soil nutrient make up. As such, we decided to limit the historical outbreak data to the years around the time of release of the Australian Soil Grid in 2015. We clarified this by adding this ending to that sentence '...*to account for any potential shifts in soil nutrient composition' LINES XXX
+
+**Lines 208 – 209: Just curious if there is any study that validated these data for the general region? I know e.g. we have soil maps for my main current field site but they are extremely inaccurate :/**
+
+*Great question. This data was validated within the publication ([@grundy_soil_2015]) and further information can be found on their website <https://esoil.io/TERNLandscapes/Public/Pages/SLGA/index.html>. Whereas further validating these modeled soil datasets is warranted, it is out of the scope of this work.*
+
+**Line 219: I assume this will be filled in if accepted? I think you do still need to cite R and packages here to give them credit.**
+
+*Yes, due to the double blind review the github link will be made available to all readers and will contain all code, notebooks, and partially all data. For reproducibility, this packages are versioned via `renv`. The github README file will have a complete list of all packages, versions, and links to documentation for all python and r packages used.*
+
+**Lines 227 – 230: An example of a section that is not super clear on question it is testing. What is the modelled response variable for the GAMs?**
+
+*We have connected method sections to the specific questions they are addressing.*
+
+**Line 244: Why not one model using all categories as response?**
+
+*Since we counted up the number of each categories that happened in each 1km x 1km grid, this produced five potential dependent variables (e.g. the number of `0` observations, the number of `1` observations, and so on). There was also a concern about surveyors accurately classifying lower nymph densities (e.g. at low numbers, its hard to quickly call an observation a 1 or a 2). As such, we decided to focus on the two extreme categories to predict: nil observations and outbreaks. To ensure readers are not confused with our grid aggregation approach, we have further clarified this within the methods as follows: '*Since it is often difficult to accurately assess categories 2-3 given the small differences in densities, We counted the number of outbreaks (APLC nymph density code 4), the number of nil records (APLC nymph density code 0), and total number of survey observations.'
+
+**Line 245: Does precip drive N? If so, you can still keep precip out of your models but it adds climate change implications for results**
+
+*Yes, precipitation drives soil nitrogen through vegetation productivity, organic matter input, and other nitrogen cycling processes. And the authors agree that this is a compelling reason to not model both variables at the same time, especially in a more inferential approach as compared to a machine learning approach. This comment is similar to reviewer #1 comment above.*
+
+**Results: Again, a better linkage with questions—being explicit about what results are for which question—would benefit readability and clarity for the reader**
+
+*Thanks for the suggestion. Like in the methods section, we have included the specific questions within the section headers.*
+
+**Lines 263 – 264: I don’t understand this statement. Can you please explain this reasoning in more depth?**
+
+*We have clarified this section to say: 'Consumption in the two diet pairings did not differ, indicating that instead of consuming between the diets randomly (which would be expected if nutrients had no impact on diet consumption) locusts were actively balancing their protein and carbohydrate consumption (@suppfig-field-pop-nutrients A, @tbl-field-population-it-model).'*
+
+**Table 2: I would include the meaning of “diet pair B” in the caption.**
+
+*We have included a brief description of both diet pairs in the caption. 'Diet pair A and B had the following protein to carbohydrate ratios: 7p:35c & 28p:14c and 7p:35c & 35p:7c respectively.'*
+
+**Table 3: What is the response variable- I don’t understand how growth rate and development time were combined (?). As all these outputs are from GAM/GAMMs, do the estimate signs (+/-) have any meaning?**
+
+*This is a good catch! First off, these are the results of two independent models, one for specific growth rate and the other for development time. Since there are no non-parametric terms estimates (e.g. non-linear smooths), the models are actually generalized linear models that were built using the generalized additive model package called `mgcv`. We have clarified that these models are either linear models, generalized linear models, or generalized additive modelings through the methods section.*
+
+**Table 7: I know this is not a research question here, but just as background, are outbreaks increasing over time?**
+
+*This is an excellent question. There is one paper that took a random forest approach and modeled climate change impacts and they reported that there should be less outbreaks given climate change. However, I think this is still open for discussion as land use/land change was not taken into account. As this question falls outside of the scope of this paper, there isn't a need to include this discussion within the main text.*
+
+**Generally, seven Tables is a lot. Can some of these be moved to supplement and switched here for figures?**
+
+*Arianne: have any opinions here?*
+
+**Line 310: delete “adding variables”**
+
+*We have deleted this from the manuscript.*
+
+**Lines 331 – 332: Would be better to interpret results here, rather than state methods.**
+
+*We have removed this sentence from the manuscript.*
+
+**Line 336: “decreasing” or just less?**
+
+*We have switch the word from decreasing to less.*
+
+**Lines 426 – 428: Very interesting!**
+
+**Fig 1.: I assume you are only using soil data from regions overlapping with the locust surveys?**
+
+*Yes, data was extracted only for 1km x 1km grid cells that contained at least one locust survey record. So for example, since Western Australia has no observations, there was no soil data used from this region.s*
