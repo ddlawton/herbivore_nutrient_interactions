@@ -10,6 +10,8 @@ manuscript:
       title: title page
     - notebook: cover_letter.qmd
       title: cover letter
+    - notebook: okios_decision_response.qmd
+      title: Okios decision response
     - notebook: scripts/field_populations/01_field_population_intake_target_choice_diet_analysis.ipynb
       title: 1-1 population - choice intake targets
     - notebook: scripts/field_populations/02_field_population_intake_target_no_choice_diet_analysis.ipynb
