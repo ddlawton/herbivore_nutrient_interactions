@@ -7,7 +7,7 @@ format:
 
 ## Dear Editors,
 
-We sincerely thank the reviewers for their thorough evaluation of our manuscript, *“Exploring Nutrient Availability and Herbivorous Insect Population Dynamics Across Multiple Scales.”* Their insightful feedback has greatly enhanced the clarity, rigor, and overall impact of this work. In the following sections, we address each comment in detail, providing clarification, additional analysis, or revisions where necessary. We have carefully considered their suggestions, incorporating additional references and elaborating on theoretical frameworks. We believe these changes significantly strengthen the manuscript and appreciate the reviewers’ contributions to this improvement process. Below we respond to the specific suggestions and comments left by the reviewers. We again thank them for their time and effort and feel that the manuscript is stronger due to their comments. Our responses will be in *italics*.
+We sincerely thank the reviewers for their thorough evaluation of our manuscript, *“Exploring Nutrient Availability and Herbivorous Insect Population Dynamics Across Multiple Scales.”* Their insightful feedback has greatly enhanced the clarity, rigor, and overall impact of this work. In the following sections, we address each comment in detail, providing clarification and revisions where necessary. We have carefully considered their suggestions, incorporating additional references and elaborating on theoretical frameworks. We believe these changes significantly strengthen the manuscript and appreciate the reviewers’ contributions to this improvement process. Below we respond to the specific suggestions and comments left by the reviewers. We again thank them for their time and effort and feel that the manuscript is stronger due to their comments. Our responses will be in *italics*.
 
 ## Specific Reponses to Reviewers
 
@@ -23,11 +23,11 @@ We sincerely thank the reviewers for their thorough evaluation of our manuscript
 
 2.  **While the introduction effectively outlines a multi-scale approach, the connection between individual herbivore nutrition and broader-scale patterns could be more explicitly articulated. Integrating recent studies could help bridge these concepts and enhance the flow between sections.**
 
-*Thank you for this suggestion. We have integrated studies **X,Y,Z** studies that help bridge the gap between concepts. Please see lines **XXX***
+_We made more explicit the connection between individual herbivore nutrition and population- and landscape-level patterns and integrated more studies throughout the introduction._
 
 3.  **The hypotheses are well-presented; however, more explicitly linking them to the theoretical framework (e.g., ecological stoichiometry) would strengthen the foundation for the experiments.**
 
-*We have added a discussion on ecological stoichiometry in the introduction and discussion sections. Please see **LINES XXX***
+_We expanded the discussion of ecological stoichiometry and the geometric framework for nutrition in several paragraphs in the introduction._
 
 4.  **Locust populations may respond differently to nitrogen based on local adaptations. I would be interested to know how closely related insect species within the same feeding guild respond to variations in nutrient status (see Behmer & Joern, 2008; Zhu et al., 2020; Zhu et al., 2023). Are there any closely related species to Chortoicetes terminifera that might exhibit different nutrient preferences?**
 
@@ -43,19 +43,19 @@ We sincerely thank the reviewers for their thorough evaluation of our manuscript
 
 5.  **Although nitrogen is the primary focus, the influence of other environmental factors (e.g., precipitation, plant diversity, temperature) should be considered, as they also affect locust outbreaks. Including these variables in relation to nitrogen could make the conclusions more robust and refine the predictive model.**
 
-*We definitely agree that precipitation, plant diversity, and temperature are all very important variables in predicting locust as this is a very active area of research. The relationship between biomass and rain and locust plagues has been well studied. The purpose of these models were to illustrate the more static environmental variables on locust outbreaks, which are typically understudied at least in large scale predictive modeling. We did not include more environmental variables into the overall model as we were concerned with concurvity which would make model inference more complicated. Instead of adding these variables directly to the model, we decided to summarize the data up to spatial grids so that we were modeling the propensity of outbreaks in spatial areas instead of predicting the temporality of locust plagues. In addition, we built a separate annual precipitation model (Supplementary Figure 8) and including a raw visualization of the relationship between soil nitrogen, soil phosphorus, annual precipitation, and woody tree over (Supplementary Figure 5).*
+*We definitely agree that precipitation, plant diversity, and temperature are all very important variables in predicting locust as this is a very active area of research. The relationship between biomass and rain and locust plagues has been well studied. The purpose of these models were to illustrate the more static environmental variables on locust outbreaks, which are typically understudied at least in large scale predictive modeling. We did not include more environmental variables into the overall model as we were concerned with concurvity which would make model inference more complicated. Instead of adding these variables directly to the model, we decided to summarize the data across a spatial grid so that we were modeling the propensity of outbreaks in spatial areas instead of predicting the temporality of locust plagues. In addition, we built a separate annual precipitation model (Supplementary Figure 8) and included a raw visualization of the relationship between soil nitrogen, soil phosphorus, annual precipitation, and woody tree cover (Supplementary Figure 5). The visual comparisons indicate that soil N is independently affecting locust outbreaks and is not simply a direct correlate of other factors such as woody tree cover.*
 
 **Minor Comments: Line 8-10: This sentence is quite long. Consider splitting it into two sentences for clarity.**
 
-*We have reworded this sentence for clarity as follows: 'In the field, locusts exposed to protein-biased plants corrected their nutritional imbalance by initially selecting carbohydrate-heavy diets (up to a 1p:20c ratio). Over a week after removal from the protein-rich environment, they returned to the 1p:2c intake target once the deficiency was balanced.'*
+*We have reworded this sentence for clarity as follows: 'In the field, locusts exposed to protein-biased plants corrected their nutritional imbalance by initially selecting carbohydrate-heavy diets (up to a 1p:20c ratio). Over a week after removal from the protein-rich environment, they returned to the 1p:2c intake target, suggesting that the deficiency was redressed at the time.'*
 
 **Line 13-15: It would be beneficial to show directly how mean annual precipitation affects the relationship between soil nitrogen and locust populations, given the high correlation between these two factors.**
 
-*Since we aggregated locust outbreaks to spatial grids (supplementary figure 2), the effects of annual precipitation are glossed over and the effects of more static variables are more pronounced. This is because instead of predicting the specific locust plague outbreak, we are predicting the number of outbreaks likely to occur in a 1x1 km\^2 grid. As such, the relationship between outbreaks summed up to the grid and mean annual precipitation is weak and very different from the more static environmental variable models (Supplementary Figure 8 and Figure 5). Given that this relationship is different and that the relationship between soil nitrogen and annual precipitation is not 1:1 (Supplementary Figure 5C), we are likely seeing the effect of soil nitrogen on the likelihood of Chortocietes terminifera outbreaks.*
+*We included additional correlation analyses in the supplemental material. There is a positive relationship between mean annual precipitation and soil nitrogen, though it is not 1:1 (Supplementary Figure 5C).*
 
 **Line 43-45: In the introduction, further elaboration on the theory of phosphorus limitation would be helpful. The study suggests a non-linear relationship between locust abundance and soil phosphorus, with a peak at approximately 4% phosphorus content. Providing examples of the influence of phosphorus and its threshold on herbivorous insects would add depth.**
 
-*Thank you for this suggestion, we have amended this section to say:* *A decrease in phosphorus in the host plant of the dryland insect herbivore Sabinia setosa—velvet mesquite (Prosopis velutina)—results in lower RNA content, slower growth, and reduced abundance in the insect population [@schade_stoichiometric_2003. Nonlinear relationships between phosphorus availability and herbivore abundance has been documented, for eample insufficient phosphorus limits RNA production and growth, while excessive phosphorus disrupts nutrient homeostasis and reduces fitness, as demonstrated in laboratory studies of locusts [@cease_dietary_2016].Phosphorus plays a vital role in RNA synthesis, energy storage and transfer via ATP, and numerous cellular processes, making it essential for animal growth and reproduction. For herbivorous insects, phosphorus-rich plant tissue is particularly important, as it supports their rapid growth and high reproductive rates[@sterner2003; @andersen_stoichiometry_2004].*
+*Thank you for this suggestion, we have amended this section to say:* *Phosphorus is necessary for RNA synthesis, energy storage and transfer via ATP, and numerous other cellular processes. Limitations in one or both restrict herbivore growth and reproduction [@sterner2003]. For example, increased host plant C:P results in lower RNA content, slower growth, and reduced abundance for the dryland insect herbivore Sabinia setosa [@schade_stoichiometric_2003].*
 
 **Line 80-88: The connection between weather conditions, soil nutrients, and locust populations in the introduction could be clarified further for a smoother transition.**
 
@@ -63,7 +63,7 @@ We sincerely thank the reviewers for their thorough evaluation of our manuscript
 
 **Line 245-247: Since soil nitrogen and mean annual precipitation are highly correlated, how do the authors distinguish the effect of soil nitrogen from precipitation on locust populations at landscape scales? It would be useful to explain how they determine the driving factor rather than correlation.**
 
-*Please see the answer above*
+*Instead of predicting specific instances of outbreaks (which are indeed highly influenced by a given rainfall event), we are predicting the number of outbreaks likely to occur in a 1x1 km^2 grid across decades. Using this approach means that the effects of stochastic variables (e.g. precipitation) are not well captured, but the overall impacts of more static variables (e.g. soil nutrients) are. This is illustrated in Supplementary Figure 8 and Figure 5 that show that the relationship between outbreaks summed up to the grid and mean annual precipitation is weak and very different from the more static environmental variable models. Because the mean annual precipitation-outbreak and soil N-outbreak relationships are different, and the relationship between soil N and MAP is not 1:1, we can conclude that the effect of soil N on the likelihood of outbreaks shown by the model is not well-explained by mean annual precipitation alone.*
 
 **Figure 5a: It appears that when soil nitrogen exceeds 0.33, an increase in soil nitrogen has a positive effect on locust populations. Clarification on this observation would enhance the interpretation of the figure.**
 
@@ -105,7 +105,7 @@ We sincerely thank the reviewers for their thorough evaluation of our manuscript
 
 **Line 196: Soil data are temporal? How can data released in 2015 overlap with 2017?**
 
-*Thanks for the question. Soil nutrients can be temporal especially the forms of nitrogen and phosphorus that are readily accessible by plants. The soil grid data is based off inorganic forms of nitrogen and phosphorus which are much more stable. With this said, there are many activities (e.g. land use/land change) that can alter soil nutrient make up. As such, we decided to limit the historical outbreak data to the years around the time of release of the Australian Soil Grid in 2015. We clarified this by adding this ending to that sentence '...*to account for any potential shifts in soil nutrient composition' LINES XXX
+*Thanks for the question. Soil nutrients can be temporal especially the forms of nitrogen and phosphorus that are readily accessible by plants. The soil grid data is based off inorganic forms of nitrogen and phosphorus which are much more stable. With this said, there are many activities (e.g. land use/land change) that can alter soil nutrient make up. As such, we decided to limit the historical outbreak data to the years around the time of release of the Australian Soil Grid in 2015. We clarified this by adding this ending to that sentence '...*to account for any potential shifts in soil nutrient composition'
 
 **Lines 208 – 209: Just curious if there is any study that validated these data for the general region? I know e.g. we have soil maps for my main current field site but they are extremely inaccurate :/**
 
@@ -113,7 +113,7 @@ We sincerely thank the reviewers for their thorough evaluation of our manuscript
 
 **Line 219: I assume this will be filled in if accepted? I think you do still need to cite R and packages here to give them credit.**
 
-*Yes, due to the double blind review the github link will be made available to all readers and will contain all code, notebooks, and partially all data. For reproducibility, this packages are versioned via `renv`. The github README file will have a complete list of all packages, versions, and links to documentation for all python and r packages used.*
+*Yes, due to the double blind review the github link will be made available to all readers and will contain all code, notebooks, and partially all data. For reproducibility, these packages are versioned via `renv`. The github README file will have a complete list of all packages, versions, and links to documentation for all python and r packages used once published.*
 
 **Lines 227 – 230: An example of a section that is not super clear on question it is testing. What is the modelled response variable for the GAMs?**
 
@@ -121,7 +121,7 @@ We sincerely thank the reviewers for their thorough evaluation of our manuscript
 
 **Line 244: Why not one model using all categories as response?**
 
-*Since we counted up the number of each categories that happened in each 1km x 1km grid, this produced five potential dependent variables (e.g. the number of `0` observations, the number of `1` observations, and so on). There was also a concern about surveyors accurately classifying lower nymph densities (e.g. at low numbers, its hard to quickly call an observation a 1 or a 2). As such, we decided to focus on the two extreme categories to predict: nil observations and outbreaks. To ensure readers are not confused with our grid aggregation approach, we have further clarified this within the methods as follows: '*Since it is often difficult to accurately assess categories 2-3 given the small differences in densities, We counted the number of outbreaks (APLC nymph density code 4), the number of nil records (APLC nymph density code 0), and total number of survey observations.'
+*Since we counted up the number of each categories that happened in each 1km x 1km grid, this produced five potential dependent variables (e.g. the number of `0` observations, the number of `1` observations, and so on). There was also a concern about surveyors accurately classifying lower nymph densities (e.g. at low numbers, its hard to quickly call an observation a 1 or a 2). As such, we decided to focus on the two extreme categories to predict: nil observations and outbreaks. To ensure readers are not confused with our grid aggregation approach, we have further clarified this within the methods as follows: 'Since it is often difficult to accurately assess categories 2-3 given the small differences in densities, We counted the number of outbreaks (APLC nymph density code 4), the number of nil records (APLC nymph density code 0), and total number of survey observations.'*
 
 **Line 245: Does precip drive N? If so, you can still keep precip out of your models but it adds climate change implications for results**
 
@@ -149,7 +149,7 @@ We sincerely thank the reviewers for their thorough evaluation of our manuscript
 
 **Generally, seven Tables is a lot. Can some of these be moved to supplement and switched here for figures?**
 
-*Arianne: have any opinions here?*
+*We feel that it's more transparent to include these statistical results in the main text to make it easily accessible, and opted for tables rather than writing the stats into the results text to make it more streamlined for readers. However, we are open to moving the tables to the supplement if the editors would suggest that approach.*
 
 **Line 310: delete “adding variables”**
 
@@ -167,4 +167,4 @@ We sincerely thank the reviewers for their thorough evaluation of our manuscript
 
 **Fig 1.: I assume you are only using soil data from regions overlapping with the locust surveys?**
 
-*Yes, data was extracted only for 1km x 1km grid cells that contained at least one locust survey record. So for example, since Western Australia has no observations, there was no soil data used from this region.s*
+*Yes, data was extracted only for 1km x 1km grid cells that contained at least one locust survey record. So for example, since Western Australia has no observations, there was no soil data used from this region.*
