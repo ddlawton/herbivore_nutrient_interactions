@@ -3,6 +3,8 @@ title: "Oikos Decision Response"
 author: "Douglas Lawton"
 format:
   docx: default
+bibliography: references.bib
+csl: oikos.csl
 ---
 
 ## Dear Editors,
@@ -23,11 +25,11 @@ We sincerely thank the reviewers for their thorough evaluation of our manuscript
 
 2.  **While the introduction effectively outlines a multi-scale approach, the connection between individual herbivore nutrition and broader-scale patterns could be more explicitly articulated. Integrating recent studies could help bridge these concepts and enhance the flow between sections.**
 
-_We made more explicit the connection between individual herbivore nutrition and population- and landscape-level patterns and integrated more studies throughout the introduction._
+*We made more explicit the connection between individual herbivore nutrition and population- and landscape-level patterns and integrated more studies throughout the introduction.*
 
 3.  **The hypotheses are well-presented; however, more explicitly linking them to the theoretical framework (e.g., ecological stoichiometry) would strengthen the foundation for the experiments.**
 
-_We expanded the discussion of ecological stoichiometry and the geometric framework for nutrition in several paragraphs in the introduction._
+*We expanded the discussion of ecological stoichiometry and the geometric framework for nutrition in several paragraphs in the introduction.*
 
 4.  **Locust populations may respond differently to nitrogen based on local adaptations. I would be interested to know how closely related insect species within the same feeding guild respond to variations in nutrient status (see Behmer & Joern, 2008; Zhu et al., 2020; Zhu et al., 2023). Are there any closely related species to Chortoicetes terminifera that might exhibit different nutrient preferences?**
 
@@ -63,7 +65,7 @@ _We expanded the discussion of ecological stoichiometry and the geometric framew
 
 **Line 245-247: Since soil nitrogen and mean annual precipitation are highly correlated, how do the authors distinguish the effect of soil nitrogen from precipitation on locust populations at landscape scales? It would be useful to explain how they determine the driving factor rather than correlation.**
 
-*Instead of predicting specific instances of outbreaks (which are indeed highly influenced by a given rainfall event), we are predicting the number of outbreaks likely to occur in a 1x1 km^2 grid across decades. Using this approach means that the effects of stochastic variables (e.g. precipitation) are not well captured, but the overall impacts of more static variables (e.g. soil nutrients) are. This is illustrated in Supplementary Figure 8 and Figure 5 that show that the relationship between outbreaks summed up to the grid and mean annual precipitation is weak and very different from the more static environmental variable models. Because the mean annual precipitation-outbreak and soil N-outbreak relationships are different, and the relationship between soil N and MAP is not 1:1, we can conclude that the effect of soil N on the likelihood of outbreaks shown by the model is not well-explained by mean annual precipitation alone.*
+*Instead of predicting specific instances of outbreaks (which are indeed highly influenced by a given rainfall event), we are predicting the number of outbreaks likely to occur in a 1x1 km\^2 grid across decades. Using this approach means that the effects of stochastic variables (e.g. precipitation) are not well captured, but the overall impacts of more static variables (e.g. soil nutrients) are. This is illustrated in Supplementary Figure 8 and Figure 5 that show that the relationship between outbreaks summed up to the grid and mean annual precipitation is weak and very different from the more static environmental variable models. Because the mean annual precipitation-outbreak and soil N-outbreak relationships are different, and the relationship between soil N and MAP is not 1:1, we can conclude that the effect of soil N on the likelihood of outbreaks shown by the model is not well-explained by mean annual precipitation alone.*
 
 **Figure 5a: It appears that when soil nitrogen exceeds 0.33, an increase in soil nitrogen has a positive effect on locust populations. Clarification on this observation would enhance the interpretation of the figure.**
 
@@ -89,7 +91,7 @@ _We expanded the discussion of ecological stoichiometry and the geometric framew
 
 **Lines 97 - 101: Why is this not included as a fourth question/ predictions?**
 
-*Great suggestion! We have added this as a fourth question to say: 'What are the large-scale patterns of C. terminifera outbreaks, accounting for climatic factors? We expect outbreaks to be associated with low-nitrogen areas, as terrestrial herbivores often require significantly more nitrogen than phosphorus \[\@elser_nutritional_2000\]. Given locusts' capacity to post-ingestively regulate phosphorus within natural ranges \[\@cease_dietary_2016; \@zhang_grasshoppers_2014\], we predict nitrogen to be a stronger predictor of population dynamics at the continental scale.'*
+*Great suggestion! We have added this as a fourth question to say: 'What are the large-scale patterns of C. terminifera outbreaks, accounting for climatic factors? We expect outbreaks to be associated with low-nitrogen areas, as terrestrial herbivores often require significantly more nitrogen than phosphorus [@elser_nutritional_2000]. Given locusts' capacity to post-ingestively regulate phosphorus within natural ranges [@cease_dietary_2016; @zhang_grasshoppers_2014], we predict nitrogen to be a stronger predictor of population dynamics at the continental scale.'*
 
 **Line 116 etc: the degrees symbol is not showing up correctly in the draft I have access to**
 
@@ -133,7 +135,7 @@ _We expanded the discussion of ecological stoichiometry and the geometric framew
 
 **Lines 263 – 264: I don’t understand this statement. Can you please explain this reasoning in more depth?**
 
-*We have clarified this section to say: 'Consumption in the two diet pairings did not differ, indicating that instead of consuming between the diets randomly (which would be expected if nutrients had no impact on diet consumption) locusts were actively balancing their protein and carbohydrate consumption (@suppfig-field-pop-nutrients A, @tbl-field-population-it-model).'*
+*We have clarified this section to say: 'Consumption in the two diet pairings did not differ, indicating that instead of consuming between the diets randomly (which would be expected if nutrients had no impact on diet consumption) locusts were actively balancing their protein and carbohydrate consumption...'*
 
 **Table 2: I would include the meaning of “diet pair B” in the caption.**
 
