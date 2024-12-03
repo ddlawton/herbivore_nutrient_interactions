@@ -216,7 +216,7 @@ dynamics, non-linear modeling, nutrient limitation, remote sensing},
 
 \usepackage{lineno}
 \linenumbers
-\renewcommand{\today}{2024-11-24}
+\renewcommand{\today}{2024-12-03}
 \newcommand{\runninghead}{A Preprint }
 \renewcommand{\runninghead}{initial submission }
 \title{Exploring Nutrient Availability and Herbivorous Insect Population
@@ -224,7 +224,7 @@ Dynamics Across Multiple Scales}
 \def\asep{\\\\\\ } % default: all authors on same column
 \def\asep{\And }
 \author{\asep\asep\asep\asep\asep\asep\asep\asep\asep}
-\date{2024-11-24}
+\date{2024-12-03}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -267,78 +267,111 @@ remote sensing
 
 \section{INTRODUCTION}\label{introduction}
 
-Plant nutrients are usually more variable than animal body composition,
-which can make it challenging for herbivores to acquire an optimal
-nutritional balance \citep{elser_nutritional_2000}. Nutrient balance
-affects individual performance
-\citep{batzli_nutritional_1986, bernays_dietary_1994} and, by extension,
-influences population dynamics \citep{elser_nutritional_2000}. One way
-many primary consumers achieve an optimal blend of nutrients is through
-selecting different host plants or plant parts to reach a specific
-amount and ratio, termed the intake target, IT \citep{simpson2012}. For
-example, giant pandas (\emph{Ailuropoda melanoleuca}) synchronize their
-migration and reproduction cycles with seasonal nutrient availability
-between different bamboo species \citep{nie_obligate_2015}. While
-studies have investigated this trend between available nutrients and
-animal populations, they usually happen at one scale and biological
-level. For example, much grasshopper nutrition research has been done at
-the organismal or local population level using lab and/or field studies
+Plant nutrients are usually more variable than animal body composition
+both in their total amounts and ratios, which can make it challenging
+for herbivores to acquire an optimal nutritional balance. This topic has
+been well-explored using Ecological Stoichiometry, which looks at the
+relative amounts of elements moving through different ecological and
+biological levels and their consequences \citep{elser_nutritional_2000}.
+Nutrient balance affects individual performance
+\citep{batzli_nutritional_1986, bernays_dietary_1994} and---by extension
+through changes in growth, reproduction, and death rates---influences
+population dynamics \citep{elser_nutritional_2000}. While studies have
+investigated this trend between available nutrients and animal
+populations, they usually happen at one scale and biological level. For
+example, much grasshopper nutrition research has been done at the
+organismal or local population level using lab and/or field studies
 \citep{behmer_insect_2009, cease_how_2024, le_gall_global_2019}, with a
 few separate larger scale modeling endeavors
-\citep{welti_nutrient_2020, zhou_increased_2019}. To our knowledge, no
-study has integrated individual herbivorous animal nutrition to
-continental level patterns in nutrient availability. Here we work across
-spatial scales, bridging field observations and cage manipulations with
-continental-scale insect pest outbreak modeling to see how the
-animal-nutrient relationship changes across multiple scales.
+\citep[\citet{welti_nutrient_2020}]{zhou_increased_2019}. To our
+knowledge, no study has integrated individual herbivorous animal
+nutrition to continental level patterns in nutrient availability. Here
+we work across spatial scales, bridging field observations and cage
+manipulations with continental-scale insect pest outbreak modeling to
+see how the animal-nutrient relationship changes across multiple scales.
 
 Food quality has long been considered an important predictor of animal
 population dynamics
-\citep{andersen_stoichiometry_2004, white_inadequate_1993}. Phosphorus
-and nitrogen commonly limit primary production in ecosystems, either
-separately or as co-limiting factors
-\citep{tyrrell_relative_1999, vitousek_terrestrial_2010}, and are often
-investigated as limiting factors for higher trophic levels to determine
-the consequences to animal growth and reproduction
-\citep{andersen_stoichiometry_2004}. For example, bluegrass fields
-supplemented with high quality (e.g.~increased nitrogen) food pellets
-increase vole (\emph{Microtus ochmgaster}) densities compared to control
-fields by supporting higher adult survival, increased breeding, and
-growth rate \citep{cole_influence_1978}. \textbf{A decrease in
-phosphorus in the host plant of the dryland insect herbivore Sabinia
-setosa---velvet mesquite (Prosopis velutina)---results in lower RNA
-content, slower growth, and reduced abundance in the insect population
-{[}\citet{schade_stoichiometric_2003}. Nonlinear relationships between
-phosphorus availability and herbivore abundance has been documented, for
-eample insufficient phosphorus limits RNA production and growth, while
-excessive phosphorus disrupts nutrient homeostasis and reduces fitness,
-as demonstrated in laboratory studies of locusts
-\citep{cease_dietary_2016}.Phosphorus plays a vital role in RNA
-synthesis, energy storage and transfer via ATP, and numerous cellular
-processes, making it essential for animal growth and reproduction. For
-herbivorous insects, phosphorus-rich plant tissue is particularly
-important, as it supports their rapid growth and high reproductive
-rates\citep{sterner2003, andersen_stoichiometry_2004}.} More broadly,
-nitrogen and phosphorus limitation has been shown in mammals
-\citep{randolph_nutritional_1995, white_inadequate_1993}, birds
+\citep{white_inadequate_1993, andersen_stoichiometry_2004}. Primary
+production in terrestrial ecosystems is often limited by nitrogen (N)
+and phosphorus (P), either separately or as co-limiting factors
+\citep{tyrrell_relative_1999, vitousek_terrestrial_2010}, and thus
+herbivores are often assumed to be N- and/or P-limited as well.
+Furthermore, plants have higher carbon (C):N and C:P ratios than the
+consumers that eat them and this mismatch in stoichiometry can make it
+challenging for primary consumers to meet their N and P needs
+\citep{elser_nutritional_2000}. Most N in plants is found in amino acids
+or proteins, which are critical for animal growth and enzymatic
+function. Phosphorus is necessary for RNA synthesis, energy storage and
+transfer via ATP, and numerous other cellular processes. Limitations in
+one or both restrict herbivore growth and reproduction
+\citep{sterner2003}. For example, increased host plant C:P results in
+lower RNA content, slower growth, and reduced abundance for the dryland
+insect herbivore \emph{Sabinia} setosa
+\citep{schade_stoichiometric_2003}. Vole (\emph{Microtus ochrogaster})
+densities increase in bluegrass fields supplemented with high quality
+(e.g.~increased N) food pellets due to higher adult survival, and
+increased breeding, and growth rates compared to control fields
+\citep{cole_influence_1978}. More broadly, N- and P-limitation has been
+shown in mammals
+\citep{white_inadequate_1993, randolph_nutritional_1995}, birds
 \citep{forero_conspecific_2002, granbom_food_2006}, and insects
-{[}\citet{floyd_frontiers_1996}; \citet{huberty_consequences_2006};
-\citet{marsh_decline_1995}; ; \citet{perkins_dietary_2004}{]} which is
-discussed further in \citet{white_role_2008} and
+\citep{floyd_frontiers_1996, huberty_consequences_2006, marsh_decline_1995, perkins_dietary_2004}
+which is discussed further in \citet{white_role_2008} and
 \citet{andersen_stoichiometry_2004}. However, not all animal populations
-respond positively to increasing environmental nutrients. For example,
-studies from across the globe reveal that the abundances of many
-grasshopper species are positively
-\citep{joern_not_2012, ozment_tracking_2021, welti_bottomup_2020, welti_nutrient_2020, zhu_effects_2020, zhu_negative_2019},
+respond positively to increasing N and P. For example, studies from
+across the globe reveal that the abundances of many grasshopper species
+are positively
+\citep{joern_not_2012, zhu_negative_2019, welti_nutrient_2020, welti_bottomup_2020, zhu_effects_2020, ozment_tracking_2021},
 or not related
 \citep{heidorn_feeding_1987, jonas_hostplant_2008, lenhart_water_2015, ozment_tracking_2021}
-to plant nitrogen concentrations as reviewed in \citet{cease_how_2024}.
-Can the relationship between herbivore abundance and environmental
-nutrients be explained by approaches that consider nutritional
-physiology at the organismal level, in addition to population and
-landscape ecology?
+to increasing plant N concentrations as reviewed in
+\citet{cease_how_2024}. Grasshoppers restricted to low or high P diets
+have decreased survival and body mass relative to grasshoppers fed their
+preferred diet of about 0.5\% P \citet{cease_dietary_2016}. These
+different responses suggest that herbivores may not be broadly N and/or
+P limited and underscore that equating plant N or P content to plant
+quality, as is commonly done in the ecological literature, may be
+misleading in the context of herbivory.
 
-One excellent study system to understand the complex relationship of
+Given the variation in responses, can the relationship between herbivore
+abundance and environmental nutrients be explained by approaches that
+consider nutritional physiology at the organismal level, in addition to
+population and landscape ecology? Unlike primary producers that can
+selectively uptake individual nutrients to meet their needs, consumers
+must actively balance nutrients by eating from among foods packaged with
+different ratios \citep{raubenheimer_geometry_1993}, or via
+post-ingestive regulation \citep{zanotto_regulation_1993}. The Geometric
+Framework for Nutrition (GFN) is complementary to Ecological
+Stoichiometry and focuses on how consumers acquire specific blends of
+nutrients and the consequences of eating imbalanced diets
+\citet{simpson_nature_2012}. If multiple food sources are available,
+many herbivores actively select different host plants or plant parts to
+reach a specific amount and ratio of nutrients that optimizes
+performance, termed the intake target, IT in the GFN
+\citep{simpson_nature_2012}. For example, giant pandas (\emph{Ailuropoda
+melanoleuca}) synchronize their migration and reproduction cycles with
+seasonal nutrient availability between different bamboo species
+\citep{nie_obligate_2015} (Nie et al.~2015). The relationship between
+plant N and herbivore performance is driven to a large extent by the
+herbivore's relative demands for protein and non-protein energy
+(carbohydrates and lipids) \citep{behmer_insect_2009}. Protein demand
+can be well-predicted by growth rate, but energy demand varies greatly
+across different environments and activity levels
+\citep{talal_body_2024}. Thus, smaller and fast-growing animals are
+predicted to have high protein demands; and highly active animals are
+predicted to have high energy demands. While protein limitation
+suppresses growth, overconsumption of protein has deleterious effects as
+well, including well-described shortening of lifespans across many taxa
+\citep{lecouteur_impact_2015, moatt_lifespan_2020}. Thus, if energy
+demands are particularly high, then consumers will require low protein,
+high energy diets so that they can eat enough to acquire the energy they
+need without overeating protein \citep{raubenheimer_integrating_1999}.
+In those cases, low N environments are predicted to be beneficial
+because they generally support growth of low protein, high carbohydrate
+plants.
+
+One excellent study system to explore the complex relationship of
 nutrient availability and population dynamics is a subset of
 grasshoppers called locusts
 \citep{cullen_molecules_2017, uvarov_grasshoppers_1977}. Locusts undergo
@@ -362,8 +395,13 @@ when eating carbohydrate-biased plants \citep{talal_plant_2020}. As
 adults, flight increases carbohydrate, but not protein, consumption in
 migratory locusts (\emph{Locusta migratoria}) and locusts eating
 carbohydrate-biased diets fly for longer times \citep{talal_body_2023}.
-At a local scale, high-use agricultural areas that decrease soil and
-plant nitrogen promote Oedaleus locust outbreaks in Senegal and China
+Locusts use lipids to fuel long distance flight, which they
+predominantly synthesize from carbohydrate consumption. However, when
+given the choice, locusts balance lipid to carbohydrate intake to most
+efficiently grow lipid stores from dietary lipids
+\citep{talal_target_2024}. At a local scale, high-use agricultural areas
+that decrease soil and plant nitrogen promote Oedaleus locust outbreaks
+in Senegal and China
 \citep{cease_heavy_2012, giese_n_2013, le_gall_global_2019, word_soil-targeted_2019}.
 Less is known about the relationship between plant phosphorus and locust
 populations, but grasshoppers and locusts can detect and regulate
@@ -381,14 +419,14 @@ to continental scale population dynamics may reveal a connection between
 soil quality and locust plagues in Australia and further elucidate the
 pattern globally \citep{cease_how_2024, le_gall_global_2019}.
 
-\textbf{The arid interior of Australia is a highly variable environment
+The arid interior of Australia is a highly variable environment
 \citep{morton_fresh_2011} characterized by the Resource-Pulse Paradigm,
 where episodic resource boosts drive ecological dynamics and population
 responses \citep{noy-meir_desert_1974, whitford_ecology_2002}. Many
 Australian animal and plant populations irrupt following periods of
-favorable climatic conditions.} Preceding vegetation growth is a key
+favorable climatic conditions. Preceding vegetation growth is a key
 factor influencing \emph{C. terminifera} population outbreaks
-\citep{lawton_seeing_2022}. \textbf{While climatic variability plays a
+\citep{lawton_seeing_2022}. While climatic variability plays a
 significant role, another critical factor in Australia is its naturally
 poor soil fertility, with essential nutrients like nitrogen and
 phosphorus often in short supply in unmodified soils
@@ -401,41 +439,36 @@ numerous studies have linked climatic conditions to \emph{C.
 terminifera} population outbreaks
 \citep{clark_influence_1974, deveson_not_2005, farrow_population_1982, key_general_1945},
 the role of soil and plant nutrients in driving these outbreaks remains
-underexplored.}
+underexplored.
 
 In this study, we investigate the across scale relationship between soil
 and plant nutrients and animal populations using \emph{C. terminifera}.
-We have \textbf{four} specific questions and subsequent predictions
-across scales:
+We have three specific questions and subsequent predictions across
+scales:
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi})}
+\def\labelenumi{\arabic{enumi}.}
 \item
-  What are the nutritional preferences of individuals from gregarious
-  \emph{C. terminifera} field populations? We expect individuals to be
-  carbohydrate biased based on their active lifestyle, and to keep a
-  constant intake target between populations.
+  What are the nutritional preferences and performance curves of
+  individuals from gregarious \emph{C. terminifera} field populations?
+  We expect individuals to select and perform best on
+  carbohydrate-biased diets based on their active lifestyle, and to keep
+  a constant intake target between populations.
 \item
-  \textbf{What happens to \emph{C. terminifera} when constrained to
-  high-nitrogen environments? Since at the individual level, locusts are
-  often confronted with sub-optimal nutritional situations like
-  high-nitrogen environments, locusts will prefer carbohydrate-rich
-  diets to correct protein-carbohydrate imbalances.}
+  How does \emph{C. terminifera} respond behaviorally when constrained
+  to high-nitrogen environments? To redress a nutritional imbalance of a
+  high p:c diet, locusts will seek out and eat carbohydrate-rich diets
+  if such foods become available.
 \item
-  \textbf{Can we use soil nutrients as a predictor of \emph{C.
-  terminifera} nymph outbreaks at the continental scale? We expect
-  outbreaks to by negatively correlation with soil nitrogen at this
-  level.}
-\item
-  \textbf{What are the large-scale patterns of C. terminifera outbreaks,
-  accounting for climatic factors? We expect outbreaks to be associated
-  with low-nitrogen areas, as terrestrial herbivores often require
-  significantly more nitrogen than phosphorus
-  {[}@elser\_nutritional\_2000{]}. Given locusts' capacity to
+  Can we use soil nutrients as a predictor of \emph{C. terminifera}
+  nymph outbreaks at the continental scale, accounting for climatic
+  factors? We expect outbreaks to by negatively correlation with soil
+  nitrogen at this level because low nitrogen environments generally
+  promote growth of low p:c vegetation. Given locusts' capacity to
   post-ingestively regulate phosphorus within natural ranges
-  {[}@cease\_dietary\_2016; @zhang\_grasshoppers\_2014{]}, we predict
+  \citep{cease_dietary_2016, zhang_grasshoppers_2014}, we predict
   nitrogen to be a stronger predictor of population dynamics at the
-  continental scale.}
+  continental scale.
 \end{enumerate}
 
 \section{METHODS}\label{methods}
@@ -470,23 +503,23 @@ scales of interest}
 
 \endgroup
 
-\subsection{Field site and animals (Question 2 and
-3)}\label{field-site-and-animals-question-2-and-3}
+\subsection{Field site and animals (Questions 1 and
+2)}\label{field-site-and-animals-questions-1-and-2}
 
-\textbf{To answer questions one and two}, lab-based and field cage
-experiments were conducted at the Trangie Agricultural Research Centre
-of the Department of Primary Industries in Trangie, New South Wales,
-Australia. We used field populations of the \emph{C. terminifera}, which
-prefers open grassy areas and is a grass generalist
-\citep{key_general_1945}. Solitarious populations of this locust species
-maintain their intake target closely regardless of spatiotemporal
-changes \citep{lawton_mismatched_2021}. We carried out these studies in
+To answer questions one and two, lab-based and field cage experiments
+were conducted at the Trangie Agricultural Research Centre of the
+Department of Primary Industries in Trangie, New South Wales, Australia.
+We used field populations of the \emph{C. terminifera}, which prefers
+open grassy areas and is a grass generalist \citep{key_general_1945}.
+Solitarious populations of this locust species maintain their intake
+target closely regardless of spatiotemporal changes
+\citep{lawton_mismatched_2021}. We carried out these studies in
 November-December 2015, during the final nymphal and early adult stages
 of the spring \emph{C. terminifera} generation.
 
 \subsection{Nutritional target and performance curve using synthetic
-diets (Question 2 and
-3)}\label{nutritional-target-and-performance-curve-using-synthetic-diets-question-2-and-3}
+diets (Question
+1)}\label{nutritional-target-and-performance-curve-using-synthetic-diets-question-1}
 
 To control the nutrient availability, we used isocaloric artificial
 diets made up of 42\% macronutrients (differing ratios of protein and
@@ -636,8 +669,8 @@ as:
 \]
 
 \subsection{Correlating historical nymphal outbreaks with soil nitrogen
-and phosphorus (Questions 3 and
-4)}\label{correlating-historical-nymphal-outbreaks-with-soil-nitrogen-and-phosphorus-questions-3-and-4}
+and phosphorus (Questions
+3)}\label{correlating-historical-nymphal-outbreaks-with-soil-nitrogen-and-phosphorus-questions-3}
 
 To understand the relationship between soil nutrients and locust
 outbreaks, we used the Australian Plague Locust Commission's (APLC)
@@ -670,13 +703,13 @@ Supplementary Figure~\ref{suppfig-grid-example}. This allowed us to
 model how often locust outbreaks occur in grid cells rather than the
 actual outbreak. We used a 1 km\textsuperscript{2} grid as this reflects
 the estimated maximum dispersal distance from hatching to 5th instar
-\citep{hunter_aerial_2008}. \textbf{Since it is often difficult to
-accurately assess categories 2-3 given the small differences in
-densities, We counted the number of outbreaks (APLC nymph density code
-4), the number of nil records (APLC nymph density code 0), and total
-number of survey observations.} This resulted in approximately 67,000
-grid cells for the final dataset. Overall APLC survey point distribution
-can be seen in Figure~\ref{fig-spatial-modeling-env-map} A.
+\citep{hunter_aerial_2008}. Since it is often difficult to accurately
+assess categories 2-3 given the small differences in densities, We
+counted the number of outbreaks (APLC nymph density code 4), the number
+of nil records (APLC nymph density code 0), and total number of survey
+observations. This resulted in approximately 67,000 grid cells for the
+final dataset. Overall APLC survey point distribution can be seen in
+Figure~\ref{fig-spatial-modeling-env-map} A.
 
 \subsubsection{Soil grid of Australia
 data}\label{soil-grid-of-australia-data}
@@ -715,17 +748,17 @@ mean proportion phosphorous at 0-15cm deep.}
 
 \subsection{Statistics}\label{statistics}
 
-\textbf{All statistics were conducted with either a generalized additive
-(mixed) model or generlized linear (mixed) model approach when
-appropriate.}This allowed us to test for non-linear and linear trends in
-the dataset and specify the hierarchical nature of the data. All
-statistics were conducted in R and python. All scripts and packages used
-can be seen within the project code repository:
+All statistics were conducted with either a generalized additive (mixed)
+model or generlized linear (mixed) model approach when appropriate.This
+allowed us to test for non-linear and linear trends in the dataset and
+specify the hierarchical nature of the data. All statistics were
+conducted in R and python. All scripts and packages used can be seen
+within the project code repository:
 \href{https://github.com/ddlawton/herbivore_nutrient_interactions}{github
 repo}.
 
-\subsubsection{Intake Targets (Question one and
-two)}\label{intake-targets-question-one-and-two}
+\subsubsection{Intake Targets (Question 1 and
+2)}\label{intake-targets-question-1-and-2}
 
 To determine intake targets, we constructed generalized additive model
 (GAM) (family: Multivariate Normal Distribution, Link: Identity) with
@@ -739,13 +772,13 @@ information criterion (BIC). If weight was not an important variable, it
 was removed entirely from the model.
 
 \subsubsection{Field population (Question
-one)}\label{field-population-question-one}
+1)}\label{field-population-question-1}
 
-We calculated intake targets as discussed above. \textbf{To see the
-impact of confined diet treatments on both specific growth rate and
-development time}, we constructed two linear models (family: gaussian,
-link: identity) with the following variables: treatment (factor), locust
-sex (factor), population (factor), and locust initial weight (numeric).
+We calculated intake targets as discussed above. To see the impact of
+confined diet treatments on both specific growth rate and development
+time, we constructed two linear models (family: gaussian, link:
+identity) with the following variables: treatment (factor), locust sex
+(factor), population (factor), and locust initial weight (numeric).
 
 \subsubsection{Field Cage Experiments (Question
 2)}\label{field-cage-experiments-question-2-1}
@@ -768,8 +801,8 @@ variables: treatment (factor) and a two-dimensional smoother of
 available protein and carbohydrate.
 
 \subsubsection{Historical outbreaks and soil nutrient grid modeling
-(Questions 3 and
-4)}\label{historical-outbreaks-and-soil-nutrient-grid-modeling-questions-3-and-4}
+(Question
+3)}\label{historical-outbreaks-and-soil-nutrient-grid-modeling-question-3}
 
 To relate nymph survey grids to soil nitrogen and phosphorus, we
 constructed two GAMMs (family: tweedie, link: log) predicting the number
@@ -801,7 +834,7 @@ of observations allowed us to account for sampling intensity biases.
 \section{RESULTS}\label{results}
 
 \subsection{Field population (Question
-1)}\label{field-population-question-1}
+1)}\label{field-population-question-1-1}
 
 \subsubsection{Choice experiment (nutritional
 target)}\label{choice-experiment-nutritional-target}
@@ -812,12 +845,12 @@ populations regulated to a specific ratio of 1 protein : 2 carbohydrate
 A,Table~\ref{tbl-field-population-it-model}). Model selection can be
 seen in
 Supplementary Table~\ref{supptbl-field-population-choice-experiment-model-selection-criteria}.
-\textbf{Consumption in the two diet pairings did not differ, indicating
-that instead of consuming between the diets randomly (which would be
-expected if nutrients had no impact on diet consumption) locusts were
-actively balancing their protein and carbohydrate consumption
+Consumption in the two diet pairings did not differ, indicating that
+instead of consuming between the diets randomly (which would be expected
+if nutrients had no impact on diet consumption) locusts were actively
+balancing their protein and carbohydrate consumption
 (Supplementary Figure~\ref{suppfig-field-pop-nutrients} A,
-Table~\ref{tbl-field-population-it-model}).} While the protein :
+Table~\ref{tbl-field-population-it-model}). While the protein :
 carbohydrate ratio did not change, females consumed more food than
 males, likely due to being bigger overall
 (Supplementary Figure~\ref{suppfig-field-pop-nutrients} B,
@@ -847,8 +880,8 @@ outbreaking populations of \emph{C. terminifera} in Mendooran and
 Guntawang. Models were selected via AIC, AICc and BIC which can be seen
 in
 Supplementary Table~\ref{supptbl-field-population-choice-experiment-model-selection-criteria}.
-\textbf{Diet pair A and B had the following protein to carbohydrate
-ratios: 7p:35c \& 28p:14c and 7p:35c \& 35p:7c respectively.} Family:
+Diet pair A and B had the following protein to carbohydrate ratios:
+7p:35c \& 28p:14c and 7p:35c \& 35p:7c respectively. Family:
 multivariate gaussian distribution, link: identity, SE: standard error.}
 
 \tabularnewline
@@ -1088,8 +1121,8 @@ out. SE: standard error and s() denotes a smoothing parameter.}
 
 \endgroup
 
-\subsection{Locust outbreaks (Question 3 and
-4)}\label{locust-outbreaks-question-3-and-4}
+\subsection{Locust outbreaks (Question
+3)}\label{locust-outbreaks-question-3}
 
 \emph{Chortoicetes terminifera} outbreaks were negatively associated
 with soil nitrogen, which supports the hypothesis that nitrogen (in
@@ -1172,20 +1205,19 @@ herbivore and introduces a more nuanced view of phosphorus limitation on
 herbivore populations. Instead of the broad generalization that animals
 are always negatively or positively associated with certain nutrients,
 specific life history traits, such as energetically-costly migration, as
-well as organism-environment interactions should be considered.
-\textbf{While this study advances our understanding of nutrient
-limitation across scales, future work should aim to explicitly assess
-phosphorus nutrient imbalances at finer scales. This could help
-elucidate whether phosphorus mismatches at smaller scales influence
-broader patterns of herbivore population dynamics.} Investigating
-multi-scale nutrient interactions, including a wider array of nutrients
-such as potassium and sodium, could also provide a more comprehensive
-framework for modeling herbivore responses to environmental
-heterogeneity. \textbf{For forecasting pest populations dynamics,
-describing the nutritional quality of landscapes can inform seasonal
-scouting surveys.} We hope that this study spurs future interest in
-multi-scale experiments and modeling of nutrient availability with
-animal population dynamics.
+well as organism-environment interactions should be considered. While
+this study advances our understanding of nutrient limitation across
+scales, future work should aim to explicitly assess phosphorus nutrient
+imbalances at finer scales. This could help elucidate whether phosphorus
+mismatches at smaller scales influence broader patterns of herbivore
+population dynamics. Investigating multi-scale nutrient interactions,
+including a wider array of nutrients such as potassium and sodium, could
+also provide a more comprehensive framework for modeling herbivore
+responses to environmental heterogeneity. For forecasting pest
+populations dynamics, describing the nutritional quality of landscapes
+can inform seasonal scouting surveys. We hope that this study spurs
+future interest in multi-scale experiments and modeling of nutrient
+availability with animal population dynamics.
 
 \subsection{Field populations}\label{field-populations}
 
@@ -1249,17 +1281,16 @@ modeling}\label{historical-outbreak-modeling}
 This is the first time to our knowledge that terrestrial animal
 population dynamics have been modeled with nutrients at the continental
 level, allowing nutrient limitation to be tested at a scale not
-previously investigated. Locust outbreaks are associated with
-\textbf{less} soil nitrogen (Figure~\ref{fig-spatial-model-nto-pto} A),
-suggesting that nitrogen acts as a limiting factor not due to its
-deficit \citep{white_inadequate_1993} but its excess. Plants growing in
-high nitrogen environments tend to have high p:c ratios, which force
-locusts to either undereat carbohydrates (limiting their energy to
-support growth and migration) or overeat protein (which can be toxic) to
-acquire sufficient carbohydrates
-\citep{behmer_insect_2009, cease_how_2024}. On the other end of the
-performance curve, \emph{C. terminifera} do have a lower p:c range that
-limits performance, as shown using artificial diets
+previously investigated. Locust outbreaks are associated with less soil
+nitrogen (Figure~\ref{fig-spatial-model-nto-pto} A), suggesting that
+nitrogen acts as a limiting factor not due to its deficit
+\citep{white_inadequate_1993} but its excess. Plants growing in high
+nitrogen environments tend to have high p:c ratios, which force locusts
+to either undereat carbohydrates (limiting their energy to support
+growth and migration) or overeat protein (which can be toxic) to acquire
+sufficient carbohydrates \citep{behmer_insect_2009, cease_how_2024}. On
+the other end of the performance curve, \emph{C. terminifera} do have a
+lower p:c range that limits performance, as shown using artificial diets
 (Figure~\ref{fig-field-pop-it-results} B-C). We also show that outbreaks
 are correlated with a low level of soil phosphorus, however, outbreaks
 peak at approximately 4\%, suggesting that while locusts generally do
@@ -1394,15 +1425,15 @@ consuming overlapping host plants \citep{behmer_coexisting_2008}.
 Similarly, \emph{Euchorthippus cheui} and \emph{E. unicolor} display
 opposing preferences for nitrogen-enriched versus nitrogen-depleted host
 plants, leading to divergent population responses to fertilization and
-grazing pressure {[}\citet{*}*zhu\_phenology\_2020;
-\citet{zhu_constrasting_2023}\textbf{{]}. These examples highlight how
-phenological or physiological differences shape responses to shared
-nutritional landscapes. Building on these findings, we hypothesize that
-related locust species, including \emph{Chortoicetes terminifera}, may
-also exhibit distinct nutrient preferences, potentially driven by local
-adaptations to environmental conditions. Investigating these differences
-could provide insights into how nutrient availability influences
-herbivore population dynamics across ecological scales.}
+grazing pressure \citep{zhu_phenology_2020, zhu_constrasting_2023}.
+These examples highlight how phenological or physiological differences
+shape responses to shared nutritional landscapes. Building on these
+findings, we hypothesize that related locust species, including
+\emph{Chortoicetes terminifera}, may also exhibit distinct nutrient
+preferences, potentially driven by local adaptations to environmental
+conditions. Investigating these differences could provide insights into
+how nutrient availability influences herbivore population dynamics
+across ecological scales.
 
 There is evidence for phosphorus limitation in some species, but limited
 research showing a detrimental effect of excess phosphorus
