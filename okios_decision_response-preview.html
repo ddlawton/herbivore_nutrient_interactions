@@ -20,7 +20,26 @@
         margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
         vertical-align: middle;
       }
-    </style>
+      /* CSS for citations */
+      div.csl-bib-body { }
+      div.csl-entry {
+        clear: both;
+      }
+      .hanging-indent div.csl-entry {
+        margin-left:2em;
+        text-indent:-2em;
+      }
+      div.csl-left-margin {
+        min-width:2em;
+        float:left;
+      }
+      div.csl-right-inline {
+        margin-left:2em;
+        padding-left:1em;
+      }
+      div.csl-indent {
+        margin-left: 2em;
+      }    </style>
 
     <style>
       body.hypothesis-enabled #quarto-embed-header {
@@ -229,9 +248,9 @@
 <p><strong>Line 13-15: It would be beneficial to show directly how mean annual precipitation affects the relationship between soil nitrogen and locust populations, given the high correlation between these two factors.</strong></p>
 <p><em>We included additional correlation analyses in the supplemental material. There is a positive relationship between mean annual precipitation and soil nitrogen, though it is not 1:1 (Supplementary Figure 5C).</em></p>
 <p><strong>Line 43-45: In the introduction, further elaboration on the theory of phosphorus limitation would be helpful. The study suggests a non-linear relationship between locust abundance and soil phosphorus, with a peak at approximately 4% phosphorus content. Providing examples of the influence of phosphorus and its threshold on herbivorous insects would add depth.</strong></p>
-<p><em>Thank you for this suggestion, we have amended this section to say:</em> <em>Phosphorus is necessary for RNA synthesis, energy storage and transfer via ATP, and numerous other cellular processes. Limitations in one or both restrict herbivore growth and reproduction <span class="citation" data-cites="sterner2003">[@sterner2003]</span>. For example, increased host plant C:P results in lower RNA content, slower growth, and reduced abundance for the dryland insect herbivore Sabinia setosa <span class="citation" data-cites="schade_stoichiometric_2003">[@schade_stoichiometric_2003]</span>.</em></p>
+<p><em>Thank you for this suggestion, we have amended this section to say:</em> <em>Phosphorus is necessary for RNA synthesis, energy storage and transfer via ATP, and numerous other cellular processes. Limitations in one or both restrict herbivore growth and reproduction <span class="citation" data-cites="sterner2003">(<a href="#ref-sterner2003" role="doc-biblioref">Sterner and Elser 2003</a>)</span>. For example, increased host plant C:P results in lower RNA content, slower growth, and reduced abundance for the dryland insect herbivore Sabinia setosa <span class="citation" data-cites="schade_stoichiometric_2003">(<a href="#ref-schade_stoichiometric_2003" role="doc-biblioref">Schade et al. 2003</a>)</span>.</em></p>
 <p><strong>Line 80-88: The connection between weather conditions, soil nutrients, and locust populations in the introduction could be clarified further for a smoother transition.</strong></p>
-<p><em>Thank you for this suggestion, we have rephrased this section to have a smoother transition as follows: ‘While climatic variability plays a significant role, another critical factor in Australia is its naturally poor soil fertility, with essential nutrients like nitrogen and phosphorus often in short supply in unmodified soils <span class="citation" data-cites="morton_fresh_2011 orians_ecology_2007">[@morton_fresh_2011; @orians_ecology_2007]</span>. This nutrient scarcity has shaped the adaptation of many native plants and animals to thrive in low-nutrient environments <span class="citation" data-cites="orians_ecology_2007">[@orians_ecology_2007]</span>]. Among Australia’s locust species, C. terminifera is the most widespread and economically damaging <span class="citation" data-cites="hunter_adaptations_2001">[@hunter_adaptations_2001]</span>. Although numerous studies have linked climatic conditions to C. terminifera population outbreaks <span class="citation" data-cites="clark_influence_1974 deveson_not_2005 farrow_population_1982 key_general_1945">[@clark_influence_1974; @deveson_not_2005; @farrow_population_1982; @key_general_1945]</span>, the role of soil and plant nutrients in driving these outbreaks remains underexplored.’</em></p>
+<p><em>Thank you for this suggestion, we have rephrased this section to have a smoother transition as follows: ‘While climatic variability plays a significant role, another critical factor in Australia is its naturally poor soil fertility, with essential nutrients like nitrogen and phosphorus often in short supply in unmodified soils <span class="citation" data-cites="morton_fresh_2011 orians_ecology_2007">(<a href="#ref-orians_ecology_2007" role="doc-biblioref">Orians and Milewski 2007</a>, <a href="#ref-morton_fresh_2011" role="doc-biblioref">Morton et al. 2011</a>)</span>. This nutrient scarcity has shaped the adaptation of many native plants and animals to thrive in low-nutrient environments <span class="citation" data-cites="orians_ecology_2007">(<a href="#ref-orians_ecology_2007" role="doc-biblioref">Orians and Milewski 2007</a>)</span>]. Among Australia’s locust species, C. terminifera is the most widespread and economically damaging <span class="citation" data-cites="hunter_adaptations_2001">(<a href="#ref-hunter_adaptations_2001" role="doc-biblioref">Hunter et al. 2001</a>)</span>. Although numerous studies have linked climatic conditions to C. terminifera population outbreaks <span class="citation" data-cites="clark_influence_1974 deveson_not_2005 farrow_population_1982 key_general_1945">(<a href="#ref-key_general_1945" role="doc-biblioref">Key 1945</a>, <a href="#ref-clark_influence_1974" role="doc-biblioref">Clark 1974</a>, <a href="#ref-farrow_population_1982" role="doc-biblioref">Farrow 1982</a>, <a href="#ref-deveson_not_2005" role="doc-biblioref">Deveson and Walker 2005</a>)</span>, the role of soil and plant nutrients in driving these outbreaks remains underexplored.’</em></p>
 <p><strong>Line 245-247: Since soil nitrogen and mean annual precipitation are highly correlated, how do the authors distinguish the effect of soil nitrogen from precipitation on locust populations at landscape scales? It would be useful to explain how they determine the driving factor rather than correlation.</strong></p>
 <p><em>Instead of predicting specific instances of outbreaks (which are indeed highly influenced by a given rainfall event), we are predicting the number of outbreaks likely to occur in a 1x1 km^2 grid across decades. Using this approach means that the effects of stochastic variables (e.g.&nbsp;precipitation) are not well captured, but the overall impacts of more static variables (e.g.&nbsp;soil nutrients) are. This is illustrated in Supplementary Figure 8 and Figure 5 that show that the relationship between outbreaks summed up to the grid and mean annual precipitation is weak and very different from the more static environmental variable models. Because the mean annual precipitation-outbreak and soil N-outbreak relationships are different, and the relationship between soil N and MAP is not 1:1, we can conclude that the effect of soil N on the likelihood of outbreaks shown by the model is not well-explained by mean annual precipitation alone.</em></p>
 <p><strong>Figure 5a: It appears that when soil nitrogen exceeds 0.33, an increase in soil nitrogen has a positive effect on locust populations. Clarification on this observation would enhance the interpretation of the figure.</strong></p>
@@ -242,13 +261,13 @@
 <p><strong>Comments to the Author Overall an interesting study with novel results of diet correction following non-choice diets and non-linear responses of locust outbreaks to soil phosphorus. This study also has clear implications for incorporating soil data into outbreak forecast models, in addition to insights into general drivers of herbivore populations. The introduction is particularly well written, and I conclusions follow results. Most of my concerns relate towards improving clarity for the reader, considering the larger number of studies and questions included.</strong></p>
 <p><strong>Minor concerns:</strong></p>
 <p><strong>Lines 78 – 80: Please connect these two sentences to include a definition of the Resource Pulse Paradigm (or otherwise make it clear what the definition of the RPP is).</strong></p>
-<p><em>Thanks for the suggestion we have amended the two sentences as follows: ‘The arid interior of Australia is a highly variable environment <span class="citation" data-cites="morton_fresh_2011">[@morton_fresh_2011]</span> characterized by the Resource-Pulse Paradigm, where episodic resource boosts drive ecological dynamics and population responses <span class="citation" data-cites="noy-meir_desert_1974 whitford_ecology_2002">[@noy-meir_desert_1974; @whitford_ecology_2002]</span>. Many Australian animal and plant populations irrupt following periods of favorable climatic conditions. For example, preceding vegetation growth is an important factor for C. terminifera population outbreaks <span class="citation" data-cites="lawton_seeing_2022">[@lawton_seeing_2022]</span>.’</em></p>
+<p><em>Thanks for the suggestion we have amended the two sentences as follows: ‘The arid interior of Australia is a highly variable environment <span class="citation" data-cites="morton_fresh_2011">(<a href="#ref-morton_fresh_2011" role="doc-biblioref">Morton et al. 2011</a>)</span> characterized by the Resource-Pulse Paradigm, where episodic resource boosts drive ecological dynamics and population responses <span class="citation" data-cites="noy-meir_desert_1974 whitford_ecology_2002">(<a href="#ref-noy-meir_desert_1974" role="doc-biblioref">Noy-Meir 1974</a>, <a href="#ref-whitford_ecology_2002" role="doc-biblioref">Whitford 2002</a>)</span>. Many Australian animal and plant populations irrupt following periods of favorable climatic conditions. For example, preceding vegetation growth is an important factor for C. terminifera population outbreaks <span class="citation" data-cites="lawton_seeing_2022">(<a href="#ref-lawton_seeing_2022" role="doc-biblioref">Lawton et al. 2022</a>)</span>.’</em></p>
 <p><strong>Lines 94 – 95: I understand where this is going based on the study methods, but as a stand-alone question and hypothesis it is a bit confusing (i.e.&nbsp;the question implied locusts are in a non-choice environment, prediction implies choice environment). If there is a way to put the importance of this question in a larger context, that would also add value here.</strong></p>
 <p><em>Thanks for the suggestion. We have further clarified this section to say: What happens to C. terminifera when constrained to high-nitrogen environments? Since at the individual level, locusts are often confronted with sub-optimal nutritional situations like high-nitrogen environments, locusts will prefer carbohydrate-rich diets to correct protein-carbohydrate imbalances.</em></p>
 <p><strong>Line 96: Would be nice to include a prediction here as well.</strong></p>
 <p><em>We have added a prediction as follows: Can we use soil nutrients as a predictor of C. terminifera nymph outbreaks at the continental scale? We expect outbreaks to by negatively correlation with soil nitrogen at this level.</em></p>
 <p><strong>Lines 97 - 101: Why is this not included as a fourth question/ predictions?</strong></p>
-<p><em>Great suggestion! We have added this as a fourth question to say: ‘What are the large-scale patterns of C. terminifera outbreaks, accounting for climatic factors? We expect outbreaks to be associated with low-nitrogen areas, as terrestrial herbivores often require significantly more nitrogen than phosphorus [@elser_nutritional_2000]. Given locusts’ capacity to post-ingestively regulate phosphorus within natural ranges [@cease_dietary_2016; @zhang_grasshoppers_2014], we predict nitrogen to be a stronger predictor of population dynamics at the continental scale.’</em></p>
+<p><em>Great suggestion! We have added this as a fourth question to say: ‘What are the large-scale patterns of C. terminifera outbreaks, accounting for climatic factors? We expect outbreaks to be associated with low-nitrogen areas, as terrestrial herbivores often require significantly more nitrogen than phosphorus <span class="citation" data-cites="elser_nutritional_2000">(<a href="#ref-elser_nutritional_2000" role="doc-biblioref">Elser et al. 2000</a>)</span>. Given locusts’ capacity to post-ingestively regulate phosphorus within natural ranges <span class="citation" data-cites="cease_dietary_2016 zhang_grasshoppers_2014">(<a href="#ref-zhang_grasshoppers_2014" role="doc-biblioref">Zhang et al. 2014</a>, <a href="#ref-cease_dietary_2016" role="doc-biblioref">Cease et al. 2016</a>)</span>, we predict nitrogen to be a stronger predictor of population dynamics at the continental scale.’</em></p>
 <p><strong>Line 116 etc: the degrees symbol is not showing up correctly in the draft I have access to</strong></p>
 <p><em>This was a rendering error when converting to the ARXIV pdf. It is corrected now.</em></p>
 <p><strong>Methods: Would be easier to follow why methods were used if there were a few more statements to connect them to the question (e.g.&nbsp;“To test our question regarding XXXX, we XXXX”).</strong></p>
@@ -258,7 +277,7 @@
 <p><strong>Line 196: Soil data are temporal? How can data released in 2015 overlap with 2017?</strong></p>
 <p><em>Thanks for the question. Soil nutrients can be temporal especially the forms of nitrogen and phosphorus that are readily accessible by plants. The soil grid data is based off inorganic forms of nitrogen and phosphorus which are much more stable. With this said, there are many activities (e.g.&nbsp;land use/land change) that can alter soil nutrient make up. As such, we decided to limit the historical outbreak data to the years around the time of release of the Australian Soil Grid in 2015. We clarified this by adding this ending to that sentence ’…</em>to account for any potential shifts in soil nutrient composition’</p>
 <p><strong>Lines 208 – 209: Just curious if there is any study that validated these data for the general region? I know e.g.&nbsp;we have soil maps for my main current field site but they are extremely inaccurate :/</strong></p>
-<p><em>Great question. This data was validated within the publication (<span class="citation" data-cites="grundy_soil_2015">[@grundy_soil_2015]</span>) and further information can be found on their website <a href="https://esoil.io/TERNLandscapes/Public/Pages/SLGA/index.html" class="uri">https://esoil.io/TERNLandscapes/Public/Pages/SLGA/index.html</a>. Whereas further validating these modeled soil datasets is warranted, it is out of the scope of this work.</em></p>
+<p><em>Great question. This data was validated within the publication (<span class="citation" data-cites="grundy_soil_2015">(<a href="#ref-grundy_soil_2015" role="doc-biblioref">Grundy et al. 2015</a>)</span>) and further information can be found on their website <a href="https://esoil.io/TERNLandscapes/Public/Pages/SLGA/index.html" class="uri">https://esoil.io/TERNLandscapes/Public/Pages/SLGA/index.html</a>. Whereas further validating these modeled soil datasets is warranted, it is out of the scope of this work.</em></p>
 <p><strong>Line 219: I assume this will be filled in if accepted? I think you do still need to cite R and packages here to give them credit.</strong></p>
 <p><em>Yes, due to the double blind review the github link will be made available to all readers and will contain all code, notebooks, and partially all data. For reproducibility, these packages are versioned via <code>renv</code>. The github README file will have a complete list of all packages, versions, and links to documentation for all python and r packages used once published.</em></p>
 <p><strong>Lines 227 – 230: An example of a section that is not super clear on question it is testing. What is the modelled response variable for the GAMs?</strong></p>
@@ -270,7 +289,7 @@
 <p><strong>Results: Again, a better linkage with questions—being explicit about what results are for which question—would benefit readability and clarity for the reader</strong></p>
 <p><em>Thanks for the suggestion. Like in the methods section, we have included the specific questions within the section headers.</em></p>
 <p><strong>Lines 263 – 264: I don’t understand this statement. Can you please explain this reasoning in more depth?</strong></p>
-<p><em>We have clarified this section to say: ‘Consumption in the two diet pairings did not differ, indicating that instead of consuming between the diets randomly (which would be expected if nutrients had no impact on diet consumption) locusts were actively balancing their protein and carbohydrate consumption (<span class="citation" data-cites="suppfig-field-pop-nutrients">@suppfig-field-pop-nutrients</span> A, <span class="citation" data-cites="tbl-field-population-it-model">@tbl-field-population-it-model</span>).’</em></p>
+<p><em>We have clarified this section to say: ‘Consumption in the two diet pairings did not differ, indicating that instead of consuming between the diets randomly (which would be expected if nutrients had no impact on diet consumption) locusts were actively balancing their protein and carbohydrate consumption…’</em></p>
 <p><strong>Table 2: I would include the meaning of “diet pair B” in the caption.</strong></p>
 <p><em>We have included a brief description of both diet pairs in the caption. ‘Diet pair A and B had the following protein to carbohydrate ratios: 7p:35c &amp; 28p:14c and 7p:35c &amp; 35p:7c respectively.’</em></p>
 <p><strong>Table 3: What is the response variable- I don’t understand how growth rate and development time were combined (?). As all these outputs are from GAM/GAMMs, do the estimate signs (+/-) have any meaning?</strong></p>
@@ -288,6 +307,56 @@
 <p><strong>Lines 426 – 428: Very interesting!</strong></p>
 <p><strong>Fig 1.: I assume you are only using soil data from regions overlapping with the locust surveys?</strong></p>
 <p><em>Yes, data was extracted only for 1km x 1km grid cells that contained at least one locust survey record. So for example, since Western Australia has no observations, there was no soil data used from this region.</em></p>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-cease_dietary_2016" class="csl-entry" role="listitem">
+Cease, A. J., Fay, M., Elser, J. J. and Harrison, J. F. 2016. <a href="https://doi.org/10.1242/jeb.126847">Dietary phosphate affects food selection, post-ingestive <span>P</span> fate, and performance of a polyphagous herbivore</a>. - Journal of Experimental Biology: jeb.126847.
+</div>
+<div id="ref-clark_influence_1974" class="csl-entry" role="listitem">
+Clark, D. 1974. <a href="https://doi.org/10.1071/ZO9740365">The <span>Influence</span> of <span>Rainfall</span> on the <span>Densities</span> of <span>Adult</span> <span>Chlortoicetes</span> <span>Terminifera</span> (<span>Walker</span>) in <span>Central</span> <span>Western</span> <span>New</span> <span>South</span> <span>Wales</span>, 1965-73.</a> - Australian Journal of Zoology 22: 365.
+</div>
+<div id="ref-deveson_not_2005" class="csl-entry" role="listitem">
+Deveson, E. D. and Walker, P. W. 2005. <a href="https://doi.org/10.1665/1082-6467(2005)14[91:NAOTHD]2.0.CO;2">Not a one-way trip: Historical distribution data for <span>Australian</span> plague locusts support frequent seasonal exchange migrations</a>. - Journal of Orthoptera Research 14: 91–105.
+</div>
+<div id="ref-elser_nutritional_2000" class="csl-entry" role="listitem">
+Elser, J. J., Fagan, W. F., Denno, R. F., Dobberfuhl, D. R., Folarin, A., Huberty, A., Interlandi, S., Kilham, S. S., McCauley, E., Schulz, K. L., Siemann, E. H. and Sterner, R. W. 2000. <a href="https://doi.org/10.1038/35046058">Nutritional constraints in terrestrial and freshwater food webs</a>. - Nature 408: 578–580.
+</div>
+<div id="ref-farrow_population_1982" class="csl-entry" role="listitem">
+Farrow, R. 1982. <a href="https://doi.org/10.1071/ZO9820569">Population <span>Dynamics</span> of the <span>Australian</span> <span>Plague</span> <span>Locust</span>, <span>Chortoicetes</span> <span>Terminifera</span> (<span>Walker</span>) in <span>Central</span> <span>Western</span> <span>New</span> <span>South</span> <span>Wales</span> <span>Iii</span>. <span>Analysis</span> of <span>Population</span> <span>Processes</span>.</a> - Australian Journal of Zoology 30: 569.
+</div>
+<div id="ref-grundy_soil_2015" class="csl-entry" role="listitem">
+Grundy, M. J., Rossel, R. A. V., Searle, R. D., Wilson, P. L., Chen, C. and Gregory, L. J. 2015. <a href="https://doi.org/10.1071/SR15191">Soil and <span>Landscape</span> <span>Grid</span> of <span>Australia</span></a>. - Soil Research 53: 835.
+</div>
+<div id="ref-hunter_adaptations_2001" class="csl-entry" role="listitem">
+Hunter, D. M., Walker, P. W. and Elder, R. J. 2001. <a href="https://doi.org/10.1665/1082-6467(2001)010[0347:AOLAGT]2.0.CO;2">Adaptations of locusts and grasshoppers to the low and variable rainfall of <span>Australia</span></a>. - Journal of Orthoptera Research 10: 347–351.
+</div>
+<div id="ref-key_general_1945" class="csl-entry" role="listitem">
+Key, K. H. L. 1945. <a href="https://doi.org/10.25919/RTPX-F935">The general ecological characteristics of the outbreak areas and outbreak years of the <span>Australian</span> plague locust (<span>Chortoicetes</span> terminifera <span>Walk</span>.)</a>. in press.
+</div>
+<div id="ref-lawton_seeing_2022" class="csl-entry" role="listitem">
+Lawton, D., Scarth, P., Deveson, E., Piou, C., Spessa, A., Waters, C. and Cease, A. J. 2022. <a href="https://doi.org/10.1111/ecog.05763">Seeing the locust in the swarm: Accounting for spatiotemporal hierarchy improves ecological models of insect populations</a>. - Ecography 2022: ecog.05763.
+</div>
+<div id="ref-morton_fresh_2011" class="csl-entry" role="listitem">
+Morton, S. R., Stafford Smith, D. M., Dickman, C. R., Dunkerley, D. L., Friedel, M. H., McAllister, R. R. J., Reid, J. R. W., Roshier, D. A., Smith, M. A., Walsh, F. J., Wardle, G. M., Watson, I. W. and Westoby, M. 2011. <a href="https://doi.org/10.1016/j.jaridenv.2010.11.001">A fresh framework for the ecology of arid <span>Australia</span></a>. - Journal of Arid Environments 75: 313–329.
+</div>
+<div id="ref-noy-meir_desert_1974" class="csl-entry" role="listitem">
+Noy-Meir, I. 1974. <a href="https://doi.org/10.1146/annurev.es.05.110174.001211">Desert <span>Ecosystems</span>: <span>Higher</span> <span>Trophic</span> <span>Levels</span></a>. - Annual Review of Ecology and Systematics 5: 195–214.
+</div>
+<div id="ref-orians_ecology_2007" class="csl-entry" role="listitem">
+Orians, G. H. and Milewski, A. V. 2007. <a href="https://doi.org/10.1111/j.1469-185X.2007.00017.x">Ecology of <span>Australia</span>: The effects of nutrient‐poor soils and intense fires</a>. - Biological Reviews 82: 393–423.
+</div>
+<div id="ref-schade_stoichiometric_2003" class="csl-entry" role="listitem">
+Schade, J. D., Kyle, M., Hobbie, S. E., Fagan, W. F. and Elser, J. J. 2003. <a href="https://doi.org/10.1046/j.1461-0248.2003.00409.x">Stoichiometric tracking of soil nutrients by a desert insect herbivore</a>. - Ecology Letters 6: 96–101.
+</div>
+<div id="ref-sterner2003" class="csl-entry" role="listitem">
+Sterner, R. W. and Elser, J. J. 2003. <a href="https://doi.org/10.1515/9781400885695">Ecological stoichiometry</a>. - Princeton University Press.
+</div>
+<div id="ref-whitford_ecology_2002" class="csl-entry" role="listitem">
+Whitford, W. G. 2002. Ecology of desert systems. - Academic Press.
+</div>
+<div id="ref-zhang_grasshoppers_2014" class="csl-entry" role="listitem">
+Zhang, Z., Elser, J. J., Cease, A. J., Zhang, X., Yu, Q., Han, X. and Zhang, G. 2014. <a href="https://doi.org/10.1371/journal.pone.0103697">Grasshoppers <span>Regulate</span> <span>N</span>:<span>P</span> <span>Stoichiometric</span> <span>Homeostasis</span> by <span>Changing</span> <span>Phosphorus</span> <span>Contents</span> in <span>Their</span> <span>Frass</span></a> (C Wicker-Thomas, Ed.). - PLoS ONE 9: e103697.
+</div>
+</div>
 </section>
 </section>
      </main>
