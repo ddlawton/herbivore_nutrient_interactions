@@ -22188,7 +22188,7 @@ combine_dat &lt;- rbind(outbreak_model_results,nil_model_results)</code>
     scale_fill_manual(values = c('dark grey','red')) +
     xlab(&quot;soil nitrogen (%)&quot;) +
     ylab(&quot;partial effect&quot;) +
-    scale_x_continuous(limits = c(0,0.3),breaks = c(0,0.1,0.2,0.3))
+    scale_x_continuous(limits = c(0,0.33),breaks = c(0,0.1,0.2,0.3))
 
 p2 &lt;- combine_dat |&gt;
   filter(.smooth == &quot;s(phosphorus)&quot;) |&gt;
@@ -22200,17 +22200,14 @@ p2 &lt;- combine_dat |&gt;
     scale_fill_manual(values = c('dark grey','red')) +
     xlab(&quot;soil phosphorus (%)&quot;) +
     ylab(&quot;partial effect&quot;)  +
-    scale_x_continuous(limits = c(0,0.2),breaks = c(0,0.1,0.2))
+    scale_x_continuous(limits = c(0,0.22),breaks = c(0,0.1,0.2))
 
 soil_outbreak_plot &lt;- (p1) / (p2) +
     plot_annotation(tag_levels = 'a')
 soil_outbreak_plot</code>
     <boxed-text>
       <preformat>Warning message:
-“Removed 54 rows containing missing values or values outside the scale range
-(`geom_line()`).”
-Warning message:
-“Removed 7 rows containing missing values or values outside the scale range
+“Removed 38 rows containing missing values or values outside the scale range
 (`geom_line()`).”</preformat>
     </boxed-text>
     <boxed-text>
