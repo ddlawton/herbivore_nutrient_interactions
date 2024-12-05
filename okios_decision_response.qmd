@@ -69,7 +69,7 @@ We sincerely thank the reviewers for their thorough evaluation of our manuscript
 
 **Figure 5a: It appears that when soil nitrogen exceeds 0.33, an increase in soil nitrogen has a positive effect on locust populations. Clarification on this observation would enhance the interpretation of the figure.**
 
-*Thanks for catching this! As can be seen, the standard error increases after roughly 0.3 as this area is reaching the upper limits of soil nitrogen seen in this dataset. There are also considerably fewer observations that lead to the model to be more unsure in this parameter space. This make model interpretation difficult and results should be taken with a grain of salt.*
+*Thanks for catching this! As can be seen in the original figure, the standard error increases after roughly 0.3 as this area is reaching the upper limits of soil nitrogen seen in this dataset. There are also considerably fewer observations that lead to the model to be more unsure in this parameter space. This make model interpretation difficult and results should be taken with a grain of salt. To not confuse the readers, we have shifted the x axis limits to 0% - 0.3% which can be in Figure 5a.*
 
 ### Reviewer: 2
 
@@ -170,3 +170,5 @@ We sincerely thank the reviewers for their thorough evaluation of our manuscript
 **Fig 1.: I assume you are only using soil data from regions overlapping with the locust surveys?**
 
 *Yes, data was extracted only for 1km x 1km grid cells that contained at least one locust survey record. So for example, since Western Australia has no observations, there was no soil data used from this region.*
+
+**References**
