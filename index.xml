@@ -3033,15 +3033,13 @@ significantly improve prediction accuracy.</p>
     </element-citation>
   </ref>
   <ref id="ref-bridgeman_feeding_2012">
-    <element-citation publication-type="article-journal">
+    <element-citation publication-type="thesis">
       <person-group person-group-type="author">
         <name><surname>Bridgeman</surname><given-names>LeAndra Luecke</given-names></name>
       </person-group>
-      <article-title>The Feeding Ecology of YucatÃ¡n Black Howler Monkeys (Alouatta pigra) in Mangrove Forest, Tabasco, Mexico</article-title>
+      <article-title>The feeding ecology of yucatán ¡n black howler monkeys (alouatta pigra) in mangrove forest, tabasco, mexico</article-title>
+      <publisher-name>Washington University in St. Louis</publisher-name>
       <year iso-8601-date="2012">2012</year>
-      <date-in-citation content-type="access-date"><year iso-8601-date="2024-09-18">2024</year><month>09</month><day>18</day></date-in-citation>
-      <uri>http://openscholarship.wustl.edu/etd/998</uri>
-      <pub-id pub-id-type="doi">10.7936/K75T3HGP</pub-id>
     </element-citation>
   </ref>
   <ref id="ref-aryal_foods_2015">
@@ -4082,14 +4080,14 @@ significantly improve prediction accuracy.</p>
     </element-citation>
   </ref>
   <ref id="ref-key_general_1945">
-    <element-citation publication-type="article-journal">
+    <element-citation publication-type="book">
       <person-group person-group-type="author">
         <name><surname>Key</surname><given-names>K. H. L.</given-names></name>
       </person-group>
-      <article-title>The general ecological characteristics of the outbreak areas and outbreak years of the Australian plague locust (Chortoicetes terminifera Walk.)</article-title>
+      <source>The general ecological characteristics of the outbreak areas and outbreak years of the Australian plague locust (Chortoicetes terminifera Walk.)</source>
+      <publisher-name>Council for Scientific; Industrial Research</publisher-name>
+      <publisher-loc>Melbourne, Vic.</publisher-loc>
       <year iso-8601-date="1945">1945</year>
-      <date-in-citation content-type="access-date"><year iso-8601-date="2024-09-08">2024</year><month>09</month><day>08</day></date-in-citation>
-      <uri>https://publications.csiro.au/publications/publication/PIprocite:8058408f-539f-4540-b888-0dda1e0c113d</uri>
       <pub-id pub-id-type="doi">10.25919/RTPX-F935</pub-id>
     </element-citation>
   </ref>
@@ -5013,22 +5011,24 @@ significantly improve prediction accuracy.</p>
         <name><surname>Nussey</surname><given-names>Daniel H.</given-names></name>
         <name><surname>Walling</surname><given-names>Craig A.</given-names></name>
       </person-group>
-      <article-title>Lifespan Extension Via Dietary Restriction: Time to Reconsider the Evolutionary Mechanisms?</article-title>
+      <article-title>Lifespan extension via dietary restriction: Time to reconsider the evolutionary mechanisms?</article-title>
       <source>BioEssays</source>
-      <year iso-8601-date="2020-07-08">2020</year><month>07</month><day>08</day>
+      <year iso-8601-date="2020">2020</year>
       <volume>42</volume>
       <issue>8</issue>
-      <uri>http://dx.doi.org/10.1002/bies.201900241</uri>
-      <pub-id pub-id-type="doi">10.1002/bies.201900241</pub-id>
+      <uri>https://onlinelibrary.wiley.com/doi/abs/10.1002/bies.201900241</uri>
+      <pub-id pub-id-type="doi">https://doi.org/10.1002/bies.201900241</pub-id>
+      <fpage>1900241</fpage>
+      <lpage></lpage>
     </element-citation>
   </ref>
   <ref id="ref-raubenheimer_integrating_1999">
-    <element-citation publication-type="chapter">
+    <element-citation publication-type="book">
       <person-group person-group-type="author">
         <name><surname>Raubenheimer</surname><given-names>D.</given-names></name>
         <name><surname>Simpson</surname><given-names>S. J.</given-names></name>
       </person-group>
-      <article-title>Integrating nutrition: a geometrical approach</article-title>
+      <source>Integrating nutrition: a geometrical approach</source>
       <publisher-name>Springer Netherlands</publisher-name>
       <year iso-8601-date="1999">1999</year>
       <uri>http://dx.doi.org/10.1007/978-94-017-1890-5_8</uri>
@@ -5049,11 +5049,13 @@ significantly improve prediction accuracy.</p>
       </person-group>
       <article-title>Target for lipid-to-carbohydrate intake minimizes cost of growth</article-title>
       <source>Proceedings of the Royal Society B: Biological Sciences</source>
-      <year iso-8601-date="2024-05">2024</year><month>05</month>
+      <year iso-8601-date="2024">2024</year>
       <volume>291</volume>
       <issue>2023</issue>
-      <uri>http://dx.doi.org/10.1098/rspb.2024.0424</uri>
+      <uri>https://royalsocietypublishing.org/doi/abs/10.1098/rspb.2024.0424</uri>
       <pub-id pub-id-type="doi">10.1098/rspb.2024.0424</pub-id>
+      <fpage>20240424</fpage>
+      <lpage></lpage>
     </element-citation>
   </ref>
 </ref-list>
@@ -8441,15 +8443,13 @@ dbl (3): estimate, SE, adjusted p-value
     </element-citation>
   </ref>
   <ref id="ref-bridgeman_feeding_2012-nb-article">
-    <element-citation publication-type="article-journal">
+    <element-citation publication-type="thesis">
       <person-group person-group-type="author">
         <name><surname>Bridgeman</surname><given-names>LeAndra Luecke</given-names></name>
       </person-group>
-      <article-title>The Feeding Ecology of YucatÃ¡n Black Howler Monkeys (Alouatta pigra) in Mangrove Forest, Tabasco, Mexico</article-title>
+      <article-title>The feeding ecology of yucatán ¡n black howler monkeys (alouatta pigra) in mangrove forest, tabasco, mexico</article-title>
+      <publisher-name>Washington University in St. Louis</publisher-name>
       <year iso-8601-date="2012">2012</year>
-      <date-in-citation content-type="access-date"><year iso-8601-date="2024-09-18">2024</year><month>09</month><day>18</day></date-in-citation>
-      <uri>http://openscholarship.wustl.edu/etd/998</uri>
-      <pub-id pub-id-type="doi">10.7936/K75T3HGP</pub-id>
     </element-citation>
   </ref>
   <ref id="ref-aryal_foods_2015-nb-article">
@@ -9490,14 +9490,14 @@ dbl (3): estimate, SE, adjusted p-value
     </element-citation>
   </ref>
   <ref id="ref-key_general_1945-nb-article">
-    <element-citation publication-type="article-journal">
+    <element-citation publication-type="book">
       <person-group person-group-type="author">
         <name><surname>Key</surname><given-names>K. H. L.</given-names></name>
       </person-group>
-      <article-title>The general ecological characteristics of the outbreak areas and outbreak years of the Australian plague locust (Chortoicetes terminifera Walk.)</article-title>
+      <source>The general ecological characteristics of the outbreak areas and outbreak years of the Australian plague locust (Chortoicetes terminifera Walk.)</source>
+      <publisher-name>Council for Scientific; Industrial Research</publisher-name>
+      <publisher-loc>Melbourne, Vic.</publisher-loc>
       <year iso-8601-date="1945">1945</year>
-      <date-in-citation content-type="access-date"><year iso-8601-date="2024-09-08">2024</year><month>09</month><day>08</day></date-in-citation>
-      <uri>https://publications.csiro.au/publications/publication/PIprocite:8058408f-539f-4540-b888-0dda1e0c113d</uri>
       <pub-id pub-id-type="doi">10.25919/RTPX-F935</pub-id>
     </element-citation>
   </ref>
@@ -10421,22 +10421,24 @@ dbl (3): estimate, SE, adjusted p-value
         <name><surname>Nussey</surname><given-names>Daniel H.</given-names></name>
         <name><surname>Walling</surname><given-names>Craig A.</given-names></name>
       </person-group>
-      <article-title>Lifespan Extension Via Dietary Restriction: Time to Reconsider the Evolutionary Mechanisms?</article-title>
+      <article-title>Lifespan extension via dietary restriction: Time to reconsider the evolutionary mechanisms?</article-title>
       <source>BioEssays</source>
-      <year iso-8601-date="2020-07-08">2020</year><month>07</month><day>08</day>
+      <year iso-8601-date="2020">2020</year>
       <volume>42</volume>
       <issue>8</issue>
-      <uri>http://dx.doi.org/10.1002/bies.201900241</uri>
-      <pub-id pub-id-type="doi">10.1002/bies.201900241</pub-id>
+      <uri>https://onlinelibrary.wiley.com/doi/abs/10.1002/bies.201900241</uri>
+      <pub-id pub-id-type="doi">https://doi.org/10.1002/bies.201900241</pub-id>
+      <fpage>1900241</fpage>
+      <lpage></lpage>
     </element-citation>
   </ref>
   <ref id="ref-raubenheimer_integrating_1999-nb-article">
-    <element-citation publication-type="chapter">
+    <element-citation publication-type="book">
       <person-group person-group-type="author">
         <name><surname>Raubenheimer</surname><given-names>D.</given-names></name>
         <name><surname>Simpson</surname><given-names>S. J.</given-names></name>
       </person-group>
-      <article-title>Integrating nutrition: a geometrical approach</article-title>
+      <source>Integrating nutrition: a geometrical approach</source>
       <publisher-name>Springer Netherlands</publisher-name>
       <year iso-8601-date="1999">1999</year>
       <uri>http://dx.doi.org/10.1007/978-94-017-1890-5_8</uri>
@@ -10457,11 +10459,13 @@ dbl (3): estimate, SE, adjusted p-value
       </person-group>
       <article-title>Target for lipid-to-carbohydrate intake minimizes cost of growth</article-title>
       <source>Proceedings of the Royal Society B: Biological Sciences</source>
-      <year iso-8601-date="2024-05">2024</year><month>05</month>
+      <year iso-8601-date="2024">2024</year>
       <volume>291</volume>
       <issue>2023</issue>
-      <uri>http://dx.doi.org/10.1098/rspb.2024.0424</uri>
+      <uri>https://royalsocietypublishing.org/doi/abs/10.1098/rspb.2024.0424</uri>
       <pub-id pub-id-type="doi">10.1098/rspb.2024.0424</pub-id>
+      <fpage>20240424</fpage>
+      <lpage></lpage>
     </element-citation>
   </ref>
 </ref-list>
