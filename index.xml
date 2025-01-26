@@ -534,11 +534,11 @@ significantly improve prediction accuracy.</p>
   protein, consumption in migratory locusts (<italic>Locusta
   migratoria</italic>) and locusts eating carbohydrate-biased diets fly
   for longer times
-  (<xref alt="Talal et al. 2023" rid="ref-talal_body_2023" ref-type="bibr">Talal
-  et al. 2023</xref>). Locusts use lipids to fuel long distance flight,
-  which they predominantly synthesize from carbohydrate consumption.
-  However, when given the choice, locusts balance lipid to carbohydrate
-  intake to most efficiently grow lipid stores from dietary lipids
+  (<xref alt="talal_body_2023?" rid="ref-talal_body_2023" ref-type="bibr"><bold>talal_body_2023?</bold></xref>).
+  Locusts use lipids to fuel long distance flight, which they
+  predominantly synthesize from carbohydrate consumption. However, when
+  given the choice, locusts balance lipid to carbohydrate intake to most
+  efficiently grow lipid stores from dietary lipids
   (<xref alt="Talal et al. 2024a" rid="ref-talal_target_2024" ref-type="bibr">Talal
   et al. 2024a</xref>). At a local scale, high-use agricultural areas
   that decrease soil and plant nitrogen promote
@@ -2109,16 +2109,15 @@ significantly improve prediction accuracy.</p>
     Because mass specific protein consumption is highly correlated with
     growth rate in both lab and field populations, but carbohydrate
     consumption is highly influenced by the environment
-    (<xref alt="Talal et al. 2023" rid="ref-talal_body_2023" ref-type="bibr">Talal
-    et al. 2023</xref>), it is most likely that locusts have similar
-    protein requirements as other non-locust grasshopper species, but
-    have much higher carbohydrate demands, potentially to support
-    migration
+    (<xref alt="talal_body_2023?" rid="ref-talal_body_2023" ref-type="bibr"><bold>talal_body_2023?</bold></xref>),
+    it is most likely that locusts have similar protein requirements as
+    other non-locust grasshopper species, but have much higher
+    carbohydrate demands, potentially to support migration
     (<xref alt="Raubenheimer and Simpson 1997" rid="ref-raubenheimer_integrative_1997" ref-type="bibr">Raubenheimer
     and Simpson 1997</xref>,
     <xref alt="Talal et al. 2021" rid="ref-talal_high_2021" ref-type="bibr">Talal
     et al. 2021</xref>,
-    <xref alt="2023" rid="ref-talal_body_2023" ref-type="bibr">2023</xref>).
+    <xref alt="talal_body_2023?" rid="ref-talal_body_2023" ref-type="bibr"><bold>talal_body_2023?</bold></xref>).
     Locusts are able to meet this increased demand for carbohydrate,
     while keeping protein consumption constant, by eating larger amounts
     of low p:c plants found in low nitrogen environments. In summary,
@@ -2237,17 +2236,16 @@ significantly improve prediction accuracy.</p>
     chickens, rats, cats, caribou, pigs, and dairy cattle, mass specific
     protein consumption is highly correlated with growth rate and
     decreases with age and body size
-    (<xref alt="Talal et al. 2023" rid="ref-talal_body_2023" ref-type="bibr">Talal
-    et al. 2023</xref>). In contrast, energy demand (carbohydrates and
-    lipids) does not show a clear relationship with growth rate and
-    instead is more affected by environment and activity
-    (<xref alt="Talal et al. 2023" rid="ref-talal_body_2023" ref-type="bibr">Talal
-    et al. 2023</xref>). Therefore, an animal’s IT is predicted to be
-    affected by the contrasting effects of growth (increases dietary
-    p:c) and activity or stress (increases carbohydrate demand and
-    therefore decreases dietary p:c), although other physiological and
-    environmental factors affect p:c demand as well (see Table 1 in
-    Cease
+    (<xref alt="talal_body_2023?" rid="ref-talal_body_2023" ref-type="bibr"><bold>talal_body_2023?</bold></xref>).
+    In contrast, energy demand (carbohydrates and lipids) does not show
+    a clear relationship with growth rate and instead is more affected
+    by environment and activity
+    (<xref alt="talal_body_2023?" rid="ref-talal_body_2023" ref-type="bibr"><bold>talal_body_2023?</bold></xref>).
+    Therefore, an animal’s IT is predicted to be affected by the
+    contrasting effects of growth (increases dietary p:c) and activity
+    or stress (increases carbohydrate demand and therefore decreases
+    dietary p:c), although other physiological and environmental factors
+    affect p:c demand as well (see Table 1 in Cease
     (<xref alt="2024" rid="ref-cease_how_2024" ref-type="bibr">2024</xref>)).
     For example, monarch butterflies have been gradually increasing
     their already-high daily energy expenditure during migration due to
@@ -4581,24 +4579,6 @@ significantly improve prediction accuracy.</p>
       <lpage></lpage>
     </element-citation>
   </ref>
-  <ref id="ref-talal_body_2023">
-    <element-citation>
-      <person-group person-group-type="author">
-        <name><surname>Talal</surname><given-names>Stav</given-names></name>
-        <name><surname>Harrison</surname><given-names>Jon F.</given-names></name>
-        <name><surname>Farington</surname><given-names>Ruth</given-names></name>
-        <name><surname>Youngblood</surname><given-names>Jacob P.</given-names></name>
-        <name><surname>Medina</surname><given-names>Hector E.</given-names></name>
-        <name><surname>Overson</surname><given-names>Rick</given-names></name>
-        <name><surname>Cease</surname><given-names>Arianne J.</given-names></name>
-      </person-group>
-      <article-title>Body mass and growth rates predict protein intake across animals</article-title>
-      <year iso-8601-date="2023-06">2023</year><month>06</month>
-      <date-in-citation content-type="access-date"><year iso-8601-date="2024-09-08">2024</year><month>09</month><day>08</day></date-in-citation>
-      <uri>http://biorxiv.org/lookup/doi/10.1101/2023.06.20.545784</uri>
-      <pub-id pub-id-type="doi">10.1101/2023.06.20.545784</pub-id>
-    </element-citation>
-  </ref>
   <ref id="ref-tyrrell_relative_1999">
     <element-citation publication-type="article-journal">
       <person-group person-group-type="author">
@@ -5559,11 +5539,11 @@ significantly improve prediction accuracy.</p>
   protein, consumption in migratory locusts (<italic>Locusta
   migratoria</italic>) and locusts eating carbohydrate-biased diets fly
   for longer times
-  (<xref alt="Talal et al. 2023" rid="ref-talal_body_2023-nb-article" ref-type="bibr">Talal
-  et al. 2023</xref>). Locusts use lipids to fuel long distance flight,
-  which they predominantly synthesize from carbohydrate consumption.
-  However, when given the choice, locusts balance lipid to carbohydrate
-  intake to most efficiently grow lipid stores from dietary lipids
+  (<xref alt="talal_body_2023?" rid="ref-talal_body_2023-nb-article" ref-type="bibr"><bold>talal_body_2023?</bold></xref>).
+  Locusts use lipids to fuel long distance flight, which they
+  predominantly synthesize from carbohydrate consumption. However, when
+  given the choice, locusts balance lipid to carbohydrate intake to most
+  efficiently grow lipid stores from dietary lipids
   (<xref alt="Talal et al. 2024a" rid="ref-talal_target_2024-nb-article" ref-type="bibr">Talal
   et al. 2024a</xref>). At a local scale, high-use agricultural areas
   that decrease soil and plant nitrogen promote
@@ -7354,16 +7334,15 @@ dbl (4): edf, ref.df, statistic, p.value
     Because mass specific protein consumption is highly correlated with
     growth rate in both lab and field populations, but carbohydrate
     consumption is highly influenced by the environment
-    (<xref alt="Talal et al. 2023" rid="ref-talal_body_2023-nb-article" ref-type="bibr">Talal
-    et al. 2023</xref>), it is most likely that locusts have similar
-    protein requirements as other non-locust grasshopper species, but
-    have much higher carbohydrate demands, potentially to support
-    migration
+    (<xref alt="talal_body_2023?" rid="ref-talal_body_2023-nb-article" ref-type="bibr"><bold>talal_body_2023?</bold></xref>),
+    it is most likely that locusts have similar protein requirements as
+    other non-locust grasshopper species, but have much higher
+    carbohydrate demands, potentially to support migration
     (<xref alt="Raubenheimer and Simpson 1997" rid="ref-raubenheimer_integrative_1997-nb-article" ref-type="bibr">Raubenheimer
     and Simpson 1997</xref>,
     <xref alt="Talal et al. 2021" rid="ref-talal_high_2021-nb-article" ref-type="bibr">Talal
     et al. 2021</xref>,
-    <xref alt="2023" rid="ref-talal_body_2023-nb-article" ref-type="bibr">2023</xref>).
+    <xref alt="talal_body_2023?" rid="ref-talal_body_2023-nb-article" ref-type="bibr"><bold>talal_body_2023?</bold></xref>).
     Locusts are able to meet this increased demand for carbohydrate,
     while keeping protein consumption constant, by eating larger amounts
     of low p:c plants found in low nitrogen environments. In summary,
@@ -7482,17 +7461,16 @@ dbl (4): edf, ref.df, statistic, p.value
     chickens, rats, cats, caribou, pigs, and dairy cattle, mass specific
     protein consumption is highly correlated with growth rate and
     decreases with age and body size
-    (<xref alt="Talal et al. 2023" rid="ref-talal_body_2023-nb-article" ref-type="bibr">Talal
-    et al. 2023</xref>). In contrast, energy demand (carbohydrates and
-    lipids) does not show a clear relationship with growth rate and
-    instead is more affected by environment and activity
-    (<xref alt="Talal et al. 2023" rid="ref-talal_body_2023-nb-article" ref-type="bibr">Talal
-    et al. 2023</xref>). Therefore, an animal’s IT is predicted to be
-    affected by the contrasting effects of growth (increases dietary
-    p:c) and activity or stress (increases carbohydrate demand and
-    therefore decreases dietary p:c), although other physiological and
-    environmental factors affect p:c demand as well (see Table 1 in
-    Cease
+    (<xref alt="talal_body_2023?" rid="ref-talal_body_2023-nb-article" ref-type="bibr"><bold>talal_body_2023?</bold></xref>).
+    In contrast, energy demand (carbohydrates and lipids) does not show
+    a clear relationship with growth rate and instead is more affected
+    by environment and activity
+    (<xref alt="talal_body_2023?" rid="ref-talal_body_2023-nb-article" ref-type="bibr"><bold>talal_body_2023?</bold></xref>).
+    Therefore, an animal’s IT is predicted to be affected by the
+    contrasting effects of growth (increases dietary p:c) and activity
+    or stress (increases carbohydrate demand and therefore decreases
+    dietary p:c), although other physiological and environmental factors
+    affect p:c demand as well (see Table 1 in Cease
     (<xref alt="2024" rid="ref-cease_how_2024-nb-article" ref-type="bibr">2024</xref>)).
     For example, monarch butterflies have been gradually increasing
     their already-high daily energy expenditure during migration due to
@@ -9989,24 +9967,6 @@ dbl (3): estimate, SE, adjusted p-value
       <pub-id pub-id-type="doi">10.1098/rspb.2020.2500</pub-id>
       <fpage>20202500</fpage>
       <lpage></lpage>
-    </element-citation>
-  </ref>
-  <ref id="ref-talal_body_2023-nb-article">
-    <element-citation>
-      <person-group person-group-type="author">
-        <name><surname>Talal</surname><given-names>Stav</given-names></name>
-        <name><surname>Harrison</surname><given-names>Jon F.</given-names></name>
-        <name><surname>Farington</surname><given-names>Ruth</given-names></name>
-        <name><surname>Youngblood</surname><given-names>Jacob P.</given-names></name>
-        <name><surname>Medina</surname><given-names>Hector E.</given-names></name>
-        <name><surname>Overson</surname><given-names>Rick</given-names></name>
-        <name><surname>Cease</surname><given-names>Arianne J.</given-names></name>
-      </person-group>
-      <article-title>Body mass and growth rates predict protein intake across animals</article-title>
-      <year iso-8601-date="2023-06">2023</year><month>06</month>
-      <date-in-citation content-type="access-date"><year iso-8601-date="2024-09-08">2024</year><month>09</month><day>08</day></date-in-citation>
-      <uri>http://biorxiv.org/lookup/doi/10.1101/2023.06.20.545784</uri>
-      <pub-id pub-id-type="doi">10.1101/2023.06.20.545784</pub-id>
     </element-citation>
   </ref>
   <ref id="ref-tyrrell_relative_1999-nb-article">
