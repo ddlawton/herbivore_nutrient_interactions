@@ -1,0 +1,36 @@
+---
+title: "Second Oikos Decision Response"
+author: "Douglas Lawton"
+format:
+  docx: default
+bibliography: references.bib
+csl: oikos.csl
+---
+
+## Dear Editors,
+
+We sincerely thank the reviewers for their thoughtful second evaluation of our manuscript, “*Exploring Nutrient Availability and Herbivorous Insect Population Dynamics Across Multiple Scales.*” We greatly appreciate their recognition of the improvements made and their additional suggestions, which have helped refine and clarify our work further. In this revision, we have addressed each of the minor comments in detail, ensuring that the manuscript is as clear and rigorous as possible. Below, we provide point-by-point responses to the second reviewer's comments, incorporating the necessary clarifications and adjustments. We are grateful for the reviewers’ careful reading and constructive feedback, which have contributed to strengthening the manuscript. Our responses are presented in *italics*.
+
+## Specific Reponses to Reviewer 2
+
+**This is my second time reviewing this manuscript. Overall, the authors have done a good job addressing previous comments and improving the clarity of the text, for their somewhat complicated number of studies and tests to examine Australian locust responses to soil nutrients. I have only the following minor issues to raise:**
+
+**Lines 163-164: Some grammatical issues with this sentence.**
+
+*Thanks for catching this. We have fixed this sentence.*
+
+**Lines 165-168: I don’t follow the logic of this sentence. How does locusts’ regulation of phosphorus use make nitrogen an important predictor of their populations?**
+
+*Our prediction is that since grasshoppers are able to regulate phosphorus intake after within the gut, the actual phosphorus content of the food is less important as compared to the nitrogen content of the food, leading to nitrogen being a stronger predictor. We made this clearer within the manuscript and changed the sentence to say: '*Given locusts' capacity to post-ingestively regulate phosphorus (e.g. regulate phosphorous intake after ingestion) within natural ranges [@cease_dietary_2016; @zhang_grasshoppers_2014], we predict nitrogen to be a stronger predictor of population dynamics at the continental scale'
+
+**Lines 347-359: Question 2 is “How does C. terminifera respond behaviorally when constrained to high-nitrogen environments?”. I don’t see how these tests will address that question. The locust related response variables are locust mass (Line 354) and two unclear ones “final adult proportion and survival proportion” (Line 356). Perhaps the question should be restated (e.g. change “behaviorally” to “physiologically”). The second two locust response variables should also be clarified.**
+
+*Thanks for catching this! This question actually corresponds to both behavioral and physiological response to high nitrogen environments. These findings come from the field cage experiment (section 2.3) where we tested locust final mass, number of nymphs that molted to adults, and the survival proportion in each cage across three fertilization levels. In addition to these physiological measurements, we took locust individuals From the none and high fertilization treatments and recorded their nutrient consumption (e.g. their behavioral choice) and redressing of nutrient imbalances. We have clarified the question to include both aspects and added more clarifications (question 2 in introduction and section 2.3).*
+
+**Lines 443-446 “future work should aim to explicitly assess phosphorus nutrient imbalances at finer scales. This could help elucidate whether phosphorus mismatches at smaller scales influence broader patterns of herbivore population dynamics.” Seems a bit redundant/circular.**
+
+*We have rephrased this sentence to say the following: 'While this study advances our understanding of nutrient limitation across scales, future work should explicitly assess phosphorus nutrient imbalances at finer scales to clarify their influence on broader patterns of herbivore population dynamics.'
+
+**Supp Fig 2: Best to show where this inset section is coming from on the larger map.**
+
+*Good suggestion! We have added a white highlighted box on the larger map to show where this inset is coming from.*
