@@ -1,5 +1,7 @@
 # Exploring Nutrient Availability and Herbivorous Insect Population Dynamics Across Multiple Scales
 
+[![DOI](https://zenodo.org/badge/854180816.svg)](https://doi.org/10.5281/zenodo.14934164)
+
 ## Overview
 This repository contains the data and code supporting the publication:
 
@@ -66,7 +68,7 @@ To reproduce the analyses, follow these steps:
 ## Citation
 If you use this dataset or code, please cite:
 
-**Lawton et al. (2024).** *Exploring Nutrient Availability and Herbivorous Insect Population Dynamics Across Multiple Scales.* Oikos. DOI: _[To be added]_
+**Lawton et al. (2024).** *Exploring Nutrient Availability and Herbivorous Insect Population Dynamics Across Multiple Scales.* Oikos. DOI: https://doi.org/10.5281/zenodo.14934164
 
 ## License
 This repository is licensed under the MIT License. See `LICENSE` for details.
