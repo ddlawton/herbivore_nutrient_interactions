@@ -1,87 +1,76 @@
-# Exploring Nutrient Availability and Herbivorous Insect Population Dynamics Across Multiple Scales 
+# Exploring Nutrient Availability and Herbivorous Insect Population Dynamics Across Multiple Scales
 
-## Authors
+## Overview
+This repository contains the data and code supporting the publication:
 
-- **Douglas Lawton**<sup>1†</sup> (douglas@douglaslawton.com)
-- **Jenni Learned**<sup>2</sup>
-- **Cathy Waters**<sup>3</sup>
-- **Ian Toole**<sup>4</sup>
-- **Natalia Thompson**<sup>5</sup>
-- **Chase Hales**<sup>6</sup>
-- **Chris Adriaansen**<sup>7</sup>
-- **Ted Deveson**<sup>7,8</sup>
-- **Stephen J. Simpson**<sup>9</sup>
-- **Arianne Cease**<sup>1,10</sup>
+**Lawton et al. (2024).** *Exploring Nutrient Availability and Herbivorous Insect Population Dynamics Across Multiple Scales.* Oikos. DOI: _[To be added]_
 
-<sup>1</sup>School of Sustainability, Arizona State University, Tempe, AZ, USA  
-<sup>2</sup>Mau Nui Seabird Recovery Project, Makawao, HI, USA  
-<sup>3</sup>GreenCollar, 3 Hickson Road, The Rocks, Sydney, NSW, Australia  
-<sup>4</sup>NSW Department of Primary Industries, Trangie, NSW, Australia  
-<sup>5</sup>School of Molecular Sciences, Arizona State University, Tempe, AZ, USA  
-<sup>6</sup>School of Geographical Sciences & Urban Planning, Arizona State University, Tempe, AZ, USA  
-<sup>7</sup>Australian Plague Locust Commission, Fyshwick, ACT, Australia  
-<sup>8</sup>Fenner School of Environment and Society, Australian National University, ACT, Australia  
-<sup>9</sup>School of Life and Environmental Science Charles Perkins Centre, University of Sydney, Sydney, Australia  
-<sup>10</sup>School of Life Sciences, Arizona State University, Tempe, AZ, USA  
-
-
-## Abstract
-
-*add abstract here*
+The study examines how nutrient availability influences herbivore populations at different spatial scales, using a combination of field experiments, remote sensing data, and spatial modeling.
 
 ## Repository Structure
+The repository is organized into major sections, each containing analysis scripts and associated data:
 
-- `data/`: Contains the datasets and metadata used in the analysis.
-- `scripts/`: Includes all scripts used for data processing, analysis, and visualization.
-- `output/`: results generated from the analysis, specifically the figures and tables.
-- `docs/`: Additional documentation related to the project.
-- `LICENSE`: Information about the licensing of the code and data.
+- **`field_populations/`** - Analyses related to field population studies.
+  - `choice_intake_target_experiment/`
+  - `no_choice_intake_target_experiment/`
+- **`field_cages/`** - Investigations of locust survival, growth, and nutrient intake.
+  - `grass_nutrient_analysis/`
+  - `locust_survival_growth_analysis/`
+  - `locust_intake_target_analysis/`
+- **`spatial_modeling/`** - Spatial analyses and predictive modeling.
+  - `fishnet_grid_construction/`
+  - `remote_sensing_data_extraction/`
+  - `raw_data_visualization/`
+  - `modeling/`
+  - `post_modeling_visualization/`
 
-Each paper section is given a subfolder within each folder when necessarily with the sections being:
-
-- field_populations
-   - choice intake target experiment
-   - no choice intake target experiment
-- field_cages
-   - grass nutrient analysis
-   - locust survival, growth analysis
-   - locust intake target analyis
-- spatial_modeling
-   - fishnet grid construction
-   - remote sensing data extraction
-   - raw data visualization
-   - modeling
-   - post modeling visualization
-
-Notebooks are numbered and for each respective folder, it starts with `01` and on.
+Notebooks within each subfolder are numbered sequentially (e.g., `01_analysis.Rmd`, `02_modeling.Rmd`) to indicate the order of execution.
 
 ## Requirements
+This project uses both R and Python for data analysis. Dependencies are managed via `renv` (R) and a virtual environment (`myenv`) for Python.
 
-The code and analysis were developed using the following software and libraries:
-- Python 3.x
-- R 4.x
-- [List of key libraries, e.g., NumPy, pandas, scikit-learn, ggplot2]
+### Software Requirements
+- **Python 3.x** (dependencies managed via `myenv`)
+- **R 4.x** (dependencies managed via `renv`)
 
-## Installation
+### Installation
+Clone the repository and set up the required environments:
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/username/repository-name.git
-    cd repository-name
-    ```
-2. Install the required Python and R packages:
-    ```bash
-    pip install -r requirements.txt
-    Rscript install_packages.R
-    ```
+```bash
+git clone https://github.com/username/repository-name.git
+cd repository-name
+```
 
-## Usage
+#### Python Setup
+Activate the Python virtual environment:
+```bash
+conda activate myenv  # or use `source myenv/bin/activate` if using virtualenv
+```
 
-*To be added*
+#### R Setup
+Restore the R package environment:
+```r
+install.packages("renv")
+renv::restore()
+```
+
+## Data Availability
+The datasets used in this study are archived on Zenodo and will be available upon publication. DOI: _[To be added]_
+
+## Reproducibility
+To reproduce the analyses, follow these steps:
+1. Ensure all dependencies are installed (see above).
+2. Navigate to the relevant analysis subfolder (e.g., `spatial_modeling/modeling/`).
+3. Run the scripts in sequential order.
 
 ## Citation
+If you use this dataset or code, please cite:
 
-If you use this code or data in your own research, please cite the following:
+**Lawton et al. (2024).** *Exploring Nutrient Availability and Herbivorous Insect Population Dynamics Across Multiple Scales.* Oikos. DOI: _[To be added]_
 
-**Your Name**, **Co-Author Name**, "Title of Your Scientific Article," *Journal Name*, Year, DOI: [link to article].
+## License
+This repository is licensed under the MIT License. See `LICENSE` for details.
+
+## Contact
+For questions or feedback, please contact: _ddlawton@asu.edu_.
 

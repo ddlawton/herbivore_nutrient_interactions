@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite it as follows."
+title: "Exploring Nutrient Availability and Herbivorous Insect Population Dynamics Across Multiple Scales"
+authors:
+  - name: "Douglas Lawton"
+    orcid: "0000-0003-2363-4084"  
+    affiliation: "Arizona State University"
+date-released: "2025-02-26"  
+version: "1.0"
+repository-code: "https://github.com/ddlawton/herbivore_nutrient_interactions"
+license: "MIT" 
+doi: ""  # TBD once Zenodo gives one
