@@ -9,4 +9,4 @@ date-released: "2025-02-26"
 version: "1.0"
 repository-code: "https://github.com/ddlawton/herbivore_nutrient_interactions"
 license: "MIT" 
-doi: ""  # TBD once Zenodo gives one
+doi: "https://doi.org/10.5281/zenodo.14934164" 
